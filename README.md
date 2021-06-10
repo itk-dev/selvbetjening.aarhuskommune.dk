@@ -1,6 +1,7 @@
 # selvbetjening.aarhuskommune.dk
 
 This project is an instance of [OS2Forms8](https://github.com/os2forms/os2forms8) hosted om https://selvbetjening.aarhuskommune.dk.
+Concretely this means that the master branch of the [OS2Forms8](https://github.com/os2forms/os2forms8) repository is considered as upstream for the develop branch in this repository.
 
 ## Getting started
 
@@ -74,7 +75,7 @@ You should now be able to browse to the application at `http://selvbetjening.doc
 
 4. Fix any merge conflicts and commit the changes.
 
-5. Create pull request with your changes and tag a colleague for code review.
+5. Create pull request with your changes with the develop branch as the target and tag a colleague for code review.
 
 ### Handling changes in [OS2Forms8](https://github.com/os2forms/os2forms8) install profile
 
