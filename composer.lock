@@ -10169,16 +10169,16 @@
         },
         {
             "name": "itk-dev/os2forms-cpr-lookup",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_cpr_lookup.git",
-                "reference": "8a528c7806078af434ab22effd87c631ef0ca90d"
+                "reference": "1dd2b42424a6a88d134391afd94d5ff2a8054b85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_cpr_lookup/zipball/8a528c7806078af434ab22effd87c631ef0ca90d",
-                "reference": "8a528c7806078af434ab22effd87c631ef0ca90d",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_cpr_lookup/zipball/1dd2b42424a6a88d134391afd94d5ff2a8054b85",
+                "reference": "1dd2b42424a6a88d134391afd94d5ff2a8054b85",
                 "shasum": ""
             },
             "require": {
@@ -10204,10 +10204,10 @@
             ],
             "description": "Provides integration to CPR service provided by Serviceplatformen.",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms_cpr_lookup/tree/1.0.0",
+                "source": "https://github.com/itk-dev/os2forms_cpr_lookup/tree/1.0.1",
                 "issues": "https://github.com/itk-dev/os2forms_cpr_lookup/issues"
             },
-            "time": "2021-06-09T12:31:38+00:00"
+            "time": "2021-06-10T12:10:44+00:00"
         },
         {
             "name": "itk-dev/serviceplatformen",
