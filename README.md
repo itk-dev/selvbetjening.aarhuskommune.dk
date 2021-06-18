@@ -3,8 +3,8 @@
 This project is an instance of [OS2Forms8](https://github.com/os2forms/os2forms8) hosted om https://selvbetjening.aarhuskommune.dk.
 Concretely this means that the master branch of the [OS2Forms8](https://github.com/os2forms/os2forms8) repository is considered as upstream for the develop branch in this repository.
 
-## Project describtion (Aarhus)
-OS2forms is a supporting system for when your Electronic document and records management system (EDRMS) does not have the opportunity to get information directly from the contributors. Via the solution, you can e.g. create forms and digitize multi-party workflows. The purpose of the solution is to further save time for the citizen and employees by providing transparency and overview.
+## Project description (Aarhus)
+OS2forms is a supporting system for when your Electronic Document and Records Management System (EDRMS) does not have the opportunity to get information directly from the contributors. Via the solution, you can e.g. create forms and digitize multi-party workflows. The purpose of the solution is to further save time for the citizen and employees by providing transparency and overview.
 Examples of workflows can be Requests for psycological assistence for children, ordering aids, hiring new employees or reporting maternity leave.
 
 
