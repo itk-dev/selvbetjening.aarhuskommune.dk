@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4683ec73b43d69e30f7637319053b24c",
+    "content-hash": "029d18e2761fde6054de6ce49fd58d97",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -10169,16 +10169,16 @@
         },
         {
             "name": "itk-dev/os2forms-cpr-lookup",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_cpr_lookup.git",
-                "reference": "1dd2b42424a6a88d134391afd94d5ff2a8054b85"
+                "reference": "a525735a9e01ab8ab8202a6515103f15a51ed955"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_cpr_lookup/zipball/1dd2b42424a6a88d134391afd94d5ff2a8054b85",
-                "reference": "1dd2b42424a6a88d134391afd94d5ff2a8054b85",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_cpr_lookup/zipball/a525735a9e01ab8ab8202a6515103f15a51ed955",
+                "reference": "a525735a9e01ab8ab8202a6515103f15a51ed955",
                 "shasum": ""
             },
             "require": {
@@ -10204,10 +10204,10 @@
             ],
             "description": "Provides integration to CPR service provided by Serviceplatformen.",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms_cpr_lookup/tree/1.0.1",
+                "source": "https://github.com/itk-dev/os2forms_cpr_lookup/tree/1.1.0",
                 "issues": "https://github.com/itk-dev/os2forms_cpr_lookup/issues"
             },
-            "time": "2021-06-10T12:10:44+00:00"
+            "time": "2021-06-16T06:19:42+00:00"
         },
         {
             "name": "itk-dev/serviceplatformen",
