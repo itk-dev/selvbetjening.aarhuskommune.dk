@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "029d18e2761fde6054de6ce49fd58d97",
+    "content-hash": "7cfd3d8e3a1ba50fdce8292c6d1dacee",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -10210,17 +10210,67 @@
             "time": "2021-06-16T06:19:42+00:00"
         },
         {
-            "name": "itk-dev/serviceplatformen",
+            "name": "itk-dev/os2forms_cvr_lookup",
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/itk-dev/serviceplatformen.git",
-                "reference": "e01cac09fe65879d41840c29b8c7f1aca4167f13"
+                "url": "https://github.com/itk-dev/os2forms_cvr_lookup.git",
+                "reference": "28fc258c692e125fab814d4180db7f1e8970ee90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/serviceplatformen/zipball/e01cac09fe65879d41840c29b8c7f1aca4167f13",
-                "reference": "e01cac09fe65879d41840c29b8c7f1aca4167f13",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_cvr_lookup/zipball/28fc258c692e125fab814d4180db7f1e8970ee90",
+                "reference": "28fc258c692e125fab814d4180db7f1e8970ee90",
+                "shasum": ""
+            },
+            "require": {
+                "ext-soap": "*",
+                "http-interop/http-factory-guzzle": "^1.0.0",
+                "itk-dev/serviceplatformen": "^1.1.0",
+                "php-http/guzzle6-adapter": "^2.0.1",
+                "symfony/property-access": "^4.4"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "drupal/coder": "^8.3"
+            },
+            "type": "drupal-module",
+            "scripts": {
+                "coding-standards-check": [
+                    "phpcs --standard=phpcs.xml.dist"
+                ],
+                "coding-standards-apply": [
+                    "phpcbf --standard=phpcs.xml.dist"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lars Steen Risom",
+                    "email": "lats@aarhus.dk"
+                }
+            ],
+            "description": "Provides integration to CVR service provided by Serviceplatformen.",
+            "support": {
+                "source": "https://github.com/itk-dev/os2forms_cvr_lookup/tree/1.0.0",
+                "issues": "https://github.com/itk-dev/os2forms_cvr_lookup/issues"
+            },
+            "time": "2021-06-18T11:27:02+00:00"
+        },
+        {
+            "name": "itk-dev/serviceplatformen",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/serviceplatformen.git",
+                "reference": "2959cfb80f72e82b5ee53357262b679879b8cd14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/serviceplatformen/zipball/2959cfb80f72e82b5ee53357262b679879b8cd14",
+                "reference": "2959cfb80f72e82b5ee53357262b679879b8cd14",
                 "shasum": ""
             },
             "require": {
@@ -10251,7 +10301,7 @@
                     "email": "lats@aarhus.dk"
                 }
             ],
-            "time": "2021-03-17T13:59:35+00:00"
+            "time": "2021-06-18T08:12:25+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",

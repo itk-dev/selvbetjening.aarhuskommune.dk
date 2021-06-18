@@ -17,6 +17,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/itk-dev/os2forms_cpr_lookup"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/itk-dev/os2forms_cvr_lookup"
         }
     ],
     "require": {
@@ -57,6 +61,7 @@
         "os2forms/os2forms_forloeb": "1.1.0",
         "os2web/os2web_logging": "dev-master",
         "itk-dev/os2forms-cpr-lookup": "^1.1.0",
+        "itk-dev/os2forms_cvr_lookup": "^1.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
