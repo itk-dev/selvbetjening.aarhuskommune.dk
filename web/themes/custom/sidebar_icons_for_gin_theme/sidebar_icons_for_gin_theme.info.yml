@@ -1,0 +1,10 @@
+name: 'Sidebar icons for Gin theme'
+type: theme
+description: 'Adds extra icons for use in sidebar with Gin admin theme'
+core: 8.x
+
+#regions:
+#  sidebar_first: 'Primary'
+
+libraries:
+  - 'sidebar_icons_for_gin_theme/styles'
