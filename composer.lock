@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "451e206ccc900c50180bbb14a801f7d8",
+    "content-hash": "f3c6cda6310099b442dd29b8ed665a52",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -10169,16 +10169,16 @@
         },
         {
             "name": "itk-dev/os2forms-cpr-lookup",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_cpr_lookup.git",
-                "reference": "182233be6b271dba234adbd52eadfff18a3e8c3a"
+                "reference": "4b9d13b8e32ba6e874007120f12e26e862f49db2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_cpr_lookup/zipball/182233be6b271dba234adbd52eadfff18a3e8c3a",
-                "reference": "182233be6b271dba234adbd52eadfff18a3e8c3a",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_cpr_lookup/zipball/4b9d13b8e32ba6e874007120f12e26e862f49db2",
+                "reference": "4b9d13b8e32ba6e874007120f12e26e862f49db2",
                 "shasum": ""
             },
             "require": {
@@ -10220,23 +10220,23 @@
             ],
             "description": "Provides integration to CPR service provided by Serviceplatformen.",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms_cpr_lookup/tree/1.2.0",
+                "source": "https://github.com/itk-dev/os2forms_cpr_lookup/tree/1.2.1",
                 "issues": "https://github.com/itk-dev/os2forms_cpr_lookup/issues"
             },
-            "time": "2021-06-23T11:10:14+00:00"
+            "time": "2021-06-23T11:36:39+00:00"
         },
         {
             "name": "itk-dev/os2forms_cvr_lookup",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_cvr_lookup.git",
-                "reference": "28fc258c692e125fab814d4180db7f1e8970ee90"
+                "reference": "9fe4b8cd388b8070355a601974e3afe7e183e071"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_cvr_lookup/zipball/28fc258c692e125fab814d4180db7f1e8970ee90",
-                "reference": "28fc258c692e125fab814d4180db7f1e8970ee90",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_cvr_lookup/zipball/9fe4b8cd388b8070355a601974e3afe7e183e071",
+                "reference": "9fe4b8cd388b8070355a601974e3afe7e183e071",
                 "shasum": ""
             },
             "require": {
@@ -10270,10 +10270,10 @@
             ],
             "description": "Provides integration to CVR service provided by Serviceplatformen.",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms_cvr_lookup/tree/1.0.0",
+                "source": "https://github.com/itk-dev/os2forms_cvr_lookup/tree/develop",
                 "issues": "https://github.com/itk-dev/os2forms_cvr_lookup/issues"
             },
-            "time": "2021-06-18T11:27:02+00:00"
+            "time": "2021-06-23T11:06:10+00:00"
         },
         {
             "name": "itk-dev/serviceplatformen",
