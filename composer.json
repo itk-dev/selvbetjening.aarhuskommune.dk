@@ -21,6 +21,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/itk-dev/os2forms_cvr_lookup"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/itk-dev/os2forms_digital_post"
         }
     ],
     "require": {
@@ -65,7 +69,8 @@
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
-        "zaporylie/composer-drupal-optimizations": "^1.0"
+        "zaporylie/composer-drupal-optimizations": "^1.0",
+        "itk-dev/os2forms-digital-post": "dev-develop"
     },
     "require-dev": {
     },

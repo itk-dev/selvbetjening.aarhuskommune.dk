@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cfd3d8e3a1ba50fdce8292c6d1dacee",
+    "content-hash": "5afc5894f0ba6f109fcf02fc572635b7",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -10210,6 +10210,70 @@
             "time": "2021-06-16T06:19:42+00:00"
         },
         {
+            "name": "itk-dev/os2forms-digital-post",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/os2forms_digital_post.git",
+                "reference": "e86a716721f9286464a406b3c7598db05d613b18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_digital_post/zipball/e86a716721f9286464a406b3c7598db05d613b18",
+                "reference": "e86a716721f9286464a406b3c7598db05d613b18",
+                "shasum": ""
+            },
+            "require": {
+                "dompdf/dompdf": "~0.8.0",
+                "ext-soap": "*",
+                "http-interop/http-factory-guzzle": "^1.0.0",
+                "itk-dev/os2forms-cpr-lookup": "^1.1",
+                "itk-dev/serviceplatformen": "^1.1",
+                "os2forms/os2forms": "^2.5",
+                "php-http/guzzle6-adapter": "^2.0.1",
+                "symfony/property-access": "^4.4",
+                "wsdltophp/packagebase": "^5.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "drupal/coder": "^8.3",
+                "wsdltophp/packagegenerator": "^4.0"
+            },
+            "type": "drupal-module",
+            "autoload": {
+                "Drupal\\os2forms_digital_post\\": "src/"
+            },
+            "scripts": {
+                "coding-standards-check/phpcs": [
+                    "phpcs --standard=phpcs.xml.dist"
+                ],
+                "coding-standards-check": [
+                    "@coding-standards-check/phpcs"
+                ],
+                "coding-standards-apply/phpcs": [
+                    "phpcbf --standard=phpcs.xml.dist"
+                ],
+                "coding-standards-apply": [
+                    "@coding-standards-apply/phpcs"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lars Steen Risom",
+                    "email": "lats@aarhus.dk"
+                }
+            ],
+            "description": "Provides integration to Print service provided by Serviceplatformen.",
+            "support": {
+                "source": "https://github.com/itk-dev/os2forms_digital_post/tree/develop",
+                "issues": "https://github.com/itk-dev/os2forms_digital_post/issues"
+            },
+            "time": "2021-07-08T12:00:29+00:00"
+        },
+        {
             "name": "itk-dev/os2forms_cvr_lookup",
             "version": "1.0.0",
             "source": {
@@ -17431,6 +17495,84 @@
             "time": "2015-02-11T11:06:42+00:00"
         },
         {
+            "name": "wsdltophp/packagebase",
+            "version": "5.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WsdlToPhp/PackageBase.git",
+                "reference": "3575e50d3163dd76641bbb5398d356e310170724"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WsdlToPhp/PackageBase/zipball/3575e50d3163dd76641bbb5398d356e310170724",
+                "reference": "3575e50d3163dd76641bbb5398d356e310170724",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-soap": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.0",
+                "phpunit/phpunit": "^9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WsdlToPhp\\PackageBase\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikaël DELSOL",
+                    "email": "contact@wsdltophp.com",
+                    "role": "Owner"
+                },
+                {
+                    "name": "Luke Rodgers",
+                    "email": "lukerodgers90@gmail.com",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Arthur Moore",
+                    "email": "github@cd-net.net",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Necati Yared Ozal",
+                    "email": "mail@necatiozal.com",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Gemorroj",
+                    "email": "wapinet@mail.ru",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "hordijk",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Jacob Dreesen",
+                    "email": "jacob.dreesen@gmail.com",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Contains the base classes to be used by classes generated by wsdltophp/packagegenerator",
+            "homepage": "https://github.com/WsdlToPhp/PackageBase",
+            "keywords": [
+                "models",
+                "php"
+            ],
+            "time": "2021-02-09T14:01:25+00:00"
+        },
+        {
             "name": "zaporylie/composer-drupal-optimizations",
             "version": "1.2.0",
             "source": {
@@ -17486,7 +17628,8 @@
         "drupal/webform_views": 15,
         "itk-dev/itkdev_openid_connect_drupal": 20,
         "os2forms/os2forms_egbolig": 20,
-        "os2web/os2web_logging": 20
+        "os2web/os2web_logging": 20,
+        "itk-dev/os2forms-digital-post": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
