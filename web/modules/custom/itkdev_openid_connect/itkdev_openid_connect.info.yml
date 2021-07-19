@@ -1,0 +1,8 @@
+name: ITK Dev OpenID Connect
+type: module
+description:
+core_version_requirement: ^8.8 || ^9
+package: 'User authentication'
+
+dependencies:
+  - drupal:openid_connect
