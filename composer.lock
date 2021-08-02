@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a23511d53a925f50ff8c0c2537347722",
+    "content-hash": "81ee1f53b2f5e4ac2e89a86d7e84c07a",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -10221,22 +10221,24 @@
         },
         {
             "name": "itk-dev/os2forms-cpr-lookup",
-            "version": "1.1.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_cpr_lookup.git",
-                "reference": "a525735a9e01ab8ab8202a6515103f15a51ed955"
+                "reference": "4b9d13b8e32ba6e874007120f12e26e862f49db2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_cpr_lookup/zipball/a525735a9e01ab8ab8202a6515103f15a51ed955",
-                "reference": "a525735a9e01ab8ab8202a6515103f15a51ed955",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_cpr_lookup/zipball/4b9d13b8e32ba6e874007120f12e26e862f49db2",
+                "reference": "4b9d13b8e32ba6e874007120f12e26e862f49db2",
                 "shasum": ""
             },
             "require": {
                 "ext-soap": "*",
                 "http-interop/http-factory-guzzle": "^1.0.0",
                 "itk-dev/serviceplatformen": "^1.0",
+                "os2forms/os2forms": "^2.5",
+                "os2web/os2web_nemlogin": "^1.0",
                 "php-http/guzzle6-adapter": "^2.0.1",
                 "symfony/property-access": "^4.4"
             },
@@ -10245,6 +10247,20 @@
                 "drupal/coder": "^8.3"
             },
             "type": "drupal-module",
+            "scripts": {
+                "coding-standards-check/phpcs": [
+                    "phpcs --standard=phpcs.xml.dist"
+                ],
+                "coding-standards-check": [
+                    "@coding-standards-check/phpcs"
+                ],
+                "coding-standards-apply/phpcs": [
+                    "phpcbf --standard=phpcs.xml.dist"
+                ],
+                "coding-standards-apply": [
+                    "@coding-standards-apply/phpcs"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -10256,23 +10272,87 @@
             ],
             "description": "Provides integration to CPR service provided by Serviceplatformen.",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms_cpr_lookup/tree/1.1.0",
+                "source": "https://github.com/itk-dev/os2forms_cpr_lookup/tree/1.2.1",
                 "issues": "https://github.com/itk-dev/os2forms_cpr_lookup/issues"
             },
-            "time": "2021-06-16T06:19:42+00:00"
+            "time": "2021-06-23T11:36:39+00:00"
         },
         {
-            "name": "itk-dev/os2forms_cvr_lookup",
-            "version": "1.0.0",
+            "name": "itk-dev/os2forms-digital-post",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
-                "url": "https://github.com/itk-dev/os2forms_cvr_lookup.git",
-                "reference": "28fc258c692e125fab814d4180db7f1e8970ee90"
+                "url": "https://github.com/itk-dev/os2forms_digital_post.git",
+                "reference": "9d0ab09e6c2b6e9613545aaf4e94dbfe000354cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_cvr_lookup/zipball/28fc258c692e125fab814d4180db7f1e8970ee90",
-                "reference": "28fc258c692e125fab814d4180db7f1e8970ee90",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_digital_post/zipball/9d0ab09e6c2b6e9613545aaf4e94dbfe000354cd",
+                "reference": "9d0ab09e6c2b6e9613545aaf4e94dbfe000354cd",
+                "shasum": ""
+            },
+            "require": {
+                "dompdf/dompdf": "~0.8.0",
+                "ext-soap": "*",
+                "http-interop/http-factory-guzzle": "^1.0.0",
+                "itk-dev/os2forms-cpr-lookup": "^1.1",
+                "itk-dev/serviceplatformen": "^1.1",
+                "os2forms/os2forms": "^2.5",
+                "php-http/guzzle6-adapter": "^2.0.1",
+                "symfony/property-access": "^4.4",
+                "wsdltophp/packagebase": "^5.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "drupal/coder": "^8.3",
+                "wsdltophp/packagegenerator": "^4.0"
+            },
+            "type": "drupal-module",
+            "autoload": {
+                "Drupal\\os2forms_digital_post\\": "src/"
+            },
+            "scripts": {
+                "coding-standards-check/phpcs": [
+                    "phpcs --standard=phpcs.xml.dist"
+                ],
+                "coding-standards-check": [
+                    "@coding-standards-check/phpcs"
+                ],
+                "coding-standards-apply/phpcs": [
+                    "phpcbf --standard=phpcs.xml.dist"
+                ],
+                "coding-standards-apply": [
+                    "@coding-standards-apply/phpcs"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lars Steen Risom",
+                    "email": "lats@aarhus.dk"
+                }
+            ],
+            "description": "Provides integration to Print service provided by Serviceplatformen.",
+            "support": {
+                "source": "https://github.com/itk-dev/os2forms_digital_post/tree/develop",
+                "issues": "https://github.com/itk-dev/os2forms_digital_post/issues"
+            },
+            "time": "2021-07-09T11:40:04+00:00"
+        },
+        {
+            "name": "itk-dev/os2forms_cvr_lookup",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/os2forms_cvr_lookup.git",
+                "reference": "9fe4b8cd388b8070355a601974e3afe7e183e071"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_cvr_lookup/zipball/9fe4b8cd388b8070355a601974e3afe7e183e071",
+                "reference": "9fe4b8cd388b8070355a601974e3afe7e183e071",
                 "shasum": ""
             },
             "require": {
@@ -10306,10 +10386,10 @@
             ],
             "description": "Provides integration to CVR service provided by Serviceplatformen.",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms_cvr_lookup/tree/1.0.0",
+                "source": "https://github.com/itk-dev/os2forms_cvr_lookup/tree/develop",
                 "issues": "https://github.com/itk-dev/os2forms_cvr_lookup/issues"
             },
-            "time": "2021-06-18T11:27:02+00:00"
+            "time": "2021-06-23T11:06:10+00:00"
         },
         {
             "name": "itk-dev/serviceplatformen",
@@ -11238,7 +11318,7 @@
                 "drupal/webform_scheduled_tasks": "^2.0",
                 "drupal/webform_views": "5.0.0-alpha7",
                 "drupal/workflow_participants": "^2.4",
-                "vlucas/phpdotenv": "^2.4",
+                "vlucas/phpdotenv": "^4.0",
                 "webmozart/path-util": "2.3.0",
                 "zaporylie/composer-drupal-optimizations": "1.2.0"
             },
@@ -11266,7 +11346,7 @@
                 "EUPL-1.2"
             ],
             "description": "This module adds Maestro workflow engine and functionality to produce advanced workflows",
-            "time": "2021-05-05T09:18:16+00:00"
+            "time": "2021-05-06T14:01:13+00:00"
         },
         {
             "name": "os2web/os2web_datalookup",
@@ -12247,6 +12327,71 @@
                 "writer"
             ],
             "time": "2019-10-01T20:43:33+00:00"
+        },
+        {
+            "name": "phpoption/phpoption",
+            "version": "1.7.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-option.git",
+                "reference": "994ecccd8f3283ecf5ac33254543eb0ac946d525"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/994ecccd8f3283ecf5ac33254543eb0ac946d525",
+                "reference": "994ecccd8f3283ecf5ac33254543eb0ac946d525",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
+                "phpunit/phpunit": "^4.8.35 || ^5.7.27 || ^6.5.6 || ^7.0 || ^8.0 || ^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpOption\\": "src/PhpOption/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "Option Type for PHP",
+            "keywords": [
+                "language",
+                "option",
+                "php",
+                "type"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-07-20T17:29:33+00:00"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -17228,23 +17373,25 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.6.7",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "b786088918a884258c9e3e27405c6a4cf2ee246e"
+                "reference": "da64796370fc4eb03cc277088f6fede9fde88482"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/b786088918a884258c9e3e27405c6a4cf2ee246e",
-                "reference": "b786088918a884258c9e3e27405c6a4cf2ee246e",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/da64796370fc4eb03cc277088f6fede9fde88482",
+                "reference": "da64796370fc4eb03cc277088f6fede9fde88482",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.9 || ^7.0 || ^8.0",
+                "php": "^5.5.9 || ^7.0 || ^8.0",
+                "phpoption/phpoption": "^1.7.3",
                 "symfony/polyfill-ctype": "^1.17"
             },
             "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
                 "ext-filter": "*",
                 "ext-pcre": "*",
                 "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20"
@@ -17256,7 +17403,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -17296,7 +17443,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-20T14:39:13+00:00"
+            "time": "2021-01-20T15:11:48+00:00"
         },
         {
             "name": "webflo/drupal-finder",
@@ -17483,6 +17630,84 @@
             "time": "2015-02-11T11:06:42+00:00"
         },
         {
+            "name": "wsdltophp/packagebase",
+            "version": "5.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WsdlToPhp/PackageBase.git",
+                "reference": "3575e50d3163dd76641bbb5398d356e310170724"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WsdlToPhp/PackageBase/zipball/3575e50d3163dd76641bbb5398d356e310170724",
+                "reference": "3575e50d3163dd76641bbb5398d356e310170724",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-soap": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.0",
+                "phpunit/phpunit": "^9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WsdlToPhp\\PackageBase\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikaël DELSOL",
+                    "email": "contact@wsdltophp.com",
+                    "role": "Owner"
+                },
+                {
+                    "name": "Luke Rodgers",
+                    "email": "lukerodgers90@gmail.com",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Arthur Moore",
+                    "email": "github@cd-net.net",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Necati Yared Ozal",
+                    "email": "mail@necatiozal.com",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Gemorroj",
+                    "email": "wapinet@mail.ru",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "hordijk",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Jacob Dreesen",
+                    "email": "jacob.dreesen@gmail.com",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Contains the base classes to be used by classes generated by wsdltophp/packagegenerator",
+            "homepage": "https://github.com/WsdlToPhp/PackageBase",
+            "keywords": [
+                "models",
+                "php"
+            ],
+            "time": "2021-02-09T14:01:25+00:00"
+        },
+        {
             "name": "zaporylie/composer-drupal-optimizations",
             "version": "1.2.0",
             "source": {
@@ -17537,6 +17762,7 @@
         "drupal/webform_composite": 5,
         "drupal/webform_views": 15,
         "itk-dev/itkdev_openid_connect_drupal": 20,
+        "itk-dev/os2forms-digital-post": 20,
         "os2forms/os2forms_egbolig": 20,
         "os2web/os2web_logging": 20
     },
