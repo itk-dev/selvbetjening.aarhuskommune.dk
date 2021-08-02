@@ -12,11 +12,24 @@ Examples of workflows can be Requests for psycological assistence for children, 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+4. Install drupal based on OS2Forms profile. Make sure you substitute the following variables:
+   * db_pass
+   * db_user
+   * db_host
+   * db_name
+   * account_password
+   * site_name
+   ```sh
+   drush si os2forms8 --db-url=mysql://db_user:db_pass@db_host/db_name --account-pass=account_password --site-name="site_name"
+   ```
+
+### With Docksal
+
+#### Prerequisites
 
 * [Docksal](https://docksal.io/)
 
-### Installing
+#### Installing
 
 1. Clone the git repository
    ```sh
@@ -96,6 +109,7 @@ For a more detailed description, you could look at the `web/core/INSTALL.txt` [h
 #### Prerequisites
 
 * A HTTP server such as [Apache](https://httpd.apache.org/) that supports PHP
+* Make sure that Apache vhost configured properly. [See requirements](https://www.drupal.org/docs/system-requirements/web-server-requirements#s-apache)
 * A database service such as [MySQL](https://www.mysql.com/)
 * PHP 7.4 with the following extensions enabled:
   * gd
