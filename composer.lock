@@ -10434,16 +10434,16 @@
         },
         {
             "name": "itk-dev/os2forms_cvr_lookup",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_cvr_lookup.git",
-                "reference": "9fe4b8cd388b8070355a601974e3afe7e183e071"
+                "reference": "2a1d027a8fe4225d2f0c301b58e40cee4b7d3601"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_cvr_lookup/zipball/9fe4b8cd388b8070355a601974e3afe7e183e071",
-                "reference": "9fe4b8cd388b8070355a601974e3afe7e183e071",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_cvr_lookup/zipball/2a1d027a8fe4225d2f0c301b58e40cee4b7d3601",
+                "reference": "2a1d027a8fe4225d2f0c301b58e40cee4b7d3601",
                 "shasum": ""
             },
             "require": {
@@ -10477,10 +10477,10 @@
             ],
             "description": "Provides integration to CVR service provided by Serviceplatformen.",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms_cvr_lookup/tree/develop",
+                "source": "https://github.com/itk-dev/os2forms_cvr_lookup/tree/1.1.1",
                 "issues": "https://github.com/itk-dev/os2forms_cvr_lookup/issues"
             },
-            "time": "2021-06-23T11:06:10+00:00"
+            "time": "2021-08-05T10:08:17+00:00"
         },
         {
             "name": "itk-dev/os2forms_nemlogin_openid_connect",
