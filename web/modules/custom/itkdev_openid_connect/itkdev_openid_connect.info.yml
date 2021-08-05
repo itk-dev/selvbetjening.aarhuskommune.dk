@@ -1,6 +1,6 @@
 name: ITK Dev OpenID Connect
 type: module
-description:
+description: 'ITK Dev OpenID Connect'
 core_version_requirement: ^8.8 || ^9
 package: 'User authentication'
 
