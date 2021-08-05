@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14160ec4b49d1d70a74fae93ca161196",
+    "content-hash": "a6fe50f3f188bbfdf90d972fa5afa6ba",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -11302,6 +11302,10 @@
                 "EUPL-1.2"
             ],
             "description": "Provide authentication via Nemlogin",
+            "support": {
+                "issues": "https://github.com/OS2web/os2web_nemlogin/issues",
+                "source": "https://github.com/OS2web/os2web_nemlogin/tree/1.1"
+            },
             "time": "2021-05-10T09:23:17+00:00"
         },
         {
@@ -17638,9 +17642,9 @@
         "drupal/webform_analysis": 10,
         "drupal/webform_composite": 5,
         "drupal/webform_views": 15,
-        "itk-dev/os2forms-digital-post": 20,
         "os2forms/os2forms_egbolig": 20,
-        "os2web/os2web_logging": 20
+        "os2web/os2web_logging": 20,
+        "itk-dev/os2forms-digital-post": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
