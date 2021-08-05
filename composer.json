@@ -25,6 +25,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/itk-dev/os2forms_digital_post"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect"
         }
     ],
     "require": {
@@ -59,18 +63,19 @@
         "drupal/webform_scheduled_tasks": "^2.0",
         "drupal/webform_views": "^5.0@alpha",
         "drush/drush": "^9.0.0",
+        "itk-dev/os2forms-cpr-lookup": "^1.2",
+        "itk-dev/os2forms-digital-post": "dev-develop",
+        "itk-dev/os2forms_cvr_lookup": "^1.1",
+        "itk-dev/os2forms_nemlogin_openid_connect": "dev-develop",
         "os2core/os2core": "^1.0.3",
         "os2forms/os2forms": "^2.5",
         "os2forms/os2forms_egbolig": "dev-master",
         "os2forms/os2forms_forloeb": "1.1.0",
         "os2web/os2web_logging": "dev-master",
-        "itk-dev/os2forms-cpr-lookup": "^1.2",
-        "itk-dev/os2forms_cvr_lookup": "^1.1",
         "vlucas/phpdotenv": "^4.0",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
-        "zaporylie/composer-drupal-optimizations": "^1.0",
-        "itk-dev/os2forms-digital-post": "dev-develop"
+        "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
     },
