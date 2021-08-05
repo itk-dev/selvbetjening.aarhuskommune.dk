@@ -1,0 +1,15 @@
+diff --git a/src/OpenIDConnect.php b/src/OpenIDConnect.php
+index 95942d4..b25e23a 100644
+--- a/src/OpenIDConnect.php
++++ b/src/OpenIDConnect.php
+@@ -670,6 +670,10 @@ class OpenIDConnect {
+       }
+     }
+ 
++    if (isset($userinfo['role']) && !isset($userinfo['groups'])) {
++      $userinfo['groups'] = $userinfo['role'];
++    }
++
+     // Map groups to Drupal roles.
+     if (isset($userinfo['groups'])) {
+       $role_mappings = $this->configFactory->get('openid_connect.settings')->get('role_mappings');

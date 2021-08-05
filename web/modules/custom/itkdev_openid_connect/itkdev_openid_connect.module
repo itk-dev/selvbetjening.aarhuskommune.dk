@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_honeypot_form_protections_alter().
+ *
+ * Disable honeypot on the OpenID Connect login form.
+ */
+function itkdev_openid_connect_honeypot_form_protections_alter(array &$options, array $form) {
+  if ('openid_connect_login_form' === ($form['form_id']['#value'] ?? NULL)) {
+    $options = [];
+  }
+}
