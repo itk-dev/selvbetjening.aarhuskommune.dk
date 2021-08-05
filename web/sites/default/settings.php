@@ -757,15 +757,3 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
 
-$databases['default']['default'] = array (
-  'database' => 'default',
-  'username' => 'root',
-  'password' => 'root',
-  'prefix' => '',
-  'host' => 'db',
-  'port' => '',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-$settings['hash_salt'] = 'sadad1232123';
-
