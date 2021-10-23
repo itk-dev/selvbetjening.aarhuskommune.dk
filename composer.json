@@ -45,6 +45,7 @@
         "drupal/fontyourface": "^3.2",
         "drupal/header_and_footer_scripts": "^2.2",
         "drupal/ldap": "^3.0@beta",
+        "drupal/memcache": "^2.3",
         "drupal/migrate_tools": "^5.0",
         "drupal/migrate_upgrade": "^3.2",
         "drupal/openid_connect": "2.x-dev@dev",
