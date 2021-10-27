@@ -12,7 +12,14 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "//": "We have to make the default Drupal composer repository non-canonical to use other Drupal repositories",
+            "canonical": false
+        },
+        {
+            "//": "os2web/os2web_logging:dev-master requires drupal/monolog:2.x-dev",
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/project/monolog"
         },
         {
             "type": "vcs",
@@ -85,6 +92,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
+        "discard-changes": true,
         "sort-packages": true
     },
     "autoload": {

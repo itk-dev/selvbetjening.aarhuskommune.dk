@@ -143,7 +143,8 @@ For a more detailed description, you could look at the `web/core/INSTALL.txt` [h
 
 4. Install dependencies without development dependencies
    ```shell
-   composer install --no-dev
+   # Important: Use --no-interation to make https://getcomposer.org/doc/06-config.md#discard-changes have effect.
+   composer install --no-dev --no-interation
    ```
 
 5. Create local settings
@@ -208,7 +209,8 @@ These instructions assume you already have an installed version of this reposito
 
 2. Install composer packages:
    ```shell
-   composer install --no-dev
+   # Important: Use --no-interation to make https://getcomposer.org/doc/06-config.md#discard-changes have effect.
+   composer install --no-dev --no-interation
    ```
 
 3. Import any configuration changes:
