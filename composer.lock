@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7e80bdc3d586f7c59eed5a036a34cd2",
+    "content-hash": "9c372f29cdb7066fec288c80497e039f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4866,8 +4866,16 @@
                     "homepage": "https://www.drupal.org/u/benjy"
                 },
                 {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                },
+                {
                     "name": "benjy",
                     "homepage": "https://www.drupal.org/user/1852732"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
                 },
                 {
                     "name": "pameeela",
@@ -6376,6 +6384,82 @@
             }
         },
         {
+            "name": "drupal/memcache",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/memcache.git",
+                "reference": "8.x-2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/memcache-8.x-2.3.zip",
+                "reference": "8.x-2.3",
+                "shasum": "b2f9715612be74f9ce55daaf838f6f17a9eb2f5a"
+            },
+            "require": {
+                "drupal/core": "^8.9 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.3",
+                    "datestamp": "1614802365",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "branch-alias": {
+                    "dev-8.x-2.x": "2.x-dev"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Fabianx",
+                    "homepage": "https://www.drupal.org/user/693738"
+                },
+                {
+                    "name": "Jeremy",
+                    "homepage": "https://www.drupal.org/user/409"
+                },
+                {
+                    "name": "bdragon",
+                    "homepage": "https://www.drupal.org/user/53081"
+                },
+                {
+                    "name": "catch",
+                    "homepage": "https://www.drupal.org/user/35733"
+                },
+                {
+                    "name": "damiankloip",
+                    "homepage": "https://www.drupal.org/user/1037976"
+                },
+                {
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "jvandyk",
+                    "homepage": "https://www.drupal.org/user/2375"
+                },
+                {
+                    "name": "robertDouglass",
+                    "homepage": "https://www.drupal.org/user/5449"
+                }
+            ],
+            "description": "High performance integration with memcache.",
+            "homepage": "http://drupal.org/project/memcache",
+            "support": {
+                "source": "https://git.drupalcode.org/project/memcache",
+                "issues": "https://www.drupal.org/project/issues/memcache"
+            }
+        },
+        {
             "name": "drupal/metatag",
             "version": "1.16.0",
             "source": {
@@ -6768,7 +6852,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/openid_connect.git",
-                "reference": "290d7095d8df593805eb188133d64618ad0dea5f"
+                "reference": "220a1f1f7f7026548e1a66998c2184d550ef416d"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
@@ -6783,7 +6867,7 @@
                 },
                 "drupal": {
                     "version": "2.x-dev",
-                    "datestamp": "1626195470",
+                    "datestamp": "1631654844",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -6836,7 +6920,8 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/openid_connect",
                 "issues": "https://www.drupal.org/project/issues/openid_connect"
-            }
+            },
+            "time": "2021-09-14T21:26:43+00:00"
         },
         {
             "name": "drupal/paragraphs",
@@ -8298,7 +8383,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-5.26",
-                    "datestamp": "1620250064",
+                    "datestamp": "1629907242",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -13528,6 +13613,7 @@
                 "facebook",
                 "simplesamlphp"
             ],
+            "abandoned": true,
             "time": "2020-03-13T11:29:21+00:00"
         },
         {
@@ -13674,6 +13760,7 @@
                 "windows",
                 "windowslive"
             ],
+            "abandoned": true,
             "time": "2019-12-03T09:01:13+00:00"
         },
         {
@@ -14394,6 +14481,7 @@
                 "oauth1",
                 "simplesamlphp"
             ],
+            "abandoned": true,
             "time": "2020-04-29T19:37:43+00:00"
         },
         {
