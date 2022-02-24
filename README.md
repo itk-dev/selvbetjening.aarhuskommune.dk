@@ -1,3 +1,5 @@
+:warning: **This repository is deprecated** and replaced by <https://github.com/itk-dev/os2forms_selvbetjening>.
+
 # selvbetjening.aarhuskommune.dk
 
 This project is an instance of [OS2Forms8](https://github.com/os2forms/os2forms8) hosted om https://selvbetjening.aarhuskommune.dk.
