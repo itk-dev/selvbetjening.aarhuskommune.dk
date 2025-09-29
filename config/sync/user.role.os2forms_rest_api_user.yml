@@ -18,7 +18,7 @@ _core:
   default_config_hash: cIIUey-tvhk71aQgyiHMMxsotedc1bXPNceYvSuKfSw
 id: os2forms_rest_api_user
 label: 'OS2Form REST API user'
-weight: 1
+weight: 2
 is_admin: null
 permissions:
   - 'restful get webform_rest_elements'

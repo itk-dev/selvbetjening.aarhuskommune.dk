@@ -1,0 +1,29 @@
+uuid: b8ffca47-4a68-4011-9895-0248fd935091
+langcode: da
+status: true
+dependencies:
+  module:
+    - webform
+    - webform_submission_log
+    - webform_translation_permissions
+id: editor
+label: Redaktør
+weight: -6
+is_admin: null
+permissions:
+  - 'access content'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'administer webform revisions'
+  - 'edit own webform submission'
+  - 'use advanced search'
+  - 'access webform overview'
+  - 'access webform submission log'
+  - 'create webform'
+  - 'edit any webform'
+  - 'translate any webform'
+  - 'translate own webform'
+  - 'view encrypted values'
+  - 'view own webform submission'
+  - 'view the administration theme'
+  - 'view webform submissions own node'

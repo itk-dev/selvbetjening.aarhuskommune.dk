@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
-    - filter.format.restricted_html
     - filter.format.maestro_notification
+    - filter.format.restricted_html
     - filter.format.webform
     - node.type.webform
     - workflows.workflow.udgivelse_af_forlob_og_webformularer
@@ -20,6 +20,7 @@ dependencies:
     - maestro_taskconsole
     - node
     - os2forms_failed_jobs
+    - os2forms_granular_permissions
     - search
     - system
     - toolbar
@@ -30,7 +31,7 @@ _core:
   default_config_hash: FuuYYl7dBxmUUArvRKKBSiWjGH8UJR6cxgF0OmOYHiQ
 id: flow_designer
 label: Flowdesigner
-weight: -6
+weight: -5
 is_admin: null
 permissions:
   - 'access content overview'
@@ -39,7 +40,14 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'access webform advanced queue overview'
+  - 'access webform css js tab'
+  - 'access webform handlers tab'
   - 'access webform overview'
+  - 'access webform references tab'
+  - 'access webform results clear tab'
+  - 'access webform results download tab'
+  - 'access webform results upload tab'
+  - 'access webform submission_notes'
   - 'add maestro entity identifiers entities'
   - 'add maestro process entities'
   - 'add maestro production assignment entities'
