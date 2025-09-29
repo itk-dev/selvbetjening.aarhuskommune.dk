@@ -11,7 +11,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   * Ændrede permissions på eksisterende roller
   * Tilføjede modul til styring af mere specifikke rettigheder i forms
   * Tilføjede rolle "Redaktør"
-  * Ændre adgang til at seltte indsendelser så det kræver specfic adgang og ikke
+  * Ændre adgang til at slette indsendelser så det kræver specifik adgang og ikke
     blot webform redigerings adgang.
 
 ## [4.6.1] 2025-09-08
