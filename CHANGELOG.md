@@ -12,7 +12,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   * Tilføjede modul til styring af mere specifikke rettigheder i forms
   * Tilføjede rolle "Redaktør"
   * Ændre adgang til at seltte indsendelser så det kræver specfic adgang og ikke
-  * blot webform redigerings adgang.
+    blot webform redigerings adgang.
 
 ## [4.6.1] 2025-09-08
 
