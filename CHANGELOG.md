@@ -6,7 +6,16 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
-# [4.6.3] XXXX
+## [4.6.3] XXXX
+
+* Formular frontend rettelser
+  * Justerede formular knapper,`næste`, `forrige` og `indsend`.
+  * Justerede radioknapper og checkbokse.
+  * Tilføjede luft under labels.
+  * Ændrede tekststørrelser på `h`-elementer og standard tekst.
+  * Justerede organisationsdata søgeknappen.
+  * Justerede størrelsen af tekstområde-elementet.
+  * Justerede visningen af elementbeskrivelser.
 
 ## [4.6.2] 2025-09-15
 
