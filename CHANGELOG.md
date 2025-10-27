@@ -16,6 +16,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   * Justerede organisationsdata søgeknappen.
   * Justerede størrelsen af tekstområde-elementet.
   * Justerede visningen af elementbeskrivelser.
+* Opdaterede styling i flexbox layout.
+  * Sikrede at checkbox labels og beskrivelser laver linjeskift.
+  * Tiljusterede placeringen af checkbox input felter.
 
 ## [4.6.2] 2025-09-15
 

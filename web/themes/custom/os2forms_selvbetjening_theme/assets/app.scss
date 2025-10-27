@@ -239,3 +239,17 @@
     width: 100%;
   }
 }
+
+/* Adjustments for webform flexbox */
+@media (min-width: 768px) {
+  /* Allow potential wrapping. Overrides web/modules/contrib/webform/css/webform.element.flexbox.css */
+  .webform-flex--container .form-type-checkbox,
+  .webform-flex--container .form-type-radio {
+    white-space: inherit;
+  }
+
+  /* Add margin to align checkboxes inside flex layout. */
+  .webform-flexbox {
+    margin: 0 var(--space-l) calc(var(--space-m) + var(--space-s));
+  }
+}
