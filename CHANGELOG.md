@@ -6,7 +6,23 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [4.6.3] XXXX
+
+* Formular frontend rettelser
+  * Justerede formular knapper,`næste`, `forrige` og `indsend`.
+  * Justerede radioknapper og checkbokse.
+  * Tilføjede luft under labels.
+  * Ændrede tekststørrelser på `h`-elementer og standard tekst.
+  * Justerede organisationsdata søgeknappen.
+  * Justerede størrelsen af tekstområde-elementet.
+  * Justerede visningen af elementbeskrivelser.
+* Opdaterede styling i flexbox layout.
+  * Sikrede at checkbox labels og beskrivelser laver linjeskift.
+  * Tiljusterede placeringen af checkbox input felter.
 * Tilføjede javascript til `DAWA adresse`-elementer så de håndterer kommaer [PR-446](https://github.com/itk-dev/os2forms_selvbetjening/pull/446).
+
+## [4.6.2] 2025-09-15
+
 * Tilføjede apostrof-regel til kodestandarder [PR-423](https://github.com/itk-dev/os2forms_selvbetjening/pull/423).
 * Tilføjede maestro bycontentfunction validation [PR-423](https://github.com/itk-dev/os2forms_selvbetjening/pull/423).
 * Tilføjede oversætbar bycontentfunction hjælpetekst [PR-443](https://github.com/itk-dev/os2forms_selvbetjening/pull/443).
@@ -674,7 +690,9 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.1...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.3...HEAD
+[4.6.3]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.2...4.6.3
+[4.6.2]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.1...4.6.2
 [4.6.1]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.0...4.6.1
 [4.6.0]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.5.0...4.6.0
 [4.5.0]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.4.0...4.5.0
