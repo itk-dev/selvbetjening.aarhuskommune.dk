@@ -38,6 +38,8 @@ services:
       - DOCKER_HOST_DOMAIN=${COMPOSE_DOMAIN}
       - COMPOSER_VERSION=2
       - PHP_IDE_CONFIG=serverName=localhost
+      # Let drush know the site uri (makes using --uri redundant)
+      - DRUSH_OPTIONS_URI=https://${COMPOSE_DOMAIN}
     depends_on:
       - mariadb
       - memcached
