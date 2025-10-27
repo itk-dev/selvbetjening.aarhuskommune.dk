@@ -19,6 +19,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 * Opdaterede styling i flexbox layout.
   * Sikrede at checkbox labels og beskrivelser laver linjeskift.
   * Tiljusterede placeringen af checkbox input felter.
+* Tilføjede javascript til `DAWA adresse`-elementer så de håndterer kommaer [PR-446](https://github.com/itk-dev/os2forms_selvbetjening/pull/446).
 
 ## [4.6.2] 2025-09-15
 
