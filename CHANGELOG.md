@@ -20,6 +20,11 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   * Sikrede at checkbox labels og beskrivelser laver linjeskift.
   * Tiljusterede placeringen af checkbox input felter.
 * Tilføjede javascript til `DAWA adresse`-elementer så de håndterer kommaer [PR-446](https://github.com/itk-dev/os2forms_selvbetjening/pull/446).
+* Sikrede at Digtial Post afsender sættes korrekt
+* Sikrede at vilkår virker på Maestro-notifikation handleren
+* Tiljusterede MitID Children Select elementet så børn kan afvælges.
+* Sikrede at e-mail ikke sendes dobbelt ved navne- og adressebeskyttelse.
+* Sikrede at automatisk export kan gemme indstillinger.
 
 ## [4.6.2] 2025-09-15
 
