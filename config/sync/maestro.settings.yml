@@ -1,5 +1,5 @@
 maestro_send_notifications: 1
-maestro_orchestrator_task_console: 1
+maestro_orchestrator_task_console: 0
 maestro_redirect_location: /taskconsole
 maestro_orchestrator_token: AvfWr5bXdQcMpGTw4NHCMdjY44JXC8w0WOJUnq5s2zA3jh45TRHhCJfxcob0AqS
 maestro_orchestrator_lock_execution_time: '30'

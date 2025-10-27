@@ -22,8 +22,7 @@ class FormHelper {
    * @param \Drupal\Core\Session\AccountInterface $account
    *   Current user.
    */
-  public function __construct(private readonly AccountInterface $account) {
-  }
+  public function __construct(private readonly AccountInterface $account) {}
 
   /**
    * Allows altering of forms.
@@ -62,8 +61,12 @@ class FormHelper {
       if ($markup instanceof TranslatableMarkup) {
         $message = strtolower($markup->getUntranslatedString());
         if (str_contains($message, 'access') && str_contains($message, 'task')) {
-          $currentUrl = Url::fromRoute('<current>')->toString(TRUE)->getGeneratedUrl();
-          $logoutUrl = Url::fromRoute('user.logout', ['destination' => $currentUrl])->toString(TRUE)->getGeneratedUrl();
+          $currentUrl = Url::fromRoute('<current>')
+            ->toString(TRUE)
+            ->getGeneratedUrl();
+          $logoutUrl = Url::fromRoute('user.logout', ['destination' => $currentUrl])
+            ->toString(TRUE)
+            ->getGeneratedUrl();
 
           $form['error'] = [
             '#type' => 'container',
@@ -95,12 +98,98 @@ class FormHelper {
         unset($form[$key]);
       }
       $form['message'] = [
-        'message' => Link::createFromRoute($this->t('Login form has been disabled'), 'user.login')->toRenderable(),
+        'message' => Link::createFromRoute($this->t('Login form has been disabled'), 'user.login')
+          ->toRenderable(),
       ];
     }
 
-    if (isset($form['#id']) && 'views-exposed-form-os2forms-failed-jobs-personalized-block-1' === $form['#id']) {
-      $form['#attached']['library'][] = 'os2forms_selvbetjening/exposed-form-display';
+    if ('template_edit_task' === $form_id) {
+      $form['#validate'][] = '\Drupal\os2forms_selvbetjening\Helper\FormHelper::validateByContentFunction';
+    }
+  }
+
+  /**
+   * Validates form input by checking a user-defined function.
+   *
+   * This method ensures that:
+   * - The specified function exists.
+   * - The number of provided parameters matches
+   * the defined function's requirements,
+   *   adjusted for additional parameters added during execution.
+   *
+   * @param array $form
+   *   The form structure.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   */
+  public static function validateByContentFunction(array &$form, FormStateInterface $form_state): void {
+    if ('bycontentfunction' === $form_state->getValue(['spv', 'method'])) {
+      // Get function name and parameters defined in the flow task.
+      $value = $form_state->getValue(['spv', 'variable_value']);
+
+      // Split function name and parameters (format: function:param1,param2).
+      $functionParts = explode(':', $value, 2);
+
+      // Get function name and parameters.
+      $functionName = $functionParts[0];
+      $functionParams = isset($functionParts[1]) ? explode(',', $functionParts[1]) : [];
+
+      // Get number of parameters.
+      $paramCount = count($functionParams);
+
+      if (!function_exists($functionName)) {
+        $form_state->setError($form['spv'], t('Function %function_name does not exist', ['%function_name' => $functionName]));
+        return;
+      }
+
+      // Get the number of parameters for the defined function.
+      try {
+        $functionParamCount = (new \ReflectionFunction($functionName))->getNumberOfRequiredParameters();
+      }
+      catch (\ReflectionException $e) {
+        $form_state->setError(
+          $form['spv'],
+          t('Invalid function %function_name', [
+            '%function_name' => $functionName,
+          ])
+        );
+        \Drupal::logger('os2forms_selvbetjening')
+          ->error('Error reflecting function %function_name: %message', [
+            '%function_name' => $functionName,
+            '%message' => $e->getMessage(),
+            // Add the full exception to the context for future reference.
+            'exception' => $e,
+          ]);
+        return;
+      }
+
+      // The maestro execute method always adds 2 parameters
+      // (queueID and processID) when handling the "bycontentfunction" case.
+      // @see MaestroSetProcessVariableTask::execute()
+      $functionParamCount -= 2;
+
+      if ($functionParamCount < 0) {
+        $form_state->setError($form['spv'], t('Function %function_name is required to take at least 2 arguments.', ['%function_name' => $functionName]));
+        return;
+      }
+
+      // Check if the number of parameters matches.
+      if ($paramCount !== $functionParamCount) {
+        $form_state->setError(
+          $form['spv'],
+          t(
+            'Function %function_name expects %function_parameter_count parameters. %parameter_defined_count given.',
+            [
+              '%function_name' => $functionName,
+              '%function_parameter_count' => $functionParamCount,
+              '%parameter_defined_count' => $paramCount,
+            ]
+          )
+        );
+      }
+      if (isset($form['#id']) && 'views-exposed-form-os2forms-failed-jobs-personalized-block-1' === $form['#id']) {
+        $form['#attached']['library'][] = 'os2forms_selvbetjening/exposed-form-display';
+      }
     }
   }
 

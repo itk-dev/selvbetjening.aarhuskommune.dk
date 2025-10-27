@@ -15,6 +15,13 @@ use Drupal\os2forms_selvbetjening\Helper\FormHelper;
  */
 function os2forms_selvbetjening_form_alter(array &$form, FormStateInterface $form_state, string $form_id) {
   Drupal::service(FormHelper::class)->formAlter($form, $form_state, $form_id);
+
+  // Set out to edit maestro field edit ajax modal.
+  if ($form_id === 'template_edit_task') {
+    if (isset($form['spv']['method']['#options']['bycontentfunction'])) {
+      $form['spv']['method']['#options']['bycontentfunction'] .= t('. Read more: <a href="https://os2forms.os2.eu/variabler-i-flow" target="_blank">https://os2forms.os2.eu/variabler-i-flow</a>');
+    }
+  }
 }
 
 /**

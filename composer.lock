@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51d0f2cb89060993c6f426ed764f7536",
+    "content-hash": "da6cb6be9ca9738937a045433e535aa7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8392,16 +8392,16 @@
         },
         {
             "name": "itk-dev/serviceplatformen",
-            "version": "1.6.1",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/serviceplatformen.git",
-                "reference": "141b4cf65dd868427b3b0f42273923d766c05706"
+                "reference": "574d0788c3e9c06ad662932ceb54fa822977af4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/serviceplatformen/zipball/141b4cf65dd868427b3b0f42273923d766c05706",
-                "reference": "141b4cf65dd868427b3b0f42273923d766c05706",
+                "url": "https://api.github.com/repos/itk-dev/serviceplatformen/zipball/574d0788c3e9c06ad662932ceb54fa822977af4e",
+                "reference": "574d0788c3e9c06ad662932ceb54fa822977af4e",
                 "shasum": ""
             },
             "require": {
@@ -8476,9 +8476,9 @@
             ],
             "support": {
                 "issues": "https://github.com/itk-dev/serviceplatformen/issues",
-                "source": "https://github.com/itk-dev/serviceplatformen/tree/1.6.1"
+                "source": "https://github.com/itk-dev/serviceplatformen/tree/1.7.1"
             },
-            "time": "2025-04-01T08:10:57+00:00"
+            "time": "2025-08-20T13:27:04+00:00"
         },
         {
             "name": "itk-dev/web_accessibility_statement",
@@ -9237,16 +9237,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "4.1.0",
+            "version": "dev-release/selvbetjening-4.6.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/OS2Forms/os2forms.git",
-                "reference": "df6abddab509e6ac327ffd2efab76343f75823d4"
+                "url": "https://github.com/itk-dev/os2forms.git",
+                "reference": "718f8fbf3b2d7f31c9edbb01d2e894f13b9f81f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2Forms/os2forms/zipball/df6abddab509e6ac327ffd2efab76343f75823d4",
-                "reference": "df6abddab509e6ac327ffd2efab76343f75823d4",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/718f8fbf3b2d7f31c9edbb01d2e894f13b9f81f8",
+                "reference": "718f8fbf3b2d7f31c9edbb01d2e894f13b9f81f8",
                 "shasum": ""
             },
             "require": {
@@ -9300,7 +9300,7 @@
                 "fig/http-message-util": "^1.1",
                 "http-interop/http-factory-guzzle": "^1.0.0",
                 "itk-dev/beskedfordeler-drupal": "^1.0",
-                "itk-dev/serviceplatformen": "^1.5",
+                "itk-dev/serviceplatformen": "^1.7.1",
                 "mglaman/composer-drupal-lenient": "^1.0",
                 "os2web/os2web_audit": "^1.0",
                 "os2web/os2web_datalookup": "^2.0",
@@ -9326,26 +9326,7 @@
             },
             "type": "drupal-module",
             "extra": {
-                "patches": {
-                    "drupal/webform": {
-                        "Webform computed element post save alter": "https://www.drupal.org/files/issues/2024-06-25/webform_computed_post_save_field_alter.patch",
-                        "Unlock possibility of using Entity print module export to Word": "https://www.drupal.org/files/issues/2020-02-29/3096552-6.patch",
-                        "Add custom hook (hook_webform_post_load_data) for audit logging": "https://gist.githubusercontent.com/cableman/d26898fc8f65ee0a31001bf391583b59/raw/6189dc4c2ceaabb19d25cc4b98b0b3028a6b0e1e/gistfile1.txt"
-                    },
-                    "drupal/entity_print": {
-                        "2733781 - Add Export to Word Support": "https://www.drupal.org/files/issues/2019-11-22/2733781-47.patch"
-                    },
-                    "drupal/webform_encrypt": {
-                        "Ensure data is base64 encoded (https://www.drupal.org/project/webform_encrypt/issues/3399414)": "https://git.drupalcode.org/project/webform_encrypt/-/merge_requests/4.patch",
-                        "PHP Warning if unserialize fails (https://www.drupal.org/project/webform_encrypt/issues/3292305)": "https://www.drupal.org/files/issues/2022-06-23/unserialize-php-notice.patch"
-                    },
-                    "drupal/webform_node_element": {
-                        "3290637 - Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2023-05-12/webform_node_element_d10-3290637-11.patch"
-                    },
-                    "drupal/coc_forms_auto_export": {
-                        "3256951: - Unable to receive attachments in emails sent": "https://git.drupalcode.org/project/coc_forms_auto_export/-/merge_requests/11.diff"
-                    }
-                },
+                "composer-exit-on-patch-failure": false,
                 "drupal-lenient": {
                     "allowed-list": [
                         "drupal/coc_forms_auto_export",
@@ -9353,18 +9334,55 @@
                     ]
                 },
                 "enable-patching": true,
-                "composer-exit-on-patch-failure": false
+                "patches": {
+                    "drupal/coc_forms_auto_export": {
+                        "3256951: - Unable to receive attachments in emails sent": "https://git.drupalcode.org/project/coc_forms_auto_export/-/merge_requests/11.diff"
+                    },
+                    "drupal/entity_print": {
+                        "2733781 - Add Export to Word Support": "https://www.drupal.org/files/issues/2019-11-22/2733781-47.patch"
+                    },
+                    "drupal/webform": {
+                        "Unlock possibility of using Entity print module export to Word": "https://www.drupal.org/files/issues/2020-02-29/3096552-6.patch",
+                        "Webform computed element post save alter": "https://www.drupal.org/files/issues/2024-06-25/webform_computed_post_save_field_alter.patch",
+                        "Add custom hook (hook_webform_post_load_data) for audit logging": "https://gist.githubusercontent.com/cableman/d26898fc8f65ee0a31001bf391583b59/raw/6189dc4c2ceaabb19d25cc4b98b0b3028a6b0e1e/gistfile1.txt"
+                    },
+                    "drupal/webform_encrypt": {
+                        "Ensure data is base64 encoded (https://www.drupal.org/project/webform_encrypt/issues/3399414)": "https://git.drupalcode.org/project/webform_encrypt/-/merge_requests/4.patch",
+                        "PHP Warning if unserialize fails (https://www.drupal.org/project/webform_encrypt/issues/3292305)": "https://www.drupal.org/files/issues/2022-06-23/unserialize-php-notice.patch"
+                    },
+                    "drupal/webform_node_element": {
+                        "3290637 - Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2023-05-12/webform_node_element_d10-3290637-11.patch"
+                    }
+                }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "code-analysis": [
+                    "@code-analysis/phpstan"
+                ],
+                "code-analysis/phpstan": [
+                    "phpstan analyse"
+                ],
+                "coding-standards-apply": [
+                    "@coding-standards-apply/phpcs"
+                ],
+                "coding-standards-apply/phpcs": [
+                    "phpcbf --standard=phpcs.xml.dist"
+                ],
+                "coding-standards-check": [
+                    "@coding-standards-check/phpcs"
+                ],
+                "coding-standards-check/phpcs": [
+                    "phpcs --standard=phpcs.xml.dist"
+                ]
+            },
             "license": [
                 "EUPL-1.2"
             ],
             "description": "Drupal 8 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "issues": "https://github.com/OS2Forms/os2forms/issues",
-                "source": "https://github.com/OS2Forms/os2forms/tree/4.1.0"
+                "source": "https://github.com/itk-dev/os2forms/tree/release/selvbetjening-4.6.0"
             },
-            "time": "2025-06-03T07:55:56+00:00"
+            "time": "2025-09-01T11:35:00+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -9412,16 +9430,16 @@
         },
         {
             "name": "os2forms/os2forms_get_organized",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OS2Forms/os2forms_get_organized.git",
-                "reference": "ef95d4cad5165c5c22ccb946f43e943942097e61"
+                "reference": "0fc840671a1ed0b5df5848f190a4fd7198c966c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2Forms/os2forms_get_organized/zipball/ef95d4cad5165c5c22ccb946f43e943942097e61",
-                "reference": "ef95d4cad5165c5c22ccb946f43e943942097e61",
+                "url": "https://api.github.com/repos/OS2Forms/os2forms_get_organized/zipball/0fc840671a1ed0b5df5848f190a4fd7198c966c5",
+                "reference": "0fc840671a1ed0b5df5848f190a4fd7198c966c5",
                 "shasum": ""
             },
             "require": {
@@ -9451,9 +9469,9 @@
             "description": "OS2Forms GetOrganized integration",
             "support": {
                 "issues": "https://github.com/OS2Forms/os2forms_get_organized/issues",
-                "source": "https://github.com/OS2Forms/os2forms_get_organized/tree/1.4.1"
+                "source": "https://github.com/OS2Forms/os2forms_get_organized/tree/1.4.2"
             },
-            "time": "2025-03-12T17:31:51+00:00"
+            "time": "2025-09-08T12:31:47+00:00"
         },
         {
             "name": "os2forms/os2forms_organisation",
@@ -9732,16 +9750,16 @@
         },
         {
             "name": "os2web/os2web_datalookup",
-            "version": "2.0.2",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OS2web/os2web_datalookup.git",
-                "reference": "cadc545c78697fc630528fe9c803c8711e168376"
+                "reference": "51214b325e7a51be8dbca05997ae10c3fd2468f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2web/os2web_datalookup/zipball/cadc545c78697fc630528fe9c803c8711e168376",
-                "reference": "cadc545c78697fc630528fe9c803c8711e168376",
+                "url": "https://api.github.com/repos/OS2web/os2web_datalookup/zipball/51214b325e7a51be8dbca05997ae10c3fd2468f5",
+                "reference": "51214b325e7a51be8dbca05997ae10c3fd2468f5",
                 "shasum": ""
             },
             "require": {
@@ -9761,9 +9779,9 @@
             "description": "Provides integration with Danish data lookup services such as Service platformen or Datafordeler.",
             "support": {
                 "issues": "https://github.com/OS2web/os2web_datalookup/issues",
-                "source": "https://github.com/OS2web/os2web_datalookup/tree/2.0.2"
+                "source": "https://github.com/OS2web/os2web_datalookup/tree/2.0.5"
             },
-            "time": "2024-12-06T09:00:08+00:00"
+            "time": "2025-09-01T12:13:19+00:00"
         },
         {
             "name": "os2web/os2web_nemlogin",
@@ -22295,10 +22313,18 @@
             "time": "2024-03-03T12:36:25+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "os2forms/os2forms",
+            "version": "dev-release/selvbetjening-4.6.0",
+            "alias": "4.2.0",
+            "alias_normalized": "4.2.0.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/site_status_message": 15
+        "drupal/site_status_message": 15,
+        "os2forms/os2forms": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
