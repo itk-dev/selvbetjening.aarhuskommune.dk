@@ -9,6 +9,7 @@ dependencies:
     - filter.format.webform
   module:
     - filter
+    - maestro_taskconsole
     - search
     - system
     - toolbar
@@ -41,6 +42,7 @@ permissions:
   - 'use text format restricted_html'
   - 'use text format webform'
   - 'view encrypted values'
+  - 'view maestro task console'
   - 'view own webform submission'
   - 'view the administration theme'
   - 'view webform submissions own node'
