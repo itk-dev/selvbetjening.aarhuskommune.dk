@@ -6,6 +6,13 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Tilføjede ny redaktørrolle [PR-451](https://github.com/itk-dev/os2forms_selvbetjening/pull/451)
+  * Ændrede permissions på eksisterende roller
+  * Tilføjede modul til styring af mere specifikke rettigheder i forms
+  * Tilføjede rolle "Redaktør"
+  * Ændre adgang til at slette indsendelser så det kræver specifik adgang og ikke
+    blot webform redigerings adgang.
+
 ## [4.6.3] 2025-11-04
 
 * Formular frontend rettelser
@@ -32,12 +39,6 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 * Tilføjede maestro bycontentfunction validation [PR-423](https://github.com/itk-dev/os2forms_selvbetjening/pull/423).
 * Tilføjede oversætbar bycontentfunction hjælpetekst [PR-443](https://github.com/itk-dev/os2forms_selvbetjening/pull/443).
 * Rettede henvisning til logo i notifikationsskabelon [PR-448](https://github.com/itk-dev/os2forms_selvbetjening/pull/448)
-* Tilføjede ny redaktørrolle [PR-451](https://github.com/itk-dev/os2forms_selvbetjening/pull/451)
-  * Ændrede permissions på eksisterende roller
-  * Tilføjede modul til styring af mere specifikke rettigheder i forms
-  * Tilføjede rolle "Redaktør"
-  * Ændre adgang til at slette indsendelser så det kræver specifik adgang og ikke
-    blot webform redigerings adgang.
 
 ## [4.6.1] 2025-09-08
 
