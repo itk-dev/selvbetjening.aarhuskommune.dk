@@ -6,7 +6,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
-## [4.6.3] XXXXX
+## [4.6.3] 2025-11-04
 
 * Formular frontend rettelser
   * Justerede formular knapper,`næste`, `forrige` og `indsend`.
