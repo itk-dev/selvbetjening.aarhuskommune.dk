@@ -9241,12 +9241,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "8783eb430666f2f26794a2caa43fc7e3d6e9afa3"
+                "reference": "84d81321adb6ef9bd172d3eba4fbf23360395e24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/8783eb430666f2f26794a2caa43fc7e3d6e9afa3",
-                "reference": "8783eb430666f2f26794a2caa43fc7e3d6e9afa3",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/84d81321adb6ef9bd172d3eba4fbf23360395e24",
+                "reference": "84d81321adb6ef9bd172d3eba4fbf23360395e24",
                 "shasum": ""
             },
             "require": {
@@ -9336,7 +9336,8 @@
                 "enable-patching": true,
                 "patches": {
                     "drupal/coc_forms_auto_export": {
-                        "3256951: - Unable to receive attachments in emails sent": "https://git.drupalcode.org/project/coc_forms_auto_export/-/merge_requests/11.diff"
+                        "3256951: - Unable to receive attachments in emails sent": "https://git.drupalcode.org/project/coc_forms_auto_export/-/merge_requests/11.diff",
+                        "3531004: Unable to save initial settings due to unfocusable form control": "https://www.drupal.org/files/issues/2025-06-19/text_area_with_text_edit_always_fails_reqired_set_via_states.patch"
                     },
                     "drupal/entity_print": {
                         "2733781 - Add Export to Word Support": "https://www.drupal.org/files/issues/2019-11-22/2733781-47.patch"
@@ -9382,7 +9383,7 @@
             "support": {
                 "source": "https://github.com/itk-dev/os2forms/tree/release/selvbetjening-4.7.0"
             },
-            "time": "2025-09-18T12:42:38+00:00"
+            "time": "2025-10-27T13:29:28+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
