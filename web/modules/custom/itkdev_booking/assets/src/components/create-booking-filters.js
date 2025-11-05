@@ -227,6 +227,8 @@ function CreateBookingFilters({
 
     delete filterParamsObj.catering;
 
+    delete filterParamsObj.telecoil;
+
     const facilitiesObj = {};
 
     facilityFilter.forEach((value) => {
