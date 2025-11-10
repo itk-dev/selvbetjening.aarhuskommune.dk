@@ -27,6 +27,7 @@ permissions:
   - 'access content'
   - 'access site in maintenance mode'
   - 'access toolbar'
+  - 'access webform handlers tab'
   - 'access webform overview'
   - 'access webform submission log'
   - 'administer webform revisions'
