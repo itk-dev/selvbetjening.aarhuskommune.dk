@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [4.6.4] 2025-11-10
+
 * Tilføjede ny redaktørrolle [PR-451](https://github.com/itk-dev/os2forms_selvbetjening/pull/451)
   * Ændrede permissions på eksisterende roller
   * Tilføjede modul til styring af mere specifikke rettigheder i forms
@@ -702,7 +704,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.3...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.4...HEAD
+[4.6.4]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.3...4.6.4
 [4.6.3]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.2...4.6.3
 [4.6.2]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.1...4.6.2
 [4.6.1]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.0...4.6.1
