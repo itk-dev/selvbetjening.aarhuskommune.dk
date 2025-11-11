@@ -1,5 +1,13 @@
 # selvbetjening.aarhuskommune.dk
 
+## Fordelingskomponenten
+
+``` shell
+docker compose exec phpfpm composer require "itk-dev/serviceplatformen":"dev-feature/SF2900-Fordelingskomponenten as 1.8.0"
+```
+
+-------------------------------------------------------------------------------
+
 ## Getting started
 
 These instructions will get you a copy of the project up and running on your
