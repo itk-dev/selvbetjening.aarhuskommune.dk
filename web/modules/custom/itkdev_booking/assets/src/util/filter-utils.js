@@ -12,6 +12,7 @@ export const facilityOptions = [
   { value: "wheelchairAccessible", label: "Handikapvenligt" },
   { value: "videoConferenceEquipment", label: "Videokonference" },
   { value: "catering", label: "Mulighed for tilkøb af mad og drikke" },
+  { value: "telecoil", label: "Teleslynge" },
 ];
 
 export const calendarTimeSelect = [

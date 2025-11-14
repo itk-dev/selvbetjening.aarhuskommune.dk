@@ -88,6 +88,16 @@ export function filterAllResources(allResources, filterParams) {
       }
     }
 
+    // Telecoil filter
+    if (filterParams.telecoil) {
+      if (!resource.telecoil && matchingState === 2) {
+        matchingState = 0;
+      }
+      if (resource.telecoil && matchingState === 1) {
+        matchingState = 2;
+      }
+    }
+
     // Capacity filter (between two values)
     if (filterParams["capacity[between]"] && matchingState !== 0) {
       const rangeArray = filterParams["capacity[between]"].split(",");
