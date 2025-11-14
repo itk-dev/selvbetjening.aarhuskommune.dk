@@ -6,6 +6,7 @@ import LoadingSpinner from "./loading-spinner";
 import getResourceFacilities from "../util/resource-utils";
 import "./resource-details.scss";
 import { ReactComponent as IconChair } from "../assets/chair.svg";
+import { ReactComponent as IconAarhusKommune } from "../assets/aak-logo-1.svg";
 
 /**
  * REsourece details component.
@@ -61,7 +62,10 @@ function ResourceDetails({ setShowResourceDetails, resource }) {
           <div className="resource-details row">
             <div className="image-wrapper col-xs-12 col-md-4">
               <div className="image">
-                <img alt={resource.resourceDisplayName ?? resource.resourceName} src={resource.resourceImage} />
+                {!resource?.resourceImage && (<IconAarhusKommune />)}
+                {resource?.resourceImage && (
+                  <img alt={resource.resourceDisplayName}
+                       src={resource.resourceImage}/>)}
               </div>
             </div>
             <div className="facilities col-xs-12 col-md-4">

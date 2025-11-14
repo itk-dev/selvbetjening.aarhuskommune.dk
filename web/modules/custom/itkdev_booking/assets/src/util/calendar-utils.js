@@ -108,6 +108,7 @@ export function handleResources(value, currentCalendarDate) {
     videoConferenceEquipment: value.videoConferenceEquipment,
     wheelchairAccessible: value.wheelchairAccessible,
     catering: value.catering,
+    telecoil: value.telecoil,
     acceptConflict: value.acceptConflict ?? false,
   };
 

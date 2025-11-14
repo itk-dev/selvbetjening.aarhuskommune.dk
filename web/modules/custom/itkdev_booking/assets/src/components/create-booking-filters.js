@@ -227,6 +227,8 @@ function CreateBookingFilters({
 
     delete filterParamsObj.catering;
 
+    delete filterParamsObj.telecoil;
+
     const facilitiesObj = {};
 
     facilityFilter.forEach((value) => {
@@ -240,6 +242,18 @@ function CreateBookingFilters({
   useEffect(() => {
     setAppParams({ resourceCategory: resourceCategoryFilter });
   }, [resourceCategoryFilter]);
+
+  const handleFocus = (elementId) => {
+    const element = document.getElementById(elementId);
+
+    element.classList.remove("filter-max-height");
+  };
+
+  const handleBlur = (elementId) => {
+    const element = document.getElementById(elementId);
+
+    element.classList.add("filter-max-height");
+  };
 
   return (
     <>
@@ -265,7 +279,7 @@ function CreateBookingFilters({
             <Select
               styles={{}}
               id="location-filter"
-              className="filter"
+              className="filter filter-max-height"
               defaultValue={locationFilter}
               value={locationFilter}
               placeholder="Lokationer..."
@@ -279,6 +293,9 @@ function CreateBookingFilters({
               loadingMessage={() => "Henter lokationer.."}
               filterOption={createFilter({ ignoreAccents: false })} // Improved performance with large datasets
               isMulti
+              onFocus={() => handleFocus("location-filter")}
+              onBlur={() => handleBlur("location-filter")}
+              classNamePrefix="location-filter"
             />
           </label>
         </div>
@@ -303,6 +320,9 @@ function CreateBookingFilters({
               loadingMessage={() => "Henter ressourcer.."}
               filterOption={createFilter({ ignoreAccents: false })} // Improved performance with large datasets
               isMulti
+              onFocus={() => handleFocus("resource-filter")}
+              onBlur={() => handleBlur("resource-filter")}
+              classNamePrefix="resource-filter"
             />
           </label>
         </div>
@@ -324,6 +344,9 @@ function CreateBookingFilters({
               }}
               value={facilityFilter}
               isMulti
+              onFocus={() => handleFocus("facility-filter")}
+              onBlur={() => handleBlur("facility-filter")}
+              classNamePrefix="facility-filter"
             />
           </label>
         </div>

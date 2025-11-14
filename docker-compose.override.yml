@@ -8,6 +8,7 @@ networks:
 services:
   phpfpm:
     networks:
+      - frontend
       - organisation_api
     environment:
       - PHP_MEMORY_LIMIT=512M

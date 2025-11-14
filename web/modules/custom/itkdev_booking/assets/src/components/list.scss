@@ -22,66 +22,75 @@
       margin: 0 auto;
       top: 50%;
     }
+
+    svg {
+      transform: translateY(-50%);
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin: 0 auto;
+      top: 50%;
+    }
   }
 
   .list-resource-details {
     display: flex;
     flex-direction: column;
-
-    .details {
-      margin: 15px 0 auto 0;
-      display: flex;
-      flex-direction: row;
-      .location {
-        margin-right: 25px;
-        height: 25px;
-
-        .location-icon {
-          flex-direction: row;
-          justify-content: center;
-          margin: auto;
-          svg {
-            margin-right: 5px;
-          }
-        }
-      }
-      .facilities {
-        margin-right: 10px;
-        .facility-container {
-          display: flex;
-          flex-direction: row;
-          .facility-item {
-            margin-right: 10px;
-            height: 25px;
-            width: 50px;
-            .facility-icon {
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              margin: auto;
-              svg {
-                margin-right: 5px;
-              }
-            }
-          }
-        }
-      }
-    }
+    gap: var(--space-xs);
 
     .headline {
       margin: 0 0 0 0;
+      font-size: var(--font-size-base);
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+
+      .location-icon {
+        flex-direction: row;
+        justify-content: center;
+        margin-right: var(--space-xs);
+        height: 18px;
+      }
+    }
+
+    .facility-container {
+      display: flex;
+      flex-direction: row;
+      gap: var(--space-l);
+
+      .facility-icon {
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-xs);
+      }
     }
 
     .description {
       margin: 0 0 0 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   .list-resource-actions {
     display: flex;
     flex-direction: column;
-    button {
+
+    .booking-btn {
       margin: auto;
+      white-space: nowrap;
+      background-color: var(--primary-button-color);
+      border-color: var(--primary-button-color-900);
+
+      &:hover {
+        background-color: var(--primary-button-color-900);
+      }
     }
   }
 }

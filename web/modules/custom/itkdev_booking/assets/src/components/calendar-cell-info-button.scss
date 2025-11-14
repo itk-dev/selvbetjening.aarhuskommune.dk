@@ -1,9 +1,23 @@
+.fc-icon {
+  display: none;
+}
+
 .calendar-cell-info {
+  display: flex;
   .calendar-cell-info-button {
     all: unset;
     cursor: pointer;
+    color: #0a6eb4;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
   .calendar-cell-info-button > img {
-    margin-left: 5px;
+    margin-right: 5px;
   }
 }

@@ -4,6 +4,7 @@ import { ReactComponent as IconWheelchair } from "../assets/wheelchair.svg";
 import { ReactComponent as IconVideoCamera } from "../assets/videocamera.svg";
 import { ReactComponent as IconFood } from "../assets/food.svg";
 import { ReactComponent as IconCandles } from "../assets/candles.svg";
+import { ReactComponent as IconTelecoil } from "../assets/telecoil.svg";
 
 /**
  * Get facilities for a resource.
@@ -41,6 +42,12 @@ export default function getResourceFacilities(resource) {
       catering: {
         title: "Forplejning",
         icon: <IconFood />,
+      },
+    }),
+    ...(resourceObj.telecoil && {
+      telecoil: {
+        title: "Teleslynge",
+        icon: <IconTelecoil />,
       },
     }),
     ...(resourceObj.holidayOpeningHours && {
