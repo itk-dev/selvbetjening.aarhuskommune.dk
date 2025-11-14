@@ -1,0 +1,4 @@
+services:
+  Drupal\os2forms_granular_permissions\Routing\RouteSubscriber:
+    tags:
+      - { name: 'event_subscriber' }

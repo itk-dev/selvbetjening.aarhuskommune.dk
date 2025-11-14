@@ -20,6 +20,7 @@ dependencies:
     - locale
     - node
     - os2forms_failed_jobs
+    - os2forms_granular_permissions
     - os2forms_permission_alterations
     - search
     - site_status_message
@@ -50,10 +51,18 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
+  - 'access webform access tab'
   - 'access webform advanced queue overview'
+  - 'access webform css js tab'
+  - 'access webform handlers tab'
   - 'access webform overview'
+  - 'access webform references tab'
+  - 'access webform results clear tab'
+  - 'access webform results download tab'
+  - 'access webform results upload tab'
   - 'access webform submission log'
   - 'access webform submission user'
+  - 'access webform submission_notes'
   - 'administer block_content display'
   - 'administer block_content form display'
   - 'administer content types'

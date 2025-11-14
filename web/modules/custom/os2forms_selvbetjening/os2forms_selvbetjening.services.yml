@@ -1,4 +1,7 @@
 services:
+  logger.channel.os2forms_selvbetjening:
+    parent: logger.channel_base
+    arguments: [ 'os2forms_selvbetjening' ]
 
   Drupal\os2forms_selvbetjening\Helper\WebformConfigurationExporter:
     arguments:

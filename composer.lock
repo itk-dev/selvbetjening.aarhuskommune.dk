@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da6cb6be9ca9738937a045433e535aa7",
+    "content-hash": "036a8cb0192601c7f7bfeedf65630c08",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9237,16 +9237,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-release/selvbetjening-4.6.0",
+            "version": "dev-release/selvbetjening-4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "718f8fbf3b2d7f31c9edbb01d2e894f13b9f81f8"
+                "reference": "84d81321adb6ef9bd172d3eba4fbf23360395e24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/718f8fbf3b2d7f31c9edbb01d2e894f13b9f81f8",
-                "reference": "718f8fbf3b2d7f31c9edbb01d2e894f13b9f81f8",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/84d81321adb6ef9bd172d3eba4fbf23360395e24",
+                "reference": "84d81321adb6ef9bd172d3eba4fbf23360395e24",
                 "shasum": ""
             },
             "require": {
@@ -9336,7 +9336,8 @@
                 "enable-patching": true,
                 "patches": {
                     "drupal/coc_forms_auto_export": {
-                        "3256951: - Unable to receive attachments in emails sent": "https://git.drupalcode.org/project/coc_forms_auto_export/-/merge_requests/11.diff"
+                        "3256951: - Unable to receive attachments in emails sent": "https://git.drupalcode.org/project/coc_forms_auto_export/-/merge_requests/11.diff",
+                        "3531004: Unable to save initial settings due to unfocusable form control": "https://www.drupal.org/files/issues/2025-06-19/text_area_with_text_edit_always_fails_reqired_set_via_states.patch"
                     },
                     "drupal/entity_print": {
                         "2733781 - Add Export to Word Support": "https://www.drupal.org/files/issues/2019-11-22/2733781-47.patch"
@@ -9380,9 +9381,9 @@
             ],
             "description": "Drupal 8 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/release/selvbetjening-4.6.0"
+                "source": "https://github.com/itk-dev/os2forms/tree/release/selvbetjening-4.7.0"
             },
-            "time": "2025-09-01T11:35:00+00:00"
+            "time": "2025-10-27T13:29:28+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -22316,9 +22317,9 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-release/selvbetjening-4.6.0",
-            "alias": "4.2.0",
-            "alias_normalized": "4.2.0.0"
+            "version": "dev-release/selvbetjening-4.7.0",
+            "alias": "4.3.0",
+            "alias_normalized": "4.3.0.0"
         }
     ],
     "minimum-stability": "dev",

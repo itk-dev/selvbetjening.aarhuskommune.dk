@@ -19,6 +19,7 @@ dependencies:
     - maestro
     - maestro_taskconsole
     - node
+    - os2forms_granular_permissions
     - search
     - system
     - taxonomy
@@ -33,7 +34,7 @@ _core:
   default_config_hash: esovrj0jPqtd5eU-RuIjs0r7UCXiTM_XAYhtEE84cDw
 id: leder
 label: Leder
-weight: -2
+weight: -1
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -47,8 +48,15 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
+  - 'access webform css js tab'
+  - 'access webform handlers tab'
   - 'access webform overview'
+  - 'access webform references tab'
+  - 'access webform results clear tab'
+  - 'access webform results download tab'
+  - 'access webform results upload tab'
   - 'access webform submission user'
+  - 'access webform submission_notes'
   - 'administer block_content display'
   - 'administer block_content form display'
   - 'administer display modes'

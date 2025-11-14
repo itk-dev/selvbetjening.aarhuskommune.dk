@@ -1,0 +1,49 @@
+uuid: b8ffca47-4a68-4011-9895-0248fd935091
+langcode: da
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - filter.format.maestro_notification
+    - filter.format.restricted_html
+    - filter.format.webform
+  module:
+    - filter
+    - maestro_taskconsole
+    - search
+    - system
+    - toolbar
+    - webform
+    - webform_encrypt
+    - webform_node
+    - webform_revisions
+    - webform_submission_log
+    - webform_translation_permissions
+id: editor
+label: Redaktør
+weight: -6
+is_admin: null
+permissions:
+  - 'access content'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'access webform handlers tab'
+  - 'access webform overview'
+  - 'access webform submission log'
+  - 'administer webform revisions'
+  - 'create webform'
+  - 'edit any webform'
+  - 'edit own webform submission'
+  - 'edit webform twig'
+  - 'translate any webform'
+  - 'translate own webform'
+  - 'use advanced search'
+  - 'use text format full_html'
+  - 'use text format maestro_notification'
+  - 'use text format restricted_html'
+  - 'use text format webform'
+  - 'view encrypted values'
+  - 'view maestro task console'
+  - 'view own webform submission'
+  - 'view the administration theme'
+  - 'view webform submissions own node'
