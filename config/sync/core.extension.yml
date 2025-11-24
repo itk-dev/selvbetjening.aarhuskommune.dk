@@ -126,6 +126,7 @@ module:
   serialization: 0
   shortcut: 0
   simplesamlphp_auth: 0
+  site_status_message: 0
   smtp: 0
   sodium: 0
   switch_page_theme: 0

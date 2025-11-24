@@ -28,6 +28,7 @@ ignored_config_entities:
   - 'os2web_datalookup.serviceplatformen_cpr_extended:useruuid'
   - 'os2web_datalookup.serviceplatformen_cpr_extended:wsdl'
   - os2web_nemlogin.settings
+  - site_status_message.settings
   - system.site
   - 'webform.settings:third_party_settings.webform_entity_print.template'
   - 'webform.webform.*'

@@ -22,6 +22,7 @@ dependencies:
     - os2forms_failed_jobs
     - os2forms_permission_alterations
     - search
+    - site_status_message
     - system
     - taxonomy
     - toolbar
@@ -60,6 +61,7 @@ permissions:
   - 'administer leaflet layers'
   - 'administer node display'
   - 'administer node form display'
+  - 'administer site status message'
   - 'administer taxonomy_term display'
   - 'administer taxonomy_term form display'
   - 'administer user display'

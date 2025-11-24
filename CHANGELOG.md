@@ -6,11 +6,31 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [4.6.2] 2025-09-15
+
+* Tilføjede apostrof-regel til kodestandarder [PR-423](https://github.com/itk-dev/os2forms_selvbetjening/pull/423).
+* Tilføjede maestro bycontentfunction validation [PR-423](https://github.com/itk-dev/os2forms_selvbetjening/pull/423).
+* Tilføjede oversætbar bycontentfunction hjælpetekst [PR-443](https://github.com/itk-dev/os2forms_selvbetjening/pull/443).
+* Rettede henvisning til logo i notifikationsskabelon [PR-448](https://github.com/itk-dev/os2forms_selvbetjening/pull/448)
+
+## [4.6.1] 2025-09-08
+
+* GO-handler kører nu kun på afsluttede indsendelser.
+
+## [4.6.0] 2025-09-01
+
+* Opdaterede `os2web/os2web_datalookup` således at resultet af opslag benyttes
+  i stedet for det der blev slået op på.
+* Opgraderede til MeMo 1.2 ifb. digital post.
+* Fjernede ikke-tal fra modtager ifb. med Maestro-digital post-notifikationer.
+* Sikrede at fejl ifb. med Maestro-digtial post-notfikationer rapporteres.
+
+## [4.5.0] 2025-07-03
+
+* Tilføjede `site_status_message`-modulet.
 * Opdaterede fejlede jobs personaliseret view.
 * Fjernede ubrugt custom modul.
-* Sikkerhedsopdateringer
-  * Opdaterede patch version af drupal core
-  * Opdaterede til nyeste version af eu_cookie_compliance modul
+* Pakke-opdateringer.
 
 ## [4.4.0] 2025-06-16
 
@@ -656,7 +676,11 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.4.0...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.2...HEAD
+[4.6.2]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.1...4.6.2
+[4.6.1]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.0...4.6.1
+[4.6.0]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.5.0...4.6.0
+[4.5.0]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.4.0...4.5.0
 [4.4.0]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.3.0...4.4.0
 [4.3.0]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.2.1...4.3.0
 [4.2.1]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.2.0...4.2.1

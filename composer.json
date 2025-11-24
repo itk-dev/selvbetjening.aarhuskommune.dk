@@ -24,13 +24,14 @@
         "drupal/menu_link_attributes": "^1.5",
         "drupal/openid_connect": "^3.0",
         "drupal/rdf": "^2.1",
+        "drupal/site_status_message": "^2.0@alpha",
         "drupal/webform_translation_permissions": "^2.0",
         "fig/http-message-util": "^1.1",
         "itk-dev/os2forms_failed_jobs": "^1.7",
         "itk-dev/os2forms_nemlogin_openid_connect": "^2.2",
         "itk-dev/os2forms_user_field_lookup": "^1.1",
         "itk-dev/web_accessibility_statement": "^1.1",
-        "os2forms/os2forms": "^4.0",
+        "os2forms/os2forms": "dev-release/selvbetjening-4.7.0 as 4.3.0",
         "os2forms/os2forms_forloeb_profile": "^1.15",
         "os2forms/os2forms_get_organized": "^1.4",
         "os2forms/os2forms_organisation": "^2.1",
@@ -53,6 +54,10 @@
     },
     "repositories": [
         {
+            "type": "vcs",
+            "url": "https://github.com/itk-dev/os2forms"
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
@@ -71,8 +76,8 @@
             "mglaman/composer-drupal-lenient": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
-            "simplesamlphp/composer-module-installer": true,
-            "simplesamlphp/composer-xmlprovider-installer": true,
+            "simplesamlphp/composer-module-installer": false,
+            "simplesamlphp/composer-xmlprovider-installer": false,
             "tbachert/spi": true,
             "zaporylie/composer-drupal-optimizations": true
         },
@@ -150,7 +155,7 @@
             "drupal/core": {
                 "Get CKEditor 5 to work in (modal) dialogs (https://www.drupal.org/project/drupal/issues/3274937)": "https://www.drupal.org/files/issues/2024-07-02/3351603-30.patch",
                 "Allow conditionals based on computed twig (https://www.drupal.org/project/webform/issues/3481569)": "https://www.drupal.org/files/issues/2024-11-05/revert-core-states.patch",
-                "Use date fields for views filters (https://www.drupal.org/project/drupal/issues/2648950)": "https://www.drupal.org/files/issues/2024-08-21/2648950-284.patch"
+                "Use date fields for views filters (https://www.drupal.org/project/drupal/issues/2648950)": "https://www.drupal.org/files/issues/2025-06-24/2648950-293.patch"
             },
             "drupal/honeypot": {
                 "Fixes issue with clash between ajax and honeypot (https://www.drupal.org/project/honeypot/issues/2396193)": "patches/drupal/honeypot/honeypot-ajax.patch"
