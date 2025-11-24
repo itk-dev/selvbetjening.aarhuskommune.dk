@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
-    - filter.format.restricted_html
     - filter.format.maestro_notification
+    - filter.format.restricted_html
     - filter.format.webform
   module:
     - block_content
@@ -19,6 +19,7 @@ dependencies:
     - maestro_taskconsole
     - node
     - os2forms_failed_jobs
+    - os2forms_granular_permissions
     - search
     - system
     - toolbar
@@ -29,7 +30,7 @@ _core:
   default_config_hash: jA-vZTVeFBc5q5-_Ukuh9YfLnjw8y0jijXonKSZ1weQ
 id: sagsbehandler
 label: Sagsbehandler
-weight: -4
+weight: -3
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -40,8 +41,12 @@ permissions:
   - 'access user profiles'
   - 'access webform advanced queue overview'
   - 'access webform overview'
+  - 'access webform results clear tab'
+  - 'access webform results download tab'
+  - 'access webform results upload tab'
   - 'access webform submission log'
   - 'access webform submission user'
+  - 'access webform submission_notes'
   - 'administer block_content display'
   - 'administer block_content display'
   - 'administer maestro production assignment entities'

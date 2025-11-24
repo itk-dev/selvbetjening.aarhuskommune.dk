@@ -1,4 +1,9 @@
 #react-booking-app {
+
+  // Reusable variables.
+  --primary-button-color: #343a40;
+  --primary-button-color-900: #212529;
+
   // Import flexbox grid similar to bootstrap 5 http://sassflexboxgrid.com/ for use in the app.
   /* stylelint-disable */
   @import "node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/main";

@@ -56,12 +56,8 @@
       font-size: 15px;
     }
 
-    th[role="columnheader"] .fc-datagrid-expander-placeholder {
+    .fc-datagrid-expander-placeholder {
       display: none;
-    }
-
-    .fc-datagrid-expander-placeholder + .fc-datagrid-cell-main {
-      font-weight: 400;
     }
 
     .fc .fc-timeline-now-indicator-line {

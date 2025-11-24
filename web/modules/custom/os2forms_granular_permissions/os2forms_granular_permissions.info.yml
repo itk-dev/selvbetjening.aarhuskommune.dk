@@ -1,0 +1,8 @@
+name: 'OS2forms Granular Permissions'
+type: module
+description: 'Provides granular permissions where contrib modules and drupal core are not sufficient'
+package: OS2Forms
+core_version_requirement: ^10
+
+dependencies:
+  - 'drupal:os2forms'

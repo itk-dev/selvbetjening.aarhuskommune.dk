@@ -116,7 +116,6 @@ function CreateBooking({ config }) {
         setUrlResource(matchingResource);
       }
 
-
       setFilterParams({
         "location[]": currentUrl.searchParams.getAll("location[]"),
         "resourceMail[]": currentUrl.searchParams.getAll("resourceMail[]"),
