@@ -69,6 +69,7 @@
 !/web/modules/custom/os2forms_email_handler
 !/web/modules/custom/webform_migrate
 !/web/modules/custom/os2forms_queued_email
+!/web/modules/custom/os2forms_granular_permissions
 
 # Ignore site specific modules.
 /web/sites/*/modules

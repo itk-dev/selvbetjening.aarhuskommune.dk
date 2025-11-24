@@ -33,6 +33,10 @@ function os2forms_selvbetjening_webform_element_alter(array &$element, FormState
   if ('webform_more' === $element['#type']) {
     $element['#attributes']['class'][] = 'js-form-item';
   }
+
+  if ('os2forms_dawa_address' === $element['#type']) {
+    $element['#attached']['library'][] = 'os2forms_selvbetjening/dawa_address_autocomplete';
+  }
 }
 
 /**

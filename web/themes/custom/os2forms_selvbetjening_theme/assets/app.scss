@@ -117,3 +117,138 @@
   border-width: 2px !important;
   border-radius: 5px;
 }
+
+
+.webform-button--next {
+  background-color: var(--button-bg-color--primary);
+  border: 2px solid #13224B;
+  border-width: 2px 2px 4px 2px;
+  color: white;
+  border-radius: 5px;
+}
+
+.webform-button--next:hover {
+  background-color: #023AAB;
+  color: white;
+}
+
+.webform-button--previous {
+  background-color: white;
+  border: 2px solid black;
+  border-width: 2px 2px 4px 2px;
+  border-radius: 5px;
+}
+
+.webform-button--previous:hover {
+  background-color: var(--button-bg-color);;
+}
+
+
+.webform-button--submit {
+  border: 2px solid #13224B;
+  border-width: 2px 2px 4px 2px;
+  border-radius: 5px;
+}
+
+
+.form-boolean--type-radio {
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  border-width: 2px;
+  border-color: black;
+}
+
+.form-boolean-group .form-type--boolean {
+  margin-bottom: 15px;
+}
+
+.form-boolean--type-checkbox {
+  width: 24px;
+  height: 24px;
+  border-width: 2px;
+  border-color: black;
+}
+
+
+.form-item__label,
+.fieldset__label {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.webform-element-description,
+.webform-element-help,
+.webform-element-more--link,
+.webform-element-more--content {
+  font-size: 16px;
+}
+
+.form-type-checkbox .webform-element-description {
+  margin-left: -28px;
+}
+
+.webform-element-more--link a {
+  color: black;
+  font-weight: bold;
+}
+
+
+.os2forms-organisation-search-query > .form-submit {
+  line-height: 0.6;
+}
+
+.os2forms-organisation-search-query > .form-type-textfield {
+  flex-basis: 63.5%;
+}
+
+.webform-submission-form h1 {
+  font-size: 72px;
+}
+
+.webform-submission-form h2 {
+  font-size: 48px;
+}
+
+.webform-submission-form h3 {
+  font-size: 28px;
+}
+
+.webform-submission-form h4 {
+  font-size: 24px;
+}
+
+.webform-submission-form h5 {
+  font-size: 20px;
+}
+
+.webform-submission-form h6 {
+  font-size: 16px;
+}
+
+.webform-submission-form .form-textarea-wrapper,
+.form-type-webform-markup {
+  width: 50%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .webform-submission-form .form-textarea-wrapper,
+  .webform-submission-form .webform-element-description,
+  .form-type-webform-markup {
+    width: 100%;
+  }
+}
+
+/* Adjustments for webform flexbox */
+@media (min-width: 768px) {
+  /* Allow potential wrapping. Overrides web/modules/contrib/webform/css/webform.element.flexbox.css */
+  .webform-flex--container .form-type-checkbox,
+  .webform-flex--container .form-type-radio {
+    white-space: inherit;
+  }
+
+  /* Add margin to align checkboxes inside flex layout. */
+  .webform-flexbox {
+    margin: 0 var(--space-l) calc(var(--space-m) + var(--space-s));
+  }
+}

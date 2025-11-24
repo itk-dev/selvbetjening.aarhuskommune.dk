@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Hooks related to the Granular Permissions module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Access\AccessResultInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function os2forms_granular_permissions_webform_submission_access(EntityInterface $entity, string $operation, AccountInterface $account) : AccessResultInterface {
+  if ('delete' === $operation) {
+    // Force forbidden access to delete webform submissions if not specifically
+    // given either own or any delete permission.
+    // This is done to separate "edit any webform" permission from
+    // "delete any webform submission" permission.
+    if (!$account->hasPermission('delete own webform submission') && !$account->hasPermission('delete any webform submission')) {
+      return AccessResult::forbidden();
+    }
+
+    return AccessResult::neutral();
+  }
+
+  return AccessResult::neutral();
+}
