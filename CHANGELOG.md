@@ -6,6 +6,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Tilføjede handler, element og taksonomi oversigter.
+* Tilføjede dokumentation af [elementer](docs/ELEMENTS.md) og
+  [handlers](docs/HANDLERS.md).
+
 ## [4.6.6] 2025-11-24
 
 * Pakke-opdateringer heriblandt Drupal `10.5`
