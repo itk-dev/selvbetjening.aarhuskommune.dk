@@ -9,7 +9,7 @@ _core:
   default_config_hash: SAKAhG41yLV5zfWMxfTe55qH7M7B1e1-odAO-DufcVc
 id: virksomhed
 label: Virksomhed
-weight: -1
+weight: 0
 is_admin: null
 permissions:
   - 'access content'

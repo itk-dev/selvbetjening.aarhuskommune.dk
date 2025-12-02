@@ -91,6 +91,7 @@ module:
   os2forms_fbs_handler: 0
   os2forms_forloeb: 0
   os2forms_get_organized: 0
+  os2forms_granular_permissions: 0
   os2forms_nemid: 0
   os2forms_nemlogin_openid_connect: 0
   os2forms_organisation: 0

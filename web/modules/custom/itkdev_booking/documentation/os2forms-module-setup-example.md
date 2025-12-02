@@ -6,9 +6,7 @@ Git clone [https://github.com/itk-dev/os2forms_selvbetjening](https://github.com
 
 Follow the steps in [https://github.com/itk-dev/os2forms_selvbetjening/blob/develop/README.md](https://github.com/itk-dev/os2forms_selvbetjening/blob/develop/README.md)
 
-```shell
-git clone https://github.com/itk-dev/drupal_webform_booking_module itkdev_booking
-```
+Ensure the module is enabled:
 
 ```shell
 itkdev-docker-compose drush pm:enable itkdev_booking
@@ -16,11 +14,12 @@ itkdev-docker-compose drush pm:enable itkdev_booking
 
 ## 2. Create an 'os2forms_rest_api' api key
 
-[https://github.com/itk-dev/os2forms_selvbetjening/blob/develop/web/modules/custom/os2forms_rest_api/README.md#authentication](https://github.com/itk-dev/os2forms_selvbetjening/blob/develop/web/modules/custom/os2forms_rest_api/README.md#authentication)
+See [OS2Forms REST API authentication](https://github.com/OS2Forms/os2forms_rest_api?tab=readme-ov-file#authentication),
+and follow step 1 and 3.
 
 ## 3. Create an Affiliation in os2forms selvbetjening
 
-@todo remove this step when affiliation term is added as part
+@todo remove this step when an affiliation term is added as part
 of the os2forms_selvbetjening installation.
 
 ```text
@@ -43,7 +42,7 @@ Create an ApiKeyUser with the following command:
 docker compose exec phpfpm bin/console app:auth:create-apikey
 ```
 
-use the api-key that was set up in step 3.
+use the api key that was set up in step 2.
 
 ## 5. Set up settings.local.php
 
@@ -53,7 +52,7 @@ Set up the book_aarhus service fields.
 // Required
 
 // Booking api endpoint, see booking api project to obtain this config
-$settings['itkdev_booking_api_endpoint'] = 'http://bookaarhus-nginx-1.frontend/';
+$settings['itkdev_booking_api_endpoint'] = 'http://bookaarhus-nginx-1.frontend:8080/';
 $settings['itkdev_booking_api_key'] = '*** Get from book aarhus project ***';
 
 // Endpoint provided by this drupal module (Domain = drupal website with webform)
@@ -71,9 +70,9 @@ $settings['itkdev_booking_fullcalendar_license'] = '*** Get from 1password ***';
 `$settings['itkdev_booking_api_endpoint']` is found by running:
 `docker ps` in the booking service project.
 Find the internal name of the "bookaarhus" nginx container.
-Something like `bookaarhus-nginx-1` and append `.frontend`.
+Something like `bookaarhus-nginx-1` and append `.frontend:8080/`.
 
-`$settings['itkdev_booking_api_key']` is the apikey created in step 5.
+`$settings['itkdev_booking_api_key']` is the apikey created in step 4.
 
 ## 6. Set up a webform
 
@@ -83,14 +82,17 @@ Select a name and the Affiliation that was set up in step 4.
 
 In "build" press "+ Add element" and add "Booking" type.
 
+Give [webform access](https://github.com/OS2Forms/os2forms_rest_api?tab=readme-ov-file#custom-access-control)
+to the API user set up in step 2.
+
 ## 7. Set up "Api request handler"
 
 In "Settings -> Emails/Handlers" press "+ Add handler".
 
-In "API url" set the SERVICE_ENDPOINT from step 6 with the path
+In "API url" set the SERVICE_ENDPOINT from step 4 with the path
 "v1/bookings-webform" appended.
 
-Example: `http://bookaarhus-nginx-1.frontend/v1/bookings-webform`
+Example: `http://bookaarhus-nginx-1.frontend:8080/v1/bookings-webform`
 
 In "API authorization header" set the text
 "Apikey SERVICE_APIKEY" as created  in step 5. SERVICE_APIKEY

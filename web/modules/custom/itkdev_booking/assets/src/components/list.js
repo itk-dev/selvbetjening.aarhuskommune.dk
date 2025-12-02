@@ -6,6 +6,7 @@ import parse from "html-react-parser";
 import getResourceFacilities from "../util/resource-utils";
 import { ReactComponent as IconChair } from "../assets/chair.svg";
 import { ReactComponent as IconArrow } from "../assets/arrow.svg";
+import { ReactComponent as IconAarhusKommune } from "../assets/aak-logo-1.svg";
 
 /**
  * @param {object} props Props.
@@ -60,24 +61,27 @@ function List({ resources, setShowResourceDetails }) {
           <div key={key} className="list-resource">
             <div className="image-wrapper">
               <div className="image">
-                <img alt={resources[key].resourceDisplayName} src={resources[key].resourceImage} />
+                {!resources[key]?.resourceImage && (<IconAarhusKommune />)}
+                {resources[key]?.resourceImage && (
+                  <img alt={resources[key].resourceDisplayName}
+                       src={resources[key].resourceImage}/>)}
               </div>
             </div>
             <div className="list-resource-details col-md-10">
-              <span className="headline">
-                <b>{resources[key].resourceDisplayName ?? resources[key].resourceName}</b>
-              </span>
-              <div className="details">
-                <span className="location">
-                  <span className="location-icon">
-                    <IconArrow />
-                  </span>
+              <h2 className="headline">
+                {resources[key].resourceDisplayName ?? resources[key].resourceName}
+              </h2>
+              <div className="location">
+                <span className="location-icon">
+                  <IconArrow />
+                </span>
+                <span>
                   {resources[key].locationDisplayName ?? resources[key].location}, {resources[key].streetName}{" "}
                   {resources[key].postalCode} {resources[key].city}
                 </span>
-                <div className="facilities">{getFacilitiesList(resources[key])}</div>
               </div>
-              <span className="description">{sanitizedDescription}</span>
+              {getFacilitiesList(resources[key])}
+              <p className="description">{sanitizedDescription}</p>
             </div>
             <div className="list-resource-actions col-md-2">
               <button type="button" className="booking-btn" data-key={key} onClick={showResourceView}>

@@ -14,7 +14,7 @@ _core:
   default_config_hash: jKxszE6mzVZHqapc2PUTL4JG8AYW41MKSx6YvyqdsxU
 id: os2forms_rest_api_user_write
 label: 'OS2Form REST API (write)'
-weight: 2
+weight: 3
 is_admin: null
 permissions:
   - 'restful post webform_rest_submit'

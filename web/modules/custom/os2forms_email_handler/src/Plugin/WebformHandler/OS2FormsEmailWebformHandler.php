@@ -214,7 +214,7 @@ class OS2FormsEmailWebformHandler extends EmailWebformHandler implements Contain
     $units = ['KB', 'MB', 'GB'];
 
     // Get number of units and units from threshold.
-    preg_match("/(?<num>\d+)(?<units>kb|mb|gb)$/i", $threshold, $matches);
+    preg_match('/(?<num>\d+)(?<units>kb|mb|gb)$/i', $threshold, $matches);
 
     $size = (int) $matches['num'];
     $unit = strtoupper($matches['units']);
@@ -272,7 +272,7 @@ class OS2FormsEmailWebformHandler extends EmailWebformHandler implements Contain
         $notificationMessage['subject'] = $this->t('File size submission warning');
 
         $notificationMessage['body'] = $this->t(
-          "<p>Dear @name</p><p>Submission @submission attempted sending an email with a large total file size of attachments surpassing @threshold for handler @handler (@handler_id) on form @form (@form_id).</p>", [
+          '<p>Dear @name</p><p>Submission @submission attempted sending an email with a large total file size of attachments surpassing @threshold for handler @handler (@handler_id) on form @form (@form_id).</p>', [
             '@name' => $emailAddress,
             '@submission' => $context['link'],
             '@handler' => $context['@handler'],

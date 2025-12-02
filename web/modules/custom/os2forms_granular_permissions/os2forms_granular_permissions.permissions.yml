@@ -1,0 +1,24 @@
+'access webform references tab':
+  title: 'Access the webform references tab'
+  description: 'Access the webform references tab.'
+'access webform handlers tab':
+  title: 'Access the webform handlers tab'
+  description: 'Access the webform handlers tab.'
+'access webform css js tab':
+  title: 'Access the webform css js tab'
+  description: 'Access the webform css js tab.'
+'access webform access tab':
+  title: 'Access the webform access tab'
+  description: 'Access the webform access tab.'
+'access webform results download tab':
+  title: 'Access the webform results download tab'
+  description: 'Access the webform results download tab.'
+'access webform results upload tab':
+  title: 'Access the webform results upload tab'
+  description: 'Access the webform results upload tab.'
+'access webform results clear tab':
+  title: 'Access the webform results clear tab'
+  description: 'Access the webform results clear tab.'
+'access webform submission_notes':
+  title: 'Access webform submission notes'
+  description: 'Access webform submission notes.'
