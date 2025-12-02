@@ -103,6 +103,7 @@ module:
   os2forms_rest_api: 0
   os2forms_sbsys: 0
   os2forms_selvbetjening: 0
+  os2forms_selvbetjening_deprecations: 0
   os2forms_sync: 0
   os2forms_user_field_lookup: 0
   os2forms_user_menu: 0

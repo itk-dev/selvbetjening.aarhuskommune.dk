@@ -70,6 +70,7 @@
 !/web/modules/custom/webform_migrate
 !/web/modules/custom/os2forms_queued_email
 !/web/modules/custom/os2forms_granular_permissions
+!/web/modules/custom/os2forms_selvbetjening_deprecations
 
 # Ignore site specific modules.
 /web/sites/*/modules
