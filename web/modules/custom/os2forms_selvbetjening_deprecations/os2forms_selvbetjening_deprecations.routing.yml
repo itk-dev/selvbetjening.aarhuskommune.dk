@@ -18,7 +18,6 @@ os2forms_selvbetjening_deprecations.handlers:
   options:
     no_cache: TRUE
 
-
 os2forms_selvbetjening_deprecations.webforms:
   path: '/admin/os2forms_selvbetjening_deprecations/webforms'
   defaults:
@@ -29,13 +28,12 @@ os2forms_selvbetjening_deprecations.webforms:
   options:
     no_cache: TRUE
 
-
 os2forms_selvbetjening_deprecations.taxonomies:
   path: '/admin/os2forms_selvbetjening_deprecations/taxonomies'
   defaults:
     _form: '\Drupal\os2forms_selvbetjening_deprecations\Form\TaxonomyForm'
     _title: 'Taxonomies'
   requirements:
-    _permission: 'access webform overview'
+    _permission: 'access deprecation taxonomy overview'
   options:
     no_cache: TRUE
