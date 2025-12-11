@@ -121,7 +121,7 @@ final class TaxonomyForm extends FormBase {
       $form['taxonomies'][$key]['webforms'] = [
         '#theme' => 'item_list',
         '#list_type' => 'ul',
-        '#title' => 'Webforms: ' . count($forms),
+        '#title' => $this->formatPlural(count($forms), 'One webform', '@count webforms'),
         '#items' => $forms
           ? array_map(
             static fn(string $webformId) => Link::createFromRoute($webformId, 'entity.webform.handlers', ['webform' => $webformId]),
@@ -136,7 +136,7 @@ final class TaxonomyForm extends FormBase {
       $form['taxonomies'][$key]['users'] = [
         '#theme' => 'item_list',
         '#list_type' => 'ul',
-        '#title' => 'Users: ' . count($users),
+        '#title' => $this->formatPlural(count($users), 'One user', '@count users'),
         '#items' => !empty($users) ? $users : [$this->t('No users')],
       ];
     }
