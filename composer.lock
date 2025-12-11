@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8bef6508226cd1085f0cfa267e26804",
+    "content-hash": "71f98953c7c58592319589c4f6f668ac",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2005,68 +2005,6 @@
             }
         },
         {
-            "name": "drupal/clientside_validation",
-            "version": "4.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/clientside_validation.git",
-                "reference": "4.1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/clientside_validation-4.1.2.zip",
-                "reference": "4.1.2",
-                "shasum": "d0fde67b600f4c14bb669d2e997f91415379838a"
-            },
-            "require": {
-                "drupal/core": "^9.4 || ^10.0 || ^11.0",
-                "php": ">=7.4.0"
-            },
-            "require-dev": {
-                "drupal/clientside_validation_demo": "*",
-                "drupal/clientside_validation_jquery": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "4.1.2",
-                    "datestamp": "1739335910",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "attiks",
-                    "homepage": "https://www.drupal.org/user/105002"
-                },
-                {
-                    "name": "jelle_s",
-                    "homepage": "https://www.drupal.org/user/829198"
-                },
-                {
-                    "name": "joseph.olstad",
-                    "homepage": "https://www.drupal.org/user/1321830"
-                },
-                {
-                    "name": "nikunjkotecha",
-                    "homepage": "https://www.drupal.org/user/694082"
-                }
-            ],
-            "description": "This module adds clientside validation",
-            "homepage": "https://www.drupal.org/project/clientside_validation",
-            "support": {
-                "source": "https://git.drupalcode.org/project/clientside_validation",
-                "issues": "https://drupal.org/project/issues/clientside_validation"
-            }
-        },
-        {
             "name": "drupal/coc_forms_auto_export",
             "version": "3.0.0-alpha1",
             "source": {
@@ -2938,73 +2876,6 @@
             "homepage": "https://www.drupal.org/project/editor_advanced_link",
             "support": {
                 "source": "https://git.drupalcode.org/project/editor_advanced_link"
-            }
-        },
-        {
-            "name": "drupal/embed",
-            "version": "1.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/embed.git",
-                "reference": "8.x-1.10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/embed-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "4ac5be0c3a421851c9c60ed82e3bc497be88e61c"
-            },
-            "require": {
-                "drupal/core": "^10.2 || ^11"
-            },
-            "require-dev": {
-                "drupal/ckeditor": "^1.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1737663032",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "cs_shadow",
-                    "homepage": "https://www.drupal.org/user/2828287"
-                },
-                {
-                    "name": "dave reid",
-                    "homepage": "https://www.drupal.org/user/53892"
-                },
-                {
-                    "name": "devin carlson",
-                    "homepage": "https://www.drupal.org/user/290182"
-                },
-                {
-                    "name": "Drupal Media Team",
-                    "homepage": "https://www.drupal.org/user/3260690"
-                },
-                {
-                    "name": "phenaproxima",
-                    "homepage": "https://www.drupal.org/user/205645"
-                },
-                {
-                    "name": "slashrsm",
-                    "homepage": "https://www.drupal.org/user/744628"
-                }
-            ],
-            "description": "Provides a framework for different types of embeds in text editors.",
-            "homepage": "https://www.drupal.org/project/embed",
-            "support": {
-                "source": "https://git.drupalcode.org/project/embed"
             }
         },
         {
@@ -8375,34 +8246,44 @@
         },
         {
             "name": "itk-dev/os2forms_nemlogin_openid_connect",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect.git",
-                "reference": "e66c2c6f41f3aa5e20cc927975a00cffbaf4f376"
+                "reference": "a7b285d97b830ea0df208642ee88696e690f1f35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_nemlogin_openid_connect/zipball/e66c2c6f41f3aa5e20cc927975a00cffbaf4f376",
-                "reference": "e66c2c6f41f3aa5e20cc927975a00cffbaf4f376",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_nemlogin_openid_connect/zipball/a7b285d97b830ea0df208642ee88696e690f1f35",
+                "reference": "a7b285d97b830ea0df208642ee88696e690f1f35",
                 "shasum": ""
             },
             "require": {
                 "drupal/webform": "^6.0",
-                "itk-dev/drupal_psr6_cache": "^1.0",
+                "itk-dev/drupal_psr6_cache": "^1.1",
                 "itk-dev/openid-connect": "^3.1",
-                "os2forms/os2forms": "^3.17 || ^4.0",
+                "os2web/os2web_audit": "^1.0",
+                "os2web/os2web_key": "^1.0",
                 "os2web/os2web_nemlogin": "^1.2",
                 "symfony/options-resolver": "^5.4 || ^6.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
                 "drupal/coder": "^8.3",
-                "friendsoftwig/twigcs": "^6.0",
-                "mglaman/drupal-check": "^1.4",
-                "mglaman/phpstan-drupal": "~1.2.0"
+                "ergebnis/composer-normalize": "^2.47",
+                "mglaman/drupal-check": "^1.5",
+                "mglaman/phpstan-drupal": "~1.2.0",
+                "vincentlanglet/twig-cs-fixer": "^3.5"
             },
             "type": "drupal-module",
+            "extra": {
+                "drupal-lenient": {
+                    "allowed-list": [
+                        "drupal/coc_forms_auto_export",
+                        "drupal/webform_node_element"
+                    ]
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -8411,26 +8292,26 @@
             "homepage": "https://www.drupal.org/project/os2forms_nemlogin_openid_connect",
             "support": {
                 "issues": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/issues",
-                "source": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/tree/2.2.1"
+                "source": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/tree/2.3.0"
             },
-            "time": "2025-03-12T17:56:51+00:00"
+            "time": "2025-12-11T14:27:52+00:00"
         },
         {
             "name": "itk-dev/os2forms_user_field_lookup",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_user_field_lookup.git",
-                "reference": "edd6ae9583c0563b3c56c872521ac3308f55ca33"
+                "reference": "14976b9b662a92cb6e48aba9abdd91cf6e45623c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_user_field_lookup/zipball/edd6ae9583c0563b3c56c872521ac3308f55ca33",
-                "reference": "edd6ae9583c0563b3c56c872521ac3308f55ca33",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_user_field_lookup/zipball/14976b9b662a92cb6e48aba9abdd91cf6e45623c",
+                "reference": "14976b9b662a92cb6e48aba9abdd91cf6e45623c",
                 "shasum": ""
             },
             "require": {
-                "os2forms/os2forms": "^3.13 || ^4.0"
+                "os2forms/os2forms": "^4.0 || ^5.0"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
@@ -8465,9 +8346,9 @@
             "description": "Use user field data in webforms.",
             "support": {
                 "issues": "https://github.com/itk-dev/os2forms_user_field_lookup/issues",
-                "source": "https://github.com/itk-dev/os2forms_user_field_lookup/tree/1.1.1"
+                "source": "https://github.com/itk-dev/os2forms_user_field_lookup/tree/1.2.0"
             },
-            "time": "2025-03-12T17:49:02+00:00"
+            "time": "2025-12-11T14:20:52+00:00"
         },
         {
             "name": "itk-dev/serviceplatformen",
@@ -8558,6 +8439,62 @@
                 "source": "https://github.com/itk-dev/serviceplatformen/tree/1.7.2"
             },
             "time": "2025-11-24T08:38:38+00:00"
+        },
+        {
+            "name": "itk-dev/vault",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/vault-library.git",
+                "reference": "d5c4fbd58817dba495bd07dcd9a3b9865e7bc69b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/vault-library/zipball/d5c4fbd58817dba495bd07dcd9a3b9865e7bc69b",
+                "reference": "d5c4fbd58817dba495bd07dcd9a3b9865e7bc69b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.1",
+                "psr/simple-cache": "^3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.64",
+                "phpunit/phpunit": "^11.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ItkDev\\Vault\\": "src/Vault"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jesper Kristensen",
+                    "email": "cableman@linuxdev.dk",
+                    "homepage": "https://linuxdev.dk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Library to communicate with Hashicorp Vault",
+            "homepage": "https://github.com/itk-dev",
+            "keywords": [
+                "approle",
+                "e",
+                "hashicorp",
+                "vault"
+            ],
+            "support": {
+                "issues": "https://github.com/itk-dev/vault-library/issues",
+                "source": "https://github.com/itk-dev/vault-library/tree/0.1.0"
+            },
+            "time": "2024-10-21T07:16:27+00:00"
         },
         {
             "name": "itk-dev/web_accessibility_statement",
@@ -9231,16 +9168,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-release/selvbetjening-4.7.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "84d81321adb6ef9bd172d3eba4fbf23360395e24"
+                "url": "https://github.com/OS2Forms/os2forms.git",
+                "reference": "e6a339e5f5a450005d603da9ad6fac0190dc67bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/84d81321adb6ef9bd172d3eba4fbf23360395e24",
-                "reference": "84d81321adb6ef9bd172d3eba4fbf23360395e24",
+                "url": "https://api.github.com/repos/OS2Forms/os2forms/zipball/e6a339e5f5a450005d603da9ad6fac0190dc67bc",
+                "reference": "e6a339e5f5a450005d603da9ad6fac0190dc67bc",
                 "shasum": ""
             },
             "require": {
@@ -9249,11 +9186,9 @@
                 "drupal/admin_toolbar": "^3.0",
                 "drupal/advancedqueue": "^1.0",
                 "drupal/cache_control_override": "^1.1 || ^2.0",
-                "drupal/clientside_validation": "^4.0",
                 "drupal/coc_forms_auto_export": "^3.0@alpha",
                 "drupal/config_entity_revisions": "2.0.x-dev",
                 "drupal/diff": "^1.0",
-                "drupal/embed": "^1.4",
                 "drupal/entity_print": "^2.1",
                 "drupal/eu_cookie_compliance": "^1.8",
                 "drupal/events_logging": "^2.0@beta",
@@ -9297,14 +9232,14 @@
                 "itk-dev/serviceplatformen": "^1.7.1",
                 "mglaman/composer-drupal-lenient": "^1.0",
                 "os2web/os2web_audit": "^1.0",
-                "os2web/os2web_datalookup": "^2.0",
+                "os2web/os2web_datalookup": "^3.0",
+                "os2web/os2web_key": "^1.0",
                 "os2web/os2web_nemlogin": "^1.0",
                 "os2web/os2web_simplesaml": "dev-master",
                 "php": "^8.1",
                 "php-http/guzzle7-adapter": "^1.0",
                 "phpoffice/phpword": "^0.18.2",
                 "symfony/options-resolver": "^5.4 || ^6.0",
-                "webmozart/path-util": "^2.3",
                 "wsdltophp/packagebase": "^5.0",
                 "zaporylie/composer-drupal-optimizations": "^1.2"
             },
@@ -9320,26 +9255,17 @@
             },
             "type": "drupal-module",
             "extra": {
-                "composer-exit-on-patch-failure": false,
-                "drupal-lenient": {
-                    "allowed-list": [
-                        "drupal/coc_forms_auto_export",
-                        "drupal/webform_node_element"
-                    ]
-                },
-                "enable-patching": true,
                 "patches": {
-                    "drupal/coc_forms_auto_export": {
-                        "3256951: - Unable to receive attachments in emails sent": "https://git.drupalcode.org/project/coc_forms_auto_export/-/merge_requests/11.diff",
-                        "3531004: Unable to save initial settings due to unfocusable form control": "https://www.drupal.org/files/issues/2025-06-19/text_area_with_text_edit_always_fails_reqired_set_via_states.patch"
+                    "drupal/core": {
+                        "Allow conditionals based on computed twig (https://www.drupal.org/project/webform/issues/3481569)": "https://www.drupal.org/files/issues/2024-11-05/revert-core-states.patch"
+                    },
+                    "drupal/webform": {
+                        "Webform computed element post save alter": "https://www.drupal.org/files/issues/2024-06-25/webform_computed_post_save_field_alter.patch",
+                        "Unlock possibility of using Entity print module export to Word": "https://www.drupal.org/files/issues/2020-02-29/3096552-6.patch",
+                        "Add custom hook (hook_webform_post_load_data) for audit logging": "https://gist.githubusercontent.com/cableman/d26898fc8f65ee0a31001bf391583b59/raw/6189dc4c2ceaabb19d25cc4b98b0b3028a6b0e1e/gistfile1.txt"
                     },
                     "drupal/entity_print": {
                         "2733781 - Add Export to Word Support": "https://www.drupal.org/files/issues/2019-11-22/2733781-47.patch"
-                    },
-                    "drupal/webform": {
-                        "Unlock possibility of using Entity print module export to Word": "https://www.drupal.org/files/issues/2020-02-29/3096552-6.patch",
-                        "Webform computed element post save alter": "https://www.drupal.org/files/issues/2024-06-25/webform_computed_post_save_field_alter.patch",
-                        "Add custom hook (hook_webform_post_load_data) for audit logging": "https://gist.githubusercontent.com/cableman/d26898fc8f65ee0a31001bf391583b59/raw/6189dc4c2ceaabb19d25cc4b98b0b3028a6b0e1e/gistfile1.txt"
                     },
                     "drupal/webform_encrypt": {
                         "Ensure data is base64 encoded (https://www.drupal.org/project/webform_encrypt/issues/3399414)": "https://git.drupalcode.org/project/webform_encrypt/-/merge_requests/4.patch",
@@ -9347,50 +9273,44 @@
                     },
                     "drupal/webform_node_element": {
                         "3290637 - Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2023-05-12/webform_node_element_d10-3290637-11.patch"
+                    },
+                    "drupal/coc_forms_auto_export": {
+                        "3256951: - Unable to receive attachments in emails sent": "https://git.drupalcode.org/project/coc_forms_auto_export/-/merge_requests/11.diff",
+                        "3531004: Unable to save initial settings due to unfocusable form control": "https://www.drupal.org/files/issues/2025-06-19/text_area_with_text_edit_always_fails_reqired_set_via_states.patch"
                     }
-                }
+                },
+                "drupal-lenient": {
+                    "allowed-list": [
+                        "drupal/coc_forms_auto_export",
+                        "drupal/webform_node_element"
+                    ]
+                },
+                "enable-patching": true,
+                "composer-exit-on-patch-failure": false
             },
-            "scripts": {
-                "code-analysis": [
-                    "@code-analysis/phpstan"
-                ],
-                "code-analysis/phpstan": [
-                    "phpstan analyse"
-                ],
-                "coding-standards-apply": [
-                    "@coding-standards-apply/phpcs"
-                ],
-                "coding-standards-apply/phpcs": [
-                    "phpcbf --standard=phpcs.xml.dist"
-                ],
-                "coding-standards-check": [
-                    "@coding-standards-check/phpcs"
-                ],
-                "coding-standards-check/phpcs": [
-                    "phpcs --standard=phpcs.xml.dist"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "EUPL-1.2"
             ],
             "description": "Drupal 8 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/release/selvbetjening-4.7.0"
+                "issues": "https://github.com/OS2Forms/os2forms/issues",
+                "source": "https://github.com/OS2Forms/os2forms/tree/5.0.0"
             },
-            "time": "2025-10-27T13:29:28+00:00"
+            "time": "2025-11-18T14:53:37+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
-            "version": "1.15.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OS2Forms/os2forms_forloeb_profile.git",
-                "reference": "cc11c7b909640d29a5fb7a146e4b17a3941221ee"
+                "reference": "53c7ef40c9fe77b19d0ac01299d2829b5c3ae3eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2Forms/os2forms_forloeb_profile/zipball/cc11c7b909640d29a5fb7a146e4b17a3941221ee",
-                "reference": "cc11c7b909640d29a5fb7a146e4b17a3941221ee",
+                "url": "https://api.github.com/repos/OS2Forms/os2forms_forloeb_profile/zipball/53c7ef40c9fe77b19d0ac01299d2829b5c3ae3eb",
+                "reference": "53c7ef40c9fe77b19d0ac01299d2829b5c3ae3eb",
                 "shasum": ""
             },
             "require": {
@@ -9399,7 +9319,7 @@
                 "drupal/core": "^9 || ^10",
                 "drupal/gin": "^3.0-rc",
                 "drush/drush": "^11.4 || ^12",
-                "os2forms/os2forms": "^3.6 || ^4.0",
+                "os2forms/os2forms": "^3.6 || ^4 || ^5",
                 "os2web/os2web_simplesaml": "8.x-dev || master"
             },
             "require-dev": {
@@ -9419,34 +9339,36 @@
             "description": "This profile adds the configuration and initial install of OS2forms 2.1 med Forløb.",
             "support": {
                 "issues": "https://github.com/OS2Forms/os2forms_forloeb_profile/issues",
-                "source": "https://github.com/OS2Forms/os2forms_forloeb_profile/tree/1.15.0"
+                "source": "https://github.com/OS2Forms/os2forms_forloeb_profile/tree/1.17.0"
             },
-            "time": "2025-03-24T10:00:35+00:00"
+            "time": "2025-11-18T15:08:09+00:00"
         },
         {
             "name": "os2forms/os2forms_get_organized",
-            "version": "1.4.2",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OS2Forms/os2forms_get_organized.git",
-                "reference": "0fc840671a1ed0b5df5848f190a4fd7198c966c5"
+                "reference": "98eba74dd9cbf283f43f730b6851fb756456d677"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2Forms/os2forms_get_organized/zipball/0fc840671a1ed0b5df5848f190a4fd7198c966c5",
-                "reference": "0fc840671a1ed0b5df5848f190a4fd7198c966c5",
+                "url": "https://api.github.com/repos/OS2Forms/os2forms_get_organized/zipball/98eba74dd9cbf283f43f730b6851fb756456d677",
+                "reference": "98eba74dd9cbf283f43f730b6851fb756456d677",
                 "shasum": ""
             },
             "require": {
                 "drupal/advancedqueue": "^1.2",
+                "drupal/key": "^1.20",
                 "drupal/webform": "^6.2",
                 "itk-dev/getorganized-api-client-php": "^1.2.2",
-                "os2forms/os2forms": "^3.17 || ^4.0",
+                "os2forms/os2forms": "^4.0 || ^5.0",
                 "symfony/options-resolver": "^5.4 || ^6.0"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
                 "drupal/coder": "^8.3",
+                "ergebnis/composer-normalize": "^2.47",
                 "mglaman/drupal-check": "^1.4",
                 "mglaman/phpstan-drupal": "~1.2.0"
             },
@@ -9464,9 +9386,9 @@
             "description": "OS2Forms GetOrganized integration",
             "support": {
                 "issues": "https://github.com/OS2Forms/os2forms_get_organized/issues",
-                "source": "https://github.com/OS2Forms/os2forms_get_organized/tree/1.4.2"
+                "source": "https://github.com/OS2Forms/os2forms_get_organized/tree/2.1.0"
             },
-            "time": "2025-09-08T12:31:47+00:00"
+            "time": "2025-12-11T14:05:48+00:00"
         },
         {
             "name": "os2forms/os2forms_organisation",
@@ -9564,23 +9486,23 @@
         },
         {
             "name": "os2forms/os2forms_rest_api",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OS2Forms/os2forms_rest_api.git",
-                "reference": "ff19a7118e600f23a0106b8fd1e33590b7a988c1"
+                "reference": "1696060ec166e606c78a2d5bb7814ea246a8877f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2Forms/os2forms_rest_api/zipball/ff19a7118e600f23a0106b8fd1e33590b7a988c1",
-                "reference": "ff19a7118e600f23a0106b8fd1e33590b7a988c1",
+                "url": "https://api.github.com/repos/OS2Forms/os2forms_rest_api/zipball/1696060ec166e606c78a2d5bb7814ea246a8877f",
+                "reference": "1696060ec166e606c78a2d5bb7814ea246a8877f",
                 "shasum": ""
             },
             "require": {
                 "cweagans/composer-patches": "^1.7",
                 "drupal/key_auth": "^2.0",
                 "drupal/webform_rest": "^4.1",
-                "os2forms/os2forms": "^3.13 || ^4.0"
+                "os2forms/os2forms": "^4.0 || ^5.0"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
@@ -9610,9 +9532,9 @@
             "description": "OS2Forms REST API",
             "support": {
                 "issues": "https://github.com/OS2Forms/os2forms_rest_api/issues",
-                "source": "https://github.com/OS2Forms/os2forms_rest_api/tree/2.2.1"
+                "source": "https://github.com/OS2Forms/os2forms_rest_api/tree/2.3.0"
             },
-            "time": "2025-03-12T17:32:27+00:00"
+            "time": "2025-12-11T14:12:41+00:00"
         },
         {
             "name": "os2forms/os2forms_sync",
@@ -9746,24 +9668,26 @@
         },
         {
             "name": "os2web/os2web_datalookup",
-            "version": "2.0.5",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OS2web/os2web_datalookup.git",
-                "reference": "51214b325e7a51be8dbca05997ae10c3fd2468f5"
+                "reference": "3101b541829506a28ec9b827f04088b59f8a8a9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2web/os2web_datalookup/zipball/51214b325e7a51be8dbca05997ae10c3fd2468f5",
-                "reference": "51214b325e7a51be8dbca05997ae10c3fd2468f5",
+                "url": "https://api.github.com/repos/OS2web/os2web_datalookup/zipball/3101b541829506a28ec9b827f04088b59f8a8a9f",
+                "reference": "3101b541829506a28ec9b827f04088b59f8a8a9f",
                 "shasum": ""
             },
             "require": {
-                "ext-soap": "*"
+                "ext-soap": "*",
+                "os2web/os2web_key": "^1.0"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
                 "drupal/coder": "^8.3",
+                "ergebnis/composer-normalize": "^2.45",
                 "os2web/os2web_audit": "^0.1",
                 "phpunit/phpunit": "^9.5"
             },
@@ -9775,9 +9699,59 @@
             "description": "Provides integration with Danish data lookup services such as Service platformen or Datafordeler.",
             "support": {
                 "issues": "https://github.com/OS2web/os2web_datalookup/issues",
-                "source": "https://github.com/OS2web/os2web_datalookup/tree/2.0.5"
+                "source": "https://github.com/OS2web/os2web_datalookup/tree/3.0.3"
             },
-            "time": "2025-09-01T12:13:19+00:00"
+            "time": "2025-11-19T09:33:00+00:00"
+        },
+        {
+            "name": "os2web/os2web_key",
+            "version": "1.0.0-rc5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/OS2web/os2web_key.git",
+                "reference": "e88f0d03272613cd70b90aaa0ea5c4ceddde25d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/OS2web/os2web_key/zipball/e88f0d03272613cd70b90aaa0ea5c4ceddde25d4",
+                "reference": "e88f0d03272613cd70b90aaa0ea5c4ceddde25d4",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^9 || ^10",
+                "drupal/key": "^1.17",
+                "ext-openssl": "*",
+                "itk-dev/serviceplatformen": "^1.6",
+                "itk-dev/vault": "^0.1",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+                "drupal/coder": "^8.3",
+                "drupal/core-dev": "^9 || ^10",
+                "ergebnis/composer-normalize": "^2.42",
+                "mglaman/phpstan-drupal": "^1.2",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpunit/phpunit": "^9.6"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "EUPL-1.2"
+            ],
+            "authors": [
+                {
+                    "name": "Mikkel Ricky",
+                    "email": "rimi@aarhus.dk"
+                }
+            ],
+            "description": "OS2Web key",
+            "support": {
+                "issues": "https://github.com/OS2web/os2web_key/issues",
+                "source": "https://github.com/OS2web/os2web_key/tree/1.0.0-rc5"
+            },
+            "time": "2025-05-13T08:09:12+00:00"
         },
         {
             "name": "os2web/os2web_nemlogin",
@@ -11519,6 +11493,57 @@
                 "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
             "time": "2024-09-11T13:17:53+00:00"
+        },
+        {
+            "name": "psr/simple-cache",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/simple-cache.git",
+                "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/764e0b3939f5ca87cb904f570ef9be2d78a07865",
+                "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\SimpleCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for simple caching",
+            "keywords": [
+                "cache",
+                "caching",
+                "psr",
+                "psr-16",
+                "simple-cache"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/simple-cache/tree/3.0.0"
+            },
+            "time": "2021-10-29T13:26:27+00:00"
         },
         {
             "name": "psy/psysh",
@@ -16765,57 +16790,6 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
-        },
-        {
-            "name": "webmozart/path-util",
-            "version": "2.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webmozart/path-util.git",
-                "reference": "d939f7edc24c9a1bb9c0dee5cb05d8e859490725"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/path-util/zipball/d939f7edc24c9a1bb9c0dee5cb05d8e859490725",
-                "reference": "d939f7edc24c9a1bb9c0dee5cb05d8e859490725",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "webmozart/assert": "~1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.6",
-                "sebastian/version": "^1.0.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Webmozart\\PathUtil\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
-                }
-            ],
-            "description": "A robust cross-platform utility for normalizing, comparing and modifying file paths.",
-            "support": {
-                "issues": "https://github.com/webmozart/path-util/issues",
-                "source": "https://github.com/webmozart/path-util/tree/2.3.0"
-            },
-            "abandoned": "symfony/filesystem",
-            "time": "2015-12-17T08:42:14+00:00"
         },
         {
             "name": "wsdltophp/packagebase",
@@ -22959,18 +22933,10 @@
             "time": "2024-03-03T12:36:25+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "os2forms/os2forms",
-            "version": "dev-release/selvbetjening-4.7.0",
-            "alias": "4.3.0",
-            "alias_normalized": "4.3.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/site_status_message": 15,
-        "os2forms/os2forms": 20
+        "drupal/site_status_message": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -22978,5 +22944,5 @@
         "php": "^8.3"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

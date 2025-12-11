@@ -31,9 +31,9 @@
         "itk-dev/os2forms_nemlogin_openid_connect": "^2.2",
         "itk-dev/os2forms_user_field_lookup": "^1.1",
         "itk-dev/web_accessibility_statement": "^1.1",
-        "os2forms/os2forms": "dev-release/selvbetjening-4.7.0 as 4.3.0",
+        "os2forms/os2forms": "^5.0",
         "os2forms/os2forms_forloeb_profile": "^1.15",
-        "os2forms/os2forms_get_organized": "^1.4",
+        "os2forms/os2forms_get_organized": "^2.0",
         "os2forms/os2forms_organisation": "^2.1",
         "os2forms/os2forms_payment": "^1.0",
         "os2forms/os2forms_rest_api": "^2.2",
@@ -53,10 +53,6 @@
         "drupal/drupal": "*"
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/itk-dev/os2forms"
-        },
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
