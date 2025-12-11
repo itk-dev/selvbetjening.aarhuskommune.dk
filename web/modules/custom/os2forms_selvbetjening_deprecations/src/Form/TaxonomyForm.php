@@ -88,6 +88,7 @@ final class TaxonomyForm extends FormBase {
     // Gather user assigned to the taxonomy terms.
     $users = $this->userStorage->loadMultiple();
     foreach ($users as $user) {
+      /** @var \Drupal\user\Entity\User $user */
       $name = $user->getDisplayName();
       $userId = $user->id();
 
@@ -98,7 +99,7 @@ final class TaxonomyForm extends FormBase {
         ->fetchCol();
 
       foreach ($term_ids as $term_id) {
-        if ($taxonomies[$term_id]) {
+        if (isset($taxonomies[$term_id])) {
           $taxonomies[$term_id]['users'][] = $name;
         }
       }
