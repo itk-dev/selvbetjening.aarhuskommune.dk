@@ -6,6 +6,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Opdaterede ClamAV version.
 * Tilføjede handler, element og taksonomi oversigter.
 * Tilføjede dokumentation af [elementer](docs/ELEMENTS.md) og
   [handlers](docs/HANDLERS.md).
