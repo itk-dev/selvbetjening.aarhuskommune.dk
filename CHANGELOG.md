@@ -6,6 +6,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [4.6.7] 2025-12-18
+
+* Opdaterede ClamAV version.
+
 ## [4.6.6] 2025-11-24
 
 * Pakke-opdateringer heriblandt Drupal `10.5`
@@ -720,8 +724,9 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.6...HEAD
-[4.6.6]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.6...4.6.6
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.7...HEAD
+[4.6.7]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.6...4.6.7
+[4.6.6]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.5...4.6.6
 [4.6.5]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.4...4.6.5
 [4.6.4]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.3...4.6.4
 [4.6.3]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.2...4.6.3
