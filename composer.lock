@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8bef6508226cd1085f0cfa267e26804",
+    "content-hash": "63e4821fdc059ac796d3872c83660e11",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -18560,6 +18560,54 @@
             "time": "2025-08-14T20:00:33+00:00"
         },
         {
+            "name": "itk-dev/drupal-phpcs-sniffs",
+            "version": "dev-drupal-phpcs-sniffs",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/drupal-phpcs-sniffs.git",
+                "reference": "489160faaffe000912b37649e31e49288b235577"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/drupal-phpcs-sniffs/zipball/489160faaffe000912b37649e31e49288b235577",
+                "reference": "489160faaffe000912b37649e31e49288b235577",
+                "shasum": ""
+            },
+            "require": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+                "drupal/coder": "^8.3"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.48"
+            },
+            "type": "phpcodesniffer-standard",
+            "autoload": {
+                "psr-4": {
+                    "ItkDevDrupal\\": "ItkDevDrupal/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikkel Ricky",
+                    "email": "rimi@aarhus.dk"
+                }
+            ],
+            "description": "Additional Drupal coding standards",
+            "keywords": [
+                "dev",
+                "phpcs"
+            ],
+            "support": {
+                "issues": "https://github.com/itk-dev/drupal-phpcs-sniffs/issues",
+                "source": "https://github.com/itk-dev/drupal-phpcs-sniffs/tree/drupal-phpcs-sniffs"
+            },
+            "time": "2025-12-19T13:23:07+00:00"
+        },
+        {
             "name": "justinrainbow/json-schema",
             "version": "6.4.2",
             "source": {
@@ -22970,6 +23018,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/site_status_message": 15,
+        "itk-dev/drupal-phpcs-sniffs": 20,
         "os2forms/os2forms": 20
     },
     "prefer-stable": true,
@@ -22978,5 +23027,5 @@
         "php": "^8.3"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
