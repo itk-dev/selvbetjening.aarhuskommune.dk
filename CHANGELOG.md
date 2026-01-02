@@ -9,6 +9,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 * Tilføjede handler, element og taksonomi oversigter.
 * Tilføjede dokumentation af [elementer](docs/ELEMENTS.md) og
   [handlers](docs/HANDLERS.md).
+* Tilføjede kommando til at finde formularer der benytter kladder.
 
 ## [4.6.7] 2025-12-18
 
