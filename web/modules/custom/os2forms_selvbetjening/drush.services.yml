@@ -1,6 +1,0 @@
-services:
-  Drupal\os2forms_selvbetjening\Commands\LookupCommands:
-    arguments:
-      - '@plugin.manager.os2web_datalookup'
-    tags:
-      - { name: drush.command }
