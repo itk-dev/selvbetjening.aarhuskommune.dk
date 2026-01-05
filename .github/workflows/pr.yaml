@@ -235,3 +235,12 @@ jobs:
       - name: Update site
         run: |
           docker compose exec --user root phpfpm vendor/bin/drush deploy --yes
+
+  check-docker-images:
+    runs-on: ubuntu-latest
+    name: Check that docker images can be pulled
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Check that docker images can be pulled
+        run: docker compose pull --quiet
