@@ -122,11 +122,9 @@ final class WebformDraftCommands extends DrushCommands {
   private function formatRow(WebformInterface $webform, bool $addSessionSettings, bool $indicateSessionEnabled): string {
     $sessionSettings = $webform->getThirdPartySetting('os2forms', 'os2forms_nemid');
 
+    $line = $webform->id();
     if ($addSessionSettings) {
-      $line = $webform->id() . ': ' . json_encode($sessionSettings);
-    }
-    else {
-      $line = $webform->id();
+      $line .= ': ' . json_encode($sessionSettings);
     }
 
     if ($indicateSessionEnabled) {
