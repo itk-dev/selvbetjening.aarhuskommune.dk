@@ -248,4 +248,4 @@ jobs:
           ref: ${{ github.base_ref }}
 
       - name: Check that docker images can be pulled
-        run: docker compose pull --quiet
+        run: docker compose pull
