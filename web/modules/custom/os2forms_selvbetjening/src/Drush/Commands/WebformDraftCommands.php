@@ -129,7 +129,7 @@ final class WebformDraftCommands extends DrushCommands {
 
     if ($indicateSessionEnabled) {
       $isEnabled = ($sessionSettings['nemlogin_auto_redirect'] ?? 0) === 1;
-      $line = ($isEnabled ? '✅ ' : '❌ ') . $line;
+      $line = ($isEnabled ? '✅' : '❌') . ' ' . $line;
     }
 
     return $line;
