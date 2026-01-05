@@ -6,7 +6,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
-* Tilføjede handler, element og taksonomi oversigter.
+* Tilføjede oversigter over formularer, handlers, elementer og taksonomier.
 * Tilføjede dokumentation af [elementer](docs/ELEMENTS.md) og
   [handlers](docs/HANDLERS.md).
 * Tilføjede kommando til at finde formularer der benytter kladder.
