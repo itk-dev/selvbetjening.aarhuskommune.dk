@@ -1,17 +1,19 @@
 <?php
 
-namespace Drupal\os2forms_selvbetjening\Commands;
+namespace Drupal\os2forms_selvbetjening\Drush\Commands;
 
 use Drupal\os2web_datalookup\Plugin\DataLookupManager;
 use Drupal\os2web_datalookup\Plugin\os2web\DataLookup\DataLookupCprInterface;
 use Drupal\os2web_datalookup\Plugin\os2web\DataLookup\DatafordelerCVR;
+use Drush\Attributes as CLI;
 use Drush\Commands\DrushCommands;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Yaml\Yaml;
 
 /**
  * Lookup commands.
  */
-class LookupCommands extends DrushCommands {
+final class LookupCommands extends DrushCommands {
 
   /**
    * Constructor.
@@ -19,19 +21,23 @@ class LookupCommands extends DrushCommands {
   public function __construct(
     private readonly DataLookupManager $dataLookupManager,
   ) {
+    parent::__construct();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('plugin.manager.os2web_datalookup'),
+    );
   }
 
   /**
    * Look up CPR.
-   *
-   * @param string $cpr
-   *   The cpr.
-   * @param array $options
-   *   The command options.
-   *
-   * @command os2forms-selvbetjening:look-up:cpr
-   * @usage os2forms-selvbetjening:look-up:cpr --help
    */
+  #[CLI\Command(name: 'os2forms-selvbetjening:look-up:cpr')]
+  #[CLI\Usage(name: 'os2forms-selvbetjening:look-up:cpr --help', description: 'Look up CPR.')]
   public function lookUpCpr(
     string $cpr,
     array $options = [
@@ -63,15 +69,9 @@ class LookupCommands extends DrushCommands {
 
   /**
    * Look up CVR.
-   *
-   * @param string $cvr
-   *   The cvr.
-   * @param array $options
-   *   The command options.
-   *
-   * @command os2forms-selvbetjening:look-up:cvr
-   * @usage os2forms-selvbetjening:look-up:cvr --help
    */
+  #[CLI\Command(name: 'os2forms-selvbetjening:look-up:cvr')]
+  #[CLI\Usage(name: 'os2forms-selvbetjening:look-up:cvr --help', description: 'Look up CVR.')]
   public function lookUpCvr(
     string $cvr,
     array $options = [
