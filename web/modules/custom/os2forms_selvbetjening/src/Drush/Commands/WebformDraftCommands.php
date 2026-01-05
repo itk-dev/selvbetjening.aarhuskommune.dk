@@ -96,7 +96,7 @@ final class WebformDraftCommands extends DrushCommands {
       $webforms = $this->entityTypeManager->getStorage('webform')->loadMultiple();
     }
     catch (InvalidPluginDefinitionException | PluginNotFoundException $e) {
-      $this->logger()->error('Failed to load webforms: {error}', ['error' => $e->getMessage()]);
+      $this->logger()->error('Failed to load webforms: @error', ['@error' => $e->getMessage()]);
       throw $e;
     }
 
