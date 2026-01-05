@@ -22,4 +22,5 @@
 
   <rule ref="DrupalPractice"/>
   <rule ref="Squiz.Strings.DoubleQuoteUsage.NotRequired"/>
+  <rule ref="ItkDevDrupal"/>
 </ruleset>

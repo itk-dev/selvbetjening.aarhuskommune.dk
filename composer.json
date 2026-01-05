@@ -44,6 +44,7 @@
         "drupal/core-dev": "^10",
         "drupal/mail_debugger": "^1.4",
         "ergebnis/composer-normalize": "^2.43",
+        "itk-dev/drupal-phpcs-sniffs": "dev-drupal-phpcs-sniffs",
         "mglaman/phpstan-drupal": "^1.2",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan": "^1.10.14",
