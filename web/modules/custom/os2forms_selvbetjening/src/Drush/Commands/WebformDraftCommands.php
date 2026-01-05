@@ -58,10 +58,10 @@ final class WebformDraftCommands extends DrushCommands {
     $groupBySessionType = $options['group-by-session-type'];
 
     if (empty($draftWebforms)) {
-      $this->output()->writeln('No webforms found with drafts enabled.');
+      $this->io()->title('No webforms found with drafts enabled.');
     }
     else {
-      $this->output()->writeln($this->formatPlural(count($draftWebforms), 'One webform has drafts enabled:', '@count webforms has drafts enabled:'));
+      $this->io()->title($this->formatPlural(count($draftWebforms), 'One webform has drafts enabled:', '@count webforms has drafts enabled:'));
 
       if ($groupBySessionType) {
 
@@ -74,15 +74,15 @@ final class WebformDraftCommands extends DrushCommands {
         }
 
         foreach ($groupedDraftWebforms as $type => $webforms) {
-          $this->output()->writeln("\n--- Session Type: $type ---");
+          $this->io->section("Session Type: $type");
           foreach ($webforms as $webform) {
-            $this->output()->writeln($this->formatRow($webform, $addSessionSettings, $indicateSessionEnabled));
+            $this->io()->writeln($this->formatRow($webform, $addSessionSettings, $indicateSessionEnabled));
           }
         }
       }
       else {
         foreach ($draftWebforms as $webform) {
-          $this->output()->writeln($this->formatRow($webform, $addSessionSettings, $indicateSessionEnabled));
+          $this->io()->writeln($this->formatRow($webform, $addSessionSettings, $indicateSessionEnabled));
         }
       }
     }
