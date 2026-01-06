@@ -1,0 +1,39 @@
+os2forms_selvbetjening_deprecations.elements:
+  path: '/admin/os2forms_selvbetjening_deprecations/elements'
+  defaults:
+    _form: '\Drupal\os2forms_selvbetjening_deprecations\Form\ElementsForm'
+    _title: 'Elements'
+  requirements:
+    _permission: 'access webform overview'
+  options:
+    no_cache: TRUE
+
+os2forms_selvbetjening_deprecations.handlers:
+  path: '/admin/os2forms_selvbetjening_deprecations/handlers'
+  defaults:
+    _form: '\Drupal\os2forms_selvbetjening_deprecations\Form\HandlersForm'
+    _title: 'Handlers'
+  requirements:
+    _permission: 'access webform overview'
+  options:
+    no_cache: TRUE
+
+os2forms_selvbetjening_deprecations.webforms:
+  path: '/admin/os2forms_selvbetjening_deprecations/webforms'
+  defaults:
+    _form: '\Drupal\os2forms_selvbetjening_deprecations\Form\WebformsForm'
+    _title: 'Webforms'
+  requirements:
+    _permission: 'access webform overview'
+  options:
+    no_cache: TRUE
+
+os2forms_selvbetjening_deprecations.taxonomies:
+  path: '/admin/os2forms_selvbetjening_deprecations/taxonomies'
+  defaults:
+    _form: '\Drupal\os2forms_selvbetjening_deprecations\Form\TaxonomyForm'
+    _title: 'Taxonomies'
+  requirements:
+    _permission: 'access deprecation taxonomy overview'
+  options:
+    no_cache: TRUE

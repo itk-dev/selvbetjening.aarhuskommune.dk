@@ -1,4 +1,4 @@
-# itk-version: 3.2.1
+# itk-version: 3.2.3
 networks:
   frontend:
     external: true
@@ -41,7 +41,7 @@ services:
       NGINX_FPM_SERVICE: ${COMPOSE_PROJECT_NAME}-phpfpm-1:9000
       NGINX_WEB_ROOT: /app/web
       NGINX_PORT: 8080
-      NGINX_MAX_BODY_SIZE: 305m
+      NGINX_MAX_BODY_SIZE: 5M
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=frontend"
@@ -53,9 +53,9 @@ services:
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.entrypoints=websecure"
 
   memcached:
-    image: 'memcached:latest'
+    image: "memcached:latest"
     restart: unless-stopped
     networks:
       - app
     environment:
-      - MEMCACHED_CACHE_SIZE=128
+      - MEMCACHED_CACHE_SIZE=64

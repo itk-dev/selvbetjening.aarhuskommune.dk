@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71f98953c7c58592319589c4f6f668ac",
+    "content-hash": "f590c9e06feee04d506d0682ee4b5fd1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9541,12 +9541,12 @@
             "version": "1.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/itk-dev/os2forms_sync.git",
+                "url": "https://github.com/OS2Forms/os2forms_sync.git",
                 "reference": "86702399501995016462afe59b7f7135d80d4969"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_sync/zipball/86702399501995016462afe59b7f7135d80d4969",
+                "url": "https://api.github.com/repos/OS2Forms/os2forms_sync/zipball/86702399501995016462afe59b7f7135d80d4969",
                 "reference": "86702399501995016462afe59b7f7135d80d4969",
                 "shasum": ""
             },

@@ -27,7 +27,11 @@ services:
       - MEMCACHED_CACHE_SIZE=128
 
   clamav:
-    image: clamav/clamav:1.2
+    image: clamav/clamav:1.4
     restart: unless-stopped
     networks:
       - app
+
+  nginx:
+    environment:
+      - NGINX_MAX_BODY_SIZE=305M
