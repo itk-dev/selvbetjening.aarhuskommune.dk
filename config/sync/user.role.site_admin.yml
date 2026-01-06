@@ -22,6 +22,7 @@ dependencies:
     - os2forms_failed_jobs
     - os2forms_granular_permissions
     - os2forms_permission_alterations
+    - os2forms_selvbetjening_deprecations
     - search
     - site_status_message
     - system
@@ -45,6 +46,7 @@ permissions:
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
+  - 'access deprecation taxonomy overview'
   - 'access files overview'
   - 'access own webform configuration'
   - 'access site in maintenance mode'
