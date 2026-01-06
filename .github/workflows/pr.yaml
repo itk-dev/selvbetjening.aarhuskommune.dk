@@ -239,13 +239,10 @@ jobs:
   check-docker-images:
     runs-on: ubuntu-latest
     name: Check that docker images can be pulled
-    strategy:
-      fail-fast: false
     steps:
-      # Install site from our base ref
       - uses: actions/checkout@master
-        with:
-          ref: ${{ github.base_ref }}
-
       - name: Check that docker images can be pulled
-        run: docker compose pull
+        run: |
+          docker network create frontend
+          docker network create serviceplatformen_organisation_api_app
+          docker compose pull
