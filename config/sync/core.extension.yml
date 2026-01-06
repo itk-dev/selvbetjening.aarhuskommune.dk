@@ -113,6 +113,7 @@ module:
   os2web_audit: 0
   os2web_audit_user: 0
   os2web_datalookup: 0
+  os2web_key: 0
   os2web_nemlogin: 0
   os2web_simplesaml: 0
   page_cache: 0
