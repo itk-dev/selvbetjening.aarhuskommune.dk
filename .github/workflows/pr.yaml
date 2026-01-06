@@ -240,7 +240,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check that docker images can be pulled
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
       - name: Check that docker images can be pulled
         run: |
           COMPOSE_PROFILES='*' docker compose pull
