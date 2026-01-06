@@ -31,3 +31,7 @@ services:
     restart: unless-stopped
     networks:
       - app
+
+  nginx:
+    environment:
+      - NGINX_MAX_BODY_SIZE=305M

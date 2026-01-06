@@ -8,6 +8,8 @@ networks:
 services:
   phpfpm:
     networks:
+      # frontend is necessary for booking to work locally.
+      # @see web/modules/custom/itkdev_booking/README.md
       - frontend
       - organisation_api
     environment:
