@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.0.0] 2026-01-06
+
+* Opdaterede til OS2Forms Core 5.0
 * Opdaterede docker setup.
 * Tilføjede oversigter over formularer, handlers, elementer og taksonomier.
 * Tilføjede dokumentation af [elementer](docs/ELEMENTS.md) og
