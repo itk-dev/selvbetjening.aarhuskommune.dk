@@ -243,6 +243,4 @@ jobs:
       - uses: actions/checkout@master
       - name: Check that docker images can be pulled
         run: |
-          docker network create frontend
-          docker network create serviceplatformen_organisation_api_app
-          docker compose pull
+          COMPOSE_PROFILES='*' docker compose pull
