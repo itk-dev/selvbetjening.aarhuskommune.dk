@@ -9,6 +9,7 @@ ignored_config_entities:
   - '# Ignore most settings on /admin/config/system/os2web-datalookup/datafordeler-cvr'
   - '# Ignore most settings on /admin/config/system/os2web-datalookup/serviceplatformen-cpr-extended'
   - 'coc_forms_auto_export.config.*'
+  - 'key.key.*'
   - key.key.webform
   - 'leaflet_layers.map_bundle.*'
   - 'leaflet_layers.map_layer.*'
