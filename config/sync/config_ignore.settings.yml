@@ -22,6 +22,7 @@ ignored_config_entities:
   - os2forms_get_organized.settings
   - os2forms_nemid.settings
   - 'os2web_audit.*'
+  - 'os2web_datalookup.*'
   - 'os2web_datalookup.datafordeler_cvr:cert_passphrase_live'
   - 'os2web_datalookup.datafordeler_cvr:cert_path_live'
   - 'os2web_datalookup.serviceplatformen_cpr_extended:certfile'
