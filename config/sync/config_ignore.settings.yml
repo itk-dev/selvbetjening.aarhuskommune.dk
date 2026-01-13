@@ -15,8 +15,12 @@ ignored_config_entities:
   - 'leaflet_layers.map_layer.*'
   - 'maestro.maestro_template.*'
   - 'os2forms_attachment.os2forms_attachment_component.*'
+  - os2forms_digital_post.settings
   - os2forms_encrypt.settings
+  - os2forms_fasit.settings
   - os2forms_forloeb.settings
+  - os2forms_get_organized.settings
+  - os2forms_nemid.settings
   - 'os2web_audit.*'
   - 'os2web_datalookup.datafordeler_cvr:cert_passphrase_live'
   - 'os2web_datalookup.datafordeler_cvr:cert_path_live'

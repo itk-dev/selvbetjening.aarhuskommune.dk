@@ -6,6 +6,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.0.2] 2026-01-13
+
+* Opdaterede “config ignore”-regler med os2forms settings
+
 ## [5.0.1] 2026-01-13
 
 * Opdaterede “config ignore”-regler med keys
@@ -737,7 +741,10 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.7...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.1...HEAD
+[5.0.2]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.1...5.0.2
+[5.0.1]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.0...5.0.1
+[5.0.0]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.7...5.0.0
 [4.6.7]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.6...4.6.7
 [4.6.6]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.5...4.6.6
 [4.6.5]: https://github.com/itk-dev/os2forms_selvbetjening/compare/4.6.4...4.6.5
