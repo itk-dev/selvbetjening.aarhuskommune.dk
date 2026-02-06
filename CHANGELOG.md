@@ -6,6 +6,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Opdaterede OS2Forms Attachment-skabelon
+  * Tiljusteret marginer
+  * Stylet adresse-element ved Digital Post forsendelse.
+
 ## [5.0.3] 2026-01-13
 
 * Opdaterede “config ignore”-regler med os2web_datalookup settings.
