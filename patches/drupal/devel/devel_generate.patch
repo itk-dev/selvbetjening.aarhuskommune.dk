@@ -1,0 +1,16 @@
+diff --git a/devel_generate/src/DevelGenerateBase.php b/devel_generate/src/DevelGenerateBase.php
+index ff527f3..8d0c261 100644
+--- a/devel_generate/src/DevelGenerateBase.php
++++ b/devel_generate/src/DevelGenerateBase.php
+@@ -22,11 +22,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
+  */
+ abstract class DevelGenerateBase extends PluginBase implements DevelGenerateBaseInterface {
+ 
+-  /**
+-   * The entity type manager service.
+-   */
+-  protected EntityTypeManagerInterface $entityTypeManager;
+-
+   /**
+    * The language manager.
+    */

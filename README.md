@@ -3,7 +3,7 @@
 ## Fordelingskomponenten
 
 ``` shell
-docker compose exec phpfpm composer require "itk-dev/serviceplatformen":"dev-feature/SF2900-Fordelingskomponenten as 1.8.0"
+docker compose exec phpfpm composer require "itk-dev/serviceplatformen":"dev-feature/SF2900-Fordelingskomponenten as 1.9.0"
 ```
 
 -------------------------------------------------------------------------------
