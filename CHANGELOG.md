@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Updated Clam anti-virus version
+* Set upload sizes to match application upload sizes
+
 ## [5.0.3] 2026-01-13
 
 * Opdaterede “config ignore”-regler med os2web_datalookup settings.
