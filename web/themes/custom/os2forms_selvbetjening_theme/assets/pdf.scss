@@ -60,9 +60,8 @@ footer {
   margin-top: $envelope-window-height;
 }
 
-#envelope-window-recipient-section-digital-post {
+#envelope-window-digital-post > div {
   position: absolute;
-  // Relative to #envelope-window-digital-post
   top: 16mm;
   left: 4mm;
   font-size: 10px;
