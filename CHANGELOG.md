@@ -8,8 +8,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [5.0.4] 2026-02-10
 
-* Updated Clam anti-virus version
-* Set upload sizes to match application upload sizes
+* Opdaterede ClamAV version
+* Opdaterede ClamAV uploadstørrelser til at matche applikationens uploadstørrelser
 
 ## [5.0.3] 2026-01-13
 
