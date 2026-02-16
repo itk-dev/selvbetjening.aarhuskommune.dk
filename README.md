@@ -26,6 +26,7 @@ docker compose exec phpfpm vendor/bin/drush site:install --existing-config --yes
 
 # Download and install external libraries
 docker compose exec phpfpm vendor/bin/drush webform:libraries:download
+docker compose exec phpfpm vendor/bin/drush chosen:plugin
 
 # Build theme assets
 docker compose run --rm node yarn --cwd web/themes/custom/os2forms_selvbetjening_theme install

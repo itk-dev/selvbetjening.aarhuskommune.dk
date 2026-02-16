@@ -10,6 +10,11 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   * Tiljusteret marginer
   * Stylet adresse-element ved Digital Post forsendelse.
 
+## [5.0.4] 2026-02-10
+
+* Updated Clam anti-virus version
+* Set upload sizes to match application upload sizes
+
 ## [5.0.3] 2026-01-13
 
 * Opdaterede “config ignore”-regler med os2web_datalookup settings.
@@ -749,7 +754,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.3...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.4...HEAD
+[5.0.4]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.3...5.0.4
 [5.0.3]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.2...5.0.3
 [5.0.2]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.1...5.0.2
 [5.0.1]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.0...5.0.1
