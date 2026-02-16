@@ -27,10 +27,14 @@ services:
       - MEMCACHED_CACHE_SIZE=128
 
   clamav:
-    image: clamav/clamav:1.4
+    image: clamav/clamav:1.5
     restart: unless-stopped
     networks:
       - app
+    environment:
+        CLAMD_CONF_MaxFileSize: "325M"
+        CLAMD_CONF_StreamMaxLength: "325M"
+        CLAMD_CONF_MaxScanSize: "400M"
 
   nginx:
     environment:

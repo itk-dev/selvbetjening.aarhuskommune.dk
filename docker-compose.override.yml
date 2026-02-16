@@ -26,12 +26,16 @@ services:
     working_dir: /app
 
   clamav:
-    image: clamav/clamav:1.4
+    image: clamav/clamav:1.5
     networks:
       - app
     ports:
       - '3310'
       - '7357'
+    environment:
+        CLAMD_CONF_MaxFileSize: "325M"
+        CLAMD_CONF_StreamMaxLength: "325M"
+        CLAMD_CONF_MaxScanSize: "400M"
 
   idp-admin:
     image: ghcr.io/soluto/oidc-server-mock:latest
