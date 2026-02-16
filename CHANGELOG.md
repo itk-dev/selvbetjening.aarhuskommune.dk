@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Gav godkendte brugere adgang til toolbaren, deriblandt logud.
+
 ## [5.0.4] 2026-02-10
 
 * Opdaterede ClamAV version
