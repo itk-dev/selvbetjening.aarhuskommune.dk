@@ -7,8 +7,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 ## [Under udvikling]
 
 * Opdaterede OS2Forms Attachment-skabelon
-  * Tiljusteret marginer
-  * Stylet adresse-element ved Digital Post forsendelse.
+  * Justerede marginer
+  * Stylede adresse-element ved Digital Post forsendelse.
 
 ## [5.0.4] 2026-02-10
 
