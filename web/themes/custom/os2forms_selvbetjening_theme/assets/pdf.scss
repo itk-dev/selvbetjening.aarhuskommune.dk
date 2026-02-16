@@ -10,6 +10,8 @@ $envelope-window-width: 115mm;
 $recipient-window-height: 21mm;
 $recipient-window-width: 59mm;
 
+// We reset margin from the default and set them in body
+// @see https://github.com/dompdf/dompdf/blob/v2.0.8/lib/res/html.css#L18
 @page {
   size: A4;
   margin: 0;
