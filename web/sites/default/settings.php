@@ -835,6 +835,11 @@ $settings['config_exclude_modules'] = [
   'os2forms_fordelingskomponent_examples',
 ];
 
+$settings['config_exclude_modules'][] = 'webprofiler';
+$settings['config_exclude_modules'][] = 'devel';
+$settings['config_exclude_modules'][] = 'tracer';
+$settings['config_exclude_modules'][] = 'devel_generate';
+
 /**
  * Load local development override configuration, if available.
  *

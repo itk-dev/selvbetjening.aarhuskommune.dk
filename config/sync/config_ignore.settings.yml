@@ -18,6 +18,7 @@ ignored_config_entities:
   - os2forms_digital_post.settings
   - os2forms_encrypt.settings
   - os2forms_fasit.settings
+  - os2forms_fordelingskomponent.settings
   - os2forms_forloeb.settings
   - os2forms_get_organized.settings
   - os2forms_nemid.settings
