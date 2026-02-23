@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85c93d887b3f9a4d22824c2404033a7c",
+    "content-hash": "5b5aaba9bf6c37c63ed0d86dc8b0b2a4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9168,16 +9168,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-feature/address-in-digital-post-pdfs",
+            "version": "dev-release/5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "0c397392b8a4d8debbb89a06e5bd700dbd6416eb"
+                "reference": "7c057aab145f7843a5435012b668eb16ee7b0b06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/0c397392b8a4d8debbb89a06e5bd700dbd6416eb",
-                "reference": "0c397392b8a4d8debbb89a06e5bd700dbd6416eb",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/7c057aab145f7843a5435012b668eb16ee7b0b06",
+                "reference": "7c057aab145f7843a5435012b668eb16ee7b0b06",
                 "shasum": ""
             },
             "require": {
@@ -9315,7 +9315,7 @@
             "support": {
                 "source": "https://github.com/itk-dev/os2forms/tree/feature/address-in-digital-post-pdfs"
             },
-            "time": "2026-02-16T09:26:03+00:00"
+            "time": "2026-02-19T14:23:04+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -22954,7 +22954,7 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-feature/address-in-digital-post-pdfs",
+            "version": "dev-release/5.1.0",
             "alias": "5.1",
             "alias_normalized": "5.1.0.0"
         }
