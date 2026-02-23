@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Opdaterede OS2Forms Attachment-skabelon
+  * Justerede marginer
+  * Stylede adresse-element ved Digital Post forsendelse.
 * Gav godkendte brugere adgang til toolbaren, deriblandt logud.
 
 ## [5.0.4] 2026-02-10
