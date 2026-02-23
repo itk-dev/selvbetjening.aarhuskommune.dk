@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.0] 2026-02-23
+
 * Opdaterede OS2Forms Attachment-skabelon
   * Justerede marginer
   * Stylede adresse-element ved Digital Post forsendelse.
@@ -755,7 +757,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.4...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.0...HEAD
+[5.1.0]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.4...5.1.0
 [5.0.4]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.3...5.0.4
 [5.0.3]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.2...5.0.3
 [5.0.2]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.1...5.0.2
