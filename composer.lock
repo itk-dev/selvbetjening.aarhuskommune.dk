@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b5aaba9bf6c37c63ed0d86dc8b0b2a4",
+    "content-hash": "9d6c1789abeda2921913a9db16ac72af",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9168,16 +9168,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-release/5.1.0",
+            "version": "dev-release/5.1.0-and-map-element",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "a99952cba985fe85b1efbc14cfc9f3743443af40"
+                "reference": "58feb6cc0f6053d3ce487028fc21bd6d267ae671"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/a99952cba985fe85b1efbc14cfc9f3743443af40",
-                "reference": "a99952cba985fe85b1efbc14cfc9f3743443af40",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/58feb6cc0f6053d3ce487028fc21bd6d267ae671",
+                "reference": "58feb6cc0f6053d3ce487028fc21bd6d267ae671",
                 "shasum": ""
             },
             "require": {
@@ -9313,9 +9313,9 @@
             ],
             "description": "Drupal 8 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/feature/address-in-digital-post-pdfs"
+                "source": "https://github.com/itk-dev/os2forms/tree/release/5.1.0-and-map-element"
             },
-            "time": "2026-02-23T12:42:02+00:00"
+            "time": "2026-02-25T07:54:28+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -22954,9 +22954,9 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-release/5.1.0",
-            "alias": "5.1",
-            "alias_normalized": "5.1.0.0"
+            "version": "dev-release/5.1.0-and-map-element",
+            "alias": "5.2",
+            "alias_normalized": "5.2.0.0"
         }
     ],
     "minimum-stability": "dev",

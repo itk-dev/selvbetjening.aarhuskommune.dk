@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Opdaterede til OS2Forms med map justeringer
+
 ## [5.1.0] 2026-02-23
 
 * Opdaterede OS2Forms Attachment-skabelon
