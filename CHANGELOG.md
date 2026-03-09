@@ -6,6 +6,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.1] 2026-03-09
+
+* Sikrede at adresse påføres korrekt til både digital post og fjernprint.
+
 ## [5.1.0] 2026-02-23
 
 * Opdaterede OS2Forms Attachment-skabelon
