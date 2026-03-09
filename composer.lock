@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b5aaba9bf6c37c63ed0d86dc8b0b2a4",
+    "content-hash": "807b9bcf26a151f8cd8d817d647438bb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9168,16 +9168,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-release/5.1.0",
+            "version": "dev-release/5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "a99952cba985fe85b1efbc14cfc9f3743443af40"
+                "reference": "eeba74bcb5045682dada63be5650329c7897cb70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/a99952cba985fe85b1efbc14cfc9f3743443af40",
-                "reference": "a99952cba985fe85b1efbc14cfc9f3743443af40",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/eeba74bcb5045682dada63be5650329c7897cb70",
+                "reference": "eeba74bcb5045682dada63be5650329c7897cb70",
                 "shasum": ""
             },
             "require": {
@@ -9315,7 +9315,7 @@
             "support": {
                 "source": "https://github.com/itk-dev/os2forms/tree/feature/address-in-digital-post-pdfs"
             },
-            "time": "2026-02-23T12:42:02+00:00"
+            "time": "2026-03-09T08:38:05+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -22954,9 +22954,9 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-release/5.1.0",
-            "alias": "5.1",
-            "alias_normalized": "5.1.0.0"
+            "version": "dev-release/5.1.1",
+            "alias": "5.1.1",
+            "alias_normalized": "5.1.1.0"
         }
     ],
     "minimum-stability": "dev",
