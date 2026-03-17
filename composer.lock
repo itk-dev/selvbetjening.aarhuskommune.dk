@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "807b9bcf26a151f8cd8d817d647438bb",
+    "content-hash": "c0e2b8da0726b7dbf7e1c90e91688ee2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9168,16 +9168,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-release/5.1.1",
+            "version": "dev-feature/sender-address-in-digital-post",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "eeba74bcb5045682dada63be5650329c7897cb70"
+                "reference": "381f438bd856a0d9f25ac1410b7eec4f9873c5be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/eeba74bcb5045682dada63be5650329c7897cb70",
-                "reference": "eeba74bcb5045682dada63be5650329c7897cb70",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/381f438bd856a0d9f25ac1410b7eec4f9873c5be",
+                "reference": "381f438bd856a0d9f25ac1410b7eec4f9873c5be",
                 "shasum": ""
             },
             "require": {
@@ -9313,9 +9313,9 @@
             ],
             "description": "Drupal 8 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/feature/address-in-digital-post-pdfs"
+                "source": "https://github.com/itk-dev/os2forms/tree/feature/sender-address-in-digital-post"
             },
-            "time": "2026-03-09T08:38:05+00:00"
+            "time": "2026-03-16T09:35:29+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -22954,9 +22954,9 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-release/5.1.1",
-            "alias": "5.1.1",
-            "alias_normalized": "5.1.1.0"
+            "version": "dev-feature/sender-address-in-digital-post",
+            "alias": "5.1.2",
+            "alias_normalized": "5.1.2.0"
         }
     ],
     "minimum-stability": "dev",
