@@ -75,9 +75,12 @@ footer {
   position: absolute;
   top: 12mm;
   left: 4mm;
-  font-size: 8px;
+  font-size: 7px;
   height: 4mm;
   width: 71mm;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .footer-content {
