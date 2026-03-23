@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0e2b8da0726b7dbf7e1c90e91688ee2",
+    "content-hash": "9723681d4455fdb57a04d756e48f3684",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9168,16 +9168,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-feature/sender-address-in-digital-post",
+            "version": "dev-release/5.1.2-and-maps-fixes",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "381f438bd856a0d9f25ac1410b7eec4f9873c5be"
+                "reference": "af09cfce9c7b992c372e66c6504b4c7ffbf44172"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/381f438bd856a0d9f25ac1410b7eec4f9873c5be",
-                "reference": "381f438bd856a0d9f25ac1410b7eec4f9873c5be",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/af09cfce9c7b992c372e66c6504b4c7ffbf44172",
+                "reference": "af09cfce9c7b992c372e66c6504b4c7ffbf44172",
                 "shasum": ""
             },
             "require": {
@@ -9280,7 +9280,7 @@
                         "Add custom hook (hook_webform_post_load_data) for audit logging": "https://gist.githubusercontent.com/cableman/d26898fc8f65ee0a31001bf391583b59/raw/6189dc4c2ceaabb19d25cc4b98b0b3028a6b0e1e/gistfile1.txt"
                     },
                     "drupal/webform_encrypt": {
-                        "Ensure data is base64 encoded (https://www.drupal.org/project/webform_encrypt/issues/3399414)": "https://git.drupalcode.org/project/webform_encrypt/-/merge_requests/4.patch",
+                        "Ensure data is base64 encoded (https://www.drupal.org/project/webform_encrypt/issues/3399414)": "https://www.drupal.org/files/issues/2026-02-06/patch.diff",
                         "PHP Warning if unserialize fails (https://www.drupal.org/project/webform_encrypt/issues/3292305)": "https://www.drupal.org/files/issues/2022-06-23/unserialize-php-notice.patch"
                     },
                     "drupal/webform_node_element": {
@@ -9313,9 +9313,9 @@
             ],
             "description": "Drupal 8 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/feature/sender-address-in-digital-post"
+                "source": "https://github.com/itk-dev/os2forms/tree/release/5.1.2-and-maps-fixes"
             },
-            "time": "2026-03-16T09:35:29+00:00"
+            "time": "2026-03-23T12:57:38+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -22954,9 +22954,9 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-feature/sender-address-in-digital-post",
-            "alias": "5.1.2",
-            "alias_normalized": "5.1.2.0"
+            "version": "dev-release/5.1.2-and-maps-fixes",
+            "alias": "5.1.3",
+            "alias_normalized": "5.1.3.0"
         }
     ],
     "minimum-stability": "dev",
