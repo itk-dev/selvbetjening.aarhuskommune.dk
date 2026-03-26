@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Opdaterede Maestro notifikations-skabelon
+
 ## [5.1.2] 2025-03-23
 
 * Tilføjede mulighed for returadresse i digital post.
