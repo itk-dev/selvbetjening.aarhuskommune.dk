@@ -34,7 +34,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ message.subject }}</title>
-  <link rel="stylesheet" media="all" href="{{ base_url }}/themes/custom/os2forms_selvbetjening_theme/assets/pdf.css" />
+  <link rel="stylesheet" media="all" href="{{ base_url }}/themes/custom/os2forms_selvbetjening_theme/build/pdf.css" />
 </head>
 <body>
 <header>
@@ -44,18 +44,21 @@
       <br/>
     </p>
   </div>
+</header>
+
+<footer>
   <div class="page-numbers">
     <span>{{ 'Page'|t }}</span>
     <span class="page-number">
-        {# Page number inserted by css. #}
-      </span>
+      {# Page number inserted by css. #}
+    </span>
     <span>{{ 'of'|t }}</span>
     <span class="page-count">
       {# String replace is done by by entity_print_module #}
       {{ '@@PC' }}
-      </span>
+    </span>
   </div>
-</header>
+</footer>
 
 <div class="page">
   <div>
