@@ -1,0 +1,5 @@
+services:
+  Drupal\os2forms_selvbetjening_examples\Helper:
+    arguments:
+      - '@entity_type.manager'
+      - '@config.factory'

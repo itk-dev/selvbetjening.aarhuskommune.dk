@@ -1,0 +1,110 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - os2forms_permissions_by_term
+    - os2forms_selvbetjening_examples
+  enforced:
+    module:
+      - os2forms_selvbetjening_examples
+third_party_settings:
+  os2forms_permissions_by_term:
+    maestro_template_permissions_by_term_settings: []
+id: example_flow_page
+label: 'example flow page'
+app_group: 0
+canvas_height: 900
+canvas_width: 800
+default_workflow_timeline_stage_count: 0
+show_details: false
+validated: true
+views_attached:
+  maestro_completed_tasks:
+    view_machine_name: maestro_completed_tasks
+    view_weight: -9
+    view_display: default;Master
+  maestro_entity_identifiers:
+    view_machine_name: maestro_entity_identifiers
+    view_weight: -10
+    view_display: 'taskconsole_display;Task Console Display'
+variables:
+  initiator:
+    variable_id: initiator
+    variable_value: '0'
+  workflow_timeline_stage_count:
+    variable_id: workflow_timeline_stage_count
+    variable_value: ''
+  workflow_current_stage:
+    variable_id: workflow_current_stage
+    variable_value: ''
+  workflow_current_stage_message:
+    variable_id: workflow_current_stage_message
+    variable_value: ''
+tasks:
+  start:
+    id: start
+    tasktype: MaestroStart
+    label: Start
+    nextstep: example_flow_step_2
+    nextfalsestep: ''
+    top: '50'
+    left: '40'
+    assignby: fixed
+    assignto: engine
+  end:
+    id: end
+    tasktype: MaestroEnd
+    label: End
+    nextstep: ''
+    nextfalsestep: ''
+    top: '50'
+    left: '360'
+    assignby: fixed
+    assignto: engine
+  example_flow_step_2:
+    id: example_flow_step_2
+    tasktype: MaestroWebformInherit
+    label: 'example flow step 2'
+    nextstep: end
+    nextfalsestep: ''
+    runonce: false
+    top: '50'
+    left: '200'
+    assignby: fixed
+    assignto: ''
+    assigned: 'role:fixed:administrator'
+    handler: ''
+    showindetail: true
+    participate_in_workflow_status_stage: false
+    workflow_status_stage_number: 0
+    workflow_status_stage_message: ''
+    data:
+      unique_id: example_flow_step_2
+      webform_machine_name: example_flow_step_2
+      modal: notmodal
+      skip_webform_handlers: 1
+      webform_nodes_attached_to: node/0
+      use_nodes_attached: 1
+      webform_nodes_attached_variable: none
+      redirect_to: taskconsole
+      show_edit_form: 1
+      inherit_webform_unique_id: submission
+      inherit_webform_create_submission: 1
+    notifications:
+      notification_assignment: ''
+      notification_reminder: ''
+      notification_escalation: ''
+      escalation_after: 0
+      reminder_after: 0
+      notification_assignment_subject: ''
+      notification_reminder_subject: ''
+      notification_escalation_subject: ''
+    raphael: ''
+    to: ''
+    pointedfrom: ''
+    falsebranch: ''
+    lines: {  }
+initiator: null
+workflow_timeline_stage_count: null
+workflow_current_stage: null
+workflow_current_stage_message: null

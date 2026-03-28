@@ -1,0 +1,7 @@
+name: 'selvbetjening.aarhus.dk examples'
+type: module
+description: 'Provides example forms and flows for selvbetjening.aarhus.dk.'
+package: 'OS2Forms'
+core_version_requirement: ^9
+# dependencies:
+#   - 'webform:webform'
