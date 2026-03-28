@@ -2,6 +2,8 @@
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.13.9",
     "markdownlint-cli": "^0.31.1"
   },
   "scripts": {

@@ -5,6 +5,9 @@ networks:
     external: true
     name: serviceplatformen_organisation_api_app
 
+include:
+  - docker-compose.playwright.yml
+
 services:
   phpfpm:
     networks:
@@ -16,7 +19,7 @@ services:
       - PHP_MEMORY_LIMIT=512M
 
   node:
-    image: node:16
+    image: node:22
     profiles:
       - dev
     networks:
