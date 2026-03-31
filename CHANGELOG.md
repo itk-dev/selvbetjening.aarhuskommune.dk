@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.3] 2025-03-31
+
 * Opdaterede Maestro notifikations-skabelon
 
 ## [5.1.2] 2025-03-23
@@ -767,7 +769,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.2...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.3...HEAD
+[5.1.3]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.2...5.1.3
 [5.1.2]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.1...5.1.2
 [5.1.1]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.0...5.1.1
 [5.1.0]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.0.4...5.1.0
