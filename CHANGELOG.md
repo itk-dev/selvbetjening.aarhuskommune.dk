@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* GO-handler oversætter nu ikke længere fejlbeskeder.
+
 ## [5.1.3] 2025-03-31
 
 * Opdaterede Maestro notifikations-skabelon
