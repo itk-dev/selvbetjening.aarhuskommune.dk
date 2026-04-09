@@ -9363,16 +9363,16 @@
         },
         {
             "name": "os2forms/os2forms_get_organized",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OS2Forms/os2forms_get_organized.git",
-                "reference": "98eba74dd9cbf283f43f730b6851fb756456d677"
+                "reference": "f323ee0251229e85afbb2fa112297980af0173f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2Forms/os2forms_get_organized/zipball/98eba74dd9cbf283f43f730b6851fb756456d677",
-                "reference": "98eba74dd9cbf283f43f730b6851fb756456d677",
+                "url": "https://api.github.com/repos/OS2Forms/os2forms_get_organized/zipball/f323ee0251229e85afbb2fa112297980af0173f4",
+                "reference": "f323ee0251229e85afbb2fa112297980af0173f4",
                 "shasum": ""
             },
             "require": {
@@ -9404,9 +9404,9 @@
             "description": "OS2Forms GetOrganized integration",
             "support": {
                 "issues": "https://github.com/OS2Forms/os2forms_get_organized/issues",
-                "source": "https://github.com/OS2Forms/os2forms_get_organized/tree/2.1.0"
+                "source": "https://github.com/OS2Forms/os2forms_get_organized/tree/2.1.1"
             },
-            "time": "2025-12-11T14:05:48+00:00"
+            "time": "2026-04-09T10:23:34+00:00"
         },
         {
             "name": "os2forms/os2forms_organisation",
