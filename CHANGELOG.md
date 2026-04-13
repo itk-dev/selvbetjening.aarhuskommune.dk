@@ -6,6 +6,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Opdaterede OS2Forms Kort-elementet.
 * GO-handler oversætter nu ikke længere fejlbeskeder.
 
 ## [5.1.3] 2025-03-31
