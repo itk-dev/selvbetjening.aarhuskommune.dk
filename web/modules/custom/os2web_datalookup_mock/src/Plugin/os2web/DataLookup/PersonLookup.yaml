@@ -1,0 +1,34 @@
+1234567890:
+  persondata:
+    status:
+      status: 0
+    navn:
+      personadresseringsnavn: Test Testersen
+    foedselsdato:
+      # Y-m-dP
+      dato: '2001-01-01+02:00'
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: '2001-01-01T00:00:00.000+02:00'
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+  relationer:
+    barn:
+    foraeldremyndighed:
+
+0000000000:
+  persondata:
+    status:
+      status: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::CPR_STATUS_DEAD
+    navn:
+      personadresseringsnavn: Afdød Hansen
+
+
+

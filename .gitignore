@@ -71,6 +71,7 @@
 !/web/modules/custom/os2forms_queued_email
 !/web/modules/custom/os2forms_granular_permissions
 !/web/modules/custom/os2forms_selvbetjening_deprecations
+!/web/modules/custom/os2web_datalookup_mock
 
 # Ignore site specific modules.
 /web/sites/*/modules
