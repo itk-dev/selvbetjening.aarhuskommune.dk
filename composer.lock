@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0e2b8da0726b7dbf7e1c90e91688ee2",
+    "content-hash": "d780d5275f62c48a55252498b2153d7d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9168,16 +9168,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-feature/sender-address-in-digital-post",
+            "version": "dev-release/5.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "381f438bd856a0d9f25ac1410b7eec4f9873c5be"
+                "reference": "c096da53921df25ebf8841338da4b672940fbf5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/381f438bd856a0d9f25ac1410b7eec4f9873c5be",
-                "reference": "381f438bd856a0d9f25ac1410b7eec4f9873c5be",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/c096da53921df25ebf8841338da4b672940fbf5c",
+                "reference": "c096da53921df25ebf8841338da4b672940fbf5c",
                 "shasum": ""
             },
             "require": {
@@ -9280,7 +9280,7 @@
                         "Add custom hook (hook_webform_post_load_data) for audit logging": "https://gist.githubusercontent.com/cableman/d26898fc8f65ee0a31001bf391583b59/raw/6189dc4c2ceaabb19d25cc4b98b0b3028a6b0e1e/gistfile1.txt"
                     },
                     "drupal/webform_encrypt": {
-                        "Ensure data is base64 encoded (https://www.drupal.org/project/webform_encrypt/issues/3399414)": "https://git.drupalcode.org/project/webform_encrypt/-/merge_requests/4.patch",
+                        "Ensure data is base64 encoded (https://www.drupal.org/project/webform_encrypt/issues/3399414)": "https://www.drupal.org/files/issues/2026-02-06/patch.diff",
                         "PHP Warning if unserialize fails (https://www.drupal.org/project/webform_encrypt/issues/3292305)": "https://www.drupal.org/files/issues/2022-06-23/unserialize-php-notice.patch"
                     },
                     "drupal/webform_node_element": {
@@ -9311,11 +9311,11 @@
             "license": [
                 "EUPL-1.2"
             ],
-            "description": "Drupal 8 OS2Form module provides advanced webform functionality for Danish Municipalities",
+            "description": "Drupal 10 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/feature/sender-address-in-digital-post"
+                "source": "https://github.com/itk-dev/os2forms/tree/feature/maps-element-display"
             },
-            "time": "2026-03-16T09:35:29+00:00"
+            "time": "2026-04-13T12:02:30+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -9363,16 +9363,16 @@
         },
         {
             "name": "os2forms/os2forms_get_organized",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OS2Forms/os2forms_get_organized.git",
-                "reference": "98eba74dd9cbf283f43f730b6851fb756456d677"
+                "reference": "f323ee0251229e85afbb2fa112297980af0173f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2Forms/os2forms_get_organized/zipball/98eba74dd9cbf283f43f730b6851fb756456d677",
-                "reference": "98eba74dd9cbf283f43f730b6851fb756456d677",
+                "url": "https://api.github.com/repos/OS2Forms/os2forms_get_organized/zipball/f323ee0251229e85afbb2fa112297980af0173f4",
+                "reference": "f323ee0251229e85afbb2fa112297980af0173f4",
                 "shasum": ""
             },
             "require": {
@@ -9404,9 +9404,9 @@
             "description": "OS2Forms GetOrganized integration",
             "support": {
                 "issues": "https://github.com/OS2Forms/os2forms_get_organized/issues",
-                "source": "https://github.com/OS2Forms/os2forms_get_organized/tree/2.1.0"
+                "source": "https://github.com/OS2Forms/os2forms_get_organized/tree/2.1.1"
             },
-            "time": "2025-12-11T14:05:48+00:00"
+            "time": "2026-04-09T10:23:34+00:00"
         },
         {
             "name": "os2forms/os2forms_organisation",
@@ -22954,9 +22954,9 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-feature/sender-address-in-digital-post",
-            "alias": "5.1.2",
-            "alias_normalized": "5.1.2.0"
+            "version": "dev-release/5.1.4",
+            "alias": "5.1.4",
+            "alias_normalized": "5.1.4.0"
         }
     ],
     "minimum-stability": "dev",
