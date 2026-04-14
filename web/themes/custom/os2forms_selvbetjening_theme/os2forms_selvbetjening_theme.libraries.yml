@@ -8,3 +8,13 @@ logout-suggestion:
   version: 1.x
   js:
     assets/logout-suggestion.js: {}
+
+dfds-embed:
+  version: 1.x
+  css:
+    theme:
+      build/dfds.css: { }
+  js:
+    assets/js/dkfds.js: { attributes: { defer: true } }
+    build/dfds.js: { }
+
