@@ -27,7 +27,6 @@
           data-module="modal"
           data-target="modal-step-indicator-helptext">
     <span>{{ 'Step <strong>@step_no</strong> of @steps'|t({'@step_no': current_index + 1, '@steps': progress|length}) }}</span>
-    {{ include("@os2forms_selvbetjening_theme/../assets/images/hamburger-menu.svg") }}
   </button>
 </div>
 
@@ -38,7 +37,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2 class="modal-title" id="modal-step-indicator-helptext-heading">
-          {{ 'Step <strong>@step_no</strong> of @steps'|t({'@step_no': index + 1, '@steps': progress|length}) }}
+          {{ 'Step @step_no of @steps'|t({'@step_no': current_index + 1, '@steps': progress|length}) }}
         </h2>
         <button class="modal-close function-link" data-modal-close>{{ 'Close'|t }}</button>
       </div>

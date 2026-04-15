@@ -1,4 +1,4 @@
-import './scss/dfds/dfds.scss'
+import './scss/dfds.scss'
 
 document.addEventListener('DOMContentLoaded', function () {
   // DKFDS expects .fds-modal-container as a direct child of <body>
