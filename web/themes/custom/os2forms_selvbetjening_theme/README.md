@@ -2,8 +2,6 @@
 
 ## "Det Fælles Designsystem"
 
-Styling fetched from "Det Fælles Designsystem" are located in assets/scss/dfds/ folder. The assets/scss/dfds/dfds.scss file imports the desired components
-
 Current version of the design system 11.2
 
 Used components:
