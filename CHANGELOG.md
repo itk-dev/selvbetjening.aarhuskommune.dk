@@ -7,6 +7,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 ## [Under udvikling]
 
 * Add new progress bar
+
+## [5.1.4] 2025-04-13
+
+* Opdaterede OS2Forms Kort-elementet.
 * GO-handler oversætter nu ikke længere fejlbeskeder.
 
 ## [5.1.3] 2025-03-31
@@ -772,7 +776,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.3...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.4...HEAD
+[5.1.4]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.3...5.1.4
 [5.1.3]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.2...5.1.3
 [5.1.2]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.1...5.1.2
 [5.1.1]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.0...5.1.1
