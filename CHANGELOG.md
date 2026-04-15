@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Add new progress bar
+
 ## [5.1.4] 2025-04-13
 
 * Opdaterede OS2Forms Kort-elementet.

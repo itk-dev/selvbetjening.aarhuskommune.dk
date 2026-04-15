@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a webform submission form.
+ *
+ * Available variables:
+ * - form: The webform submission form.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('os2forms_selvbetjening_theme/dfds-embed') }}
+
+{% set settings = form['progress']['#webform'].getSettings %}
+{% set showProgressLeft = settings['wizard_progress_bar'] %}
+
+<div>
+  {% if showProgressLeft %}
+    <div class="progress-tracker-side">
+      {{ form['progress'] }}
+    </div>
+    <div class="form-content">
+      {{ form|without('progress') }}
+    </div>
+  {% else %}
+    <div class="container">
+      {{ form }}
+    </div>
+  {% endif %}
+</div>
+
+
+
+
