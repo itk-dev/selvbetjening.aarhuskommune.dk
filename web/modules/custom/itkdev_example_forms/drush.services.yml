@@ -1,0 +1,9 @@
+services:
+  itkdev_example_forms.export_webforms:
+    class: Drupal\itkdev_example_forms\Command\ExportWebformsCommand
+    arguments:
+      - '@config.manager'
+      - '@extension.list.module'
+      - '@file_system'
+    tags:
+      - { name: console.command }
