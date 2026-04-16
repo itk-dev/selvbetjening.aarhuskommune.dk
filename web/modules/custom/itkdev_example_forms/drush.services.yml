@@ -7,3 +7,11 @@ services:
       - '@file_system'
     tags:
       - { name: console.command }
+
+  itkdev_example_forms.reset_webforms:
+    class: Drupal\itkdev_example_forms\Command\ResetWebformsCommand
+    arguments:
+      - '@config.manager'
+      - '@extension.list.module'
+    tags:
+      - { name: console.command }

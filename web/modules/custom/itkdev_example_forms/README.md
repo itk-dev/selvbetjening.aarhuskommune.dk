@@ -62,4 +62,8 @@ You can reset a set of example forms with the follow incantation:
 drush config:import --source=modules/custom/itkdev_example_forms/modules/itkdev_ex_misc/config/install/ --partial
 ```
 
-<!-- @todo Add a Drush comment to reset a single form. -->
+Reset (config for) select webforms with
+
+``` shell
+drush itkdev-example-forms:webforms:reset
+```
