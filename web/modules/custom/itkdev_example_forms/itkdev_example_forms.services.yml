@@ -5,3 +5,5 @@ services:
   Drupal\itkdev_example_forms\Fixture\UserAffiliationTermFixture:
     tags:
       - { name: content_fixture }
+
+  Drupal\itkdev_example_forms\WebformHelper:
