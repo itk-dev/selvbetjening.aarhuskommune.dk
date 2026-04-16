@@ -103,33 +103,30 @@ final class ExportWebformsCommand extends Command {
         ]));
       }
 
-      foreach ($configNames as $name) {
-        $targetName = $targetDir . '/' . $name . '.yml';
-
-        if ($output->isVerbose()) {
-          $io->section($name);
-        }
-
-        $config = $configFactory->getEditable($name);
-        foreach (static::$configKeysToClear as $key) {
-          if ($output->isVerbose()) {
-            $io->writeln(dt('Clearing key %config_key', ['%config_key' => $key]));
-          }
-          $config->clear($key);
-        }
-
-        $dependencies = $config->get('dependencies');
-        $enforcedModules = $dependencies['enforced']['module'] ?? [];
-        $dependencies['enforced']['module'] = array_unique((array) $enforcedModules + [$moduleName]);
-        $config->set('dependencies', $dependencies);
-
-        // @todo (How) Can we use the config manager (or factory) to do this?
-        file_put_contents($targetName, Yaml::encode($config->get()));
-        $io->success(dt('Config %config_name written to %file', [
-          '%config_name' => $configName,
-          '%file' => $targetName,
-        ]));
+      if ($output->isVerbose()) {
+        $io->section($configName);
       }
+
+      $config = $configFactory->getEditable($configName);
+      foreach (static::$configKeysToClear as $key) {
+        if ($output->isVerbose()) {
+          $io->writeln(dt('Clearing key %config_key', ['%config_key' => $key]));
+        }
+        $config->clear($key);
+      }
+
+      $dependencies = $config->get('dependencies');
+      $enforcedModules = $dependencies['enforced']['module'] ?? [];
+      $dependencies['enforced']['module'] = array_unique((array) $enforcedModules + [$moduleName]);
+      $config->set('dependencies', $dependencies);
+
+      $targetName = $targetDir . '/' . $configName . '.yml';
+      // @todo (How) Can we use the config manager (or factory) to do this?
+      file_put_contents($targetName, Yaml::encode($config->get()));
+      $io->success(dt('Config %config_name written to %file', [
+        '%config_name' => $configName,
+        '%file' => $targetName,
+      ]));
     }
 
     return self::SUCCESS;
