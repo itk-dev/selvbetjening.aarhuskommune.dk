@@ -25,9 +25,16 @@ class ServiceplatformenCPRExtendedMock extends ServiceplatformenCPRExtended {
 
       $result = $data[$id] + ['status' => TRUE];
 
-      // Convert to object.
-      $result['persondata'] = json_decode(json_encode($result['persondata']));
-      $result['adresse'] = json_decode(json_encode($result['adresse']));
+      // Convert some (JSON) values to objects.
+      foreach ([
+                 'persondata',
+                 'adresse',
+                 'relationer',
+               ] as $key) {
+        if (isset($result[$key]) && is_array($result[$key])) {
+          $result[$key] = json_decode(json_encode($result[$key]));
+        }
+      }
 
       return $result;
     }

@@ -5,6 +5,7 @@
  * Module file for os2web_datalookup_mock.
  */
 
+// @todo Remove this file when upgrading to Drupal 11 (cf. https://www.drupal.org/node/3442349).
 use Drupal\os2web_datalookup_mock\Hook\Hooks;
 
 /**

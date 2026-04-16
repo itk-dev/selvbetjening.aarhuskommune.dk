@@ -1,12 +1,128 @@
-1234567890:
+# https://cprservicedesk.atlassian.net/wiki/spaces/CPR/pages/11436127/Testdata » Testpersoner i demo.xlsx » Version 7?
+
+
+# flowchart TD
+#     1111110010 -->|mor| 1111110000
+#     1111110020 -->|mor| 1111110000
+#     1111110010 -->|far| 1111110001
+
+#     1111110000 -->|barn| 1111110010
+#     1111110000 -->|barn| 1111110020
+#     1111110001 -->|barn| 111111001
+
+
+# Map from CPR (PNR) to user data.
+
+'1111110000':
   persondata:
     status:
-      status: 0
+      status: '01'
     navn:
-      personadresseringsnavn: Test Testersen
+      personadresseringsnavn: 'Mother 62'
     foedselsdato:
       # Y-m-dP
-      dato: '2001-01-01+02:00'
+      dato: '1981-12-13+01:00'
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: '2001-01-01T00:00:00.000+02:00'
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    barn:
+      - personnummer: '1111110010'
+      - personnummer: '1111110020'
+    foraeldremyndighed:
+
+'1111110001':
+  persondata:
+    status:
+      status: '01'
+    navn:
+      personadresseringsnavn: 'Father Vader'
+    foedselsdato:
+      # Y-m-dP
+      dato: '1981-12-13+01:00'
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: '2001-01-01T00:00:00.000+02:00'
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    barn:
+      - personnummer: '1111110010'
+    foraeldremyndighed:
+
+'1111110010':
+  persondata:
+    status:
+      status: '01'
+    navn:
+      personadresseringsnavn: 'Child 01'
+    foedselsdato:
+      # Y-m-dP
+      dato: '1981-12-13+01:00'
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: '2001-01-01T00:00:00.000+02:00'
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    foraeldremyndighed:
+      - foraeldremyndighedtype: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::GUARDIAN_MOTHER
+      - foraeldremyndighedtype: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::GUARDIAN_FATHER
+    mor:
+      personnummer: '1111110000'
+    far:
+      personnummer: '1111110001'
+
+'1111110020':
+  persondata:
+    status:
+      status: '01'
+    navn:
+      personadresseringsnavn: 'Child 02'
+    foedselsdato:
+      # Y-m-dP
+      dato: '1981-12-13+01:00'
     tilmeldtDigitalpost: true
     adressebeskyttelse:
       beskyttet: true
@@ -19,16 +135,22 @@
   adresse:
     aktuelAdresse:
       vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
   relationer:
-    barn:
     foraeldremyndighed:
+      - foraeldremyndighedtype: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::GUARDIAN_MOTHER
+      - foraeldremyndighedtype: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::GUARDIAN_FATHER
+    mor:
+      personnummer: '1111110000'
 
-0000000000:
+'0000000000':
   persondata:
     status:
       status: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::CPR_STATUS_DEAD
     navn:
       personadresseringsnavn: Afdød Hansen
-
-
-

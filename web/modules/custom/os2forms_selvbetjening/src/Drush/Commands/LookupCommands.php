@@ -42,6 +42,8 @@ final class LookupCommands extends DrushCommands {
     string $cpr,
     array $options = [
       'dump-configuration' => FALSE,
+      'fetch-children' => FALSE,
+      'dump-result' => FALSE,
     ],
   ) {
     try {
@@ -53,10 +55,13 @@ final class LookupCommands extends DrushCommands {
           Yaml::dump($instance->getConfiguration()),
         ]);
       }
-      $result = $instance->lookup($cpr);
+      $result = $instance->lookup($cpr, $options['fetch-children']);
 
       if (!$result->isSuccessful()) {
         $this->output()->writeln($result->getErrorMessage());
+      }
+      else if ($options['dump-result']) {
+        $this->output()->write(print_r($result, true));
       }
       else {
         $this->output()->write($result->getName());
