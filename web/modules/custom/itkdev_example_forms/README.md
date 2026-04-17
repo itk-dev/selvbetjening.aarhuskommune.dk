@@ -2,8 +2,8 @@
 
 Webform examples for Selvbetjening.
 
-The basic idea is that we export webforms with IDs matching specific patterns into the `config/install` folder in
-sub-modules to group releated webforms.
+The basic idea is that we export webforms with IDs matching specific patterns
+into the `config/install` folder in sub-modules to group releated webforms.
 
 ## Example usage
 
@@ -42,8 +42,8 @@ sub-modules to group releated webforms.
 
    to export the updated webform
 
-See [`itkdev_ex_misc.install`](modules/itkdev_ex_misc/itkdev_ex_misc.install) for examples on how to create content
-pages for an example webform.
+See [`itkdev_ex_misc.install`](modules/itkdev_ex_misc/itkdev_ex_misc.install)
+for examples on how to create content pages for an example webform.
 
 ## Installation
 
