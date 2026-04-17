@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the itkdev_ex_nemlogin module.
+ */
+
+use Drupal\itkdev_ex_nemlogin\SettingsHelper;
+use Drupal\itkdev_example_forms\WebformHelper;
+use Drupal\webform\Entity\Webform;
+
+/**
+ * Implements hook_install().
+ */
+function itkdev_ex_nemlogin_install(bool $is_syncing) : void {
+  if (!$is_syncing) {
+    /** @var \Drupal\itkdev_ex_nemlogin\SettingsHelper $helper */
+    $helper = \Drupal::service(SettingsHelper::class);
+    $helper->setConfig();
+
+    /** @var \Drupal\itkdev_example_forms\WebformHelper $helper */
+    $helper = \Drupal::service(WebformHelper::class);
+
+    $webformId = 'itkdev_ex_nemlogin_000';
+    if ($webform = Webform::load($webformId)) {
+      $helper->createWebformPage($webform, [
+        'title' => $webform->label(),
+        WebformHelper::FIELD_OS2FORMS_PERMISSIONS => array_filter((array) $webform->getThirdPartySetting('os2forms_permissions_by_term',
+          'settings')),
+      ]);
+    }
+  }
+}

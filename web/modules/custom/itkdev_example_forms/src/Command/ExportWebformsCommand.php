@@ -24,10 +24,14 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 final class ExportWebformsCommand extends Command {
   use AutowireTrait;
 
+  // @todo Use an event to let modules tell which config names they want to control?
+  // @todo Simplify this (?!):
+  //   webform.webform.itkdev_ex_{module-suffix}_{id} goes to
+  //   module://itkdev_ex_{module-suffix}/config/install/ (longest match wins)
   private const CONFIG_NAME_PATTERNS = [
     // Regexp => module name.
     '/^webform\.webform\.itkdev_ex_/' => 'itkdev_ex_misc',
-    '/^webform\.webform\.itkdev_ex_mitid_/' => 'itkdev_ex_mitid',
+    '/^webform\.webform\.itkdev_ex_nemlogin_/' => 'itkdev_ex_nemlogin',
   ];
 
   /**

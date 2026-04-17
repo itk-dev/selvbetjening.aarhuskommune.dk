@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Module file for os2web_datalookup_mock.
+ */
+
+// @todo Remove this file when upgrading to Drupal 11 (cf. https://www.drupal.org/node/3442349).
+use Drupal\os2web_datalookup_mock\Hook\Hooks;
+
+/**
+ * Implements os2web_datalookup_info_alter().
+ */
+function os2web_datalookup_mock_os2web_datalookup_info_alter(array &$data): void {
+  \Drupal::service(Hooks::class)->os2webDatalookupInfoAlter($data);
+}
