@@ -8,14 +8,13 @@ use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Config\ConfigManagerInterface;
 use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\Core\Extension\Exception\UnknownExtensionException;
-use Drupal\Core\Extension\ModuleExtensionList;
+use Drupal\Core\Extension\ModuleHandler;
 use Drupal\Core\File\FileSystemInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 // phpcs:disable Drupal.Commenting.ClassComment.Missing
 #[AsCommand(
@@ -46,8 +45,7 @@ final class ExportWebformsCommand extends Command {
    */
   public function __construct(
     private readonly ConfigManagerInterface $configManager,
-    #[Autowire(service: 'extension.list.module')]
-    private readonly ModuleExtensionList $moduleExtensionList,
+    private readonly ModuleHandler $moduleHandler,
     private readonly FileSystemInterface $fileSystem,
   ) {
     parent::__construct();
@@ -86,13 +84,14 @@ final class ExportWebformsCommand extends Command {
     foreach ($configNames as $configName) {
       $moduleName = $this->getModuleName($configName);
       try {
-        $moduleDir = $this->moduleExtensionList->getPath($moduleName);
+        $module = $this->moduleHandler->getModule($moduleName);
       }
       catch (UnknownExtensionException $exception) {
         $io->error($exception->getMessage());
         continue;
       }
-      $targetDir = $moduleDir . '/config/install';
+
+      $targetDir = $module->getPath() . '/config/install';
       if (!is_dir($targetDir)) {
         $this->fileSystem->mkdir($targetDir, recursive: TRUE);
       }

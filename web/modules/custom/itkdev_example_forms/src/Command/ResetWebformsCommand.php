@@ -7,14 +7,14 @@ namespace Drupal\itkdev_example_forms\Command;
 use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Config\ConfigManagerInterface;
 use Drupal\Core\DependencyInjection\AutowireTrait;
-use Drupal\Core\Extension\ModuleExtensionList;
+use Drupal\Core\Extension\Exception\UnknownExtensionException;
+use Drupal\Core\Extension\ModuleHandler;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 // phpcs:disable Drupal.Commenting.ClassComment.Missing
 #[AsCommand(
@@ -29,8 +29,7 @@ final class ResetWebformsCommand extends Command {
    */
   public function __construct(
     private readonly ConfigManagerInterface $configManager,
-    #[Autowire(service: 'extension.list.module')]
-    private readonly ModuleExtensionList $moduleExtensionList,
+    private readonly ModuleHandler $moduleHandler,
   ) {
     parent::__construct();
   }
@@ -69,9 +68,18 @@ final class ResetWebformsCommand extends Command {
         throw new \RuntimeException(dt('Cannot find module for webform %webform_id', ['%webform_id' => $id]));
       }
 
-      $moduleDir = $this->moduleExtensionList->getPath($moduleName);
+      try {
+        $module = $this->moduleHandler->getModule($moduleName);
+      }
+      catch (UnknownExtensionException $exception) {
+        $io->error($exception->getMessage());
+        continue;
+      }
 
-      $filename = $moduleDir . '/config/install/' . $configName . '.yml';
+      $filename = $module->getPath() . '/config/install/' . $configName . '.yml';
+      if (!file_exists($filename)) {
+        throw new \RuntimeException(dt('Config file %config_file does not exist', ['%config_file' => $filename]));
+      }
       $data = Yaml::decode(file_get_contents($filename));
       $config->setData($data);
       $config->save();

@@ -3,7 +3,7 @@ services:
     class: Drupal\itkdev_example_forms\Command\ExportWebformsCommand
     arguments:
       - '@config.manager'
-      - '@extension.list.module'
+      - '@module_handler'
       - '@file_system'
     tags:
       - { name: console.command }
@@ -12,6 +12,6 @@ services:
     class: Drupal\itkdev_example_forms\Command\ResetWebformsCommand
     arguments:
       - '@config.manager'
-      - '@extension.list.module'
+      - '@module_handler'
     tags:
       - { name: console.command }
