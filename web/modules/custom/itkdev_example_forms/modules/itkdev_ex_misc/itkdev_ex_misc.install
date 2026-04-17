@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the itkdev_ex_misc module.
+ */
+
+use Drupal\itkdev_example_forms\Fixture\UserAffiliationTermFixture;
+use Drupal\itkdev_example_forms\WebformHelper;
+use Drupal\webform\Entity\Webform;
+
+/**
+ * Implements hook_install().
+ */
+function itkdev_ex_misc_install(bool $is_syncing) : void {
+  /** @var \Drupal\itkdev_example_forms\WebformHelper $helper */
+  $helper = \Drupal::service(WebformHelper::class);
+
+  $webformId = 'itkdev_ex_000';
+  if ($webform = Webform::load($webformId)) {
+    $helper->createWebformPage($webform, [
+      'title' => $webform->label(),
+      WebformHelper::FIELD_OS2FORMS_PERMISSIONS => [
+        UserAffiliationTermFixture::ITK_DEVELOPMENT,
+      ],
+    ]);
+  }
+
+  $webformId = 'itkdev_ex_001';
+  if ($webform = Webform::load($webformId)) {
+    $helper->createWebformPage($webform, [
+      'title' => $webform->label(),
+      WebformHelper::FIELD_OS2FORMS_PERMISSIONS => array_filter((array) $webform->getThirdPartySetting('os2forms_permissions_by_term', 'settings')),
+    ]);
+  }
+
+}

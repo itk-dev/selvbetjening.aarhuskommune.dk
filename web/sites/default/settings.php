@@ -828,6 +828,11 @@ $settings['twig_sandbox_allowed_methods'] = [
   'createFileUrl'
 ];
 
+// Ignore itkdev_example_forms and friends.
+$settings['config_exclude_modules'][] = 'itkdev_example_forms';
+$settings['config_exclude_modules'][] = 'content_fixtures';
+$settings['config_exclude_modules'][] = 'itkdev_ex_misc';
+
 /**
  * Load local development override configuration, if available.
  *

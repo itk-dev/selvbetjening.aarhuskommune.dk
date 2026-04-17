@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d780d5275f62c48a55252498b2153d7d",
+    "content-hash": "a687a555ae24d01aa256f781b8f21d9f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6888,12 +6888,12 @@
             "version": "v6.11.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/firebase/php-jwt.git",
+                "url": "https://github.com/googleapis/php-jwt.git",
                 "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
+                "url": "https://api.github.com/repos/googleapis/php-jwt/zipball/d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
                 "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
                 "shasum": ""
             },
@@ -17818,6 +17818,30 @@
             "time": "2024-05-06T16:37:16+00:00"
         },
         {
+            "name": "custom/itkdev_example_forms",
+            "version": "1.0-dev",
+            "dist": {
+                "type": "path",
+                "url": "web/modules/custom/itkdev_example_forms",
+                "reference": "63040160a6e7e6e3091e4fba42331d59d3bdbe67"
+            },
+            "require": {
+                "drupal/content_fixtures": "^3.2"
+            },
+            "type": "drupal-custom-module",
+            "authors": [
+                {
+                    "name": "Mikkel Ricky",
+                    "email": "rimi@aarhus.dk"
+                }
+            ],
+            "description": "custom/itkdev_example_forms",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
             "version": "v1.2.0",
             "source": {
@@ -17963,6 +17987,62 @@
                 "source": "https://www.drupal.org/project/coder"
             },
             "time": "2025-10-16T12:23:49+00:00"
+        },
+        {
+            "name": "drupal/content_fixtures",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/content_fixtures.git",
+                "reference": "3.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/content_fixtures-3.2.0.zip",
+                "reference": "3.2.0",
+                "shasum": "355aa636d7f55c07128a92fd11405d35c2c855dc"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9 || ^10 || ^11",
+                "drush/drush": "^9 || ^10 || ^11 || ^12 || ^13",
+                "php": ">=7.1.0"
+            },
+            "suggest": {
+                "fakerphp/faker": "Fake data generator. Generates multiple types of fake data.",
+                "joshtronic/php-loremipsum": "Lorem ipsum generator for dummy content."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.2.0",
+                    "datestamp": "1737128481",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10 || ^11 || ^12 || ^13"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Łukasz Zaroda",
+                    "homepage": "https://www.drupal.org/user/1890152",
+                    "email": "luken@luken-tech.pl"
+                }
+            ],
+            "description": "Module privides an API for creating generators of dummy content in a way similar to the 'DoctrineFixturesBundle'.",
+            "homepage": "https://www.drupal.org/project/content_fixtures",
+            "support": {
+                "source": "https://git.drupalcode.org/project/content_fixtures"
+            }
         },
         {
             "name": "drupal/core-dev",
