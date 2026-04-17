@@ -1,0 +1,23 @@
+services:
+  # https://github.com/geigerzaehler/oidc-provider-mock
+  idp-citizen:
+    image: ghcr.io/geigerzaehler/oidc-provider-mock:latest
+    container_name: idp-citizen.${COMPOSE_DOMAIN}
+    networks:
+      - app
+      - frontend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=frontend"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-idp-citizen.rule=Host(`idp-citizen.${COMPOSE_DOMAIN}`)"
+    expose:
+      - "80"
+    command:
+      [
+        "--port", "80",
+
+        "--user-claims",
+        '{"sub": "Mother with two children", "cpr": "1111110000", "name": "Mother 62"}',
+        "--user-claims",
+        '{"sub": "Father with a single child", "cpr": "1111110001", "name": "Father Vader"}',
+      ]

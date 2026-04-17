@@ -5,6 +5,9 @@
 #     external: true
 #     name: serviceplatformen_organisation_api_app
 
+include:
+  - docker-compose.oidc.yml
+
 services:
   phpfpm:
     image: itkdev/php8.3-fpm:latest
@@ -137,123 +140,4 @@ services:
             ValueType: json
           - Type: nameidentifier
             Value: test12345
-            ValueType: string
-
-  idp-citizen:
-    image: ghcr.io/soluto/oidc-server-mock:latest
-    # Let this container be accessible both internally and externally on the same domain.
-    container_name: idp-citizen.${COMPOSE_DOMAIN}
-    profiles:
-      - test
-    networks:
-      - app
-      - frontend
-    ports:
-      - "80"
-    volumes:
-      - .:/tmp/config:ro
-    labels:
-      - "traefik.enable=true"
-      - "traefik.docker.network=frontend"
-      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}_idp-citizen.rule=Host(`idp-citizen.${COMPOSE_DOMAIN}`)"
-      - "traefik.http.services.${COMPOSE_PROJECT_NAME}_idp-citizen.loadbalancer.server.port=80"
-    environment:
-      ASPNETCORE_ENVIRONMENT: Development
-      SERVER_OPTIONS_INLINE: |
-        AccessTokenJwtType: JWT
-        Discovery:
-          ShowKeySet: true
-        Authentication:
-          CookieSameSiteMode: Lax
-          CheckSessionCookieSameSiteMode: Lax
-
-      LOGIN_OPTIONS_INLINE: |
-        {
-          "AllowRememberLogin": false
-        }
-
-      LOGOUT_OPTIONS_INLINE: |
-        {
-          "AutomaticRedirectAfterSignOut": true
-        }
-
-      CLIENTS_CONFIGURATION_INLINE: |
-        - ClientId: client-id
-          ClientSecrets: [client-secret]
-          Description: Mock citizen IdP
-          AllowedGrantTypes:
-            # - client_credentials
-            # - implicit
-            - authorization_code
-          # https://github.com/Soluto/oidc-server-mock/issues/46#issuecomment-704963181
-          RequireClientSecret: false
-          AllowAccessTokensViaBrowser: true
-          # https://github.com/Soluto/oidc-server-mock/issues/26#issuecomment-705022941
-          AlwaysIncludeUserClaimsInIdToken: true
-          AllowedScopes:
-            - openid
-            - profile
-            - email
-          ClientClaimsPrefix: ''
-          RedirectUris:
-            - '*'
-          # https://github.com/Soluto/oidc-server-mock/issues/60
-          PostLogoutRedirectUris:
-            - '*'
-          # https://github.com/Soluto/oidc-server-mock/issues/46#issuecomment-704845375
-          RequirePkce: false
-
-      # Needed to set custom claim types in "profile"
-      # https://github.com/Soluto/oidc-server-mock/issues/123#issuecomment-1427129278
-      OVERRIDE_STANDARD_IDENTITY_RESOURCES: true
-      IDENTITY_RESOURCES_INLINE: |
-        # https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes#standard-claims
-        - Name: openid
-          ClaimTypes:
-            - sub
-        - Name: email
-          ClaimTypes:
-            - email
-        - Name: profile
-          ClaimTypes:
-            # Add your custom claims here
-            - name
-            - cpr
-            - cvr
-
-      USERS_CONFIGURATION_INLINE: |
-        - SubjectId: '1705880000'
-          Username: '1705880000'
-          Password: '1705880000'
-          Claims:
-            # Claims added here must be defined above in IDENTITY_RESOURCES_INLINE
-          - Type: name
-            Value: Troels Bondetest
-            ValueType: string
-          - Type: cpr
-            Value: '1705880000'
-            ValueType: string
-
-        - SubjectId: '2611740000'
-          Username: '2611740000'
-          Password: '2611740000'
-          Claims:
-            # Claims added here must be defined above in IDENTITY_RESOURCES_INLINE
-          - Type: name
-            Value: Betina Henningsentest
-            ValueType: string
-          - Type: cpr
-            Value: '2611740000'
-            ValueType: string
-
-        - SubjectId: '43486829'
-          Username: '43486829'
-          Password: '43486829'
-          Claims:
-            # Claims added here must be defined above in IDENTITY_RESOURCES_INLINE
-          - Type: name
-            Value: grillkylling.nu
-            ValueType: string
-          - Type: cvr
-            Value: '43486829'
             ValueType: string
