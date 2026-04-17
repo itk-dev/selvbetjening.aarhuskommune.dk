@@ -5,8 +5,18 @@ Webform examples form Selvbetjening.
 ## Installation
 
 ``` shell
+# Optional
+# drush site:install --existing-config --yes
 drush pm:install itkdev_example_forms
 ```
+
+Run
+
+``` shell
+drush list --filter=itkdev-example-forms
+```
+
+to see a list of Drush commands defined by this module.
 
 ## Load data and example forms
 
