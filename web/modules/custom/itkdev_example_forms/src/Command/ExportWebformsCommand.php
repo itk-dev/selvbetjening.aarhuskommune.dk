@@ -119,6 +119,7 @@ final class ExportWebformsCommand extends Command {
       $enforcedModules = $dependencies['enforced']['module'] ?? [];
       $dependencies['enforced']['module'] = array_unique((array) $enforcedModules + [$moduleName]);
       $config->set('dependencies', $dependencies);
+      $config->save();
 
       $targetName = $targetDir . '/' . $configName . '.yml';
       // @todo (How) Can we use the config manager (or factory) to do this?
