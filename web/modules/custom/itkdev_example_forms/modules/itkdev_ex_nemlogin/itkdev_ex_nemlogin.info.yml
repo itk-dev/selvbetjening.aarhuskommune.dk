@@ -1,0 +1,9 @@
+name: 'NemLog-in example forms'
+type: module
+description: 'NemLog-in example forms'
+package: ITK Dev example forms
+core_version_requirement: ^10 || ^11
+dependencies:
+  - itkdev_example_forms:itkdev_example_forms
+  - os2forms_nemlogin_openid_connect:os2forms_nemlogin_openid_connect
+  - os2web_datalookup_mock:os2web_datalookup_mock
