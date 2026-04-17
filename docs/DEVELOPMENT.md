@@ -56,7 +56,7 @@ $config['os2web_nemlogin.settings']['OpenIDConnect'] = serialize([
   'nemlogin_openid_connect_client_id' => 'client-id',
   'nemlogin_openid_connect_client_secret' => 'client-secret',
   'nemlogin_openid_connect_fetch_once' => 0,
-    // Set this the url of your "You're not signed out" page.
+  // Set this to the URL of your "You're now signed out" page.
   'nemlogin_openid_connect_post_logout_redirect_uri' => '/node/126',
   'nemlogin_openid_connect_user_claims' => 'cpr: CPR-nummer
 email: E-mailadresse',

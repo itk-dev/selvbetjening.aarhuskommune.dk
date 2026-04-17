@@ -1,0 +1,8 @@
+name: 'OS2Web Data lookup mock'
+type: module
+description: 'Mocks for OS2Web Data lookup'
+package: Custom
+core_version_requirement: ^10 || ^11
+
+dependencies:
+  - os2web_datalookup:os2web_datalookup
