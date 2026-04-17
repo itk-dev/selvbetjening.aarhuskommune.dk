@@ -1,9 +1,9 @@
 # https://github.com/Soluto/oidc-server-mock
 
-networks:
-  organisation_api:
-    external: true
-    name: serviceplatformen_organisation_api_app
+#networks:
+#  organisation_api:
+#    external: true
+#    name: serviceplatformen_organisation_api_app
 
 services:
   phpfpm:
@@ -11,7 +11,7 @@ services:
       # frontend is necessary for booking to work locally.
       # @see web/modules/custom/itkdev_booking/README.md
       - frontend
-      - organisation_api
+#      - organisation_api
     environment:
       - PHP_MEMORY_LIMIT=512M
 
@@ -27,6 +27,7 @@ services:
 
   clamav:
     image: clamav/clamav:1.5
+    platform: linux/amd64
     networks:
       - app
     ports:

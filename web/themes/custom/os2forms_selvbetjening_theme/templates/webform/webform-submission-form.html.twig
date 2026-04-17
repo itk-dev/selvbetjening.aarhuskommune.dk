@@ -17,7 +17,7 @@
 
 <div>
   {% if showProgressLeft %}
-    <div class="progress-tracker-side">
+    <div class="progress-tracker-side {{ settings['wizard_progress_link'] ? 'show-progress-links': '' }}">
       {{ form['progress'] }}
     </div>
     <div class="form-content">
