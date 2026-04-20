@@ -49,3 +49,12 @@ function os2forms_selvbetjening_views_plugins_field_alter(array &$plugins) {
     $plugins['author_assignment_node_bulk_form']['provider'] = 'os2forms_selvbetjening';
   }
 }
+
+function os2forms_selvbetjening_webform_create($webform) {
+  // webform id will only be null before the webform is created, ensuring we only execute this once.
+ if (is_null($webform->id())) {
+    $webform->setSetting('wizard_progress_bar', FALSE);
+    $webform->setSetting('confirmation_back', FALSE);
+  }
+
+}
