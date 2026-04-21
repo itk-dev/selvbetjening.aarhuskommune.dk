@@ -6,49 +6,49 @@ display:
         options:
           submit_button: Udfør
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         id:
           admin_label: K
           label: K
-          separator: ', '
+          separator: ", "
         task_label:
           label: Etiket
-          separator: ', '
+          separator: ", "
         process_id_1:
-          separator: ', '
+          separator: ", "
         process_name:
-          separator: ', '
+          separator: ", "
         task_class_name:
-          separator: ', '
+          separator: ", "
         task_id:
           label: Maskinnavn
-          separator: ', '
+          separator: ", "
         created:
           label: Oprettet
-          separator: ', '
+          separator: ", "
         changed:
           label: Ændret
-          separator: ', '
+          separator: ", "
         is_interactive:
-          separator: ', '
+          separator: ", "
         handler:
           label: Håndtering
-          separator: ', '
+          separator: ", "
         num_escalations_sent:
-          separator: ', '
+          separator: ", "
         num_reminders_sent:
-          separator: ', '
+          separator: ", "
         last_escalation_time:
-          separator: ', '
+          separator: ", "
         admin_operations:
           label: Handlinger
       header:
@@ -60,33 +60,33 @@ display:
         id:
           admin_label: K
           label: K
-          separator: ', '
+          separator: ", "
         task_label:
           label: Etiket
-          separator: ', '
+          separator: ", "
         process_id_1:
-          separator: ', '
+          separator: ", "
         process_name:
-          separator: ', '
+          separator: ", "
         task_class_name:
-          separator: ', '
+          separator: ", "
         task_id:
           label: Maskinnavn
-          separator: ', '
+          separator: ", "
         created:
           label: Oprettet
-          separator: ', '
+          separator: ", "
         is_interactive:
-          separator: ', '
+          separator: ", "
         handler:
           label: Håndtering
-          separator: ', '
+          separator: ", "
         num_escalations_sent:
-          separator: ', '
+          separator: ", "
         num_reminders_sent:
-          separator: ', '
+          separator: ", "
         last_escalation_time:
-          separator: ', '
+          separator: ", "
         admin_operations:
           label: Handlinger
   maestro_all_active_tasks_lean:
@@ -95,23 +95,23 @@ display:
         id:
           admin_label: K
           label: K
-          separator: ', '
+          separator: ", "
         task_label:
-          separator: ', '
+          separator: ", "
         process_id_1:
-          separator: ', '
+          separator: ", "
         process_name:
-          separator: ', '
+          separator: ", "
         task_class_name:
-          separator: ', '
+          separator: ", "
         task_id:
           label: Maskinnavn
-          separator: ', '
+          separator: ", "
         created:
           label: Oprettet
-          separator: ', '
+          separator: ", "
         is_interactive:
-          separator: ', '
+          separator: ", "
         active_handler:
           label: Håndtering
         admin_operations:

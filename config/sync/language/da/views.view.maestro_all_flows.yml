@@ -6,28 +6,28 @@ display:
         options:
           submit_button: Udfør
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         process_id:
-          separator: ', '
+          separator: ", "
         process_name:
-          separator: ', '
+          separator: ", "
         template_id:
-          separator: ', '
+          separator: ", "
         created:
           label: Oprettet
-          separator: ', '
+          separator: ", "
         completed:
           label: Gennemført
-          separator: ', '
+          separator: ", "
         admin_operations:
           label: Handlinger
   all_flows_full:

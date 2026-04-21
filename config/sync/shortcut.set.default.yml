@@ -1,7 +1,7 @@
 uuid: 1fc41d55-25bb-4525-9cc0-43adfc32c445
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: U5VlGjd_SfV0Qm_EfnaynOfc549cNscFAx48JfYoMRI
 id: default

@@ -20,7 +20,7 @@ content:
     label: above
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     weight: 54
     region: content
   field_department:
@@ -28,7 +28,7 @@ content:
     label: above
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     weight: 53
     region: content
   field_is_leader:
@@ -36,9 +36,9 @@ content:
     label: above
     settings:
       format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
+      format_custom_false: ""
+      format_custom_true: ""
+    third_party_settings: {}
     weight: 55
     region: content
   field_name:
@@ -46,17 +46,17 @@ content:
     label: above
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings: {}
     weight: 51
     region: content
   masquerade:
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     weight: 50
     region: content
   member_for:
-    settings: {  }
-    third_party_settings: {  }
+    settings: {}
+    third_party_settings: {}
     weight: 5
     region: content
 hidden:

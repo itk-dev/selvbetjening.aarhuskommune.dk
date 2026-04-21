@@ -1,5 +1,5 @@
-label: 'Maestro Outstanding Tasks'
-description: 'All active interactive tasks that are outstanding'
+label: "Maestro Outstanding Tasks"
+description: "All active interactive tasks that are outstanding"
 display:
   default:
     display_title: Master
@@ -8,95 +8,95 @@ display:
         options:
           submit_button: Apply
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
         options:
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
+            items_per_page_label: "Items per page"
+            items_per_page_options_all_label: "- All -"
             offset_label: Offset
           tags:
             previous: ��
             next: ��
       fields:
         queue_id_1:
-          label: 'Queue ID'
-          separator: ', '
+          label: "Queue ID"
+          separator: ", "
         task_label:
           label: Task
-          separator: ', '
+          separator: ", "
         process_name:
-          label: 'Process Name'
-          separator: ', '
+          label: "Process Name"
+          separator: ", "
         assign_id:
-          label: 'Assigned To'
-          separator: ', '
+          label: "Assigned To"
+          separator: ", "
         active_handler:
           label: Handler
         handler:
           label: Handler
-          separator: ', '
+          separator: ", "
         created_1:
-          label: 'Task Assigned'
-          separator: ', '
+          label: "Task Assigned"
+          separator: ", "
         created:
-          label: 'Process Started'
-          separator: ', '
+          label: "Process Started"
+          separator: ", "
         admin_operations:
           label: Operations
       filters:
         process_name:
           expose:
-            label: 'Process Name'
-            description: 'Filter on process name'
+            label: "Process Name"
+            description: "Filter on process name"
           group_info:
-            label: 'Process Name'
+            label: "Process Name"
         task_label:
           expose:
-            label: 'Task Name'
-            description: 'Filter on task name'
+            label: "Task Name"
+            description: "Filter on task name"
       header:
         area:
           admin_label: Introduction
           content:
-            value: 'Report of outstanding or active interactive tasks for all workflow processes that are active and have not completed. You are able to filter the results to view only the tasks for a selected process, for which there could be many active instances at different points in the workflow. Also filter the results for only a selected task name. The available actions include the ability to re-assign the task owner for a selected task.'
+            value: "Report of outstanding or active interactive tasks for all workflow processes that are active and have not completed. You are able to filter the results to view only the tasks for a selected process, for which there could be many active instances at different points in the workflow. Also filter the results for only a selected task name. The available actions include the ability to re-assign the task owner for a selected task."
       footer:
         area:
           content:
-            value: 'Total Records: [view:total-rows] '
-      title: 'Outstanding Interactive Tasks'
+            value: "Total Records: [view:total-rows] "
+      title: "Outstanding Interactive Tasks"
   maestro_outstanding_tasks:
-    display_title: 'Outstanding Tasks'
+    display_title: "Outstanding Tasks"
     display_options:
       menu:
-        title: 'Outstanding Tasks'
+        title: "Outstanding Tasks"
   taskconsole_display:
-    display_title: 'Task Console Display'
+    display_title: "Task Console Display"
     display_options:
       fields:
         queue_id_1:
-          label: 'Queue ID'
-          separator: ', '
+          label: "Queue ID"
+          separator: ", "
         task_label:
           label: Task
-          separator: ', '
+          separator: ", "
         process_name:
-          label: 'Process Name'
-          separator: ', '
+          label: "Process Name"
+          separator: ", "
         assign_id:
-          label: 'Assigned To'
-          separator: ', '
+          label: "Assigned To"
+          separator: ", "
         handler:
           label: Handler
-          separator: ', '
+          separator: ", "
         created_1:
-          label: 'Task Assigned'
-          separator: ', '
+          label: "Task Assigned"
+          separator: ", "
         created:
-          label: 'Process Started'
-          separator: ', '
+          label: "Process Started"
+          separator: ", "
       arguments:
         process_id:
           exception:

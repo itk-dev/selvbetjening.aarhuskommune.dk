@@ -9,9 +9,9 @@ dependencies:
 _core:
   default_config_hash: rX48v_U7vIh1FltSyJnTdpebtM-lj991qL_jO8BmZ2w
 id: comments_recent
-label: 'Seneste kommentarer'
+label: "Seneste kommentarer"
 module: views
-description: 'Seneste kommentarer.'
+description: "Seneste kommentarer."
 tag: default
 base_table: comment_field_data
 base_field: cid
@@ -22,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Seneste kommentarer'
+      title: "Seneste kommentarer"
       fields:
         subject:
           id: subject
@@ -30,48 +30,48 @@ display:
           field: subject
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: ""
           entity_type: comment
           entity_field: subject
           plugin_id: field
-          label: ''
+          label: ""
           exclude: false
           alter:
             alter_text: false
-            text: ''
+            text: ""
             make_link: false
-            path: ''
+            path: ""
             absolute: false
             external: false
             replace_spaces: false
             path_case: none
             trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
+            alt: ""
+            rel: ""
+            link_class: ""
+            prefix: ""
+            suffix: ""
+            target: ""
             nl2br: false
             max_length: 0
             word_boundary: false
             ellipsis: false
             more_link: false
-            more_link_text: ''
-            more_link_path: ''
+            more_link_text: ""
+            more_link_path: ""
             strip_tags: false
             trim: false
-            preserve_tags: ''
+            preserve_tags: ""
             html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
+          element_type: ""
+          element_class: ""
+          element_label_type: ""
+          element_label_class: ""
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: ""
+          element_wrapper_class: ""
           element_default_classes: true
-          empty: ''
+          empty: ""
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -84,55 +84,55 @@ display:
           field: changed
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: ""
           entity_type: comment
           entity_field: changed
           plugin_id: field
-          label: ''
+          label: ""
           exclude: false
           alter:
             alter_text: false
-            text: ''
+            text: ""
             make_link: false
-            path: ''
+            path: ""
             absolute: false
             external: false
             replace_spaces: false
             path_case: none
             trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
+            alt: ""
+            rel: ""
+            link_class: ""
+            prefix: ""
+            suffix: ""
+            target: ""
             nl2br: false
             max_length: 0
             word_boundary: true
             ellipsis: true
             more_link: false
-            more_link_text: ''
-            more_link_path: ''
+            more_link_text: ""
+            more_link_path: ""
             strip_tags: false
             trim: false
-            preserve_tags: ''
+            preserve_tags: ""
             html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
+          element_type: ""
+          element_class: ""
+          element_label_type: ""
+          element_label_class: ""
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: ""
+          element_wrapper_class: ""
           element_default_classes: true
-          empty: ''
+          empty: ""
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           type: timestamp_ago
           settings:
-            future_format: '@interval hence'
-            past_format: '@interval ago'
+            future_format: "@interval hence"
+            past_format: "@interval ago"
             granularity: 2
       pager:
         type: some
@@ -144,7 +144,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'access comments'
+          perm: "access comments"
       cache:
         type: tag
       empty:
@@ -154,11 +154,11 @@ display:
           field: area_text_custom
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: ""
           plugin_id: text_custom
-          label: ''
+          label: ""
           empty: true
-          content: 'Der er ingen kommentarer at vise.'
+          content: "Der er ingen kommentarer at vise."
           tokenize: false
       sorts:
         created:
@@ -167,13 +167,13 @@ display:
           field: created
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: ""
           entity_type: comment
           entity_field: created
           plugin_id: date
           order: DESC
           expose:
-            label: ''
+            label: ""
             field_identifier: created
           exposed: false
         cid:
@@ -182,7 +182,7 @@ display:
           field: cid
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: ""
           entity_type: comment
           entity_field: cid
           plugin_id: field
@@ -198,12 +198,12 @@ display:
           entity_type: comment
           entity_field: status
           plugin_id: boolean
-          value: '1'
+          value: "1"
           group: 1
           expose:
-            operator: ''
+            operator: ""
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: {}
         status_node:
           id: status_node
           table: node_field_data
@@ -212,21 +212,21 @@ display:
           entity_type: node
           entity_field: status
           plugin_id: boolean
-          value: '1'
+          value: "1"
           group: 1
           expose:
-            operator: ''
+            operator: ""
             operator_limit_selection: false
-            operator_list: {  }
+            operator_list: {}
       style:
         type: html_list
         options:
-          grouping: {  }
-          row_class: ''
+          grouping: {}
+          row_class: ""
           default_row_class: true
           type: ul
           wrapper_class: item-list
-          class: ''
+          class: ""
       row:
         type: fields
         options:
@@ -241,29 +241,29 @@ display:
           field: node
           plugin_id: standard
           required: true
-      display_extenders: {  }
+      display_extenders: {}
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
+        - "languages:language_content"
+        - "languages:language_interface"
         - user.permissions
-      tags: {  }
+      tags: {}
   block_1:
     id: block_1
     display_title: Blok
     display_plugin: block
     position: 1
     display_options:
-      display_extenders: {  }
-      block_description: 'Seneste kommentarer'
-      block_category: 'Lister (Views)'
+      display_extenders: {}
+      block_description: "Seneste kommentarer"
+      block_category: "Lister (Views)"
       allow:
         items_per_page: true
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
+        - "languages:language_content"
+        - "languages:language_interface"
         - user.permissions
-      tags: {  }
+      tags: {}

@@ -6,8 +6,8 @@ connect_existing_users: true
 override_registration_settings: true
 end_session_enabled: true
 user_login_display: replace
-redirect_login: ''
-redirect_logout: ''
+redirect_login: ""
+redirect_logout: ""
 userinfo_mappings:
   timezone: zoneinfo
   field_az_ident: az_ident
@@ -16,11 +16,11 @@ userinfo_mappings:
   field_name: full_name
   field_organisation_user_id: organisation_user_id
 role_mappings:
-  administrator: {  }
-  flow_designer: {  }
-  forloeb_designer: {  }
-  sagsbehandler: {  }
-  medarbejder: {  }
-  leder: {  }
-  virksomhed: {  }
-  borger: {  }
+  administrator: {}
+  flow_designer: {}
+  forloeb_designer: {}
+  sagsbehandler: {}
+  medarbejder: {}
+  leder: {}
+  virksomhed: {}
+  borger: {}

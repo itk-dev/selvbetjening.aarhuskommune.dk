@@ -1,9 +1,9 @@
-name: 'OS2Forms queued email'
+name: "OS2Forms queued email"
 type: module
-description: 'Adds queued mail mailer'
-package: 'OS2Forms'
+description: "Adds queued mail mailer"
+package: "OS2Forms"
 core_version_requirement: ^9 | ^10
 dependencies:
-  - 'webform:webform'
-  - 'advancedqueue:advancedqueue'
-  - 'os2forms_email_handler:os2forms_email_handler'
+  - "webform:webform"
+  - "advancedqueue:advancedqueue"
+  - "os2forms_email_handler:os2forms_email_handler"

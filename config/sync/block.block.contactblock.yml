@@ -14,9 +14,9 @@ provider: null
 plugin: contact_block
 settings:
   id: contact_block
-  label: 'Contact block'
-  label_display: '0'
+  label: "Contact block"
+  label_display: "0"
   provider: itkdev_footer
-  contact_text_first: ' '
-  contact_text_second: '(+45) 89 40 20 00'
-visibility: {  }
+  contact_text_first: " "
+  contact_text_second: "(+45) 89 40 20 00"
+visibility: {}

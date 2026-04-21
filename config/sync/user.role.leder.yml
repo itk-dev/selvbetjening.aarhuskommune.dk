@@ -37,91 +37,91 @@ label: Leder
 weight: -1
 is_admin: null
 permissions:
-  - 'access administration pages'
-  - 'access any webform configuration'
-  - 'access content'
-  - 'access content overview'
-  - 'access contextual links'
-  - 'access files overview'
-  - 'access own webform configuration'
-  - 'access site in maintenance mode'
-  - 'access taxonomy overview'
-  - 'access toolbar'
-  - 'access user profiles'
-  - 'access webform css js tab'
-  - 'access webform handlers tab'
-  - 'access webform overview'
-  - 'access webform references tab'
-  - 'access webform results clear tab'
-  - 'access webform results download tab'
-  - 'access webform results upload tab'
-  - 'access webform submission user'
-  - 'access webform submission_notes'
-  - 'administer block_content display'
-  - 'administer block_content form display'
-  - 'administer display modes'
-  - 'administer maestro production assignment entities'
-  - 'administer maestro queue entities'
-  - 'administer maestro templates'
-  - 'administer node display'
-  - 'administer node form display'
-  - 'administer taxonomy_term display'
-  - 'administer taxonomy_term form display'
-  - 'administer user display'
-  - 'administer user form display'
-  - 'administer webform'
-  - 'administer webform element access'
-  - 'administer webform revisions'
-  - 'administer webform templates'
-  - 'bypass entity print access'
-  - 'bypass honeypot protection'
-  - 'can be workflow participant'
-  - 'create webform'
-  - 'create webform content'
-  - 'delete any webform'
-  - 'delete any webform submission'
-  - 'delete own webform'
-  - 'delete own webform content'
-  - 'delete own webform submission'
-  - 'delete webform submissions any node'
-  - 'delete webform submissions own node'
-  - 'edit any webform'
-  - 'edit any webform content'
-  - 'edit any webform submission'
-  - 'edit own webform'
-  - 'edit own webform content'
-  - 'edit own webform submission'
-  - 'edit webform assets'
-  - 'edit webform submissions any node'
-  - 'edit webform submissions own node'
-  - 'edit webform twig'
-  - 'entity print access type block_content'
-  - 'entity print access type content_moderation_state'
-  - 'entity print access type file'
-  - 'entity print access type menu_link_content'
-  - 'entity print access type node'
-  - 'entity print access type redirect'
-  - 'entity print access type taxonomy_term'
-  - 'entity print access type user'
-  - 'entity print access type webform_submission'
-  - 'revert webform revisions'
-  - 'search content'
-  - 'translate interface'
-  - 'use advanced search'
-  - 'use text format full_html'
-  - 'use text format webform'
-  - 'view any unpublished content'
-  - 'view any webform submission'
-  - 'view encrypted values'
-  - 'view latest version'
-  - 'view maestro entity identifiers entities'
-  - 'view maestro process entities'
-  - 'view maestro production assignment entities'
-  - 'view maestro queue entities'
-  - 'view maestro task console'
-  - 'view own unpublished content'
-  - 'view own webform submission'
-  - 'view the administration theme'
-  - 'view webform revisions'
-  - 'view webform submissions any node'
-  - 'view webform submissions own node'
+  - "access administration pages"
+  - "access any webform configuration"
+  - "access content"
+  - "access content overview"
+  - "access contextual links"
+  - "access files overview"
+  - "access own webform configuration"
+  - "access site in maintenance mode"
+  - "access taxonomy overview"
+  - "access toolbar"
+  - "access user profiles"
+  - "access webform css js tab"
+  - "access webform handlers tab"
+  - "access webform overview"
+  - "access webform references tab"
+  - "access webform results clear tab"
+  - "access webform results download tab"
+  - "access webform results upload tab"
+  - "access webform submission user"
+  - "access webform submission_notes"
+  - "administer block_content display"
+  - "administer block_content form display"
+  - "administer display modes"
+  - "administer maestro production assignment entities"
+  - "administer maestro queue entities"
+  - "administer maestro templates"
+  - "administer node display"
+  - "administer node form display"
+  - "administer taxonomy_term display"
+  - "administer taxonomy_term form display"
+  - "administer user display"
+  - "administer user form display"
+  - "administer webform"
+  - "administer webform element access"
+  - "administer webform revisions"
+  - "administer webform templates"
+  - "bypass entity print access"
+  - "bypass honeypot protection"
+  - "can be workflow participant"
+  - "create webform"
+  - "create webform content"
+  - "delete any webform"
+  - "delete any webform submission"
+  - "delete own webform"
+  - "delete own webform content"
+  - "delete own webform submission"
+  - "delete webform submissions any node"
+  - "delete webform submissions own node"
+  - "edit any webform"
+  - "edit any webform content"
+  - "edit any webform submission"
+  - "edit own webform"
+  - "edit own webform content"
+  - "edit own webform submission"
+  - "edit webform assets"
+  - "edit webform submissions any node"
+  - "edit webform submissions own node"
+  - "edit webform twig"
+  - "entity print access type block_content"
+  - "entity print access type content_moderation_state"
+  - "entity print access type file"
+  - "entity print access type menu_link_content"
+  - "entity print access type node"
+  - "entity print access type redirect"
+  - "entity print access type taxonomy_term"
+  - "entity print access type user"
+  - "entity print access type webform_submission"
+  - "revert webform revisions"
+  - "search content"
+  - "translate interface"
+  - "use advanced search"
+  - "use text format full_html"
+  - "use text format webform"
+  - "view any unpublished content"
+  - "view any webform submission"
+  - "view encrypted values"
+  - "view latest version"
+  - "view maestro entity identifiers entities"
+  - "view maestro process entities"
+  - "view maestro production assignment entities"
+  - "view maestro queue entities"
+  - "view maestro task console"
+  - "view own unpublished content"
+  - "view own webform submission"
+  - "view the administration theme"
+  - "view webform revisions"
+  - "view webform submissions any node"
+  - "view webform submissions own node"

@@ -1,10 +1,10 @@
 uuid: 16a74dca-1b9c-4fb0-b35d-73195ee655c1
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: M7yqicYkU36hRy5p9drAaGBBihhUD1OyujFrAaQ93ZE
 id: html_time
-label: 'HTML Time'
+label: "HTML Time"
 locked: true
-pattern: 'H:i:s'
+pattern: "H:i:s"

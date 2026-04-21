@@ -1,7 +1,7 @@
 uuid: null
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 id: os2web_audit
 label: os2web_audit
 backend: database

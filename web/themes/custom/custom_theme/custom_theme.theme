@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Theme file for custom_theme.
+ */
+
 /**
  * Implements hook_preprocess_page().
  *

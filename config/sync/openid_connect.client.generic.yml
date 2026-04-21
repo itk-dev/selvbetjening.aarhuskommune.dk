@@ -1,19 +1,19 @@
 uuid: e691c6c3-35b5-42ef-b6cb-741b28528bd8
 langcode: en
 status: true
-dependencies: {  }
+dependencies: {}
 id: generic
 label: Generic
 plugin: generic
 settings:
   client_id: "file:///settings.local.php#$config['openid_connect.client.azureb2c']['settings']['client_id']"
   client_secret: "file:///settings.local.php#$config['openid_connect.client.azureb2c']['settings']['client_secret']"
-  iss_allowed_domains: ''
-  issuer_url: ''
-  authorization_endpoint: 'https://example.com/oauth2/'
-  token_endpoint: 'https://example.com/oauth2/'
-  userinfo_endpoint: ''
-  end_session_endpoint: ''
+  iss_allowed_domains: ""
+  issuer_url: ""
+  authorization_endpoint: "https://example.com/oauth2/"
+  token_endpoint: "https://example.com/oauth2/"
+  userinfo_endpoint: ""
+  end_session_endpoint: ""
   scopes:
     - openid
     - email

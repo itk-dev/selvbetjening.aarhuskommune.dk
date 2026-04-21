@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - coc_forms_auto_export
-title: 'Default cron handler'
+title: "Default cron handler"
 id: coc_forms_auto_export_cron
 weight: 0
 module: coc_forms_auto_export

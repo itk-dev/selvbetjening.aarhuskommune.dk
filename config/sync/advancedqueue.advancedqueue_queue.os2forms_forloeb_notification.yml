@@ -1,11 +1,11 @@
 uuid: ec53e881-af8a-4032-87b9-2bad63d22389
 langcode: en
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
-  default_config_hash: '-38M9x8R1Ctmtnf5Q2Hx4yAtQBBPHLqqYKrPNO_mlHo'
+  default_config_hash: "-38M9x8R1Ctmtnf5Q2Hx4yAtQBBPHLqqYKrPNO_mlHo"
 id: os2forms_forloeb_notification
-label: 'OSForms forløb notification'
+label: "OSForms forløb notification"
 backend: database
 backend_configuration:
   lease_time: 300

@@ -37,104 +37,104 @@ dependencies:
     - webform_translation_permissions
     - workflow_participants
 id: site_admin
-label: 'Site admin'
+label: "Site admin"
 weight: -7
 is_admin: null
 permissions:
-  - 'access administration pages'
-  - 'access any webform configuration'
-  - 'access content'
-  - 'access content overview'
-  - 'access contextual links'
-  - 'access deprecation taxonomy overview'
-  - 'access files overview'
-  - 'access own webform configuration'
-  - 'access site in maintenance mode'
-  - 'access taxonomy overview'
-  - 'access toolbar'
-  - 'access user profiles'
-  - 'access webform access tab'
-  - 'access webform advanced queue overview'
-  - 'access webform css js tab'
-  - 'access webform handlers tab'
-  - 'access webform overview'
-  - 'access webform references tab'
-  - 'access webform results clear tab'
-  - 'access webform results download tab'
-  - 'access webform results upload tab'
-  - 'access webform submission log'
-  - 'access webform submission user'
-  - 'access webform submission_notes'
-  - 'administer block_content display'
-  - 'administer block_content form display'
-  - 'administer content types'
-  - 'administer display modes'
-  - 'administer leaflet layers'
-  - 'administer node display'
-  - 'administer node form display'
-  - 'administer site status message'
-  - 'administer taxonomy_term display'
-  - 'administer taxonomy_term form display'
-  - 'administer user display'
-  - 'administer user form display'
-  - 'administer webform'
-  - 'administer webform element access'
-  - 'administer webform revisions'
-  - 'administer webform submission'
-  - 'administer webform templates'
-  - 'assign author to selected content'
-  - 'bypass entity print access'
-  - 'bypass honeypot protection'
-  - 'can be workflow participant'
-  - 'create webform'
-  - 'create webform content'
-  - 'delete any webform'
-  - 'delete any webform content'
-  - 'delete any webform submission'
-  - 'delete own webform'
-  - 'delete own webform content'
-  - 'delete own webform submission'
-  - 'delete webform revisions'
-  - 'delete webform submissions any node'
-  - 'delete webform submissions own node'
-  - 'edit any webform'
-  - 'edit any webform content'
-  - 'edit any webform submission'
-  - 'edit own webform'
-  - 'edit own webform content'
-  - 'edit own webform submission'
-  - 'edit webform assets'
-  - 'edit webform submissions any node'
-  - 'edit webform submissions own node'
-  - 'edit webform twig'
-  - 'entity print access type block_content'
-  - 'entity print access type content_moderation_state'
-  - 'entity print access type file'
-  - 'entity print access type menu_link_content'
-  - 'entity print access type node'
-  - 'entity print access type redirect'
-  - 'entity print access type taxonomy_term'
-  - 'entity print access type user'
-  - 'entity print access type webform_submission'
-  - 'revert webform revisions'
-  - 'search content'
-  - 'translate any webform'
-  - 'translate interface'
-  - 'translate own webform'
-  - 'use advanced search'
-  - 'use text format full_html'
-  - 'use text format webform'
-  - 'use udgivelse_af_forlob_og_webformularer transition create_new_draft'
-  - 'use udgivelse_af_forlob_og_webformularer transition publish'
-  - 'use udgivelse_af_forlob_og_webformularer transition republish'
-  - 'use udgivelse_af_forlob_og_webformularer transition unpublish'
-  - 'view any unpublished content'
-  - 'view any webform submission'
-  - 'view encrypted values'
-  - 'view latest version'
-  - 'view own unpublished content'
-  - 'view own webform submission'
-  - 'view the administration theme'
-  - 'view webform revisions'
-  - 'view webform submissions any node'
-  - 'view webform submissions own node'
+  - "access administration pages"
+  - "access any webform configuration"
+  - "access content"
+  - "access content overview"
+  - "access contextual links"
+  - "access deprecation taxonomy overview"
+  - "access files overview"
+  - "access own webform configuration"
+  - "access site in maintenance mode"
+  - "access taxonomy overview"
+  - "access toolbar"
+  - "access user profiles"
+  - "access webform access tab"
+  - "access webform advanced queue overview"
+  - "access webform css js tab"
+  - "access webform handlers tab"
+  - "access webform overview"
+  - "access webform references tab"
+  - "access webform results clear tab"
+  - "access webform results download tab"
+  - "access webform results upload tab"
+  - "access webform submission log"
+  - "access webform submission user"
+  - "access webform submission_notes"
+  - "administer block_content display"
+  - "administer block_content form display"
+  - "administer content types"
+  - "administer display modes"
+  - "administer leaflet layers"
+  - "administer node display"
+  - "administer node form display"
+  - "administer site status message"
+  - "administer taxonomy_term display"
+  - "administer taxonomy_term form display"
+  - "administer user display"
+  - "administer user form display"
+  - "administer webform"
+  - "administer webform element access"
+  - "administer webform revisions"
+  - "administer webform submission"
+  - "administer webform templates"
+  - "assign author to selected content"
+  - "bypass entity print access"
+  - "bypass honeypot protection"
+  - "can be workflow participant"
+  - "create webform"
+  - "create webform content"
+  - "delete any webform"
+  - "delete any webform content"
+  - "delete any webform submission"
+  - "delete own webform"
+  - "delete own webform content"
+  - "delete own webform submission"
+  - "delete webform revisions"
+  - "delete webform submissions any node"
+  - "delete webform submissions own node"
+  - "edit any webform"
+  - "edit any webform content"
+  - "edit any webform submission"
+  - "edit own webform"
+  - "edit own webform content"
+  - "edit own webform submission"
+  - "edit webform assets"
+  - "edit webform submissions any node"
+  - "edit webform submissions own node"
+  - "edit webform twig"
+  - "entity print access type block_content"
+  - "entity print access type content_moderation_state"
+  - "entity print access type file"
+  - "entity print access type menu_link_content"
+  - "entity print access type node"
+  - "entity print access type redirect"
+  - "entity print access type taxonomy_term"
+  - "entity print access type user"
+  - "entity print access type webform_submission"
+  - "revert webform revisions"
+  - "search content"
+  - "translate any webform"
+  - "translate interface"
+  - "translate own webform"
+  - "use advanced search"
+  - "use text format full_html"
+  - "use text format webform"
+  - "use udgivelse_af_forlob_og_webformularer transition create_new_draft"
+  - "use udgivelse_af_forlob_og_webformularer transition publish"
+  - "use udgivelse_af_forlob_og_webformularer transition republish"
+  - "use udgivelse_af_forlob_og_webformularer transition unpublish"
+  - "view any unpublished content"
+  - "view any webform submission"
+  - "view encrypted values"
+  - "view latest version"
+  - "view own unpublished content"
+  - "view own webform submission"
+  - "view the administration theme"
+  - "view webform revisions"
+  - "view webform submissions any node"
+  - "view webform submissions own node"

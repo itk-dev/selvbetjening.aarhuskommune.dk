@@ -1,7 +1,7 @@
 uuid: cd156ef9-6312-459b-959b-b73e6c53b8d6
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: lBXDpdDPXQtrfTJQhr6MjRJJEEyYSoRJ0acdvHLsWeA
 id: en

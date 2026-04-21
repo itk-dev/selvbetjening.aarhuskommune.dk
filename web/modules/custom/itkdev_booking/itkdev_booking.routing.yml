@@ -1,87 +1,87 @@
 itkdev_booking.resources:
-  path: '/itkdev_booking/resources'
+  path: "/itkdev_booking/resources"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::getResources'
   methods: [GET]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
 
 itkdev_booking.resources_all:
-  path: '/itkdev_booking/resources-all'
+  path: "/itkdev_booking/resources-all"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::getAllResources'
   methods: [GET]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
 
 itkdev_booking.resources_by_email:
-  path: '/itkdev_booking/resources/{resourceEmail}'
+  path: "/itkdev_booking/resources/{resourceEmail}"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::getResource'
   methods: [GET]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
 
 itkdev_booking.busy_intervals:
-  path: '/itkdev_booking/busy_intervals'
+  path: "/itkdev_booking/busy_intervals"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::getBusyIntervals'
   methods: [GET]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
 
 itkdev_booking.locations:
-  path: '/itkdev_booking/locations'
+  path: "/itkdev_booking/locations"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::getLocations'
-  methods: [ GET ]
+  methods: [GET]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
 
 itkdev_booking.user_bookings:
-  path: '/itkdev_booking/user-bookings'
+  path: "/itkdev_booking/user-bookings"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::getUserBookings'
   methods: [GET]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
 
 itkdev_booking.pending_bookings:
-  path: '/itkdev_booking/pending-bookings'
+  path: "/itkdev_booking/pending-bookings"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::getPendingBookings'
-  methods: [ POST ]
+  methods: [POST]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
 
 itkdev_booking.user_bookings_delete:
-  path: '/itkdev_booking/user-booking/{bookingId}'
+  path: "/itkdev_booking/user-booking/{bookingId}"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::deleteUserBooking'
   methods: [DELETE]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
 
 itkdev_booking.user_bookings_patch:
-  path: '/itkdev_booking/user-booking/{bookingId}'
+  path: "/itkdev_booking/user-booking/{bookingId}"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::patchUserBooking'
   methods: [PATCH]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
 
 itkdev_booking.booking_details:
-  path: '/itkdev_booking/booking-details/{bookingId}'
+  path: "/itkdev_booking/booking-details/{bookingId}"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::getUserBookingDetails'
   methods: [GET]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
 
 itkdev_booking.user_information:
-  path: '/itkdev_booking/user-information'
+  path: "/itkdev_booking/user-information"
   defaults:
     _controller: '\Drupal\itkdev_booking\Controller\BookingController::getUserInformation'
   methods: [GET]
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"

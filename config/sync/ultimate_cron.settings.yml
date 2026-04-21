@@ -31,6 +31,6 @@ scheduler:
   crontab:
     catch_up: 86400
     rules:
-      - '*/10+@ * * * *'
+      - "*/10+@ * * * *"
   simple:
-    rule: '*/15+@ * * * *'
+    rule: "*/15+@ * * * *"

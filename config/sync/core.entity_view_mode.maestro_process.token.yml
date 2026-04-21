@@ -6,6 +6,6 @@ dependencies:
     - maestro
 id: maestro_process.token
 label: Token
-description: ''
+description: ""
 targetEntityType: maestro_process
 cache: true

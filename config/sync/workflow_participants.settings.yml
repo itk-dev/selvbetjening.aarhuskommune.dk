@@ -3,7 +3,7 @@ _core:
 langcode: da
 enable_notifications: true
 participant_message:
-  subject: 'You have been added as workflow participant to [node:title]'
+  subject: "You have been added as workflow participant to [node:title]"
   body:
     value: |-
       Greetings [user:name],

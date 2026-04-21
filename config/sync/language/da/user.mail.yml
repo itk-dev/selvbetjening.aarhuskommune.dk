@@ -13,7 +13,7 @@ cancel_confirm:
     Linket udløber om én dag og der sker ikke noget hvis det ikke bruges.
 
     --  Holdet bag [site:name]
-  subject: 'Anmodning om opsigelse af konto for [user:display-name] på [site:name]'
+  subject: "Anmodning om opsigelse af konto for [user:display-name] på [site:name]"
 password_reset:
   body: |-
     [user:display-name],
@@ -27,7 +27,7 @@ password_reset:
     Dette link kan kun bruges til at logge ind én gang, og det sender dig til en side hvor du kan vælge en adgangskode. Linket udløber efter én dag og der sker ikke noget hvis det ikke bruges.
 
     -- Holdet bag [site:name]
-  subject: 'Ny login-information for [user:display-name] på [site:name]'
+  subject: "Ny login-information for [user:display-name] på [site:name]"
 register_admin_created:
   body: |-
     [user:display-name],
@@ -44,7 +44,7 @@ register_admin_created:
     Adgangskode: Din adgangskode
 
     --  Holdet bag [site:name]
-  subject: 'En administrator har oprettet en konto til dig på [site:name]'
+  subject: "En administrator har oprettet en konto til dig på [site:name]"
 register_no_approval_required:
   body: |-
     [user:display-name],
@@ -61,21 +61,21 @@ register_no_approval_required:
     Adgangskode: Din adgangskode
 
     --  Holdet bag [site:name]
-  subject: 'Kontoinformationer for [user:display-name] på [site:name] (blokeret)'
+  subject: "Kontoinformationer for [user:display-name] på [site:name] (blokeret)"
 register_pending_approval:
-  subject: 'Kontoinformation for [user:display-name] på [site:name] (afventer godkendelse af administrator)'
+  subject: "Kontoinformation for [user:display-name] på [site:name] (afventer godkendelse af administrator)"
 register_pending_approval_admin:
   body: |-
     [user:display-name] har anmodet om en konto.
 
     [user:edit-url]
-  subject: 'Kontoinformation for [user:display-name] på [site:name] (afventer godkendelse af administrator)'
+  subject: "Kontoinformation for [user:display-name] på [site:name] (afventer godkendelse af administrator)"
 status_activated:
   body: "[user:display-name],\r\n\r\nDin konto på [site:name] er blevet aktiveret.\r\n\r\nDu kan logge ind ved at klikke på følgende link eller ved at kopiere og indsætte det i din browser:\r\n\r\n[user:one-time-login-url]\r\n\r\nLinket kan kun bruges én gang, og det fører dig til en side, hvor du kan vælge din adgangskode.\r\n\r\nNår du har valgt en adgangskode kan du fremover logge ind på [site:login-url] med:\r\n\r\nBrugernavn: [user:account-name]\r\nAdgangskode: Din adgangskode\r\n\r\n--  Holdet bag [site:name]"
-  subject: 'Kontoinformationer for [user:display-name] på [site:name] (godkendt)'
+  subject: "Kontoinformationer for [user:display-name] på [site:name] (godkendt)"
 status_blocked:
   body: "[user:display-name],\r\n\r\nDin konto på [site:name] er blevet blokeret.\r\n\r\n--  [site:name] team"
-  subject: 'Kontoinformationer for [user:display-name] på [site:name] (blokeret)'
+  subject: "Kontoinformationer for [user:display-name] på [site:name] (blokeret)"
 status_canceled:
   body: |-
     [user:display-name],
@@ -83,4 +83,4 @@ status_canceled:
     Din konto på [site:name] er blevet lukket.
 
     --  [site:name] holdet
-  subject: 'Kontoinformationer for [user:display-name] på [site:name] (opsagt)'
+  subject: "Kontoinformationer for [user:display-name] på [site:name] (opsagt)"

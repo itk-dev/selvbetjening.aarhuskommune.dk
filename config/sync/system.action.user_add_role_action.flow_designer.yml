@@ -7,7 +7,7 @@ dependencies:
   module:
     - user
 id: user_add_role_action.flow_designer
-label: 'Add the Flow designer role to the selected user(s)'
+label: "Add the Flow designer role to the selected user(s)"
 type: user
 plugin: user_add_role_action
 configuration:

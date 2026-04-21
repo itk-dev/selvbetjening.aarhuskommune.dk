@@ -1,15 +1,15 @@
-label: 'Seneste kommentarer'
-description: 'Seneste kommentarer.'
+label: "Seneste kommentarer"
+description: "Seneste kommentarer."
 display:
   default:
     display_title: Master
     display_options:
-      title: 'Seneste kommentarer'
+      title: "Seneste kommentarer"
       empty:
         area_text_custom:
-          content: 'Der er ingen kommentarer at vise.'
+          content: "Der er ingen kommentarer at vise."
   block_1:
     display_title: Blok
     display_options:
-      block_description: 'Seneste kommentarer'
-      block_category: 'Lister (Views)'
+      block_description: "Seneste kommentarer"
+      block_category: "Lister (Views)"

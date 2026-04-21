@@ -1,9 +1,9 @@
 uuid: 51742614-4854-4e73-b6c3-7446cd47e470
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 id: get_organized_queue
-label: 'Get Organized Queue'
+label: "Get Organized Queue"
 backend: database
 backend_configuration:
   lease_time: 300

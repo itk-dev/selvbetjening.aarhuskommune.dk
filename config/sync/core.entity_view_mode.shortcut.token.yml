@@ -6,6 +6,6 @@ dependencies:
     - shortcut
 id: shortcut.token
 label: Token
-description: ''
+description: ""
 targetEntityType: shortcut
 cache: true

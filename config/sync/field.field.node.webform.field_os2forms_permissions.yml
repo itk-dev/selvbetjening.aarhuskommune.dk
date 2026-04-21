@@ -11,13 +11,13 @@ field_name: field_os2forms_permissions
 entity_type: node
 bundle: webform
 label: Permissions
-description: ''
+description: ""
 required: false
 translatable: false
-default_value: {  }
-default_value_callback: ''
+default_value: {}
+default_value_callback: ""
 settings:
-  handler: 'default:taxonomy_term'
+  handler: "default:taxonomy_term"
   handler_settings:
     target_bundles:
       user_affiliation: user_affiliation
@@ -25,5 +25,5 @@ settings:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: ""
 field_type: entity_reference

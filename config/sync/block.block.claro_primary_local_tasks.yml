@@ -14,9 +14,9 @@ provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: 'Primære faneblade'
-  label_display: '0'
+  label: "Primære faneblade"
+  label_display: "0"
   provider: core
   primary: true
   secondary: false
-visibility: {  }
+visibility: {}

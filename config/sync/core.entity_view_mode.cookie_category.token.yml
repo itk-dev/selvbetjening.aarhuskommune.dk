@@ -6,6 +6,6 @@ dependencies:
     - eu_cookie_compliance
 id: cookie_category.token
 label: Token
-description: ''
+description: ""
 targetEntityType: cookie_category
 cache: true

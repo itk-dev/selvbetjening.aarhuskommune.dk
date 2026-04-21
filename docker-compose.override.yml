@@ -1,17 +1,18 @@
 # https://github.com/Soluto/oidc-server-mock
 
-networks:
-  organisation_api:
-    external: true
-    name: serviceplatformen_organisation_api_app
+# networks:
+#   organisation_api:
+#     external: true
+#     name: serviceplatformen_organisation_api_app
 
 services:
   phpfpm:
+    image: itkdev/php8.3-fpm:latest
     networks:
       # frontend is necessary for booking to work locally.
       # @see web/modules/custom/itkdev_booking/README.md
       - frontend
-      - organisation_api
+      # - organisation_api
     environment:
       - PHP_MEMORY_LIMIT=512M
 
@@ -30,12 +31,12 @@ services:
     networks:
       - app
     ports:
-      - '3310'
-      - '7357'
+      - "3310"
+      - "7357"
     environment:
-        CLAMD_CONF_MaxFileSize: "325M"
-        CLAMD_CONF_StreamMaxLength: "325M"
-        CLAMD_CONF_MaxScanSize: "400M"
+      CLAMD_CONF_MaxFileSize: "325M"
+      CLAMD_CONF_StreamMaxLength: "325M"
+      CLAMD_CONF_MaxScanSize: "400M"
 
   idp-admin:
     image: ghcr.io/soluto/oidc-server-mock:latest
@@ -47,7 +48,7 @@ services:
       - app
       - frontend
     ports:
-      - '80'
+      - "80"
     volumes:
       - .:/tmp/config:ro
     labels:
@@ -148,7 +149,7 @@ services:
       - app
       - frontend
     ports:
-      - '80'
+      - "80"
     volumes:
       - .:/tmp/config:ro
     labels:

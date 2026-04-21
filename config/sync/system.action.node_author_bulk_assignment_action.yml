@@ -6,7 +6,7 @@ dependencies:
     - author_bulk_assignment
     - node
 id: node_author_bulk_assignment_action
-label: 'Assign bulk indholdselement to author'
+label: "Assign bulk indholdselement to author"
 type: node
-plugin: 'entity:author_bulk_assignment_action:node'
-configuration: {  }
+plugin: "entity:author_bulk_assignment_action:node"
+configuration: {}

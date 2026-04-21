@@ -7,26 +7,26 @@ display:
         options:
           submit_button: Filter
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           tags:
-            previous: '‹ forrige'
-            next: 'næste ›'
-            first: '« første'
-            last: 'sidste »'
+            previous: "‹ forrige"
+            next: "næste ›"
+            first: "« første"
+            last: "sidste »"
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         redirect_bulk_form:
           action_title: Handling
         redirect_source__path:
           label: Fra
-          separator: ', '
+          separator: ", "
         created:
           label: Oprettet
       filters:
@@ -40,22 +40,22 @@ display:
           group_info:
             group_items:
               1:
-                title: '300 Flere valg'
+                title: "300 Flere valg"
               2:
-                title: '301 Flyttet permanent'
+                title: "301 Flyttet permanent"
               3:
-                title: '302 Fundet'
+                title: "302 Fundet"
               4:
-                title: '303 Se anden placering'
+                title: "303 Se anden placering"
               5:
-                title: '304 Ikke ændret'
+                title: "304 Ikke ændret"
               6:
-                title: '305 Brug proxy'
+                title: "305 Brug proxy"
               7:
-                title: '307 Midlertidig omdirigering'
+                title: "307 Midlertidig omdirigering"
         language:
           expose:
-            label: 'Originalt sprog'
+            label: "Originalt sprog"
       title: Redirect
   page_1:
     display_title: Side

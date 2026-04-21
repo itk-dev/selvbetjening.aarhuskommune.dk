@@ -5,7 +5,6 @@ namespace Drupal\itkdev_booking\Helper;
 use Drupal\Core\Site\Settings;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use JsonException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
@@ -65,10 +64,12 @@ class BookingHelper {
         'statusCode' => $statusCode,
         'data' => $data,
       ];
-    } catch (ClientException $e) {
-      throw new HttpException($e->getCode(), "Get locations failed.");
-    } catch (JsonException $e) {
-      throw new HttpException($e->getCode(), "Get locations failed. Could not decode response.");
+    }
+    catch (ClientException $e) {
+      throw new HttpException($e->getCode(), 'Get locations failed.');
+    }
+    catch (\JsonException $e) {
+      throw new HttpException($e->getCode(), 'Get locations failed. Could not decode response.');
     }
   }
 
@@ -105,10 +106,12 @@ class BookingHelper {
         'statusCode' => $statusCode,
         'data' => $data,
       ];
-    } catch (ClientException $e) {
-      throw new HttpException($e->getCode(), "Get resources failed.");
-    } catch (JsonException $e) {
-      throw new HttpException($e->getCode(), "Get resources failed. Could not decode response.");
+    }
+    catch (ClientException $e) {
+      throw new HttpException($e->getCode(), 'Get resources failed.');
+    }
+    catch (\JsonException $e) {
+      throw new HttpException($e->getCode(), 'Get resources failed. Could not decode response.');
     }
   }
 
@@ -147,10 +150,12 @@ class BookingHelper {
         'statusCode' => $statusCode,
         'data' => $data,
       ];
-    } catch (ClientException $e) {
-      throw new HttpException($e->getCode(), "Get all resources failed.");
-    } catch (JsonException $e) {
-      throw new HttpException($e->getCode(), "Get all resources failed. Could not decode response.");
+    }
+    catch (ClientException $e) {
+      throw new HttpException($e->getCode(), 'Get all resources failed.');
+    }
+    catch (\JsonException $e) {
+      throw new HttpException($e->getCode(), 'Get all resources failed. Could not decode response.');
     }
   }
 
@@ -188,10 +193,12 @@ class BookingHelper {
         'statusCode' => $statusCode,
         'data' => $data,
       ];
-    } catch (ClientException $e) {
-      throw new HttpException($e->getCode(), "Get resource by id failed.");
-    } catch (JsonException $e) {
-      throw new HttpException($e->getCode(), "Get resource by id failed. Could not decode response.");
+    }
+    catch (ClientException $e) {
+      throw new HttpException($e->getCode(), 'Get resource by id failed.');
+    }
+    catch (\JsonException $e) {
+      throw new HttpException($e->getCode(), 'Get resource by id failed. Could not decode response.');
     }
 
   }
@@ -230,10 +237,12 @@ class BookingHelper {
         'data' => $data,
       ];
 
-    } catch (ClientException $e) {
-      throw new HttpException($e->getCode(), "Get busy intervals failed.");
-    } catch (JsonException $e) {
-      throw new HttpException($e->getCode(), "Get busy intervals failed. Could not decode response.");
+    }
+    catch (ClientException $e) {
+      throw new HttpException($e->getCode(), 'Get busy intervals failed.');
+    }
+    catch (\JsonException $e) {
+      throw new HttpException($e->getCode(), 'Get busy intervals failed. Could not decode response.');
     }
   }
 
@@ -267,12 +276,14 @@ class BookingHelper {
 
       return [
         'statusCode' => $statusCode,
-        'data' => $data
+        'data' => $data,
       ];
-    } catch (ClientException $e) {
-      throw new HttpException($e->getCode(), "Get user bookings failed.");
-    } catch (JsonException $e) {
-      throw new HttpException($e->getCode(), "Get user bookings failed. Could not decode response.");
+    }
+    catch (ClientException $e) {
+      throw new HttpException($e->getCode(), 'Get user bookings failed.');
+    }
+    catch (\JsonException $e) {
+      throw new HttpException($e->getCode(), 'Get user bookings failed. Could not decode response.');
     }
   }
 
@@ -291,9 +302,9 @@ class BookingHelper {
       $client = new Client();
       $headers = $this->userHelper->attachUserToHeaders($request, $this->headers);
       $headers['content-type'] = 'application/json';
-      $response = $client->request("POST", "{$endpoint}v1/status-by-ids", [
+      $response = $client->request('POST', "{$endpoint}v1/status-by-ids", [
         'headers' => $headers,
-        'json' => json_decode($request->getContent())
+        'json' => json_decode($request->getContent()),
       ]);
 
       $statusCode = $response->getStatusCode();
@@ -305,10 +316,12 @@ class BookingHelper {
         'statusCode' => $statusCode,
         'data' => $data,
       ];
-    } catch (ClientException $e) {
-      throw new HttpException($e->getCode(), "Get pending bookings failed.");
-    } catch (JsonException $e) {
-      throw new HttpException($e->getCode(), "Get pending user bookings failed. Could not decode response.");
+    }
+    catch (ClientException $e) {
+      throw new HttpException($e->getCode(), 'Get pending bookings failed.');
+    }
+    catch (\JsonException $e) {
+      throw new HttpException($e->getCode(), 'Get pending user bookings failed. Could not decode response.');
     }
   }
 
@@ -337,12 +350,14 @@ class BookingHelper {
 
       return [
         'statusCode' => $statusCode,
-        'data' => null,
+        'data' => NULL,
       ];
-    } catch (ClientException $e) {
-      throw new HttpException($e->getCode(), "Delete booking failed.");
-    } catch (JsonException $e) {
-      throw new HttpException($e->getCode(), "Delete booking failed. Could not decode response.");
+    }
+    catch (ClientException $e) {
+      throw new HttpException($e->getCode(), 'Delete booking failed.');
+    }
+    catch (\JsonException $e) {
+      throw new HttpException($e->getCode(), 'Delete booking failed. Could not decode response.');
     }
   }
 
@@ -376,10 +391,12 @@ class BookingHelper {
         'statusCode' => $statusCode,
         'data' => $data,
       ];
-    } catch (ClientException $e) {
-      throw new HttpException($e->getCode(), "Booking patch failed.");
-    } catch (JsonException $e) {
-      throw new HttpException($e->getCode(), "Booking patch failed. Could not decode response.");
+    }
+    catch (ClientException $e) {
+      throw new HttpException($e->getCode(), 'Booking patch failed.');
+    }
+    catch (\JsonException $e) {
+      throw new HttpException($e->getCode(), 'Booking patch failed. Could not decode response.');
     }
   }
 
@@ -414,10 +431,12 @@ class BookingHelper {
         'statusCode' => $statusCode,
         'data' => $data,
       ];
-    } catch (ClientException $e) {
-      throw new HttpException($e->getCode(), "Get booking details failed.");
-    } catch (JsonException $e) {
-      throw new HttpException($e->getCode(), "Get booking details failed. Could not decode response.");
+    }
+    catch (ClientException $e) {
+      throw new HttpException($e->getCode(), 'Get booking details failed.');
+    }
+    catch (\JsonException $e) {
+      throw new HttpException($e->getCode(), 'Get booking details failed. Could not decode response.');
     }
   }
 

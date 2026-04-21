@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - system
-title: 'Cleanup (caches, batch, flood, temp-files, etc.)'
+title: "Cleanup (caches, batch, flood, temp-files, etc.)"
 id: system_cron
 weight: 0
 module: system

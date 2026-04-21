@@ -1,5 +1,5 @@
 label: Indhold
-description: 'Find og håndtér indhold.'
+description: "Find og håndtér indhold."
 display:
   default:
     display_options:
@@ -7,29 +7,29 @@ display:
         options:
           submit_button: Filter
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           tags:
-            previous: '‹ Forrige'
-            next: 'Næste ›'
-            first: '« Første'
-            last: 'Sidste »'
+            previous: "‹ Forrige"
+            next: "Næste ›"
+            first: "« Første"
+            last: "Sidste »"
       fields:
         title:
           label: Titel
         type:
           label: Indholdstype
-          separator: ', '
+          separator: ", "
         name:
           label: Forfatter
         status:
           label: Status
           settings:
             format_custom_true: Udgivet
-            format_custom_false: 'Ikke udgivet'
+            format_custom_false: "Ikke udgivet"
         changed:
           label: Opdateret
         operations:
@@ -50,14 +50,14 @@ display:
               1:
                 title: Udgivet
               2:
-                title: 'Ikke udgivet'
+                title: "Ikke udgivet"
         langcode:
           expose:
             label: Sprog
       title: Indhold
       empty:
         area_text_custom:
-          content: 'Der er intet indhold at vise.'
+          content: "Der er intet indhold at vise."
     display_title: Master
   page_1:
     display_options:
@@ -65,5 +65,5 @@ display:
         title: Indhold
       tab_options:
         title: Indhold
-        description: 'Find og håndtér indhold'
+        description: "Find og håndtér indhold"
     display_title: Side
