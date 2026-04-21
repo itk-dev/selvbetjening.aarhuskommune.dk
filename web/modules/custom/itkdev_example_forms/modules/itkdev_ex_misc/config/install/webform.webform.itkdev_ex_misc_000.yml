@@ -13,8 +13,8 @@ dependencies:
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
-      2: '2'
-      1: 0
+      1: '1'
+      2: 0
   webform_encrypt:
     element:
       name:
@@ -65,8 +65,8 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_001
-title: 'Another example'
+id: itkdev_ex_misc_000
+title: itkdev_ex_misc_000
 description: ''
 categories: {  }
 elements: |-

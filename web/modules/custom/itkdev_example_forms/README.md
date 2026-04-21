@@ -2,8 +2,8 @@
 
 Webform examples for Selvbetjening.
 
-The basic idea is that we export webforms with IDs matching specific patterns
-into the `config/install` folder in sub-modules to group releated webforms.
+The basic idea is that we export webforms with IDs starting with `itkdev_ex_*_` where `itkdev_ex_*` is the name of an
+installed module into the `config/install` folder in said module.
 
 ## Example usage
 
@@ -14,7 +14,18 @@ into the `config/install` folder in sub-modules to group releated webforms.
    drush pm:install itkdev_ex_misc
    ```
 
-3. Create a webform whose ID starts with `itkdev_ex_`, e.g. `itkdev_ex_my_example`
+3. Run
+
+   ``` shell
+   drush itkdev-example-forms:webform:generate
+   ```
+
+   to generate a new example webform.
+
+   Alternatively, you can create the webform manually on
+   [`/admin/structure/webform/add`](https://selvbetjening.local.itkdev.dk/admin/structure/webform/add) using an
+   appropriate webform ID, e.g. `itkdev_ex_misc_my_example` for the `itkdev_ex_misc` module.
+
 4. Run
 
    ``` shell
@@ -23,17 +34,17 @@ into the `config/install` folder in sub-modules to group releated webforms.
 
    to export the webform into the `itkdev_ex_misc` module's `config/install` folder.
 5. Edit
-   `web/modules/custom/itkdev_example_forms/modules/itkdev_ex_misc/config/install/webform.webform.itkdev_ex_my_example.yml`
+   `web/modules/custom/itkdev_example_forms/modules/itkdev_ex_misc/config/install/webform.webform.itkdev_ex_misc_my_example.yml`
    and update the webform's `title`, say.
 6. Run
 
    ``` shell
-   drush itkdev-example-forms:webforms:reset itkdev_ex_my_example
+   drush itkdev-example-forms:webforms:reset itkdev_ex_misc_my_example
    ```
 
    to import the updated webform config (cf.
-   [`/admin/structure/webform/manage/itkdev_ex_my_example/settings`](https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/itkdev_ex_my_example/settings)
-7. Edit the webform on [`/admin/structure/webform/manage/itkdev_ex_my_example/settings`](https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/itkdev_ex_my_example/settings)
+   [`/admin/structure/webform/manage/itkdev_ex_misc_my_example/settings`](https://selvbetjening.local.itkdev.dk/admin/structure/webform/manage/itkdev_ex_misc_my_example/settings)
+7. Edit the webform on [`/admin/structure/webform/manage/itkdev_ex_misc_my_example/settings`](https://selvbetjening.local.itkdev.dk/admin/structure/webform/manage/itkdev_ex_misc_my_example/settings)
 8. Run
 
    ``` shell

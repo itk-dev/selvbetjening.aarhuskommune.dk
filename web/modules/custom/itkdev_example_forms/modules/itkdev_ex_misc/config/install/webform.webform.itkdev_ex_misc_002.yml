@@ -13,11 +13,20 @@ dependencies:
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
-      1: '1'
-      2: 0
+      2: '2'
+      1: 0
   webform_encrypt:
     element:
+      page_1:
+        encrypt: true
+        encrypt_profile: webform
       name:
+        encrypt: true
+        encrypt_profile: webform
+      page_2:
+        encrypt: true
+        encrypt_profile: webform
+      date:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -65,15 +74,24 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_000
-title: itkdev_ex_000
+id: itkdev_ex_misc_002
+title: 'Multipage form'
 description: ''
 categories: {  }
 elements: |-
-  name:
-    '#type': textfield
-    '#title': name
-    '#required': true
+  page_1:
+    '#type': webform_wizard_page
+    '#title': 'Side 1'
+    name:
+      '#type': textfield
+      '#title': Navn
+      '#required': true
+  page_2:
+    '#type': webform_wizard_page
+    '#title': 'Side 2'
+    date:
+      '#type': date
+      '#title': Dato
 css: ''
 javascript: ''
 settings:

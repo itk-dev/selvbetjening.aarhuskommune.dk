@@ -8,6 +8,7 @@ use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Config\ConfigManagerInterface;
 use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\Core\Extension\Exception\UnknownExtensionException;
+use Drupal\Core\Extension\Extension;
 use Drupal\Core\Extension\ModuleHandler;
 use Drupal\Core\File\FileSystemInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -24,11 +25,14 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 final class ExportWebformsCommand extends Command {
   use AutowireTrait;
 
-  private const CONFIG_NAME_PATTERNS = [
-    // Regexp => module name.
-    '/^webform\.webform\.itkdev_ex_/' => 'itkdev_ex_misc',
-    '/^webform\.webform\.itkdev_ex_mitid_/' => 'itkdev_ex_mitid',
-  ];
+  private const WEBFORM_ID_PREFIX = 'itkdev_ex_';
+
+  /**
+   * The example modules.
+   *
+   * @var Extension[]
+   */
+  private array $exampleModules;
 
   /**
    * The config keys to clear.
@@ -49,6 +53,13 @@ final class ExportWebformsCommand extends Command {
     private readonly FileSystemInterface $fileSystem,
   ) {
     parent::__construct();
+
+    $this->exampleModules = [];
+    foreach ($this->moduleHandler->getModuleList() as $module) {
+      if ($this->isExampleModule($module)) {
+        $this->exampleModules[$module->getName()] = $module;
+      }
+    }
   }
 
   /**
@@ -57,34 +68,38 @@ final class ExportWebformsCommand extends Command {
   protected function execute(InputInterface $input, OutputInterface $output): int {
     $io = new SymfonyStyle($input, $output);
 
-    if (!$io->confirm('Really export all example webforms?', !$input->isInteractive())) {
-      return self::FAILURE;
-    }
+      if (!$io->confirm('Really export all example webforms?', !$input->isInteractive())) {
+        return self::FAILURE;
+      }
 
-    $configNamePatterns = array_keys(self::CONFIG_NAME_PATTERNS);
+
     if ($output->isVerbose()) {
-      $io->info(dt('Exporting webforms with IDs matching one of %patterns', [
-        '%patterns' => implode(',', $configNamePatterns),
-      ]));
-    }
+$io->info(dt('Exporting webforms with IDs starting with %prefix', ['%prefix' => self::WEBFORM_ID_PREFIX,]));
+}
 
     $configFactory = $this->configManager->getConfigFactory();
-    $configNames = array_values(
-      array_filter(
-        $configFactory->listAll(),
-        static fn(string $name): bool => !empty(array_filter(
-          array_map(
-            static fn(string $pattern) => preg_match($pattern, $name),
-            $configNamePatterns
-          )
-        )),
+    $webformIds = array_values(
+      array_map(
+        static fn (string $configName): string => substr($configName, 16),
+        array_filter(
+          $configFactory->listAll(),
+          static fn(string $name): bool => str_starts_with($name, 'webform.webform.'.self::WEBFORM_ID_PREFIX),
+        )
       )
     );
 
-    foreach ($configNames as $configName) {
-      $moduleName = $this->getModuleName($configName);
+    if ($output->isVerbose()) {
+      $io->info(array_merge(
+        [dt('Exporting webforms with IDs')],
+        $webformIds
+      ));
+    }
+
+    foreach ($webformIds as $webformId) {
+      $io->section($webformId);
+
       try {
-        $module = $this->moduleHandler->getModule($moduleName);
+        $module = $this->getModule($webformId);
       }
       catch (UnknownExtensionException $exception) {
         $io->error($exception->getMessage());
@@ -95,18 +110,15 @@ final class ExportWebformsCommand extends Command {
       if (!is_dir($targetDir)) {
         $this->fileSystem->mkdir($targetDir, recursive: TRUE);
       }
+
       if ($output->isVerbose()) {
         $io->info(dt('Exporting %config_name to module %module_name', [
-          '%config_name' => $configName,
-          '%module_name' => $moduleName,
+          '%config_name' => $webformId,
+          '%module_name' => $module->getName(),
         ]));
       }
 
-      if ($output->isVerbose()) {
-        $io->section($configName);
-      }
-
-      $config = $configFactory->getEditable($configName);
+      $config = $configFactory->getEditable($this->getConfigName($webformId));
       foreach (static::$configKeysToClear as $key) {
         if ($output->isVerbose()) {
           $io->writeln(dt('Clearing key %config_key', ['%config_key' => $key]));
@@ -116,15 +128,15 @@ final class ExportWebformsCommand extends Command {
 
       $dependencies = $config->get('dependencies');
       $enforcedModules = $dependencies['enforced']['module'] ?? [];
-      $dependencies['enforced']['module'] = array_unique((array) $enforcedModules + [$moduleName]);
+      $dependencies['enforced']['module'] = array_unique((array) $enforcedModules + [$module->getName()]);
       $config->set('dependencies', $dependencies);
       $config->save();
 
-      $targetName = $targetDir . '/' . $configName . '.yml';
+      $targetName = $targetDir . '/' . $config->getName() . '.yml';
       // @todo (How) Can we use the config manager (or factory) to do this?
       file_put_contents($targetName, Yaml::encode($config->get()));
-      $io->success(dt('Config %config_name written to %file', [
-        '%config_name' => $configName,
+      $io->success(dt('Webform %config_name exported to %file', [
+        '%config_name' => $webformId,
         '%file' => $targetName,
       ]));
     }
@@ -132,22 +144,29 @@ final class ExportWebformsCommand extends Command {
     return self::SUCCESS;
   }
 
+  private function isExampleModule(string|Extension $module): bool {
+    $name = is_string($module) ? $module : $module->getName();
+
+    return str_starts_with($name, self::WEBFORM_ID_PREFIX);
+  }
+
   /**
    * Get module name form config name.
    */
-  private function getModuleName(string $configName): string {
-    $bestMatch = NULL;
-
-    foreach (self::CONFIG_NAME_PATTERNS as $pattern => $moduleName) {
-      if (preg_match($pattern, $configName, $matches)) {
-        $match = $matches[0];
-        if (strlen($match) > strlen($bestMatch ?? '')) {
-          $bestMatch = $moduleName;
-        }
+  private function getModule(string $webformId): Extension {
+    foreach ($this->exampleModules as $moduleName => $module) {
+      if (str_starts_with($webformId, $moduleName)) {
+        return $module;
       }
     }
 
-    return $bestMatch;
+    throw new UnknownExtensionException(dt('Cannot find example module for webform %webform_id', [
+      '%webform_id' => $webformId,
+    ]));
+  }
+
+  private function getConfigName(string $webformId): string {
+    return 'webform.webform.'.$webformId;
   }
 
 }
