@@ -6,6 +6,6 @@ dependencies:
     - events_logging
 id: events_logging.token
 label: Token
-description: ''
+description: ""
 targetEntityType: events_logging
 cache: true

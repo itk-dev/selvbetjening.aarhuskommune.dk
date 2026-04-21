@@ -12,7 +12,7 @@ dependencies:
 _core:
   default_config_hash: Yhiduw4iz_SirhTpmcJuilZVxfZfgww00eFfrJJ2_xg
 id: user_add_role_action.os2forms_rest_api_user
-label: 'Add the OS2Form REST API user role to the selected user(s)'
+label: "Add the OS2Form REST API user role to the selected user(s)"
 type: user
 plugin: user_add_role_action
 configuration:

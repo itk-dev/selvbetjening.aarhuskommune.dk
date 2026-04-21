@@ -3,11 +3,11 @@ _core:
 langcode: da
 spt_table:
   1:
-    status: '1'
+    status: "1"
     pages: "/user/*\r\n<front>\r\n/sagsbehandler-overblik/*\r\n/sagsbehandler-overblik\r\n/maestro-all-flows\r\n/outstanding-tasks\r\n/taskconsole\r\n/maestro/*\r\n/maestro-all-in-production-tasks\r\n/admin/structure/webform/manage/*\r\n/node/*/webform/submission/*"
-    theme_key: ''
+    theme_key: ""
     theme: gin
-    weight: '-10'
+    weight: "-10"
     roles:
       anonymous: anonymous
       authenticated: authenticated
@@ -18,19 +18,19 @@ spt_table:
       sagsbehandler: sagsbehandler
       medarbejder: medarbejder
       leder: leder
-      virksomhed: '0'
-      borger: '0'
-      os2forms_rest_api_user: '0'
-      os2forms_rest_api_user_write: '0'
+      virksomhed: "0"
+      borger: "0"
+      os2forms_rest_api_user: "0"
+      os2forms_rest_api_user_write: "0"
     language:
       da: 0
       en: 0
   0:
-    status: '0'
+    status: "0"
     pages: "/node/*\r\n*/submission/*/edit"
-    theme_key: ''
+    theme_key: ""
     theme: custom_theme
-    weight: '-9'
+    weight: "-9"
     roles:
       anonymous: anonymous
       authenticated: authenticated
@@ -41,10 +41,10 @@ spt_table:
       sagsbehandler: sagsbehandler
       medarbejder: medarbejder
       leder: leder
-      virksomhed: '0'
-      borger: '0'
-      os2forms_rest_api_user: '0'
-      os2forms_rest_api_user_write: '0'
+      virksomhed: "0"
+      borger: "0"
+      os2forms_rest_api_user: "0"
+      os2forms_rest_api_user_write: "0"
     language:
       da: 0
       en: 0

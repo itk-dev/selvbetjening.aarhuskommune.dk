@@ -1,57 +1,57 @@
-label: 'OS2forms failed jobs'
-description: 'Failed jobs displayed under a forms results tab'
+label: "OS2forms failed jobs"
+description: "Failed jobs displayed under a forms results tab"
 display:
   default:
     display_title: Default
     display_options:
-      title: 'OS2forms failed jobs'
+      title: "OS2forms failed jobs"
       fields:
         job_id:
-          label: 'Job ID'
+          label: "Job ID"
         type_1:
-          label: 'Job type'
+          label: "Job type"
         webform_id:
-          label: 'Webform id'
+          label: "Webform id"
         webform_submission_id:
-          label: 'Webform submission id'
+          label: "Webform submission id"
         webform_submission_serial_id:
-          label: 'Webform submission serial id'
+          label: "Webform submission serial id"
         retry_operation:
-          label: 'Retry operation'
+          label: "Retry operation"
         state:
           label: State
         advancedqueue_bulk_form:
-          label: 'Advanced queue operations bulk form'
+          label: "Advanced queue operations bulk form"
         nothing:
-          label: 'Site wide id / Webform submission id'
+          label: "Site wide id / Webform submission id"
           alter:
             text: '<a href="/admin/structure/webform/manage/{{ webform_id }}/submission/{{ webform_submission_id }}">{{ webform_submission_id }} / {{ webform_submission_serial_id }}</a>'
         nothing_1:
-          label: 'Related handler / Error message'
+          label: "Related handler / Error message"
           alter:
             text: '<a class="use-ajax" data-dialog-options="{&quot;width&quot;:400}" data-dialog-type="modal" href="/os2forms_failed_jobs/{{ webform_id }}/jobs/{{ job_id }}/message">{{ type_1 }}</a>'
         processed:
-          label: 'Last processed date'
+          label: "Last processed date"
         nothing_2:
-          label: 'State / Action'
+          label: "State / Action"
           alter:
             text: "{% if state == 'Error' or state == 'Fejl'  %}\r\n{{ retry_operation }}\r\n{% else %}\r\n{{ state }}\r\n{% endif %}"
       pager:
         options:
           tags:
-            next: 'Næste ›'
-            previous: '‹ Forrige'
-            first: '« Første'
-            last: 'Sidste »'
+            next: "Næste ›"
+            previous: "‹ Forrige"
+            first: "« Første"
+            last: "Sidste »"
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       exposed_form:
         options:
           submit_button: Udfør
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       arguments:
@@ -61,6 +61,6 @@ display:
       filters:
         webform_submission_serial_id:
           expose:
-            label: 'Webform submission id'
+            label: "Webform submission id"
   block_1:
     display_title: Block

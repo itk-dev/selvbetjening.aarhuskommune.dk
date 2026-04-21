@@ -1,5 +1,5 @@
-label: 'My Workflow'
-description: 'Content a user has access to that is ready for moderation'
+label: "My Workflow"
+description: "Content a user has access to that is ready for moderation"
 display:
   default:
     display_title: Master
@@ -8,55 +8,55 @@ display:
         options:
           submit_button: Apply
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
         options:
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
+            items_per_page_label: "Items per page"
+            items_per_page_options_all_label: "- All -"
             offset_label: Offset
           tags:
             previous: ‹‹
             next: ››
-            first: '« First'
-            last: 'Last »'
+            first: "« First"
+            last: "Last »"
       fields:
         title:
           label: Title
-          separator: ', '
+          separator: ", "
         moderation_state:
-          label: 'Latest state'
-          separator: ', '
+          label: "Latest state"
+          separator: ", "
         status:
           label: Published
-          separator: ', '
+          separator: ", "
         participant_role_field:
-          label: 'My role'
+          label: "My role"
       filters:
         title:
           expose:
             label: Title
         type:
           expose:
-            label: 'Content type'
+            label: "Content type"
           group_info:
-            label: 'Content type'
+            label: "Content type"
         status:
           expose:
             label: Published
         participant_role_filter:
           expose:
-            label: 'Participant role filter'
+            label: "Participant role filter"
         participant_role_filter_1:
           expose:
-            label: 'My role'
-      title: 'My Workflow'
+            label: "My role"
+      title: "My Workflow"
   my_workflow_page:
-    display_title: 'My workflow'
+    display_title: "My workflow"
     display_options:
       menu:
-        title: 'My workflow'
-        description: 'Content a user has access to that is ready for moderation'
-      display_description: 'Content a user has access to that is ready for moderation'
+        title: "My workflow"
+        description: "Content a user has access to that is ready for moderation"
+      display_description: "Content a user has access to that is ready for moderation"

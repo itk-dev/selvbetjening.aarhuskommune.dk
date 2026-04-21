@@ -1,5 +1,5 @@
 label: Filer
-description: 'Find og håndtér filer.'
+description: "Find og håndtér filer."
 display:
   default:
     display_title: Master
@@ -8,26 +8,26 @@ display:
         options:
           submit_button: Filter
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           tags:
-            previous: '‹ Forrige'
-            next: 'Næste ›'
+            previous: "‹ Forrige"
+            next: "Næste ›"
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         fid:
           label: Fid
         filename:
           label: Navn
-          separator: ', '
+          separator: ", "
         filemime:
-          label: 'MIME type'
+          label: "MIME type"
         filesize:
           label: Størrelse
         status:
@@ -40,37 +40,37 @@ display:
         changed:
           label: Ændringsdato
         count:
-          label: 'Brugt i'
+          label: "Brugt i"
       filters:
         filename:
           expose:
             label: Filnavn
         filemime:
           expose:
-            label: 'MIME type'
+            label: "MIME type"
         status:
           expose:
             label: Status
       title: Filer
       empty:
         area_text_custom:
-          content: 'Ingen tilgængelige filer.'
+          content: "Ingen tilgængelige filer."
   page_1:
     display_title: Filoversigt
     display_options:
       menu:
         title: Filer
   page_2:
-    display_title: 'File usage'
+    display_title: "File usage"
     display_options:
       pager:
         options:
           tags:
-            previous: '‹ Forrige'
-            next: 'Næste ›'
+            previous: "‹ Forrige"
+            next: "Næste ›"
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         entity_label:
@@ -78,12 +78,12 @@ display:
         type:
           label: Entity-type
         module:
-          label: 'Registrerer modul'
+          label: "Registrerer modul"
         count:
-          label: 'Brug antal'
-      title: 'File usage'
+          label: "Brug antal"
+      title: "File usage"
       arguments:
         fid:
           exception:
             title: Alle
-          title: 'Information om brug af filen {{ arguments.fid }}'
+          title: "Information om brug af filen {{ arguments.fid }}"

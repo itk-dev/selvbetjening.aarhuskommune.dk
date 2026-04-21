@@ -6,6 +6,6 @@ dependencies:
     - webform
 id: webform.token
 label: Token
-description: ''
+description: ""
 targetEntityType: webform
 cache: true

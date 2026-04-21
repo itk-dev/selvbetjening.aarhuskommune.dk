@@ -1,10 +1,10 @@
 uuid: 7d749c25-6c1a-4729-9389-71bfa05952f7
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
 id: main
-label: 'Primær navigation'
-description: 'Links til sitets sektioner'
+label: "Primær navigation"
+description: "Links til sitets sektioner"
 locked: true

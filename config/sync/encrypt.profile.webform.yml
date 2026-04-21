@@ -11,5 +11,5 @@ _core:
 id: webform
 label: Webform
 encryption_method: sodium
-encryption_method_configuration: {  }
+encryption_method_configuration: {}
 encryption_key: webform

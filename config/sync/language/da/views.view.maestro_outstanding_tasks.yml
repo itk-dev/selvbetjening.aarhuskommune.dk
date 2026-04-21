@@ -6,35 +6,35 @@ display:
         options:
           submit_button: Udfør
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         queue_id_1:
           label: K
-          separator: ', '
+          separator: ", "
         task_label:
           label: Opgave
-          separator: ', '
+          separator: ", "
         process_name:
-          separator: ', '
+          separator: ", "
         assign_id:
-          separator: ', '
+          separator: ", "
         active_handler:
           label: Håndtering
         handler:
           label: Håndtering
-          separator: ', '
+          separator: ", "
         created_1:
-          separator: ', '
+          separator: ", "
         created:
-          separator: ', '
+          separator: ", "
         admin_operations:
           label: Handlinger
       header:
@@ -45,21 +45,21 @@ display:
       fields:
         queue_id_1:
           label: K
-          separator: ', '
+          separator: ", "
         task_label:
           label: Opgave
-          separator: ', '
+          separator: ", "
         process_name:
-          separator: ', '
+          separator: ", "
         assign_id:
-          separator: ', '
+          separator: ", "
         handler:
           label: Håndtering
-          separator: ', '
+          separator: ", "
         created_1:
-          separator: ', '
+          separator: ", "
         created:
-          separator: ', '
+          separator: ", "
       arguments:
         process_id:
           exception:

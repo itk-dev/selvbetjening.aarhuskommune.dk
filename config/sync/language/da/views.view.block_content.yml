@@ -1,5 +1,5 @@
-label: 'Brugerdefineret blokbibliotek'
-description: 'Find og håndtér brugerdefinerede blokke.'
+label: "Brugerdefineret blokbibliotek"
+description: "Find og håndtér brugerdefinerede blokke."
 display:
   default:
     display_title: Master
@@ -8,25 +8,25 @@ display:
         options:
           submit_button: Udfør
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           tags:
-            previous: '‹ Forrige'
-            next: 'Næste ›'
+            previous: "‹ Forrige"
+            next: "Næste ›"
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         info:
           label: Beskrivelse
-          separator: ', '
+          separator: ", "
         type:
           label: Bloktype
-          separator: ', '
+          separator: ", "
         changed:
           label: Opdateret
         operations:
@@ -38,12 +38,12 @@ display:
         type:
           expose:
             label: Bloktype
-      title: 'Brugerdefineret blokbibliotek'
+      title: "Brugerdefineret blokbibliotek"
       empty:
         area_text_custom:
-          content: 'Der er ingen tilpassede blokke tilgængeligt.'
+          content: "Der er ingen tilpassede blokke tilgængeligt."
   page_1:
     display_title: Side
     display_options:
       menu:
-        title: 'Brugerdefineret blokbibliotek'
+        title: "Brugerdefineret blokbibliotek"

@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - honeypot
-title: 'Default cron handler'
+title: "Default cron handler"
 id: honeypot_cron
 weight: 0
 module: honeypot

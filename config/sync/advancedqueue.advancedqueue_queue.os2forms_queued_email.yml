@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: N9qjjFEXcXH9WSKJH1J8zJ0v5TnB5KfvwBM_LY_Fd90
 id: os2forms_queued_email
-label: 'OS2forms queued e-mail'
+label: "OS2forms queued e-mail"
 backend: database
 backend_configuration:
   lease_time: 300

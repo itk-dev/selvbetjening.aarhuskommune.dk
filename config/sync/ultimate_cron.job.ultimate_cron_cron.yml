@@ -1,8 +1,8 @@
 uuid: aa646fa4-a104-4215-9173-9f8c951d6a0f
 langcode: en
 status: true
-dependencies: {  }
-title: 'Runs internal cleanup operations'
+dependencies: {}
+title: "Runs internal cleanup operations"
 id: ultimate_cron_cron
 weight: 0
 module: ultimate_cron

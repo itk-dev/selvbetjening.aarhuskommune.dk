@@ -3,39 +3,39 @@ _core:
 langcode: da
 mode: simple
 ignored_config_entities:
-  - '# Ignore encryption key and os2forms_encrypt settings'
-  - '# Ignore global header, colophon and footer settings'
-  - '# Ignore leaflet layers'
-  - '# Ignore most settings on /admin/config/system/os2web-datalookup/datafordeler-cvr'
-  - '# Ignore most settings on /admin/config/system/os2web-datalookup/serviceplatformen-cpr-extended'
-  - 'coc_forms_auto_export.config.*'
-  - 'key.key.*'
+  - "# Ignore encryption key and os2forms_encrypt settings"
+  - "# Ignore global header, colophon and footer settings"
+  - "# Ignore leaflet layers"
+  - "# Ignore most settings on /admin/config/system/os2web-datalookup/datafordeler-cvr"
+  - "# Ignore most settings on /admin/config/system/os2web-datalookup/serviceplatformen-cpr-extended"
+  - "coc_forms_auto_export.config.*"
+  - "key.key.*"
   - key.key.webform
-  - 'leaflet_layers.map_bundle.*'
-  - 'leaflet_layers.map_layer.*'
-  - 'maestro.maestro_template.*'
-  - 'os2forms_attachment.os2forms_attachment_component.*'
+  - "leaflet_layers.map_bundle.*"
+  - "leaflet_layers.map_layer.*"
+  - "maestro.maestro_template.*"
+  - "os2forms_attachment.os2forms_attachment_component.*"
   - os2forms_digital_post.settings
   - os2forms_encrypt.settings
   - os2forms_fasit.settings
   - os2forms_forloeb.settings
   - os2forms_get_organized.settings
   - os2forms_nemid.settings
-  - 'os2web_audit.*'
-  - 'os2web_datalookup.*'
-  - 'os2web_datalookup.datafordeler_cvr:cert_passphrase_live'
-  - 'os2web_datalookup.datafordeler_cvr:cert_path_live'
-  - 'os2web_datalookup.serviceplatformen_cpr_extended:certfile'
-  - 'os2web_datalookup.serviceplatformen_cpr_extended:certfile_passphrase'
-  - 'os2web_datalookup.serviceplatformen_cpr_extended:certfile_test'
-  - 'os2web_datalookup.serviceplatformen_cpr_extended:mode_selector'
-  - 'os2web_datalookup.serviceplatformen_cpr_extended:serviceagreementuuid'
-  - 'os2web_datalookup.serviceplatformen_cpr_extended:usersystemuuid'
-  - 'os2web_datalookup.serviceplatformen_cpr_extended:useruuid'
-  - 'os2web_datalookup.serviceplatformen_cpr_extended:wsdl'
+  - "os2web_audit.*"
+  - "os2web_datalookup.*"
+  - "os2web_datalookup.datafordeler_cvr:cert_passphrase_live"
+  - "os2web_datalookup.datafordeler_cvr:cert_path_live"
+  - "os2web_datalookup.serviceplatformen_cpr_extended:certfile"
+  - "os2web_datalookup.serviceplatformen_cpr_extended:certfile_passphrase"
+  - "os2web_datalookup.serviceplatformen_cpr_extended:certfile_test"
+  - "os2web_datalookup.serviceplatformen_cpr_extended:mode_selector"
+  - "os2web_datalookup.serviceplatformen_cpr_extended:serviceagreementuuid"
+  - "os2web_datalookup.serviceplatformen_cpr_extended:usersystemuuid"
+  - "os2web_datalookup.serviceplatformen_cpr_extended:useruuid"
+  - "os2web_datalookup.serviceplatformen_cpr_extended:wsdl"
   - os2web_nemlogin.settings
   - site_status_message.settings
   - system.site
-  - 'webform.settings:third_party_settings.webform_entity_print.template'
-  - 'webform.webform.*'
-  - 'webform.webform_options.*'
+  - "webform.settings:third_party_settings.webform_entity_print.template"
+  - "webform.webform.*"
+  - "webform.webform_options.*"

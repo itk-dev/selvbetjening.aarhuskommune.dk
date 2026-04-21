@@ -7,14 +7,14 @@ disable_search_threshold: 0
 minimum_width: 0
 max_shown_results: null
 use_relative_width: false
-jquery_selector: 'select:visible'
+jquery_selector: "select:visible"
 search_contains: false
 disable_search: false
 allow_single_deselect: false
 allow_mobile: false
 add_helper_buttons: false
-disabled_themes: {  }
+disabled_themes: {}
 chosen_include: 2
-placeholder_text_multiple: 'Choose some options'
-placeholder_text_single: 'Choose an option'
-no_results_text: 'No results match'
+placeholder_text_multiple: "Choose some options"
+placeholder_text_single: "Choose an option"
+no_results_text: "No results match"

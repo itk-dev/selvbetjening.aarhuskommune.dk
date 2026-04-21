@@ -8,7 +8,7 @@ dependencies:
     module:
       - os2forms_failed_jobs
 id: advancedqueue_handle_manually_action
-label: 'Håndtér manuelt'
+label: "Håndtér manuelt"
 type: advancedqueue_queue
 plugin: advancedqueue_handle_manually_action
-configuration: {  }
+configuration: {}

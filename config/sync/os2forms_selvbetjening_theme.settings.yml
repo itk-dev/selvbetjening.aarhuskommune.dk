@@ -5,8 +5,8 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: 'public://aak_02_venstre_70_2.png'
+  path: "public://aak_02_venstre_70_2.png"
 favicon:
   use_default: 0
-  path: 'public://Aarhus-byvaaben.ico'
+  path: "public://Aarhus-byvaaben.ico"
   mimetype: image/vnd.microsoft.icon

@@ -1,5 +1,5 @@
-label: 'Seneste indhold'
-description: 'Seneste indhold.'
+label: "Seneste indhold"
+description: "Seneste indhold."
 display:
   default:
     display_title: Master
@@ -8,16 +8,16 @@ display:
         options:
           submit_button: Udfør
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       fields:
         changed:
-          separator: ', '
-      title: 'Seneste indhold'
+          separator: ", "
+      title: "Seneste indhold"
       empty:
         area_text_custom:
-          content: 'Der er intet indhold at vise.'
+          content: "Der er intet indhold at vise."
       use_more_text: Mere
   block_1:
     display_title: Blok

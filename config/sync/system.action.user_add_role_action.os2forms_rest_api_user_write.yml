@@ -12,7 +12,7 @@ dependencies:
 _core:
   default_config_hash: SziW3nCnyd3IvBd1RDC7JV2eWfVdzJRAwqIK0QD1D74
 id: user_add_role_action.os2forms_rest_api_user_write
-label: 'Add the OS2Form REST API user (write) role to the selected user(s)'
+label: "Add the OS2Form REST API user (write) role to the selected user(s)"
 type: user
 plugin: user_add_role_action
 configuration:

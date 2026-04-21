@@ -6,6 +6,6 @@ dependencies:
     - maestro
 id: maestro_production_assignments.token
 label: Token
-description: ''
+description: ""
 targetEntityType: maestro_production_assignments
 cache: true

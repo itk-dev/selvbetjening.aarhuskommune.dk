@@ -31,12 +31,12 @@ services:
     networks:
       - app
     ports:
-      - '3310'
-      - '7357'
+      - "3310"
+      - "7357"
     environment:
-        CLAMD_CONF_MaxFileSize: "325M"
-        CLAMD_CONF_StreamMaxLength: "325M"
-        CLAMD_CONF_MaxScanSize: "400M"
+      CLAMD_CONF_MaxFileSize: "325M"
+      CLAMD_CONF_StreamMaxLength: "325M"
+      CLAMD_CONF_MaxScanSize: "400M"
 
   idp-admin:
     image: ghcr.io/soluto/oidc-server-mock:latest
@@ -48,7 +48,7 @@ services:
       - app
       - frontend
     ports:
-      - '80'
+      - "80"
     volumes:
       - .:/tmp/config:ro
     labels:
@@ -149,7 +149,7 @@ services:
       - app
       - frontend
     ports:
-      - '80'
+      - "80"
     volumes:
       - .:/tmp/config:ro
     labels:

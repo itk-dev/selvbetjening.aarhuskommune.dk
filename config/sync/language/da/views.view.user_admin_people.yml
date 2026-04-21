@@ -1,5 +1,5 @@
 label: Personer
-description: 'Find og håndtér personer som bruger dit site.'
+description: "Find og håndtér personer som bruger dit site."
 display:
   default:
     display_title: Master
@@ -8,19 +8,19 @@ display:
         options:
           submit_button: Filter
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           tags:
-            previous: '‹ Forrige'
-            next: 'Næste ›'
-            first: '« Første'
-            last: 'Sidste »'
+            previous: "‹ Forrige"
+            next: "Næste ›"
+            first: "« Første"
+            last: "Sidste »"
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         user_bulk_form:
@@ -35,17 +35,17 @@ display:
         roles_target_id:
           label: Roller
         created:
-          label: 'Medlem i'
+          label: "Medlem i"
         access:
-          label: 'Seneste tilgang'
+          label: "Seneste tilgang"
         operations:
           label: Handlinger
         mail:
-          separator: ', '
+          separator: ", "
       filters:
         combine:
           expose:
-            label: 'Navn eller e-mail indeholder'
+            label: "Navn eller e-mail indeholder"
         status:
           group_info:
             label: Status
@@ -63,14 +63,14 @@ display:
       title: Personer
       empty:
         area_text_custom:
-          content: 'Ingen personer til rådighed.'
+          content: "Ingen personer til rådighed."
       use_more_text: mere
   page_1:
     display_title: Side
     display_options:
       menu:
         title: Vis
-        description: 'Find og håndtér personer som bruger dit site.'
+        description: "Find og håndtér personer som bruger dit site."
       tab_options:
         title: Personer
-        description: 'Håndtér brugerkonti, roller og tilladelser.'
+        description: "Håndtér brugerkonti, roller og tilladelser."

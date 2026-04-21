@@ -1,5 +1,5 @@
 label: Kommentarer
-description: 'Find og administrér kommentarer'
+description: "Find og administrér kommentarer"
 display:
   default:
     display_title: Master
@@ -8,41 +8,41 @@ display:
         options:
           submit_button: Udfør
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           tags:
-            previous: '‹ forrige'
-            next: 'næste ›'
-            first: '« første'
-            last: 'sidste »'
+            previous: "‹ forrige"
+            next: "næste ›"
+            first: "« første"
+            last: "sidste »"
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         comment_bulk_form:
           action_title: Handling
         subject:
           label: Emne
-          separator: ', '
+          separator: ", "
         uid:
-          separator: ', '
+          separator: ", "
         name:
           label: Forfatter
-          separator: ', '
+          separator: ", "
         entity_id:
-          label: 'Indsendt til'
-          separator: ', '
+          label: "Indsendt til"
+          separator: ", "
         changed:
           label: Opdateret
-          separator: ', '
+          separator: ", "
         operations:
           label: Handlinger
         name_1:
-          separator: ', '
+          separator: ", "
       filters:
         subject:
           expose:
@@ -56,21 +56,21 @@ display:
       title: Kommentarer
       empty:
         area_text_custom:
-          content: 'Der er ingen kommentarer at vise.'
+          content: "Der er ingen kommentarer at vise."
       use_more_text: mere
   page_published:
-    display_title: 'Udgivne kommentarer'
+    display_title: "Udgivne kommentarer"
     display_options:
       menu:
         title: Kommentarer
-        description: 'Publicerede kommentarer'
-      display_description: 'Liste over godkendte kommentarer.'
+        description: "Publicerede kommentarer"
+      display_description: "Liste over godkendte kommentarer."
   page_unapproved:
-    display_title: 'Ikke-godkendte kommentarer'
+    display_title: "Ikke-godkendte kommentarer"
     display_options:
       menu:
-        title: 'Ikke-godkendte kommentarer'
-        description: 'Ikke-godkendte kommentarer'
+        title: "Ikke-godkendte kommentarer"
+        description: "Ikke-godkendte kommentarer"
       filters:
         subject:
           expose:
@@ -86,19 +86,19 @@ display:
           action_title: Handling
         subject:
           label: Emne
-          separator: ', '
+          separator: ", "
         uid:
-          separator: ', '
+          separator: ", "
         name:
           label: Forfatter
-          separator: ', '
+          separator: ", "
         entity_id:
-          label: 'Indsendt til'
-          separator: ', '
+          label: "Indsendt til"
+          separator: ", "
         changed:
           label: Opdateret
-          separator: ', '
+          separator: ", "
         operations:
           label: Handlinger
         name_1:
-          separator: ', '
+          separator: ", "

@@ -1,5 +1,5 @@
-label: 'Maestro All Active Tasks'
-description: 'All tasks that are currently active in the Maestro Queue'
+label: "Maestro All Active Tasks"
+description: "All tasks that are currently active in the Maestro Queue"
 display:
   default:
     display_title: Master
@@ -8,169 +8,169 @@ display:
         options:
           submit_button: Apply
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
         options:
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
+            items_per_page_label: "Items per page"
+            items_per_page_options_all_label: "- All -"
             offset_label: Offset
           tags:
             previous: ��
             next: ��
       fields:
         id:
-          admin_label: 'Queue ID'
-          label: 'Queue ID'
-          separator: ', '
+          admin_label: "Queue ID"
+          label: "Queue ID"
+          separator: ", "
         task_label:
           label: Label
-          separator: ', '
+          separator: ", "
         process_id_1:
-          label: 'Process ID'
-          separator: ', '
+          label: "Process ID"
+          separator: ", "
         process_name:
-          label: 'Process Name'
-          separator: ', '
+          label: "Process Name"
+          separator: ", "
         task_class_name:
-          label: 'Class Name'
-          separator: ', '
+          label: "Class Name"
+          separator: ", "
         task_id:
-          label: 'Machine Name'
-          separator: ', '
+          label: "Machine Name"
+          separator: ", "
         created:
           label: Created
-          separator: ', '
+          separator: ", "
         changed:
           label: Changed
-          separator: ', '
+          separator: ", "
         is_interactive:
-          label: 'Is Interactive'
-          separator: ', '
+          label: "Is Interactive"
+          separator: ", "
         active_handler:
-          label: 'The Active Task Handler'
+          label: "The Active Task Handler"
         handler:
           label: Handler
-          separator: ', '
+          separator: ", "
         num_escalations_sent:
-          label: '# escalations sent'
-          separator: ', '
+          label: "# escalations sent"
+          separator: ", "
         num_reminders_sent:
-          label: '# Reminders sent'
-          separator: ', '
+          label: "# Reminders sent"
+          separator: ", "
         last_escalation_time:
-          label: 'Last escalation Time'
-          separator: ', '
+          label: "Last escalation Time"
+          separator: ", "
         active_assignments:
-          label: 'Assigned To'
+          label: "Assigned To"
         admin_operations:
           label: Operations
       filters:
         process_name:
           expose:
-            label: 'Process Name'
-            description: 'Filter on process name'
+            label: "Process Name"
+            description: "Filter on process name"
         task_label:
           expose:
-            label: 'Task Name'
-            description: 'Filter on task name'
-      title: 'All Active Maestro Workflow Tasks'
+            label: "Task Name"
+            description: "Filter on task name"
+      title: "All Active Maestro Workflow Tasks"
       header:
         area:
           admin_label: Introduction
           content:
-            value: 'Report of all outstanding or active tasks including batch tasks and conditional tasks - all task types. This is for all workflow processes that are active and have not yet completed. You are able to filter the results to view only the tasks for a selected process, for which there could be many active instances at different points in the workflow. Also filter the results for only a selected task name. The available actions include the ability to re-assign the task owner for a selected task.'
+            value: "Report of all outstanding or active tasks including batch tasks and conditional tasks - all task types. This is for all workflow processes that are active and have not yet completed. You are able to filter the results to view only the tasks for a selected process, for which there could be many active instances at different points in the workflow. Also filter the results for only a selected task name. The available actions include the ability to re-assign the task owner for a selected task."
       footer:
         area:
           content:
-            value: 'Total Records: [view:total-rows]'
+            value: "Total Records: [view:total-rows]"
   maestro_all_active_tasks_full:
-    display_title: 'Full View'
+    display_title: "Full View"
     display_options:
       fields:
         id:
-          admin_label: 'Queue ID'
-          label: 'Queue ID'
-          separator: ', '
+          admin_label: "Queue ID"
+          label: "Queue ID"
+          separator: ", "
         task_label:
           label: Label
-          separator: ', '
+          separator: ", "
         process_id_1:
-          label: 'Process ID'
-          separator: ', '
+          label: "Process ID"
+          separator: ", "
         process_name:
-          label: 'Process Name'
-          separator: ', '
+          label: "Process Name"
+          separator: ", "
         task_class_name:
-          label: 'Class Name'
-          separator: ', '
+          label: "Class Name"
+          separator: ", "
         task_id:
-          label: 'Machine Name'
-          separator: ', '
+          label: "Machine Name"
+          separator: ", "
         created:
           label: Created
-          separator: ', '
+          separator: ", "
         started_time:
-          label: 'Started Time'
+          label: "Started Time"
         is_interactive:
           label: Interactive
-          separator: ', '
+          separator: ", "
         active_handler:
-          label: 'The Active Task Handler'
+          label: "The Active Task Handler"
         handler:
           label: Handler
-          separator: ', '
+          separator: ", "
         num_escalations_sent:
-          label: '# escalations sent'
-          separator: ', '
+          label: "# escalations sent"
+          separator: ", "
         num_reminders_sent:
-          label: '# Reminders sent'
-          separator: ', '
+          label: "# Reminders sent"
+          separator: ", "
         last_escalation_time:
-          label: 'Last escalation Time'
-          separator: ', '
+          label: "Last escalation Time"
+          separator: ", "
         active_assignments:
-          label: 'Assigned To'
+          label: "Assigned To"
         admin_operations:
           label: Operations
   maestro_all_active_tasks_lean:
-    display_title: 'Lean View'
+    display_title: "Lean View"
     display_options:
       menu:
-        title: 'All Maestro Active Tasks'
-        description: 'Shows all active tasks - all task types'
+        title: "All Maestro Active Tasks"
+        description: "Shows all active tasks - all task types"
       fields:
         id:
-          admin_label: 'Queue ID'
-          label: 'Queue ID'
-          separator: ', '
+          admin_label: "Queue ID"
+          label: "Queue ID"
+          separator: ", "
         task_label:
-          label: 'Task Name'
-          separator: ', '
+          label: "Task Name"
+          separator: ", "
         process_id_1:
-          label: 'Process ID'
-          separator: ', '
+          label: "Process ID"
+          separator: ", "
         active_assignments:
-          label: 'The Active Assignees of this task'
+          label: "The Active Assignees of this task"
         process_name:
-          label: 'Process Name'
-          separator: ', '
+          label: "Process Name"
+          separator: ", "
         task_class_name:
-          label: 'Class Name'
-          separator: ', '
+          label: "Class Name"
+          separator: ", "
         task_id:
-          label: 'Machine Name'
-          separator: ', '
+          label: "Machine Name"
+          separator: ", "
         created:
           label: Created
-          separator: ', '
+          separator: ", "
         started_time:
-          label: 'Started Time'
+          label: "Started Time"
         is_interactive:
           label: Interactive
-          separator: ', '
+          separator: ", "
         active_handler:
           label: Handler
         admin_operations:

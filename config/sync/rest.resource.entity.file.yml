@@ -7,7 +7,7 @@ dependencies:
     - os2forms_rest_api
     - serialization
 id: entity.file
-plugin_id: 'entity:file'
+plugin_id: "entity:file"
 granularity: resource
 configuration:
   methods:

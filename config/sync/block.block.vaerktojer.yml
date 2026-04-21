@@ -16,9 +16,9 @@ theme: gin
 region: content
 weight: -3
 provider: null
-plugin: 'system_menu_block:tools'
+plugin: "system_menu_block:tools"
 settings:
-  id: 'system_menu_block:tools'
+  id: "system_menu_block:tools"
   label: Værktøjer
   label_display: visible
   provider: system
@@ -29,12 +29,12 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    context_mapping: {  }
-    pages: '<front>'
+    context_mapping: {}
+    pages: "<front>"
   user_role:
     id: user_role
     negate: false
     context_mapping:
-      user: '@user.current_user_context:current_user'
+      user: "@user.current_user_context:current_user"
     roles:
       flow_designer: flow_designer

@@ -1,4 +1,4 @@
 popup_agreed:
-  value: '<h2>Tak forfi du accepterede cookies</h2><p>Du kan nu skjule denne meddelelse eller lære mere om cookies.</p>'
+  value: "<h2>Tak forfi du accepterede cookies</h2><p>Du kan nu skjule denne meddelelse eller lære mere om cookies.</p>"
 popup_hide_button_message: Skjul
-withdraw_tab_button_label: 'Indstillinger for privatliv'
+withdraw_tab_button_label: "Indstillinger for privatliv"

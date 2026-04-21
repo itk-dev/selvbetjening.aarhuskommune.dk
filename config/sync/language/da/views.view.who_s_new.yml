@@ -1,5 +1,5 @@
-label: 'Nye brugere'
-description: 'Viser en liste af de nyeste brugerkonti på sitet.'
+label: "Nye brugere"
+description: "Viser en liste af de nyeste brugerkonti på sitet."
 display:
   default:
     display_title: Master
@@ -8,13 +8,13 @@ display:
         options:
           submit_button: Udfør
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
-      title: 'Nye brugere'
+      title: "Nye brugere"
   block_1:
-    display_title: 'Nye brugere'
+    display_title: "Nye brugere"
     display_options:
-      display_description: 'En liste af nye brugere'
-      block_description: 'Nye brugere'
+      display_description: "En liste af nye brugere"
+      block_description: "Nye brugere"
       block_category: Bruger

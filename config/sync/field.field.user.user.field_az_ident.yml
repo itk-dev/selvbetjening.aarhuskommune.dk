@@ -11,10 +11,10 @@ field_name: field_az_ident
 entity_type: user
 bundle: user
 label: az-ident
-description: ''
+description: ""
 required: false
 translatable: false
-default_value: {  }
-default_value_callback: ''
-settings: {  }
+default_value: {}
+default_value_callback: ""
+settings: {}
 field_type: string

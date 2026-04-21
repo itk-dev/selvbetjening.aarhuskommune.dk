@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - node
-title: 'Updates search rankings for nodes'
+title: "Updates search rankings for nodes"
 id: node_cron
 weight: 0
 module: node

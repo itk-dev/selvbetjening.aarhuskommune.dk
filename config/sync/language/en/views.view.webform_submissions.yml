@@ -1,5 +1,5 @@
-label: 'Webform submissions'
-description: 'Default webform submissions views.'
+label: "Webform submissions"
+description: "Default webform submissions views."
 display:
   default:
     display_title: Master
@@ -8,7 +8,7 @@ display:
         options:
           submit_button: Apply
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
@@ -16,78 +16,78 @@ display:
           tags:
             previous: ‹‹
             next: ››
-            first: '« First'
-            last: 'Last »'
+            first: "« First"
+            last: "Last »"
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
+            items_per_page_label: "Items per page"
+            items_per_page_options_all_label: "- All -"
             offset_label: Offset
       fields:
         sid:
-          label: '#'
-          separator: ', '
+          label: "#"
+          separator: ", "
         in_draft:
           label: Draft
-          separator: ', '
+          separator: ", "
         created:
           label: Created
-          separator: ', '
+          separator: ", "
         remote_addr:
-          label: 'IP address'
-          separator: ', '
+          label: "IP address"
+          separator: ", "
         view_webform_submission:
           label: Operations
           text: view
       header:
         result:
-          content: 'Displaying @start - @end of @total'
+          content: "Displaying @start - @end of @total"
       empty:
         area_text_custom:
-          content: 'No submissions available.'
+          content: "No submissions available."
       arguments:
         in_draft:
           exception:
             title: All
-      title: 'Webform submissions'
+      title: "Webform submissions"
   embed_default:
-    display_title: 'Embed: Default'
+    display_title: "Embed: Default"
     display_options:
-      display_description: 'Display submissions.'
+      display_description: "Display submissions."
   embed_administer:
-    display_title: 'Embed: Administer'
+    display_title: "Embed: Administer"
     display_options:
-      display_description: 'Administer submissions.'
+      display_description: "Administer submissions."
       fields:
         webform_submission_bulk_form:
-          label: 'Webform submission operations bulk form'
+          label: "Webform submission operations bulk form"
           action_title: Action
         sid:
-          label: '#'
-          separator: ', '
+          label: "#"
+          separator: ", "
         in_draft:
           label: Draft
-          separator: ', '
+          separator: ", "
         sticky:
           label: Sticky
-          separator: ', '
+          separator: ", "
         locked:
           label: Locked
-          separator: ', '
+          separator: ", "
         created:
           label: Created
-          separator: ', '
+          separator: ", "
         completed:
           label: Completed
-          separator: ', '
+          separator: ", "
         remote_addr:
-          label: 'IP address'
-          separator: ', '
+          label: "IP address"
+          separator: ", "
         operations:
           label: Operations
       filters:
         in_draft:
           expose:
-            label: 'Is draft'
+            label: "Is draft"
         sticky:
           expose:
             label: Sticky
@@ -95,34 +95,34 @@ display:
           expose:
             label: Locked
   embed_manage:
-    display_title: 'Embed: Manage'
+    display_title: "Embed: Manage"
     display_options:
-      display_description: 'Manage submissions.'
+      display_description: "Manage submissions."
       fields:
         webform_submission_bulk_form:
-          label: 'Webform submission operations bulk form'
+          label: "Webform submission operations bulk form"
           action_title: Action
         sid:
-          label: '#'
-          separator: ', '
+          label: "#"
+          separator: ", "
         in_draft:
           label: Draft
-          separator: ', '
+          separator: ", "
         sticky:
           label: Sticky
-          separator: ', '
+          separator: ", "
         locked:
           label: Locked
-          separator: ', '
+          separator: ", "
         created:
           label: Created
-          separator: ', '
+          separator: ", "
         completed:
           label: Completed
-          separator: ', '
+          separator: ", "
         remote_addr:
-          label: 'IP address'
-          separator: ', '
+          label: "IP address"
+          separator: ", "
         view_webform_submission:
           label: Operations
           text: view
@@ -132,7 +132,7 @@ display:
       filters:
         in_draft:
           expose:
-            label: 'Is draft'
+            label: "Is draft"
         sticky:
           expose:
             label: Sticky
@@ -140,38 +140,38 @@ display:
           expose:
             label: Locked
   embed_review:
-    display_title: 'Embed: Review'
+    display_title: "Embed: Review"
     display_options:
-      display_description: 'Review submissions.'
+      display_description: "Review submissions."
       fields:
         sid:
-          label: '#'
-          separator: ', '
+          label: "#"
+          separator: ", "
         in_draft:
           label: Draft
-          separator: ', '
+          separator: ", "
         sticky:
           label: Sticky
-          separator: ', '
+          separator: ", "
         locked:
           label: Locked
-          separator: ', '
+          separator: ", "
         created:
           label: Created
-          separator: ', '
+          separator: ", "
         completed:
           label: Completed
-          separator: ', '
+          separator: ", "
         remote_addr:
-          label: 'IP address'
-          separator: ', '
+          label: "IP address"
+          separator: ", "
         view_webform_submission:
           label: Operations
           text: view
       filters:
         in_draft:
           expose:
-            label: 'Is draft'
+            label: "Is draft"
         sticky:
           expose:
             label: Sticky

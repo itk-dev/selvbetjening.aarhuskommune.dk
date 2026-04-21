@@ -1,11 +1,11 @@
 uuid: 21a36dec-9e5d-43bb-8834-1230607f16a5
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: eNX6lLCKDaY83nCMh20My---y03KbiFlv802DKCCpvg
 id: und
-label: 'Ikke angivet'
+label: "Ikke angivet"
 direction: ltr
 weight: 2
 locked: true

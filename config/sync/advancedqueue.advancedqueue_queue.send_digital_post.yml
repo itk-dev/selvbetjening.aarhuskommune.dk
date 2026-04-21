@@ -1,9 +1,9 @@
 uuid: 7f05d7e6-401a-4432-a8f7-ab48a46d4ab0
 langcode: en
 status: true
-dependencies: {  }
+dependencies: {}
 id: send_digital_post
-label: 'Send Digital Post'
+label: "Send Digital Post"
 backend: database
 backend_configuration:
   lease_time: 300

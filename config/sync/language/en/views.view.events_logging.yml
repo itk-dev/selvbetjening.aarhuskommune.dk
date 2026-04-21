@@ -1,4 +1,4 @@
-label: 'Events Logging Events'
+label: "Events Logging Events"
 display:
   default:
     display_title: Master
@@ -7,14 +7,14 @@ display:
         options:
           submit_button: Apply
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
         options:
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
+            items_per_page_label: "Items per page"
+            items_per_page_options_all_label: "- All -"
             offset_label: Offset
           tags:
             previous: ‹‹
@@ -22,25 +22,25 @@ display:
       fields:
         created:
           label: date
-          separator: ', '
+          separator: ", "
         user_id:
-          label: 'Authored by'
-          separator: ', '
+          label: "Authored by"
+          separator: ", "
         name:
           label: Name
-          separator: ', '
+          separator: ", "
         type:
           label: Type
-          separator: ', '
+          separator: ", "
         operation:
           label: Operation
-          separator: ', '
+          separator: ", "
         description:
           label: Description
-          separator: ', '
+          separator: ", "
         ip:
           label: IP
-          separator: ', '
+          separator: ", "
       filters:
         ip:
           expose:
@@ -51,9 +51,9 @@ display:
         type:
           expose:
             label: Type
-      title: 'View Events Logging log'
+      title: "View Events Logging log"
   page_1:
     display_title: Page
     display_options:
       menu:
-        title: 'View Events Logging log'
+        title: "View Events Logging log"

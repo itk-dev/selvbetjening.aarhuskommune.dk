@@ -1,3 +1,3 @@
-webserviceurl_live: 'https://s5-certservices.datafordeler.dk/CVR/HentCVRData/1/rest/'
-cert_path_live: ''
-cert_passphrase_live: ''
+webserviceurl_live: "https://s5-certservices.datafordeler.dk/CVR/HentCVRData/1/rest/"
+cert_path_live: ""
+cert_passphrase_live: ""

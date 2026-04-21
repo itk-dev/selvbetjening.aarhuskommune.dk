@@ -32,7 +32,7 @@ definitions:
     weight: 5
     expanded: false
     enabled: true
-  'admin_toolbar_tools__extra_links:flush_views':
+  "admin_toolbar_tools__extra_links:flush_views":
     menu_name: admin
     parent: admin_toolbar_tools.flush
     weight: 7
@@ -104,7 +104,7 @@ definitions:
     weight: -48
     expanded: false
     enabled: true
-  'admin_toolbar_tools__extra_links:views_ui__field_list':
+  "admin_toolbar_tools__extra_links:views_ui__field_list":
     menu_name: admin
     parent: entity.field_storage_config.collection
     weight: -40
@@ -158,13 +158,13 @@ definitions:
     weight: -10
     expanded: false
     enabled: true
-  'admin_toolbar_tools__extra_links:node__add':
+  "admin_toolbar_tools__extra_links:node__add":
     menu_name: admin
     parent: system.admin_content
     weight: -9
     expanded: false
     enabled: true
-  'admin_toolbar_tools__extra_links:view__files':
+  "admin_toolbar_tools__extra_links:view__files":
     menu_name: admin
     parent: system.admin_content
     weight: -11

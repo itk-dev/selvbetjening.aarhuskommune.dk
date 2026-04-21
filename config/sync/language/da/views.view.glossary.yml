@@ -1,5 +1,5 @@
 label: Ordliste
-description: 'Alt indhold efter forbogstav.'
+description: "Alt indhold efter forbogstav."
 display:
   default:
     display_title: Master
@@ -8,14 +8,14 @@ display:
         options:
           submit_button: Udfør
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
           tags:
             previous: ‹‹
@@ -26,7 +26,7 @@ display:
         name:
           label: Forfatter
         changed:
-          label: 'Seneste opdatering'
+          label: "Seneste opdatering"
   attachment_1:
     display_title: Bilag
   page_1:

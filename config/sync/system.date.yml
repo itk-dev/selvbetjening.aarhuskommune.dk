@@ -3,7 +3,7 @@ _core:
 langcode: da
 first_day: 0
 country:
-  default: ''
+  default: ""
 timezone:
   default: Europe/Copenhagen
   user:

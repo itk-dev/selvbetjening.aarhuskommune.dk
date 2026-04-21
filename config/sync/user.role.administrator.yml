@@ -1,11 +1,11 @@
 uuid: 734d4ab5-0af6-4f82-aaa3-d34356f69bec
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: 8TBy3gF9yYetUInIdFmutz6CON7CMLHjdMAvlxcQs54
 id: administrator
 label: Administrator
 weight: -8
 is_admin: true
-permissions: {  }
+permissions: {}

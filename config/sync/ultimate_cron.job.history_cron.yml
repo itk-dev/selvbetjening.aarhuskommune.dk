@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - history
-title: 'Deletes history'
+title: "Deletes history"
 id: history_cron
 weight: 0
 module: history

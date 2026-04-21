@@ -6,6 +6,6 @@ dependencies:
     - maestro
 id: maestro_entity_identifiers.token
 label: Token
-description: ''
+description: ""
 targetEntityType: maestro_entity_identifiers
 cache: true

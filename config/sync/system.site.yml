@@ -4,10 +4,10 @@ langcode: da
 uuid: 4f43c943-1193-4d76-90d6-8069d469b874
 name: Selvbetjening.aarhuskommune.dk
 mail: noreply@aarhus.dk
-slogan: ''
+slogan: ""
 page:
-  403: ''
-  404: ''
+  403: ""
+  404: ""
   front: /user/login
 admin_compact_mode: false
 weight_select_max: 100
