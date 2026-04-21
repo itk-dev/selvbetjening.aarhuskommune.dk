@@ -1,0 +1,1 @@
+(()=>{"use strict";document.addEventListener("DOMContentLoaded",(function(){for(var e=document.querySelectorAll(".fds-modal-container"),n=0;n<e.length;n++)document.body.appendChild(e[n]);window.DKFDS.init()}))})();

@@ -1,2 +1,6 @@
 build/entrypoints.json
 build/manifest.json
+
+# Generated from node_modules/dkfds by the postinstall script.
+assets/js/dkfds.js
+assets/img/svg-icons/more-vert.svg

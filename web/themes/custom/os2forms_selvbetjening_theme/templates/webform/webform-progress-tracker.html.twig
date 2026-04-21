@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Default theme implementation for webform wizard progress tracker.
+ *
+ * Available variables:
+ * - webform: A webform.
+ * - pages: Associative array of wizard pages.
+ * - progress: Array of wizard progress containing page titles.
+ * - current_page: Current wizard page key.
+ * - current_index: The current wizard page index.
+ * - max_pages: Maximum number of pages that progress text should be displayed on.
+ *
+ * @see template_preprocess_webform_progress_tracker()
+ * @see https://www.w3.org/WAI/tutorials/forms/multi-page/
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('webform/webform.progress.tracker') }}
+
+<nav aria-label="{{ 'Step indicator'|t }}" class="step-indicator-wrapper">
+  {{ include("@os2forms_selvbetjening_theme/webform/progress-bar-steps.html.twig") }}
+</nav>
+<div class="step-indicator-button-wrapper">
+  <button class="step-indicator-button" aria-haspopup="dialog" type="button"
+          data-module="modal"
+          data-target="modal-step-indicator-helptext">
+    <span>{{ 'Step <strong>@step_no</strong> of @steps'|t({'@step_no': current_index + 1, '@steps': progress|length}) }}</span>
+  </button>
+</div>
+
+<div class="fds-modal-container">
+  <div class="fds-modal modal-step-indicator" id="modal-step-indicator-helptext"
+       aria-hidden="true" role="dialog" aria-modal="true"
+       aria-labelledby="modal-step-indicator-helptext-heading">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-step-indicator-helptext-heading">
+          {{ 'Step @step_no of @steps'|t({'@step_no': current_index + 1, '@steps': progress|length}) }}
+        </h2>
+        <button class="modal-close function-link" data-modal-close>{{ 'Close'|t }}</button>
+      </div>
+      <div class="modal-body">
+        <nav aria-label="{{ 'Step indicator'|t }}">
+          {{ include("@os2forms_selvbetjening_theme/webform/progress-bar-steps.html.twig") }}
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
