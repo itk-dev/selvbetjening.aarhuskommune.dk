@@ -41,6 +41,9 @@ final class SettingsHelper implements EventSubscriberInterface {
           'openid_connect_nemlogin' => 'OpenIDConnect Nemlogin (set by itkdev_ex_nemlogin)',
         ]),
       ]);
+
+    // We need to rebuild cache after setting settings.
+    drupal_flush_all_caches();
   }
 
   /**
