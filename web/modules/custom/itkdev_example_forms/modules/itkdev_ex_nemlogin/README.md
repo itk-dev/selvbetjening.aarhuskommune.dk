@@ -13,7 +13,7 @@ Installing this module will set config that enables mocking citizen login:
 If you need to reset the config, you can run
 
 ```shell
-drush php:eval '\Drupal::service(\Drupal\itkdev_ex_nemlogin\SettingsHelper::class)->setConfig()'
+drush php:eval '\Drupal::service(\Drupal\itkdev_ex_nemlogin\SettingsHelper::class)->setSettings()'
 ```
 
 (rather than reinstalling the module).

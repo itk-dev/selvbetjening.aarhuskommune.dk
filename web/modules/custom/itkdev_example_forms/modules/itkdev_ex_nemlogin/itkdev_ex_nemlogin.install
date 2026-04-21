@@ -16,7 +16,7 @@ function itkdev_ex_nemlogin_install(bool $is_syncing) : void {
   if (!$is_syncing) {
     /** @var \Drupal\itkdev_ex_nemlogin\SettingsHelper $helper */
     $helper = \Drupal::service(SettingsHelper::class);
-    $helper->setConfig();
+    $helper->setSettings();
 
     /** @var \Drupal\itkdev_example_forms\WebformHelper $helper */
     $helper = \Drupal::service(WebformHelper::class);

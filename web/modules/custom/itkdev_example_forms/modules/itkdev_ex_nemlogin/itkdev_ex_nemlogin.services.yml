@@ -9,3 +9,7 @@ services:
   Drupal\itkdev_ex_nemlogin\SettingsHelper:
     tags:
       - { name: event_subscriber }
+
+  Drupal\itkdev_ex_nemlogin\Config\ConfigOverrides:
+    tags:
+      - {name: config.factory.override, priority: 5}
