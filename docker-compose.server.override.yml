@@ -10,6 +10,7 @@ networks:
 
 services:
   phpfpm:
+    image: itkdev/php8.3-fpm:alpine
     networks:
       - organisation_api
     environment:

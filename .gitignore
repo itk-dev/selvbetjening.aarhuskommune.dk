@@ -235,3 +235,5 @@ config/sync/**/leaflet_layers.map_layer.*
 config/sync/os2web_nemlogin.settings.yml
 # Ignore attachment components
 config/sync/os2forms_attachment.os2forms_attachment_component.*.yml
+
+*.local.yml

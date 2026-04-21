@@ -1,4 +1,4 @@
-# itk-version: 3.2.3
+# itk-version: 3.2.4
 services:
   phpfpm:
     environment:
@@ -6,7 +6,7 @@ services:
 
   nginx:
     labels:
-      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.middlewares=ITKBasicAuth@file"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}.middlewares=ITKBasicAuth@file"
 
   mail:
     image: axllent/mailpit
@@ -17,11 +17,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=frontend"
-      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME}-http.rule=Host(`mail.${COMPOSE_SERVER_DOMAIN}`)"
-      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME}-http.entrypoints=web"
-      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME}-http.middlewares=redirect-to-https"
+      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME:?}-http.rule=Host(`mail.${COMPOSE_SERVER_DOMAIN:?}`)"
+      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME:?}-http.entrypoints=web"
+      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME:?}-http.middlewares=redirect-to-https"
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME}.rule=Host(`mail.${COMPOSE_SERVER_DOMAIN}`)"
-      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME}.entrypoints=websecure"
-      - "traefik.http.services.mail_${COMPOSE_PROJECT_NAME}.loadbalancer.server.port=8025"
-      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME}.middlewares=ITKMailhogAuth@file"
+      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME:?}.rule=Host(`mail.${COMPOSE_SERVER_DOMAIN:?}`)"
+      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME:?}.entrypoints=websecure"
+      - "traefik.http.services.mail_${COMPOSE_PROJECT_NAME:?}.loadbalancer.server.port=8025"
+      - "traefik.http.routers.mail_${COMPOSE_PROJECT_NAME:?}.middlewares=ITKMailhogAuth@file"

@@ -1,4 +1,4 @@
-# itk-version: 3.2.3
+# itk-version: 3.2.4
 networks:
   frontend:
     external: true
@@ -25,12 +25,9 @@ services:
       - MYSQL_PASSWORD=db
       - MYSQL_DATABASE=db
       #- ENCRYPT=1 # Uncomment to enable database encryption.
-    # https://symfony.com/doc/current/setup/symfony_server.html#docker-integration
-    labels:
-      com.symfony.server.service-prefix: "DATABASE"
 
   phpfpm:
-    image: itkdev/php8.3-fpm:latest
+    image: itkdev/php8.4-fpm:latest
     user: ${COMPOSE_USER:-deploy}
     networks:
       - app
@@ -42,10 +39,10 @@ services:
       - PHP_MEMORY_LIMIT=256M
       # Depending on the setup, you may have to remove --read-envelope-from from msmtp (cf. https://marlam.de/msmtp/msmtp.html) or use SMTP to send mail
       - PHP_SENDMAIL_PATH=/usr/bin/msmtp --host=mail --port=1025 --read-recipients --read-envelope-from
-      - DOCKER_HOST_DOMAIN=${COMPOSE_DOMAIN}
+      - DOCKER_HOST_DOMAIN=${COMPOSE_DOMAIN:?}
       - PHP_IDE_CONFIG=serverName=localhost
       # Let drush know the site uri (makes using --uri redundant)
-      - DRUSH_OPTIONS_URI=https://${COMPOSE_DOMAIN}
+      - DRUSH_OPTIONS_URI=http://${COMPOSE_DOMAIN:?}
     depends_on:
       mariadb:
         condition: service_healthy
@@ -67,17 +64,21 @@ services:
       - ./.docker/templates:/etc/nginx/templates:ro
       - .:/app
     environment:
-      NGINX_FPM_SERVICE: ${COMPOSE_PROJECT_NAME}-phpfpm-1:9000
+      NGINX_FPM_SERVICE: ${COMPOSE_PROJECT_NAME:?}-phpfpm-1:9000
+      NGINX_CRON_METRICS: ${COMPOSE_PROJECT_NAME:?}-phpfpm-1:9746
       NGINX_WEB_ROOT: /app/web
       NGINX_PORT: 8080
       NGINX_MAX_BODY_SIZE: 5M
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=frontend"
-      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.rule=Host(`${COMPOSE_DOMAIN}`)"
-      # HTTPS config - uncomment to enable redirect from :80 to :443
-      # - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.middlewares=redirect-to-https"
-      # - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}.rule=Host(`${COMPOSE_DOMAIN:?}`)"
+      # HTTPS config - enable redirect from :80 to :443
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      # Cron-metrics protection.
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-metrics.rule=Host(`${COMPOSE_DOMAIN:?}`) && PathPrefix(`/cron-metrics`) "
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-metrics.middlewares=ITKMetricsAuth@file"
 
   memcached:
     image: memcached:alpine
@@ -103,5 +104,24 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=frontend"
-      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}mail.rule=Host(`mail-${COMPOSE_DOMAIN}`)"
-      - "traefik.http.services.${COMPOSE_PROJECT_NAME}mail.loadbalancer.server.port=8025"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}mail.rule=Host(`mail-${COMPOSE_DOMAIN:?}`)"
+      - "traefik.http.services.${COMPOSE_PROJECT_NAME:?}mail.loadbalancer.server.port=8025"
+
+  # Code checks tools
+  markdownlint:
+    image: itkdev/markdownlint
+    profiles:
+      - dev
+    volumes:
+      - ./:/md
+
+  prettier:
+    # Prettier does not (yet, fcf.
+    # https://github.com/prettier/prettier/issues/15206) have an official
+    # docker image.
+    # https://hub.docker.com/r/jauderho/prettier is good candidate (cf. https://hub.docker.com/search?q=prettier&sort=updated_at&order=desc)
+    image: jauderho/prettier
+    profiles:
+      - dev
+    volumes:
+      - ./:/work
