@@ -12,9 +12,9 @@ services:
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-idp-citizen.rule=Host(`idp-citizen.${COMPOSE_DOMAIN}`)"
     expose:
       - "80"
-    command:
-      [
-        "--port", "80",
+    command: [
+        "--port",
+        "80",
 
         # @todo Remove "aud" when upgrading to itk-dev/openid-connect:^4
         "--user-claims",

@@ -4,7 +4,7 @@ services:
 
   logger.channel.itkdev_ex_nemlogin:
     parent: logger.channel_base
-    arguments: [ 'itkdev_ex_nemlogin' ]
+    arguments: ["itkdev_ex_nemlogin"]
 
   Drupal\itkdev_ex_nemlogin\SettingsHelper:
     tags:
@@ -12,4 +12,4 @@ services:
 
   Drupal\itkdev_ex_nemlogin\Config\ConfigOverrides:
     tags:
-      - {name: config.factory.override, priority: 5}
+      - { name: config.factory.override, priority: 5 }
