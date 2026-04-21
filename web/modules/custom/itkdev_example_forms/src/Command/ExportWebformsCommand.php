@@ -30,7 +30,7 @@ final class ExportWebformsCommand extends Command {
   /**
    * The example modules.
    *
-   * @var Extension[]
+   * @var \Drupal\Core\Extension\Extension[]
    */
   private array $exampleModules;
 
@@ -68,22 +68,19 @@ final class ExportWebformsCommand extends Command {
   protected function execute(InputInterface $input, OutputInterface $output): int {
     $io = new SymfonyStyle($input, $output);
 
-      if (!$io->confirm('Really export all example webforms?', !$input->isInteractive())) {
-        return self::FAILURE;
-      }
-
+    if (!$io->confirm('Really export all example webforms?', !$input->isInteractive())) {
+      return self::FAILURE;
+    }
 
     if ($output->isVerbose()) {
-$io->info(dt('Exporting webforms with IDs starting with %prefix', ['%prefix' => self::WEBFORM_ID_PREFIX,]));
-}
+      $io->info(dt('Exporting webforms with IDs starting with %prefix', ['%prefix' => self::WEBFORM_ID_PREFIX]));
+    }
 
     $configFactory = $this->configManager->getConfigFactory();
     $webformIds = array_values(
       array_map(
-        static fn (string $configName): string => substr($configName, 16),
-        array_filter(
-          $configFactory->listAll(),
-          static fn(string $name): bool => str_starts_with($name, 'webform.webform.'.self::WEBFORM_ID_PREFIX),
+        $this->getWebformId(...),
+        array_filter($configFactory->listAll(), $this->isWebformConfigName(...),
         )
       )
     );
@@ -118,7 +115,7 @@ $io->info(dt('Exporting webforms with IDs starting with %prefix', ['%prefix' => 
         ]));
       }
 
-      $config = $configFactory->getEditable($this->getConfigName($webformId));
+      $config = $configFactory->getEditable($this->getWebformConfigName($webformId));
       foreach (static::$configKeysToClear as $key) {
         if ($output->isVerbose()) {
           $io->writeln(dt('Clearing key %config_key', ['%config_key' => $key]));
@@ -144,6 +141,9 @@ $io->info(dt('Exporting webforms with IDs starting with %prefix', ['%prefix' => 
     return self::SUCCESS;
   }
 
+  /**
+   * Is example module?
+   */
   private function isExampleModule(string|Extension $module): bool {
     $name = is_string($module) ? $module : $module->getName();
 
@@ -165,8 +165,25 @@ $io->info(dt('Exporting webforms with IDs starting with %prefix', ['%prefix' => 
     ]));
   }
 
-  private function getConfigName(string $webformId): string {
-    return 'webform.webform.'.$webformId;
+  /**
+   * Get config name for a webform ID.
+   */
+  private function getWebformConfigName(string $webformId): string {
+    return 'webform.webform.' . $webformId;
+  }
+
+  /**
+   * Is webform config name?
+   */
+  private function isWebformConfigName(string $configName): bool {
+    return str_starts_with($configName, 'webform.webform.');
+  }
+
+  /**
+   * Is webform config name?
+   */
+  private function getWebformId(string $configName): string {
+    return substr($configName, strlen('webform.webform.'));
   }
 
 }

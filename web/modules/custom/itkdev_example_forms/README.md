@@ -2,8 +2,9 @@
 
 Webform examples for Selvbetjening.
 
-The basic idea is that we export webforms with IDs starting with `itkdev_ex_*_` where `itkdev_ex_*` is the name of an
-installed module into the `config/install` folder in said module.
+The basic idea is that we export webforms with IDs starting with `itkdev_ex_*_`
+where `itkdev_ex_*` is the name of an installed module into the `config/install`
+folder in said module.
 
 ## Example usage
 
@@ -23,8 +24,9 @@ installed module into the `config/install` folder in said module.
    to generate a new example webform.
 
    Alternatively, you can create the webform manually on
-   [`/admin/structure/webform/add`](https://selvbetjening.local.itkdev.dk/admin/structure/webform/add) using an
-   appropriate webform ID, e.g. `itkdev_ex_misc_my_example` for the `itkdev_ex_misc` module.
+   [`/admin/structure/webform/add`](https://selvbetjening.local.itkdev.dk/admin/structure/webform/add)
+   using an appropriate webform ID, e.g. `itkdev_ex_misc_my_example` for the
+   `itkdev_ex_misc` module.
 
 4. Run
 

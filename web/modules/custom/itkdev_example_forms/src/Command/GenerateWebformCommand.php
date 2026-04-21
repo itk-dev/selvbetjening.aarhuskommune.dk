@@ -6,7 +6,6 @@ namespace Drupal\itkdev_example_forms\Command;
 
 use Composer\Console\Input\InputArgument;
 use Composer\Console\Input\InputOption;
-use Drupal\Core\Config\ConfigManagerInterface;
 use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Extension\Exception\UnknownExtensionException;
@@ -28,6 +27,9 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 final class GenerateWebformCommand extends Command {
   use AutowireTrait;
 
+  /**
+   * The webform storage.
+   */
   private readonly WebformEntityStorageInterface $webformStorage;
 
   /**
@@ -35,7 +37,6 @@ final class GenerateWebformCommand extends Command {
    */
   public function __construct(
     EntityTypeManagerInterface $entityTypeManager,
-    private readonly ConfigManagerInterface $configManager,
     private readonly ModuleHandler $moduleHandler,
   ) {
     parent::__construct();
@@ -43,7 +44,7 @@ final class GenerateWebformCommand extends Command {
   }
 
   /**
-   *
+   * {@inheritdoc}
    */
   protected function configure() {
     $this
