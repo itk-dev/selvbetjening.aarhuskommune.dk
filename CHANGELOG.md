@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-488](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/488)
+  Tilføjede eksempelformularer.
+
 ## [5.1.5] 2025-04-16
 
 * Sikkerhedsopdatering af Drupal.

@@ -1,0 +1,25 @@
+services:
+  itkdev_example_forms.generate_webform:
+    class: Drupal\itkdev_example_forms\Command\GenerateWebformCommand
+    arguments:
+      - '@entity_type.manager'
+      - '@module_handler'
+    tags:
+      - { name: console.command }
+
+  itkdev_example_forms.export_webforms:
+    class: Drupal\itkdev_example_forms\Command\ExportWebformsCommand
+    arguments:
+      - '@config.manager'
+      - '@module_handler'
+      - '@file_system'
+    tags:
+      - { name: console.command }
+
+  itkdev_example_forms.reset_webforms:
+    class: Drupal\itkdev_example_forms\Command\ResetWebformsCommand
+    arguments:
+      - '@config.manager'
+      - '@module_handler'
+    tags:
+      - { name: console.command }

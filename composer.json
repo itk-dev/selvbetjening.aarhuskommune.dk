@@ -41,6 +41,7 @@
         "os2forms/os2forms_webform_submission_log": "^1.1"
     },
     "require-dev": {
+        "custom/itkdev_example_forms": "^1.0",
         "drupal/core-dev": "^10",
         "drupal/mail_debugger": "^1.4",
         "ergebnis/composer-normalize": "^2.43",
@@ -60,6 +61,16 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "path",
+            "url": "web/modules/custom/itkdev_example_forms",
+            "options": {
+                "symlink": false,
+                "versions": {
+                    "custom/itkdev_example_forms": "1.0-dev"
+                }
+            }
         }
     ],
     "minimum-stability": "dev",
