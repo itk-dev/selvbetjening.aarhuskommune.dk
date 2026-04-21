@@ -1,0 +1,214 @@
+version: "3"
+
+# https://taskfile.dev/usage/#env-files
+dotenv: [".env.docker.local", ".env.local", ".env"]
+
+vars:
+  # https://taskfile.dev/reference/templating/
+  DOCKER_COMPOSE: '{{.TASK_DOCKER_COMPOSE | default "docker compose"}}'
+  COMPOSER_INSTALL_ARGUMENTS: '{{.TASK_COMPOSER_INSTALL_ARGUMENTS | default ""}}'
+
+tasks:
+  site:install:
+    desc: Install site from scratch
+    prompt: "This will reset your setup. Continue?"
+    cmds:
+      - task: compose
+        vars:
+          TASK_ARGS: down --volumes --remove-orphans
+      - task: compose
+        vars:
+          TASK_ARGS: pull
+      - task: compose
+        vars:
+          TASK_ARGS: up --detach --wait
+      - task: composer
+        vars:
+          TASK_ARGS: install {{.COMPOSER_INSTALL_ARGUMENTS}}
+      - task: drush
+        vars:
+          TASK_ARGS: site:install --existing-config {{if .CLI_ASSUME_YES}}--yes{{end}}
+
+  site:update:
+    desc: Update site
+    cmds:
+      - task: compose
+        vars:
+          TASK_ARGS: pull
+      - task: compose
+        vars:
+          TASK_ARGS: up --detach --wait
+      - task: composer
+        vars:
+          TASK_ARGS: install {{.COMPOSER_INSTALL_ARGUMENTS}}
+      - task: drush
+        vars:
+          TASK_ARGS: deploy
+
+  compose:
+    cmds:
+      - "{{.DOCKER_COMPOSE}} {{.TASK_ARGS}} {{.CLI_ARGS}}"
+
+  composer:
+    cmds:
+      - task: compose
+        vars:
+          TASK_ARGS: exec phpfpm composer {{.TASK_ARGS}}
+
+  drush:
+    cmds:
+      # Check if we have content on stdin (cf.
+      # https://unix.stackexchange.com/questions/762992/bash-check-if-the-standard-input-contains-anything)
+      - |
+        if [[ ! -t 0 ]]; then NO_TTY="--no-TTY"; fi
+        task compose -- exec ${NO_TTY:-} phpfpm vendor/bin/drush {{.TASK_ARGS}} {{.CLI_ARGS}}
+      # silent: true
+
+  coding-standards:apply:
+    desc: "Apply coding standards"
+    cmds:
+      - task: coding-standards:javascript:apply
+      - task: coding-standards:markdown:apply
+      - task: coding-standards:php:apply
+      - task: coding-standards:styles:apply
+      - task: coding-standards:twig:apply
+      - task: coding-standards:yaml:apply
+    silent: true
+
+  coding-standards:check:
+    desc: "Apply coding standards"
+    cmds:
+      - task: coding-standards:javascript:check
+      - task: coding-standards:markdown:check
+      - task: coding-standards:php:check
+      - task: coding-standards:styles:check
+      - task: coding-standards:twig:check
+      - task: coding-standards:yaml:check
+    silent: true
+
+  coding-standards:javascript:apply:
+    desc: "Apply coding standards for javascript"
+    cmds:
+      # Cf. .github/workflows/javascript.yaml
+      - docker compose run --rm prettier 'web/*/custom/**/*.js' --write
+
+  coding-standards:javascript:check:
+    desc: "Apply coding standards for javascript"
+    cmds:
+      - task: coding-standards:javascript:apply
+      # Cf. .github/workflows/javascript.yaml
+      - docker compose run --rm prettier 'web/*/custom/**/*.js' --check
+
+  coding-standards:markdown:apply:
+    desc: "Apply coding standards for Markdown"
+    cmds:
+      # Cf. .github/workflows/markdown.yaml
+      - docker compose run --rm markdownlint markdownlint '**/*.md' --fix
+
+  coding-standards:markdown:check:
+    desc: "Apply and check coding standards for Markdown"
+    cmds:
+      - task: coding-standards:markdown:apply
+      # Cf. .github/workflows/markdown.yaml
+      - docker compose run --rm markdownlint markdownlint '**/*.md'
+
+  coding-standards:php:apply:
+    desc: "Apply coding standards for PHP"
+    cmds:
+      # Cf. .github/workflows/php.yaml
+      - docker compose run --rm phpfpm vendor/bin/phpcbf
+    silent: true
+
+  coding-standards:php:check:
+    desc: "Apply and check coding standards for PHP"
+    cmds:
+      - task: coding-standards:php:apply
+      # Cf. .github/workflows/php.yaml
+      - docker compose run --rm phpfpm vendor/bin/phpcs
+    silent: true
+
+  coding-standards:styles:apply:
+    desc: "Apply coding standards for styles"
+    cmds:
+      # Cf. .github/workflows/styles.yaml
+      - docker compose run --rm prettier 'web/themes/custom/**/css/**/*.{css,scss}' --write
+
+  coding-standards:styles:check:
+    desc: "Apply coding standards for styles"
+    cmds:
+      - task: coding-standards:styles:apply
+      # Cf. .github/workflows/styles.yaml
+      - docker compose run --rm prettier 'web/themes/custom/**/css/**/*.{css,scss}' --check
+
+  coding-standards:twig:apply:
+    desc: "Apply coding standards for Twig"
+    cmds:
+      - docker compose run --rm phpfpm vendor/bin/twig-cs-fixer fix
+    silent: true
+
+  coding-standards:twig:check:
+    desc: "Apply and check coding standards for Twig"
+    cmds:
+      - task: coding-standards:twig:apply
+      - docker compose run --rm phpfpm vendor/bin/twig-cs-fixer lint
+    silent: true
+
+  coding-standards:yaml:apply:
+    desc: "Apply coding standards for YAML"
+    cmds:
+      # Cf. .github/workflows/yaml.yaml
+      - docker compose run --rm prettier '**/*.{yml,yaml}' --write
+
+  coding-standards:yaml:check:
+    desc: "Apply coding standards for YAML"
+    cmds:
+      - task: coding-standards:yaml:apply
+      # Cf. .github/workflows/yaml.yaml
+      - docker compose run --rm prettier '**/*.{yml,yaml}' --check
+
+  # Development settings tasks (`/admin/config/development/settings`) (cf. https://www.drupal.org/docs/develop/development-tools/disabling-and-debugging-caching).
+
+  development-settings:do-not-cache-markup-enable:
+    desc: Disable markup cache (check ‘Do not cache markup“ on `/admin/config/development/settings`)
+    cmds:
+      - task drush -- php:eval "Drupal::keyValue('development_settings')->setMultiple(['disable_rendered_output_cache_bins' => TRUE]);"
+      - task drush -- cache:rebuild
+
+  development-settings:do-not-cache-markup-disable:
+    desc: Enable markup cache (for production) (uncheck ‘Do not cache markup“ on `/admin/config/development/settings`)
+    cmds:
+      - task drush -- php:eval "Drupal::keyValue('development_settings')->setMultiple(['disable_rendered_output_cache_bins' => FALSE]);"
+      - task drush -- cache:rebuild
+
+  development-settings:twig-develoment-mode-enable:
+    desc: Enable Twig development mode (check ‘Twig development mode“ on `/admin/config/development/settings`)
+    cmds:
+      - task drush -- php:eval "Drupal::keyValue('development_settings')->setMultiple(['twig_debug' => TRUE, 'twig_cache_disable' => TRUE]);"
+      - task drush -- cache:rebuild
+
+  development-settings:twig-develoment-mode-disable:
+    desc: Disable Twig development mode (for production) (uncheck ‘Twig development mode“ on `/admin/config/development/settings`)
+    cmds:
+      - task drush -- php:eval "Drupal::keyValue('development_settings')->setMultiple(['twig_debug' => FALSE, 'twig_cache_disable' => FALSE]);"
+      - task drush -- cache:rebuild
+
+  development-settings:development:
+    desc: Set cache settings for development
+    cmds:
+      - task development-settings:do-not-cache-markup-enable
+      - task development-settings:twig-develoment-mode-enable
+      - task drush -- cache:rebuild
+    silent: true
+
+  development-settings:production:
+    desc: Set cache settings for production
+    cmds:
+      - task development-settings:do-not-cache-markup-disable
+      - task development-settings:twig-develoment-mode-disable
+      - task drush -- cache:rebuild
+    silent: true
+
+  default:
+    cmds:
+      - task --list-all
+    silent: true
