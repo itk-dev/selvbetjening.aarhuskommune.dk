@@ -96,7 +96,7 @@ final class ExportWebformsCommand extends Command {
       $io->section($webformId);
 
       try {
-        $module = $this->getModule($webformId);
+        $module = $this->getExampleModule($webformId);
       }
       catch (UnknownExtensionException $exception) {
         $io->error($exception->getMessage());
@@ -151,9 +151,12 @@ final class ExportWebformsCommand extends Command {
   }
 
   /**
-   * Get module name form config name.
+   * Get example module name for a webform ID.
+   *
+   * @throws \Drupal\Core\Extension\Exception\UnknownExtensionException
+   *   If no example module can be found.
    */
-  private function getModule(string $webformId): Extension {
+  private function getExampleModule(string $webformId): Extension {
     foreach ($this->exampleModules as $moduleName => $module) {
       if (str_starts_with($webformId, $moduleName)) {
         return $module;

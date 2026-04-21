@@ -3,7 +3,6 @@ services:
     class: Drupal\itkdev_example_forms\Command\GenerateWebformCommand
     arguments:
       - '@entity_type.manager'
-      - '@config.manager'
       - '@module_handler'
     tags:
       - { name: console.command }
