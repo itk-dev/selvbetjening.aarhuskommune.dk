@@ -237,3 +237,4 @@ config/sync/os2web_nemlogin.settings.yml
 config/sync/os2forms_attachment.os2forms_attachment_component.*.yml
 
 *.local.yml
+*.cache

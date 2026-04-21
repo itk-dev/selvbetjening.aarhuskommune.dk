@@ -84,15 +84,15 @@
           set row_classes = [
             not no_striping ? cycle(['odd', 'even'], loop.index0),
             row.cells[1]['content']['#markup'] is defined ? 'full-width',
-            row.cells[1]['content']["#plain_text"] is empty ? 'full-width'
+            row.cells[1]['content']['#plain_text'] is empty ? 'full-width',
           ]
         %}
         <tr{{ row.attributes.addClass(row_classes) }}>
-          {% if row.cells[1]['content']['#markup'] is defined or row.cells[1]['content']["#plain_text"] is defined %}
+          {% if row.cells[1]['content']['#markup'] is defined or row.cells[1]['content']['#plain_text'] is defined %}
             {% set contentLength = row.cells[1]['content']['#markup']|length %}
-              {% if contentLength > 100 or row.cells[1]['content']["#plain_text"] is empty %}
+              {% if contentLength > 100 or row.cells[1]['content']['#plain_text'] is empty %}
               <td colspan="2">
-                {% for key,cell in row.cells %}
+                {% for key, cell in row.cells %}
                   <div class="{{ key is same as(0) ? 'strong-text' }}">
                     {{- cell.content -}}
                   </div>
