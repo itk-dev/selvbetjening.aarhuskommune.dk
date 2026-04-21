@@ -2,6 +2,9 @@
 
 namespace Drupal\itkdev_booking\Helper;
 
+/**
+ *
+ */
 class SampleDataHelper {
 
   /**
@@ -17,6 +20,7 @@ class SampleDataHelper {
    */
   public static function getSampleData($sampleName): array {
     $stringData = file_get_contents(__DIR__ . '/../../sampleData/' . $sampleName . '.json');
-    return json_decode($stringData, true, 512, JSON_THROW_ON_ERROR);
+    return json_decode($stringData, TRUE, 512, JSON_THROW_ON_ERROR);
   }
+
 }

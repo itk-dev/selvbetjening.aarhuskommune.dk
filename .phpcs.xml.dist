@@ -15,6 +15,9 @@
   <exclude-pattern>*.css</exclude-pattern>
   <exclude-pattern>*.js</exclude-pattern>
 
+  <!-- @todo Clean up this module -->
+  <exclude-pattern>web/modules/custom/itkdev_booking/</exclude-pattern>
+
   <arg value="p"/>
 
   <arg name="extensions" value="php,module,inc,install,test,profile,theme,css,info,txt,yml"/>
