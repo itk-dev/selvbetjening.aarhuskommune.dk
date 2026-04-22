@@ -120,7 +120,7 @@ function UserPanel({ config }) {
     }
   };
 
-  const currentBookings = userBookings ? Object.values(userBookings["hydra:member"]) ?? [] : [];
+  const currentBookings = userBookings ? (Object.values(userBookings["hydra:member"]) ?? []) : [];
 
   const getStatus = (status) => {
     if (typeof status === "string") {

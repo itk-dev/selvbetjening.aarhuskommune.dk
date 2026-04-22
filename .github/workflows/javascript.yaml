@@ -22,8 +22,6 @@ on:
 
 jobs:
   javascript-lint:
-    # @todo Clean up JavaScript
-    if: false
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false

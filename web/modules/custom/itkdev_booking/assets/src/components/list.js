@@ -61,16 +61,14 @@ function List({ resources, setShowResourceDetails }) {
           <div key={key} className="list-resource">
             <div className="image-wrapper">
               <div className="image">
-                {!resources[key]?.resourceImage && (<IconAarhusKommune />)}
+                {!resources[key]?.resourceImage && <IconAarhusKommune />}
                 {resources[key]?.resourceImage && (
-                  <img alt={resources[key].resourceDisplayName}
-                       src={resources[key].resourceImage}/>)}
+                  <img alt={resources[key].resourceDisplayName} src={resources[key].resourceImage} />
+                )}
               </div>
             </div>
             <div className="list-resource-details col-md-10">
-              <h2 className="headline">
-                {resources[key].resourceDisplayName ?? resources[key].resourceName}
-              </h2>
+              <h2 className="headline">{resources[key].resourceDisplayName ?? resources[key].resourceName}</h2>
               <div className="location">
                 <span className="location-icon">
                   <IconArrow />
@@ -108,7 +106,7 @@ List.propTypes = {
       resourceDisplayName: PropTypes.string,
       resourceDescription: PropTypes.string,
       resourceImage: PropTypes.string,
-    })
+    }),
   ).isRequired,
   setShowResourceDetails: PropTypes.func.isRequired,
 };

@@ -1,1 +1,1 @@
-import './pdf.scss'
+import "./pdf.scss";

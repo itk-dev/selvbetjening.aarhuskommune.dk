@@ -79,14 +79,14 @@ function CreateBookingFilters({
           value: value.resourceMail,
           label: value.resourceDisplayName ?? value.resourceName,
         };
-      })
+      }),
     );
 
     const newResourceCategoryOptions = [
       ...new Set(
         allResources
           .filter((resource) => resource?.resourceCategory !== null && resource?.resourceCategory !== "")
-          .map((resource) => resource.resourceCategory)
+          .map((resource) => resource.resourceCategory),
       ),
     ];
 
@@ -119,7 +119,7 @@ function CreateBookingFilters({
             carry.push({
               value: foundResource.resourceMail,
               label: foundResource.resourceDisplayName ?? foundResource.resourceName,
-            })
+            }),
           );
 
           return carry;

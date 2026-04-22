@@ -1,19 +1,25 @@
-window.addEventListener('load', function () {
-  const elem = document.getElementById('logout_suggestion')
-  let url = elem.getAttribute('href')
-  url = replaceUrlParam(url, 'destination', window.location.pathname)
-  elem.setAttribute('href', url)
-}, false)
+window.addEventListener(
+  "load",
+  function () {
+    const elem = document.getElementById("logout_suggestion");
+    let url = elem.getAttribute("href");
+    url = replaceUrlParam(url, "destination", window.location.pathname);
+    elem.setAttribute("href", url);
+  },
+  false,
+);
 
 // @see https://stackoverflow.com/a/20420424
-function replaceUrlParam (url, paramName, paramValue) {
+function replaceUrlParam(url, paramName, paramValue) {
   if (paramValue == null) {
-    paramValue = ''
+    paramValue = "";
   }
-  const pattern = new RegExp('\\b(' + paramName + '=).*?(&|#|$)')
+  const pattern = new RegExp("\\b(" + paramName + "=).*?(&|#|$)");
   if (url.search(pattern) >= 0) {
-    return url.replace(pattern, '$1' + paramValue + '$2')
+    return url.replace(pattern, "$1" + paramValue + "$2");
   }
-  url = url.replace(/[?#]$/, '')
-  return url + (url.indexOf('?') > 0 ? '&' : '?') + paramName + '=' + paramValue
+  url = url.replace(/[?#]$/, "");
+  return (
+    url + (url.indexOf("?") > 0 ? "&" : "?") + paramName + "=" + paramValue
+  );
 }

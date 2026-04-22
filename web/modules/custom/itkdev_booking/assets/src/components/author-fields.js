@@ -38,8 +38,8 @@ function AuthorFields({ authorFields, setAuthorFields }) {
             <div class="description form-item__description">
               <div class="webform-element-description">
                 <p>
-                  <strong>Bemærk</strong>
-                  : Den ovenstående titel kan blive vist på en infoskærm. Angiv venligst ikke følsomme oplysninger i titlen på din booking.
+                  <strong>Bemærk</strong>: Den ovenstående titel kan blive vist på en infoskærm. Angiv venligst ikke
+                  følsomme oplysninger i titlen på din booking.
                 </p>
               </div>
             </div>

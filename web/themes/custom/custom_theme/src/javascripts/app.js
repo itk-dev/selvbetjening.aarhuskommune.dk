@@ -1,5 +1,5 @@
 jQuery(function ($) {
-  'use strict';
+  "use strict";
 
   // Enable tooltips.
   $('[data-toggle="tooltip"]').tooltip();

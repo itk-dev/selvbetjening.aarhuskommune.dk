@@ -1,6 +1,3 @@
 {
-  "plugins": [
-    "prettier-plugin-jsdoc"
-  ],
   "printWidth": 120
 }
