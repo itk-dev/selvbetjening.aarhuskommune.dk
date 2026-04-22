@@ -17,8 +17,9 @@ $recipient-window-width: 59mm;
   margin: 0;
 }
 
-html, body {
-  font-family:"DejaVu Sans",Helvetica,Arial,sans-serif;
+html,
+body {
+  font-family: "DejaVu Sans", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -53,7 +54,7 @@ footer {
   left: $margin-left;
   height: $envelope-window-height;
   width: $envelope-window-width;
-  background: white
+  background: white;
 }
 
 // If envelope window is present, move webform content down
@@ -97,14 +98,17 @@ details {
 summary {
   font-size: 20px !important;
   font-weight: bold;
-  padding: .5em .5em 0 .5em;
+  padding: 0.5em 0.5em 0 0.5em;
 }
 
 summary::marker {
   display: none;
 }
 
-legend, summary, .details-wrapper, fieldset {
+legend,
+summary,
+.details-wrapper,
+fieldset {
   padding: 0;
 }
 
@@ -148,7 +152,8 @@ th {
   font-weight: bold;
 }
 
-details, .claro-details {
+details,
+.claro-details {
   border: none !important;
 }
 
@@ -204,7 +209,7 @@ details, .claro-details {
 
 .webform-element-type-webform-table table th,
 .webform-element-type-webform-table table td {
-  padding: .25em;
+  padding: 0.25em;
   border: 1px solid lightgrey;
   overflow-wrap: anywhere;
 }

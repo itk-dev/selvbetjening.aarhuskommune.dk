@@ -12,7 +12,8 @@ div#sliding-popup .eu-cookie-withdraw-banner {
 }
 
 .sliding-popup-bottom,
-.sliding-popup-top {}
+.sliding-popup-top {
+}
 
 .eu-cookie-compliance-banner,
 .eu-cookie-withdraw-banner {
@@ -23,7 +24,7 @@ div#sliding-popup .eu-cookie-withdraw-banner {
 
   padding: 20px;
 
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
   border: 1px solid #747474;
 
   @media (min-width: 1000px) {
@@ -35,7 +36,6 @@ div#sliding-popup .eu-cookie-withdraw-banner {
   max-width: unset;
 }
 .eu-cookie-compliance-message {
-
   h2 {
     font-size: $font-size-h3;
   }
@@ -47,7 +47,6 @@ div#sliding-popup .eu-cookie-withdraw-banner {
 }
 
 body {
-
   .eu-cookie-compliance-more-button {
     text-decoration: underline;
 
@@ -71,7 +70,6 @@ body {
 }
 
 body {
-
   .disagree-button.eu-cookie-compliance-more-button,
   .eu-cookie-compliance-agree-button,
   .eu-cookie-compliance-default-button,

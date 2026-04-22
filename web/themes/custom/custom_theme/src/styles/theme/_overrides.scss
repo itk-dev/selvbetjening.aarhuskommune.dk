@@ -29,7 +29,8 @@ img {
   max-width: 100%;
 }
 
-.icon {}
+.icon {
+}
 
 .form-control {
   // Remove inline shadow on iOS (https://stackoverflow.com/questions/23211656/remove-ios-input-shadow)
@@ -42,7 +43,6 @@ img {
 }
 
 a {
-
   &:not(.btn) {
     text-decoration: underline;
 
@@ -61,37 +61,49 @@ a {
 // --------------------------------------------------
 
 // Mobile - and up
-@media #{$breakpoint-mobile-and-up} {}
+@media #{$breakpoint-mobile-and-up} {
+}
 
 // Mobile - only
-@media #{$breakpoint-mobile-only} {}
+@media #{$breakpoint-mobile-only} {
+}
 
 // Tablet - and up
-@media #{$breakpoint-tablet-and-up} {}
+@media #{$breakpoint-tablet-and-up} {
+}
 
 // Tablet - only
-@media #{$breakpoint-tablet-only} {}
+@media #{$breakpoint-tablet-only} {
+}
 
 // Desktop - and up
-@media #{$breakpoint-desktop-and-up} {}
+@media #{$breakpoint-desktop-and-up} {
+}
 
 // Desktop - only
-@media #{$breakpoint-desktop-only} {}
+@media #{$breakpoint-desktop-only} {
+}
 
 // Large desktop - and up
-@media #{$breakpoint-large-desktop-and-up} {}
+@media #{$breakpoint-large-desktop-and-up} {
+}
 
 // Print
-@media print {}
+@media print {
+}
 
 // Touch
-.touchevents {}
+.touchevents {
+}
 
 // No touch
-.no-touchevents {}
+.no-touchevents {
+}
 
 // Flexbox
-.flexbox {}
+.flexbox {
+}
 
 // No flexbox
-.no-flexbox {}
+.no-flexbox {
+}
