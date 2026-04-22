@@ -6,14 +6,8 @@ namespace Drupal\itkdev_example_forms\Command;
 
 use Composer\Console\Input\InputArgument;
 use Composer\Console\Input\InputOption;
-use Drupal\Core\DependencyInjection\AutowireTrait;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Extension\Exception\UnknownExtensionException;
-use Drupal\Core\Extension\Extension;
-use Drupal\Core\Extension\ModuleHandler;
-use Drupal\webform\WebformEntityStorageInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -24,24 +18,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
   name: 'itkdev-example-forms:webform:generate',
   description: 'Generate example webform',
 )]
-final class GenerateWebformCommand extends Command {
-  use AutowireTrait;
-
-  /**
-   * The webform storage.
-   */
-  private readonly WebformEntityStorageInterface $webformStorage;
-
-  /**
-   * {@inheritdoc}
-   */
-  public function __construct(
-    EntityTypeManagerInterface $entityTypeManager,
-    private readonly ModuleHandler $moduleHandler,
-  ) {
-    parent::__construct();
-    $this->webformStorage = $entityTypeManager->getStorage('webform');
-  }
+final class GenerateWebformCommand extends AbstractCommand {
 
   /**
    * {@inheritdoc}
@@ -62,14 +39,9 @@ final class GenerateWebformCommand extends Command {
 
     $moduleName = $input->getArgument('module');
     if (!$moduleName) {
-      $exampleModules = array_filter(
-        $this->moduleHandler->getModuleList(),
-        static fn(Extension $module): bool => str_starts_with($module->getName(), 'itkdev_ex_')
-      );
-
       $choices = [];
-      foreach ($exampleModules as $moduleName) {
-        $choices[$moduleName->getName()] = $moduleName->getName();
+      foreach ($this->exampleModules as $module) {
+        $choices[$module->getName()] = $module->getName();
       }
       $moduleName = $io->choice('Module?', $choices);
     }

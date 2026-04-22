@@ -5,14 +5,8 @@ declare(strict_types=1);
 namespace Drupal\itkdev_example_forms\Command;
 
 use Drupal\Component\Serialization\Yaml;
-use Drupal\Core\Config\ConfigManagerInterface;
-use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\Core\Extension\Exception\UnknownExtensionException;
-use Drupal\Core\Extension\Extension;
-use Drupal\Core\Extension\ModuleHandler;
-use Drupal\Core\File\FileSystemInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -22,17 +16,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
   name: 'itkdev-example-forms:webforms:export',
   description: 'Export example webforms',
 )]
-final class ExportWebformsCommand extends Command {
-  use AutowireTrait;
-
-  private const WEBFORM_ID_PREFIX = 'itkdev_ex_';
-
-  /**
-   * The example modules.
-   *
-   * @var \Drupal\Core\Extension\Extension[]
-   */
-  private array $exampleModules;
+final class ExportWebformsCommand extends AbstractCommand {
 
   /**
    * The config keys to clear.
@@ -43,24 +27,6 @@ final class ExportWebformsCommand extends Command {
     'third_party_settings.webform_revisions',
     // 'third_party_settings.os2forms_permissions_by_term',
   ];
-
-  /**
-   * {@inheritdoc}
-   */
-  public function __construct(
-    private readonly ConfigManagerInterface $configManager,
-    private readonly ModuleHandler $moduleHandler,
-    private readonly FileSystemInterface $fileSystem,
-  ) {
-    parent::__construct();
-
-    $this->exampleModules = [];
-    foreach ($this->moduleHandler->getModuleList() as $module) {
-      if ($this->isExampleModule($module)) {
-        $this->exampleModules[$module->getName()] = $module;
-      }
-    }
-  }
 
   /**
    * {@inheritdoc}
@@ -139,54 +105,6 @@ final class ExportWebformsCommand extends Command {
     }
 
     return self::SUCCESS;
-  }
-
-  /**
-   * Is example module?
-   */
-  private function isExampleModule(string|Extension $module): bool {
-    $name = is_string($module) ? $module : $module->getName();
-
-    return str_starts_with($name, self::WEBFORM_ID_PREFIX);
-  }
-
-  /**
-   * Get example module name for a webform ID.
-   *
-   * @throws \Drupal\Core\Extension\Exception\UnknownExtensionException
-   *   If no example module can be found.
-   */
-  private function getExampleModule(string $webformId): Extension {
-    foreach ($this->exampleModules as $moduleName => $module) {
-      if (str_starts_with($webformId, $moduleName)) {
-        return $module;
-      }
-    }
-
-    throw new UnknownExtensionException(dt('Cannot find example module for webform %webform_id', [
-      '%webform_id' => $webformId,
-    ]));
-  }
-
-  /**
-   * Get config name for a webform ID.
-   */
-  private function getWebformConfigName(string $webformId): string {
-    return 'webform.webform.' . $webformId;
-  }
-
-  /**
-   * Is webform config name?
-   */
-  private function isWebformConfigName(string $configName): bool {
-    return str_starts_with($configName, 'webform.webform.');
-  }
-
-  /**
-   * Is webform config name?
-   */
-  private function getWebformId(string $configName): string {
-    return substr($configName, strlen('webform.webform.'));
   }
 
 }
