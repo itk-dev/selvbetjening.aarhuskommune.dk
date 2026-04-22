@@ -13,6 +13,7 @@ use Symfony\Component\Console\Exception\RuntimeException;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
@@ -29,7 +30,8 @@ final class ImportWebformsCommand extends AbstractCommand {
   protected function configure(): void {
     $this
       ->addArgument('module', InputArgument::OPTIONAL, 'The module')
-      ->addArgument('webform-id', InputArgument::OPTIONAL | InputArgument::IS_ARRAY, 'The webform IDs');
+      ->addArgument('webform-id', InputArgument::OPTIONAL | InputArgument::IS_ARRAY, 'The webform IDs')
+      ->addOption('diff', NULL, InputOption::VALUE_NONE);
   }
 
   /**
@@ -98,6 +100,7 @@ final class ImportWebformsCommand extends AbstractCommand {
         'command' => 'config:import',
         '--partial' => TRUE,
         '--source' => $tempSource,
+        '--diff' => (bool) $input->getOption('diff'),
       ]);
 
       if ($io->isDebug()) {
