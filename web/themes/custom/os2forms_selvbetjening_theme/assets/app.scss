@@ -10,7 +10,7 @@
 
 .footer {
   overflow: hidden;
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
   padding: 1.5rem 0 0;
 
   .layout-container {
@@ -118,17 +118,16 @@
   border-radius: 5px;
 }
 
-
 .webform-button--next {
   background-color: var(--button-bg-color--primary);
-  border: 2px solid #13224B;
+  border: 2px solid #13224b;
   border-width: 2px 2px 4px 2px;
   color: white;
   border-radius: 5px;
 }
 
 .webform-button--next:hover {
-  background-color: #023AAB;
+  background-color: #023aab;
   color: white;
 }
 
@@ -140,16 +139,14 @@
 }
 
 .webform-button--previous:hover {
-  background-color: var(--button-bg-color);;
+  background-color: var(--button-bg-color);
 }
 
-
 .webform-button--submit {
-  border: 2px solid #13224B;
+  border: 2px solid #13224b;
   border-width: 2px 2px 4px 2px;
   border-radius: 5px;
 }
-
 
 .form-boolean--type-radio {
   width: 24px;
@@ -169,7 +166,6 @@
   border-width: 2px;
   border-color: black;
 }
-
 
 .form-item__label,
 .fieldset__label {
@@ -192,7 +188,6 @@
   color: black;
   font-weight: bold;
 }
-
 
 .os2forms-organisation-search-query > .form-submit {
   line-height: 0.6;

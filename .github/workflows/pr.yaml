@@ -31,23 +31,6 @@ jobs:
         run: |
           composer code-analysis
 
-  coding-standards-custom-themes:
-    name: Yarn - Check Coding Standards in custom themes
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Setup docker network
-        run: docker network create frontend
-
-      - name: Setup docker network
-        run: docker network create serviceplatformen_organisation_api_app
-
-      - name: Install build dependencies
-        run: docker compose run --rm node yarn --cwd web/themes/custom/os2forms_selvbetjening_theme install
-
-      - name: Check coding standards
-        run: docker compose run --rm node yarn --cwd web/themes/custom/os2forms_selvbetjening_theme check-coding-standards
-
   check-custom-theme-assets:
     name: Check custom theme assets are up to date
     runs-on: ubuntu-latest

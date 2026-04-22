@@ -7,9 +7,11 @@
   // https://www.drupal.org/project/drupal/issues/2821181#comment-12012538.
   Drupal.autocomplete.splitValues = function (value) {
     // Check if the current autocomplete is for a focused DAWA address field
-    if ($('.ui-autocomplete-input:focus').closest('.os2forms-dawa-address').length) {
+    if (
+      $(".ui-autocomplete-input:focus").closest(".os2forms-dawa-address").length
+    ) {
       // For DAWA address fields, return the entire value as a single value
-      return [ value.trim() ];
+      return [value.trim()];
     }
     // For other fields, use the original behavior
     return Drupal.autocomplete.splitValues(value);

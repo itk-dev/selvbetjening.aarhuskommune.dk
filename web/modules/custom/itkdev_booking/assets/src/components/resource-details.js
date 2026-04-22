@@ -62,10 +62,8 @@ function ResourceDetails({ setShowResourceDetails, resource }) {
           <div className="resource-details row">
             <div className="image-wrapper col-xs-12 col-md-4">
               <div className="image">
-                {!resource?.resourceImage && (<IconAarhusKommune />)}
-                {resource?.resourceImage && (
-                  <img alt={resource.resourceDisplayName}
-                       src={resource.resourceImage}/>)}
+                {!resource?.resourceImage && <IconAarhusKommune />}
+                {resource?.resourceImage && <img alt={resource.resourceDisplayName} src={resource.resourceImage} />}
               </div>
             </div>
             <div className="facilities col-xs-12 col-md-4">

@@ -134,7 +134,7 @@ function UserBookingEdit({ config, booking, onBookingChanged, close }) {
             calendarSelectionResourceTitle={resources[0].resourceName ?? ""}
             calendarSelectionResourceId={resources[0].id}
             actionText="Anmod om ændring af tidspunkt"
-          />
+          />,
         );
 
         document.getElementById("calendar-selection-choice-confirm").addEventListener("mousedown", (e) => {

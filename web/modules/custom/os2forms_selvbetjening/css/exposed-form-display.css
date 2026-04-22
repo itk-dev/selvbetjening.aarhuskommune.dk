@@ -1,33 +1,55 @@
-.view-os2forms-failed-jobs-personalized .views-exposed-form #edit-webform-submission-created-1-wrapper {
+.view-os2forms-failed-jobs-personalized
+  .views-exposed-form
+  #edit-webform-submission-created-1-wrapper {
   border: none;
   box-shadow: none;
   margin: 0;
   margin-inline: 0 var(--space-xs);
 }
 
-.view-os2forms-failed-jobs-personalized .views-exposed-form #edit-webform-submission-created-1-wrapper .fieldset__wrapper {
+.view-os2forms-failed-jobs-personalized
+  .views-exposed-form
+  #edit-webform-submission-created-1-wrapper
+  .fieldset__wrapper {
   margin: 0;
 }
 
-.view-os2forms-failed-jobs-personalized .views-exposed-form #edit-webform-submission-created-1-wrapper .fieldset__label {
-  padding-bottom: .5em;
+.view-os2forms-failed-jobs-personalized
+  .views-exposed-form
+  #edit-webform-submission-created-1-wrapper
+  .fieldset__label {
+  padding-bottom: 0.5em;
   padding-left: 0;
   padding-right: 0;
 }
 
-.view-os2forms-failed-jobs-personalized .views-exposed-form #edit-webform-submission-created-1-wrapper .form-datetime-wrapper {
+.view-os2forms-failed-jobs-personalized
+  .views-exposed-form
+  #edit-webform-submission-created-1-wrapper
+  .form-datetime-wrapper {
   display: inline-block;
   margin: 0;
 }
 
-.view-os2forms-failed-jobs-personalized .views-exposed-form #edit-webform-submission-created-1-wrapper .form-datetime-wrapper .form-item {
+.view-os2forms-failed-jobs-personalized
+  .views-exposed-form
+  #edit-webform-submission-created-1-wrapper
+  .form-datetime-wrapper
+  .form-item {
   margin-top: 0;
 }
 
-.view-os2forms-failed-jobs-personalized .views-exposed-form #edit-webform-submission-created-1-wrapper .form-datetime-wrapper #edit-processed-min:after {
+.view-os2forms-failed-jobs-personalized
+  .views-exposed-form
+  #edit-webform-submission-created-1-wrapper
+  .form-datetime-wrapper
+  #edit-processed-min:after {
   content: "-";
 }
 
-.view-os2forms-failed-jobs-personalized .views-exposed-form #edit-webform-submission-created-1-wrapper .form-item__label {
+.view-os2forms-failed-jobs-personalized
+  .views-exposed-form
+  #edit-webform-submission-created-1-wrapper
+  .form-item__label {
   display: none;
 }

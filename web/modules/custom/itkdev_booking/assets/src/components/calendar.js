@@ -191,7 +191,7 @@ function Calendar({
             calendarSelection={calendarSelection}
             calendarSelectionResourceTitle={calendarSelectionResourceTitle}
             calendarSelectionResourceId={calendarSelectionResourceId}
-          />
+          />,
         );
 
         document.getElementById("calendar-selection-choice-confirm").addEventListener("mousedown", (e) => {

@@ -257,3 +257,31 @@ services:
           - Type: cvr
             Value: '43486829'
             ValueType: string
+
+  prettier:
+    image: !reset
+    build:
+      # Build a custom image with global plugin enabled (cf. https://github.com/prettier/prettier/issues/15141)
+      dockerfile_inline: |-
+        # https://github.com/jauderho/dockerfiles/blob/main/prettier/Dockerfile
+
+        FROM node:lts-alpine
+
+        # https://github.com/prettier/prettier/releases
+        ARG PRETTIER_VERSION=3.8.3
+        ARG PRETTIER_PLUGINS="prettier-plugin-jsdoc"
+
+        # Note that we must use $$ to rerence an ARG (cf. https://github.com/docker/docs/issues/18566#issuecomment-1796418110)
+        RUN apk update \
+         && apk upgrade -a \
+         && apk add --no-cache ca-certificates nodejs-current npm \
+         && update-ca-certificates \
+         && npm install -g prettier@$${PRETTIER_VERSION} $${PRETTIER_PLUGINS} \
+         && npm cache clean --force \
+         && apk del npm
+
+        WORKDIR /work
+
+        # Tell prettier to use our global plugins.
+        ENTRYPOINT [ "prettier", "--plugin", "/usr/local/lib/node_modules/prettier-plugin-jsdoc/dist/index.js" ]
+        CMD ["--help"]
