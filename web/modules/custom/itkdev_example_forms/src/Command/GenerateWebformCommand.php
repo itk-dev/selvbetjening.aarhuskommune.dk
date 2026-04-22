@@ -6,7 +6,6 @@ namespace Drupal\itkdev_example_forms\Command;
 
 use Composer\Console\Input\InputArgument;
 use Composer\Console\Input\InputOption;
-use Drupal\Core\Extension\Exception\UnknownExtensionException;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputInterface;
@@ -38,20 +37,7 @@ final class GenerateWebformCommand extends AbstractCommand {
     $io = new SymfonyStyle($input, $output);
 
     $moduleName = $input->getArgument('module');
-    if (!$moduleName) {
-      $choices = [];
-      foreach ($this->exampleModules as $module) {
-        $choices[$module->getName()] = $module->getName();
-      }
-      $moduleName = $io->choice('Module?', $choices);
-    }
-
-    try {
-      $module = $this->moduleHandler->getModule($moduleName);
-    }
-    catch (UnknownExtensionException $e) {
-      throw new InvalidArgumentException(dt('Invalid module: %module', ['%module' => $moduleName]));
-    }
+    $module = $this->requestExampleModule($moduleName, $io);
 
     $webformId = $input->getArgument('webform-id');
     if (!$webformId && $input->getOption('generate-id')) {

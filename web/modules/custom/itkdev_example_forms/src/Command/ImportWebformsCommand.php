@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Drupal\itkdev_example_forms\Command;
 
-use Drupal\Core\Extension\Exception\UnknownExtensionException;
 use Drupal\Core\File\FileExists;
 use Drupal\Core\File\FileSystemInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
-use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Exception\RuntimeException;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
@@ -45,17 +43,7 @@ final class ImportWebformsCommand extends AbstractCommand {
       throw new RuntimeException(dt('Module name cannot be empty when running interactively.'));
     }
 
-    if (!$moduleName) {
-      if (!$input->isInteractive()) {
-        throw new RuntimeException(dt('Module name cannot be empty when running interactively.'));
-      }
-
-      $choices = [];
-      foreach ($this->exampleModules as $module) {
-        $choices[$module->getName()] = $module->getName();
-      }
-      $moduleName = $io->choice('Module?', $choices);
-    }
+    $module = $this->requestExampleModule($moduleName, $io);
 
     $webformIds = $input->getArgument('webform-id');
     $includeFile = function (string $filename) use (&$webformIds) {
@@ -71,13 +59,6 @@ final class ImportWebformsCommand extends AbstractCommand {
 
       return FALSE;
     };
-
-    try {
-      $module = $this->moduleHandler->getModule($moduleName);
-    }
-    catch (UnknownExtensionException $e) {
-      throw new InvalidArgumentException(dt('Invalid module: %module.', ['%module' => $moduleName]));
-    }
 
     $sourcePath = $module->getPath() . '/config/install';
     if (!is_dir($sourcePath)) {

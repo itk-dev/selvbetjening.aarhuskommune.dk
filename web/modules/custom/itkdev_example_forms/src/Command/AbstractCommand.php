@@ -13,6 +13,9 @@ use Drupal\Core\Extension\ModuleHandler;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\webform\WebformEntityStorageInterface;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Exception\InvalidArgumentException;
+use Symfony\Component\Console\Exception\RuntimeException;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 // phpcs:disable Drupal.Commenting.ClassComment.Missing
 abstract class AbstractCommand extends Command {
@@ -31,16 +34,6 @@ abstract class AbstractCommand extends Command {
    * @var \Drupal\Core\Extension\Extension[]
    */
   protected array $exampleModules;
-
-  /**
-   * The config keys to clear.
-   */
-  private static array $configKeysToClear = [
-    'uuid',
-    '_core',
-    'third_party_settings.webform_revisions',
-    // 'third_party_settings.os2forms_permissions_by_term',
-  ];
 
   /**
    * {@inheritdoc}
@@ -110,6 +103,32 @@ abstract class AbstractCommand extends Command {
    */
   protected function getWebformId(string $configName): string {
     return substr($configName, strlen('webform.webform.'));
+  }
+
+  /**
+   * Request an example module.
+   */
+  protected function requestExampleModule(?string $moduleName, SymfonyStyle $io): Extension {
+    if (!$moduleName) {
+      $choices = [];
+      foreach ($this->exampleModules as $module) {
+        $choices[$module->getName()] = $module->getName();
+      }
+      $moduleName = $io->choice('Module?', $choices);
+    }
+
+    try {
+      $module = $this->moduleHandler->getModule($moduleName);
+    }
+    catch (UnknownExtensionException $e) {
+      throw new InvalidArgumentException(dt('Invalid module: %module', ['%module' => $moduleName]));
+    }
+
+    if (!$this->isExampleModule($module->getName())) {
+      throw new RuntimeException(dt('Module %module is not an example module', ['%module' => $moduleName]));
+    }
+
+    return $module;
   }
 
 }
