@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,16 +17,13 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_date:
+      example_hidden:
         encrypt: true
         encrypt_profile: webform
-      example_datelist:
+      example_value:
         encrypt: true
         encrypt_profile: webform
-      example_datetime:
-        encrypt: true
-        encrypt_profile: webform
-      example_time:
+      example_computed_twig:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -74,28 +71,24 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_datetime
-title: "Date and time elements"
-description: "Examples of date and time input elements"
+id: itkdev_ex_core_fields_computed
+title: "Hidden and computed elements"
+description: "Examples of hidden value storage and computed (Twig) elements"
 categories: {}
 elements: |-
-  example_date:
-    '#type': date
-    '#title': Date
-  example_datelist:
-    '#type': datelist
-    '#title': 'Date list'
-    '#date_part_order':
-      - year
-      - month
-      - day
-  example_datetime:
-    '#type': datetime
-    '#title': 'Date and time'
-  example_time:
-    '#type': webform_time
-    '#title': Time
-    '#time_format': 'H:i'
+  example_hidden:
+    '#type': hidden
+    '#title': Hidden
+    '#value': hidden_default_value
+  example_value:
+    '#type': value
+    '#title': Value
+    '#value': stored_default_value
+  example_computed_twig:
+    '#type': webform_computed_twig
+    '#title': 'Computed (Twig)'
+    '#template': 'The current date is {{ "now"|date("Y-m-d") }}'
+    '#ajax': true
 css: ""
 javascript: ""
 settings:

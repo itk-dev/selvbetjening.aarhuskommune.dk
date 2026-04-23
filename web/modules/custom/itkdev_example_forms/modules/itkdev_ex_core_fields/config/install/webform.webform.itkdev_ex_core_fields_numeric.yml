@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,19 +17,16 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_managed_file:
+      example_number:
         encrypt: true
         encrypt_profile: webform
-      example_image_file:
+      example_range:
         encrypt: true
         encrypt_profile: webform
-      example_audio_file:
+      example_scale:
         encrypt: true
         encrypt_profile: webform
-      example_video_file:
-        encrypt: true
-        encrypt_profile: webform
-      example_document_file:
+      example_rating:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -77,33 +74,36 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_files
-title: "File upload elements"
-description: "Examples of file upload elements: general files, images, audio, video and documents"
+id: itkdev_ex_core_fields_numeric
+title: "Numeric and rating elements"
+description: "Examples of numeric input elements: numbers, ranges, scales and ratings"
 categories: {}
 elements: |-
-  example_managed_file:
-    '#type': managed_file
-    '#title': 'File upload'
-    '#file_extensions': 'txt pdf doc docx'
-    '#max_filesize': '10'
-  example_image_file:
-    '#type': webform_image_file
-    '#title': 'Image upload'
-    '#file_extensions': 'jpg jpeg png gif'
-    '#max_filesize': '5'
-  example_audio_file:
-    '#type': webform_audio_file
-    '#title': 'Audio upload'
-    '#file_extensions': 'mp3 wav ogg'
-  example_video_file:
-    '#type': webform_video_file
-    '#title': 'Video upload'
-    '#file_extensions': 'mp4 webm'
-  example_document_file:
-    '#type': webform_document_file
-    '#title': 'Document upload'
-    '#file_extensions': 'pdf doc docx xls xlsx'
+  example_number:
+    '#type': number
+    '#title': Number
+    '#min': 0
+    '#max': 100
+    '#step': 1
+  example_range:
+    '#type': range
+    '#title': Range
+    '#min': 0
+    '#max': 100
+    '#step': 5
+    '#output': right
+    '#output__field_suffix': '%'
+  example_scale:
+    '#type': webform_scale
+    '#title': Scale
+    '#min': 1
+    '#max': 10
+    '#min_text': 'Not likely'
+    '#max_text': 'Very likely'
+  example_rating:
+    '#type': webform_rating
+    '#title': Rating
+    '#star_size': medium
 css: ""
 javascript: ""
 settings:

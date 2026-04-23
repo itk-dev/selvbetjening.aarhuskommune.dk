@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install and update functions for the itkdev_ex_webform_core_fields module.
+ * Install and update functions for the itkdev_ex_core_fields module.
  */
 
 use Drupal\itkdev_example_forms\Fixture\UserAffiliationTermFixture;
@@ -12,17 +12,17 @@ use Drupal\webform\Entity\Webform;
 /**
  * Get all webform IDs managed by this module.
  */
-function _itkdev_ex_webform_core_fields_webform_ids(): array {
+function _itkdev_ex_core_fields_webform_ids(): array {
   return [
-    'itkdev_ex_webform_core_text',
-    'itkdev_ex_webform_core_numeric',
-    'itkdev_ex_webform_core_options',
-    'itkdev_ex_webform_core_datetime',
-    'itkdev_ex_webform_core_files',
-    'itkdev_ex_webform_core_contact',
-    'itkdev_ex_webform_core_layout',
-    'itkdev_ex_webform_core_computed',
-    'itkdev_ex_webform_core_misc',
+    'itkdev_ex_core_fields_text',
+    'itkdev_ex_core_fields_numeric',
+    'itkdev_ex_core_fields_options',
+    'itkdev_ex_core_fields_datetime',
+    'itkdev_ex_core_fields_files',
+    'itkdev_ex_core_fields_contact',
+    'itkdev_ex_core_fields_layout',
+    'itkdev_ex_core_fields_computed',
+    'itkdev_ex_core_fields_misc',
     'itkdev_ex_webform_sub_mod_fields',
   ];
 }
@@ -30,11 +30,11 @@ function _itkdev_ex_webform_core_fields_webform_ids(): array {
 /**
  * Implements hook_install().
  */
-function itkdev_ex_webform_core_fields_install(bool $is_syncing): void {
+function itkdev_ex_core_fields_install(bool $is_syncing): void {
   /** @var \Drupal\itkdev_example_forms\WebformHelper $helper */
   $helper = \Drupal::service(WebformHelper::class);
 
-  foreach (_itkdev_ex_webform_core_fields_webform_ids() as $webformId) {
+  foreach (_itkdev_ex_core_fields_webform_ids() as $webformId) {
     if ($webform = Webform::load($webformId)) {
       $helper->createWebformPage($webform, [
         'title' => $webform->label(),
@@ -53,11 +53,11 @@ function itkdev_ex_webform_core_fields_install(bool $is_syncing): void {
  * tracking table or the page nodes created in hook_install(). Both must be
  * deleted explicitly to avoid errors on reinstall.
  */
-function itkdev_ex_webform_core_fields_uninstall(bool $is_syncing): void {
+function itkdev_ex_core_fields_uninstall(bool $is_syncing): void {
   /** @var \Drupal\itkdev_example_forms\WebformHelper $helper */
   $helper = \Drupal::service(WebformHelper::class);
 
-  foreach (_itkdev_ex_webform_core_fields_webform_ids() as $webformId) {
+  foreach (_itkdev_ex_core_fields_webform_ids() as $webformId) {
     // Delete the webform page node.
     if ($page = $helper->loadWebformPage($webformId)) {
       $page->delete();

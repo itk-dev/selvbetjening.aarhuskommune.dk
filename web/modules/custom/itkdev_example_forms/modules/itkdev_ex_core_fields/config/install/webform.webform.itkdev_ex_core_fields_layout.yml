@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,37 +17,76 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_select:
+      page_containers:
         encrypt: true
         encrypt_profile: webform
-      example_radios:
+      example_container:
         encrypt: true
         encrypt_profile: webform
-      example_checkbox:
+      container_child:
         encrypt: true
         encrypt_profile: webform
-      example_checkboxes:
+      example_details:
         encrypt: true
         encrypt_profile: webform
-      example_select_other:
+      details_child:
         encrypt: true
         encrypt_profile: webform
-      example_radios_other:
+      example_fieldset:
         encrypt: true
         encrypt_profile: webform
-      example_checkboxes_other:
+      fieldset_child:
         encrypt: true
         encrypt_profile: webform
-      example_tableselect:
+      example_flexbox:
         encrypt: true
         encrypt_profile: webform
-      example_likert:
+      flexbox_child_1:
         encrypt: true
         encrypt_profile: webform
-      example_term_select:
+      flexbox_child_2:
         encrypt: true
         encrypt_profile: webform
-      example_term_checkboxes:
+      example_section:
+        encrypt: true
+        encrypt_profile: webform
+      section_child:
+        encrypt: true
+        encrypt_profile: webform
+      page_display:
+        encrypt: true
+        encrypt_profile: webform
+      example_vertical_tabs:
+        encrypt: true
+        encrypt_profile: webform
+      vertical_tab_1:
+        encrypt: true
+        encrypt_profile: webform
+      tab1_child:
+        encrypt: true
+        encrypt_profile: webform
+      vertical_tab_2:
+        encrypt: true
+        encrypt_profile: webform
+      tab2_child:
+        encrypt: true
+        encrypt_profile: webform
+      page_tables:
+        encrypt: true
+        encrypt_profile: webform
+      example_webform_table:
+        encrypt: true
+        encrypt_profile: webform
+      table_row_1:
+        encrypt: true
+        encrypt_profile: webform
+      row1_name:
+        encrypt: true
+        encrypt_profile: webform
+      row1_value:
+        encrypt: true
+        encrypt_profile: webform
+      example_table_sort:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -95,89 +134,103 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_options
-title: "Option and selection elements"
-description: "Examples of option-based elements: dropdowns, radios, checkboxes, likert scales and taxonomy term selectors"
+id: itkdev_ex_core_fields_layout
+title: "Layout and structure elements"
+description: "Examples of layout and structural elements: containers, sections, tables, markup, wizard pages and display helpers"
 categories: {}
 elements: |-
-  example_select:
-    '#type': select
-    '#title': Select
-    '#options':
-      option_a: 'Option A'
-      option_b: 'Option B'
-      option_c: 'Option C'
-  example_radios:
-    '#type': radios
-    '#title': Radios
-    '#options':
-      yes: 'Yes'
-      no: 'No'
-      maybe: Maybe
-  example_checkbox:
-    '#type': checkbox
-    '#title': 'Single checkbox'
-  example_checkboxes:
-    '#type': checkboxes
-    '#title': Checkboxes
-    '#options':
-      red: Red
-      green: Green
-      blue: Blue
-  example_select_other:
-    '#type': webform_select_other
-    '#title': 'Select (with other)'
-    '#options':
-      cat: Cat
-      dog: Dog
-    '#other__placeholder': 'Specify other'
-  example_radios_other:
-    '#type': webform_radios_other
-    '#title': 'Radios (with other)'
-    '#options':
-      morning: Morning
-      afternoon: Afternoon
-      evening: Evening
-    '#other__placeholder': 'Specify other'
-  example_checkboxes_other:
-    '#type': webform_checkboxes_other
-    '#title': 'Checkboxes (with other)'
-    '#options':
-      email_contact: Email
-      phone_contact: Phone
-      sms_contact: SMS
-    '#other__placeholder': 'Specify other'
-  example_tableselect:
-    '#type': tableselect
-    '#title': 'Table select'
-    '#options':
-      row_1:
-        column_1: 'Row 1, Col 1'
-        column_2: 'Row 1, Col 2'
-      row_2:
-        column_1: 'Row 2, Col 1'
-        column_2: 'Row 2, Col 2'
-  example_likert:
-    '#type': webform_likert
-    '#title': Likert
-    '#questions':
-      q1: 'The service was fast'
-      q2: 'The staff was helpful'
-      q3: 'The quality was good'
-    '#answers':
-      1: 'Strongly disagree'
-      2: Disagree
-      3: Neutral
-      4: Agree
-      5: 'Strongly agree'
-  example_term_select:
-    '#type': webform_term_select
-    '#title': 'Taxonomy term select'
-    '#vocabulary': tags
-  example_term_checkboxes:
-    '#type': webform_term_checkboxes
-    '#title': 'Taxonomy term checkboxes'
-    '#vocabulary': tags
+  page_containers:
+    '#type': webform_wizard_page
+    '#title': 'Container elements'
+    example_container:
+      '#type': container
+      '#title': Container
+      container_child:
+        '#type': textfield
+        '#title': 'Field inside container'
+    example_details:
+      '#type': details
+      '#title': Details
+      '#open': true
+      details_child:
+        '#type': textfield
+        '#title': 'Field inside details'
+    example_fieldset:
+      '#type': fieldset
+      '#title': Fieldset
+      fieldset_child:
+        '#type': textfield
+        '#title': 'Field inside fieldset'
+    example_flexbox:
+      '#type': webform_flexbox
+      flexbox_child_1:
+        '#type': textfield
+        '#title': 'Left field'
+      flexbox_child_2:
+        '#type': textfield
+        '#title': 'Right field'
+    example_section:
+      '#type': webform_section
+      '#title': Section
+      section_child:
+        '#type': textfield
+        '#title': 'Field inside section'
+  page_display:
+    '#type': webform_wizard_page
+    '#title': 'Display elements'
+    example_horizontal_rule:
+      '#type': webform_horizontal_rule
+    example_more:
+      '#type': webform_more
+      '#more': '<p>This text is hidden until the user clicks to expand it.</p>'
+    example_markup:
+      '#type': webform_markup
+      '#markup': '<p>This is example markup displayed in the form.</p>'
+    example_vertical_tabs:
+      '#type': vertical_tabs
+      '#title': 'Vertical tabs'
+    vertical_tab_1:
+      '#type': details
+      '#title': 'Tab 1'
+      '#group': example_vertical_tabs
+      tab1_child:
+        '#type': textfield
+        '#title': 'Field in tab 1'
+    vertical_tab_2:
+      '#type': details
+      '#title': 'Tab 2'
+      '#group': example_vertical_tabs
+      tab2_child:
+        '#type': textfield
+        '#title': 'Field in tab 2'
+  page_tables:
+    '#type': webform_wizard_page
+    '#title': 'Table elements'
+    example_table:
+      '#type': table
+      '#header':
+        - 'Column 1'
+        - 'Column 2'
+    example_webform_table:
+      '#type': webform_table
+      '#header':
+        - Name
+        - Value
+      table_row_1:
+        '#type': webform_table_row
+        row1_name:
+          '#type': textfield
+          '#title': Name
+        row1_value:
+          '#type': textfield
+          '#title': Value
+    example_table_sort:
+      '#type': webform_table_sort
+      '#title': 'Table sort'
+      '#options':
+        item_1: 'First item'
+        item_2: 'Second item'
+        item_3: 'Third item'
 css: ""
 javascript: ""
 settings:

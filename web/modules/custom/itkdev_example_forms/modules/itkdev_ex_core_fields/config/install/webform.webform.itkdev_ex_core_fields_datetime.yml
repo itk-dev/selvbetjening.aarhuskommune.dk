@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,16 +17,16 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_textfield:
+      example_date:
         encrypt: true
         encrypt_profile: webform
-      example_textarea:
+      example_datelist:
         encrypt: true
         encrypt_profile: webform
-      example_text_format:
+      example_datetime:
         encrypt: true
         encrypt_profile: webform
-      example_autocomplete:
+      example_time:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -74,29 +74,28 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_text
-title: "Text input elements"
-description: "Examples of text-based input elements: plain text, formatted text and autocomplete"
+id: itkdev_ex_core_fields_datetime
+title: "Date and time elements"
+description: "Examples of date and time input elements"
 categories: {}
 elements: |-
-  example_textfield:
-    '#type': textfield
-    '#title': 'Text field'
-    '#placeholder': 'Enter text here'
-  example_textarea:
-    '#type': textarea
-    '#title': 'Text area'
-    '#rows': 5
-  example_text_format:
-    '#type': text_format
-    '#title': 'Formatted text'
-  example_autocomplete:
-    '#type': webform_autocomplete
-    '#title': Autocomplete
-    '#autocomplete_items':
-      - 'Option A'
-      - 'Option B'
-      - 'Option C'
+  example_date:
+    '#type': date
+    '#title': Date
+  example_datelist:
+    '#type': datelist
+    '#title': 'Date list'
+    '#date_part_order':
+      - year
+      - month
+      - day
+  example_datetime:
+    '#type': datetime
+    '#title': 'Date and time'
+  example_time:
+    '#type': webform_time
+    '#title': Time
+    '#time_format': 'H:i'
 css: ""
 javascript: ""
 settings:

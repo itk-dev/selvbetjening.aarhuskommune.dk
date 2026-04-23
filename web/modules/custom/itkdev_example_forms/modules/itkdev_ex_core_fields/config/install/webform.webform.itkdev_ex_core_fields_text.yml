@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,16 +17,16 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_number:
+      example_textfield:
         encrypt: true
         encrypt_profile: webform
-      example_range:
+      example_textarea:
         encrypt: true
         encrypt_profile: webform
-      example_scale:
+      example_text_format:
         encrypt: true
         encrypt_profile: webform
-      example_rating:
+      example_autocomplete:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -74,36 +74,29 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_numeric
-title: "Numeric and rating elements"
-description: "Examples of numeric input elements: numbers, ranges, scales and ratings"
+id: itkdev_ex_core_fields_text
+title: "Text input elements"
+description: "Examples of text-based input elements: plain text, formatted text and autocomplete"
 categories: {}
 elements: |-
-  example_number:
-    '#type': number
-    '#title': Number
-    '#min': 0
-    '#max': 100
-    '#step': 1
-  example_range:
-    '#type': range
-    '#title': Range
-    '#min': 0
-    '#max': 100
-    '#step': 5
-    '#output': right
-    '#output__field_suffix': '%'
-  example_scale:
-    '#type': webform_scale
-    '#title': Scale
-    '#min': 1
-    '#max': 10
-    '#min_text': 'Not likely'
-    '#max_text': 'Very likely'
-  example_rating:
-    '#type': webform_rating
-    '#title': Rating
-    '#star_size': medium
+  example_textfield:
+    '#type': textfield
+    '#title': 'Text field'
+    '#placeholder': 'Enter text here'
+  example_textarea:
+    '#type': textarea
+    '#title': 'Text area'
+    '#rows': 5
+  example_text_format:
+    '#type': text_format
+    '#title': 'Formatted text'
+  example_autocomplete:
+    '#type': webform_autocomplete
+    '#title': Autocomplete
+    '#autocomplete_items':
+      - 'Option A'
+      - 'Option B'
+      - 'Option C'
 css: ""
 javascript: ""
 settings:

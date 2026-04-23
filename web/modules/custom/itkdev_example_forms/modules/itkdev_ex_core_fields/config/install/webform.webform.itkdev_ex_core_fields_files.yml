@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,25 +17,19 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_email:
+      example_managed_file:
         encrypt: true
         encrypt_profile: webform
-      example_tel:
+      example_image_file:
         encrypt: true
         encrypt_profile: webform
-      example_url:
+      example_audio_file:
         encrypt: true
         encrypt_profile: webform
-      example_email_confirm:
+      example_video_file:
         encrypt: true
         encrypt_profile: webform
-      example_address:
-        encrypt: true
-        encrypt_profile: webform
-      example_webform_address:
-        encrypt: true
-        encrypt_profile: webform
-      example_contact:
+      example_document_file:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -83,37 +77,33 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_contact
-title: "Contact and address elements"
-description: "Examples of contact information elements: email, telephone, URL and address composites"
+id: itkdev_ex_core_fields_files
+title: "File upload elements"
+description: "Examples of file upload elements: general files, images, audio, video and documents"
 categories: {}
 elements: |-
-  example_email:
-    '#type': email
-    '#title': Email
-    '#placeholder': 'user@example.com'
-  example_tel:
-    '#type': tel
-    '#title': Telephone
-    '#placeholder': '+45 12345678'
-  example_url:
-    '#type': url
-    '#title': URL
-    '#placeholder': 'https://example.com'
-  example_email_confirm:
-    '#type': webform_email_confirm
-    '#title': 'Confirm email'
-  example_address:
-    '#type': address
-    '#title': Address
-    '#default_value':
-      country_code: DK
-  example_webform_address:
-    '#type': webform_address
-    '#title': 'Webform address'
-  example_contact:
-    '#type': webform_contact
-    '#title': Contact
+  example_managed_file:
+    '#type': managed_file
+    '#title': 'File upload'
+    '#file_extensions': 'txt pdf doc docx'
+    '#max_filesize': '10'
+  example_image_file:
+    '#type': webform_image_file
+    '#title': 'Image upload'
+    '#file_extensions': 'jpg jpeg png gif'
+    '#max_filesize': '5'
+  example_audio_file:
+    '#type': webform_audio_file
+    '#title': 'Audio upload'
+    '#file_extensions': 'mp3 wav ogg'
+  example_video_file:
+    '#type': webform_video_file
+    '#title': 'Video upload'
+    '#file_extensions': 'mp4 webm'
+  example_document_file:
+    '#type': webform_document_file
+    '#title': 'Document upload'
+    '#file_extensions': 'pdf doc docx xls xlsx'
 css: ""
 javascript: ""
 settings:

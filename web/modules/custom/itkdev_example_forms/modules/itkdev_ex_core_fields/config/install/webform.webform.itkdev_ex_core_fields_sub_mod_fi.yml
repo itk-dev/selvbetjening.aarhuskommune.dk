@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,22 +17,31 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_signature:
+      example_buttons:
         encrypt: true
         encrypt_profile: webform
-      example_terms_of_service:
+      example_buttons_other:
         encrypt: true
         encrypt_profile: webform
-      example_custom_composite:
+      example_image_select:
         encrypt: true
         encrypt_profile: webform
-      example_language_select:
+      example_location_geocomplete:
         encrypt: true
         encrypt_profile: webform
-      example_machine_name_source:
+      example_location_places:
         encrypt: true
         encrypt_profile: webform
-      example_machine_name:
+      example_options_custom:
+        encrypt: true
+        encrypt_profile: webform
+      example_options_custom_entity:
+        encrypt: true
+        encrypt_profile: webform
+      example_toggle:
+        encrypt: true
+        encrypt_profile: webform
+      example_toggles:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -80,60 +89,95 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_misc
-title: "Miscellaneous elements"
-description: "Examples of specialized elements: signature, terms of service, composites, CAPTCHA and other utility elements"
+id: itkdev_ex_core_fields_sub_mod_fi
+title: "Webform sub-module elements"
+description: "Examples of elements from webform sub-modules. Elements only render when their sub-module is enabled. See the markup at the top of this form for required modules."
 categories: {}
 elements: |-
-  example_webform_element:
-    '#type': webform_element
-    '#title': 'Generic element'
-    '#markup': '<p>A generic webform element for display purposes.</p>'
-  example_actions:
-    '#type': webform_actions
-    '#title': 'Submit button(s)'
-    '#submit__label': Send
-  example_signature:
-    '#type': webform_signature
-    '#title': Signature
-  example_terms_of_service:
-    '#type': webform_terms_of_service
-    '#title': 'Terms of service'
-    '#terms_type': modal
-    '#terms_content': 'These are the example terms of service. By checking the box you agree to these terms.'
-  example_custom_composite:
-    '#type': webform_custom_composite
-    '#title': 'Custom composite'
-    '#element':
-      composite_name:
-        '#type': textfield
-        '#title': Name
-      composite_age:
-        '#type': number
-        '#title': Age
-  example_variant:
-    '#type': webform_variant
-    '#title': Variant
-  example_captcha:
-    '#type': captcha
-    '#captcha_type': default
-  example_language_select:
-    '#type': language_select
-    '#title': Language
-  example_machine_name_source:
-    '#type': textfield
-    '#title': 'Label for machine name'
-  example_machine_name:
-    '#type': machine_name
-    '#title': 'Machine name'
-    '#machine_name':
-      source:
-        - example_machine_name_source
-  example_view:
-    '#type': view
-    '#title': 'Embedded view'
-    '#name': content_recent
-    '#display_id': default
+  required_modules_info:
+    '#type': webform_markup
+    '#markup': |
+      <details>
+        <summary><strong>Required modules for sub-module elements</strong></summary>
+        <p>Elements on this form require the following webform sub-modules to be enabled. Elements from disabled modules will not render.</p>
+        <table>
+          <thead><tr><th>Module</th><th>Element type</th></tr></thead>
+          <tbody>
+            <tr><td><code>webform_jqueryui_buttons</code></td><td>webform_buttons, webform_buttons_other</td></tr>
+            <tr><td><code>webform_image_select</code></td><td>webform_image_select</td></tr>
+            <tr><td><code>webform_location_geocomplete</code></td><td>webform_location_geocomplete</td></tr>
+            <tr><td><code>webform_location_places</code></td><td>webform_location_places</td></tr>
+            <tr><td><code>webform_options_custom</code></td><td>webform_options_custom, webform_options_custom_entity</td></tr>
+            <tr><td><code>webform_toggles</code></td><td>webform_toggle, webform_toggles</td></tr>
+          </tbody>
+        </table>
+      </details>
+  example_buttons:
+    '#type': webform_buttons
+    '#title': Buttons
+    '#options':
+      yes: 'Yes'
+      no: 'No'
+      maybe: Maybe
+  example_buttons_other:
+    '#type': webform_buttons_other
+    '#title': 'Buttons (with other)'
+    '#options':
+      option_a: 'Option A'
+      option_b: 'Option B'
+      option_c: 'Option C'
+    '#other__placeholder': 'Specify other'
+  example_image_select:
+    '#type': webform_image_select
+    '#title': 'Image select'
+    '#show_label': true
+    '#images':
+      image_1:
+        text: 'Image 1'
+        src: 'https://placehold.co/150x100?text=1'
+      image_2:
+        text: 'Image 2'
+        src: 'https://placehold.co/150x100?text=2'
+      image_3:
+        text: 'Image 3'
+        src: 'https://placehold.co/150x100?text=3'
+  example_location_geocomplete:
+    '#type': webform_location_geocomplete
+    '#title': 'Location (Geocomplete)'
+  example_location_places:
+    '#type': webform_location_places
+    '#title': 'Location (Places)'
+  example_options_custom:
+    '#type': webform_options_custom
+    '#title': 'Custom options'
+    '#options':
+      option_1: 'Custom option 1'
+      option_2: 'Custom option 2'
+      option_3: 'Custom option 3'
+  example_options_custom_entity:
+    '#type': webform_options_custom_entity
+    '#title': 'Custom options (entity)'
+    '#options':
+      option_1: 'Entity option 1'
+      option_2: 'Entity option 2'
+  example_toggle:
+    '#type': webform_toggle
+    '#title': 'Toggle option'
+    '#toggle_theme': light
+    '#toggle_size': medium
+    '#on_text': 'Yes'
+    '#off_text': 'No'
+  example_toggles:
+    '#type': webform_toggles
+    '#title': 'Toggle options'
+    '#toggle_theme': light
+    '#toggle_size': medium
+    '#on_text': 'Yes'
+    '#off_text': 'No'
+    '#options':
+      notify_email: 'Email notifications'
+      notify_sms: 'SMS notifications'
+      notify_push: 'Push notifications'
 css: ""
 javascript: ""
 settings:
