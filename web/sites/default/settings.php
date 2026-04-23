@@ -832,6 +832,7 @@ $settings['twig_sandbox_allowed_methods'] = [
 $settings['config_exclude_modules'][] = 'itkdev_example_forms';
 $settings['config_exclude_modules'][] = 'content_fixtures';
 $settings['config_exclude_modules'][] = 'itkdev_ex_misc';
+$settings['config_exclude_modules'][] = 'itkdev_ex_webform_core_fields';
 
 /**
  * Load local development override configuration, if available.
