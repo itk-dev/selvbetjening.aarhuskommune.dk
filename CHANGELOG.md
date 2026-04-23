@@ -12,6 +12,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   Opdaterede projektskabelon.
 * [PR-488](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/488)
   Tilføjede eksempelformularer.
+  Tilføjede webform core eksempelformularer.
 
 ## [5.1.5] 2025-04-16
 

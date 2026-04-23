@@ -1,0 +1,7 @@
+name: "Webform core field examples"
+type: module
+description: "Example forms demonstrating all available core webform elements"
+package: ITK Dev example forms
+core_version_requirement: ^10 || ^11
+dependencies:
+  - itkdev_example_forms:itkdev_example_forms
