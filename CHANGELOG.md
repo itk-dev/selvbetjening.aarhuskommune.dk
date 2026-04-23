@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-492](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/492)
+  * Opstrammede eksempelformularkommandoer
 * [PR-490](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/490)
   Opdaterede projektskabelon.
 * [PR-488](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/488)

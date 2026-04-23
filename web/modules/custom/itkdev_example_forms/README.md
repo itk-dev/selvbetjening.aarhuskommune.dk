@@ -122,16 +122,19 @@ Use `--yes` to just do it:
 drush itkdev-example-forms:webforms:export --yes
 ```
 
-## Resetting example webforms
+## Importing example webforms
 
-You can reset a set of example webforms with the follow incantation:
-
-``` shell
-drush config:import --source=modules/custom/itkdev_example_forms/modules/itkdev_ex_misc/config/install/ --partial
-```
-
-Reset (config for) select webforms with
+You can import a set of example webforms with the follow incantation:
 
 ``` shell
-drush itkdev-example-forms:webforms:reset
+drush itkdev-example-forms:webforms:import itkdev_ex_misc
 ```
+
+A single webform can be imported with
+
+``` shell
+drush itkdev-example-forms:webforms:import itkdev_ex_misc itkdev_ex_misc_001
+```
+
+Under the hood, the `itkdev-example-forms:webforms:import` uses [`config:import
+--partial`](https://www.drush.org/13.x/commands/config_import/#options) to perform its magic.
