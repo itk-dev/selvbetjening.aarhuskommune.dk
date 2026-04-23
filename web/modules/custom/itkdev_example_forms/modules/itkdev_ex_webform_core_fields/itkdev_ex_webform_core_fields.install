@@ -2,7 +2,8 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the itkdev_ex_webform_core_fields module.
+ * Install, update and uninstall functions for the
+ * itkdev_ex_webform_core_fields module.
  */
 
 use Drupal\itkdev_example_forms\Fixture\UserAffiliationTermFixture;
