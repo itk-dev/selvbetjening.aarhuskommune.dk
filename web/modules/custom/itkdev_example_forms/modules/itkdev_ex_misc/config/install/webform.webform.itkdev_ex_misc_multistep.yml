@@ -1,0 +1,627 @@
+langcode: da
+status: open
+dependencies:
+  module:
+    - os2forms
+    - os2forms_permissions_by_term
+    - webform_encrypt
+    - webform_entity_print
+    - webform_revisions
+  enforced:
+    module:
+      - itkdev_ex_misc
+third_party_settings:
+  os2forms_permissions_by_term:
+    settings:
+      2: "2"
+      1: 0
+  webform_encrypt:
+    element:
+      page_personal:
+        encrypt: true
+        encrypt_profile: webform
+      name:
+        encrypt: true
+        encrypt_profile: webform
+      email:
+        encrypt: true
+        encrypt_profile: webform
+      phone:
+        encrypt: true
+        encrypt_profile: webform
+      page_address:
+        encrypt: true
+        encrypt_profile: webform
+      street:
+        encrypt: true
+        encrypt_profile: webform
+      house_number:
+        encrypt: true
+        encrypt_profile: webform
+      postal_code:
+        encrypt: true
+        encrypt_profile: webform
+      city:
+        encrypt: true
+        encrypt_profile: webform
+      page_employment:
+        encrypt: true
+        encrypt_profile: webform
+      employment_status:
+        encrypt: true
+        encrypt_profile: webform
+      employer:
+        encrypt: true
+        encrypt_profile: webform
+      job_title:
+        encrypt: true
+        encrypt_profile: webform
+      start_date:
+        encrypt: true
+        encrypt_profile: webform
+      education_level:
+        encrypt: true
+        encrypt_profile: webform
+      education_institution:
+        encrypt: true
+        encrypt_profile: webform
+      education_name:
+        encrypt: true
+        encrypt_profile: webform
+      work_experience_years:
+        encrypt: true
+        encrypt_profile: webform
+      page_preferences:
+        encrypt: true
+        encrypt_profile: webform
+      preferred_contact:
+        encrypt: true
+        encrypt_profile: webform
+      interests:
+        encrypt: true
+        encrypt_profile: webform
+      page_inquiry:
+        encrypt: true
+        encrypt_profile: webform
+      inquiry_type:
+        encrypt: true
+        encrypt_profile: webform
+      subject:
+        encrypt: true
+        encrypt_profile: webform
+      description:
+        encrypt: true
+        encrypt_profile: webform
+      priority:
+        encrypt: true
+        encrypt_profile: webform
+      desired_date:
+        encrypt: true
+        encrypt_profile: webform
+      desired_time:
+        encrypt: true
+        encrypt_profile: webform
+      preferred_department:
+        encrypt: true
+        encrypt_profile: webform
+      reference_number:
+        encrypt: true
+        encrypt_profile: webform
+      attachment:
+        encrypt: true
+        encrypt_profile: webform
+      page_additional:
+        encrypt: true
+        encrypt_profile: webform
+      service_rating:
+        encrypt: true
+        encrypt_profile: webform
+      recommendation_likelihood:
+        encrypt: true
+        encrypt_profile: webform
+      experience_evaluation:
+        encrypt: true
+        encrypt_profile: webform
+      comments:
+        encrypt: true
+        encrypt_profile: webform
+      visited_before:
+        encrypt: true
+        encrypt_profile: webform
+      visit_count:
+        encrypt: true
+        encrypt_profile: webform
+      heard_about_us:
+        encrypt: true
+        encrypt_profile: webform
+      preferred_communication:
+        encrypt: true
+        encrypt_profile: webform
+      available_days:
+        encrypt: true
+        encrypt_profile: webform
+      budget:
+        encrypt: true
+        encrypt_profile: webform
+      page_confirmation:
+        encrypt: true
+        encrypt_profile: webform
+      accept_terms:
+        encrypt: true
+        encrypt_profile: webform
+      terms_of_service:
+        encrypt: true
+        encrypt_profile: webform
+      signature:
+        encrypt: true
+        encrypt_profile: webform
+  os2forms:
+    os2forms_email_handler:
+      enabled: 0
+      email_recipients: ""
+    os2forms_nemid:
+      session_type: ""
+      webform_type: ""
+      nemlogin_auto_redirect: 0
+      os2forms_nemlogin_openid_connect:
+        authentication_settings:
+          user_claim: ""
+          element_key: ""
+          error_message: ""
+    os2forms_nemid_address_protection:
+      nemlogin_hide_form: os2forms_nemlogin_address_protection_default_behaviour
+      nemlogin_hide_message: ""
+    os2forms_rest_api:
+      allowed_users: null
+    os2forms_sync:
+      publish: 0
+    os2forms_webform_submission_log:
+      emails: ""
+  webform_entity_print:
+    template:
+      header: ""
+      footer: ""
+      css: ""
+      os2form_header: ""
+      os2form_colophon: ""
+      os2form_footer: ""
+    export_types:
+      pdf:
+        enabled: true
+        link_text: ""
+        link_attributes: {}
+      word_docx:
+        enabled: false
+        link_text: ""
+        link_attributes: {}
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: itkdev_ex_misc_multistep
+title: "Multistep wizard form"
+description: "Example of a multi-step wizard form with 7 pages demonstrating various field types"
+categories: {}
+elements: |-
+  page_personal:
+    '#type': webform_wizard_page
+    '#title': 'Personlige oplysninger'
+    name:
+      '#type': textfield
+      '#title': Navn
+      '#required': true
+    email:
+      '#type': email
+      '#title': Email
+      '#placeholder': 'user@example.com'
+      '#required': true
+    phone:
+      '#type': tel
+      '#title': Telefon
+      '#placeholder': '+45 12345678'
+  page_address:
+    '#type': webform_wizard_page
+    '#title': Adresse
+    street:
+      '#type': textfield
+      '#title': Vejnavn
+    house_number:
+      '#type': textfield
+      '#title': Husnummer
+    postal_code:
+      '#type': textfield
+      '#title': Postnummer
+    city:
+      '#type': textfield
+      '#title': By
+  page_employment:
+    '#type': webform_wizard_page
+    '#title': "Beskæftigelse og uddannelse"
+    employment_status:
+      '#type': select
+      '#title': "Beskæftigelse"
+      '#options':
+        employed: Ansat
+        self_employed: Selvstændig
+        unemployed: Ledig
+        student: Studerende
+        retired: Pensioneret
+    employer:
+      '#type': textfield
+      '#title': Arbejdsgiver
+    job_title:
+      '#type': textfield
+      '#title': Jobtitel
+    start_date:
+      '#type': date
+      '#title': Startdato
+    education_level:
+      '#type': select
+      '#title': Uddannelsesniveau
+      '#options':
+        primary: Grundskole
+        secondary: Gymnasium
+        vocational: Erhvervsuddannelse
+        bachelor: Bachelor
+        master: Kandidat
+        phd: Ph.d.
+    education_institution:
+      '#type': textfield
+      '#title': Uddannelsessted
+    education_name:
+      '#type': textfield
+      '#title': Uddannelse
+    work_experience_years:
+      '#type': number
+      '#title': "Erhvervserfaring i år"
+      '#min': 0
+      '#max': 50
+      '#step': 1
+  page_preferences:
+    '#type': webform_wizard_page
+    '#title': "Præferencer"
+    preferred_contact:
+      '#type': radios
+      '#title': 'Foretrukken kontaktform'
+      '#options':
+        email_contact: Email
+        phone_contact: Telefon
+        sms_contact: SMS
+    interests:
+      '#type': checkboxes
+      '#title': Interesser
+      '#options':
+        sport: Sport
+        music: Musik
+        technology: Teknologi
+        art: Kunst
+        nature: Natur
+  page_inquiry:
+    '#type': webform_wizard_page
+    '#title': 'Detaljer om henvendelse'
+    inquiry_type:
+      '#type': select
+      '#title': 'Type af henvendelse'
+      '#options':
+        question: "Spørgsmål"
+        complaint: Klage
+        suggestion: Forslag
+        feedback: Feedback
+        other: Andet
+    subject:
+      '#type': textfield
+      '#title': Emne
+      '#required': true
+    description:
+      '#type': textarea
+      '#title': Beskrivelse
+      '#rows': 5
+    priority:
+      '#type': radios
+      '#title': Prioritet
+      '#options':
+        low: Lav
+        medium: Mellem
+        high: "Høj"
+    desired_date:
+      '#type': date
+      '#title': "Ønsket dato"
+    desired_time:
+      '#type': webform_time
+      '#title': "Ønsket tidspunkt"
+      '#time_format': 'H:i'
+    preferred_department:
+      '#type': select
+      '#title': 'Foretrukken afdeling'
+      '#options':
+        customer_service: Kundeservice
+        technical: Teknisk
+        sales: Salg
+        management: Ledelse
+    reference_number:
+      '#type': textfield
+      '#title': Referencenummer
+    attachment:
+      '#type': managed_file
+      '#title': "Vedhæft fil"
+      '#file_extensions': 'txt pdf doc docx'
+      '#max_filesize': '10'
+  page_additional:
+    '#type': webform_wizard_page
+    '#title': 'Yderligere information'
+    service_rating:
+      '#type': webform_rating
+      '#title': 'Tilfredshed med service'
+      '#star_size': medium
+    recommendation_likelihood:
+      '#type': webform_scale
+      '#title': 'Sandsynlighed for anbefaling'
+      '#min': 1
+      '#max': 10
+      '#min_text': 'Slet ikke sandsynligt'
+      '#max_text': 'Meget sandsynligt'
+    experience_evaluation:
+      '#type': webform_likert
+      '#title': 'Vurdering af oplevelse'
+      '#questions':
+        q1: 'Servicen var hurtig'
+        q2: 'Personalet var venligt'
+        q3: 'Problemet blev løst'
+      '#answers':
+        1: 'Meget uenig'
+        2: Uenig
+        3: Neutral
+        4: Enig
+        5: 'Meget enig'
+    comments:
+      '#type': textarea
+      '#title': Kommentarer
+      '#rows': 3
+    visited_before:
+      '#type': radios
+      '#title': "Har du besøgt os før?"
+      '#options':
+        yes: Ja
+        no: Nej
+    visit_count:
+      '#type': number
+      '#title': "Antal besøg"
+      '#min': 0
+      '#max': 100
+      '#step': 1
+    heard_about_us:
+      '#type': select
+      '#title': "Hvordan hørte du om os?"
+      '#options':
+        search: "Søgemaskine"
+        social_media: Sociale medier
+        friend: Ven eller familie
+        advertisement: Reklame
+        other: Andet
+    preferred_communication:
+      '#type': webform_select_other
+      '#title': 'Foretrukken kommunikation'
+      '#options':
+        email_comm: Email
+        phone_comm: Telefon
+        letter: Brev
+      '#other__placeholder': 'Angiv anden'
+    available_days:
+      '#type': checkboxes
+      '#title': "Tilgængelige dage"
+      '#options':
+        monday: Mandag
+        tuesday: Tirsdag
+        wednesday: Onsdag
+        thursday: Torsdag
+        friday: Fredag
+    budget:
+      '#type': range
+      '#title': Budget
+      '#min': 0
+      '#max': 10000
+      '#step': 500
+      '#output': right
+      '#output__field_suffix': ' DKK'
+  page_confirmation:
+    '#type': webform_wizard_page
+    '#title': "Bekræftelse"
+    accept_terms:
+      '#type': checkbox
+      '#title': "Jeg accepterer vilkårene"
+      '#required': true
+    terms_of_service:
+      '#type': webform_terms_of_service
+      '#title': "Servicevilkår"
+      '#terms_type': modal
+      '#terms_content': "Dette er eksempel på servicevilkår. Ved at acceptere erklærer du dig enig i disse vilkår."
+    signature:
+      '#type': webform_signature
+      '#title': Underskrift
+css: ""
+javascript: ""
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ""
+  ajax_effect: ""
+  ajax_speed: null
+  page: true
+  page_submit_path: ""
+  page_confirm_path: ""
+  page_theme_name: ""
+  form_title: both
+  form_submit_once: false
+  form_open_message: ""
+  form_close_message: ""
+  form_exception_message: ""
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ""
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ""
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ""
+  form_access_denied_message: ""
+  form_access_denied_attributes: {}
+  form_file_limit: ""
+  form_attributes: {}
+  form_method: ""
+  form_action: ""
+  share: false
+  share_node: false
+  share_theme_name: ""
+  share_title: true
+  share_page_body_attributes: {}
+  submission_label: ""
+  submission_exception_message: ""
+  submission_locked_message: ""
+  submission_log: false
+  submission_excluded_elements: {}
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {}
+  submission_views_replace: {}
+  submission_user_columns: {}
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ""
+  submission_access_denied_message: ""
+  submission_access_denied_attributes: {}
+  previous_submission_message: ""
+  previous_submissions_message: ""
+  autofill: false
+  autofill_message: ""
+  autofill_excluded_elements: {}
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ""
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ""
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ""
+  wizard_prev_button_label: ""
+  wizard_next_button_label: ""
+  wizard_toggle: false
+  wizard_toggle_show_label: ""
+  wizard_toggle_hide_label: ""
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ""
+  preview_title: ""
+  preview_message: ""
+  preview_attributes: {}
+  preview_excluded_elements: {}
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ""
+  draft_loaded_message: ""
+  draft_pending_single_message: ""
+  draft_pending_multiple_message: ""
+  confirmation_type: page
+  confirmation_url: ""
+  confirmation_title: ""
+  confirmation_message: ""
+  confirmation_attributes: {}
+  confirmation_back: true
+  confirmation_back_label: ""
+  confirmation_back_attributes: {}
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ""
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ""
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: all
+  purge_days: 30
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {}
+    permissions: {}
+  view_any:
+    roles: {}
+    users: {}
+    permissions: {}
+  update_any:
+    roles: {}
+    users: {}
+    permissions: {}
+  delete_any:
+    roles: {}
+    users: {}
+    permissions: {}
+  purge_any:
+    roles: {}
+    users: {}
+    permissions: {}
+  view_own:
+    roles: {}
+    users: {}
+    permissions: {}
+  update_own:
+    roles: {}
+    users: {}
+    permissions: {}
+  delete_own:
+    roles: {}
+    users: {}
+    permissions: {}
+  administer:
+    roles: {}
+    users: {}
+    permissions: {}
+  test:
+    roles: {}
+    users: {}
+    permissions: {}
+  configuration:
+    roles: {}
+    users: {}
+    permissions: {}
+handlers: {}
+variants: {}
