@@ -75,8 +75,8 @@ uid: 1
 template: false
 archive: false
 id: itkdev_ex_webform_core_text
-title: 'Text input elements'
-description: 'Examples of text-based input elements: plain text, formatted text and autocomplete'
+title: "Text input elements"
+description: "Examples of text-based input elements: plain text, formatted text and autocomplete"
 categories: {}
 elements: |-
   example_textfield:

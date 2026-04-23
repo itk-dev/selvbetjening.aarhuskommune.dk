@@ -81,8 +81,8 @@ uid: 1
 template: false
 archive: false
 id: itkdev_ex_webform_core_misc
-title: 'Miscellaneous elements'
-description: 'Examples of specialized elements: signature, terms of service, composites, CAPTCHA and other utility elements'
+title: "Miscellaneous elements"
+description: "Examples of specialized elements: signature, terms of service, composites, CAPTCHA and other utility elements"
 categories: {}
 elements: |-
   example_webform_element:

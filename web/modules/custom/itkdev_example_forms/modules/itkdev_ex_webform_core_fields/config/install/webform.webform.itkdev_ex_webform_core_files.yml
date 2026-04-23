@@ -78,8 +78,8 @@ uid: 1
 template: false
 archive: false
 id: itkdev_ex_webform_core_files
-title: 'File upload elements'
-description: 'Examples of file upload elements: general files, images, audio, video and documents'
+title: "File upload elements"
+description: "Examples of file upload elements: general files, images, audio, video and documents"
 categories: {}
 elements: |-
   example_managed_file:
