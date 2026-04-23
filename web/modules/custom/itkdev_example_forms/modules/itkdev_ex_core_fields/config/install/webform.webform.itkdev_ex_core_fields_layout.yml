@@ -56,6 +56,15 @@ third_party_settings:
       page_display:
         encrypt: true
         encrypt_profile: webform
+      example_horizontal_rule:
+        encrypt: true
+        encrypt_profile: webform
+      example_more:
+        encrypt: true
+        encrypt_profile: webform
+      example_markup:
+        encrypt: true
+        encrypt_profile: webform
       example_vertical_tabs:
         encrypt: true
         encrypt_profile: webform
@@ -72,6 +81,9 @@ third_party_settings:
         encrypt: true
         encrypt_profile: webform
       page_tables:
+        encrypt: true
+        encrypt_profile: webform
+      example_table:
         encrypt: true
         encrypt_profile: webform
       example_webform_table:

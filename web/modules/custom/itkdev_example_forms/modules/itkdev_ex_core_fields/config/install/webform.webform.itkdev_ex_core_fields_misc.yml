@@ -17,6 +17,12 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
+      example_webform_element:
+        encrypt: true
+        encrypt_profile: webform
+      example_actions:
+        encrypt: true
+        encrypt_profile: webform
       example_signature:
         encrypt: true
         encrypt_profile: webform
@@ -26,6 +32,12 @@ third_party_settings:
       example_custom_composite:
         encrypt: true
         encrypt_profile: webform
+      example_variant:
+        encrypt: true
+        encrypt_profile: webform
+      example_captcha:
+        encrypt: true
+        encrypt_profile: webform
       example_language_select:
         encrypt: true
         encrypt_profile: webform
@@ -33,6 +45,9 @@ third_party_settings:
         encrypt: true
         encrypt_profile: webform
       example_machine_name:
+        encrypt: true
+        encrypt_profile: webform
+      example_view:
         encrypt: true
         encrypt_profile: webform
   os2forms:

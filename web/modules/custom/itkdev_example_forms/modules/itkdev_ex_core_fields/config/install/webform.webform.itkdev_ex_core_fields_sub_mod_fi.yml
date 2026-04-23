@@ -17,6 +17,9 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
+      required_modules_info:
+        encrypt: true
+        encrypt_profile: webform
       example_buttons:
         encrypt: true
         encrypt_profile: webform
