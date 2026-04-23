@@ -1,4 +1,4 @@
-  langcode: da
+langcode: da
 settings:
   default_status: open
   default_categories: {}
