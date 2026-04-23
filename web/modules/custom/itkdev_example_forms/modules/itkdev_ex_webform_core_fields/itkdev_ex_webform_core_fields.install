@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the itkdev_ex_webform_core_fields module.
+ */
+
+use Drupal\itkdev_example_forms\Fixture\UserAffiliationTermFixture;
+use Drupal\itkdev_example_forms\WebformHelper;
+use Drupal\webform\Entity\Webform;
+
+/**
+ * Implements hook_install().
+ */
+function itkdev_ex_webform_core_fields_install(bool $is_syncing): void {
+  /** @var \Drupal\itkdev_example_forms\WebformHelper $helper */
+  $helper = \Drupal::service(WebformHelper::class);
+
+  $webformIds = [
+    'itkdev_ex_webform_core_text',
+    'itkdev_ex_webform_core_numeric',
+    'itkdev_ex_webform_core_options',
+    'itkdev_ex_webform_core_datetime',
+    'itkdev_ex_webform_core_files',
+    'itkdev_ex_webform_core_contact',
+    'itkdev_ex_webform_core_layout',
+    'itkdev_ex_webform_core_computed',
+    'itkdev_ex_webform_core_misc',
+  ];
+
+  foreach ($webformIds as $webformId) {
+    if ($webform = Webform::load($webformId)) {
+      $helper->createWebformPage($webform, [
+        'title' => $webform->label(),
+        WebformHelper::FIELD_OS2FORMS_PERMISSIONS => [
+          UserAffiliationTermFixture::ITK_DEVELOPMENT,
+        ],
+      ]);
+    }
+  }
+}
