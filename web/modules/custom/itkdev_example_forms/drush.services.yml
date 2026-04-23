@@ -1,4 +1,6 @@
 services:
+  # Autowiring Drush commands does not yet work (when using Drush 12),
+  # cf. https://www.drush.org/13.x/commands/
   itkdev_example_forms.generate_webform:
     class: Drupal\itkdev_example_forms\Command\GenerateWebformCommand
     arguments: &arguments

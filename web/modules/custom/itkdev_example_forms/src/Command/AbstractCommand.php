@@ -21,7 +21,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 abstract class AbstractCommand extends Command {
   use AutowireTrait;
 
-  protected const WEBFORM_ID_PREFIX = 'itkdev_ex_';
+  protected const string WEBFORM_ID_PREFIX = 'itkdev_ex_';
 
   /**
    * The webform storage.

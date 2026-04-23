@@ -22,7 +22,7 @@ final class GenerateWebformCommand extends AbstractCommand {
   /**
    * {@inheritdoc}
    */
-  protected function configure() {
+  protected function configure(): void {
     $this
       ->addArgument('module', InputArgument::OPTIONAL, 'The module')
       ->addArgument('webform-id', InputArgument::OPTIONAL, 'The webform ID')
