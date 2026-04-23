@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+
+  logger.channel.itkdev_ex_nemlogin:
+    parent: logger.channel_base
+    arguments: ["itkdev_ex_nemlogin"]
+
+  Drupal\itkdev_ex_nemlogin\SettingsHelper:
+    tags:
+      - { name: event_subscriber }
+
+  Drupal\itkdev_ex_nemlogin\Config\ConfigOverrides:
+    tags:
+      - { name: config.factory.override, priority: 5 }
