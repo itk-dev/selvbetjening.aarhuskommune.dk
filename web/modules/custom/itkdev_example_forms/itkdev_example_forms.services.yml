@@ -6,4 +6,9 @@ services:
     tags:
       - { name: content_fixture }
 
+  Drupal\itkdev_example_forms\ModuleHelper:
   Drupal\itkdev_example_forms\WebformHelper:
+
+  Drupal\itkdev_example_forms\EventSubscriber\ItkdevExampleFormsConfigSubscriber:
+    tags:
+      - { name: event_subscriber }

@@ -62,7 +62,7 @@ final class ExportWebformsCommand extends AbstractCommand {
       $io->section($webformId);
 
       try {
-        $module = $this->getExampleModule($webformId);
+        $module = $this->moduleHelper->getExampleModuleForWebform($webformId);
       }
       catch (UnknownExtensionException $exception) {
         $io->error($exception->getMessage());
