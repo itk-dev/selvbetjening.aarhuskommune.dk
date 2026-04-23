@@ -833,6 +833,8 @@ $settings['config_exclude_modules'][] = 'itkdev_example_forms';
 $settings['config_exclude_modules'][] = 'content_fixtures';
 $settings['config_exclude_modules'][] = 'itkdev_ex_misc';
 $settings['config_exclude_modules'][] = 'itkdev_ex_webform_core_fields';
+$settings['config_exclude_modules'][] = 'itkdev_ex_nemlogin';
+$settings['config_exclude_modules'][] = 'os2web_datalookup_mock';
 
 /**
  * Load local development override configuration, if available.
