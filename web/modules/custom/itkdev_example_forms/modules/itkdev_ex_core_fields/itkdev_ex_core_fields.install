@@ -9,24 +9,6 @@ use Drupal\itkdev_example_forms\Fixture\UserAffiliationTermFixture;
 use Drupal\itkdev_example_forms\WebformHelper;
 
 /**
- * Get all webform IDs managed by this module.
- */
-function _itkdev_ex_core_fields_webform_ids(): array {
-  return [
-    'itkdev_ex_core_fields_text',
-    'itkdev_ex_core_fields_numeric',
-    'itkdev_ex_core_fields_options',
-    'itkdev_ex_core_fields_datetime',
-    'itkdev_ex_core_fields_files',
-    'itkdev_ex_core_fields_contact',
-    'itkdev_ex_core_fields_layout',
-    'itkdev_ex_core_fields_computed',
-    'itkdev_ex_core_fields_misc',
-    'itkdev_ex_core_fields_sub_mod_fi',
-  ];
-}
-
-/**
  * Implements hook_install().
  */
 function itkdev_ex_core_fields_install(bool $is_syncing): void {
