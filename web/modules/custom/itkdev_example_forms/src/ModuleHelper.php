@@ -24,7 +24,7 @@ class ModuleHelper {
    * Get example modules.
    *
    * @return \Drupal\Core\Extension\Extension[]
-   *   The example modules plus any addionally requested modules.
+   *   The example modules.
    */
   public function getExampleModules(): array {
     $installedModules = array_intersect_key(

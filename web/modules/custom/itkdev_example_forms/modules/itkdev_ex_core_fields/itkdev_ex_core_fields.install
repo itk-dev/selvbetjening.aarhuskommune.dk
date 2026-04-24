@@ -7,7 +7,6 @@
 
 use Drupal\itkdev_example_forms\Fixture\UserAffiliationTermFixture;
 use Drupal\itkdev_example_forms\WebformHelper;
-use Drupal\webform\Entity\Webform;
 
 /**
  * Get all webform IDs managed by this module.
@@ -23,7 +22,7 @@ function _itkdev_ex_core_fields_webform_ids(): array {
     'itkdev_ex_core_fields_layout',
     'itkdev_ex_core_fields_computed',
     'itkdev_ex_core_fields_misc',
-    'itkdev_ex_webform_sub_mod_fields',
+    'itkdev_ex_core_fields_sub_mod_fi',
   ];
 }
 
@@ -33,16 +32,14 @@ function _itkdev_ex_core_fields_webform_ids(): array {
 function itkdev_ex_core_fields_install(bool $is_syncing): void {
   /** @var \Drupal\itkdev_example_forms\WebformHelper $helper */
   $helper = \Drupal::service(WebformHelper::class);
-
-  foreach (_itkdev_ex_core_fields_webform_ids() as $webformId) {
-    if ($webform = Webform::load($webformId)) {
-      $helper->createWebformPage($webform, [
-        'title' => $webform->label(),
-        WebformHelper::FIELD_OS2FORMS_PERMISSIONS => [
-          UserAffiliationTermFixture::ITK_DEVELOPMENT,
-        ],
-      ]);
-    }
+  $webforms = $helper->loadWebforms('itkdev_ex_core_fields_');
+  foreach ($webforms as $webform) {
+    $helper->createWebformPage($webform, [
+      'title' => $webform->label(),
+      WebformHelper::FIELD_OS2FORMS_PERMISSIONS => [
+        UserAffiliationTermFixture::ITK_DEVELOPMENT,
+      ],
+    ]);
   }
 }
 
@@ -56,15 +53,14 @@ function itkdev_ex_core_fields_install(bool $is_syncing): void {
 function itkdev_ex_core_fields_uninstall(bool $is_syncing): void {
   /** @var \Drupal\itkdev_example_forms\WebformHelper $helper */
   $helper = \Drupal::service(WebformHelper::class);
+  $webforms = $helper->loadWebforms('itkdev_ex_core_fields_');
 
-  foreach (_itkdev_ex_core_fields_webform_ids() as $webformId) {
+  foreach ($webforms as $webform) {
     // Delete the webform page node.
-    if ($page = $helper->loadWebformPage($webformId)) {
+    if ($page = $helper->loadWebformPage($webform->id())) {
       $page->delete();
     }
     // Delete the webform entity (also cleans up the webform serial table).
-    if ($webform = Webform::load($webformId)) {
-      $webform->delete();
-    }
+    $webform->delete();
   }
 }

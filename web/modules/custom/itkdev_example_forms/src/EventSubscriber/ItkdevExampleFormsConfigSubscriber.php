@@ -45,6 +45,7 @@ final class ItkdevExampleFormsConfigSubscriber implements EventSubscriberInterfa
     $moduleNames = array_keys($this->moduleHelper->getExampleModules());
     // … and the base module …
     $moduleNames[] = 'itkdev_example_forms';
+    $moduleNames[] = 'content_fixtures';
     // … and our look up mock.
     $moduleNames[] = 'os2web_datalookup_mock';
 

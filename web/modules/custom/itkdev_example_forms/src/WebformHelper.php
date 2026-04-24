@@ -5,6 +5,7 @@ namespace Drupal\itkdev_example_forms;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\NodeInterface;
 use Drupal\node\NodeStorageInterface;
+use Drupal\webform\WebformEntityStorageInterface;
 use Drupal\webform\WebformInterface;
 
 /**
@@ -24,12 +25,20 @@ class WebformHelper {
    */
   private NodeStorageInterface $nodeStorage;
 
+  /**
+   * The webform storage.
+   */
+  private WebformEntityStorageInterface $webformStorage;
+
   public function __construct(
     EntityTypeManagerInterface $entityTypeManager,
   ) {
     /** @var \Drupal\node\NodeStorageInterface $nodeStorage */
     $nodeStorage = $entityTypeManager->getStorage('node');
     $this->nodeStorage = $nodeStorage;
+    /** @var \Drupal\webform\WebformEntityStorageInterface $webformStorage */
+    $webformStorage = $entityTypeManager->getStorage('webform');
+    $this->webformStorage = $webformStorage;
   }
 
   /**
@@ -80,7 +89,9 @@ class WebformHelper {
   /**
    * Load webform page for a specific webform ID.
    */
-  public function loadWebformPage(string $webformId): ?NodeInterface {
+  public function loadWebformPage(string|WebformInterface $webform): ?NodeInterface {
+    $webformId = is_string($webform) ? $webform : $webform->id();
+
     /** @var \Drupal\node\NodeInterface[] $nodes */
     $nodes = $this->nodeStorage->loadByProperties([
       'type' => self::NODE_TYPE_WEBFORM,
@@ -88,6 +99,22 @@ class WebformHelper {
     ]);
 
     return reset($nodes) ?: NULL;
+  }
+
+  /**
+   * Load webforms by ID prefix.
+   *
+   * @param string $prefix
+   *   The webform ID prefix.
+   *
+   * @return \Drupal\webform\WebformInterface[]
+   *   The webforms
+   */
+  public function loadWebforms(string $prefix): array {
+    $webforms = $this->webformStorage->loadMultiple();
+
+    return array_filter($webforms,
+      static fn(WebformInterface $webform): bool => str_starts_with($webform->id(), $prefix));
   }
 
 }
