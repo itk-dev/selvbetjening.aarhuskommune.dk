@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,13 +17,19 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_hidden:
+      example_managed_file:
         encrypt: true
         encrypt_profile: webform
-      example_value:
+      example_image_file:
         encrypt: true
         encrypt_profile: webform
-      example_computed_twig:
+      example_audio_file:
+        encrypt: true
+        encrypt_profile: webform
+      example_video_file:
+        encrypt: true
+        encrypt_profile: webform
+      example_document_file:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -71,24 +77,33 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_computed
-title: "Hidden and computed elements"
-description: "Examples of hidden value storage and computed (Twig) elements"
+id: itkdev_ex_core_fields_files
+title: "File upload elements"
+description: "Examples of file upload elements: general files, images, audio, video and documents"
 categories: {}
 elements: |-
-  example_hidden:
-    '#type': hidden
-    '#title': Hidden
-    '#value': hidden_default_value
-  example_value:
-    '#type': value
-    '#title': Value
-    '#value': stored_default_value
-  example_computed_twig:
-    '#type': webform_computed_twig
-    '#title': 'Computed (Twig)'
-    '#template': 'The current date is {{ "now"|date("Y-m-d") }}'
-    '#ajax': true
+  example_managed_file:
+    '#type': managed_file
+    '#title': 'File upload'
+    '#file_extensions': 'txt pdf doc docx'
+    '#max_filesize': '10'
+  example_image_file:
+    '#type': webform_image_file
+    '#title': 'Image upload'
+    '#file_extensions': 'jpg jpeg png gif'
+    '#max_filesize': '5'
+  example_audio_file:
+    '#type': webform_audio_file
+    '#title': 'Audio upload'
+    '#file_extensions': 'mp3 wav ogg'
+  example_video_file:
+    '#type': webform_video_file
+    '#title': 'Video upload'
+    '#file_extensions': 'mp4 webm'
+  example_document_file:
+    '#type': webform_document_file
+    '#title': 'Document upload'
+    '#file_extensions': 'pdf doc docx xls xlsx'
 css: ""
 javascript: ""
 settings:

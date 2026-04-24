@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Install and update functions for the itkdev_ex_core_fields module.
+ */
+
+use Drupal\itkdev_example_forms\Fixture\UserAffiliationTermFixture;
+use Drupal\itkdev_example_forms\WebformHelper;
+
+/**
+ * Implements hook_install().
+ */
+function itkdev_ex_core_fields_install(bool $is_syncing): void {
+  /** @var \Drupal\itkdev_example_forms\WebformHelper $helper */
+  $helper = \Drupal::service(WebformHelper::class);
+  $webforms = $helper->loadWebforms('itkdev_ex_core_fields_');
+  foreach ($webforms as $webform) {
+    $helper->createWebformPage($webform, [
+      'title' => $webform->label(),
+      WebformHelper::FIELD_OS2FORMS_PERMISSIONS => [
+        UserAffiliationTermFixture::ITK_DEVELOPMENT,
+      ],
+    ]);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Enforced dependency config removal does not clean up the webform serial
+ * tracking table or the page nodes created in hook_install(). Both must be
+ * deleted explicitly to avoid errors on reinstall.
+ */
+function itkdev_ex_core_fields_uninstall(bool $is_syncing): void {
+  /** @var \Drupal\itkdev_example_forms\WebformHelper $helper */
+  $helper = \Drupal::service(WebformHelper::class);
+  $webforms = $helper->loadWebforms('itkdev_ex_core_fields_');
+
+  foreach ($webforms as $webform) {
+    // Delete the webform page node.
+    if ($page = $helper->loadWebformPage($webform->id())) {
+      $page->delete();
+    }
+    // Delete the webform entity (also cleans up the webform serial table).
+    $webform->delete();
+  }
+}

@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,16 +17,37 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_date:
+      example_select:
         encrypt: true
         encrypt_profile: webform
-      example_datelist:
+      example_radios:
         encrypt: true
         encrypt_profile: webform
-      example_datetime:
+      example_checkbox:
         encrypt: true
         encrypt_profile: webform
-      example_time:
+      example_checkboxes:
+        encrypt: true
+        encrypt_profile: webform
+      example_select_other:
+        encrypt: true
+        encrypt_profile: webform
+      example_radios_other:
+        encrypt: true
+        encrypt_profile: webform
+      example_checkboxes_other:
+        encrypt: true
+        encrypt_profile: webform
+      example_tableselect:
+        encrypt: true
+        encrypt_profile: webform
+      example_likert:
+        encrypt: true
+        encrypt_profile: webform
+      example_term_select:
+        encrypt: true
+        encrypt_profile: webform
+      example_term_checkboxes:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -74,28 +95,89 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_datetime
-title: "Date and time elements"
-description: "Examples of date and time input elements"
+id: itkdev_ex_core_fields_options
+title: "Option and selection elements"
+description: "Examples of option-based elements: dropdowns, radios, checkboxes, likert scales and taxonomy term selectors"
 categories: {}
 elements: |-
-  example_date:
-    '#type': date
-    '#title': Date
-  example_datelist:
-    '#type': datelist
-    '#title': 'Date list'
-    '#date_part_order':
-      - year
-      - month
-      - day
-  example_datetime:
-    '#type': datetime
-    '#title': 'Date and time'
-  example_time:
-    '#type': webform_time
-    '#title': Time
-    '#time_format': 'H:i'
+  example_select:
+    '#type': select
+    '#title': Select
+    '#options':
+      option_a: 'Option A'
+      option_b: 'Option B'
+      option_c: 'Option C'
+  example_radios:
+    '#type': radios
+    '#title': Radios
+    '#options':
+      yes: 'Yes'
+      no: 'No'
+      maybe: Maybe
+  example_checkbox:
+    '#type': checkbox
+    '#title': 'Single checkbox'
+  example_checkboxes:
+    '#type': checkboxes
+    '#title': Checkboxes
+    '#options':
+      red: Red
+      green: Green
+      blue: Blue
+  example_select_other:
+    '#type': webform_select_other
+    '#title': 'Select (with other)'
+    '#options':
+      cat: Cat
+      dog: Dog
+    '#other__placeholder': 'Specify other'
+  example_radios_other:
+    '#type': webform_radios_other
+    '#title': 'Radios (with other)'
+    '#options':
+      morning: Morning
+      afternoon: Afternoon
+      evening: Evening
+    '#other__placeholder': 'Specify other'
+  example_checkboxes_other:
+    '#type': webform_checkboxes_other
+    '#title': 'Checkboxes (with other)'
+    '#options':
+      email_contact: Email
+      phone_contact: Phone
+      sms_contact: SMS
+    '#other__placeholder': 'Specify other'
+  example_tableselect:
+    '#type': tableselect
+    '#title': 'Table select'
+    '#options':
+      row_1:
+        column_1: 'Row 1, Col 1'
+        column_2: 'Row 1, Col 2'
+      row_2:
+        column_1: 'Row 2, Col 1'
+        column_2: 'Row 2, Col 2'
+  example_likert:
+    '#type': webform_likert
+    '#title': Likert
+    '#questions':
+      q1: 'The service was fast'
+      q2: 'The staff was helpful'
+      q3: 'The quality was good'
+    '#answers':
+      1: 'Strongly disagree'
+      2: Disagree
+      3: Neutral
+      4: Agree
+      5: 'Strongly agree'
+  example_term_select:
+    '#type': webform_term_select
+    '#title': 'Taxonomy term select'
+    '#vocabulary': tags
+  example_term_checkboxes:
+    '#type': webform_term_checkboxes
+    '#title': 'Taxonomy term checkboxes'
+    '#vocabulary': tags
 css: ""
 javascript: ""
 settings:

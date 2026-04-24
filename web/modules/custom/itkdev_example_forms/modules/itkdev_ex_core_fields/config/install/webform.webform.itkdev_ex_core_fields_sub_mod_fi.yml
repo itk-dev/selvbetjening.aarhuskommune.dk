@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,37 +17,34 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_select:
+      required_modules_info:
         encrypt: true
         encrypt_profile: webform
-      example_radios:
+      example_buttons:
         encrypt: true
         encrypt_profile: webform
-      example_checkbox:
+      example_buttons_other:
         encrypt: true
         encrypt_profile: webform
-      example_checkboxes:
+      example_image_select:
         encrypt: true
         encrypt_profile: webform
-      example_select_other:
+      example_location_geocomplete:
         encrypt: true
         encrypt_profile: webform
-      example_radios_other:
+      example_location_places:
         encrypt: true
         encrypt_profile: webform
-      example_checkboxes_other:
+      example_options_custom:
         encrypt: true
         encrypt_profile: webform
-      example_tableselect:
+      example_options_custom_entity:
         encrypt: true
         encrypt_profile: webform
-      example_likert:
+      example_toggle:
         encrypt: true
         encrypt_profile: webform
-      example_term_select:
-        encrypt: true
-        encrypt_profile: webform
-      example_term_checkboxes:
+      example_toggles:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -95,89 +92,95 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_options
-title: "Option and selection elements"
-description: "Examples of option-based elements: dropdowns, radios, checkboxes, likert scales and taxonomy term selectors"
+id: itkdev_ex_core_fields_sub_mod_fi
+title: "Webform sub-module elements"
+description: "Examples of elements from webform sub-modules. Elements only render when their sub-module is enabled. See the markup at the top of this form for required modules."
 categories: {}
 elements: |-
-  example_select:
-    '#type': select
-    '#title': Select
-    '#options':
-      option_a: 'Option A'
-      option_b: 'Option B'
-      option_c: 'Option C'
-  example_radios:
-    '#type': radios
-    '#title': Radios
+  required_modules_info:
+    '#type': webform_markup
+    '#markup': |
+      <details>
+        <summary><strong>Required modules for sub-module elements</strong></summary>
+        <p>Elements on this form require the following webform sub-modules to be enabled. Elements from disabled modules will not render.</p>
+        <table>
+          <thead><tr><th>Module</th><th>Element type</th></tr></thead>
+          <tbody>
+            <tr><td><code>webform_jqueryui_buttons</code></td><td>webform_buttons, webform_buttons_other</td></tr>
+            <tr><td><code>webform_image_select</code></td><td>webform_image_select</td></tr>
+            <tr><td><code>webform_location_geocomplete</code></td><td>webform_location_geocomplete</td></tr>
+            <tr><td><code>webform_location_places</code></td><td>webform_location_places</td></tr>
+            <tr><td><code>webform_options_custom</code></td><td>webform_options_custom, webform_options_custom_entity</td></tr>
+            <tr><td><code>webform_toggles</code></td><td>webform_toggle, webform_toggles</td></tr>
+          </tbody>
+        </table>
+      </details>
+  example_buttons:
+    '#type': webform_buttons
+    '#title': Buttons
     '#options':
       yes: 'Yes'
       no: 'No'
       maybe: Maybe
-  example_checkbox:
-    '#type': checkbox
-    '#title': 'Single checkbox'
-  example_checkboxes:
-    '#type': checkboxes
-    '#title': Checkboxes
+  example_buttons_other:
+    '#type': webform_buttons_other
+    '#title': 'Buttons (with other)'
     '#options':
-      red: Red
-      green: Green
-      blue: Blue
-  example_select_other:
-    '#type': webform_select_other
-    '#title': 'Select (with other)'
-    '#options':
-      cat: Cat
-      dog: Dog
+      option_a: 'Option A'
+      option_b: 'Option B'
+      option_c: 'Option C'
     '#other__placeholder': 'Specify other'
-  example_radios_other:
-    '#type': webform_radios_other
-    '#title': 'Radios (with other)'
+  example_image_select:
+    '#type': webform_image_select
+    '#title': 'Image select'
+    '#show_label': true
+    '#images':
+      image_1:
+        text: 'Image 1'
+        src: 'https://placehold.co/150x100?text=1'
+      image_2:
+        text: 'Image 2'
+        src: 'https://placehold.co/150x100?text=2'
+      image_3:
+        text: 'Image 3'
+        src: 'https://placehold.co/150x100?text=3'
+  example_location_geocomplete:
+    '#type': webform_location_geocomplete
+    '#title': 'Location (Geocomplete)'
+  example_location_places:
+    '#type': webform_location_places
+    '#title': 'Location (Places)'
+  example_options_custom:
+    '#type': webform_options_custom
+    '#title': 'Custom options'
     '#options':
-      morning: Morning
-      afternoon: Afternoon
-      evening: Evening
-    '#other__placeholder': 'Specify other'
-  example_checkboxes_other:
-    '#type': webform_checkboxes_other
-    '#title': 'Checkboxes (with other)'
+      option_1: 'Custom option 1'
+      option_2: 'Custom option 2'
+      option_3: 'Custom option 3'
+  example_options_custom_entity:
+    '#type': webform_options_custom_entity
+    '#title': 'Custom options (entity)'
     '#options':
-      email_contact: Email
-      phone_contact: Phone
-      sms_contact: SMS
-    '#other__placeholder': 'Specify other'
-  example_tableselect:
-    '#type': tableselect
-    '#title': 'Table select'
+      option_1: 'Entity option 1'
+      option_2: 'Entity option 2'
+  example_toggle:
+    '#type': webform_toggle
+    '#title': 'Toggle option'
+    '#toggle_theme': light
+    '#toggle_size': medium
+    '#on_text': 'Yes'
+    '#off_text': 'No'
+  example_toggles:
+    '#type': webform_toggles
+    '#title': 'Toggle options'
+    '#toggle_theme': light
+    '#toggle_size': medium
+    '#on_text': 'Yes'
+    '#off_text': 'No'
     '#options':
-      row_1:
-        column_1: 'Row 1, Col 1'
-        column_2: 'Row 1, Col 2'
-      row_2:
-        column_1: 'Row 2, Col 1'
-        column_2: 'Row 2, Col 2'
-  example_likert:
-    '#type': webform_likert
-    '#title': Likert
-    '#questions':
-      q1: 'The service was fast'
-      q2: 'The staff was helpful'
-      q3: 'The quality was good'
-    '#answers':
-      1: 'Strongly disagree'
-      2: Disagree
-      3: Neutral
-      4: Agree
-      5: 'Strongly agree'
-  example_term_select:
-    '#type': webform_term_select
-    '#title': 'Taxonomy term select'
-    '#vocabulary': tags
-  example_term_checkboxes:
-    '#type': webform_term_checkboxes
-    '#title': 'Taxonomy term checkboxes'
-    '#vocabulary': tags
+      notify_email: 'Email notifications'
+      notify_sms: 'SMS notifications'
+      notify_push: 'Push notifications'
 css: ""
 javascript: ""
 settings:

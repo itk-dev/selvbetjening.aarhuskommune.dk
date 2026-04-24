@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,16 +17,13 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_number:
+      example_hidden:
         encrypt: true
         encrypt_profile: webform
-      example_range:
+      example_value:
         encrypt: true
         encrypt_profile: webform
-      example_scale:
-        encrypt: true
-        encrypt_profile: webform
-      example_rating:
+      example_computed_twig:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -74,36 +71,24 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_numeric
-title: "Numeric and rating elements"
-description: "Examples of numeric input elements: numbers, ranges, scales and ratings"
+id: itkdev_ex_core_fields_computed
+title: "Hidden and computed elements"
+description: "Examples of hidden value storage and computed (Twig) elements"
 categories: {}
 elements: |-
-  example_number:
-    '#type': number
-    '#title': Number
-    '#min': 0
-    '#max': 100
-    '#step': 1
-  example_range:
-    '#type': range
-    '#title': Range
-    '#min': 0
-    '#max': 100
-    '#step': 5
-    '#output': right
-    '#output__field_suffix': '%'
-  example_scale:
-    '#type': webform_scale
-    '#title': Scale
-    '#min': 1
-    '#max': 10
-    '#min_text': 'Not likely'
-    '#max_text': 'Very likely'
-  example_rating:
-    '#type': webform_rating
-    '#title': Rating
-    '#star_size': medium
+  example_hidden:
+    '#type': hidden
+    '#title': Hidden
+    '#value': hidden_default_value
+  example_value:
+    '#type': value
+    '#title': Value
+    '#value': stored_default_value
+  example_computed_twig:
+    '#type': webform_computed_twig
+    '#title': 'Computed (Twig)'
+    '#template': 'The current date is {{ "now"|date("Y-m-d") }}'
+    '#ajax': true
 css: ""
 javascript: ""
 settings:

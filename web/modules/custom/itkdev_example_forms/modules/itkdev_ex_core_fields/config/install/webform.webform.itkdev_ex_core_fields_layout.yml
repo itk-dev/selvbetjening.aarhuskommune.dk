@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,31 +17,88 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_buttons:
+      page_containers:
         encrypt: true
         encrypt_profile: webform
-      example_buttons_other:
+      example_container:
         encrypt: true
         encrypt_profile: webform
-      example_image_select:
+      container_child:
         encrypt: true
         encrypt_profile: webform
-      example_location_geocomplete:
+      example_details:
         encrypt: true
         encrypt_profile: webform
-      example_location_places:
+      details_child:
         encrypt: true
         encrypt_profile: webform
-      example_options_custom:
+      example_fieldset:
         encrypt: true
         encrypt_profile: webform
-      example_options_custom_entity:
+      fieldset_child:
         encrypt: true
         encrypt_profile: webform
-      example_toggle:
+      example_flexbox:
         encrypt: true
         encrypt_profile: webform
-      example_toggles:
+      flexbox_child_1:
+        encrypt: true
+        encrypt_profile: webform
+      flexbox_child_2:
+        encrypt: true
+        encrypt_profile: webform
+      example_section:
+        encrypt: true
+        encrypt_profile: webform
+      section_child:
+        encrypt: true
+        encrypt_profile: webform
+      page_display:
+        encrypt: true
+        encrypt_profile: webform
+      example_horizontal_rule:
+        encrypt: true
+        encrypt_profile: webform
+      example_more:
+        encrypt: true
+        encrypt_profile: webform
+      example_markup:
+        encrypt: true
+        encrypt_profile: webform
+      example_vertical_tabs:
+        encrypt: true
+        encrypt_profile: webform
+      vertical_tab_1:
+        encrypt: true
+        encrypt_profile: webform
+      tab1_child:
+        encrypt: true
+        encrypt_profile: webform
+      vertical_tab_2:
+        encrypt: true
+        encrypt_profile: webform
+      tab2_child:
+        encrypt: true
+        encrypt_profile: webform
+      page_tables:
+        encrypt: true
+        encrypt_profile: webform
+      example_table:
+        encrypt: true
+        encrypt_profile: webform
+      example_webform_table:
+        encrypt: true
+        encrypt_profile: webform
+      table_row_1:
+        encrypt: true
+        encrypt_profile: webform
+      row1_name:
+        encrypt: true
+        encrypt_profile: webform
+      row1_value:
+        encrypt: true
+        encrypt_profile: webform
+      example_table_sort:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -89,95 +146,103 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_sub_mod_fields
-title: "Webform sub-module elements"
-description: "Examples of elements from webform sub-modules. Elements only render when their sub-module is enabled. See the markup at the top of this form for required modules."
+id: itkdev_ex_core_fields_layout
+title: "Layout and structure elements"
+description: "Examples of layout and structural elements: containers, sections, tables, markup, wizard pages and display helpers"
 categories: {}
 elements: |-
-  required_modules_info:
-    '#type': webform_markup
-    '#markup': |
-      <details>
-        <summary><strong>Required modules for sub-module elements</strong></summary>
-        <p>Elements on this form require the following webform sub-modules to be enabled. Elements from disabled modules will not render.</p>
-        <table>
-          <thead><tr><th>Module</th><th>Element type</th></tr></thead>
-          <tbody>
-            <tr><td><code>webform_jqueryui_buttons</code></td><td>webform_buttons, webform_buttons_other</td></tr>
-            <tr><td><code>webform_image_select</code></td><td>webform_image_select</td></tr>
-            <tr><td><code>webform_location_geocomplete</code></td><td>webform_location_geocomplete</td></tr>
-            <tr><td><code>webform_location_places</code></td><td>webform_location_places</td></tr>
-            <tr><td><code>webform_options_custom</code></td><td>webform_options_custom, webform_options_custom_entity</td></tr>
-            <tr><td><code>webform_toggles</code></td><td>webform_toggle, webform_toggles</td></tr>
-          </tbody>
-        </table>
-      </details>
-  example_buttons:
-    '#type': webform_buttons
-    '#title': Buttons
-    '#options':
-      yes: 'Yes'
-      no: 'No'
-      maybe: Maybe
-  example_buttons_other:
-    '#type': webform_buttons_other
-    '#title': 'Buttons (with other)'
-    '#options':
-      option_a: 'Option A'
-      option_b: 'Option B'
-      option_c: 'Option C'
-    '#other__placeholder': 'Specify other'
-  example_image_select:
-    '#type': webform_image_select
-    '#title': 'Image select'
-    '#show_label': true
-    '#images':
-      image_1:
-        text: 'Image 1'
-        src: 'https://placehold.co/150x100?text=1'
-      image_2:
-        text: 'Image 2'
-        src: 'https://placehold.co/150x100?text=2'
-      image_3:
-        text: 'Image 3'
-        src: 'https://placehold.co/150x100?text=3'
-  example_location_geocomplete:
-    '#type': webform_location_geocomplete
-    '#title': 'Location (Geocomplete)'
-  example_location_places:
-    '#type': webform_location_places
-    '#title': 'Location (Places)'
-  example_options_custom:
-    '#type': webform_options_custom
-    '#title': 'Custom options'
-    '#options':
-      option_1: 'Custom option 1'
-      option_2: 'Custom option 2'
-      option_3: 'Custom option 3'
-  example_options_custom_entity:
-    '#type': webform_options_custom_entity
-    '#title': 'Custom options (entity)'
-    '#options':
-      option_1: 'Entity option 1'
-      option_2: 'Entity option 2'
-  example_toggle:
-    '#type': webform_toggle
-    '#title': 'Toggle option'
-    '#toggle_theme': light
-    '#toggle_size': medium
-    '#on_text': 'Yes'
-    '#off_text': 'No'
-  example_toggles:
-    '#type': webform_toggles
-    '#title': 'Toggle options'
-    '#toggle_theme': light
-    '#toggle_size': medium
-    '#on_text': 'Yes'
-    '#off_text': 'No'
-    '#options':
-      notify_email: 'Email notifications'
-      notify_sms: 'SMS notifications'
-      notify_push: 'Push notifications'
+  page_containers:
+    '#type': webform_wizard_page
+    '#title': 'Container elements'
+    example_container:
+      '#type': container
+      '#title': Container
+      container_child:
+        '#type': textfield
+        '#title': 'Field inside container'
+    example_details:
+      '#type': details
+      '#title': Details
+      '#open': true
+      details_child:
+        '#type': textfield
+        '#title': 'Field inside details'
+    example_fieldset:
+      '#type': fieldset
+      '#title': Fieldset
+      fieldset_child:
+        '#type': textfield
+        '#title': 'Field inside fieldset'
+    example_flexbox:
+      '#type': webform_flexbox
+      flexbox_child_1:
+        '#type': textfield
+        '#title': 'Left field'
+      flexbox_child_2:
+        '#type': textfield
+        '#title': 'Right field'
+    example_section:
+      '#type': webform_section
+      '#title': Section
+      section_child:
+        '#type': textfield
+        '#title': 'Field inside section'
+  page_display:
+    '#type': webform_wizard_page
+    '#title': 'Display elements'
+    example_horizontal_rule:
+      '#type': webform_horizontal_rule
+    example_more:
+      '#type': webform_more
+      '#more': '<p>This text is hidden until the user clicks to expand it.</p>'
+    example_markup:
+      '#type': webform_markup
+      '#markup': '<p>This is example markup displayed in the form.</p>'
+    example_vertical_tabs:
+      '#type': vertical_tabs
+      '#title': 'Vertical tabs'
+    vertical_tab_1:
+      '#type': details
+      '#title': 'Tab 1'
+      '#group': example_vertical_tabs
+      tab1_child:
+        '#type': textfield
+        '#title': 'Field in tab 1'
+    vertical_tab_2:
+      '#type': details
+      '#title': 'Tab 2'
+      '#group': example_vertical_tabs
+      tab2_child:
+        '#type': textfield
+        '#title': 'Field in tab 2'
+  page_tables:
+    '#type': webform_wizard_page
+    '#title': 'Table elements'
+    example_table:
+      '#type': table
+      '#header':
+        - 'Column 1'
+        - 'Column 2'
+    example_webform_table:
+      '#type': webform_table
+      '#header':
+        - Name
+        - Value
+      table_row_1:
+        '#type': webform_table_row
+        row1_name:
+          '#type': textfield
+          '#title': Name
+        row1_value:
+          '#type': textfield
+          '#title': Value
+    example_table_sort:
+      '#type': webform_table_sort
+      '#title': 'Table sort'
+      '#options':
+        item_1: 'First item'
+        item_2: 'Second item'
+        item_3: 'Third item'
 css: ""
 javascript: ""
 settings:

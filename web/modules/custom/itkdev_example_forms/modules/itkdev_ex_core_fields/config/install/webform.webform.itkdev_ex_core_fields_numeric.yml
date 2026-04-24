@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,76 +17,16 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      page_containers:
+      example_number:
         encrypt: true
         encrypt_profile: webform
-      example_container:
+      example_range:
         encrypt: true
         encrypt_profile: webform
-      container_child:
+      example_scale:
         encrypt: true
         encrypt_profile: webform
-      example_details:
-        encrypt: true
-        encrypt_profile: webform
-      details_child:
-        encrypt: true
-        encrypt_profile: webform
-      example_fieldset:
-        encrypt: true
-        encrypt_profile: webform
-      fieldset_child:
-        encrypt: true
-        encrypt_profile: webform
-      example_flexbox:
-        encrypt: true
-        encrypt_profile: webform
-      flexbox_child_1:
-        encrypt: true
-        encrypt_profile: webform
-      flexbox_child_2:
-        encrypt: true
-        encrypt_profile: webform
-      example_section:
-        encrypt: true
-        encrypt_profile: webform
-      section_child:
-        encrypt: true
-        encrypt_profile: webform
-      page_display:
-        encrypt: true
-        encrypt_profile: webform
-      example_vertical_tabs:
-        encrypt: true
-        encrypt_profile: webform
-      vertical_tab_1:
-        encrypt: true
-        encrypt_profile: webform
-      tab1_child:
-        encrypt: true
-        encrypt_profile: webform
-      vertical_tab_2:
-        encrypt: true
-        encrypt_profile: webform
-      tab2_child:
-        encrypt: true
-        encrypt_profile: webform
-      page_tables:
-        encrypt: true
-        encrypt_profile: webform
-      example_webform_table:
-        encrypt: true
-        encrypt_profile: webform
-      table_row_1:
-        encrypt: true
-        encrypt_profile: webform
-      row1_name:
-        encrypt: true
-        encrypt_profile: webform
-      row1_value:
-        encrypt: true
-        encrypt_profile: webform
-      example_table_sort:
+      example_rating:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -134,103 +74,36 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_layout
-title: "Layout and structure elements"
-description: "Examples of layout and structural elements: containers, sections, tables, markup, wizard pages and display helpers"
+id: itkdev_ex_core_fields_numeric
+title: "Numeric and rating elements"
+description: "Examples of numeric input elements: numbers, ranges, scales and ratings"
 categories: {}
 elements: |-
-  page_containers:
-    '#type': webform_wizard_page
-    '#title': 'Container elements'
-    example_container:
-      '#type': container
-      '#title': Container
-      container_child:
-        '#type': textfield
-        '#title': 'Field inside container'
-    example_details:
-      '#type': details
-      '#title': Details
-      '#open': true
-      details_child:
-        '#type': textfield
-        '#title': 'Field inside details'
-    example_fieldset:
-      '#type': fieldset
-      '#title': Fieldset
-      fieldset_child:
-        '#type': textfield
-        '#title': 'Field inside fieldset'
-    example_flexbox:
-      '#type': webform_flexbox
-      flexbox_child_1:
-        '#type': textfield
-        '#title': 'Left field'
-      flexbox_child_2:
-        '#type': textfield
-        '#title': 'Right field'
-    example_section:
-      '#type': webform_section
-      '#title': Section
-      section_child:
-        '#type': textfield
-        '#title': 'Field inside section'
-  page_display:
-    '#type': webform_wizard_page
-    '#title': 'Display elements'
-    example_horizontal_rule:
-      '#type': webform_horizontal_rule
-    example_more:
-      '#type': webform_more
-      '#more': '<p>This text is hidden until the user clicks to expand it.</p>'
-    example_markup:
-      '#type': webform_markup
-      '#markup': '<p>This is example markup displayed in the form.</p>'
-    example_vertical_tabs:
-      '#type': vertical_tabs
-      '#title': 'Vertical tabs'
-    vertical_tab_1:
-      '#type': details
-      '#title': 'Tab 1'
-      '#group': example_vertical_tabs
-      tab1_child:
-        '#type': textfield
-        '#title': 'Field in tab 1'
-    vertical_tab_2:
-      '#type': details
-      '#title': 'Tab 2'
-      '#group': example_vertical_tabs
-      tab2_child:
-        '#type': textfield
-        '#title': 'Field in tab 2'
-  page_tables:
-    '#type': webform_wizard_page
-    '#title': 'Table elements'
-    example_table:
-      '#type': table
-      '#header':
-        - 'Column 1'
-        - 'Column 2'
-    example_webform_table:
-      '#type': webform_table
-      '#header':
-        - Name
-        - Value
-      table_row_1:
-        '#type': webform_table_row
-        row1_name:
-          '#type': textfield
-          '#title': Name
-        row1_value:
-          '#type': textfield
-          '#title': Value
-    example_table_sort:
-      '#type': webform_table_sort
-      '#title': 'Table sort'
-      '#options':
-        item_1: 'First item'
-        item_2: 'Second item'
-        item_3: 'Third item'
+  example_number:
+    '#type': number
+    '#title': Number
+    '#min': 0
+    '#max': 100
+    '#step': 1
+  example_range:
+    '#type': range
+    '#title': Range
+    '#min': 0
+    '#max': 100
+    '#step': 5
+    '#output': right
+    '#output__field_suffix': '%'
+  example_scale:
+    '#type': webform_scale
+    '#title': Scale
+    '#min': 1
+    '#max': 10
+    '#min_text': 'Not likely'
+    '#max_text': 'Very likely'
+  example_rating:
+    '#type': webform_rating
+    '#title': Rating
+    '#star_size': medium
 css: ""
 javascript: ""
 settings:

@@ -9,7 +9,7 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_webform_core_fields
+      - itkdev_ex_core_fields
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
@@ -17,22 +17,16 @@ third_party_settings:
       2: 0
   webform_encrypt:
     element:
-      example_signature:
+      example_textfield:
         encrypt: true
         encrypt_profile: webform
-      example_terms_of_service:
+      example_textarea:
         encrypt: true
         encrypt_profile: webform
-      example_custom_composite:
+      example_text_format:
         encrypt: true
         encrypt_profile: webform
-      example_language_select:
-        encrypt: true
-        encrypt_profile: webform
-      example_machine_name_source:
-        encrypt: true
-        encrypt_profile: webform
-      example_machine_name:
+      example_autocomplete:
         encrypt: true
         encrypt_profile: webform
   os2forms:
@@ -80,60 +74,29 @@ close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_webform_core_misc
-title: "Miscellaneous elements"
-description: "Examples of specialized elements: signature, terms of service, composites, CAPTCHA and other utility elements"
+id: itkdev_ex_core_fields_text
+title: "Text input elements"
+description: "Examples of text-based input elements: plain text, formatted text and autocomplete"
 categories: {}
 elements: |-
-  example_webform_element:
-    '#type': webform_element
-    '#title': 'Generic element'
-    '#markup': '<p>A generic webform element for display purposes.</p>'
-  example_actions:
-    '#type': webform_actions
-    '#title': 'Submit button(s)'
-    '#submit__label': Send
-  example_signature:
-    '#type': webform_signature
-    '#title': Signature
-  example_terms_of_service:
-    '#type': webform_terms_of_service
-    '#title': 'Terms of service'
-    '#terms_type': modal
-    '#terms_content': 'These are the example terms of service. By checking the box you agree to these terms.'
-  example_custom_composite:
-    '#type': webform_custom_composite
-    '#title': 'Custom composite'
-    '#element':
-      composite_name:
-        '#type': textfield
-        '#title': Name
-      composite_age:
-        '#type': number
-        '#title': Age
-  example_variant:
-    '#type': webform_variant
-    '#title': Variant
-  example_captcha:
-    '#type': captcha
-    '#captcha_type': default
-  example_language_select:
-    '#type': language_select
-    '#title': Language
-  example_machine_name_source:
+  example_textfield:
     '#type': textfield
-    '#title': 'Label for machine name'
-  example_machine_name:
-    '#type': machine_name
-    '#title': 'Machine name'
-    '#machine_name':
-      source:
-        - example_machine_name_source
-  example_view:
-    '#type': view
-    '#title': 'Embedded view'
-    '#name': content_recent
-    '#display_id': default
+    '#title': 'Text field'
+    '#placeholder': 'Enter text here'
+  example_textarea:
+    '#type': textarea
+    '#title': 'Text area'
+    '#rows': 5
+  example_text_format:
+    '#type': text_format
+    '#title': 'Formatted text'
+  example_autocomplete:
+    '#type': webform_autocomplete
+    '#title': Autocomplete
+    '#autocomplete_items':
+      - 'Option A'
+      - 'Option B'
+      - 'Option C'
 css: ""
 javascript: ""
 settings:

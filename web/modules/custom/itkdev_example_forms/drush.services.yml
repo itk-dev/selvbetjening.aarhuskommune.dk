@@ -6,7 +6,7 @@ services:
     arguments: &arguments
       - "@entity_type.manager"
       - "@config.manager"
-      - "@module_handler"
+      - "@Drupal\\itkdev_example_forms\\ModuleHelper"
       - "@file_system"
     tags:
       - { name: console.command }
