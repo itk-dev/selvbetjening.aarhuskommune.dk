@@ -89,6 +89,10 @@
   li .step .step-number {
     line-height: 1.3;
     padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    vertical-align: bottom;
   }
 }
 
@@ -96,6 +100,10 @@
 .show-progress-links .step-indicator li.progress-step.is-complete .step[role="link"] {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.step-indicator li {
+  padding: .5em 0;
 }
 
 // Hide outline of steps in progress bar
@@ -111,7 +119,13 @@
   display: none!important;
 }
 
-// Background colors in step indicator.
+// Colors in step indicator.
+.step-indicator li .step .step-information {
+  color: inherit;
+  padding-left: 60px;
+  width: 100%;
+}
+
 .step-indicator li .step:hover .step-number,
 .step-indicator li .step .step-number:hover {
   background-color: #f5f5f5;
@@ -149,5 +163,17 @@
     background: rgba(255, 255, 255, 1);
     height: 100%;
     max-height: 100%;
+  }
+}
+
+// Sticky bar om desktop.
+.sticky-progress-bar.fixed {
+  @include mixins.media-breakpoint-up(md) {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    max-width: calc(300px - 4em);
+    min-width: calc(200px - 4em);
+    padding-top: 50px;
   }
 }
