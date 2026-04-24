@@ -43,6 +43,7 @@
     "require-dev": {
         "custom/itkdev_example_forms": "^1.0",
         "drupal/core-dev": "^10",
+        "drupal/devel": "^5.4",
         "drupal/mail_debugger": "^1.4",
         "ergebnis/composer-normalize": "^2.43",
         "mglaman/phpstan-drupal": "^1.2",
@@ -161,12 +162,16 @@
         },
         "patches": {
             "drupal/config_entity_revisions": {
+                "patches/drupal/config_entity_revisions/missing-use-statement.patch": "patches/drupal/config_entity_revisions/missing-use-statement.patch",
                 "webform_revisions_install called twice during site:install --existing-config": "patches/drupal/config_entity_revisions/webform_revisions.install.patch"
             },
             "drupal/core": {
                 "Get CKEditor 5 to work in (modal) dialogs (https://www.drupal.org/project/drupal/issues/3274937)": "https://www.drupal.org/files/issues/2024-07-02/3351603-30.patch",
                 "Allow conditionals based on computed twig (https://www.drupal.org/project/webform/issues/3481569)": "https://www.drupal.org/files/issues/2024-11-05/revert-core-states.patch",
                 "Use date fields for views filters (https://www.drupal.org/project/drupal/issues/2648950)": "https://www.drupal.org/files/issues/2025-06-24/2648950-293.patch"
+            },
+            "drupal/devel": {
+                "patches/drupal/devel/devel_generate.patch": "patches/drupal/devel/devel_generate.patch"
             },
             "drupal/entity_print": {
                 "Add page count https://www.drupal.org/project/entity_print/issues/2823430": "https://www.drupal.org/files/issues/2023-07-10/entity_print-dompdf_page_count-2823430-14.patch"
@@ -183,7 +188,8 @@
             },
             "drupal/webform": {
                 "Fix issue with webform search containing æøå": "https://www.drupal.org/files/issues/2024-02-26/3415445-cant-load-non-english_0.patch",
-                "Email handler shows fieldset and section titles despite all children fields etc are excluded (https://www.drupal.org/project/webform/issues/3482544)": "patches/drupal/webform/email_handler_titles_despite_exluded_element.patch"
+                "Email handler shows fieldset and section titles despite all children fields etc are excluded (https://www.drupal.org/project/webform/issues/3482544)": "patches/drupal/webform/email_handler_titles_despite_exluded_element.patch",
+                "patches/drupal/webform/devel_generate.patch": "patches/drupal/webform/devel_generate.patch"
             },
             "os2forms/os2forms": {
                 "Hide additional os2forms webform settings page": "patches/drupal/os2forms/os2forms_hide_additional_settings_page.diff"

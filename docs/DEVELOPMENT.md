@@ -139,3 +139,10 @@ docker compose up -d
 ```
 
 to reload the OIDC configuration.
+
+## Generating webform submissions
+
+``` shell
+docker compose exec phpfpm vendor/bin/drush pm:install devel_generate
+docker compose exec phpfpm vendor/bin/drush --help
+```
