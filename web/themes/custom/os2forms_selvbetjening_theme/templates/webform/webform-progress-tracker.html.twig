@@ -34,15 +34,15 @@
   <div class="fds-modal modal-step-indicator" id="modal-step-indicator-helptext"
        aria-hidden="true" role="dialog" aria-modal="true"
        aria-labelledby="modal-step-indicator-helptext-heading">
-    <div class="modal-content">
+    <div class="modal-content {{ webform.getSettings['wizard_progress_link'] ? 'show-progress-links': '' }}">
       <div class="modal-header">
         <h2 class="modal-title" id="modal-step-indicator-helptext-heading">
           {{ 'Step @step_no of @steps'|t({'@step_no': current_index + 1, '@steps': progress|length}) }}
         </h2>
         <button class="modal-close function-link" data-modal-close>{{ 'Close'|t }}</button>
       </div>
-      <div class="modal-body">
-        <nav aria-label="{{ 'Step indicator'|t }}">
+      <div class="webform-progress modal-body">
+        <nav class= step-indicator-wrapper" aria-label="{{ 'Step indicator'|t }}">
           {{ include("@os2forms_selvbetjening_theme/webform/progress-bar-steps.html.twig") }}
         </nav>
       </div>

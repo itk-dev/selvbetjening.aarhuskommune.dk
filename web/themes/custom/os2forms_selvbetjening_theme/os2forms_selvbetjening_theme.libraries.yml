@@ -17,8 +17,3 @@ dfds-embed:
   js:
     assets/js/dkfds.js: { attributes: { defer: true } }
     build/dfds.js: { }
-
-sticky-progress:
-  version: 1.x
-  js:
-    assets/progress-bar.js: { attributes: { defer: true } }

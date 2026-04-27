@@ -119,11 +119,15 @@
   display: none!important;
 }
 
-// Colors in step indicator.
+// Step indicator.
 .step-indicator li .step .step-information {
   color: inherit;
   padding-left: 60px;
   width: 100%;
+}
+
+.step-indicator li.current .step .step-information {
+  font-weight: 700;
 }
 
 .step-indicator li .step:hover .step-number,
@@ -167,13 +171,12 @@
 }
 
 // Sticky bar om desktop.
-.sticky-progress-bar.fixed {
+.sticky-progress-bar {
   @include mixins.media-breakpoint-up(md) {
-    position: fixed;
-    top: 0;
+    position: sticky;
+    top: 50px;
     z-index: 1000;
     max-width: calc(300px - 4em);
     min-width: calc(200px - 4em);
-    padding-top: 50px;
   }
 }
