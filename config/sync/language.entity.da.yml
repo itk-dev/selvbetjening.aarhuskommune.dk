@@ -1,7 +1,7 @@
 uuid: 73a6842a-057f-47c0-a4bf-22cdfd2953ab
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: aajgToDzhzy6gqVVqN4_m9djqEC2TeQ9jcm3kqOQm-o
 id: da

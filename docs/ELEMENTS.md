@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 -->
 # Elements
 
 This contains a list of enabled elements as of May 2025,
@@ -12,116 +13,116 @@ section and link to a more detailed section in which they are grouped by functio
 
 ## Usage
 
--  [Tekstfelt (textfield)](#tekstfelt-textfield): 614
--  [Simpel HTML (webform_markup)](#simpel-html-webform_markup): 514
--  [OS2Forms Attachment (os2forms_attachment)](#os2forms-attachment-os2forms_attachment): 457
--  [Tekstområde (textarea)](#tekstområde-textarea): 456
--  [Sektion (webform_section)](#sektion-webform_section): 452
--  [Radioknapper (radios)](#radioknapper-radios): 401
--  [Feltgruppe (fieldset)](#feltgruppe-fieldset): 393
--  [Checkbox (checkbox)](#checkbox-checkbox): 283
--  [NemID Name (os2forms_nemid_name)](#nemid-name-os2forms_nemid_name): 283
--  [Vandret streg (webform_horizontal_rule)](#vandret-streg-webform_horizontal_rule): 253
--  [Mine organisation data (mine_organisations_data_element)](#mine-organisation-data-mine_organisations_data_element): 220
--  [Flexbox layout (webform_flexbox)](#flexbox-layout-webform_flexbox): 218
--  [NemID CPR (os2forms_nemid_cpr)](#nemid-cpr-os2forms_nemid_cpr): 218
--  [Send knap(per) (webform_actions)](#send-knapper-webform_actions): 212
--  [Dato (date)](#dato-date): 211
--  [Vælg (select)](#vælg-select): 196
--  [Fil (managed_file)](#fil-managed_file): 190
--  [Telefon (tel)](#telefon-tel): 170
--  [E-mail (email)](#e-mail-email): 159
--  [NemID Address (os2forms_nemid_address)](#nemid-address-os2forms_nemid_address): 152
--  [DAWA Address (autocomplete) (os2forms_dawa_address)](#dawa-address-autocomplete-os2forms_dawa_address): 140
--  [Antal (number)](#antal-number): 139
--  [Custom composite (webform_custom_composite)](#custom-composite-webform_custom_composite): 130
--  [Computed Twig (webform_computed_twig)](#computed-twig-webform_computed_twig): 129
--  [CPR / Navn validering (os2forms_person_lookup)](#cpr--navn-validering-os2forms_person_lookup): 127
--  [Afkrydsningsfelter (checkboxes)](#afkrydsningsfelter-checkboxes): 107
--  [Dokument fil (webform_document_file)](#dokument-fil-webform_document_file): 102
--  [Mere (webform_more)](#mere-webform_more): 96
--  [Email confirm (webform_email_confirm)](#email-confirm-webform_email_confirm): 60
--  [Beholder (container)](#beholder-container): 47
--  [Radioknapper andet (webform_radios_other)](#radioknapper-andet-webform_radios_other): 39
--  [Detaljer (details)](#detaljer-details): 39
--  [MitID Children Select (os2forms_nemid_children_select)](#mitid-children-select-os2forms_nemid_children_select): 38
--  [Signatur (webform_signature)](#signatur-webform_signature): 36
--  [Likert (webform_likert)](#likert-webform_likert): 33
--  [MitID Child Name (os2forms_mitid_child_name)](#mitid-child-name-os2forms_mitid_child_name): 33
--  [NemID Company CVR (os2forms_nemid_company_cvr)](#nemid-company-cvr-os2forms_nemid_company_cvr): 32
--  [MitID Child CPR (os2forms_mitid_child_cpr)](#mitid-child-cpr-os2forms_mitid_child_cpr): 29
--  [Adresse (webform_address)](#adresse-webform_address): 28
--  [Afkrydsningsfelter andet (webform_checkboxes_other)](#afkrydsningsfelter-andet-webform_checkboxes_other): 28
--  [NemID Company Name (os2forms_nemid_company_name)](#nemid-company-name-os2forms_nemid_company_name): 28
--  [Remote select element (webform_remote_select_element)](#remote-select-element-webform_remote_select_element): 25
--  [Vælg andet (webform_select_other)](#vælg-andet-webform_select_other): 25
--  [Kontakt (webform_contact)](#kontakt-webform_contact): 24
--  [Skjult (hidden)](#skjult-hidden): 22
--  [Tekstformat (text_format)](#tekstformat-text_format): 18
--  [NemID City (os2forms_nemid_city)](#nemid-city-os2forms_nemid_city): 18
--  [Dato liste (datelist)](#dato-liste-datelist): 17
--  [Terms of service (webform_terms_of_service)](#terms-of-service-webform_terms_of_service): 15
--  [NemID Company CVR fetch data (os2forms_nemid_company_cvr_fetch_data)](#nemid-company-cvr-fetch-data-os2forms_nemid_company_cvr_fetch_data): 15
--  [Tid (webform_time)](#tid-webform_time): 14
--  [Billedfil (webform_image_file)](#billedfil-webform_image_file): 13
--  [OS2Forms Kort (webform_map_field)](#os2forms-kort-webform_map_field): 13
--  [NemID Postal code (os2forms_nemid_postal_code)](#nemid-postal-code-os2forms_nemid_postal_code): 13
--  [Bedømmelse (webform_rating)](#bedømmelse-webform_rating): 11
--  [Dato/tid (datetime)](#datotid-datetime): 10
--  [NemID Company Address (os2forms_nemid_company_address)](#nemid-company-address-os2forms_nemid_company_address): 10
--  [URL (url)](#url-url): 9
--  [DAWA Matrikula (autocomplete) (os2forms_dawa_matrikula)](#dawa-matrikula-autocomplete-os2forms_dawa_matrikula): 9
--  [NemID Kommunekode (os2forms_nemid_kommunekode)](#nemid-kommunekode-os2forms_nemid_kommunekode): 9
--  [MitID Child Other Guardian (os2forms_mitid_child_other_guardian)](#mitid-child-other-guardian-os2forms_mitid_child_other_guardian): 9
--  [DAWA Address-Matrikula (autocomplete) (os2forms_dawa_address_matrikula)](#dawa-address-matrikula-autocomplete-os2forms_dawa_address_matrikula): 8
--  [NemID Street (os2forms_nemid_street)](#nemid-street-os2forms_nemid_street): 8
--  [NemID House nr (os2forms_nemid_house_nr)](#nemid-house-nr-os2forms_nemid_house_nr): 8
--  [MitID Child Address (os2forms_mitid_child_address)](#mitid-child-address-os2forms_mitid_child_address): 8
--  [Værdi (value)](#værdi-value): 7
--  [Booking (booking_element)](#booking-booking_element): 6
--  [Skalér (webform_scale)](#skalér-webform_scale): 6
--  [Table select (tableselect)](#table-select-tableselect): 6
--  [NemID Floor (os2forms_nemid_floor)](#nemid-floor-os2forms_nemid_floor): 6
--  [Autofuldfør (webform_autocomplete)](#autofuldfør-webform_autocomplete): 5
--  [NemID Nemlogin link (os2forms_nemid_nemlogin_link)](#nemid-nemlogin-link-os2forms_nemid_nemlogin_link): 5
--  [NemID Apartment nr (os2forms_nemid_apartment_nr)](#nemid-apartment-nr-os2forms_nemid_apartment_nr): 5
--  [Spænd (range)](#spænd-range): 4
--  [User Field Element (user_field_element)](#user-field-element-user_field_element): 4
--  [Attachment Word Document (webform_entity_print_attachment)](#attachment-word-document-webform_entity_print_attachment): 3
--  [MitID Child street (os2forms_mitid_child_street)](#mitid-child-street-os2forms_mitid_child_street): 3
--  [MitID Child House Nr (os2forms_mitid_child_house_nr)](#mitid-child-house-nr-os2forms_mitid_child_house_nr): 3
--  [MitID Child Apartment Nr (os2forms_mitid_child_apartment_nr)](#mitid-child-apartment-nr-os2forms_mitid_child_apartment_nr): 3
--  [MitID Child Floor (os2forms_mitid_child_floor)](#mitid-child-floor-os2forms_mitid_child_floor): 3
--  [MitID Child City (os2forms_mitid_child_city)](#mitid-child-city-os2forms_mitid_child_city): 3
--  [MitID Child Postal Code (os2forms_mitid_child_postal_code)](#mitid-child-postal-code-os2forms_mitid_child_postal_code): 3
--  [OS2forms payment element (os2forms_payment)](#os2forms-payment-element-os2forms_payment): 3
--  [DAWA Block (autocomplete) (os2forms_dawa_block)](#dawa-block-autocomplete-os2forms_dawa_block): 2
--  [NemID PID (os2forms_nemid_pid)](#nemid-pid-os2forms_nemid_pid): 2
--  [Table sort (webform_table_sort)](#table-sort-webform_table_sort): 1
--  [Lydfil (webform_audio_file)](#lydfil-webform_audio_file): 1
--  [Indholdselement (webform_node_element)](#indholdselement-webform_node_element): 1
--  [NemID UUID (os2forms_nemid_uuid)](#nemid-uuid-os2forms_nemid_uuid): 1
--  [NemID Coaddress (os2forms_nemid_coaddress)](#nemid-coaddress-os2forms_nemid_coaddress): 1
--  [NemID Company Street (os2forms_nemid_company_street)](#nemid-company-street-os2forms_nemid_company_street): 1
--  [MitID Children Radios (os2forms_nemid_children_radios)](#mitid-children-radios-os2forms_nemid_children_radios): 1
--  [MitID Child Coaddress (os2forms_mitid_child_coaddress)](#mitid-child-coaddress-os2forms_mitid_child_coaddress): 1
--  [MitID Child kommunekode (os2forms_mitid_child_kommunekode)](#mitid-child-kommunekode-os2forms_mitid_child_kommunekode): 1
--  [Term checkboxes (webform_term_checkboxes)](#term-checkboxes-webform_term_checkboxes): 1
--  [Term select (webform_term_select)](#term-select-webform_term_select): 1
--  [Variant (webform_variant)](#variant-webform_variant): 0
--  [Tabel (table)](#tabel-table): 0
--  [Videofil (webform_video_file)](#videofil-webform_video_file): 0
--  [OS2Forms Session dynamic value field (os2forms_session_dynamic_value)](#os2forms-session-dynamic-value-field-os2forms_session_dynamic_value): 0
--  [Vis (view)](#vis-view): 0
--  [NemID Company P-Number (os2forms_nemid_company_p_number)](#nemid-company-p-number-os2forms_nemid_company_p_number): 0
--  [NemID Company RID (os2forms_nemid_company_rid)](#nemid-company-rid-os2forms_nemid_company_rid): 0
--  [NemID Company HouseNr (os2forms_nemid_company_house_nr)](#nemid-company-housenr-os2forms_nemid_company_house_nr): 0
--  [NemID Company ApartmentNr (os2forms_nemid_company_apartment_nr)](#nemid-company-apartmentnr-os2forms_nemid_company_apartment_nr): 0
--  [NemID Company Floor (os2forms_nemid_company_floor)](#nemid-company-floor-os2forms_nemid_company_floor): 0
--  [NemID Company City (os2forms_nemid_company_city)](#nemid-company-city-os2forms_nemid_company_city): 0
--  [NemID Company PostalCode (os2forms_nemid_company_postal_code)](#nemid-company-postalcode-os2forms_nemid_company_postal_code): 0
--  [NemID Company Kommunekode (os2forms_nemid_company_kommunekode)](#nemid-company-kommunekode-os2forms_nemid_company_kommunekode): 0
--  [User Field Element (checkbox) (user_field_element_checkbox)](#user-field-element-checkbox-user_field_element_checkbox): 0
+- [Tekstfelt (textfield)](#tekstfelt-textfield): 614
+- [Simpel HTML (webform_markup)](#simpel-html-webform_markup): 514
+- [OS2Forms Attachment (os2forms_attachment)](#os2forms-attachment-os2forms_attachment): 457
+- [Tekstområde (textarea)](#tekstområde-textarea): 456
+- [Sektion (webform_section)](#sektion-webform_section): 452
+- [Radioknapper (radios)](#radioknapper-radios): 401
+- [Feltgruppe (fieldset)](#feltgruppe-fieldset): 393
+- [Checkbox (checkbox)](#checkbox-checkbox): 283
+- [NemID Name (os2forms_nemid_name)](#nemid-name-os2forms_nemid_name): 283
+- [Vandret streg (webform_horizontal_rule)](#vandret-streg-webform_horizontal_rule): 253
+- [Mine organisation data (mine_organisations_data_element)](#mine-organisation-data-mine_organisations_data_element): 220
+- [Flexbox layout (webform_flexbox)](#flexbox-layout-webform_flexbox): 218
+- [NemID CPR (os2forms_nemid_cpr)](#nemid-cpr-os2forms_nemid_cpr): 218
+- [Send knap(per) (webform_actions)](#send-knapper-webform_actions): 212
+- [Dato (date)](#dato-date): 211
+- [Vælg (select)](#vælg-select): 196
+- [Fil (managed_file)](#fil-managed_file): 190
+- [Telefon (tel)](#telefon-tel): 170
+- [E-mail (email)](#e-mail-email): 159
+- [NemID Address (os2forms_nemid_address)](#nemid-address-os2forms_nemid_address): 152
+- [DAWA Address (autocomplete) (os2forms_dawa_address)](#dawa-address-autocomplete-os2forms_dawa_address): 140
+- [Antal (number)](#antal-number): 139
+- [Custom composite (webform_custom_composite)](#custom-composite-webform_custom_composite): 130
+- [Computed Twig (webform_computed_twig)](#computed-twig-webform_computed_twig): 129
+- [CPR / Navn validering (os2forms_person_lookup)](#cpr--navn-validering-os2forms_person_lookup): 127
+- [Afkrydsningsfelter (checkboxes)](#afkrydsningsfelter-checkboxes): 107
+- [Dokument fil (webform_document_file)](#dokument-fil-webform_document_file): 102
+- [Mere (webform_more)](#mere-webform_more): 96
+- [Email confirm (webform_email_confirm)](#email-confirm-webform_email_confirm): 60
+- [Beholder (container)](#beholder-container): 47
+- [Radioknapper andet (webform_radios_other)](#radioknapper-andet-webform_radios_other): 39
+- [Detaljer (details)](#detaljer-details): 39
+- [MitID Children Select (os2forms_nemid_children_select)](#mitid-children-select-os2forms_nemid_children_select): 38
+- [Signatur (webform_signature)](#signatur-webform_signature): 36
+- [Likert (webform_likert)](#likert-webform_likert): 33
+- [MitID Child Name (os2forms_mitid_child_name)](#mitid-child-name-os2forms_mitid_child_name): 33
+- [NemID Company CVR (os2forms_nemid_company_cvr)](#nemid-company-cvr-os2forms_nemid_company_cvr): 32
+- [MitID Child CPR (os2forms_mitid_child_cpr)](#mitid-child-cpr-os2forms_mitid_child_cpr): 29
+- [Adresse (webform_address)](#adresse-webform_address): 28
+- [Afkrydsningsfelter andet (webform_checkboxes_other)](#afkrydsningsfelter-andet-webform_checkboxes_other): 28
+- [NemID Company Name (os2forms_nemid_company_name)](#nemid-company-name-os2forms_nemid_company_name): 28
+- [Remote select element (webform_remote_select_element)](#remote-select-element-webform_remote_select_element): 25
+- [Vælg andet (webform_select_other)](#vælg-andet-webform_select_other): 25
+- [Kontakt (webform_contact)](#kontakt-webform_contact): 24
+- [Skjult (hidden)](#skjult-hidden): 22
+- [Tekstformat (text_format)](#tekstformat-text_format): 18
+- [NemID City (os2forms_nemid_city)](#nemid-city-os2forms_nemid_city): 18
+- [Dato liste (datelist)](#dato-liste-datelist): 17
+- [Terms of service (webform_terms_of_service)](#terms-of-service-webform_terms_of_service): 15
+- [NemID Company CVR fetch data (os2forms_nemid_company_cvr_fetch_data)](#nemid-company-cvr-fetch-data-os2forms_nemid_company_cvr_fetch_data): 15
+- [Tid (webform_time)](#tid-webform_time): 14
+- [Billedfil (webform_image_file)](#billedfil-webform_image_file): 13
+- [OS2Forms Kort (webform_map_field)](#os2forms-kort-webform_map_field): 13
+- [NemID Postal code (os2forms_nemid_postal_code)](#nemid-postal-code-os2forms_nemid_postal_code): 13
+- [Bedømmelse (webform_rating)](#bedømmelse-webform_rating): 11
+- [Dato/tid (datetime)](#datotid-datetime): 10
+- [NemID Company Address (os2forms_nemid_company_address)](#nemid-company-address-os2forms_nemid_company_address): 10
+- [URL (url)](#url-url): 9
+- [DAWA Matrikula (autocomplete) (os2forms_dawa_matrikula)](#dawa-matrikula-autocomplete-os2forms_dawa_matrikula): 9
+- [NemID Kommunekode (os2forms_nemid_kommunekode)](#nemid-kommunekode-os2forms_nemid_kommunekode): 9
+- [MitID Child Other Guardian (os2forms_mitid_child_other_guardian)](#mitid-child-other-guardian-os2forms_mitid_child_other_guardian): 9
+- [DAWA Address-Matrikula (autocomplete) (os2forms_dawa_address_matrikula)](#dawa-address-matrikula-autocomplete-os2forms_dawa_address_matrikula): 8
+- [NemID Street (os2forms_nemid_street)](#nemid-street-os2forms_nemid_street): 8
+- [NemID House nr (os2forms_nemid_house_nr)](#nemid-house-nr-os2forms_nemid_house_nr): 8
+- [MitID Child Address (os2forms_mitid_child_address)](#mitid-child-address-os2forms_mitid_child_address): 8
+- [Værdi (value)](#værdi-value): 7
+- [Booking (booking_element)](#booking-booking_element): 6
+- [Skalér (webform_scale)](#skalér-webform_scale): 6
+- [Table select (tableselect)](#table-select-tableselect): 6
+- [NemID Floor (os2forms_nemid_floor)](#nemid-floor-os2forms_nemid_floor): 6
+- [Autofuldfør (webform_autocomplete)](#autofuldfør-webform_autocomplete): 5
+- [NemID Nemlogin link (os2forms_nemid_nemlogin_link)](#nemid-nemlogin-link-os2forms_nemid_nemlogin_link): 5
+- [NemID Apartment nr (os2forms_nemid_apartment_nr)](#nemid-apartment-nr-os2forms_nemid_apartment_nr): 5
+- [Spænd (range)](#spænd-range): 4
+- [User Field Element (user_field_element)](#user-field-element-user_field_element): 4
+- [Attachment Word Document (webform_entity_print_attachment)](#attachment-word-document-webform_entity_print_attachment): 3
+- [MitID Child street (os2forms_mitid_child_street)](#mitid-child-street-os2forms_mitid_child_street): 3
+- [MitID Child House Nr (os2forms_mitid_child_house_nr)](#mitid-child-house-nr-os2forms_mitid_child_house_nr): 3
+- [MitID Child Apartment Nr (os2forms_mitid_child_apartment_nr)](#mitid-child-apartment-nr-os2forms_mitid_child_apartment_nr): 3
+- [MitID Child Floor (os2forms_mitid_child_floor)](#mitid-child-floor-os2forms_mitid_child_floor): 3
+- [MitID Child City (os2forms_mitid_child_city)](#mitid-child-city-os2forms_mitid_child_city): 3
+- [MitID Child Postal Code (os2forms_mitid_child_postal_code)](#mitid-child-postal-code-os2forms_mitid_child_postal_code): 3
+- [OS2forms payment element (os2forms_payment)](#os2forms-payment-element-os2forms_payment): 3
+- [DAWA Block (autocomplete) (os2forms_dawa_block)](#dawa-block-autocomplete-os2forms_dawa_block): 2
+- [NemID PID (os2forms_nemid_pid)](#nemid-pid-os2forms_nemid_pid): 2
+- [Table sort (webform_table_sort)](#table-sort-webform_table_sort): 1
+- [Lydfil (webform_audio_file)](#lydfil-webform_audio_file): 1
+- [Indholdselement (webform_node_element)](#indholdselement-webform_node_element): 1
+- [NemID UUID (os2forms_nemid_uuid)](#nemid-uuid-os2forms_nemid_uuid): 1
+- [NemID Coaddress (os2forms_nemid_coaddress)](#nemid-coaddress-os2forms_nemid_coaddress): 1
+- [NemID Company Street (os2forms_nemid_company_street)](#nemid-company-street-os2forms_nemid_company_street): 1
+- [MitID Children Radios (os2forms_nemid_children_radios)](#mitid-children-radios-os2forms_nemid_children_radios): 1
+- [MitID Child Coaddress (os2forms_mitid_child_coaddress)](#mitid-child-coaddress-os2forms_mitid_child_coaddress): 1
+- [MitID Child kommunekode (os2forms_mitid_child_kommunekode)](#mitid-child-kommunekode-os2forms_mitid_child_kommunekode): 1
+- [Term checkboxes (webform_term_checkboxes)](#term-checkboxes-webform_term_checkboxes): 1
+- [Term select (webform_term_select)](#term-select-webform_term_select): 1
+- [Variant (webform_variant)](#variant-webform_variant): 0
+- [Tabel (table)](#tabel-table): 0
+- [Videofil (webform_video_file)](#videofil-webform_video_file): 0
+- [OS2Forms Session dynamic value field (os2forms_session_dynamic_value)](#os2forms-session-dynamic-value-field-os2forms_session_dynamic_value): 0
+- [Vis (view)](#vis-view): 0
+- [NemID Company P-Number (os2forms_nemid_company_p_number)](#nemid-company-p-number-os2forms_nemid_company_p_number): 0
+- [NemID Company RID (os2forms_nemid_company_rid)](#nemid-company-rid-os2forms_nemid_company_rid): 0
+- [NemID Company HouseNr (os2forms_nemid_company_house_nr)](#nemid-company-housenr-os2forms_nemid_company_house_nr): 0
+- [NemID Company ApartmentNr (os2forms_nemid_company_apartment_nr)](#nemid-company-apartmentnr-os2forms_nemid_company_apartment_nr): 0
+- [NemID Company Floor (os2forms_nemid_company_floor)](#nemid-company-floor-os2forms_nemid_company_floor): 0
+- [NemID Company City (os2forms_nemid_company_city)](#nemid-company-city-os2forms_nemid_company_city): 0
+- [NemID Company PostalCode (os2forms_nemid_company_postal_code)](#nemid-company-postalcode-os2forms_nemid_company_postal_code): 0
+- [NemID Company Kommunekode (os2forms_nemid_company_kommunekode)](#nemid-company-kommunekode-os2forms_nemid_company_kommunekode): 0
+- [User Field Element (checkbox) (user_field_element_checkbox)](#user-field-element-checkbox-user_field_element_checkbox): 0
 
 ## Element configuration and usage
 

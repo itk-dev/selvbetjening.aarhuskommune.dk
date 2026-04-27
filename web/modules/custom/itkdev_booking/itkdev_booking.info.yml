@@ -1,7 +1,7 @@
 name: ITK Dev booking
 type: module
-description: 'ITK Dev booking'
+description: "ITK Dev booking"
 core_version_requirement: ^9 || ^10
-package: 'ITKDev'
+package: "ITKDev"
 dependencies:
   - drupal:webform

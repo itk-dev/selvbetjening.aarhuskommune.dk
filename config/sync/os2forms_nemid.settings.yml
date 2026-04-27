@@ -1,6 +1,6 @@
 os2forms_nemid_hide_active_nemid_session_message: 1
-submit: 'Save configuration'
+submit: "Save configuration"
 form_build_id: form-j8xvjptj5Tc1B165N6KAo1WuvojSE4PPaXXvLzWkNwQ
 form_token: 24QiwddjRMA5Cj_lN1VbYcQh9wmpy1Iyzt7s8CNZzGg
 form_id: os2forms_nemid_settings
-op: 'Save configuration'
+op: "Save configuration"

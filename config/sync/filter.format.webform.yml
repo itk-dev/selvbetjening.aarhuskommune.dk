@@ -1,7 +1,7 @@
 uuid: a2522dbf-a9e7-4ced-9fd3-f02b7fe4f93a
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 name: Webform
 format: webform
 weight: -10
@@ -11,13 +11,13 @@ filters:
     provider: filter
     status: true
     weight: 0
-    settings: {  }
+    settings: {}
   filter_autop:
     id: filter_autop
     provider: filter
     status: true
     weight: 0
-    settings: {  }
+    settings: {}
   filter_html:
     id: filter_html
     provider: filter
@@ -32,7 +32,7 @@ filters:
     provider: filter
     status: true
     weight: 10
-    settings: {  }
+    settings: {}
   filter_url:
     id: filter_url
     provider: filter

@@ -17,19 +17,19 @@ provider: null
 plugin: user_login_block
 settings:
   id: user_login_block
-  label: 'Log ind'
+  label: "Log ind"
   label_display: visible
   provider: user
 visibility:
   request_path:
     id: request_path
     negate: false
-    context_mapping: {  }
-    pages: '<front>'
+    context_mapping: {}
+    pages: "<front>"
   user_role:
     id: user_role
     negate: false
     context_mapping:
-      user: '@user.current_user_context:current_user'
+      user: "@user.current_user_context:current_user"
     roles:
       anonymous: anonymous

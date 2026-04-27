@@ -14,8 +14,8 @@ provider: null
 plugin: privacy_block
 settings:
   id: privacy_block
-  label: 'Privacy block'
-  label_display: '0'
+  label: "Privacy block"
+  label_display: "0"
   provider: itkdev_footer
-  privacy_url: 'https://www.aarhus.dk/om-kommunen/databeskyttelse/databeskyttelse/'
-visibility: {  }
+  privacy_url: "https://www.aarhus.dk/om-kommunen/databeskyttelse/databeskyttelse/"
+visibility: {}

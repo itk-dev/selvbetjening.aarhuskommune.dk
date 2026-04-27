@@ -2,7 +2,6 @@
 
 namespace Drupal\itkdev_booking\Plugin\WebformElement;
 
-use Drupal;
 use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\itkdev_booking\Helper\UserHelper;
@@ -24,17 +23,14 @@ use Drupal\Core\Url;
  *   category = @Translation("Advanced elements"),
  * )
  */
-
-class BookingElement extends Hidden
-{
+class BookingElement extends Hidden {
 
   private ModuleExtensionList $extensionList;
 
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition)
-  {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     $instance = parent::create($container, $configuration, $plugin_id, $plugin_definition);
     $instance->extensionList = $container->get('extension.list.module');
     return $instance;
@@ -43,36 +39,33 @@ class BookingElement extends Hidden
   /**
    * {@inheritdoc}
    */
-  protected function defineDefaultProperties()
-  {
+  protected function defineDefaultProperties() {
     return [
-        'rooms' => [],
-        'enable_booking' => false,
-        'enable_resource_tooltips' => false,
-        'booking_mode' => '',
-        'create_booking_url' => '',
-        'change_booking_url' => '',
-        'step1' => false,
-        'redirect_url' => '',
-        'info_box_color' => '',
-        'info_box_header' => '',
-        'info_box_content' => ''
-      ] + parent::defineDefaultProperties();
+      'rooms' => [],
+      'enable_booking' => FALSE,
+      'enable_resource_tooltips' => FALSE,
+      'booking_mode' => '',
+      'create_booking_url' => '',
+      'change_booking_url' => '',
+      'step1' => FALSE,
+      'redirect_url' => '',
+      'info_box_color' => '',
+      'info_box_header' => '',
+      'info_box_content' => '',
+    ] + parent::defineDefaultProperties();
   }
 
   /**
    * {@inheritdoc}
    */
-  public function preview()
-  {
+  public function preview() {
     return [];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getTestValues(array $element, WebformInterface $webform, array $options = [])
-  {
+  public function getTestValues(array $element, WebformInterface $webform, array $options = []) {
     // Hidden elements should never get a test value.
     return NULL;
   }
@@ -80,42 +73,41 @@ class BookingElement extends Hidden
   /**
    * {@inheritdoc}
    */
-  public function form(array $form, FormStateInterface $form_state)
-  {
+  public function form(array $form, FormStateInterface $form_state) {
     $form = parent::form($form, $form_state);
 
-    $form['element']['booking_mode'] = array(
+    $form['element']['booking_mode'] = [
       '#type' => 'radios',
       '#required' => TRUE,
       '#title' => $this
         ->t('Form mode'),
-      '#options' => array(
+      '#options' => [
         'create_booking_mode' => $this
           ->t('Create booking mode'),
         'change_booking_mode' => $this
           ->t('List bookings mode'),
-      ),
+      ],
       '#description' => $this
         ->t('Use the element for either creating a new booking or view a list of existing bookings.'),
-    );
+    ];
 
-    $form['element']['create_booking_url'] = array(
+    $form['element']['create_booking_url'] = [
       '#type' => 'url',
       '#title' => $this
         ->t('Create booking url'),
       '#description' => $this
         ->t('This is needed for the app menu to work properly.'),
-    );
+    ];
 
-    $form['element']['change_booking_url'] = array(
+    $form['element']['change_booking_url'] = [
       '#type' => 'url',
       '#title' => $this
         ->t('List bookings url'),
       '#description' => $this
         ->t('This is needed for the app menu to work properly.'),
-    );
+    ];
 
-    $form['element']['step1'] = array(
+    $form['element']['step1'] = [
       '#type' => 'checkbox',
       '#title' => $this
         ->t('View only (No booking)'),
@@ -125,10 +117,10 @@ class BookingElement extends Hidden
         'visible' => [
           ':input[name="properties[booking_mode]"]' => ['value' => 'create_booking_mode'],
         ],
-      ]
-    );
+      ],
+    ];
 
-    $form['element']['redirect_url'] = array(
+    $form['element']['redirect_url'] = [
       '#type' => 'url',
       '#title' => $this
         ->t('Redirect url'),
@@ -136,27 +128,26 @@ class BookingElement extends Hidden
         'visible' => [
           ':input[name="properties[step1]"]' => ['checked' => TRUE],
         ],
-      ]
-    );
+      ],
+    ];
 
-    $form['element']['info_box_color'] = array(
+    $form['element']['info_box_color'] = [
       '#type' => 'url',
       '#title' => $this
-        ->t('Info boks baggrundsfarve (HEXCODE - f.eks. #0c6efd)')
-    );
+        ->t('Info boks baggrundsfarve (HEXCODE - f.eks. #0c6efd)'),
+    ];
 
-    $form['element']['info_box_header'] = array(
+    $form['element']['info_box_header'] = [
       '#type' => 'url',
       '#title' => $this
-        ->t('Info boks titel')
-    );
+        ->t('Info boks titel'),
+    ];
 
-    $form['element']['info_box_content'] = array(
+    $form['element']['info_box_content'] = [
       '#type' => 'url',
       '#title' => $this
-        ->t('Info boks indhold')
-    );
-
+        ->t('Info boks indhold'),
+    ];
 
     return $form;
   }
@@ -164,21 +155,20 @@ class BookingElement extends Hidden
   /**
    * {@inheritdoc}
    */
-  public function alterForm(array &$element, array &$form, FormStateInterface $form_state)
-  {
+  public function alterForm(array &$element, array &$form, FormStateInterface $form_state) {
     $params = [
       'api_endpoint' => Settings::get('itkdev_booking_api_endpoint_frontend'),
       'front_page_url' => Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString(),
       'license_key' => Settings::get('itkdev_booking_fullcalendar_license'),
       'output_field_id' => 'submit-values',
       'create_booking_mode' => $element['#booking_mode'] === 'create_booking_mode',
-      'create_booking_url' => $element['#create_booking_url'] ?? null,
-      'change_booking_url' => $element['#change_booking_url'] ?? null,
+      'create_booking_url' => $element['#create_booking_url'] ?? NULL,
+      'change_booking_url' => $element['#change_booking_url'] ?? NULL,
       'step_one' => isset($element['#step1']),
-      'redirect_url' => $element['#redirect_url'] ?? null,
-      'info_box_color' => $element['info_box_color'] ?? null,
-      'info_box_header' => $element['info_box_header'] ?? null,
-      'info_box_content' => $element['info_box_content'] ?? null,
+      'redirect_url' => $element['#redirect_url'] ?? NULL,
+      'info_box_color' => $element['info_box_color'] ?? NULL,
+      'info_box_header' => $element['info_box_header'] ?? NULL,
+      'info_box_content' => $element['info_box_content'] ?? NULL,
       'df_map_username' => Settings::get('itkdev_booking_df_map_username'),
       'df_map_password' => Settings::get('itkdev_booking_df_map_password'),
     ];
@@ -205,13 +195,13 @@ class BookingElement extends Hidden
    * @throws \JsonException
    */
   public function preSave(array &$element, WebformSubmissionInterface $webform_submission) {
-    $request = Drupal::request();
+    $request = \Drupal::request();
     $userHelper = new UserHelper();
 
     $userArray = $userHelper->getUserValues($request);
 
     foreach ($webform_submission->getWebform()->getElementsDecoded() as $elementName => $element) {
-      if('booking_element' === $element['#type']) {
+      if ('booking_element' === $element['#type']) {
         $data = json_decode($webform_submission->getData()[$elementName], TRUE, 512, JSON_THROW_ON_ERROR);
 
         $data['name'] = $userArray['name'];
@@ -232,7 +222,7 @@ class BookingElement extends Hidden
    *
    * @param $form
    *   The form to validate.
-   * @param FormStateInterface $form_state
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The state of the form.
    */
   public function validateBooking(&$form, FormStateInterface $form_state) {
@@ -241,7 +231,8 @@ class BookingElement extends Hidden
       if (is_array($form_element) && isset($form_element['#type']) && 'booking_element' === $form_element['#type']) {
         try {
           $bookingValues = json_decode($form_state->getValues()[$key], TRUE, 512, JSON_THROW_ON_ERROR);
-        } catch (\JsonException $exception) {
+        }
+        catch (\JsonException $exception) {
           $form_state->setError($form, t('Error in decoding booking data.'));
           return;
         }
@@ -252,9 +243,11 @@ class BookingElement extends Hidden
               case 'subject':
                 $form_state->setError($form, t('Error in "Booking title"'));
                 break;
+
               case 'email':
                 $form_state->setError($form, t('Error in "Your email"'));
                 break;
+
               case 'resourceId':
                 $form_state->setError($form, t('Error in booking selection resource id'));
               case 'start':
@@ -262,6 +255,7 @@ class BookingElement extends Hidden
               case 'end':
                 $form_state->setError($form, t('Error in booking selection'));
                 break;
+
               default:
             }
           }
@@ -269,4 +263,5 @@ class BookingElement extends Hidden
       }
     }
   }
+
 }

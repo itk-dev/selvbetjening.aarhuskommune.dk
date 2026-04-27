@@ -1,10 +1,10 @@
-name: 'OS2Forms Selvbetjening'
+name: "OS2Forms Selvbetjening"
 type: module
-description: 'Provides changes to webform email handler and elements.'
-package: 'OS2Forms'
+description: "Provides changes to webform email handler and elements."
+package: "OS2Forms"
 core_version_requirement: ^9 || ^10
 dependencies:
-  - 'webform:webform'
-  - 'advancedqueue:advancedqueue'
-  - 'chosen:chosen'
-  - 'author_bulk_assignment:author_bulk_assignment'
+  - "webform:webform"
+  - "advancedqueue:advancedqueue"
+  - "chosen:chosen"
+  - "author_bulk_assignment:author_bulk_assignment"

@@ -1,16 +1,16 @@
 services:
   logger.channel.os2forms_selvbetjening:
     parent: logger.channel_base
-    arguments: [ 'os2forms_selvbetjening' ]
+    arguments: ["os2forms_selvbetjening"]
 
   Drupal\os2forms_selvbetjening\Helper\WebformConfigurationExporter:
     arguments:
-      - '@config.factory'
-      - '@current_user'
+      - "@config.factory"
+      - "@current_user"
 
   Drupal\os2forms_selvbetjening\Helper\FormHelper:
     arguments:
-      - '@current_user'
+      - "@current_user"
 
   Drupal\Drupal\os2forms_selvbetjening\Form\SettingsForm:
     arguments:
@@ -18,15 +18,21 @@ services:
 
   Drupal\os2forms_selvbetjening\EventSubscriber\ResponseSubscriber:
     arguments:
-      - '@router.admin_context'
+      - "@router.admin_context"
     tags:
-      - { name: 'event_subscriber' }
+      - { name: "event_subscriber" }
 
   Drupal\os2forms_selvbetjening\Routing\RouteSubscriber:
     tags:
-      - { name: 'event_subscriber' }
+      - { name: "event_subscriber" }
 
   #@todo If it needs to be configurable see: https://www.specbee.com/blogs/overriding-custom-services-in-drupal
   advancedqueue.processor:
     class: Drupal\os2forms_selvbetjening\Service\AdvancedQueueProcessorOverride
-    arguments: ['@event_dispatcher', '@datetime.time', '@plugin.manager.advancedqueue_job_type', '@logger.channel.cron']
+    arguments:
+      [
+        "@event_dispatcher",
+        "@datetime.time",
+        "@plugin.manager.advancedqueue_job_type",
+        "@logger.channel.cron",
+      ]

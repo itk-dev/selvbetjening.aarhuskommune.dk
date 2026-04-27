@@ -4,5 +4,5 @@ description: User menu for os2forms
 package: OS2Forms
 core_version_requirement: ^9 || ^10
 dependencies:
-  - 'drupal:os2web_nemlogin'
-  - 'drupal:os2web_datalookup'
+  - "drupal:os2web_nemlogin"
+  - "drupal:os2web_datalookup"

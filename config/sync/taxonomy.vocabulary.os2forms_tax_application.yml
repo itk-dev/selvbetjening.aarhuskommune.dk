@@ -1,10 +1,10 @@
 uuid: 76763ca6-c877-4dc7-a26c-a1a05db438be
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: 2njj56hvwC9Ucer8Y1EyDebNJ6GP3fOHKSAfpovdQrk
-name: 'Webform application'
+name: "Webform application"
 vid: os2forms_tax_application
 description: null
 weight: 0

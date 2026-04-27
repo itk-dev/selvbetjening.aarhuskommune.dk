@@ -1,0 +1,11 @@
+diff --git a/modules/webform_revisions/src/Entity/WebformRevisionsSubmission.php b/modules/webform_revisions/src/Entity/WebformRevisionsSubmission.php
+index 8620fd5..082c600 100644
+--- a/modules/webform_revisions/src/Entity/WebformRevisionsSubmission.php
++++ b/modules/webform_revisions/src/Entity/WebformRevisionsSubmission.php
+@@ -5,5 +5,6 @@ namespace Drupal\webform_revisions\Entity;
+ use Drupal\Component\Utility\Crypt;
+ use Drupal\config_entity_revisions\ConfigEntityRevisionsInterface;
+ use Drupal\Core\Entity\EntityStorageInterface;
++use Drupal\Core\Serialization\Yaml;
+ use Drupal\webform\Entity\WebformSubmission;
+ use Drupal\webform_revisions\Controller\WebformRevisionsController;

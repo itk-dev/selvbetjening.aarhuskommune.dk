@@ -1,6 +1,6 @@
-redirect_ips: ''
+redirect_ips: ""
 redirect_trigger_path: /
-redirect_cookies_ttl: '300'
+redirect_cookies_ttl: "300"
 _core:
   default_config_hash: v2nlXDbZXzhcalBk1TnZcU4jXSUERXD14dGxrp0npN4
 langcode: da

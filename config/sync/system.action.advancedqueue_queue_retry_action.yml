@@ -10,7 +10,7 @@ dependencies:
 _core:
   default_config_hash: pexPU9ftUC8P4KrPUZbAMG-riQDByKt2Y0_ap2QDhRE
 id: advancedqueue_queue_retry_action
-label: 'Forsøg processering igen'
+label: "Forsøg processering igen"
 type: advancedqueue_queue
 plugin: advancedqueue_queue_retry_action
-configuration: {  }
+configuration: {}

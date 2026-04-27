@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: EOhF5Li9zR3Dq-vO3EcPPeiHKUh8ukFHwVwsoDABId8
 id: os2forms_digital_post
-label: 'OSForms digital post'
+label: "OSForms digital post"
 backend: database
 backend_configuration:
   lease_time: 300

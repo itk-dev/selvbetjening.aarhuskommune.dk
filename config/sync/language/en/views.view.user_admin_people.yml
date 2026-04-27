@@ -1,5 +1,5 @@
 label: People
-description: 'Find and manage people interacting with your site.'
+description: "Find and manage people interacting with your site."
 display:
   default:
     display_title: Default
@@ -7,7 +7,7 @@ display:
       title: People
       fields:
         user_bulk_form:
-          label: 'Bulk update'
+          label: "Bulk update"
         name:
           label: Username
         status:
@@ -18,44 +18,44 @@ display:
         roles_target_id:
           label: Roles
         created:
-          label: 'Member for'
+          label: "Member for"
           settings:
-            future_format: '@interval'
-            past_format: '@interval'
+            future_format: "@interval"
+            past_format: "@interval"
         access:
-          label: 'Last access'
+          label: "Last access"
           settings:
-            future_format: '@interval hence'
-            past_format: '@interval ago'
+            future_format: "@interval hence"
+            past_format: "@interval ago"
         operations:
           label: Operations
         mail:
-          separator: ', '
+          separator: ", "
       pager:
         options:
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
+            next: "Next ›"
+            previous: "‹ Previous"
+            first: "« First"
+            last: "Last »"
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
+            items_per_page_label: "Items per page"
+            items_per_page_options_all_label: "- All -"
             offset_label: Offset
       exposed_form:
         options:
           submit_button: Filter
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       empty:
         area_text_custom:
-          content: 'No people available.'
+          content: "No people available."
       filters:
         combine:
           expose:
-            label: 'Name or email contains'
+            label: "Name or email contains"
         status:
           group_info:
             label: Status
@@ -76,7 +76,7 @@ display:
     display_options:
       menu:
         title: List
-        description: 'Find and manage people interacting with your site.'
+        description: "Find and manage people interacting with your site."
       tab_options:
         title: People
-        description: 'Manage user accounts, roles, and permissions.'
+        description: "Manage user accounts, roles, and permissions."

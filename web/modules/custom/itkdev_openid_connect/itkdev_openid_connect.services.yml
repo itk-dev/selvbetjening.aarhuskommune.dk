@@ -2,5 +2,5 @@ services:
   itkdev_openid_connect.helper:
     class: Drupal\itkdev_openid_connect\Helper\Helper
     arguments:
-      - '@permissions_by_term.access_storage'
-      - '@entity_type.manager'
+      - "@permissions_by_term.access_storage"
+      - "@entity_type.manager"

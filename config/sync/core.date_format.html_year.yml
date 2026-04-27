@@ -1,10 +1,10 @@
 uuid: 31222f30-5fd3-45bd-a4cb-2dbe6e4114a5
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: OjekiQuX9RbVQ2_8jOHBL94RgYLePqX7wpfNGgcQzrk
 id: html_year
-label: 'HTML Year'
+label: "HTML Year"
 locked: true
-pattern: 'Y'
+pattern: "Y"

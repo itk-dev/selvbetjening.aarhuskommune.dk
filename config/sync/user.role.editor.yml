@@ -24,26 +24,26 @@ label: Redaktør
 weight: -6
 is_admin: null
 permissions:
-  - 'access content'
-  - 'access site in maintenance mode'
-  - 'access toolbar'
-  - 'access webform handlers tab'
-  - 'access webform overview'
-  - 'access webform submission log'
-  - 'administer webform revisions'
-  - 'create webform'
-  - 'edit any webform'
-  - 'edit own webform submission'
-  - 'edit webform twig'
-  - 'translate any webform'
-  - 'translate own webform'
-  - 'use advanced search'
-  - 'use text format full_html'
-  - 'use text format maestro_notification'
-  - 'use text format restricted_html'
-  - 'use text format webform'
-  - 'view encrypted values'
-  - 'view maestro task console'
-  - 'view own webform submission'
-  - 'view the administration theme'
-  - 'view webform submissions own node'
+  - "access content"
+  - "access site in maintenance mode"
+  - "access toolbar"
+  - "access webform handlers tab"
+  - "access webform overview"
+  - "access webform submission log"
+  - "administer webform revisions"
+  - "create webform"
+  - "edit any webform"
+  - "edit own webform submission"
+  - "edit webform twig"
+  - "translate any webform"
+  - "translate own webform"
+  - "use advanced search"
+  - "use text format full_html"
+  - "use text format maestro_notification"
+  - "use text format restricted_html"
+  - "use text format webform"
+  - "view encrypted values"
+  - "view maestro task console"
+  - "view own webform submission"
+  - "view the administration theme"
+  - "view webform submissions own node"

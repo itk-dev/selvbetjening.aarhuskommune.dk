@@ -1,8 +1,8 @@
-name: 'OS2Forms API request handler'
+name: "OS2Forms API request handler"
 type: module
-description: 'Send form submissions to an API endpoint.'
-package: 'OS2Forms'
+description: "Send form submissions to an API endpoint."
+package: "OS2Forms"
 core_version_requirement: ^9 || ^10
 dependencies:
-  - 'webform:webform'
-  - 'drupal:advancedqueue'
+  - "webform:webform"
+  - "drupal:advancedqueue"

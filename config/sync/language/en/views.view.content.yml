@@ -1,5 +1,5 @@
 label: Content
-description: 'Find and manage content.'
+description: "Find and manage content."
 display:
   default:
     display_title: Default
@@ -9,8 +9,8 @@ display:
         title:
           label: Title
         type:
-          label: 'Content type'
-          separator: ', '
+          label: "Content type"
+          separator: ", "
         name:
           label: Author
         status:
@@ -25,32 +25,32 @@ display:
       pager:
         options:
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
+            next: "Next ›"
+            previous: "‹ Previous"
+            first: "« First"
+            last: "Last »"
       exposed_form:
         options:
           submit_button: Filter
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       empty:
         area_text_custom:
-          content: 'No content available.'
+          content: "No content available."
       filters:
         title:
           expose:
             label: Title
         type:
           expose:
-            label: 'Content type'
+            label: "Content type"
         status:
           expose:
             label: Status
           group_info:
-            label: 'Published status'
+            label: "Published status"
             group_items:
               1:
                 title: Published
@@ -66,4 +66,4 @@ display:
         title: Content
       tab_options:
         title: Content
-        description: 'Find and manage content'
+        description: "Find and manage content"
