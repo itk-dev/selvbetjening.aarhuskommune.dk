@@ -15,5 +15,4 @@ dfds-embed:
     theme:
       build/dfds.css: { }
   js:
-    assets/js/dkfds.js: { attributes: { defer: true } }
     build/dfds.js: { }
