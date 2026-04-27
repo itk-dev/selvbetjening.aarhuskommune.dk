@@ -1,7 +1,7 @@
 exposed-form-display:
   css:
     theme:
-      css/exposed-form-display.css: { }
+      css/exposed-form-display.css: {}
 author_bulk_assignment:
   version: 1.x
   css:

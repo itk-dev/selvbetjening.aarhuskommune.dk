@@ -1,0 +1,24 @@
+services:
+  # Autowiring Drush commands does not yet work (when using Drush 12),
+  # cf. https://www.drush.org/13.x/commands/
+  itkdev_example_forms.generate_webform:
+    class: Drupal\itkdev_example_forms\Command\GenerateWebformCommand
+    arguments: &arguments
+      - "@entity_type.manager"
+      - "@config.manager"
+      - "@Drupal\\itkdev_example_forms\\ModuleHelper"
+      - "@file_system"
+    tags:
+      - { name: console.command }
+
+  itkdev_example_forms.export_webforms:
+    class: Drupal\itkdev_example_forms\Command\ExportWebformsCommand
+    arguments: *arguments
+    tags:
+      - { name: console.command }
+
+  itkdev_example_forms.reset_webforms:
+    class: Drupal\itkdev_example_forms\Command\ImportWebformsCommand
+    arguments: *arguments
+    tags:
+      - { name: console.command }

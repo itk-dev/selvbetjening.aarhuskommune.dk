@@ -22,7 +22,7 @@ class BookingController extends ControllerBase {
   /**
    * UserBookingsController constructor.
    *
-   * @param BookingHelper $bookingsHelper
+   * @param \Drupal\itkdev_booking\Helper\BookingHelper $bookingsHelper
    */
   public function __construct(BookingHelper $bookingsHelper) {
     $this->bookingHelper = $bookingsHelper;
@@ -43,11 +43,12 @@ class BookingController extends ControllerBase {
    * @param \Symfony\Component\HttpFoundation\Request $request
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *
    * @throws \JsonException
    */
   public function getLocations(Request $request): JsonResponse {
     if ($this->bookingApiSampleData) {
-      $data = SampleDataHelper::getSampleData("locations");
+      $data = SampleDataHelper::getSampleData('locations');
       return new JsonResponse($data, 200);
     }
 
@@ -67,7 +68,7 @@ class BookingController extends ControllerBase {
    */
   public function getResources(Request $request): JsonResponse {
     if ($this->bookingApiSampleData) {
-      $data = SampleDataHelper::getSampleData("resources");
+      $data = SampleDataHelper::getSampleData('resources');
       return new JsonResponse($data, 200);
     }
 
@@ -87,7 +88,7 @@ class BookingController extends ControllerBase {
    */
   public function getAllResources(Request $request): JsonResponse {
     if ($this->bookingApiSampleData) {
-      $data = SampleDataHelper::getSampleData("resources");
+      $data = SampleDataHelper::getSampleData('resources');
       return new JsonResponse($data, 200);
     }
 
@@ -103,11 +104,12 @@ class BookingController extends ControllerBase {
    * @param string $resourceEmail
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *
    * @throws \JsonException
    */
   public function getResource(Request $request, string $resourceEmail): JsonResponse {
     if ($this->bookingApiSampleData) {
-      $data = SampleDataHelper::getSampleData("resource");
+      $data = SampleDataHelper::getSampleData('resource');
       return new JsonResponse($data, 200);
     }
 
@@ -127,7 +129,7 @@ class BookingController extends ControllerBase {
    */
   public function getBusyIntervals(Request $request): JsonResponse {
     if ($this->bookingApiSampleData) {
-      $data = SampleDataHelper::getSampleData("busy-intervals");
+      $data = SampleDataHelper::getSampleData('busy-intervals');
       return new JsonResponse($data, 200);
     }
 
@@ -142,11 +144,12 @@ class BookingController extends ControllerBase {
    * @param \Symfony\Component\HttpFoundation\Request $request
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *
    * @throws \JsonException
    */
   public function getUserBookings(Request $request): JsonResponse {
     if ($this->bookingApiSampleData) {
-      $data = SampleDataHelper::getSampleData("user-bookings");
+      $data = SampleDataHelper::getSampleData('user-bookings');
       return new JsonResponse($data, 200);
     }
 
@@ -161,6 +164,7 @@ class BookingController extends ControllerBase {
    * @param \Symfony\Component\HttpFoundation\Request $request
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *
    * @throws \JsonException
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
@@ -177,6 +181,7 @@ class BookingController extends ControllerBase {
    * @param string $bookingId
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *
    * @throws \JsonException
    */
   public function deleteUserBooking(Request $request, string $bookingId): JsonResponse {
@@ -196,6 +201,7 @@ class BookingController extends ControllerBase {
    * @param string $bookingId
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *
    * @throws \JsonException
    */
   public function patchUserBooking(Request $request, string $bookingId): JsonResponse {
@@ -215,11 +221,12 @@ class BookingController extends ControllerBase {
    * @param string $bookingId
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *
    * @throws \JsonException
    */
   public function getUserBookingDetails(Request $request, string $bookingId): JsonResponse {
     if ($this->bookingApiSampleData) {
-      $data = SampleDataHelper::getSampleData("booking-details");
+      $data = SampleDataHelper::getSampleData('booking-details');
       return new JsonResponse($data, 200);
     }
 
@@ -234,6 +241,7 @@ class BookingController extends ControllerBase {
    * @param \Symfony\Component\HttpFoundation\Request $request
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *
    * @throws \JsonException
    */
   public function getUserInformation(Request $request): JsonResponse {
@@ -243,4 +251,5 @@ class BookingController extends ControllerBase {
       'userType' => $userArray['userType'],
     ], 200);
   }
+
 }

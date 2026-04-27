@@ -1,7 +1,7 @@
 uuid: b103e4cd-26b0-4d41-ad77-487eacf58358
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 id: os2forms_payment
 label: os2forms_payment
 backend: database

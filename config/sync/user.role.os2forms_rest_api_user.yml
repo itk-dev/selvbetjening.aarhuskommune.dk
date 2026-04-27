@@ -17,13 +17,13 @@ dependencies:
 _core:
   default_config_hash: cIIUey-tvhk71aQgyiHMMxsotedc1bXPNceYvSuKfSw
 id: os2forms_rest_api_user
-label: 'OS2Form REST API user'
+label: "OS2Form REST API user"
 weight: 2
 is_admin: null
 permissions:
-  - 'restful get webform_rest_elements'
-  - 'restful get webform_rest_fields'
-  - 'restful get webform_rest_form_submissions'
-  - 'restful get webform_rest_submission'
-  - 'use key authentication'
-  - 'view encrypted values'
+  - "restful get webform_rest_elements"
+  - "restful get webform_rest_fields"
+  - "restful get webform_rest_form_submissions"
+  - "restful get webform_rest_submission"
+  - "use key authentication"
+  - "view encrypted values"

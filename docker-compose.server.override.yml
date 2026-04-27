@@ -10,6 +10,7 @@ networks:
 
 services:
   phpfpm:
+    image: itkdev/php8.3-fpm:alpine
     networks:
       - organisation_api
     environment:
@@ -32,9 +33,9 @@ services:
     networks:
       - app
     environment:
-        CLAMD_CONF_MaxFileSize: "325M"
-        CLAMD_CONF_StreamMaxLength: "325M"
-        CLAMD_CONF_MaxScanSize: "400M"
+      CLAMD_CONF_MaxFileSize: "325M"
+      CLAMD_CONF_StreamMaxLength: "325M"
+      CLAMD_CONF_MaxScanSize: "400M"
 
   nginx:
     environment:

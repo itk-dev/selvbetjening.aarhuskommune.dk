@@ -12,5 +12,5 @@ label: Virksomhed
 weight: 0
 is_admin: null
 permissions:
-  - 'access content'
-  - 'display eu cookie compliance popup'
+  - "access content"
+  - "display eu cookie compliance popup"

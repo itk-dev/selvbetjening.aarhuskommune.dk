@@ -6,6 +6,6 @@ dependencies:
     - block_content
 id: block_content.token
 label: Token
-description: ''
+description: ""
 targetEntityType: block_content
 cache: true

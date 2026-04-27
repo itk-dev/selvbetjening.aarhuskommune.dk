@@ -3,8 +3,8 @@ _core:
 langcode: da
 favicon:
   mimetype: image/vnd.microsoft.icon
-  path: ''
-  url: ''
+  path: ""
+  url: ""
   use_default: true
 features:
   comment_user_picture: true
@@ -12,6 +12,6 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: ''
-  url: ''
+  path: ""
+  url: ""
   use_default: true

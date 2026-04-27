@@ -1,10 +1,10 @@
 uuid: e25a520a-c440-43ac-8224-4aa324a57903
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: nzL5d024NjXIX_8TlT6uFAu973lmfkmHklJC-2i9rAE
 id: medium
-label: 'Standard mellem dato'
+label: "Standard mellem dato"
 locked: false
-pattern: 'D, d/m/Y - H:i'
+pattern: "D, d/m/Y - H:i"

@@ -1,7 +1,7 @@
 uuid: c77a2988-e216-42bf-b62d-c0ad7975c5a3
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 name: Affiliation
 vid: user_affiliation
 description: null

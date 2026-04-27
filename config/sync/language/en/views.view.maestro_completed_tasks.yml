@@ -1,5 +1,5 @@
-label: 'Maestro Completed Tasks'
-description: 'Shows all Maestro Completed Tasks'
+label: "Maestro Completed Tasks"
+description: "Shows all Maestro Completed Tasks"
 display:
   default:
     display_title: Master
@@ -8,14 +8,14 @@ display:
         options:
           submit_button: Apply
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
         options:
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
+            items_per_page_label: "Items per page"
+            items_per_page_options_all_label: "- All -"
             offset_label: Offset
           tags:
             previous: ��
@@ -23,14 +23,14 @@ display:
       fields:
         task_label:
           label: Task
-          separator: ', '
+          separator: ", "
         created:
           label: Assigned
-          separator: ', '
+          separator: ", "
         completion_time:
           label: Completed
         who_completed:
-          label: 'Completed By'
+          label: "Completed By"
       empty:
         area:
           content:

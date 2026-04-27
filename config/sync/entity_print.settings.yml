@@ -5,5 +5,5 @@ default_css: false
 force_download: true
 print_engines:
   pdf_engine: dompdf
-  epub_engine: ''
+  epub_engine: ""
   word_docx_engine: word_docx

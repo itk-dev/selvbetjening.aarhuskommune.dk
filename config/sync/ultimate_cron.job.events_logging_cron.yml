@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - events_logging
-title: 'Default cron handler'
+title: "Default cron handler"
 id: events_logging_cron
 weight: 0
 module: events_logging

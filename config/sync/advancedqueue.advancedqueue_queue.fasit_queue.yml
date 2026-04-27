@@ -1,9 +1,9 @@
 uuid: 4c32545f-717b-478e-9ddc-b35992dc7b69
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 id: fasit_queue
-label: 'Fasit Queue'
+label: "Fasit Queue"
 backend: database
 backend_configuration:
   lease_time: 300

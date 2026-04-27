@@ -3,12 +3,12 @@ _core:
 langcode: da
 attributes:
   class:
-    label: ''
-    description: ''
+    label: ""
+    description: ""
   target:
-    label: ''
-    description: ''
+    label: ""
+    description: ""
     options:
-      _blank: 'New window (_blank)'
-      _self: 'Same window (_self)'
-    default_value: ''
+      _blank: "New window (_blank)"
+      _self: "Same window (_self)"
+    default_value: ""

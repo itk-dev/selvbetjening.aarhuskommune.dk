@@ -20,7 +20,7 @@ third_party_settings:
 _core:
   default_config_hash: p3QtDEbkZg211Tn8B67GmDmFKPvdELm3IuEUS4_OcWg
 id: udgivelse_af_forlob_og_webformularer
-label: 'Udgivelse af forløb og webformularer'
+label: "Udgivelse af forløb og webformularer"
 type: content_moderation
 type_settings:
   states:
@@ -41,7 +41,7 @@ type_settings:
       default_revision: true
   transitions:
     create_new_draft:
-      label: 'Create New Draft'
+      label: "Create New Draft"
       from:
         - draft
         - published

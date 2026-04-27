@@ -1,10 +1,10 @@
 uuid: 4612ef97-4fbf-4d13-8bb0-76dda2570394
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: og8sWXhBuHbLMw3CoiBEZjgqSyhFBFmcbUW_wLcfNbo
 id: long
-label: 'Standard lang dato'
+label: "Standard lang dato"
 locked: false
-pattern: 'l j F Y - H:i'
+pattern: "l j F Y - H:i"

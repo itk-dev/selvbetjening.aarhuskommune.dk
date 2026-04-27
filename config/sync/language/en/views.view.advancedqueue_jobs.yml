@@ -1,4 +1,4 @@
-label: 'Advanced Queue jobs'
+label: "Advanced Queue jobs"
 display:
   default:
     display_title: Master
@@ -7,7 +7,7 @@ display:
         options:
           submit_button: Apply
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
@@ -15,18 +15,18 @@ display:
           tags:
             previous: ‹‹
             next: ››
-            first: '« First'
-            last: 'Last »'
+            first: "« First"
+            last: "Last »"
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
+            items_per_page_label: "Items per page"
+            items_per_page_options_all_label: "- All -"
             offset_label: Offset
       fields:
         job_id:
-          label: 'Job ID'
+          label: "Job ID"
         num_retries:
           alter:
-            text: 'Number of retries: {{ num_retries }}'
+            text: "Number of retries: {{ num_retries }}"
           format_plural_string: !!binary MQNAY291bnQ=
         state:
           label: State
@@ -36,15 +36,15 @@ display:
 
               {{ num_retries }}
         type:
-          label: 'Job type'
+          label: "Job type"
         payload:
           label: Payload
           alter:
-            text: '<pre>{{ payload }}</pre>'
+            text: "<pre>{{ payload }}</pre>"
         available:
-          label: 'Available date'
+          label: "Available date"
         processed:
-          label: 'Processed date'
+          label: "Processed date"
           alter:
             text: |-
               {{ processed }}
@@ -53,26 +53,26 @@ display:
         message:
           label: Message
           alter:
-            text: 'Message: {{ message }}'
+            text: "Message: {{ message }}"
         operations:
           label: Operations
       filters:
         type:
           expose:
-            label: 'Job type'
+            label: "Job type"
         state:
           expose:
             label: State
         available:
           expose:
-            label: 'Available from'
+            label: "Available from"
             placeholder: YYYY-MM-DD
           group_info:
-            label: 'Available date'
+            label: "Available date"
       title: Jobs
       empty:
         area_text_custom:
-          content: 'No jobs found'
+          content: "No jobs found"
       arguments:
         queue_id:
           exception:

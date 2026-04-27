@@ -1,5 +1,5 @@
-label: 'Modereret indhold'
-description: 'Find og moderér indhold.'
+label: "Modereret indhold"
+description: "Find og moderér indhold."
 display:
   default:
     display_title: Master
@@ -8,35 +8,35 @@ display:
         options:
           submit_button: Filter
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
         options:
           tags:
-            previous: '‹ Forrige'
-            next: 'Næste ›'
-            first: '« Første'
-            last: 'Sidste »'
+            previous: "‹ Forrige"
+            next: "Næste ›"
+            first: "« Første"
+            last: "Sidste »"
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         title:
           label: Titel
-          separator: ', '
+          separator: ", "
         type:
           label: Indholdstype
-          separator: ', '
+          separator: ", "
         name:
           label: Forfatter
-          separator: ', '
+          separator: ", "
         moderation_state:
-          separator: ', '
+          separator: ", "
         changed:
           label: Opdateret
-          separator: ', '
+          separator: ", "
         operations:
           label: Handlinger
       filters:
@@ -49,6 +49,6 @@ display:
         langcode:
           expose:
             label: Sprog
-      title: 'Modereret indhold'
+      title: "Modereret indhold"
   moderated_content:
-    display_title: 'Modereret indhold'
+    display_title: "Modereret indhold"

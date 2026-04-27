@@ -1,5 +1,5 @@
-label: 'Maestro All Flows'
-description: 'Shows all Maestro workflows regardless of completion status.'
+label: "Maestro All Flows"
+description: "Shows all Maestro workflows regardless of completion status."
 display:
   default:
     display_title: Master
@@ -8,47 +8,47 @@ display:
         options:
           submit_button: Apply
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
         options:
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
+            items_per_page_label: "Items per page"
+            items_per_page_options_all_label: "- All -"
             offset_label: Offset
           tags:
-            previous: '??'
-            next: '??'
+            previous: "??"
+            next: "??"
       fields:
         process_id:
           label: ProcessID
-          separator: ', '
+          separator: ", "
         process_name:
-          label: 'Process Name'
-          separator: ', '
+          label: "Process Name"
+          separator: ", "
         template_id:
-          label: 'Template Machine Name/ID'
-          separator: ', '
+          label: "Template Machine Name/ID"
+          separator: ", "
         initiator_username:
-          label: 'The initiator of the process.'
+          label: "The initiator of the process."
         created:
           label: Created
-          separator: ', '
+          separator: ", "
         completed:
           label: Completed
-          separator: ', '
+          separator: ", "
         admin_operations:
           label: Operations
         process_details:
-          label: 'Process Details'
+          label: "Process Details"
       filters:
         process_name:
           expose:
-            label: 'Process Name'
+            label: "Process Name"
         template_id_filter:
           expose:
-            label: 'Template Name'
-      title: 'Maestro All Flows'
+            label: "Template Name"
+      title: "Maestro All Flows"
   all_flows_full:
     display_title: Page

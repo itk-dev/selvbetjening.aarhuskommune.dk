@@ -7,7 +7,7 @@ dependencies:
   module:
     - user
 id: user_remove_role_action.site_admin
-label: 'Remove the Site admin role from the selected user(s)'
+label: "Remove the Site admin role from the selected user(s)"
 type: user
 plugin: user_remove_role_action
 configuration:

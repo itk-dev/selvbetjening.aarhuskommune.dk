@@ -1,9 +1,9 @@
 uuid: 7268b24d-ed77-4b36-af45-b3cb440910b3
 langcode: en
 status: true
-dependencies: {  }
+dependencies: {}
 id: webform_revisions
-label: 'Webform Revisions'
+label: "Webform Revisions"
 description: null
 help: null
 preview_mode: 1

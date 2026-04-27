@@ -6,7 +6,7 @@ dependencies:
     - editor
 _core:
   default_config_hash: AFh8y8IOwZo6iOkkAWJXMwVEN_iNUgcyz9qfN8bhV9U
-name: 'Full HTML'
+name: "Full HTML"
 format: full_html
 weight: -9
 filters:
@@ -15,26 +15,26 @@ filters:
     provider: editor
     status: true
     weight: 11
-    settings: {  }
+    settings: {}
   filter_align:
     id: filter_align
     provider: filter
     status: true
     weight: 8
-    settings: {  }
+    settings: {}
   filter_caption:
     id: filter_caption
     provider: filter
     status: true
     weight: 9
-    settings: {  }
+    settings: {}
   filter_html:
     id: filter_html
     provider: filter
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <img src alt data-entity-type data-entity-uuid data-align data-caption>'
+      allowed_html: "<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <img src alt data-entity-type data-entity-uuid data-align data-caption>"
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
@@ -42,4 +42,4 @@ filters:
     provider: filter
     status: true
     weight: 10
-    settings: {  }
+    settings: {}
