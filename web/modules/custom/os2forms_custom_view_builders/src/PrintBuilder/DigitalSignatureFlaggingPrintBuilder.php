@@ -34,12 +34,18 @@ final class DigitalSignatureFlaggingPrintBuilder extends Os2formsAttachmentPrint
   /**
    * {@inheritdoc}
    *
+   * @param array $entities
+   *   The entities to print.
+   * @param \Drupal\entity_print\Plugin\PrintEngineInterface $print_engine
+   *   The print engine.
    * @param string $scheme
    *   Stream wrapper scheme to save to.
    * @param string|false $filename
    *   Target filename, or FALSE to derive one.
    * @param bool $use_default_css
    *   Whether to include the default CSS.
+   * @param string $signaturePosition
+   *   Position for the digital signature validation text.
    */
   public function savePrintableDigitalSignature(array $entities, PrintEngineInterface $print_engine, $scheme = 'public', $filename = FALSE, $use_default_css = TRUE, string $signaturePosition = self::SIGNATURE_POSITION_AFTER_CONTENT) {
     $request = $this->requestStack->getCurrentRequest();
