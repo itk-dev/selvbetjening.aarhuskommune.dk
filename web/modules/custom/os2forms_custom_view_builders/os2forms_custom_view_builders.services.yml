@@ -1,7 +1,7 @@
 services:
   os2forms_custom_view_builders.digital_signature_link_stripper_subscriber:
     class: Drupal\os2forms_custom_view_builders\EventSubscriber\DigitalSignatureLinkStripperSubscriber
-    arguments: ['@request_stack']
+    arguments: ["@request_stack"]
     tags:
       - { name: event_subscriber }
 
@@ -9,8 +9,8 @@ services:
     class: Drupal\os2forms_custom_view_builders\PrintBuilder\DigitalSignatureFlaggingPrintBuilder
     decorates: os2forms_attachment.print_builder
     arguments:
-      - '@entity_print.renderer_factory'
-      - '@event_dispatcher'
-      - '@string_translation'
-      - '@file_system'
-      - '@request_stack'
+      - "@entity_print.renderer_factory"
+      - "@event_dispatcher"
+      - "@string_translation"
+      - "@file_system"
+      - "@request_stack"

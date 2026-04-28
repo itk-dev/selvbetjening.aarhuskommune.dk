@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-497](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/497)
+  Fjerende links fra OS2Forms Attachments der er indstillet til digital
+  signering.
 * [PR-494](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/494)
   Undlod at eksportere eksempelformularkonfiguration
 * [PR-489](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/489)
