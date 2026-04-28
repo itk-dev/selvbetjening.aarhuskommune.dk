@@ -25,6 +25,9 @@ third_party_settings:
       url_til_din_favoritside:
         encrypt: true
         encrypt_profile: webform
+      document_file:
+        encrypt: true
+        encrypt_profile: webform
       os2forms_attachment:
         encrypt: true
         encrypt_profile: webform
@@ -79,7 +82,7 @@ template: false
 archive: false
 id: itkdev_ex_digital_signature_002
 title: "Webform with links in container and digital signature"
-description: "<p>Webform with links both via the URL-element and within a container.</p><p>Attachment element IS configured to be for digital signature.</p>"
+description: "<p>Webform with links via the Telephone-, URL- and Document file-element. Some within a container to check up on nested elements.</p><p>Attachment element IS configured to be for digital signature.</p>"
 categories: {}
 elements: |-
   telefon:
@@ -97,6 +100,9 @@ elements: |-
       '#type': url
       '#title': 'URL til din favoritside'
       '#default_value': 'https://www.dr.dk/'
+    document_file:
+      '#type': webform_document_file
+      '#title': 'Document file'
   os2forms_attachment:
     '#type': os2forms_attachment
     '#title': 'OS2Forms Attachment'
