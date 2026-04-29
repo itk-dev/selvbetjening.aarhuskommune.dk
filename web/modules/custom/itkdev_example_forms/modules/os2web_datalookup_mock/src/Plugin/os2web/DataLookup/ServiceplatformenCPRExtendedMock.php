@@ -24,10 +24,18 @@ class ServiceplatformenCPRExtendedMock extends ServiceplatformenCPRExtended {
     try {
       $id = $request['PNR'] ?? NULL;
 
+      $dataFilename = __DIR__ . '/' . $method . '.yaml';
       // https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
-      $data = Yaml::parseFile(__DIR__ . '/' . $method . '.yaml', flags: Yaml::PARSE_CONSTANT);
+      $data = Yaml::parseFile($dataFilename, flags: Yaml::PARSE_CONSTANT);
       if (!isset($data[$id])) {
-        throw new \RuntimeException('Invalid CPR: ' . $id);
+        $message = sprintf('Invalid mock CPR: %s', $id);
+        if (empty($data)) {
+          $message .= PHP_EOL . sprintf('No mock CPR values defined in %s', $dataFilename);
+        }
+        else {
+          $message .= PHP_EOL . sprintf('CPR values defined in %s:', $dataFilename) . PHP_EOL . implode(PHP_EOL, array_keys($data));
+        }
+        throw new \RuntimeException($message);
       }
 
       $result = $data[$id] + ['status' => TRUE];
