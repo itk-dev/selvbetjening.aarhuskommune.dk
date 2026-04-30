@@ -3,7 +3,8 @@
 namespace Drupal\os2forms_selvbetjening\Drush\Commands;
 
 use Drupal\advancedqueue\Entity\Queue;
-use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\SupportsListingJobsInterface;
+use Drupal\advancedqueue\Entity\QueueInterface;
+use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\BackendInterface;
 use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\SupportsLoadingJobsInterface;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Config\MemoryStorage;
@@ -51,26 +52,66 @@ final class AdvancedQueueCommands extends DrushCommands {
   #[CLI\Argument(name: 'queue_id', description: 'The queue ID.')]
   #[CLI\Argument(name: 'job_id', description: 'Job ID')]
   #[CLI\Option(name: 'show-payload', description: 'Show payload')]
+  #[CLI\Option(name: 'search', description: 'Search for a value, by path or by a JSON object')]
+  #[CLI\Option(name: 'limit', description: 'Maximum number of jobs to return (at most 100)')]
   #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue', description: 'Show jobs in "my_queue" queue.')]
   #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue 87', description: 'Show job with ID 87 in "my_queue" queue.')]
   #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue --show-payload', description: 'Show job payload.')]
+  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue --search horse', description: 'List jobs where "horse" as a value in the payload.')]
+  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue --search handler.id=87', description: 'List jobs where payload.handler.id has the (string) value "87".')]
+  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue --search \'{"submissionId": "87"}\'', description: 'List jobs where payload contains the specified JSON object.')]
   public function listJobs(
     string $queue_id,
     ?string $job_id = NULL,
     $options = [
       'show-payload' => FALSE,
+      'search' => NULL,
+      'limit' => 10,
     ],
   ) {
-    [$queue, $backend] = $this->loadQueueAndBackend($queue_id);
+    [, $backend] = $this->loadQueueAndBackend($queue_id);
 
-    $query = $this->connection->select('advancedqueue', 't')
-      ->fields('t', ['job_id'])
-      ->condition('queue_id', $queue->id());
+    // Build the query by hand to use JSON functions (cf.
+    // https://www.drupal.org/project/drupal/issues/3378275)
+    $query = 'SELECT job_id FROM {advancedqueue} WHERE queue_id = :queue_id';
+    $params = [
+      ':queue_id' => $queue_id,
+    ];
     if ($job_id) {
-      $query->condition('job_id', $job_id);
+      $query .= 'AND job_id = :job_id';
+      $params[':job_id'] = $job_id;
     }
+    if ($search = ($options['search'] ?? NULL)) {
+      $obj = json_decode($search);
+      if ($obj && is_object($obj)) {
+        // Search by JSON object, e.g
+        // --search '{"submissionId": "1"}'
+        // https://mariadb.com/docs/server/reference/sql-functions/special-functions/json-functions/json_contains
+        $query .= ' AND JSON_CONTAINS(payload, JSON_EXTRACT(:value, \'$\'))';
+        $params[':value'] = json_encode($obj);
+      }
+      elseif (preg_match('/^(?P<path>[^=]+)=(?P<value>.+)/', $search, $matches)) {
+        // Search by path and value, e.g
+        // --search handlerSettings.handler_id=fordelingskomponent_sf2900_1
+        // https://mariadb.com/docs/server/reference/sql-functions/special-functions/json-functions/json_extract
+        $query .= ' AND JSON_EXTRACT(payload, :path) = :value';
+        $params[':path'] = '$.' . $matches['path'];
+        $params[':value'] = $matches['value'];
+      }
+      else {
+        // Search by value, e.g
+        // --search fordelingskomponent_sf2900_1
+        // https://mariadb.com/docs/server/reference/sql-functions/special-functions/json-functions/json_search
+        $query .= ' AND JSON_SEARCH(payload, \'one\', :value) IS NOT NULL';
+        $params[':value'] = $search;
+      }
+    }
+    // Clamp limit between 0 and 100 (both inclusive).
+    $limit = max(0, min(100, (int) $options['limit']));
+    // @todo Can we pass limit as a parameter?
+    $query .= ' ORDER BY job_id DESC LIMIT '.$limit;
 
-    $jobIds = $query->execute()->fetchCol();
+    $jobIds = $this->connection->query($query, $params)->fetchCol();
 
     if (empty($jobIds)) {
       $this->io()->info('No jobs found.');
@@ -181,7 +222,7 @@ final class AdvancedQueueCommands extends DrushCommands {
   /**
    * Load a queue and its backend.
    *
-   * @return array
+   * @return array{QueueInterface, BackendInterface&SupportsLoadingJobsInterface}
    *   The queue and its backend.
    */
   private function loadQueueAndBackend(string $queueId): array {
@@ -192,9 +233,8 @@ final class AdvancedQueueCommands extends DrushCommands {
     assert($queue instanceof Queue);
 
     $backend = $queue->getBackend();
-    if (!$backend instanceof SupportsListingJobsInterface
-      || !$backend instanceof SupportsLoadingJobsInterface) {
-      throw new RuntimeException(dt('Backend (%backend_class) for %queue does not support listing and loading jobs.', [
+    if (!$backend instanceof SupportsLoadingJobsInterface) {
+      throw new RuntimeException(dt('Backend (%backend_class) for %queue does not support loading jobs.', [
         '%backend_class' => $backend::class,
         '%queue' => $queue->label(),
       ]));
