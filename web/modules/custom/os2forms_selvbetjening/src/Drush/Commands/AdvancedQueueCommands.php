@@ -3,7 +3,6 @@
 namespace Drupal\os2forms_selvbetjening\Drush\Commands;
 
 use Drupal\advancedqueue\Entity\Queue;
-use Drupal\advancedqueue\Entity\QueueInterface;
 use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\BackendInterface;
 use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\SupportsLoadingJobsInterface;
 use Drupal\Component\Utility\NestedArray;
@@ -69,7 +68,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       'limit' => 1,
     ],
   ) {
-    [, $backend] = $this->loadQueueAndBackend($queue_id);
+    $backend = $this->loadQueueBackend($queue_id);
 
     // Build the query by hand to use JSON functions (cf.
     // https://www.drupal.org/project/drupal/issues/3378275)
@@ -167,7 +166,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       'unset' => [],
     ],
   ) {
-    [, $backend] = $this->loadQueueAndBackend($queue_id);
+    $backend = $this->loadQueueBackend($queue_id);
     try {
       $updateJob = new \ReflectionMethod($backend, 'updateJob');
     }
@@ -220,12 +219,9 @@ final class AdvancedQueueCommands extends DrushCommands {
   }
 
   /**
-   * Load a queue and its backend.
-   *
-   * @return array{QueueInterface, BackendInterface&SupportsLoadingJobsInterface}
-   *   The queue and its backend.
+   * Load a queue's backend.
    */
-  private function loadQueueAndBackend(string $queueId): array {
+  private function loadQueueBackend(string $queueId): BackendInterface&SupportsLoadingJobsInterface {
     $queue = $this->queueStorage->load($queueId);
     if (NULL === $queue) {
       throw new RuntimeException(dt('Cannot load queue %id.', ['%id' => $queueId]));
@@ -240,7 +236,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       ]));
     }
 
-    return [$queue, $backend];
+    return $backend;
   }
 
   /**
