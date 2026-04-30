@@ -3,6 +3,8 @@
 namespace Drupal\os2forms_selvbetjening\Drush\Commands;
 
 use Drupal\advancedqueue\Entity\Queue;
+use Drupal\advancedqueue\Entity\QueueInterface;
+use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\BackendInterface;
 use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\SupportsLoadingJobsInterface;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Config\MemoryStorage;
