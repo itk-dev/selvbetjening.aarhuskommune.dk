@@ -3,8 +3,6 @@
 namespace Drupal\os2forms_selvbetjening\Drush\Commands;
 
 use Drupal\advancedqueue\Entity\Queue;
-use Drupal\advancedqueue\Entity\QueueInterface;
-use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\BackendInterface;
 use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\SupportsLoadingJobsInterface;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Config\MemoryStorage;
@@ -57,7 +55,7 @@ final class AdvancedQueueCommands extends DrushCommands {
   #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue', description: 'Show jobs in "my_queue" queue.')]
   #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue 87', description: 'Show job with ID 87 in "my_queue" queue.')]
   #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue --show-payload', description: 'Show job payload.')]
-  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue --search horse', description: 'List jobs where "horse" as a value in the payload.')]
+  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue --search horse', description: 'List jobs where "horse" is a value in the payload.')]
   #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue --search handler.id=87', description: 'List jobs where payload.handler.id has the (string) value "87".')]
   #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue --search \'{"submissionId": "87"}\'', description: 'List jobs where payload contains the specified JSON object.')]
   public function listJobs(
@@ -66,7 +64,7 @@ final class AdvancedQueueCommands extends DrushCommands {
     $options = [
       'show-payload' => FALSE,
       'search' => NULL,
-      'limit' => 10,
+      'limit' => 1,
     ],
   ) {
     [, $backend] = $this->loadQueueAndBackend($queue_id);
@@ -109,7 +107,7 @@ final class AdvancedQueueCommands extends DrushCommands {
     // Clamp limit between 0 and 100 (both inclusive).
     $limit = max(0, min(100, (int) $options['limit']));
     // @todo Can we pass limit as a parameter?
-    $query .= ' ORDER BY job_id DESC LIMIT '.$limit;
+    $query .= ' ORDER BY job_id DESC LIMIT ' . $limit;
 
     $jobIds = $this->connection->query($query, $params)->fetchCol();
 
