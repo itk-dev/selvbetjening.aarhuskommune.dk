@@ -79,6 +79,9 @@ services:
       # Cron-metrics protection.
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-metrics.rule=Host(`${COMPOSE_DOMAIN:?}`) && PathPrefix(`/cron-metrics`) "
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-metrics.middlewares=ITKMetricsAuth@file"
+      # mTLS (doesn't yet make much sense for development)
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-mtls.rule=Host(`mtls-${COMPOSE_DOMAIN:?}`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-mtls.middlewares=redirect-to-https"
 
   memcached:
     image: memcached:alpine
