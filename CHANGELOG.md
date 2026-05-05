@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-497](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/497)
+  Fjerende links fra OS2Forms Attachments der er indstillet til digital
+  signering.
 * [PR-498](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/498)
   Tilføjede fikse køjobkomandoer
 * [PR-500](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/500)

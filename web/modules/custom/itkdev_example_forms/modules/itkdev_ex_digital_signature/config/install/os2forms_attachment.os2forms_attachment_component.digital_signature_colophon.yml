@@ -1,0 +1,10 @@
+langcode: da
+status: true
+dependencies:
+  enforced:
+    module:
+      - itkdev_ex_digital_signature
+id: digital_signature_colophon
+label: "Digital signature colophon"
+body: '<p>[webform_submission:completed:custom:d. F Y]</p><p><strong>Aarhus Kommune</strong><br />Rådhuspladsen 2<br />8000 Aarhus C</p><p><a href="https://www.dr.dk/">Hjemmeside</a></p>'
+type: colophon
