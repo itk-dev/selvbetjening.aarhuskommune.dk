@@ -8,6 +8,13 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 * [PR-486](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/486)
   Style progress bar ud fra "Det fælles design system".
+* [PR-497](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/497)
+  Fjerende links fra OS2Forms Attachments der er indstillet til digital
+  signering.
+* [PR-498](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/498)
+  Tilføjede fikse køjobkomandoer
+* [PR-500](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/500)
+  Added mTLS config
 * [PR-494](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/494)
   Undlod at eksportere eksempelformularkonfiguration
 * [PR-489](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/489)
@@ -325,7 +332,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   version.
 * Tilføjede mulighed for at sende notifikation hvis
   størrelse på e-mailvedhæftninger overstiger grænse. (<https://os2forms-leantime.itkdev.dk/tickets/showKanban#/tickets/showTicket/132>)
-* Opdaterede [OS2Forms Organisation](https://github.com/itk-dev/os2forms_organisation)
+* Opdaterede [OS2Forms Organisation](https://github.com/1itk-dev/os2forms_organisation)
   version. (<https://os2forms-leantime.itkdev.dk/tickets/showKanban#/tickets/showTicket/96>)
 * Tilføjede signatur-element patches. (<https://os2forms-leantime.itkdev.dk/tickets/showKanban#/tickets/showTicket/133>)
 * CKEditor 5 link standard `https` protocol. (<https://os2forms-leantime.itkdev.dk/tickets/showKanban#/tickets/showTicket/168>)
