@@ -6,13 +6,14 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
-* Add new progress bar
+* [PR-486](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/486)
+  Style progress bar ud fra "Det fælles design system".
 * [PR-494](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/494)
   Undlod at eksportere eksempelformularkonfiguration
 * [PR-489](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/489)
   Tilføjede NemLog-in-eksempelformularer.
 * [PR-492](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/492)
-  * Opstrammede eksempelformularkommandoer
+  Opstrammede eksempelformularkommandoer
 * [PR-490](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/490)
   Opdaterede projektskabelon.
 * [PR-488](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/488)

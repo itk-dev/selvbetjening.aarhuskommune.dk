@@ -5,8 +5,9 @@
 Current version of the design system 11.2
 
 Used components:
- - [Step indicator](https://designsystem.dk/komponenter/trinindikator/)
- - [Modal](https://designsystem.dk/komponenter/modal)
+
+- [Step indicator](https://designsystem.dk/komponenter/trinindikator/)
+- [Modal](https://designsystem.dk/komponenter/modal)
 
 ## PDF templates
 

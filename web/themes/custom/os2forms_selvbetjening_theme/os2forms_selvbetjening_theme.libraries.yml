@@ -13,6 +13,6 @@ dfds-embed:
   version: 1.x
   css:
     theme:
-      build/dfds.css: { }
+      build/dfds.css: {}
   js:
-    build/dfds.js: { }
+    build/dfds.js: {}
