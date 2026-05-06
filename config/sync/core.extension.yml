@@ -89,6 +89,7 @@ module:
   os2forms_failed_jobs: 0
   os2forms_fasit: 0
   os2forms_fbs_handler: 0
+  os2forms_fordelingskomponent: 0
   os2forms_forloeb: 0
   os2forms_get_organized: 0
   os2forms_granular_permissions: 0
@@ -135,6 +136,7 @@ module:
   switch_page_theme: 0
   syslog: 0
   system: 0
+  system_stream_wrapper: 0
   taxonomy: 0
   telephone: 0
   text: 0

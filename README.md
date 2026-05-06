@@ -1,5 +1,99 @@
 # selvbetjening.aarhuskommune.dk
 
+## Fordelingskomponenten
+
+### Production (dev)
+
+* <https://getcomposer.org/doc/03-cli.md#repository-repo>
+
+``` shell name=require-prod
+docker compose exec phpfpm composer repo add os2forms_fordelingskomponent vcs https://github.com/itk-dev/os2forms_fordelingskomponent
+docker compose exec phpfpm composer require "os2forms/os2forms_fordelingskomponent":"dev-os2forms_fordelingskomponent as 1.0.0" "itk-dev/serviceplatformen":"dev-feature/SF2900-Fordelingskomponenten as 1.9.0"
+```
+
+### Development
+
+Assuming that a clone of <https://github.com/itk-dev/os2forms_fordelingskomponent/tree/os2forms_fordelingskomponent>
+sits in `web/sites/default/modules/os2forms_fordelingskomponent` and a clone of
+<https://github.com/itk-dev/serviceplatformen/tree/feature/SF2900-Fordelingskomponenten> sits in
+`packages/itk-dev/serviceplatformen`:
+
+``` shell name=require-dev
+docker compose exec phpfpm composer repo add os2forms_fordelingskomponent '{
+ "type": "path",
+ "url": "web/sites/default/modules/os2forms_fordelingskomponent",
+ "options": {
+  "versions": {
+   "os2forms/os2forms_fordelingskomponent": "1.0-dev"
+  }
+ }
+}'
+docker compose exec phpfpm composer repo add serviceplatformen path packages/itk-dev/serviceplatformen
+
+docker compose exec phpfpm composer require "os2forms/os2forms_fordelingskomponent":"1.0-dev" "itk-dev/serviceplatformen":"dev-feature/SF2900-Fordelingskomponenten as 1.9.0"
+```
+
+``` json
+// composer.json
+    "repositories": [
+        {
+            "type": "path",
+            "url": "web/sites/default/modules/os2forms_fordelingskomponent",
+            "options": {
+                "symlink": false,
+                "versions": {
+                    "os2forms/os2forms_fordelingskomponent": "1.0-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "packages/itk-dev/serviceplatformen"
+        }
+    ]
+```
+
+``` diff
+diff --git a/composer.json b/composer.json
+index 9e18a9a3..4bd43818 100644
+--- a/composer.json
++++ b/composer.json
+@@ -30,8 +30,10 @@
+         "itk-dev/os2forms_failed_jobs": "^1.7",
+         "itk-dev/os2forms_nemlogin_openid_connect": "^2.2",
+         "itk-dev/os2forms_user_field_lookup": "^1.1",
++        "itk-dev/serviceplatformen": "dev-feature/SF2900-Fordelingskomponenten as 1.9.0",
+         "itk-dev/web_accessibility_statement": "^1.1",
+         "os2forms/os2forms": "dev-release/5.1.4 as 5.1.4",
++        "os2forms/os2forms_fordelingskomponent": "1.0-dev",
+         "os2forms/os2forms_forloeb_profile": "^1.15",
+         "os2forms/os2forms_get_organized": "^2.0",
+         "os2forms/os2forms_organisation": "^2.1",
+@@ -72,6 +74,20 @@
+                     "custom/itkdev_example_forms": "1.0-dev"
+                 }
+             }
++        },
++        {
++            "type": "path",
++            "url": "web/sites/default/modules/os2forms_fordelingskomponent",
++            "options": {
++                "symlink": false,
++                "versions": {
++                    "os2forms/os2forms_fordelingskomponent": "1.0-dev"
++                }
++            }
++        },
++        {
++            "type": "path",
++            "url": "packages/itk-dev/serviceplatformen"
+         }
+     ],
+     "minimum-stability": "dev",
+```
+
+-------------------------------------------------------------------------------
+
 ## Getting started
 
 These instructions will get you a copy of the project up and running on your
