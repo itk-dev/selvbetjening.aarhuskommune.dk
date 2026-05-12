@@ -16,6 +16,7 @@ ignored_config_entities:
   - "maestro.maestro_template.*"
   - "os2forms_attachment.os2forms_attachment_component.*"
   - os2forms_digital_post.settings
+  - os2forms_digital_signature.settings
   - os2forms_encrypt.settings
   - os2forms_fasit.settings
   - os2forms_forloeb.settings
