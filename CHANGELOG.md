@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-501](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/501)
+  Tilføjede Digital signatur indstillinger til config-ignore.
 * [PR-486](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/486)
   Style progress bar ud fra "Det fælles design system".
 * [PR-497](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/497)
