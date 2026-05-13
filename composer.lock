@@ -8397,16 +8397,16 @@
         },
         {
             "name": "itk-dev/serviceplatformen",
-            "version": "dev-feature/SF2900-Fordelingskomponenten",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/serviceplatformen.git",
-                "reference": "734ab8c2867a25da9317c999cb8cc82bc8cf8885"
+                "reference": "9afa6353606e3e5e3be0e4b0dd98334150afcbac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/serviceplatformen/zipball/734ab8c2867a25da9317c999cb8cc82bc8cf8885",
-                "reference": "734ab8c2867a25da9317c999cb8cc82bc8cf8885",
+                "url": "https://api.github.com/repos/itk-dev/serviceplatformen/zipball/9afa6353606e3e5e3be0e4b0dd98334150afcbac",
+                "reference": "9afa6353606e3e5e3be0e4b0dd98334150afcbac",
                 "shasum": ""
             },
             "require": {
@@ -8435,7 +8435,6 @@
                 "wsdltophp/packagebase": "^5.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.48",
                 "friendsofphp/php-cs-fixer": "^3.11",
                 "goetas-webservices/xsd2php": "dev-feature-xml-namespace-prefix#itk-0.4.14",
                 "phan/phan": "^5.4",
@@ -8486,9 +8485,9 @@
             ],
             "support": {
                 "issues": "https://github.com/itk-dev/serviceplatformen/issues",
-                "source": "https://github.com/itk-dev/serviceplatformen/tree/feature/SF2900-Fordelingskomponenten"
+                "source": "https://github.com/itk-dev/serviceplatformen/tree/1.9.0"
             },
-            "time": "2026-05-06T10:50:50+00:00"
+            "time": "2026-05-13T09:51:41+00:00"
         },
         {
             "name": "itk-dev/vault",
@@ -23634,12 +23633,6 @@
     ],
     "aliases": [
         {
-            "package": "itk-dev/serviceplatformen",
-            "version": "dev-feature/SF2900-Fordelingskomponenten",
-            "alias": "1.9.0",
-            "alias_normalized": "1.9.0.0"
-        },
-        {
             "package": "os2forms/os2forms",
             "version": "dev-release/5.1.6",
             "alias": "5.1.6",
@@ -23649,7 +23642,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/site_status_message": 15,
-        "itk-dev/serviceplatformen": 20,
         "os2forms/os2forms": 20,
         "os2forms/os2forms_fordelingskomponent": 20
     },
