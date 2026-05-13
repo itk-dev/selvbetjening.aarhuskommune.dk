@@ -9,7 +9,9 @@
 ``` shell name=require-prod
 git checkout develop composer.json composer.lock
 git restore --staged composer.json composer.lock
+
 docker compose exec phpfpm composer repo add os2forms_fordelingskomponent vcs https://github.com/itk-dev/os2forms_fordelingskomponent
+
 docker compose exec phpfpm composer update itk-dev/serviceplatformen
 docker compose exec phpfpm composer require "os2forms/os2forms_fordelingskomponent":"dev-os2forms_fordelingskomponent as 1.0.0"
 ```
