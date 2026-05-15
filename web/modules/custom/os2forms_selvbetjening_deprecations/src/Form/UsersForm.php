@@ -214,6 +214,7 @@ final class UsersForm extends FormBase {
    * Group all webforms by owner uid.
    *
    * @return array<int|string, \Drupal\webform\WebformInterface[]>
+   *   Webforms grouped by owner id.
    */
   private function groupWebformsByOwner(): array {
     $grouped = [];
