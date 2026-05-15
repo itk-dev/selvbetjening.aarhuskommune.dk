@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-503](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/503)
+  Tilføjede overblik over brugere og deres ejerskaber.
 * [PR-501](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/501)
   Tilføjede Digital signatur indstillinger til config-ignore.
 * [PR-486](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/486)
