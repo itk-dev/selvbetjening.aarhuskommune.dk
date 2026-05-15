@@ -37,3 +37,13 @@ os2forms_selvbetjening_deprecations.taxonomies:
     _permission: "access deprecation taxonomy overview"
   options:
     no_cache: TRUE
+
+os2forms_selvbetjening_deprecations.users:
+  path: "/admin/os2forms_selvbetjening_deprecations/users"
+  defaults:
+    _form: '\Drupal\os2forms_selvbetjening_deprecations\Form\UsersForm'
+    _title: "Users"
+  requirements:
+    _permission: "access deprecation user overview"
+  options:
+    no_cache: TRUE

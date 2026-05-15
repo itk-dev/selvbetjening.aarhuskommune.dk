@@ -47,6 +47,7 @@ permissions:
   - "access content overview"
   - "access contextual links"
   - "access deprecation taxonomy overview"
+  - "access deprecation user overview"
   - "access files overview"
   - "access own webform configuration"
   - "access site in maintenance mode"
