@@ -11,7 +11,7 @@ scan_mode: 0
 verbosity: 0
 mode_executable:
   executable_path: /usr/bin/clamscan
-  executable_parameters: ''
+  executable_parameters: ""
 mode_daemon_tcpip:
   hostname: clamav
   port: 3310

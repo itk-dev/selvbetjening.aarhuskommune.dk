@@ -13,31 +13,25 @@ editor: ckeditor
 settings:
   toolbar:
     rows:
-      -
-        -
-          name: Formatering
+      - - name: Formatering
           items:
             - Bold
             - Italic
-        -
-          name: Links
+        - name: Links
           items:
             - DrupalLink
             - DrupalUnlink
-        -
-          name: Lister
+        - name: Lister
           items:
             - BulletedList
             - NumberedList
-        -
-          name: Media
+        - name: Media
           items:
             - Blockquote
             - DrupalImage
-        -
-          name: Værktøjer
+        - name: Værktøjer
           items:
             - Source
-  plugins: {  }
+  plugins: {}
 image_upload:
   status: false

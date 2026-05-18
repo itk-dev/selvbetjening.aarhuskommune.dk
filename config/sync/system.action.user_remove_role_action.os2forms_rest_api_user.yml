@@ -12,7 +12,7 @@ dependencies:
 _core:
   default_config_hash: IrRkEiOCvn5bdFbrYum3aawve9xK1Q5Hv7_esORGZwM
 id: user_remove_role_action.os2forms_rest_api_user
-label: 'Remove the OS2Form REST API user role from the selected user(s)'
+label: "Remove the OS2Form REST API user role from the selected user(s)"
 type: user
 plugin: user_remove_role_action
 configuration:

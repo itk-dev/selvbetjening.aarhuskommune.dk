@@ -1,6 +1,6 @@
 uuid: 9e0894cb-65fb-48c7-a7f0-135161abd8a7
 langcode: en
 status: true
-dependencies: {  }
+dependencies: {}
 id: word_docx
-settings: {  }
+settings: {}

@@ -1,7 +1,7 @@
 uuid: 7accebde-dfc7-4ef3-8ce2-cc447f0b33af
 langcode: en
 status: true
-dependencies: {  }
+dependencies: {}
 id: os2forms_api_request_handler
 label: os2forms_api_request_handler
 backend: database

@@ -1,10 +1,10 @@
 uuid: 5f3ab462-7616-4ec2-9c71-d5b6a1fbf009
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 _core:
   default_config_hash: M_Bh81osDyUQ4wV0GgU_NdBNqkzM87sLxjaCdFj9mnw
 id: account
-label: 'User account menu'
-description: 'Links relateret til den aktive brugerkonto'
+label: "User account menu"
+description: "Links relateret til den aktive brugerkonto"
 locked: true

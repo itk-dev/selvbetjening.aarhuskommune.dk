@@ -1,7 +1,7 @@
 langcode: da
 settings:
   default_status: open
-  default_categories: {  }
+  default_categories: {}
   default_page: true
   default_page_base_path: /form
   default_ajax: false
@@ -12,45 +12,45 @@ settings:
   default_reset_button_label: Gendan
   default_delete_button_label: Slet
   default_form_submit_once: false
-  default_form_open_message: 'This form has not yet been opened to submissions.'
-  default_form_close_message: 'Sorry… This form is closed to new submissions.'
-  default_form_exception_message: 'Unable to display this webform. Please contact the site administrator.'
+  default_form_open_message: "This form has not yet been opened to submissions."
+  default_form_close_message: "Sorry… This form is closed to new submissions."
+  default_form_exception_message: "Unable to display this webform. Please contact the site administrator."
   default_form_confidential_message: 'This form is confidential. You must <a href="[site:login-url]/logout?destination=[current-page:url:relative]">Log out</a> to submit it.'
-  default_form_access_denied_message: 'Please login to access this form.'
+  default_form_access_denied_message: "Please login to access this form."
   default_form_disable_remote_addr: true
   default_form_novalidate: false
   default_form_disable_inline_errors: false
   default_form_required: false
-  default_form_required_label: 'Indicates required field'
+  default_form_required_label: "Indicates required field"
   default_form_unsaved: false
   default_form_disable_back: false
   default_form_submit_back: false
   default_form_details_toggle: true
-  default_form_file_limit: ''
-  default_wizard_prev_button_label: '< Forrige'
-  default_wizard_next_button_label: 'Næste >'
+  default_form_file_limit: ""
+  default_wizard_prev_button_label: "< Forrige"
+  default_wizard_next_button_label: "Næste >"
   default_wizard_start_label: Start
   default_wizard_confirmation_label: Komplet
-  default_wizard_toggle_show_label: 'Show all'
-  default_wizard_toggle_hide_label: 'Hide all'
+  default_wizard_toggle_show_label: "Show all"
+  default_wizard_toggle_hide_label: "Hide all"
   default_preview_next_button_label: Gennemse
-  default_preview_prev_button_label: '< Forrige'
+  default_preview_prev_button_label: "< Forrige"
   default_preview_label: Gennemse
-  default_preview_title: '[webform:title]: Preview'
+  default_preview_title: "[webform:title]: Preview"
   default_preview_message: 'Please review your submission. Your submission is not complete until you press the "Submit" button!'
-  default_draft_button_label: 'Gem kladde'
-  default_draft_saved_message: 'Submission saved. You may return to this form later and it will restore the current values.'
-  default_draft_loaded_message: 'A partially-completed form was found. Please complete the remaining portions.'
+  default_draft_button_label: "Gem kladde"
+  default_draft_saved_message: "Submission saved. You may return to this form later and it will restore the current values."
+  default_draft_loaded_message: "A partially-completed form was found. Please complete the remaining portions."
   default_draft_pending_single_message: 'You have a pending draft for this webform. <a href="#">Load your pending draft</a>.'
   default_draft_pending_multiple_message: 'You have pending drafts for this webform. <a href="#">View your pending drafts</a>.'
-  default_confirmation_message: 'Ny besvarelse oprettet vedrørende [webform:title].'
-  default_confirmation_back_label: 'Tilbage til formular'
+  default_confirmation_message: "Ny besvarelse oprettet vedrørende [webform:title]."
+  default_confirmation_back_label: "Tilbage til formular"
   default_confirmation_noindex: true
-  default_limit_total_message: 'No more submissions are permitted.'
-  default_limit_user_message: 'No more submissions are permitted.'
-  default_submission_label: '[webform_submission:submitted-to]: Submission #[webform_submission:serial]'
+  default_limit_total_message: "No more submissions are permitted."
+  default_limit_user_message: "No more submissions are permitted."
+  default_submission_label: "[webform_submission:submitted-to]: Submission #[webform_submission:serial]"
   default_submission_log: true
-  default_submission_views: {  }
+  default_submission_views: {}
   default_submission_views_replace:
     global_routes:
       - entity.webform_submission.collection
@@ -64,19 +64,19 @@ settings:
       - entity.node.webform.user.drafts
       - entity.node.webform.user.submissions
   default_results_customize: false
-  default_submission_access_denied_message: 'Please login to access this submission.'
-  default_submission_exception_message: 'Unable to process this submission. Please contact the site administrator.'
-  default_submission_locked_message: 'This submission has been locked.'
+  default_submission_access_denied_message: "Please login to access this submission."
+  default_submission_exception_message: "Unable to process this submission. Please contact the site administrator."
+  default_submission_locked_message: "This submission has been locked."
   default_previous_submission_message: 'Du har allerede udfyldt denne formular. <a href="#">Se din tidligere besvarelse</a>.'
   default_previous_submissions_message: 'Du har allerede udfyldt denne formular. <a href="#">Se din tidligere besvarelse</a>.'
-  default_autofill_message: 'This submission has been autofilled with your previous submission.'
+  default_autofill_message: "This submission has been autofilled with your previous submission."
   form_classes: |
     container-inline clearfix
     form--inline clearfix
     messages messages--error
     messages messages--warning
     messages messages--status
-  button_classes: ''
+  button_classes: ""
   preview_classes: |
     messages messages--error
     messages messages--warning
@@ -89,7 +89,7 @@ settings:
     button
   default_share: false
   default_share_node: false
-  default_share_theme_name: ''
+  default_share_theme_name: ""
   webform_bulk_form: true
   webform_bulk_form_actions:
     - webform_open_action
@@ -118,15 +118,15 @@ settings:
       title: Bred
       width: 1000
 assets:
-  css: ''
-  javascript: ''
+  css: ""
+  javascript: ""
 form:
   limit: 50
-  filter_category: ''
-  filter_state: ''
+  filter_category: ""
+  filter_state: ""
 element:
   machine_name_pattern: a-z0-9_
-  empty_message: '{Tom}'
+  empty_message: "{Tom}"
   allowed_tags: admin
   wrapper_classes: |
     container-inline clearfix
@@ -150,12 +150,12 @@ element:
     webform-horizontal-rule--thick
     webform-horizontal-rule--flaired
     webform-horizontal-rule--glyph
-  default_description_display: ''
+  default_description_display: ""
   default_more_title: Mere
   default_section_title_tag: h2
   default_empty_option: true
-  default_empty_option_required: ''
-  default_empty_option_optional: ''
+  default_empty_option_required: ""
+  default_empty_option_optional: ""
   excluded_elements:
     color: color
     entity_autocomplete: entity_autocomplete
@@ -174,7 +174,7 @@ element:
     webform_computed_token: webform_computed_token
     webform_email_multiple: webform_email_multiple
     webform_entity_checkboxes: webform_entity_checkboxes
-    'webform_entity_print_attachment:pdf': 'webform_entity_print_attachment:pdf'
+    "webform_entity_print_attachment:pdf": "webform_entity_print_attachment:pdf"
     webform_entity_radios: webform_entity_radios
     webform_entity_select: webform_entity_select
     webform_height: webform_height
@@ -194,25 +194,25 @@ html_editor:
 file:
   file_public: false
   file_private_redirect: true
-  file_private_redirect_message: '<p>Please login to access the uploaded file.</p>'
-  default_max_filesize: ''
-  default_managed_file_extensions: 'gif jpg jpeg png bmp eps tif pict psd txt rtf html odf pdf doc docx ppt pptx xls xlsx xml avi mov mp3 mp4 ogg wav bz2 dmg gz jar rar sit svg tar zip'
-  default_image_file_extensions: 'gif jpg jpeg png'
-  default_video_file_extensions: 'avi mov mp4 ogg wav webm'
-  default_audio_file_extensions: 'mp3 ogg wav'
-  default_document_file_extensions: 'txt rtf pdf doc docx odt ppt pptx odp xls xlsx ods'
+  file_private_redirect_message: "<p>Please login to access the uploaded file.</p>"
+  default_max_filesize: ""
+  default_managed_file_extensions: "gif jpg jpeg png bmp eps tif pict psd txt rtf html odf pdf doc docx ppt pptx xls xlsx xml avi mov mp3 mp4 ogg wav bz2 dmg gz jar rar sit svg tar zip"
+  default_image_file_extensions: "gif jpg jpeg png"
+  default_video_file_extensions: "avi mov mp4 ogg wav webm"
+  default_audio_file_extensions: "mp3 ogg wav"
+  default_document_file_extensions: "txt rtf pdf doc docx odt ppt pptx odp xls xlsx ods"
   make_unused_managed_files_temporary: true
   delete_temporary_managed_files: true
-format: {  }
+format: {}
 mail:
-  default_to_mail: '[site:mail]'
-  default_from_mail: '[site:mail]'
-  default_from_name: '[site:name]'
-  default_reply_to: ''
-  default_return_path: ''
-  default_sender_mail: ''
-  default_sender_name: ''
-  default_subject: '[webform_submission:source-title] (fra [site:name])'
+  default_to_mail: "[site:mail]"
+  default_from_mail: "[site:mail]"
+  default_from_name: "[site:name]"
+  default_reply_to: ""
+  default_return_path: ""
+  default_sender_mail: ""
+  default_sender_name: ""
+  default_subject: "[webform_submission:source-title] (fra [site:name])"
   default_body_text: |-
     Kære borger
 
@@ -227,9 +227,9 @@ mail:
 
     <p>Du har angivet følgende informationer:</p>
     [webform_submission:values]
-  roles: {  }
+  roles: {}
 export:
-  temp_directory: ''
+  temp_directory: ""
   exporter: delimited
   delimiter: ;
   multiple_delimiter: ;
@@ -238,7 +238,7 @@ export:
   header_format: label
   header_prefix: true
   header_prefix_key_delimiter: __
-  header_prefix_label_delimiter: ': '
+  header_prefix_label_delimiter: ": "
   entity_reference_items:
     - id
     - title
@@ -249,13 +249,13 @@ export:
   likert_answers_format: label
   signature_format: status
   composite_element_item_format: label
-  excluded_exporters: {  }
+  excluded_exporters: {}
 handler:
   excluded_handlers:
     rest_handler: rest_handler
     save_to_file: save_to_file
 variant:
-  excluded_variants: {  }
+  excluded_variants: {}
 batch:
   default_batch_export_size: 500
   default_batch_import_size: 100
@@ -368,8 +368,8 @@ third_party_settings:
     replace_administration_mode: true
   webform_entity_print:
     template:
-      header: '<h1>[webform_submission:label]</h1>'
-      footer: ''
+      header: "<h1>[webform_submission:label]</h1>"
+      footer: ""
       css: |-
         /* Remove page margins and padding and rely on the PDF generator's default margins. */
         body {
@@ -385,7 +385,7 @@ third_party_settings:
     export_types:
       pdf:
         enabled: true
-        link_text: 'Download PDF'
+        link_text: "Download PDF"
         link_attributes:
           class:
             - button

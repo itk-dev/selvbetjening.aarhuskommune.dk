@@ -6,6 +6,9 @@ use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Site\Settings;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ *
+ */
 class UserHelper {
   protected bool $bookingApiSampleUser;
 
@@ -19,7 +22,7 @@ class UserHelper {
   public function attachUserToHeaders(Request $request, array $headers): array {
     $userArray = $this->getUserValues($request);
 
-    if ($userArray != null) {
+    if ($userArray != NULL) {
       $headers['Authorization-UserId'] = $userArray['userId'];
       $headers['Authorization-UserPermission'] = $userArray['permission'];
     }
@@ -30,20 +33,21 @@ class UserHelper {
   /**
    * @throws \JsonException
    */
-  public function attachPermissionQueryParameters(Request $request, array $query, bool $attachUserId = false): array {
+  public function attachPermissionQueryParameters(Request $request, array $query, bool $attachUserId = FALSE): array {
     $userArray = $this->getUserValues($request);
 
-    if ($userArray != null) {
+    if ($userArray != NULL) {
       $permission = $userArray['permission'];
 
       if ($permission == 'businessPartner') {
-        $query['permissionBusinessPartner'] = true;
+        $query['permissionBusinessPartner'] = TRUE;
 
         if (isset($userArray['whitelistKey'])) {
           $query['whitelistKey'] = $userArray['whitelistKey'];
         }
-      } else if ($permission == 'citizen') {
-        $query['permissionCitizen'] = true;
+      }
+      elseif ($permission == 'citizen') {
+        $query['permissionCitizen'] = TRUE;
       }
     }
 
@@ -66,25 +70,31 @@ class UserHelper {
       $whitelistKey = $userToken['cvr'];
       $userId = $this->generateUserId($userToken['cvr']);
       $userType = 'businessPartner';
-    } else if (isset($userToken['cpr']) && isset($userToken['pid'])) {
+    }
+    elseif (isset($userToken['cpr']) && isset($userToken['pid'])) {
       $permission = 'citizen';
       $userType = 'citizen';
       $userId = $this->generateUserId($userToken['pid']);
-    } else {
-      return null;
+    }
+    else {
+      return NULL;
     }
 
     return [
-      'name' => $userToken['name'] ?? null,
-      'givenName' => $userToken['given_name'] ?? null,
+      'name' => $userToken['name'] ?? NULL,
+      'givenName' => $userToken['given_name'] ?? NULL,
       'permission' => $permission,
       'userId' => $userId,
-      'whitelistKey' => $whitelistKey ?? null,
+      'whitelistKey' => $whitelistKey ?? NULL,
       'userType' => $userType,
     ];
   }
 
+  /**
+   *
+   */
   private function generateUserId(string $uniqueIdentifier): string {
     return Crypt::hashBase64($uniqueIdentifier);
   }
+
 }

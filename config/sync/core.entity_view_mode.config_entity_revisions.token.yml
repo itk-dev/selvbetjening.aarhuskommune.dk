@@ -6,6 +6,6 @@ dependencies:
     - config_entity_revisions
 id: config_entity_revisions.token
 label: Token
-description: ''
+description: ""
 targetEntityType: config_entity_revisions
 cache: true

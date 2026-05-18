@@ -10,6 +10,7 @@ networks:
 
 services:
   phpfpm:
+    image: itkdev/php8.3-fpm:alpine
     networks:
       - organisation_api
     environment:
@@ -32,10 +33,24 @@ services:
     networks:
       - app
     environment:
-        CLAMD_CONF_MaxFileSize: "325M"
-        CLAMD_CONF_StreamMaxLength: "325M"
-        CLAMD_CONF_MaxScanSize: "400M"
+      CLAMD_CONF_MaxFileSize: "325M"
+      CLAMD_CONF_StreamMaxLength: "325M"
+      CLAMD_CONF_MaxScanSize: "400M"
 
   nginx:
     environment:
       - NGINX_MAX_BODY_SIZE=305M
+    labels:
+      # mTLS is needed for callbacks from Fordelingskomponenten
+      #
+      # We can only enable mTLS on (sub)domains; not on a path (contrary to what
+      # is claimed on
+      # https://community.traefik.io/t/configure-clientauth-mtls-for-docker-container/26935)
+      #
+      # Note: Using two subdomains, e.g. mtls.selvbetjening.aarhuskommune.dk
+      # will not work with Aarhus kommunes wildcard certificate. Therefore we
+      # prefix the existing subdomain with `mtls-`.
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-mtls.rule=Host(`mtls-${COMPOSE_SERVER_DOMAIN:?}`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-mtls.entrypoints=websecure"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-mtls.tls.options=mtls@file"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-mtls.middlewares=mtls-passtlsclientcert@file"

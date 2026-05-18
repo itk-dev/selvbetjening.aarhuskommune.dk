@@ -2179,6 +2179,11 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
+dkfds@^11.2.0:
+  version "11.2.0"
+  resolved "https://registry.yarnpkg.com/dkfds/-/dkfds-11.2.0.tgz#f9ca4518ed211eed72d039449e4da456a084bd91"
+  integrity sha512-JuVf8NjEOeF+TKIhEFXa3BfZvk1ulQM8+XN+6QhgDo6kiwwvupyBY34YU4FglBeyFWHbE5mYDmnrcYTWOSKkEA==
+
 dns-equal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dns-equal/-/dns-equal-1.0.0.tgz#b39e7f1da6eb0a75ba9c17324b34753c47e0654d"

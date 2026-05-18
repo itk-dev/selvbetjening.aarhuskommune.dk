@@ -1,18 +1,18 @@
 uuid: da99aaa0-d232-41a7-983d-a45915f6d7c1
 langcode: en
 status: true
-dependencies: {  }
+dependencies: {}
 id: dompdf
 settings:
   default_paper_size: letter
   default_paper_orientation: portrait
-  username: ''
-  password: ''
+  username: ""
+  password: ""
   enable_html5_parser: true
   enable_remote: true
   font_subsetting: true
   embedded_php: false
-  cafile: ''
+  cafile: ""
   verify_peer: true
   verify_peer_name: true
   orientation: portrait

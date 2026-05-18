@@ -6,6 +6,6 @@ dependencies:
     - comment
 id: comment.token
 label: Token
-description: ''
+description: ""
 targetEntityType: comment
 cache: true

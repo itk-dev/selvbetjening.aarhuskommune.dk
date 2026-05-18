@@ -6,20 +6,45 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
-## [5.1.5] 2025-04-16
+## [5.1.6] 2026-05-18
+
+* [PR-501](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/501)
+  Tilføjede Digital signatur indstillinger til config-ignore.
+* [PR-486](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/486)
+  Style progress bar ud fra "Det fælles design system".
+* [PR-497](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/497)
+  Fjerende links fra OS2Forms Attachments der er indstillet til digital
+  signering.
+* [PR-498](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/498)
+  Tilføjede fikse køjobkomandoer
+* [PR-500](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/500)
+  Added mTLS config
+* [PR-494](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/494)
+  Undlod at eksportere eksempelformularkonfiguration
+* [PR-489](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/489)
+  Tilføjede NemLog-in-eksempelformularer.
+* [PR-492](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/492)
+  Opstrammede eksempelformularkommandoer
+* [PR-490](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/490)
+  Opdaterede projektskabelon.
+* [PR-488](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/488)
+  Tilføjede eksempelformularer.
+  Tilføjede webform core eksempelformularer.
+
+## [5.1.5] 2026-04-16
 
 * Sikkerhedsopdatering af Drupal.
 
-## [5.1.4] 2025-04-13
+## [5.1.4] 2026-04-13
 
 * Opdaterede OS2Forms Kort-elementet.
 * GO-handler oversætter nu ikke længere fejlbeskeder.
 
-## [5.1.3] 2025-03-31
+## [5.1.3] 2026-03-31
 
 * Opdaterede Maestro notifikations-skabelon
 
-## [5.1.2] 2025-03-23
+## [5.1.2] 2026-03-23
 
 * Tilføjede mulighed for returadresse i digital post.
 
@@ -311,7 +336,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   version.
 * Tilføjede mulighed for at sende notifikation hvis
   størrelse på e-mailvedhæftninger overstiger grænse. (<https://os2forms-leantime.itkdev.dk/tickets/showKanban#/tickets/showTicket/132>)
-* Opdaterede [OS2Forms Organisation](https://github.com/itk-dev/os2forms_organisation)
+* Opdaterede [OS2Forms Organisation](https://github.com/1itk-dev/os2forms_organisation)
   version. (<https://os2forms-leantime.itkdev.dk/tickets/showKanban#/tickets/showTicket/96>)
 * Tilføjede signatur-element patches. (<https://os2forms-leantime.itkdev.dk/tickets/showKanban#/tickets/showTicket/133>)
 * CKEditor 5 link standard `https` protocol. (<https://os2forms-leantime.itkdev.dk/tickets/showKanban#/tickets/showTicket/168>)
@@ -778,7 +803,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.5...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.6...HEAD
+[5.1.6]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.5...5.1.6
 [5.1.5]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.4...5.1.5
 [5.1.4]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.3...5.1.4
 [5.1.3]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.2...5.1.3

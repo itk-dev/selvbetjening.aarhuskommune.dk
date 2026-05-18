@@ -33,49 +33,49 @@ label: Sagsbehandler
 weight: -3
 is_admin: null
 permissions:
-  - 'access administration pages'
-  - 'access content overview'
-  - 'access files overview'
-  - 'access site in maintenance mode'
-  - 'access toolbar'
-  - 'access user profiles'
-  - 'access webform advanced queue overview'
-  - 'access webform overview'
-  - 'access webform results clear tab'
-  - 'access webform results download tab'
-  - 'access webform results upload tab'
-  - 'access webform submission log'
-  - 'access webform submission user'
-  - 'access webform submission_notes'
-  - 'administer block_content display'
-  - 'administer block_content display'
-  - 'administer maestro production assignment entities'
-  - 'administer maestro queue entities'
-  - 'administer node display'
-  - 'administer node display'
-  - 'administer webform element access'
-  - 'administer webform submission'
-  - 'bypass honeypot protection'
-  - 'edit own webform submission'
-  - 'entity print access type user'
-  - 'entity print access type webform_submission'
-  - 'search content'
-  - 'use advanced search'
-  - 'use advanced search'
-  - 'use text format full_html'
-  - 'use text format maestro_notification'
-  - 'use text format restricted_html'
-  - 'use text format webform'
-  - 'view any unpublished content'
-  - 'view any webform submission'
-  - 'view latest version'
-  - 'view maestro entity identifiers entities'
-  - 'view maestro process entities'
-  - 'view maestro production assignment entities'
-  - 'view maestro queue entities'
-  - 'view maestro task console'
-  - 'view own unpublished content'
-  - 'view own webform submission'
-  - 'view the administration theme'
-  - 'view webform submissions any node'
-  - 'view webform submissions own node'
+  - "access administration pages"
+  - "access content overview"
+  - "access files overview"
+  - "access site in maintenance mode"
+  - "access toolbar"
+  - "access user profiles"
+  - "access webform advanced queue overview"
+  - "access webform overview"
+  - "access webform results clear tab"
+  - "access webform results download tab"
+  - "access webform results upload tab"
+  - "access webform submission log"
+  - "access webform submission user"
+  - "access webform submission_notes"
+  - "administer block_content display"
+  - "administer block_content display"
+  - "administer maestro production assignment entities"
+  - "administer maestro queue entities"
+  - "administer node display"
+  - "administer node display"
+  - "administer webform element access"
+  - "administer webform submission"
+  - "bypass honeypot protection"
+  - "edit own webform submission"
+  - "entity print access type user"
+  - "entity print access type webform_submission"
+  - "search content"
+  - "use advanced search"
+  - "use advanced search"
+  - "use text format full_html"
+  - "use text format maestro_notification"
+  - "use text format restricted_html"
+  - "use text format webform"
+  - "view any unpublished content"
+  - "view any webform submission"
+  - "view latest version"
+  - "view maestro entity identifiers entities"
+  - "view maestro process entities"
+  - "view maestro production assignment entities"
+  - "view maestro queue entities"
+  - "view maestro task console"
+  - "view own unpublished content"
+  - "view own webform submission"
+  - "view the administration theme"
+  - "view webform submissions any node"
+  - "view webform submissions own node"

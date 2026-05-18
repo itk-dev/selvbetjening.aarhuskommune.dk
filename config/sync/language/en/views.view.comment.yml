@@ -1,5 +1,5 @@
 label: Comments
-description: 'Find and manage comments.'
+description: "Find and manage comments."
 display:
   default:
     display_title: Default
@@ -10,96 +10,96 @@ display:
           action_title: Action
         subject:
           label: Subject
-          separator: ', '
+          separator: ", "
         uid:
-          separator: ', '
+          separator: ", "
         name:
           label: Author
-          separator: ', '
+          separator: ", "
         entity_id:
-          label: 'Posted in'
-          separator: ', '
+          label: "Posted in"
+          separator: ", "
         changed:
           label: Updated
-          separator: ', '
+          separator: ", "
         operations:
           label: Operations
         name_1:
-          separator: ', '
+          separator: ", "
       pager:
         options:
           tags:
-            next: 'next ›'
-            previous: '‹ previous'
-            first: '« first'
-            last: 'last »'
+            next: "next ›"
+            previous: "‹ previous"
+            first: "« first"
+            last: "last »"
           expose:
-            items_per_page_label: 'Items per page'
-            items_per_page_options_all_label: '- All -'
+            items_per_page_label: "Items per page"
+            items_per_page_options_all_label: "- All -"
             offset_label: Offset
       exposed_form:
         options:
           submit_button: Filter
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: "Sort by"
           sort_asc_label: Asc
           sort_desc_label: Desc
       empty:
         area_text_custom:
-          content: 'No comments available.'
+          content: "No comments available."
       filters:
         subject:
           expose:
             label: Subject
         combine:
           expose:
-            label: 'Author name'
+            label: "Author name"
         langcode:
           expose:
             label: Language
       use_more_text: more
   page_published:
-    display_title: 'Published comments'
+    display_title: "Published comments"
     display_options:
-      display_description: 'The approved comments listing.'
+      display_description: "The approved comments listing."
       menu:
         title: Comments
-        description: 'Comments published'
+        description: "Comments published"
   page_unapproved:
-    display_title: 'Unapproved comments'
+    display_title: "Unapproved comments"
     display_options:
       fields:
         comment_bulk_form:
           action_title: Action
         subject:
           label: Subject
-          separator: ', '
+          separator: ", "
         uid:
-          separator: ', '
+          separator: ", "
         name:
           label: Author
-          separator: ', '
+          separator: ", "
         entity_id:
-          label: 'Posted in'
-          separator: ', '
+          label: "Posted in"
+          separator: ", "
         changed:
           label: Updated
-          separator: ', '
+          separator: ", "
         operations:
           label: Operations
         name_1:
-          separator: ', '
+          separator: ", "
       filters:
         subject:
           expose:
             label: Subject
         combine:
           expose:
-            label: 'Author Name'
+            label: "Author Name"
         langcode:
           expose:
             label: Language
-      display_description: 'The unapproved comments listing.'
+      display_description: "The unapproved comments listing."
       menu:
-        title: 'Unapproved comments'
-        description: 'Comments unapproved'
+        title: "Unapproved comments"
+        description: "Comments unapproved"

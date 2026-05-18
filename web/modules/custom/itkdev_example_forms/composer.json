@@ -1,0 +1,14 @@
+{
+    "name": "custom/itkdev_example_forms",
+    "description": "custom/itkdev_example_forms",
+    "type": "drupal-custom-module",
+    "authors": [
+        {
+            "name": "Mikkel Ricky",
+            "email": "rimi@aarhus.dk"
+        }
+    ],
+    "require": {
+        "drupal/content_fixtures": "^3.2"
+    }
+}

@@ -3,9 +3,9 @@ _core:
 langcode: da
 definition:
   local:
-    path: 'public://library-definitions'
+    path: "public://library-definitions"
   remote:
     enable: true
     urls:
-      - 'http://cgit.drupalcode.org/libraries_registry/plain/registry/8'
-global_locators: {  }
+      - "http://cgit.drupalcode.org/libraries_registry/plain/registry/8"
+global_locators: {}

@@ -12,27 +12,27 @@ settings:
   toolbar:
     items:
       - heading
-      - '|'
+      - "|"
       - bold
       - italic
       - subscript
       - superscript
-      - '|'
+      - "|"
       - specialCharacters
-      - '|'
+      - "|"
       - link
       - drupalInsertImage
-      - '|'
+      - "|"
       - numberedList
       - bulletedList
-      - '|'
+      - "|"
       - outdent
       - indent
-      - '|'
+      - "|"
       - blockQuote
-      - '|'
+      - "|"
       - sourceEditing
-      - '-'
+      - "-"
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -49,7 +49,7 @@ settings:
         startIndex: true
       multiBlock: true
     ckeditor5_sourceEditing:
-      allowed_tags: {  }
+      allowed_tags: {}
     editor_advanced_link_link:
       enabled_attributes:
         - target

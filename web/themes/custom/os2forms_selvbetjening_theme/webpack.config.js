@@ -22,6 +22,7 @@ Encore
      */
     .addEntry('app', './assets/app.js')
     .addEntry('pdf', './assets/pdf.js')
+    .addEntry('dfds', './assets/dfds.js')
 
     // // will require an extra script tag for runtime.js
     // // but, you probably want this, unless you're building a single-page app
@@ -48,7 +49,23 @@ Encore
     })
 
     // enables Sass/SCSS support
-    .enableSassLoader()
+    .enableSassLoader((options) => {
+        // Allow `@use "dkfds/..."` to resolve from node_modules.
+        options.sassOptions = {
+            includePaths: ['node_modules'],
+        };
+    }, {
+        // Absolute url()s (e.g. /themes/.../foo.svg) are valid Drupal
+        // paths served at runtime; do not try to resolve them at build time.
+        resolveUrlLoader: false,
+    })
+
+    // Tell css-loader to ignore absolute url() references (Drupal serves them).
+    .configureCssLoader((options) => {
+        options.url = {
+            filter: (url) => !url.startsWith('/'),
+        };
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();

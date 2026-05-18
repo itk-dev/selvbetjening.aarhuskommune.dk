@@ -14,18 +14,17 @@ field_name: webform
 entity_type: node
 bundle: webform
 label: Formular
-description: 'Select the webform that you would like to attach to this node.'
+description: "Select the webform that you would like to attach to this node."
 required: false
 translatable: false
 default_value:
-  -
-    target_uuid: ''
-    default_data: ''
+  - target_uuid: ""
+    default_data: ""
     status: open
-    open: ''
-    close: ''
-default_value_callback: ''
+    open: ""
+    close: ""
+default_value_callback: ""
 settings:
-  handler: 'default:webform'
-  handler_settings: {  }
+  handler: "default:webform"
+  handler_settings: {}
 field_type: webform

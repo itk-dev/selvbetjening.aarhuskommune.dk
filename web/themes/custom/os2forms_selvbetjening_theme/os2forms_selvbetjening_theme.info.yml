@@ -1,6 +1,6 @@
 name: selvbetjening.aarhuskommune.dk
 type: theme
-description: 'Theme for selvbetjening.aarhuskommune.dk'
+description: "Theme for selvbetjening.aarhuskommune.dk"
 core_version_requirement: ^9 || ^10
 base theme: claro
 
@@ -12,18 +12,18 @@ logo: images/logo.png
 
 regions:
   # Claro's regions
-  header: 'Header'
-  pre_content: 'Pre-content'
+  header: "Header"
+  pre_content: "Pre-content"
   breadcrumb: Breadcrumb
   highlighted: Highlighted
   help: Help
   content: Content
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
-  sidebar_first: 'First sidebar'
+  page_top: "Page top"
+  page_bottom: "Page bottom"
+  sidebar_first: "First sidebar"
   # Custom regions
-  footer_first: 'Footer first'
-  footer_second: 'Footer second'
-  footer_third: 'Footer third'
+  footer_first: "Footer first"
+  footer_second: "Footer second"
+  footer_third: "Footer third"
 regions_hidden:
   - sidebar_first

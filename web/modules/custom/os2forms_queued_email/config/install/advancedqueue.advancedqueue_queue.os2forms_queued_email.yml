@@ -5,7 +5,7 @@ dependencies:
     module:
       - os2forms_queued_email
 id: os2forms_queued_email
-label: 'OS2forms queued e-mail'
+label: "OS2forms queued e-mail"
 backend: database
 backend_configuration:
   lease_time: 300

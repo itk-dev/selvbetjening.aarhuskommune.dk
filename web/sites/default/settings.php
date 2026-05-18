@@ -828,6 +828,16 @@ $settings['twig_sandbox_allowed_methods'] = [
   'createFileUrl'
 ];
 
+// Exclude development modules from configuration synchronization
+// https://www.drupal.org/node/3079028
+$settings['config_exclude_modules'][] = 'os2forms_digital_post_examples';
+$settings['config_exclude_modules'][] = 'os2forms_fordelingskomponent_examples';
+
+$settings['config_exclude_modules'][] = 'webprofiler';
+$settings['config_exclude_modules'][] = 'devel';
+$settings['config_exclude_modules'][] = 'tracer';
+$settings['config_exclude_modules'][] = 'devel_generate';
+
 /**
  * Load local development override configuration, if available.
  *

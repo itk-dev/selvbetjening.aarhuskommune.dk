@@ -7,12 +7,12 @@ dependencies:
 _core:
   default_config_hash: nLClPWPElXEamLO6M0lLi-d9GKVWjgS_CWCAggCpcOE
 id: os2forms_wf_webforms
-label: 'OS2Forms Webforms'
-type: 'canonical_entities:node'
-pattern: 'content/[node:field_os2forms_wff_application:entity:name]/[node:title]'
+label: "OS2Forms Webforms"
+type: "canonical_entities:node"
+pattern: "content/[node:field_os2forms_wff_application:entity:name]/[node:title]"
 selection_criteria:
   c6e82172-e76f-406f-bdce-b4b4a8331591:
-    id: 'entity_bundle:node'
+    id: "entity_bundle:node"
     negate: false
     uuid: c6e82172-e76f-406f-bdce-b4b4a8331591
     context_mapping:
@@ -21,4 +21,4 @@ selection_criteria:
       webform: webform
 selection_logic: and
 weight: -5
-relationships: {  }
+relationships: {}

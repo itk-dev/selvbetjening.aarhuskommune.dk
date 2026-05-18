@@ -1,4 +1,4 @@
-label: 'Indsendte webforms'
+label: "Indsendte webforms"
 display:
   default:
     display_title: Master
@@ -7,7 +7,7 @@ display:
         options:
           submit_button: Udfør
           reset_button_label: Gendan
-          exposed_sorts_label: 'Sortér efter'
+          exposed_sorts_label: "Sortér efter"
           sort_asc_label: Stigende
           sort_desc_label: Faldende
       pager:
@@ -15,62 +15,62 @@ display:
           tags:
             previous: ‹‹
             next: ››
-            first: '« Første'
-            last: 'Sidste »'
+            first: "« Første"
+            last: "Sidste »"
           expose:
-            items_per_page_label: 'Antal elementer'
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_label: "Antal elementer"
+            items_per_page_options_all_label: "- Alle -"
             offset_label: Forskydning
       fields:
         sid:
-          label: '#'
-          separator: ', '
+          label: "#"
+          separator: ", "
         in_draft:
           label: Kladde
-          separator: ', '
+          separator: ", "
         created:
           label: Oprettet
-          separator: ', '
+          separator: ", "
         remote_addr:
           label: IP-adresse
-          separator: ', '
+          separator: ", "
         view_webform_submission:
           label: Handlinger
           text: vis
       header:
         result:
-          content: 'Viser @start - @end af @total'
+          content: "Viser @start - @end af @total"
       arguments:
         in_draft:
           exception:
             title: Alle
-      title: 'Indsendte webforms'
+      title: "Indsendte webforms"
   embed_administer:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Handling
         sid:
-          label: '#'
-          separator: ', '
+          label: "#"
+          separator: ", "
         in_draft:
           label: Kladde
-          separator: ', '
+          separator: ", "
         sticky:
           label: Klæbrig
-          separator: ', '
+          separator: ", "
         locked:
           label: Låst
-          separator: ', '
+          separator: ", "
         created:
           label: Oprettet
-          separator: ', '
+          separator: ", "
         completed:
           label: Gennemført
-          separator: ', '
+          separator: ", "
         remote_addr:
           label: IP-adresse
-          separator: ', '
+          separator: ", "
         operations:
           label: Handlinger
       filters:
@@ -86,26 +86,26 @@ display:
         webform_submission_bulk_form:
           action_title: Handling
         sid:
-          label: '#'
-          separator: ', '
+          label: "#"
+          separator: ", "
         in_draft:
           label: Kladde
-          separator: ', '
+          separator: ", "
         sticky:
           label: Klæbrig
-          separator: ', '
+          separator: ", "
         locked:
           label: Låst
-          separator: ', '
+          separator: ", "
         created:
           label: Oprettet
-          separator: ', '
+          separator: ", "
         completed:
           label: Gennemført
-          separator: ', '
+          separator: ", "
         remote_addr:
           label: IP-adresse
-          separator: ', '
+          separator: ", "
         view_webform_submission:
           label: Handlinger
           text: vis
@@ -123,26 +123,26 @@ display:
     display_options:
       fields:
         sid:
-          label: '#'
-          separator: ', '
+          label: "#"
+          separator: ", "
         in_draft:
           label: Kladde
-          separator: ', '
+          separator: ", "
         sticky:
           label: Klæbrig
-          separator: ', '
+          separator: ", "
         locked:
           label: Låst
-          separator: ', '
+          separator: ", "
         created:
           label: Oprettet
-          separator: ', '
+          separator: ", "
         completed:
           label: Gennemført
-          separator: ', '
+          separator: ", "
         remote_addr:
           label: IP-adresse
-          separator: ', '
+          separator: ", "
         view_webform_submission:
           label: Handlinger
           text: vis

@@ -2,12 +2,17 @@
 
 namespace Drupal\os2forms_custom_view_builders;
 
+use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityViewBuilder;
+use Drupal\Core\Render\Element;
+use Drupal\os2forms_custom_view_builders\PrintBuilder\DigitalSignatureFlaggingPrintBuilder;
 use Drupal\webform\Twig\WebformTwigExtension;
 use Drupal\webform\Utility\WebformElementHelper;
 use Drupal\webform\Utility\WebformYaml;
 use Drupal\webform\WebformSubmissionInterface;
 use Drupal\webform\WebformSubmissionViewBuilder;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Defines a class override webform submission view builder.
@@ -21,6 +26,20 @@ use Drupal\webform\WebformSubmissionViewBuilder;
  * @see \Drupal\webform\Entity\WebformSubmission
  */
 class CustomViewBuilderWebformSubmission extends WebformSubmissionViewBuilder {
+
+  /**
+   * The request stack.
+   */
+  protected RequestStack $requestStack;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function createInstance(ContainerInterface $container, EntityTypeInterface $entity_type) {
+    $instance = parent::createInstance($container, $entity_type);
+    $instance->requestStack = $container->get('request_stack');
+    return $instance;
+  }
 
   /**
    * {@inheritdoc}
@@ -90,6 +109,9 @@ class CustomViewBuilderWebformSubmission extends WebformSubmissionViewBuilder {
         case 'table':
           /* @internal OS2Forms changes start */
           $elements = $webform->getElementsInitializedAndFlattened();
+          if ($this->isDigitalSignatureAttachmentRender()) {
+            $this->overrideFormatsForPdf($elements);
+          }
           /* @internal OS2Forms changes end */
           $build[$id]['data'] = $this->buildTable($elements, $webform_submission, $options);
           break;
@@ -97,12 +119,54 @@ class CustomViewBuilderWebformSubmission extends WebformSubmissionViewBuilder {
         default:
         case 'html':
           $elements = $webform->getElementsInitialized();
+          /* @internal OS2Forms changes start */
+          if ($this->isDigitalSignatureAttachmentRender()) {
+            $this->overrideFormatsForPdf($elements);
+          }
+          /* @internal OS2Forms changes end */
           $build[$id]['data'] = $this->buildElements($elements, $webform_submission, $options);
           break;
       }
     }
 
     EntityViewBuilder::buildComponents($build, $entities, $displays, $view_mode);
+  }
+
+  /**
+   * Whether the current request is rendering a digital-signature attachment.
+   */
+  private function isDigitalSignatureAttachmentRender(): bool {
+    $request = $this->requestStack->getCurrentRequest();
+
+    return (bool) $request?->attributes->get(DigitalSignatureFlaggingPrintBuilder::REQUEST_ATTRIBUTE);
+  }
+
+  /**
+   * Override element display formats for PDF rendering (no links).
+   *
+   * When rendering webform submissions as PDF attachments for digital
+   * signature, element values must not be displayed as clickable links.
+   *
+   * @param array $elements
+   *   The webform elements array (nested or flat).
+   */
+  private function overrideFormatsForPdf(array &$elements): void {
+    $formatOverrides = [
+      'managed_file' => 'name',
+      'webform_document_file' => 'name',
+      'webform_audio_file' => 'name',
+      'webform_video_file' => 'name',
+      'webform_image_file' => 'name',
+    ];
+
+    foreach (Element::children($elements) as $key) {
+      $type = $elements[$key]['#type'] ?? '';
+      if (isset($formatOverrides[$type])) {
+        $elements[$key]['#format'] = $formatOverrides[$type];
+      }
+      // Recurse for nested child elements.
+      $this->overrideFormatsForPdf($elements[$key]);
+    }
   }
 
   /**

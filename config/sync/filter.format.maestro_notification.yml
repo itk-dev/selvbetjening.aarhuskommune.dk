@@ -1,7 +1,7 @@
 uuid: fef9fa1b-32cc-4771-aa08-1afb324def24
 langcode: da
 status: true
-dependencies: {  }
+dependencies: {}
 name: Maestro-notifikation
 format: maestro_notification
 weight: 0
@@ -11,14 +11,14 @@ filters:
     provider: filter
     status: true
     weight: 0
-    settings: {  }
+    settings: {}
   filter_html:
     id: filter_html
     provider: filter
     status: false
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>'
+      allowed_html: "<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>"
       filter_html_help: true
       filter_html_nofollow: false
   filter_url:
