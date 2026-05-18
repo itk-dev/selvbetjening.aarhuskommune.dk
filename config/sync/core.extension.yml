@@ -85,7 +85,6 @@ module:
   os2forms_custom_view_builders: 0
   os2forms_dawa: 0
   os2forms_digital_post: 0
-  os2forms_digital_signature: 0
   os2forms_email_handler: 0
   os2forms_failed_jobs: 0
   os2forms_fasit: 0
