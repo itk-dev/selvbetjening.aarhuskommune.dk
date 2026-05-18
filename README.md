@@ -1,5 +1,60 @@
 # selvbetjening.aarhuskommune.dk
 
+<details>
+<summary>F2</summary>
+
+## Production (dev)
+
+* <https://getcomposer.org/doc/03-cli.md#repository-repo>
+
+``` shell name=f2-require-prod
+git fetch
+git checkout origin/feature/drupal-11 composer.json composer.lock
+git restore --staged composer.json composer.lock
+
+docker compose run --rm phpfpm composer require "os2forms/os2forms_f2":"^1.0"
+docker compose run --rm phpfpm composer normalize
+```
+
+## Development
+
+Assuming that a clone of <https://github.com/itk-dev/os2forms_f2/tree/os2forms_f2>
+sits in `web/sites/default/modules/os2forms_f2` and a clone of
+<https://github.com/itk-dev/f2-api-client/tree/f2-api-client> sits in
+`packages/itk-dev/f2-api-client`:
+
+``` shell name=f2-require-dev
+git fetch
+git checkout origin/feature/drupal-11 composer.json composer.lock
+git restore --staged composer.json composer.lock
+
+docker compose run --rm phpfpm composer repo add itk-dev/f2-api-client path packages/itk-dev/f2-api-client
+docker compose run --rm phpfpm composer repo add os2forms_f2 '{
+ "type": "path",
+ "url": "web/sites/default/modules/os2forms_f2",
+ "options": {
+  "versions": {
+   "os2forms/os2forms_f2": "1.0-dev"
+  }
+ }
+}'
+
+docker compose run --rm phpfpm composer require "os2forms/os2forms_f2":"^1.0"
+```
+
+## Testing the F2 integration
+
+``` shell
+docker compose exec phpfpm vendor/bin/drush pm:install itkdev_ex_misc
+docker compose exec phpfpm vendor/bin/drush itkdev-example-forms:webforms:import itkdev_ex_misc itkdev_ex_misc_f2 --diff --yes
+# Show example webform handlers
+docker compose exec phpfpm vendor/bin/drush browse admin/structure/webform/manage/itkdev_ex_misc_f2/handlers
+docker compose exec phpfpm vendor/bin/drush advancedqueue:queue:list:jobs os2forms_f2 --limit=10
+docker compose exec phpfpm vendor/bin/drush advancedqueue:queue:job:process os2forms_f2 … --show-payload --yes
+```
+
+</details>
+
 ## Getting started
 
 These instructions will get you a copy of the project up and running on your

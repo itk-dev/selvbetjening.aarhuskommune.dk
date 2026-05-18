@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "adc6e3906f5a59bc91a334197858be6c",
+    "content-hash": "55874e120abb5dbe2c8e62e5a92c0aed",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8045,6 +8045,56 @@
             "time": "2025-07-04T11:48:48+00:00"
         },
         {
+            "name": "itk-dev/f2-api-client",
+            "version": "1.0.0-rc.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/f2-api-client.git",
+                "reference": "4cbbe94f9113a870adc862627fba059db3f39abe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/f2-api-client/zipball/4cbbe94f9113a870adc862627fba059db3f39abe",
+                "reference": "4cbbe94f9113a870adc862627fba059db3f39abe",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "php": "^8.3",
+                "psr/cache": "^2.0 || ^3.0",
+                "swaggest/json-diff": "^3.12",
+                "symfony/cache": "^6.4 || ^7.4 || ^8.1",
+                "symfony/console": "^6.4 || ^7.4 || ^8.1",
+                "symfony/http-client": "^6.4 || ^7.4 || ^8.1",
+                "symfony/http-foundation": "^6.4 || ^7.4 || ^8.1",
+                "symfony/options-resolver": "^6.4 || ^7.4 || ^8.1"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.52",
+                "friendsofphp/php-cs-fixer": "^3.95",
+                "phpstan/phpstan": "^2.2"
+            },
+            "bin": [
+                "bin/f2-api-client"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ItkDev\\F2ApiClient\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "F2 API client",
+            "support": {
+                "issues": "https://github.com/itk-dev/f2-api-client/issues",
+                "source": "https://github.com/itk-dev/f2-api-client/tree/1.0.0-rc.1"
+            },
+            "time": "2026-10-25T07:27:21+00:00"
+        },
+        {
             "name": "itk-dev/getorganized-api-client-php",
             "version": "1.3.0",
             "source": {
@@ -9576,6 +9626,65 @@
                 "source": "https://github.com/itk-dev/os2forms/tree/drupal-11-selvbetjening.aarhuskommune.dk"
             },
             "time": "2026-10-27T09:57:11+00:00"
+        },
+        {
+            "name": "os2forms/os2forms_f2",
+            "version": "1.0.0-rc.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/os2forms_f2.git",
+                "reference": "ee66ca67b0d51e7f98024451d3287870fc10f453"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_f2/zipball/ee66ca67b0d51e7f98024451d3287870fc10f453",
+                "reference": "ee66ca67b0d51e7f98024451d3287870fc10f453",
+                "shasum": ""
+            },
+            "require": {
+                "drush/drush": "^13.8",
+                "itk-dev/drupal_psr6_cache": "^1.1",
+                "itk-dev/f2-api-client": "^1.0",
+                "os2forms/os2forms": "^6.1",
+                "php": "^8.4"
+            },
+            "require-dev": {
+                "drupal/coder": "^9.0",
+                "ergebnis/composer-normalize": "^2.54",
+                "itk-dev/drupal_translation_extractor": "^2.0",
+                "mglaman/composer-drupal-lenient": "^1.0",
+                "mglaman/phpstan-drupal": "^2.2",
+                "palantirnet/drupal-rector": "^1.1",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan-deprecation-rules": "^2.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal-lenient": {
+                    "allowed-list": [
+                        "drupal/coc_forms_auto_export",
+                        "drupal/webform_node_element",
+                        "drupal/events_logging",
+                        "drupal/switch_page_theme"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "EUPL-1.2"
+            ],
+            "authors": [
+                {
+                    "name": "Mikkel Ricky",
+                    "email": "rimi@aarhus.dk"
+                }
+            ],
+            "description": "OS2Forms: F2 integration",
+            "support": {
+                "issues": "https://github.com/itk-dev/os2forms_f2/issues",
+                "source": "https://github.com/itk-dev/os2forms_f2/tree/1.0.0-rc.5"
+            },
+            "time": "2026-10-27T09:29:32+00:00"
         },
         {
             "name": "os2forms/os2forms_fordelingskomponent",
@@ -12989,6 +13098,50 @@
                 "source": "https://github.com/simplesamlphp/xml-soap/tree/v2.3.0"
             },
             "time": "2026-02-17T20:22:50+00:00"
+        },
+        {
+            "name": "swaggest/json-diff",
+            "version": "v3.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swaggest/json-diff.git",
+                "reference": "7ebc4eab95bcc73916433964c266588d09b35052"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swaggest/json-diff/zipball/7ebc4eab95bcc73916433964c266588d09b35052",
+                "reference": "7ebc4eab95bcc73916433964c266588d09b35052",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phperf/phpunit": "4.8.37"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Swaggest\\JsonDiff\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Viacheslav Poturaev",
+                    "email": "vearutop@gmail.com"
+                }
+            ],
+            "description": "JSON diff/rearrange/patch/pointer library for PHP",
+            "support": {
+                "issues": "https://github.com/swaggest/json-diff/issues",
+                "source": "https://github.com/swaggest/json-diff/tree/v3.12.1"
+            },
+            "time": "2025-03-10T08:22:10+00:00"
         },
         {
             "name": "symfony/cache",
