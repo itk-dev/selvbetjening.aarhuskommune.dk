@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5db9ae6f59099928fe37b846f0f618dd",
+    "content-hash": "61065902ddf060515faaef54f73ee088",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8080,6 +8080,41 @@
             "time": "2025-07-04T11:48:48+00:00"
         },
         {
+            "name": "itk-dev/f2-api-client",
+            "version": "dev-f2-api-client",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/f2-api-client.git",
+                "reference": "9a2ecf791918373a707840aab41333801858292d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/f2-api-client/zipball/9a2ecf791918373a707840aab41333801858292d",
+                "reference": "9a2ecf791918373a707840aab41333801858292d",
+                "shasum": ""
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.52",
+                "friendsofphp/php-cs-fixer": "^3.95"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ItkDev\\F2ApiClient\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "F2 API client",
+            "support": {
+                "issues": "https://github.com/itk-dev/f2-api-client/issues",
+                "source": "https://github.com/itk-dev/f2-api-client/tree/f2-api-client"
+            },
+            "time": "2026-05-18T12:13:42+00:00"
+        },
+        {
             "name": "itk-dev/getorganized-api-client-php",
             "version": "1.2.2",
             "source": {
@@ -9313,6 +9348,39 @@
                 "source": "https://github.com/itk-dev/os2forms/tree/feature/maps-element-display"
             },
             "time": "2026-04-13T12:02:30+00:00"
+        },
+        {
+            "name": "os2forms/os2forms_f2",
+            "version": "dev-os2forms_f2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/os2forms_f2.git",
+                "reference": "dc3e6eeeb9d534806987d964115069bab2c70949"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_f2/zipball/dc3e6eeeb9d534806987d964115069bab2c70949",
+                "reference": "dc3e6eeeb9d534806987d964115069bab2c70949",
+                "shasum": ""
+            },
+            "require": {
+                "itk-dev/f2-api-client": "dev-f2-api-client as 1.0.0",
+                "os2forms/os2forms": "^5.0"
+            },
+            "require-dev": {
+                "drupal/coder": "^9.0",
+                "ergebnis/composer-normalize": "^2.52"
+            },
+            "type": "drupal-module",
+            "license": [
+                "MIT"
+            ],
+            "description": "OS2Forms: F2 integration",
+            "support": {
+                "source": "https://github.com/itk-dev/os2forms_f2/tree/os2forms_f2",
+                "issues": "https://github.com/itk-dev/os2forms_f2/issues"
+            },
+            "time": "2026-05-18T12:22:30+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -23585,12 +23653,19 @@
             "version": "dev-release/5.1.4",
             "alias": "5.1.4",
             "alias_normalized": "5.1.4.0"
+        },
+        {
+            "package": "os2forms/os2forms_f2",
+            "version": "dev-os2forms_f2",
+            "alias": "1.0.0",
+            "alias_normalized": "1.0.0.0"
         }
     ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/site_status_message": 15,
-        "os2forms/os2forms": 20
+        "os2forms/os2forms": 20,
+        "os2forms/os2forms_f2": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
