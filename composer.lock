@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9a9e5e5445b018797452a3a14b8892d",
+    "content-hash": "61065902ddf060515faaef54f73ee088",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8080,6 +8080,41 @@
             "time": "2025-07-04T11:48:48+00:00"
         },
         {
+            "name": "itk-dev/f2-api-client",
+            "version": "dev-f2-api-client",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/f2-api-client.git",
+                "reference": "9a2ecf791918373a707840aab41333801858292d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/f2-api-client/zipball/9a2ecf791918373a707840aab41333801858292d",
+                "reference": "9a2ecf791918373a707840aab41333801858292d",
+                "shasum": ""
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.52",
+                "friendsofphp/php-cs-fixer": "^3.95"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ItkDev\\F2ApiClient\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "F2 API client",
+            "support": {
+                "issues": "https://github.com/itk-dev/f2-api-client/issues",
+                "source": "https://github.com/itk-dev/f2-api-client/tree/f2-api-client"
+            },
+            "time": "2026-05-18T12:13:42+00:00"
+        },
+        {
             "name": "itk-dev/getorganized-api-client-php",
             "version": "1.2.2",
             "source": {
@@ -8243,22 +8278,22 @@
         },
         {
             "name": "itk-dev/os2forms_nemlogin_openid_connect",
-            "version": "2.5.1",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect.git",
-                "reference": "80c5f857063c34fb723ec1172fb39edb70a237cf"
+                "reference": "c7f403ce68b3d3fe112afa476beeb36f0100342e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_nemlogin_openid_connect/zipball/80c5f857063c34fb723ec1172fb39edb70a237cf",
-                "reference": "80c5f857063c34fb723ec1172fb39edb70a237cf",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_nemlogin_openid_connect/zipball/c7f403ce68b3d3fe112afa476beeb36f0100342e",
+                "reference": "c7f403ce68b3d3fe112afa476beeb36f0100342e",
                 "shasum": ""
             },
             "require": {
                 "drupal/webform": "^6.0",
                 "itk-dev/drupal_psr6_cache": "^1.1",
-                "itk-dev/openid-connect": "^3.1 || ^4.0",
+                "itk-dev/openid-connect": "^3.1",
                 "os2web/os2web_audit": "^1.0",
                 "os2web/os2web_key": "^1.0",
                 "os2web/os2web_nemlogin": "^1.2",
@@ -8289,9 +8324,9 @@
             "homepage": "https://www.drupal.org/project/os2forms_nemlogin_openid_connect",
             "support": {
                 "issues": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/issues",
-                "source": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/tree/2.5.1"
+                "source": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/tree/2.3.1"
             },
-            "time": "2026-07-16T07:57:50+00:00"
+            "time": "2025-12-12T12:38:46+00:00"
         },
         {
             "name": "itk-dev/os2forms_user_field_lookup",
@@ -9165,16 +9200,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-release/5.1.6",
+            "version": "dev-release/5.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "7d3d0032fb776194890436b25736e1a456ebea2a"
+                "reference": "c096da53921df25ebf8841338da4b672940fbf5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/7d3d0032fb776194890436b25736e1a456ebea2a",
-                "reference": "7d3d0032fb776194890436b25736e1a456ebea2a",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/c096da53921df25ebf8841338da4b672940fbf5c",
+                "reference": "c096da53921df25ebf8841338da4b672940fbf5c",
                 "shasum": ""
             },
             "require": {
@@ -9310,9 +9345,42 @@
             ],
             "description": "Drupal 10 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/release/5.1.5-and-avoid-inheriting-data-on-page-transition"
+                "source": "https://github.com/itk-dev/os2forms/tree/feature/maps-element-display"
             },
-            "time": "2026-07-02T08:43:42+00:00"
+            "time": "2026-04-13T12:02:30+00:00"
+        },
+        {
+            "name": "os2forms/os2forms_f2",
+            "version": "dev-os2forms_f2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/os2forms_f2.git",
+                "reference": "dc3e6eeeb9d534806987d964115069bab2c70949"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_f2/zipball/dc3e6eeeb9d534806987d964115069bab2c70949",
+                "reference": "dc3e6eeeb9d534806987d964115069bab2c70949",
+                "shasum": ""
+            },
+            "require": {
+                "itk-dev/f2-api-client": "dev-f2-api-client as 1.0.0",
+                "os2forms/os2forms": "^5.0"
+            },
+            "require-dev": {
+                "drupal/coder": "^9.0",
+                "ergebnis/composer-normalize": "^2.52"
+            },
+            "type": "drupal-module",
+            "license": [
+                "MIT"
+            ],
+            "description": "OS2Forms: F2 integration",
+            "support": {
+                "source": "https://github.com/itk-dev/os2forms_f2/tree/os2forms_f2",
+                "issues": "https://github.com/itk-dev/os2forms_f2/issues"
+            },
+            "time": "2026-05-18T12:22:30+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -9683,16 +9751,16 @@
         },
         {
             "name": "os2web/os2web_datalookup",
-            "version": "3.3.1",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OS2web/os2web_datalookup.git",
-                "reference": "7d9ac9e147cd2c686bcf362388b83e3e954dc3f4"
+                "reference": "3101b541829506a28ec9b827f04088b59f8a8a9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2web/os2web_datalookup/zipball/7d9ac9e147cd2c686bcf362388b83e3e954dc3f4",
-                "reference": "7d9ac9e147cd2c686bcf362388b83e3e954dc3f4",
+                "url": "https://api.github.com/repos/OS2web/os2web_datalookup/zipball/3101b541829506a28ec9b827f04088b59f8a8a9f",
+                "reference": "3101b541829506a28ec9b827f04088b59f8a8a9f",
                 "shasum": ""
             },
             "require": {
@@ -9714,9 +9782,9 @@
             "description": "Provides integration with Danish data lookup services such as Service platformen or Datafordeler.",
             "support": {
                 "issues": "https://github.com/OS2web/os2web_datalookup/issues",
-                "source": "https://github.com/OS2web/os2web_datalookup/tree/3.3.1"
+                "source": "https://github.com/OS2web/os2web_datalookup/tree/3.0.3"
             },
-            "time": "2026-06-17T12:38:50+00:00"
+            "time": "2025-11-19T09:33:00+00:00"
         },
         {
             "name": "os2web/os2web_key",
@@ -23582,15 +23650,22 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-release/5.1.6",
-            "alias": "5.1.6",
-            "alias_normalized": "5.1.6.0"
+            "version": "dev-release/5.1.4",
+            "alias": "5.1.4",
+            "alias_normalized": "5.1.4.0"
+        },
+        {
+            "package": "os2forms/os2forms_f2",
+            "version": "dev-os2forms_f2",
+            "alias": "1.0.0",
+            "alias_normalized": "1.0.0.0"
         }
     ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/site_status_message": 15,
-        "os2forms/os2forms": 20
+        "os2forms/os2forms": 20,
+        "os2forms/os2forms_f2": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
