@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-505](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/505)
+  * F2-behandler
+
 * Opdateret til OS2Forms Core 6.1.0.
 * Pakkeopdateringer heriblandt Drupal `11.4`
 * PHP `8.4`
