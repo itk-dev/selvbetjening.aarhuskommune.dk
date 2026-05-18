@@ -8,6 +8,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 * [PR-505](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/505)
   * Installerede [Locale Translation Context](https://www.drupal.org/project/locale_translation_context)
+  * Installerede [F2-integration](https://github.com/itk-dev/os2forms_f2)
 
 ## [6.0.2] 2026-11-20
 
