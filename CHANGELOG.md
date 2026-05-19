@@ -6,6 +6,11 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.7] 2026-05-19
+
+* [PR-509](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/509)
+  Tilføjede flex-basis til formularvisning når der ikke benyttes progress bar.
+
 ## [5.1.6] 2026-05-18
 
 * [PR-501](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/501)
