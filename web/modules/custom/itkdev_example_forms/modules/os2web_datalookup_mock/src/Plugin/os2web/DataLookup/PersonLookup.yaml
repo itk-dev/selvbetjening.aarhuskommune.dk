@@ -13,12 +13,98 @@
 # The CPRs should match "cpr" claims defined in
 # ../../../../../../../../../../docker-compose.oidc.yml.
 
+# persondata:
+#   personnummer: "1234567890"
+#   navn:
+#     personadresseringsnavn: First Middle Last
+#     fornavn: First Middle
+#     # I've yet to see "mellemnavn" with a non-empty value …
+#     mellemnavn: Middle
+#     efternavn: Last
+#     navnestartdato:
+#       dato: "1970-01-01T00:00:00.000+01:00"
+#   foedselsdato:
+#     dato: "1970-01-01+01:00"
+#   foedselsregistreringsOplysninger:
+#     foedselsregistreringsstedKode: 0000
+#     foedselsregistreringsstedKodeMyndighedsnavn: …,…
+#   startdato:
+#     dato: 1970-01-01+01:00
+#     usikkerhedsmarkering: '*'
+#   alder: 00
+#   koen: M/K
+#   antalBoernUnder18: 0
+#   status:
+#     status: 1
+#   civilstand:
+#     civilstand: U
+#   statsborgerskab:
+#     landekode: 5100
+#     statsborgerskabDato:
+#       dato: …
+#       usikkerhedsmarkering: '*'
+#     landekodeMyndighedsnavn: Danmark
+#   adressebeskyttelse: {}
+#   vejviserbeskyttelse: {}
+#   markedsfoeringsbeskyttelse: {}
+#   tilmeldtNemsms: true
+#   tilmeldtDigitalpost: true
+# adresse:
+#   aktuelAdresse:
+#     kommuneCvr: "55133018"
+#     kommunekode: 751
+#     vejkode: 000
+#     husnummer: "000"
+#     postnummer: "0000"
+#     postdistrikt: …
+#     vejnavn: …
+#     standardadresse: …
+#     adresseringsnavn: First Middle Last
+#     vejadresseringsnavn: …
+#     tilflytningsdato:
+#       dato: "1970-01-01T00:00:00.000+02:00"
+#     distrikter:
+#       postnummer: 0000
+#       postdistrikt: …
+#       kirkedistriktKode: 00
+#       kirkedistrikt: æ
+#       sognedistriktKode: 0000
+#       sognedistrikt: …,…
+#       valgdistriktKode: 50
+#       valgdistrikt: …
+#   adresseHistorik:
+#     - kommuneCvr: …
+#       kommunekode: 000
+#       vejkode: 000
+#       husnummer: "000"
+#       bynavn: …
+#       postnummer: "0000"
+#       postdistrikt: …
+#       vejnavn: …
+#       tilflytningsdato:
+#         dato: "1970-01-01T00:00:00.000+01:00"
+#       fraflytningsdato:
+#         dato: "1970-01-10T00:00:00.000+02:00"
+# relationer:
+#   mor:
+#     personnummer: "0000000000"
+#   far:
+#     personnummer: "0000000000"
+#   barn:
+#     - personnummer: "1111111111"
+#     - personnummer: "1111111111"
+#   foraeldremyndighed:
+
 "1111110000":
   persondata:
     status:
+      # @see https://rimi-itk.github.io/digitaliseringskataloget.dk/digitaliseringskataloget.dk/sf1520/4.0/PersonBaseDataExtendedService/xsd/PersonBaseDataExtendedServiceTypes.xsd
       status: "01"
     navn:
-      personadresseringsnavn: "Mother 62"
+      personadresseringsnavn: "Mother X 62"
+      fornavn: "Mother"
+      mellemnavn: "X"
+      efternavn: "62"
     foedselsdato:
       # Y-m-dP
       dato: "1981-12-13+01:00"
