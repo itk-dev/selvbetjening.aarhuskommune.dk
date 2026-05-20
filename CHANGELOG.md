@@ -9,6 +9,11 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 * [PR-507](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/507)
   Enabled os2forms_digital_signature-module.
 
+## [5.1.8] 2026-05-20
+
+* [PR-510](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/510)
+  Sikkerhedsopdatering af Drupal.
+
 ## [5.1.7] 2026-05-19
 
 * [PR-509](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/509)
@@ -811,7 +816,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.7...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.8...HEAD
+[5.1.8]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.7...5.1.8
 [5.1.7]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.6...5.1.7
 [5.1.6]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.5...5.1.6
 [5.1.5]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.4...5.1.5
