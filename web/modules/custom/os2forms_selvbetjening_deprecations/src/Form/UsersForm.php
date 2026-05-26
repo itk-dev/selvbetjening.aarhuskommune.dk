@@ -66,6 +66,9 @@ final class UsersForm extends FormBase {
     $userOptions = [];
     foreach ($users as $user) {
       /** @var \Drupal\user\UserInterface $user */
+      if ($user->isAnonymous()) {
+        continue;
+      }
       $userOptions[$user->id()] = $this->getUserLabel($user);
     }
     // Keep non-capital (api and placeholder) users at the bottom.
