@@ -10,10 +10,16 @@
 git checkout develop composer.json composer.lock
 git restore --staged composer.json composer.lock
 
-docker compose exec phpfpm composer repo add os2forms_fordelingskomponent vcs https://github.com/itk-dev/os2forms_fordelingskomponent
+docker compose exec phpfpm composer repo add os2forms/os2forms_fordelingskomponent vcs https://github.com/itk-dev/os2forms_fordelingskomponent
+docker compose exec phpfpm composer repo add os2forms/os2forms vcs https://github.com/itk-dev/os2forms
+docker compose exec phpfpm composer repo add os2web/os2web_datalookup vcs https://github.com/itk-dev/os2web_datalookup
 
 docker compose exec phpfpm composer update itk-dev/serviceplatformen
 docker compose exec phpfpm composer require "os2forms/os2forms_fordelingskomponent":"dev-os2forms_fordelingskomponent as 1.0.0"
+docker compose exec phpfpm composer require "os2forms/os2forms":"dev-feature/add-first-middle-and-last-name-nemid-elements as 5.1.0"
+docker compose exec phpfpm composer require "os2web/os2web_datalookup":"dev-feature/fetch-first-middle-and-last-name as 3.1.0"
+
+docker compose exec phpfpm composer normalize
 ```
 
 ### Development

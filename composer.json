@@ -31,7 +31,7 @@
         "itk-dev/os2forms_nemlogin_openid_connect": "^2.2",
         "itk-dev/os2forms_user_field_lookup": "^1.1",
         "itk-dev/web_accessibility_statement": "^1.1",
-        "os2forms/os2forms": "dev-release/5.1.4 as 5.1.4",
+        "os2forms/os2forms": "dev-feature/add-first-middle-and-last-name-nemid-elements as 5.1.0",
         "os2forms/os2forms_fordelingskomponent": "dev-os2forms_fordelingskomponent as 1.0.0",
         "os2forms/os2forms_forloeb_profile": "^1.15",
         "os2forms/os2forms_get_organized": "^2.0",
@@ -39,7 +39,8 @@
         "os2forms/os2forms_payment": "^1.0",
         "os2forms/os2forms_rest_api": "^2.2",
         "os2forms/os2forms_sync": "^1.2",
-        "os2forms/os2forms_webform_submission_log": "^1.1"
+        "os2forms/os2forms_webform_submission_log": "^1.1",
+        "os2web/os2web_datalookup": "dev-feature/fetch-first-middle-and-last-name as 3.1.0"
     },
     "require-dev": {
         "custom/itkdev_example_forms": "^1.0",
@@ -58,9 +59,19 @@
     },
     "repositories": [
         {
-            "name": "os2forms_fordelingskomponent",
             "type": "vcs",
-            "url": "https://github.com/itk-dev/os2forms_fordelingskomponent"
+            "url": "https://github.com/itk-dev/os2web_datalookup",
+            "name": "os2web/os2web_datalookup"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/itk-dev/os2forms",
+            "name": "os2forms/os2forms"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/itk-dev/os2forms_fordelingskomponent",
+            "name": "os2forms/os2forms_fordelingskomponent"
         },
         {
             "type": "vcs",
