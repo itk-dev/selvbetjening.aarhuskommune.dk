@@ -9759,7 +9759,20 @@
                 "phpunit/phpunit": "^9.5"
             },
             "type": "drupal-module",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "coding-standards-apply": [
+                    "@coding-standards-apply/phpcs"
+                ],
+                "coding-standards-apply/phpcs": [
+                    "phpcbf --standard=phpcs.xml.dist"
+                ],
+                "coding-standards-check": [
+                    "@coding-standards-check/phpcs"
+                ],
+                "coding-standards-check/phpcs": [
+                    "phpcs --standard=phpcs.xml.dist"
+                ]
+            },
             "license": [
                 "EUPL-1.2"
             ],
@@ -23643,7 +23656,8 @@
     "stability-flags": {
         "drupal/site_status_message": 15,
         "os2forms/os2forms": 20,
-        "os2forms/os2forms_fordelingskomponent": 20
+        "os2forms/os2forms_fordelingskomponent": 20,
+        "os2web/os2web_datalookup": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
