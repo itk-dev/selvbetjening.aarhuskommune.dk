@@ -236,5 +236,7 @@ config/sync/os2web_nemlogin.settings.yml
 # Ignore attachment components
 config/sync/os2forms_attachment.os2forms_attachment_component.*.yml
 
+config/sync/os2forms_fordelingskomponent.settings.yml
+
 *.local.yml
 *.cache
