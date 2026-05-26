@@ -8291,22 +8291,22 @@
         },
         {
             "name": "itk-dev/os2forms_nemlogin_openid_connect",
-            "version": "2.3.1",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect.git",
-                "reference": "c7f403ce68b3d3fe112afa476beeb36f0100342e"
+                "reference": "8f915661ff88e579821adadef138b854ffb4eb13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_nemlogin_openid_connect/zipball/c7f403ce68b3d3fe112afa476beeb36f0100342e",
-                "reference": "c7f403ce68b3d3fe112afa476beeb36f0100342e",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_nemlogin_openid_connect/zipball/8f915661ff88e579821adadef138b854ffb4eb13",
+                "reference": "8f915661ff88e579821adadef138b854ffb4eb13",
                 "shasum": ""
             },
             "require": {
                 "drupal/webform": "^6.0",
                 "itk-dev/drupal_psr6_cache": "^1.1",
-                "itk-dev/openid-connect": "^3.1",
+                "itk-dev/openid-connect": "^3.1 || ^4.0",
                 "os2web/os2web_audit": "^1.0",
                 "os2web/os2web_key": "^1.0",
                 "os2web/os2web_nemlogin": "^1.2",
@@ -8337,9 +8337,9 @@
             "homepage": "https://www.drupal.org/project/os2forms_nemlogin_openid_connect",
             "support": {
                 "issues": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/issues",
-                "source": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/tree/2.3.1"
+                "source": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/tree/2.4.1"
             },
-            "time": "2025-12-12T12:38:46+00:00"
+            "time": "2026-04-23T07:33:56+00:00"
         },
         {
             "name": "itk-dev/os2forms_user_field_lookup",
@@ -9372,12 +9372,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_fordelingskomponent.git",
-                "reference": "ca8c24110416154dd717fcf59f46dc4c31305b14"
+                "reference": "fa10eb87605187c1506f62af7f8cb551501a895e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/ca8c24110416154dd717fcf59f46dc4c31305b14",
-                "reference": "ca8c24110416154dd717fcf59f46dc4c31305b14",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/fa10eb87605187c1506f62af7f8cb551501a895e",
+                "reference": "fa10eb87605187c1506f62af7f8cb551501a895e",
                 "shasum": ""
             },
             "require": {
@@ -9427,7 +9427,7 @@
                 "source": "https://github.com/itk-dev/os2forms_fordelingskomponent/tree/os2forms_fordelingskomponent",
                 "issues": "https://github.com/itk-dev/os2forms_fordelingskomponent/issues"
             },
-            "time": "2026-05-18T14:53:54+00:00"
+            "time": "2026-05-26T10:48:55+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
