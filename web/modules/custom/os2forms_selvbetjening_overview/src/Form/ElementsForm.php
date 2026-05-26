@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\os2forms_selvbetjening_deprecations\Form;
+namespace Drupal\os2forms_selvbetjening_overview\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -42,7 +42,7 @@ final class ElementsForm extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'os2forms_selvbetjening_deprecations_elements';
+    return 'os2forms_selvbetjening_overview_elements';
   }
 
   /**

@@ -7,7 +7,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 ## [Under udvikling]
 
 * [PR-503](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/503)
-  Tilføjede overblik over brugere og deres ejerskaber.
+  * Tilføjede overblik over brugere og deres ejerskaber.
+  * Omdøbte `os2forms_selvbetjening_deprecations`-modulet til
+    `os2forms_selvbetjening_overview`. Erstat derfor modul-navnet i URL'en
+    for at tilgå visningerne.
 * [PR-507](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/507)
   Enabled os2forms_digital_signature-module.
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\os2forms_selvbetjening_deprecations\Form;
+namespace Drupal\os2forms_selvbetjening_overview\Form;
 
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\FormBase;
@@ -47,7 +47,7 @@ final class UsersForm extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'os2forms_selvbetjening_deprecations_users';
+    return 'os2forms_selvbetjening_overview_users';
   }
 
   /**

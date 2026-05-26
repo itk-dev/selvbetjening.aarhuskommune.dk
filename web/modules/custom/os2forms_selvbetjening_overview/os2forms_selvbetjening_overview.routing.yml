@@ -1,0 +1,49 @@
+os2forms_selvbetjening_overview.elements:
+  path: "/admin/os2forms_selvbetjening_overview/elements"
+  defaults:
+    _form: '\Drupal\os2forms_selvbetjening_overview\Form\ElementsForm'
+    _title: "Elements"
+  requirements:
+    _permission: "access webform overview"
+  options:
+    no_cache: TRUE
+
+os2forms_selvbetjening_overview.handlers:
+  path: "/admin/os2forms_selvbetjening_overview/handlers"
+  defaults:
+    _form: '\Drupal\os2forms_selvbetjening_overview\Form\HandlersForm'
+    _title: "Handlers"
+  requirements:
+    _permission: "access webform overview"
+  options:
+    no_cache: TRUE
+
+os2forms_selvbetjening_overview.webforms:
+  path: "/admin/os2forms_selvbetjening_overview/webforms"
+  defaults:
+    _form: '\Drupal\os2forms_selvbetjening_overview\Form\WebformsForm'
+    _title: "Webforms"
+  requirements:
+    _permission: "access webform overview"
+  options:
+    no_cache: TRUE
+
+os2forms_selvbetjening_overview.taxonomies:
+  path: "/admin/os2forms_selvbetjening_overview/taxonomies"
+  defaults:
+    _form: '\Drupal\os2forms_selvbetjening_overview\Form\TaxonomyForm'
+    _title: "Taxonomies"
+  requirements:
+    _permission: "access deprecation taxonomy overview"
+  options:
+    no_cache: TRUE
+
+os2forms_selvbetjening_overview.users:
+  path: "/admin/os2forms_selvbetjening_overview/users"
+  defaults:
+    _form: '\Drupal\os2forms_selvbetjening_overview\Form\UsersForm'
+    _title: "Users"
+  requirements:
+    _permission: "access deprecation user overview"
+  options:
+    no_cache: TRUE
