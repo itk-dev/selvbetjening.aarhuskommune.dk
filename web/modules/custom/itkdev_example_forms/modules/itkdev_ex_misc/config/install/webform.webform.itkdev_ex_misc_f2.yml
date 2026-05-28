@@ -232,5 +232,8 @@ handlers:
     status: true
     conditions: {}
     weight: 0
-    settings: {}
+    settings:
+      handler:
+        attachment_element: attachment
+        archive_target: case_id
 variants: {}

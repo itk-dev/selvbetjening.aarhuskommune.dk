@@ -8085,18 +8085,29 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/f2-api-client.git",
-                "reference": "9a2ecf791918373a707840aab41333801858292d"
+                "reference": "695d2b5b8ffad434a9c8fb8aa5991a7f447b0de2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/f2-api-client/zipball/9a2ecf791918373a707840aab41333801858292d",
-                "reference": "9a2ecf791918373a707840aab41333801858292d",
+                "url": "https://api.github.com/repos/itk-dev/f2-api-client/zipball/695d2b5b8ffad434a9c8fb8aa5991a7f447b0de2",
+                "reference": "695d2b5b8ffad434a9c8fb8aa5991a7f447b0de2",
                 "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "symfony/console": "^6.4 || ^7.4",
+                "symfony/http-client": "^6.4 || ^7.4",
+                "symfony/http-foundation": "^6.4 || ^7.4",
+                "symfony/options-resolver": "^6.4 || ^7.4"
             },
             "require-dev": {
                 "ergebnis/composer-normalize": "^2.52",
-                "friendsofphp/php-cs-fixer": "^3.95"
+                "friendsofphp/php-cs-fixer": "^3.95",
+                "php": "^8.3"
             },
+            "bin": [
+                "bin/f2-api-client"
+            ],
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -8112,7 +8123,7 @@
                 "issues": "https://github.com/itk-dev/f2-api-client/issues",
                 "source": "https://github.com/itk-dev/f2-api-client/tree/f2-api-client"
             },
-            "time": "2026-05-18T12:13:42+00:00"
+            "time": "2026-05-27T10:51:03+00:00"
         },
         {
             "name": "itk-dev/getorganized-api-client-php",
