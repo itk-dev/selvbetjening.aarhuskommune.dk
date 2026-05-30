@@ -1,0 +1,68 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Yaml\Yaml;
+
+$faker = Faker\Factory::create('da_DK');
+
+$cpr = static fn() => preg_replace('/[^0-9]/', '', $faker->cpr());
+
+$persons = [];
+
+for ($i = 0; $i < 10; $i++) {
+  $faker->seed($i);
+  $personnummer = $cpr();
+  $gender = 0 === ($personnummer[-1] %2) ? Faker\Provider\Person::GENDER_FEMALE : Faker\Provider\Person::GENDER_MALE;
+
+  $person['persondata']['status']['status'] = '01';
+  $person['persondata']['navn']['fornavn'] = $faker->firstName($gender);
+  if (0 === $faker->numberBetween(0, 3)) {
+    $person['persondata']['navn']['mellemnavn'] = $faker->middleName($gender);
+  }
+  $person['persondata']['navn']['efternavn'] = $faker->lastName($gender);
+  $person['persondata']['navn']['personadresseringsnavn'] = array_filter([
+      $person['persondata']['navn']['fornavn'],
+      $person['persondata']['navn']['mellemnavn'] ?? '',
+      $person['persondata']['navn']['efternavn'],
+  ])
+    |> (static fn (array $a) => implode(' ', $a))
+    |> trim(...);
+
+  $person['persondata']['foedselsdato']['dato'] = $faker->date('Y-m-dP');
+
+  $person['persondata']['tilmeldtDigitalpost'] = $faker->boolean(90);
+  if ($faker->boolean(10)) {
+    $person['persondata']['adressebeskyttelse']['beskyttet'] = true;
+  }
+
+  $person['persondata']['statsborgerskab'] = [
+    'landekode' => '5100',
+    'statsborgerskabDato' => [
+      'dato' => new \DateTimeImmutable('2001-01-01')->format(\DateTimeInterface::RFC3339_EXTENDED),
+    ],
+  ];
+
+  $person['adresse']['aktuelAdresse']['vejnavn'] = $faker->streetName();
+  $person['adresse']['aktuelAdresse']['husnummer'] = $faker->buildingNumber();
+  $person['adresse']['aktuelAdresse']['etage'] = $faker->buildingLevel();
+  $person['adresse']['aktuelAdresse']['sidedoer'] = $faker->buildingSide();
+  $person['adresse']['aktuelAdresse']['postnummer'] = $faker->postcode();
+  // @todo This should match the postcode.
+  $person['adresse']['aktuelAdresse']['postdistrikt'] = $faker->city();
+  $person['adresse']['aktuelAdresse']['kommunekode'] = $faker->kommune();
+
+  $numberOfChildren = $faker->numberBetween(0, 7);
+  foreach (range(0, $numberOfChildren) as $_) {
+    $person['relationer']['barn']['personnummer'] = $cpr();
+  }
+  $numberOfPeople = $faker->numberBetween(0, 3);
+  foreach (range(0, $numberOfPeople) as $_) {
+    $person['relationer']['foraeldremyndighed']['personnummer'] = $cpr();
+  }
+
+  $persons[$personnummer] = $person;
+}
+
+echo Yaml::dump($persons, inline: PHP_INT_MAX);

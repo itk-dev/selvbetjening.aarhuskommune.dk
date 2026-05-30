@@ -9,16 +9,36 @@
 #     1111110000 -->|barn| 1111110020
 #     1111110001 -->|barn| 111111001
 
-# Map from CPR (PNR) to user data.
-# The CPRs should match "cpr" claims defined in
-# ../../../../../../../../../../docker-compose.oidc.yml.
+# Map from CPR (PNR) to person data.
+#
+# Persons with persondata.status.status in (1, 3, 5, 7) will be used to define mock OIDC
+# users (cf. ../../../../../../../docker-compose.oidc.yml). Run
+#
+#   docker compose restart idp-citizen-generate-user-claims idp-citizen
+#
+# to reload OIDC mock users after changing this file.
 
 "1111110000":
   persondata:
     status:
-      status: "01"
+      # https://rimi-itk.github.io/digitaliseringskataloget.dk/digitaliseringskataloget.dk/sf1520/4.0/PersonBaseDataExtendedService/xsd/PersonBaseDataExtendedServiceTypes.xsd
+      # Status attribute:
+      # 1 = Aktiv, bopæl i dansk folkeregister
+      # 3 = Aktiv, speciel vejkode (9900 - 9999) i dansk folkeregister
+      # 5 = Aktiv, bopæl i grønlandsk folkeregister
+      # 7 = Aktiv, speciel vejkode (9900 - 9999) i grønlandsk folkeregister
+      # 20 = Inaktiv, uden bopæl i dansk/grønlandsk folkeregister men tildelt personnummer af skattehensyn (kommunekoderne 0010, 0011, 0012 og 0019)
+      # 30 = Inaktiv, anulleret personnummer 50 = Inaktiv, slettet personnummer ved dobbeltnummer
+      # 60 = Inaktiv, ændret personnummer ved ændring af fødselsdato og køn CPR Centrale Personregister Side 8 af 53
+      # 70 = Inaktiv, forsvundet
+      # 80 = Inaktiv, udrejst
+      # 90 = Inaktiv, død
+      status: 1
     navn:
-      personadresseringsnavn: "Mother 62"
+      personadresseringsnavn: "Augusta Dalgaard Ipsen"
+      fornavn: Augusta
+      mellemnavn: Dalgaard
+      efternavn: Ipsen
     foedselsdato:
       # Y-m-dP
       dato: "1981-12-13+01:00"
@@ -49,9 +69,12 @@
 "1111110001":
   persondata:
     status:
-      status: "01"
+      status: 1
     navn:
-      personadresseringsnavn: "Father Vader"
+      personadresseringsnavn: "Louis Pallesen"
+      fornavn: Louis
+      mellemnavn:
+      efternavn: Pallesen
     foedselsdato:
       # Y-m-dP
       dato: "1981-12-13+01:00"
@@ -81,9 +104,12 @@
 "1111110010":
   persondata:
     status:
-      status: "01"
+      status: 1
     navn:
-      personadresseringsnavn: "Child 01"
+      personadresseringsnavn: "Emilie Dalgaard Ipsen-Pallesen"
+      fornavn: Emilie
+      mellemnavn: Dalgaard
+      efternavn: Ipsen-Pallesen
     foedselsdato:
       # Y-m-dP
       dato: "1981-12-13+01:00"
@@ -117,9 +143,12 @@
 "1111110020":
   persondata:
     status:
-      status: "01"
+      status: 1
     navn:
-      personadresseringsnavn: "Child 02"
+      personadresseringsnavn: "Anja Dalgaard Ipsen-Pallesen"
+      fornavn: Anja
+      mellemnavn: Dalgaard
+      efternavn: Ipsen-Pallesen
     foedselsdato:
       # Y-m-dP
       dato: "1981-12-13+01:00"
@@ -154,3 +183,35 @@
       status: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::CPR_STATUS_DEAD
     navn:
       personadresseringsnavn: Afdød Hansen
+      fornavn: Afdød
+      mellemnavn:
+      efternavn: Hansen
+
+2011004773:
+  persondata:
+    status:
+      status: 1
+    navn:
+      fornavn: Emil
+      efternavn: Frandsen
+      personadresseringsnavn: "Emil Dalgaard Frandsen"
+      mellemnavn: Dalgaard
+    foedselsdato:
+      dato: "2008-07-21+02:00"
+    tilmeldtDigitalpost: true
+    statsborgerskab:
+      landekode: "5100"
+      statsborgerskabDato:
+        dato: "2001-01-01T00:00:00.000+01:00"
+  adresse:
+    aktuelAdresse:
+      vejnavn: Boisengade
+      husnummer: 8V
+      etage: "1."
+      sidedoer: th.
+      postnummer: "9380"
+      postdistrikt: Ålsgårde
+      kommunekode: Bornholm
+  relationer:
+    barn:
+    foraeldremyndighed:

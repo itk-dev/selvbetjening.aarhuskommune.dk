@@ -2,6 +2,7 @@
 
 namespace Drupal\os2web_datalookup_mock\Plugin\os2web\DataLookup;
 
+use Drupal\Core\Site\Settings;
 use Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended;
 use Symfony\Component\Yaml\Yaml;
 
@@ -25,7 +26,8 @@ class ServiceplatformenCPRExtendedMock extends ServiceplatformenCPRExtended {
       $id = $request['PNR'] ?? NULL;
 
       // https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
-      $data = Yaml::parseFile(__DIR__ . '/' . $method . '.yaml', flags: Yaml::PARSE_CONSTANT);
+      $path = $this->getDataPath($method);
+      $data = Yaml::parseFile($path, flags: Yaml::PARSE_CONSTANT);
       if (!isset($data[$id])) {
         throw new \RuntimeException('Invalid CPR: ' . $id);
       }
@@ -51,6 +53,19 @@ class ServiceplatformenCPRExtendedMock extends ServiceplatformenCPRExtended {
         'error' => $exception->getMessage(),
       ];
     }
+  }
+
+  /**
+   * Get mock data path.
+   */
+  private function getDataPath(string $method): string {
+    $settings = Settings::get('os2web_datalookup_mock');
+    $path = $settings['paths'][$method] ?? NULL;
+    if (NULL !== $path && is_readable($path)) {
+      return $path;
+    }
+
+    return __DIR__ . '/../../../../resources/' . $method . '.yaml';
   }
 
 }

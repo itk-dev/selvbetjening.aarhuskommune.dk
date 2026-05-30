@@ -2,23 +2,48 @@ services:
   # https://github.com/geigerzaehler/oidc-provider-mock
   idp-citizen:
     image: ghcr.io/geigerzaehler/oidc-provider-mock:latest
-    container_name: idp-citizen.${COMPOSE_DOMAIN}
+    container_name: idp-citizen.${COMPOSE_DOMAIN:?}
     networks:
       - app
       - frontend
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=frontend"
-      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-idp-citizen.rule=Host(`idp-citizen.${COMPOSE_DOMAIN}`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-idp-citizen.rule=Host(`idp-citizen.${COMPOSE_DOMAIN:?}`)"
     expose:
       - "80"
     command: [
         "--port",
         "80",
 
-        # @todo Remove "aud" when upgrading to itk-dev/openid-connect:^4
-        "--user-claims",
-        '{"sub": "Mother with two children", "cpr": "1111110000", "name": "Mother 62", "aud": "client-id"}',
-        "--user-claims",
-        '{"sub": "Father with a single child", "cpr": "1111110001", "name": "Father Vader", "aud": "client-id"}',
+        # https://oidc-provider-mock.readthedocs.io/stable/usage.html#predefined-users
+        "--user-claims-file",
+        "/app/user-claims.yaml",
       ]
+    volumes:
+      - idp-citizen-data:/app
+    # https://docs.docker.com/reference/compose-file/services/#depends_on
+    depends_on:
+      idp-citizen-generate-user-claims:
+        condition: service_completed_successfully
+
+  # Generate user data for idp-citizen service
+  idp-citizen-generate-user-claims:
+    image: mikefarah/yq
+    user: root
+    entrypoint: [
+        sh,
+        -c,
+        'yq ''.[] | select(.persondata.status.status == (1, 3, 5, 7)) | [{
+        "sub": key + ": " + .persondata.navn.personadresseringsnavn,
+        "status": .persondata.status.status,
+        "cpr": key,
+        "aud": "client-id"
+        }]'' /input/data.yaml > /app/user-claims.yaml',
+      ]
+    volumes:
+      - idp-citizen-data:/app
+      - ./${PERSON_LOOKUP_PATH:-web/modules/custom/itkdev_example_forms/modules/os2web_datalookup_mock/resources/PersonLookup.yaml}:/input/data.yaml
+
+volumes:
+  idp-citizen-data:

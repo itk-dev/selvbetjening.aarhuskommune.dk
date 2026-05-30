@@ -1,26 +1,14 @@
 # Testing OpenID Connect
 
-We use [OpenId Connect Server Mock](https://github.com/Soluto/oidc-server-mock).
+We use [OpenID Provider Mock](https://github.com/geigerzaehler/oidc-provider-mock) to the OIDC login during development.
 
-**Note**: The following assumes that [the itkdev-docker-compose helper
-script](https://github.com/itk-dev/devops_itkdev-docker#helper-scripts) is used
-for development.
-
-Start docker compose show with the `test`
-[profile](https://docs.docker.com/compose/profiles/):
-
-```sh
-docker compose --profile test up --detach
-```
-
-Remember to add `--profile test` when stopping (or downing) to stop (or down)
-all containers:
-
-```sh
-docker compose --profile test stop
-```
+For "[Citizen login](#citizen-login)", we generate the mock OIDC users based on [mock CPR lookup data](../web/modules/custom/itkdev_example_forms/modules/os2web_datalookup_mock/resources/PersonLookup.yaml),
+see [docker-compose.oidc.yml](../docker-compose.oidc.yml) for details.
 
 ## "Medarbejderlogin"
+
+> [!WARNING]
+> The content in this section is outdated.
 
 Configure [the OpenID Connect
 module](https://www.drupal.org/project/openid_connect) to use
@@ -44,6 +32,9 @@ Go to <https://selvbetjening.local.itkdev.dk/user/login>, click
 (cf. `USERS_CONFIGURATION_INLINE` in [`docker-compose.override.yml`](../docker-compose.override.yml)).
 
 ## Citizen login
+
+> [!WARNING]
+> The content in this section is outdated.
 
 ```php
 # web/sites/default/settings.local.php
@@ -69,65 +60,6 @@ $settings['os2forms_nemlogin_openid_connect']['allow_http'] = TRUE;
 
 Create a public form with "Webform type" set to "Personal" and a `webform` page
 using the form.
-
-When accessing the page you should be redirected to the IdP sign in form. Sign
-in with username `1705880000` and password `1705880000` (for CPR user) or with
-username `43486829` and password `43486829` (for CVR user) (cf.
-`USERS_CONFIGURATION_INLINE` in
-[`docker-compose.override.yml`](../docker-compose.override.yml)).
-
-## Test users
-
-* <https://idp-admin.selvbetjening.local.itkdev.dk/api/v1/user/administrator>
-* <https://idp-citizen.selvbetjening.local.itkdev.dk/api/v1/user/1705880000>
-* <https://idp-citizen.selvbetjening.local.itkdev.dk/api/v1/user/43486829>
-
-## Adding a claim
-
-You can add a claim by modifying `USERS_CONFIGURATION_INLINE` in the relevant
-mock idp container in [`docker-compose.override.yml`](../docker-compose.override.yml).
-
-```yaml
-USERS_CONFIGURATION_INLINE: |
-  - SubjectId: administrator
-    Username: administrator
-    Password: administrator
-    Claims:
-    - Type: name
-      Value: Admin Jensen
-      ValueType: string
-    - Type: email
-      Value: administrator@example.com
-      ValueType: string
-    - Type: groups
-      Value: '["AD-administrator"]'
-      ValueType: json
-    # Beneath is added
-    - Type: some_new_claim
-      Value: integer
-      ValueType: 1234
-```
-
-and updating `IDENTITY_RESOURCES_INLINE`
-
-```yaml
-IDENTITY_RESOURCES_INLINE: |
-  # https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes#standard-claims
-  - Name: openid
-    ClaimTypes:
-      - sub
-  - Name: profile
-    ClaimTypes:
-      - name
-      - groups
-      - some_new_claim # Added
-  - Name: email
-    ClaimTypes:
-      - email
-```
-
-Changes will take effect after reloading the OIDC configuration as explained
-beneath.
 
 ## Reloading the OIDC configuration
 

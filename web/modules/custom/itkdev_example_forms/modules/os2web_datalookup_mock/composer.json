@@ -1,0 +1,17 @@
+{
+    "name": "itk-dev/os2web_datalookup_mock",
+    "description": "OS2Web Data lookup mock",
+    "license": "GPL-2.0-or-later",
+    "type": "drupal-custom-module",
+    "require-dev": {
+        "php": "^8.5",
+        "ergebnis/composer-normalize": "^2.52",
+        "fakerphp/faker": "^1.24",
+        "symfony/yaml": "^8.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        }
+    }
+}
