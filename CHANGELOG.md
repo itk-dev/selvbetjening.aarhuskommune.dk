@@ -9,6 +9,21 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 * [PR-504](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/504)
   Justerede digital signatur validerings teksten så den ikke overlapper
   kolofon.
+* [PR-507](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/507)
+  Enabled os2forms_digital_signature-module.
+
+## [5.1.8] 2026-05-20
+
+* [PR-510](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/510)
+  Sikkerhedsopdatering af Drupal.
+
+## [5.1.7] 2026-05-19
+
+* [PR-509](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/509)
+  Tilføjede flex-basis til formularvisning når der ikke benyttes progress bar.
+
+## [5.1.6] 2026-05-18
+
 * [PR-501](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/501)
   Tilføjede Digital signatur indstillinger til config-ignore.
 * [PR-486](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/486)
@@ -32,20 +47,20 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   Tilføjede eksempelformularer.
   Tilføjede webform core eksempelformularer.
 
-## [5.1.5] 2025-04-16
+## [5.1.5] 2026-04-16
 
 * Sikkerhedsopdatering af Drupal.
 
-## [5.1.4] 2025-04-13
+## [5.1.4] 2026-04-13
 
 * Opdaterede OS2Forms Kort-elementet.
 * GO-handler oversætter nu ikke længere fejlbeskeder.
 
-## [5.1.3] 2025-03-31
+## [5.1.3] 2026-03-31
 
 * Opdaterede Maestro notifikations-skabelon
 
-## [5.1.2] 2025-03-23
+## [5.1.2] 2026-03-23
 
 * Tilføjede mulighed for returadresse i digital post.
 
@@ -804,7 +819,10 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.5...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.8...HEAD
+[5.1.8]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.7...5.1.8
+[5.1.7]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.6...5.1.7
+[5.1.6]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.5...5.1.6
 [5.1.5]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.4...5.1.5
 [5.1.4]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.3...5.1.4
 [5.1.3]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.2...5.1.3
