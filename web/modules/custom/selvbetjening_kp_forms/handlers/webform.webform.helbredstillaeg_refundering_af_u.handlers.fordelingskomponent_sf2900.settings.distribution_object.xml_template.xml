@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Anmodning>
+  {# module://os2forms_fordelingskomponent/resources/SP/SF2900_XSD/Anmodning.xsd #}
+
+  {% macro personnummer(value) -%}
+  {{ 'urn:oio:cpr:%010d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro telefonnummer(value) -%}
+    {{ '%08d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro date(value) -%}
+  {{ value|date('Y-m-d') }}
+  {%- endmacro %}
+
+  {% macro max_laengde_strings_200(value) -%}
+  {{ value|trim|slice(0, 200) }}
+  {%- endmacro %}
+
+  {% macro positive_integer(value) -%}
+  {%- set value = max(1, value|number_format(0, '', '')) -%}
+  {{ '%d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro positive_integer_type_or_empty(value) -%}
+  {%- if value is not empty -%}
+  {%- set value = max(1, value|number_format(0, '', '')) -%}
+  {{ '%d'|format(value) }}
+  {%- endif -%}
+  {%- endmacro %}
+
+  {# number_format (https://twig.symfony.com/doc/3.x/filters/number_format.html) will cast anything (that can be casted to a float) to a float before formatting
+  (cf. https://github.com/twigphp/Twig/blob/99d95dd6b8b0cc3c2397d15d45a4bb87eff89ddc/src/Extension/CoreExtension.php#L698) #}
+
+  {# Strip thousand and decimal separators (from Danish floats); compute with 4 decimals #}
+  {% macro decimal_value(value) -%}
+  {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '') -%}
+  {{ value }}
+  {%- endmacro %}
+
+  {% macro positiv_decimal_type(value) -%}
+  {%- set value = max(0.01, value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '')) -%}
+  {{ value|number_format(2, '.', '') }}
+  {%- endmacro %}
+
+  {% macro decimal_type(value) -%}
+  {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '') -%}
+  {{ value|number_format(2, '.', '') }}
+  {%- endmacro %}
+
+  <Header>
+    <Myndighed>urn:oio:cvr-nr:{{ handler.settings.sender.sender_id }}</Myndighed>
+    <ModtagetDato>{{ _self.date(submission.completed) }}</ModtagetDato>
+    <KLE>{{ handler.settings.distribution_context.kle_emne }}</KLE>
+    {% for file in files.dokumenter_overslag|default([]) %}
+    <Dokumenter>
+      <Dokumentnavn>{{ file.sftp_filename }}</Dokumentnavn>
+      <Dokumenttype>Overslag</Dokumenttype>
+    </Dokumenter>
+    {% endfor %}
+    {% for file in files.dokumenter_faktura|default([]) %}
+    <Dokumenter>
+      <Dokumentnavn>{{ file.sftp_filename }}</Dokumentnavn>
+      <Dokumenttype>Faktura</Dokumenttype>
+    </Dokumenter>
+    {% endfor %}
+    {% for file in files.dokumenter_bilag|default([]) %}
+    <Dokumenter>
+      <Dokumentnavn>{{ file.sftp_filename }}</Dokumentnavn>
+      <Dokumenttype>Bilag</Dokumenttype>
+    </Dokumenter>
+    {% endfor %}
+  </Header>
+
+  <AnsoegerOplysninger>
+    <Ansoeger>
+      <Fornavn>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn|trim }}</Fornavn>
+      {% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %}
+      <Mellemnavn>{{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn|trim }}</Mellemnavn>
+      {% endif %}
+      <Efternavn>{{ submission.data.ansoegeroplysninger_ansoeger_efternavn|trim }}</Efternavn>
+      <Personnummer>{{ _self.personnummer(submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</Personnummer>
+      {% if submission.data.ansoegeroplysninger_ansoeger_telefonnummer|default(false) %}
+      <Telefonnummer>{{ _self.telefonnummer(submission.data.ansoegeroplysninger_ansoeger_telefonnummer) }}</Telefonnummer>
+      {% endif %}
+    </Ansoeger>
+  </AnsoegerOplysninger>
+
+  <Sagstype>
+    {% if submission.data.sagstype == 'Helbredstillæg' %}
+    <AlmindeligtHelbredstillaeg>{{ submission.data.sagstype_almindeligthelbredstillaeg|trim }}</AlmindeligtHelbredstillaeg>
+    {% else %}
+    <UdvidetHelbredstillaeg>{{ submission.data.sagstype_udvidethelbredstillaeg|trim }}</UdvidetHelbredstillaeg>
+    {% endif %}
+  </Sagstype>
+
+  <Underskriftsoplysninger>
+    <Underskrift>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn }}{% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %} {{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn }}{% endif %} {{ submission.data.ansoegeroplysninger_ansoeger_efternavn }}</Underskrift>
+    <Underskriftsdato>{{ _self.date(submission.data.underskriftsoplysninger_underskriftsdato) }}</Underskriftsdato>
+  </Underskriftsoplysninger>
+
+    <Bemaerkning>{{ _self.max_laengde_strings_200('@todo') }}</Bemaerkning>
+
+  {% if submission.data.giver_med_min_underskrift_begraenset_fuldmagt_til is not empty %}
+  {# @todo #}
+  <Fuldmagt>
+    <FuldmagtDokumentnavn>{{ submission.data.for_og_mellemnavn_e1|trim }} {{ submission.data.efternavn1|trim }}</FuldmagtDokumentnavn>
+    <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.personnummer1) }}</FuldmagthaversPersonnummer>
+  </Fuldmagt>
+  {% endif %}
+
+</Anmodning>

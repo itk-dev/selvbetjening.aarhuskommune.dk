@@ -1,0 +1,524 @@
+uuid: 0c5e06ad-4ef7-45cb-914a-2616227409ec
+langcode: da
+status: open
+dependencies:
+  module:
+    - os2forms
+    - os2forms_digital_post
+    - os2forms_fordelingskomponent
+    - os2forms_permissions_by_term
+    - webform_encrypt
+    - webform_entity_print
+    - webform_revisions
+third_party_settings:
+  webform_revisions:
+    contentEntity_id: '391'
+    revisionId: '405'
+    auto_update: 0
+  os2forms_permissions_by_term:
+    settings:
+      42: '42'
+      43: '43'
+      44: '44'
+  webform_encrypt:
+    element:
+      oplysninger1:
+        encrypt: true
+        encrypt_profile: webform
+      oplysninger2:
+        encrypt: true
+        encrypt_profile: webform
+      oplysninger3:
+        encrypt: true
+        encrypt_profile: webform
+      markup_01:
+        encrypt: true
+        encrypt_profile: webform
+      vejledning_til_specificeret_overslag_fra_optiker_oejenlaege:
+        encrypt: true
+        encrypt_profile: webform
+      cvr_nummer:
+        encrypt: true
+        encrypt_profile: webform
+      oplysninger_om_optikeren_oejenlaegen1:
+        encrypt: true
+        encrypt_profile: webform
+      markup_02:
+        encrypt: true
+        encrypt_profile: webform
+      dit_cpr_nummer:
+        encrypt: true
+        encrypt_profile: webform
+      evt_p_nummer:
+        encrypt: true
+        encrypt_profile: webform
+      navn:
+        encrypt: true
+        encrypt_profile: webform
+      vejnavn:
+        encrypt: true
+        encrypt_profile: webform
+      husnummer:
+        encrypt: true
+        encrypt_profile: webform
+      etage:
+        encrypt: true
+        encrypt_profile: webform
+      side_doer:
+        encrypt: true
+        encrypt_profile: webform
+      postnummer:
+        encrypt: true
+        encrypt_profile: webform
+      by:
+        encrypt: true
+        encrypt_profile: webform
+      behandler_telefonnummerbehandler:
+        encrypt: true
+        encrypt_profile: webform
+      behandler_emailbehandler:
+        encrypt: true
+        encrypt_profile: webform
+      oplysninger_om_kunden_patienten:
+        encrypt: true
+        encrypt_profile: webform
+      oplysninger_om_kunden_patienten1:
+        encrypt: true
+        encrypt_profile: webform
+      oplysninger_om_kunden_patienten2:
+        encrypt: true
+        encrypt_profile: webform
+      markup_03:
+        encrypt: true
+        encrypt_profile: webform
+      cpransoeger:
+        encrypt: true
+        encrypt_profile: webform
+      navnansoeger:
+        encrypt: true
+        encrypt_profile: webform
+      telefonnummer:
+        encrypt: true
+        encrypt_profile: webform
+      behov_for_brille:
+        encrypt: true
+        encrypt_profile: webform
+      behov_for_brille1:
+        encrypt: true
+        encrypt_profile: webform
+      behov_for_brille2:
+        encrypt: true
+        encrypt_profile: webform
+      aarsag:
+        encrypt: true
+        encrypt_profile: webform
+      aarsag_harbriller:
+        encrypt: true
+        encrypt_profile: webform
+      aarsag_harbriller_alder:
+        encrypt: true
+        encrypt_profile: webform
+      aarsag_begrundelse:
+        encrypt: true
+        encrypt_profile: webform
+      aarsag_andenbegrundelse:
+        encrypt: true
+        encrypt_profile: webform
+      brilletype:
+        encrypt: true
+        encrypt_profile: webform
+      brilletype1:
+        encrypt: true
+        encrypt_profile: webform
+      brilletype2:
+        encrypt: true
+        encrypt_profile: webform
+      markup_05:
+        encrypt: true
+        encrypt_profile: webform
+      hvilken_brille_kan_afhjaelpe_problemet:
+        encrypt: true
+        encrypt_profile: webform
+      er_der_specielle_forhold_fx_allergi_der_goer_sig_gaeldende_for_v:
+        encrypt: true
+        encrypt_profile: webform
+      aarsag_specielleforhold:
+        encrypt: true
+        encrypt_profile: webform
+      ny_side:
+        encrypt: true
+        encrypt_profile: webform
+      ny_side1:
+        encrypt: true
+        encrypt_profile: webform
+      ny_side2:
+        encrypt: true
+        encrypt_profile: webform
+      markup_06:
+        encrypt: true
+        encrypt_profile: webform
+      overslag:
+        encrypt: true
+        encrypt_profile: webform
+      brillestel_brilleglas:
+        encrypt: true
+        encrypt_profile: webform
+      overslag_brilleglas_venstre:
+        encrypt: true
+        encrypt_profile: webform
+      overslag_brilleglas_hoejre:
+        encrypt: true
+        encrypt_profile: webform
+      tilfoej_andet:
+        encrypt: true
+        encrypt_profile: webform
+      overslag_andet:
+        encrypt: true
+        encrypt_profile: webform
+      overslag_andet_brillestel:
+        encrypt: true
+        encrypt_profile: webform
+      overslag_andet_brillestel_pris:
+        encrypt: true
+        encrypt_profile: webform
+      overslag_andet_brilleglas_venstre:
+        encrypt: true
+        encrypt_profile: webform
+      overslag_andet_brilleglas_hoejre:
+        encrypt: true
+        encrypt_profile: webform
+      overslag_pris:
+        encrypt: true
+        encrypt_profile: webform
+      dokumenter_bilag:
+        encrypt: true
+        encrypt_profile: webform
+      dokumenter_faktura:
+        encrypt: true
+        encrypt_profile: webform
+      dokumenter_overslag:
+        encrypt: true
+        encrypt_profile: webform
+      jeg_bekraefter_hermed_at_jeg_har_vedhaeftet_alle_obligatoriske_b:
+        encrypt: true
+        encrypt_profile: webform
+      nyside:
+        encrypt: true
+        encrypt_profile: webform
+      nyside1:
+        encrypt: true
+        encrypt_profile: webform
+      nyside2:
+        encrypt: true
+        encrypt_profile: webform
+      markup_07:
+        encrypt: true
+        encrypt_profile: webform
+      erklaering_navnansoeger:
+        encrypt: true
+        encrypt_profile: webform
+      erklaering_cpransoeger:
+        encrypt: true
+        encrypt_profile: webform
+      erklaering_underskriftsoplysningeransoeger_underskriftsdatoansoeger:
+        encrypt: true
+        encrypt_profile: webform
+      erklaering_underskriftsoplysningeransoeger_underskriftansoeger:
+        encrypt: true
+        encrypt_profile: webform
+      behandler_underskriftsoplysningerbehandler_underskriftsdatobehandler:
+        encrypt: true
+        encrypt_profile: webform
+      behandler_underskriftsoplysningerbehandler_underskriftbehandler:
+        encrypt: true
+        encrypt_profile: webform
+      kvittering:
+        encrypt: true
+        encrypt_profile: webform
+  os2forms:
+    os2forms_email_handler:
+      enabled: 0
+      email_recipients: ''
+    os2forms_nemid:
+      session_type: ''
+      webform_type: ''
+      nemlogin_auto_redirect: 0
+      os2forms_nemlogin_openid_connect:
+        authentication_settings:
+          user_claim: ''
+          element_key: ''
+          error_message: ''
+    os2forms_nemid_address_protection:
+      nemlogin_hide_form: os2forms_nemlogin_address_protection_default_behaviour
+      nemlogin_hide_message: ''
+    os2forms_rest_api:
+      allowed_users: null
+    os2forms_sync:
+      publish: 0
+    os2forms_webform_submission_log:
+      emails: ''
+  webform_entity_print:
+    template:
+      header: ''
+      footer: ''
+      css: ''
+      os2form_header: ''
+      os2form_colophon: ''
+      os2form_footer: ''
+    export_types:
+      pdf:
+        enabled: true
+        link_text: ''
+        link_attributes: {  }
+      word_docx:
+        enabled: false
+        link_text: ''
+        link_attributes: {  }
+weight: 0
+open: null
+close: null
+uid: 57
+template: false
+archive: false
+id: erklaering_fra_optiker_sp246_000
+title: 'Erklæring fra optiker - SP246_000'
+description: '<p><strong>Beskrivelse:</strong>&nbsp;Denne indberetning anvendes, når en optiker eller øjenlæge skal sende et overslag.<br>&nbsp;<br><strong>Ejer:</strong>&nbsp;<br>&nbsp;<br><strong>Afdeling:</strong>&nbsp;Pension<br><br><strong>Postkasse: &nbsp;</strong>pension@msb.aarhus.dk<br><br>&nbsp;<br><strong>Direkte link:</strong>&nbsp;</p><p><br><strong>Shortlink:</strong>&nbsp;<br>&nbsp;<br><strong>Henvisninger:&nbsp; </strong>SP246_000<br><br><strong>Sprog:</strong> Dansk</p>'
+categories:
+  - Ekstern
+  - Fordelingskomponent
+  - KP
+  - Test
+elements: "oplysninger1:\n  '#type': webform_wizard_page\n  '#title': 'Oplysninger om optikeren/øjenlægen'\n  oplysninger2:\n    '#type': webform_section\n    '#title': 'Dine oplysninger '\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    oplysninger3:\n      '#type': fieldset\n      '#title': Oplysninger\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      '#format': container\n      markup_01:\n        '#type': webform_markup\n        '#markup': '<h3><strong>Info</strong></h3><p>Du skal som optiker/øjenlæge anvende dette forløb til udfyldelse af overslag vedr. borgers behov for brille.</p><p>Hvis der er specielle forhold, fx allergi, der gør sig gældende for valg af stel/glas skal lægeerklæring medsendes som bilag i ansøgningsforløbet til udvidet helbredstillæg.</p>'\n      vejledning_til_specificeret_overslag_fra_optiker_oejenlaege:\n        '#type': details\n        '#title': 'Vejledning til specificeret overslag fra optiker/øjenlæge'\n        '#description': '<h3>Vejledning&nbsp;</h3><p>Blanketten anvendes af kommunen ved indhentning af specificeret overslag for briller, i tilfælde hvor der ikke er indgået prisaftale med kommunen.&nbsp;</p><p>Før kommunen træffer afgørelse om betaling af brille efter reglerne om udvidet helbredstillæg, jf. pensionslovens § 14a, stk. 4 eller førtidspensionsloven § 18, stk. 4, ønskes en vurdering af kundens/patientens behov for brille, årsagen hertil samt et overslag på udgifterne. Vurderingen behøver ikke at blive angivet på netop denne blanket, men skal indeholde de efterspurgte forhold.&nbsp;</p><p>Overslaget fremsendes til kommunen eller udleveres til kunden/patienten.&nbsp;</p><p>Hvis der er indgået prisaftale med kommunen om den foreslåede behandling, bedes optikeren/øjenlægen anvende den administrative arbejdsgang, der er aftalt og sædvane ved denne behandling.&nbsp;</p><p><strong>Om samtykke</strong>&nbsp;</p><p>Med din underskrift giver du dit samtykke til at optikeren/ øjenlægen videregive oplysningerne i overslaget til kommunen. Reglerne om samtykke om videregivelse af oplysninger fremgår af Databeskyttelsesforordningen.</p><p>Ved samtykke forstås ”enhver frivillig, specifik, informeret og utvetydig viljestilkendegivelse fra den registrerede, hvorved den registrerede ved erklæring eller klar bekræftelse indvilliger i, at personoplysninger, der vedrører den pågældende, gøres til genstand for behandling.” Jf. Databeskyttelsesforordningen artikel 4 nr. 11.</p><p>Du kan altid tilbagekalde et samtykke til indhentning eller videregivelse af oplysninger, jf. Databeskyttelsesforordningens artikel 7, stk. 3. Når et samtykke tilbagekaldes behandles sagen efterfølgende efter reglerne uden samtykke. Det kan have betydning for din ret til ydelsen.</p>'\n      cvr_nummer:\n        '#type': os2forms_nemid_company_cvr\n        '#title': 'CVR nummer'\n        '#multiple': false\n        '#readonly': true\n    oplysninger_om_optikeren_oejenlaegen1:\n      '#type': fieldset\n      '#title': 'Oplysninger om optikeren/øjenlægen'\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_02:\n        '#type': webform_markup\n        '#markup': '<h3>Oplysninger om optikeren/øjenlægen</h3>'\n      dit_cpr_nummer:\n        '#type': textfield\n        '#title': CVR-nummer\n        '#required': true\n      evt_p_nummer:\n        '#type': textfield\n        '#title': 'Evt. P-nummer'\n      navn:\n        '#type': textfield\n        '#title': Navn\n        '#required': true\n      vejnavn:\n        '#type': textfield\n        '#title': Vejnavn\n        '#required': true\n      husnummer:\n        '#type': textfield\n        '#title': Husnummer\n        '#required': true\n        '#wrapper_attributes':\n          style: 'max-width: 200px; '\n      etage:\n        '#type': textfield\n        '#title': Etage\n        '#wrapper_attributes':\n          style: 'max-width: 200px; '\n      side_doer:\n        '#type': textfield\n        '#title': Side/Dør\n        '#wrapper_attributes':\n          style: 'max-width: 200px; '\n      postnummer:\n        '#type': textfield\n        '#title': Postnummer\n        '#required': true\n        '#wrapper_attributes':\n          style: 'max-width: 200px; '\n      by:\n        '#type': textfield\n        '#title': By\n        '#required': true\n      behandler_telefonnummerbehandler:\n        '#type': tel\n        '#title': Telefonnummer\n        '#required': true\n      behandler_emailbehandler:\n        '#type': email\n        '#title': E-mail\n        '#required': true\noplysninger_om_kunden_patienten:\n  '#type': webform_wizard_page\n  '#title': 'Oplysninger om kunden/patienten'\n  oplysninger_om_kunden_patienten1:\n    '#type': webform_section\n    '#title': 'Oplysninger om kunden/patienten'\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    oplysninger_om_kunden_patienten2:\n      '#type': fieldset\n      '#title': 'Oplysninger om kunden/patienten'\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_03:\n        '#type': webform_markup\n        '#markup': '<h3>Oplysninger om kunden/patienten</h3>'\n      cpransoeger:\n        '#type': textfield\n        '#title': Personnummer\n        '#required': true\n      navnansoeger:\n        '#type': textfield\n        '#title': 'Fulde navn '\n      telefonnummer:\n        '#type': tel\n        '#title': Telefonnummer\n        '#required': true\nbehov_for_brille:\n  '#type': webform_wizard_page\n  '#title': 'Årsag til behov for brille'\n  behov_for_brille1:\n    '#type': webform_section\n    '#title': 'Årsag til behov for brille'\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    behov_for_brille2:\n      '#type': fieldset\n      '#title': 'Årsag til behov for brille'\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      aarsag:\n        '#type': webform_markup\n        '#markup': '<h3>Årsag til behov for brille</h3>'\n      aarsag_harbriller:\n        '#type': radios\n        '#title': 'Har kunden/patienten allerede briller/kontaktlinser'\n        '#options': yes_no\n        '#required': true\n      aarsag_harbriller_alder:\n        '#type': textfield\n        '#title': 'Brillens/kontaktlinsernes alder'\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"har_kunden_patienten_allerede_briller_kontaktlinser\"]':\n              value: Ja\n      aarsag_begrundelse:\n        '#type': checkboxes\n        '#title': 'Hvilken begrundelse er der for en (ny) brille'\n        '#options':\n          Synsændring: Synsændring\n          Synsnedsættelse: Synsnedsættelse\n          'Styrkeforskel og/eller bygningsfejl på læsebrille - minimum 1 dioptri': 'Styrkeforskel og/eller bygningsfejl på læsebrille - minimum 1 dioptri'\n          'Uanvendelig gammel brille, da den er slidt op, gået i stykker eller lignende': 'Uanvendelig gammel brille, da den er slidt op, gået i stykker eller lignende'\n        '#required': true\n      aarsag_andenbegrundelse:\n        '#type': textarea\n        '#title': 'Anden/yderligere/mere specifik begrundelse'\nbrilletype:\n  '#type': webform_wizard_page\n  '#title': Brilletype\n  brilletype1:\n    '#type': webform_section\n    '#title': Brilletype\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px; '\n    brilletype2:\n      '#type': fieldset\n      '#title': Brilletype\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_05:\n        '#type': webform_markup\n        '#markup': '<h3>Brilletype</h3>'\n      hvilken_brille_kan_afhjaelpe_problemet:\n        '#type': checkboxes\n        '#title': 'Hvilken brille kan afhjælpe problemet'\n        '#options':\n          'Nyt brillestel': 'Nyt brillestel'\n          'Læsebrille med styrkeforskel - minimum 1 dioptri': 'Læsebrille med styrkeforskel - minimum 1 dioptri'\n          'Permanente briller til nær- og langsynethed (herunder bygningsfejl)': 'Permanente briller til nær- og langsynethed (herunder bygningsfejl)'\n          'Permanente briller til nær- og langsynethed (herunder bygningsfejl) med indbygget læsefelt (bifokale glas)': 'Permanente briller til nær- og langsynethed (herunder bygningsfejl) med indbygget læsefelt (bifokale glas)'\n        '#required': true\n      er_der_specielle_forhold_fx_allergi_der_goer_sig_gaeldende_for_v:\n        '#type': radios\n        '#title': 'Er der specielle forhold, fx allergi, der gør sig gældende for valg af stel/glas'\n        '#options': yes_no\n        '#required': true\n      aarsag_specielleforhold:\n        '#type': textarea\n        '#title': 'Specielle forhold (husk at vedlægge lægeerklæring, når ansøgningen udfyldes)'\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"er_der_specielle_forhold_fx_allergi_der_goer_sig_gaeldende_for_v\"]':\n              value: Ja\nny_side:\n  '#type': webform_wizard_page\n  '#title': Overslag\n  ny_side1:\n    '#type': webform_section\n    '#title': Overslag\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px; '\n    ny_side2:\n      '#type': fieldset\n      '#title': Overslag\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_06:\n        '#type': webform_markup\n        '#markup': '<h3>Overslag</h3>'\n      overslag:\n        '#type': radios\n        '#title': 'Vil du tilføje dit overslag som et bilag'\n        '#options': yes_no\n        '#required': true\n      brillestel_brilleglas:\n        '#type': webform_custom_composite\n        '#title': 'Brillestel- og glas'\n        '#states':\n          visible:\n            ':input[name=\"overslag\"]':\n              value: Nej\n        '#element':\n          brillestel_navn:\n            '#type': textfield\n            '#title': Navn\n          brillestel_pris_stel:\n            '#type': textfield\n            '#title': 'Brillestel - Pris - kr.'\n          brilleglas_pris:\n            '#type': textfield\n            '#title': 'Brilleglas - Pris - kr.'\n      overslag_brilleglas_venstre:\n        '#type': webform_custom_composite\n        '#title': 'Venstre brilleglas'\n        '#states':\n          visible:\n            ':input[name=\"overslag\"]':\n              value: Nej\n        '#element':\n          styrke:\n            '#type': textfield\n            '#title': Styrke\n          cyl:\n            '#type': textfield\n            '#title': Cyl.\n          add:\n            '#type': textfield\n            '#title': Add.\n          o:\n            '#type': textfield\n            '#title': O\n      overslag_brilleglas_hoejre:\n        '#type': webform_custom_composite\n        '#title': 'Højre brilleglas'\n        '#states':\n          visible:\n            ':input[name=\"overslag\"]':\n              value: Nej\n        '#element':\n          styrke:\n            '#type': textfield\n            '#title': Styrke\n          cyl:\n            '#type': textfield\n            '#title': Cyl.\n          add:\n            '#type': textfield\n            '#title': Add.\n          o:\n            '#type': textfield\n            '#title': O\n      tilfoej_andet:\n        '#type': checkbox\n        '#title': 'Tilføj andet'\n        '#states':\n          visible:\n            ':input[name=\"overslag\"]':\n              value: Nej\n      overslag_andet:\n        '#type': textfield\n        '#title': Andet\n        '#states':\n          visible:\n            ':input[name=\"tilfoej_andet\"]':\n              checked: true\n      overslag_andet_brillestel:\n        '#type': textfield\n        '#title': Navn\n        '#states':\n          visible:\n            ':input[name=\"tilfoej_andet\"]':\n              checked: true\n      overslag_andet_brillestel_pris:\n        '#type': textfield\n        '#title': 'Pris - kr.'\n        '#states':\n          visible:\n            ':input[name=\"tilfoej_andet\"]':\n              checked: true\n      overslag_andet_brilleglas_venstre:\n        '#type': webform_custom_composite\n        '#title': Venstre\n        '#states':\n          visible:\n            ':input[name=\"tilfoej_andet\"]':\n              checked: true\n        '#element':\n          styrke:\n            '#type': textfield\n            '#title': Styrke\n          cyl:\n            '#type': textfield\n            '#title': Cyl.\n          add:\n            '#type': textfield\n            '#title': Add.\n          o:\n            '#type': textfield\n            '#title': O\n      overslag_andet_brilleglas_hoejre:\n        '#type': webform_custom_composite\n        '#title': Højre\n        '#states':\n          visible:\n            ':input[name=\"tilfoej_andet\"]':\n              checked: true\n        '#element':\n          styrke:\n            '#type': textfield\n            '#title': Styrke\n          cyl:\n            '#type': textfield\n            '#title': Cyl.\n          add:\n            '#type': textfield\n            '#title': Add.\n          o:\n            '#type': textfield\n            '#title': O\n      overslag_pris:\n        '#type': webform_computed_twig\n        '#title': 'Pris i alt'\n        '#states':\n          visible:\n            ':input[name=\"overslag\"]':\n              value: Nej\n        '#template': |-\n          {% set antal=0 %}\n          {% for ele in data.indsats %}\n          {% set antal = antal + ele. tidsforbrug|default(0) %}\n          {% endfor %}\n\n          {% for ele in data.indsats1 %}\n            {% set antal = antal + ele.tidsforbrug|default(0) %}\n          {% endfor %}\n\n          {% for ele in data.indsats2 %}\n            {% set antal = antal + ele.tidsforbrug|default(0) %}\n          {% endfor %}\n\n          {% for ele in data.indsats3 %}\n            {% set antal = antal + ele.tidsforbrug|default(0) %}\n          {% endfor %}\n\n          {% for ele in data.indsats4 %}\n            {% set antal = antal + ele.tidsforbrug|default(0) %}\n          {% endfor %}\n\n\n          {{ antal }} kr.\n      dokumenter_bilag:\n        '#type': managed_file\n        '#title': Bilag\n        '#multiple': true\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"overslag\"]':\n              value: Ja\n        '#format': name\n      dokumenter_faktura:\n        '#type': managed_file\n        '#title': Faktura\n        '#multiple': true\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"overslag\"]':\n              value: Ja\n        '#format': name\n      dokumenter_overslag:\n        '#type': managed_file\n        '#title': Overslag\n        '#multiple': true\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"overslag\"]':\n              value: Ja\n        '#format': name\n      jeg_bekraefter_hermed_at_jeg_har_vedhaeftet_alle_obligatoriske_b:\n        '#type': checkbox\n        '#title': 'Jeg bekræfter hermed at jeg har vedhæftet alle obligatoriske bilag.'\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"overslag\"]':\n              value: Ja\nnyside:\n  '#type': webform_wizard_page\n  '#title': Erklæring\n  nyside1:\n    '#type': webform_section\n    '#title': nyside\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    nyside2:\n      '#type': fieldset\n      '#title': nyside\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_07:\n        '#type': webform_markup\n        '#markup': '<p>Optiker/øjenlæge må videregive overslaget til kommunen til brug for behandling af ansøgning om udvidet helbredstillæg og kender rettigheder og pligter om behandling af personoplysninger.</p>'\n      erklaering_navnansoeger:\n        '#type': textfield\n        '#title': 'Ansøgers navn'\n        '#required': true\n      erklaering_cpransoeger:\n        '#type': textfield\n        '#title': 'Ansøgers personnnummer'\n        '#required': true\n      erklaering_underskriftsoplysningeransoeger_underskriftsdatoansoeger:\n        '#type': date\n        '#title': 'Dato for underskrift'\n        '#required': true\n      erklaering_underskriftsoplysningeransoeger_underskriftansoeger:\n        '#type': webform_signature\n        '#title': Underskrift\n        '#description': '<p>Sign above</p>'\n        '#required': true\n      behandler_underskriftsoplysningerbehandler_underskriftsdatobehandler:\n        '#type': date\n        '#title': 'Dato for behandlers underskrift'\n        '#required': true\n      behandler_underskriftsoplysningerbehandler_underskriftbehandler:\n        '#type': webform_signature\n        '#title': 'Underskrift for behandler'\n        '#description': '<p>Sign above</p>'\n        '#required': true\nkvittering:\n  '#type': os2forms_attachment\n  '#title': Kvittering\n  '#filename': Kvittering.pdf\n  '#export_type': pdf\n  '#digital_signature': 0\n  '#excluded_elements': {  }\n  '#exclude_empty': 0\n  '#exclude_empty_checkbox': 0"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: all
+  purge_days: 30
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  digital_post_sf1601:
+    id: digital_post_sf1601
+    handler_id: digital_post_sf1601
+    label: 'Digital post (sf1601)'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      debug: false
+      memo_message:
+        type: 'Automatisk Valg'
+        recipient_element: cvr_nummer
+        attachment_element: kvittering
+        sender_label: 'Selvbetjening Aarhus kommune'
+        message_header_label: 'Kvittering for erklæring fra optiker via selvbetjening'
+        sender_address: ''
+      memo_actions:
+        actions: {  }
+  fordelingskomponent_sf2900:
+    id: os2forms_fordelingskomponent_sf2900
+    handler_id: fordelingskomponent_sf2900
+    label: 'Fordelingskomponent (sf2900)'
+    notes: ''
+    status: false
+    conditions: {  }
+    weight: 0
+    settings:
+      distribution_context:
+        routing_modtager_aktoer: ''
+        kle_emne: 32.03.12
+        handling_facet: G01
+        titel: 'Specificeret overslag fra optiker/øjenlæge (SP246)'
+        beskrivelse: 'Se https://rimi-itk.github.io/digitaliseringskataloget.dk/digitaliseringskataloget.dk/sf1415/0.6/Integrationsbeskrivelse_SF1415.pdf#page=14 for at finde formulartype mm.'
+      distribution_object:
+        distribution_type: FORMULAR
+        journalpost_message: ''
+        attachment_element: kvittering
+        formular_type: ØjenspecialistOverslagFormular_1
+        brugervendt_noegle: ''
+        files:
+          filspecifikation: ØjenspecialistOverslagBilag_1
+          recipient_it_system_look_up: 1
+          recipient_it_system: ''
+          recipient_authority: ''
+        xml_template: '<e/>'
+        xsd_url: 'module://os2forms_fordelingskomponent/resources/SP/SF2900_XSD/SP246.xsd'
+variants: {  }
+
