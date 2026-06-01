@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-502](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/502)
+  Opdater konfigurationer.
 * [PR-504](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/504)
   Justerede digital signatur validerings teksten så den ikke overlapper
   kolofon.
