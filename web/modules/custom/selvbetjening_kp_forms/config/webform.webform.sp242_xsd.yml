@@ -1,0 +1,689 @@
+uuid: f04e85d0-ebe5-4158-95a7-c21c9ce79d05
+langcode: da
+status: open
+dependencies:
+  module:
+    - os2forms
+    - os2forms_fordelingskomponent
+    - os2forms_permissions_by_term
+    - webform_encrypt
+    - webform_entity_print
+    - webform_revisions
+third_party_settings:
+  webform_revisions:
+    contentEntity_id: '446'
+    revisionId: '460'
+    auto_update: 0
+  os2forms_permissions_by_term:
+    settings:
+      44: '44'
+      43: '43'
+      42: '42'
+      46: 0
+      48: 0
+      45: 0
+      47: 0
+  webform_encrypt:
+    element:
+      start:
+        encrypt: true
+        encrypt_profile: webform
+      ansoegeroplysninger:
+        encrypt: true
+        encrypt_profile: webform
+      ansoeger:
+        encrypt: true
+        encrypt_profile: webform
+      ansoeger_fornavn:
+        encrypt: true
+        encrypt_profile: webform
+      ansoeger_mellemnavn:
+        encrypt: true
+        encrypt_profile: webform
+      ansoeger_efternavn:
+        encrypt: true
+        encrypt_profile: webform
+      ansoeger_personnummer_cpr_:
+        encrypt: true
+        encrypt_profile: webform
+      ansoeger_telefonnummer:
+        encrypt: true
+        encrypt_profile: webform
+      markup_31:
+        encrypt: true
+        encrypt_profile: webform
+      markup_01:
+        encrypt: true
+        encrypt_profile: webform
+      helbredstillaeg_er_afhaengig_af_din_indkomst_og_din_formue:
+        encrypt: true
+        encrypt_profile: webform
+      du_skal_paa_denne_side_angive_om_du_er_ansoeger_eller_om_du_repr:
+        encrypt: true
+        encrypt_profile: webform
+      markup_02:
+        encrypt: true
+        encrypt_profile: webform
+      jeg_udfylder_anmodningen_som:
+        encrypt: true
+        encrypt_profile: webform
+      fuldmagt_i_forbindelse_med_ansoegning_om_helbredstillaeg_og_per1:
+        encrypt: true
+        encrypt_profile: webform
+      fuldmagt_i_forbindelse_med_ansoegning_om_helbredstillaeg_og_per2:
+        encrypt: true
+        encrypt_profile: webform
+      markup_03:
+        encrypt: true
+        encrypt_profile: webform
+      markup_12:
+        encrypt: true
+        encrypt_profile: webform
+      fuldmagt_for_og_mellemnavn_e1:
+        encrypt: true
+        encrypt_profile: webform
+      fuldmagt_efternavn:
+        encrypt: true
+        encrypt_profile: webform
+      fuldmagt_undertegnedepersonnummer:
+        encrypt: true
+        encrypt_profile: webform
+      vejnavn2:
+        encrypt: true
+        encrypt_profile: webform
+      husnummer2:
+        encrypt: true
+        encrypt_profile: webform
+      etage2:
+        encrypt: true
+        encrypt_profile: webform
+      side_doer2:
+        encrypt: true
+        encrypt_profile: webform
+      postnummer2:
+        encrypt: true
+        encrypt_profile: webform
+      by2:
+        encrypt: true
+        encrypt_profile: webform
+      fuldmagt:
+        encrypt: true
+        encrypt_profile: webform
+      markup_13:
+        encrypt: true
+        encrypt_profile: webform
+      fuldmagt_fuldmagtdokumentnavn:
+        encrypt: true
+        encrypt_profile: webform
+      fuldmagt_fuldmagthaverspersonnummer:
+        encrypt: true
+        encrypt_profile: webform
+      vejnavn3:
+        encrypt: true
+        encrypt_profile: webform
+      husnummer3:
+        encrypt: true
+        encrypt_profile: webform
+      etage3:
+        encrypt: true
+        encrypt_profile: webform
+      side_doer3:
+        encrypt: true
+        encrypt_profile: webform
+      postnummer3:
+        encrypt: true
+        encrypt_profile: webform
+      by3:
+        encrypt: true
+        encrypt_profile: webform
+      markup_14:
+        encrypt: true
+        encrypt_profile: webform
+      cvr_nummer1:
+        encrypt: true
+        encrypt_profile: webform
+      p_nummer:
+        encrypt: true
+        encrypt_profile: webform
+      navn3:
+        encrypt: true
+        encrypt_profile: webform
+      vejnavn4:
+        encrypt: true
+        encrypt_profile: webform
+      husnummer4:
+        encrypt: true
+        encrypt_profile: webform
+      etage4:
+        encrypt: true
+        encrypt_profile: webform
+      side_doer4:
+        encrypt: true
+        encrypt_profile: webform
+      postnummer4:
+        encrypt: true
+        encrypt_profile: webform
+      by4:
+        encrypt: true
+        encrypt_profile: webform
+      markup_17:
+        encrypt: true
+        encrypt_profile: webform
+      partsrepraesentan:
+        encrypt: true
+        encrypt_profile: webform
+      markup_15:
+        encrypt: true
+        encrypt_profile: webform
+      ansoegning_om:
+        encrypt: true
+        encrypt_profile: webform
+      markup_16:
+        encrypt: true
+        encrypt_profile: webform
+      fuldmagt_dato:
+        encrypt: true
+        encrypt_profile: webform
+      fuldmagt_underskrift:
+        encrypt: true
+        encrypt_profile: webform
+      oplysninger_om_ansoeger:
+        encrypt: true
+        encrypt_profile: webform
+      oplysninger_om_ansoeger1:
+        encrypt: true
+        encrypt_profile: webform
+      oplysninger_om_ansoeger2:
+        encrypt: true
+        encrypt_profile: webform
+      markup_07:
+        encrypt: true
+        encrypt_profile: webform
+      jeg_har_ikke_adresse_i_danmark:
+        encrypt: true
+        encrypt_profile: webform
+      vejnavn:
+        encrypt: true
+        encrypt_profile: webform
+      husnummer:
+        encrypt: true
+        encrypt_profile: webform
+      etage:
+        encrypt: true
+        encrypt_profile: webform
+      side_doer:
+        encrypt: true
+        encrypt_profile: webform
+      postnummer:
+        encrypt: true
+        encrypt_profile: webform
+      by:
+        encrypt: true
+        encrypt_profile: webform
+      telefonnummer:
+        encrypt: true
+        encrypt_profile: webform
+      adresselinje_1:
+        encrypt: true
+        encrypt_profile: webform
+      adresselinje_2:
+        encrypt: true
+        encrypt_profile: webform
+      adresselinje_3:
+        encrypt: true
+        encrypt_profile: webform
+      adresselinje_4:
+        encrypt: true
+        encrypt_profile: webform
+      adresselinje_5:
+        encrypt: true
+        encrypt_profile: webform
+      du_er_registreret_med_en_udenlandsk_adresse_og_du_skal_derfor_be:
+        encrypt: true
+        encrypt_profile: webform
+      markup_04:
+        encrypt: true
+        encrypt_profile: webform
+      tilskud:
+        encrypt: true
+        encrypt_profile: webform
+      tilskud1:
+        encrypt: true
+        encrypt_profile: webform
+      tilskud2:
+        encrypt: true
+        encrypt_profile: webform
+      markup_18:
+        encrypt: true
+        encrypt_profile: webform
+      udvidethelbredstillaeg:
+        encrypt: true
+        encrypt_profile: webform
+      tandprotese:
+        encrypt: true
+        encrypt_profile: webform
+      markup_19:
+        encrypt: true
+        encrypt_profile: webform
+      briller:
+        encrypt: true
+        encrypt_profile: webform
+      markup_20:
+        encrypt: true
+        encrypt_profile: webform
+      fodbehandling:
+        encrypt: true
+        encrypt_profile: webform
+      markup_21:
+        encrypt: true
+        encrypt_profile: webform
+      hvorfor_er_behandlingen_noedvendig:
+        encrypt: true
+        encrypt_profile: webform
+      har_du_sukkersyge_nedgroede_negle_med_boejle_svaer_ledegigt_elle:
+        encrypt: true
+        encrypt_profile: webform
+      hvordan_oensker_du_at_dokumentere_din_udgift:
+        encrypt: true
+        encrypt_profile: webform
+      dokumenter_overslag:
+        encrypt: true
+        encrypt_profile: webform
+      dokumenter_faktura:
+        encrypt: true
+        encrypt_profile: webform
+      dokumenter_bilag:
+        encrypt: true
+        encrypt_profile: webform
+      jeg_bekraefter_hermed_at_jeg_har_vedhaeftet_alle_obligatoriske_b:
+        encrypt: true
+        encrypt_profile: webform
+      du_har_valgt_at_eftersende_din_dokumentation_og_skal_derfor_vaer:
+        encrypt: true
+        encrypt_profile: webform
+      markup_22:
+        encrypt: true
+        encrypt_profile: webform
+      aktuel_formue_mv:
+        encrypt: true
+        encrypt_profile: webform
+      aktuel_formue_mv1:
+        encrypt: true
+        encrypt_profile: webform
+      aktuel_formue_mv2:
+        encrypt: true
+        encrypt_profile: webform
+      markup_30:
+        encrypt: true
+        encrypt_profile: webform
+      sygeforsikring:
+        encrypt: true
+        encrypt_profile: webform
+      sygeforsikring_gruppe:
+        encrypt: true
+        encrypt_profile: webform
+      for_at_kunne_afgoere_din_ansoegning_om_udvidet_helbredstillaeg_s:
+        encrypt: true
+        encrypt_profile: webform
+      markup_23:
+        encrypt: true
+        encrypt_profile: webform
+      bemaerkning:
+        encrypt: true
+        encrypt_profile: webform
+      bemaerkning1:
+        encrypt: true
+        encrypt_profile: webform
+      bemaerkning2:
+        encrypt: true
+        encrypt_profile: webform
+      markup_24:
+        encrypt: true
+        encrypt_profile: webform
+      her_kan_du_skrive_supplerende_bemaerkninger_som_du_oensker_skal:
+        encrypt: true
+        encrypt_profile: webform
+      markup_25:
+        encrypt: true
+        encrypt_profile: webform
+      bemaerkninger:
+        encrypt: true
+        encrypt_profile: webform
+      side:
+        encrypt: true
+        encrypt_profile: webform
+      sektion:
+        encrypt: true
+        encrypt_profile: webform
+      feltgruppe:
+        encrypt: true
+        encrypt_profile: webform
+      overskrift:
+        encrypt: true
+        encrypt_profile: webform
+      feltgruppea:
+        encrypt: true
+        encrypt_profile: webform
+      markup_26:
+        encrypt: true
+        encrypt_profile: webform
+      samtykke:
+        encrypt: true
+        encrypt_profile: webform
+      markup_27:
+        encrypt: true
+        encrypt_profile: webform
+      side1:
+        encrypt: true
+        encrypt_profile: webform
+      sektion1:
+        encrypt: true
+        encrypt_profile: webform
+      feltgruppe2:
+        encrypt: true
+        encrypt_profile: webform
+      markup_33:
+        encrypt: true
+        encrypt_profile: webform
+      inden_at_du_paa_naeste_side_underskriver_og_indsender_ansoegning:
+        encrypt: true
+        encrypt_profile: webform
+      markup_28:
+        encrypt: true
+        encrypt_profile: webform
+      markup_29:
+        encrypt: true
+        encrypt_profile: webform
+      erklaering:
+        encrypt: true
+        encrypt_profile: webform
+      sideb:
+        encrypt: true
+        encrypt_profile: webform
+      sektionb:
+        encrypt: true
+        encrypt_profile: webform
+      feltgruppeb:
+        encrypt: true
+        encrypt_profile: webform
+      markup_34:
+        encrypt: true
+        encrypt_profile: webform
+      underskriftsoplysninger_underskriftsdato:
+        encrypt: true
+        encrypt_profile: webform
+      underskriftsoplysninger_underskrift:
+        encrypt: true
+        encrypt_profile: webform
+      kvittering:
+        encrypt: true
+        encrypt_profile: webform
+      actions:
+        encrypt: true
+        encrypt_profile: webform
+  os2forms:
+    os2forms_email_handler:
+      enabled: 0
+      email_recipients: ''
+    os2forms_nemid:
+      session_type: openid_connect_nemlogin
+      webform_type: personal
+      nemlogin_auto_redirect: 1
+      os2forms_nemlogin_openid_connect:
+        authentication_settings:
+          user_claim: ''
+          element_key: ''
+          error_message: ''
+    os2forms_nemid_address_protection:
+      nemlogin_hide_form: os2forms_nemlogin_address_protection_default_behaviour
+      nemlogin_hide_message: ''
+    os2forms_rest_api:
+      allowed_users: null
+    os2forms_sync:
+      publish: 0
+    os2forms_webform_submission_log:
+      emails: ''
+  webform_entity_print:
+    template:
+      header: ''
+      footer: ''
+      css: ''
+      os2form_header: ''
+      os2form_colophon: ''
+      os2form_footer: ''
+    export_types:
+      pdf:
+        enabled: true
+        link_text: ''
+        link_attributes: {  }
+      word_docx:
+        enabled: false
+        link_text: ''
+        link_attributes: {  }
+weight: 0
+open: null
+close: null
+uid: 57
+template: false
+archive: false
+id: sp242_xsd
+title: 'SP242 - XSD'
+description: "<p>Andreas' forsøg på at lave XSD til en yaml</p>"
+categories:
+  - Fordelingskomponent
+  - Test
+elements: "start:\n  '#type': webform_wizard_page\n  '#title': Oplysninger\n  ansoegeroplysninger:\n    '#type': webform_section\n    '#title': 'Dine oplysninger '\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    ansoeger:\n      '#type': fieldset\n      '#title': Oplysninger\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      '#format': container\n      ansoeger_fornavn:\n        '#type': os2forms_nemid_first_name\n        '#title': Fornavn\n        '#multiple': false\n        '#readonly': true\n      ansoeger_mellemnavn:\n        '#type': os2forms_nemid_middle_name\n        '#title': Mellemnavn\n        '#multiple': false\n        '#readonly': true\n      ansoeger_efternavn:\n        '#type': os2forms_nemid_last_name\n        '#title': Efternavn\n        '#multiple': false\n        '#readonly': true\n      ansoeger_personnummer_cpr_:\n        '#type': os2forms_nemid_cpr\n        '#title': 'CPR nummer'\n        '#multiple': false\n        '#readonly': true\n      ansoeger_telefonnummer:\n        '#type': textfield\n        '#title': Telefonnummer\n        '#pattern': \\d+\n      markup_31:\n        '#type': webform_markup\n        '#markup': '<h3>Info</h3><p><strong>Hvem kan søge om udvidet helbredstillæg?</strong><br>Hvis du opfylder de krav, som er listet op nedenfor, kan du bruge denne selvbetjeningsløsning til at søge om udvidet helbredstillæg.</p><ul><li>Du er folkepensionist eller førtidspensionist under reglerne fra før 2003</li><li>Du og din eventuelle ægtefælles/samlevers samlede formue overstiger ikke 108.000 kr. (år 2026).</li><li>Din personlige tillægsprocent er mere end 0. Udbetaling Danmark fastsætter din personlige tillægsprocent i forbindelse med pensionsberegningen og tallet fremgår af din pensionsmeddelelse.</li></ul><p><br><strong>Hvad kan jeg søge udvidet helbredstillæg til?</strong><br>Udvidet helbredstillæg gives til udgifter til tandproteser, briller og fodbehandling, hvis kommunen vurderer, at udgiften er nødvendig. Det er vigtigt, at du søger om udvidet helbredstillæg inden behandlingen påbegyndes.<br><br><strong>VIGTIGT!</strong><br><strong>Oplys din formue til Udbetaling Danmark</strong><br>Du skal oplyse din formue til Udbetaling Danmark, før din ansøgning om udvidet helbredstillæg er færdiggjort.<br>Oplysning om din formue skal ske via Udbetaling Danmark''s <a href=\"https://www.borger.dk/Handlingsside?selfserviceId=df161e6a-b52f-4dfd-b875-3fe42132f4cb\" target=\"_blank\">selvbetjeningsløsning </a>(åbner i nyt vindue)<br>Når du har gennemført denne selvbetjeningsløsning, vil ovenstående link til Udbetaling Danmark igen, fremkomme.</p><p><strong>Læs mere</strong><br>Du kan læse mere om lovgrundlag, klagevejledning og generel information om udvidet helbredstillæg under menupunktet <em>Helbredstillæg</em> på <a href=\"https://www.borger.dk/pension-og-efterloen/tillaeg-til-folke--og-foertidspension/Helbredstillaeg\" target=\"_blank\">borger.dk</a> (nyt vindue).</p><p>&nbsp;</p><h5>Bilag</h5><p>Så vidt muligt, skal du vedhæfte dokumentation i form af et overslag/tilbud på tandbehandling, fodbehandling eller briller som bilag.<br><br>Ved anvendelse af partsrepræsentant er det obligatorisk at vedhæfte en fuldmagt som bilag.<br><br>Bilag skal vedhæftes sidst i selvbetjeningsløsningen.</p><p>&nbsp;</p>'\n      markup_01:\n        '#type': webform_markup\n        '#markup': '<h3>Hvem udfylder ansøgningen</h3>'\n      helbredstillaeg_er_afhaengig_af_din_indkomst_og_din_formue:\n        '#type': details\n        '#title': 'Helbredstillæg er afhængig af din indkomst og din formue (Kan foldes ud)'\n        '#description': '<p>Din indkomst er opgjort af Udbetaling Danmark og er omregnet til din personlige tillægsprocent. Din personlige tillægsprocent skal være større end 0, for at du kan få helbredstillæg.<br>Din og din ægtefælles/samlevers likvide formue skal<br>være under 103.100 kr. (2025-sats), for at du kan få helbredstillæg. Likvid formue er værdien af forskellige værdipapirer (aktier og obligationer og tilsvarende), indestående i banken og dine kontanter.</p><p><br><strong>Ændringer i din økonomi</strong><br>Vær også opmærksom på, at du skal fortælle Udbetaling Danmark, hvis dine indtægter, formue og personlige forhold har ændret sig, siden du ansøgte om pension eller øvrige pensionsydelser eller siden sidste opgørelse fra Udbetaling Danmark ved årsskiftet. Du skal ændre den indkomst, som du betaler skat af, via forskudsregistrering på SKAT.dk. Øvrige ændringer meddeles digitalt til Udbetaling Danmark på Borger.dk. Hvis du ikke kan betjene dig selv digitalt, skal du henvende dig til din kommunes<br>borgerservice. Ændringer i indkomst, formue og personlige forhold kan medføre, at din folkepension og øvrige pensionsydelser skal ændres.</p><p><br><strong>Helbredstillæggets størrelse</strong><br>Udvidet helbredstillæg er 85% af din egen andel af den nødvendige udgift.<br>Kommunen kan indgå prisaftaler med leverandører af de nævnte ydelser. Hvis der er indgået prisaftale udgør helbredstillægget 85% af den aftalte pris.<br>Hvis du vælger en anden (dyrere) løsning, end den kommunen vurderer er nødvendig, eller vælger en anden (dyrere) leverandør, så skal du selv betale merudgiften. Hvis du vælger en billigere løsning udgør helbredstillægget 85% af den faktiske pris.<br>Har kommunen ikke indgået en prisaftale, beregnes helbredstillægget i forhold til den faktiske pris på den nødvendige udgift.</p><p><br><strong>Personligt tillæg</strong><br>Kommunen kan yde personligt tillæg til andre nødvendige og rimelige udgifter, som du ikke selv kan betale. Hvis du ikke selv kan betale din egen andel af de udgifter, der er omfattet af helbredstillægget, kan du også søge disse udgifter dækket.<br>For at få personligt tillæg, skal du være særligt vanskeligt stillet økonomisk.</p><p><br><strong>Yderligere information og vejledning</strong><br>Du kan få yderlige information og vejledning om udvidet helbredstillæg i din kommunes borgerservice. Optikeren, tandlægen og fodbehandleren ved ofte, om der overhovedet gives udvidet helbredstillæg til den behandling, som du har brug for.<br>Det er muligt at søge yderligere information om pension og øvrige pensionsydelser på www.borger.dk.<br>Hvis du har brug for personlig vejledning eller hjælp til digital selvbetjening skal du henvende dig til Udbetaling Danmark, hvis det drejer sig om folkepension, selve udbetalingen af din førtidspension, personlig tillægsprocent, formueopgørelse, varmetillæg og ældrecheck (se hvordan på Borger.dk).<br>Hvis du har brug for personlig hjælp og rådgivning eller yderligere vejledning til førtidspension, helbredstillæg og personligt tillæg, skal du henvende dig i kommunens borgerservice</p>'\n      du_skal_paa_denne_side_angive_om_du_er_ansoeger_eller_om_du_repr:\n        '#type': fieldset\n        '#title': 'Du skal på denne side, angive om du er ansøger eller om du repræsenterer en ansøger. Som partsrepræsentant er det et krav, at der vedhæftes en fuldmagt.'\n        '#title_display': invisible\n        '#attributes':\n          style: 'background: #EEFFE2; padding: 25px;'\n        markup_02:\n          '#type': webform_markup\n          '#markup': '<p>Du skal på denne side, angive om du er ansøger eller om du repræsenterer en ansøger. Som partsrepræsentant er det et krav, at der vedhæftes en fuldmagt.</p>'\n      jeg_udfylder_anmodningen_som:\n        '#type': radios\n        '#title': 'Jeg udfylder anmodningen som'\n        '#options':\n          'Ansøger, der ønsker at lave en anmodning om refusion i forbindelse med udgifter til behandling': 'Ansøger, der ønsker at lave en anmodning om refusion i forbindelse med udgifter til behandling'\n          'Privatperson, der med en fuldmagt udfylder og signerer på vegne af ansøger': 'Privatperson, der med en fuldmagt udfylder og signerer på vegne af ansøger'\n        '#required': true\n  fuldmagt_i_forbindelse_med_ansoegning_om_helbredstillaeg_og_per1:\n    '#type': webform_section\n    '#title': 'Fuldmagt i forbindelse med ansøgning om helbredstillæg og personligt tillæg'\n    '#title_display': invisible\n    '#states':\n      visible:\n        ':input[name=\"jeg_udfylder_anmodningen_som\"]':\n          value: 'Privatperson, der med en fuldmagt udfylder og signerer på vegne af ansøger'\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    fuldmagt_i_forbindelse_med_ansoegning_om_helbredstillaeg_og_per2:\n      '#type': fieldset\n      '#title': 'Fuldmagt i forbindelse med ansøgning om helbredstillæg og personligt tillæg'\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_03:\n        '#type': webform_markup\n        '#markup': '<h3>Fuldmagt i forbindelse med ansøgning om helbredstillæg og personligt tillæg</h3>'\n      markup_12:\n        '#type': webform_markup\n        '#markup': '<h5>Undertegnede</h5>'\n      fuldmagt_for_og_mellemnavn_e1:\n        '#type': textfield\n        '#title': 'For- og mellemnavn(e)'\n        '#required': true\n      fuldmagt_efternavn:\n        '#type': textfield\n        '#title': Efternavn\n        '#required': true\n      fuldmagt_undertegnedepersonnummer:\n        '#type': textfield\n        '#title': Personnummer\n        '#required': true\n      vejnavn2:\n        '#type': textfield\n        '#title': Vejnavn\n        '#required': true\n      husnummer2:\n        '#type': textfield\n        '#title': Husnummer\n        '#required': true\n      etage2:\n        '#type': textfield\n        '#title': Etage\n      side_doer2:\n        '#type': textfield\n        '#title': Side/Dør\n      postnummer2:\n        '#type': textfield\n        '#title': Postnummer\n        '#required': true\n      by2:\n        '#type': textfield\n        '#title': By\n        '#required': true\n      fuldmagt:\n        '#type': checkboxes\n        '#title': 'Giver med min underskrift begrænset fuldmagt til'\n        '#options':\n          Person: Person\n          Virksomhed: Virksomhed\n        '#required': true\n      markup_13:\n        '#type': webform_markup\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Person]\"]':\n              checked: true\n        '#markup': '<h3>Til person</h3>'\n      fuldmagt_fuldmagtdokumentnavn:\n        '#type': textfield\n        '#title': 'Fulde navn'\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Person]\"]':\n              checked: true\n      fuldmagt_fuldmagthaverspersonnummer:\n        '#type': textfield\n        '#title': Personnummer\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Person]\"]':\n              checked: true\n        '#required': true\n      vejnavn3:\n        '#type': textfield\n        '#title': Vejnavn\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Person]\"]':\n              checked: true\n      husnummer3:\n        '#type': textfield\n        '#title': Husnummer\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Person]\"]':\n              checked: true\n      etage3:\n        '#type': textfield\n        '#title': Etage\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Person]\"]':\n              checked: true\n      side_doer3:\n        '#type': textfield\n        '#title': Side/Dør\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Person]\"]':\n              checked: true\n      postnummer3:\n        '#type': textfield\n        '#title': Postnummer\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Person]\"]':\n              checked: true\n      by3:\n        '#type': textfield\n        '#title': By\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Person]\"]':\n              checked: true\n      markup_14:\n        '#type': webform_markup\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Virksomhed]\"]':\n              checked: true\n        '#markup': '<h3>Til virksomhed</h3>'\n      cvr_nummer1:\n        '#type': textfield\n        '#title': CVR-nummer\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Virksomhed]\"]':\n              checked: true\n      p_nummer:\n        '#type': textfield\n        '#title': P-nummer\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Virksomhed]\"]':\n              checked: true\n      navn3:\n        '#type': textfield\n        '#title': Navn\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Virksomhed]\"]':\n              checked: true\n        '#required': true\n      vejnavn4:\n        '#type': textfield\n        '#title': Vejnavn\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Virksomhed]\"]':\n              checked: true\n      husnummer4:\n        '#type': textfield\n        '#title': Husnummer\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"bfuldmagt[Virksomhed]\"]':\n              checked: true\n      etage4:\n        '#type': textfield\n        '#title': Etage\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Virksomhed]\"]':\n              checked: true\n      side_doer4:\n        '#type': textfield\n        '#title': Side/Dør\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Virksomhed]\"]':\n              checked: true\n      postnummer4:\n        '#type': textfield\n        '#title': Postnummer\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Virksomhed]\"]':\n              checked: true\n      by4:\n        '#type': textfield\n        '#title': By\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"fuldmagt[Virksomhed]\"]':\n              checked: true\n      markup_17:\n        '#type': webform_markup\n        '#markup': '<p><strong>Erklæring</strong></p>'\n      partsrepraesentan:\n        '#type': checkbox\n        '#title': 'Som partsrepræsentant erklærer jeg, at der foreligger en underskrevet fuldmagt, der vil blive vedhæftet som bilag'\n        '#states':\n          visible:\n            ':input[name=\"jeg_udfylder_anmodningen_som\"]':\n              value: 'Privatperson, der med en fuldmagt udfylder og signerer på vegne af ansøger'\n      markup_15:\n        '#type': webform_markup\n        '#markup': '<h3>Fuldmagtens omfang</h3><p>Fuldmagten giver tilladelse til, at partsrepræsentanten må hjælpe mig med at få udfyldt, signeret (med partsrepræsentants NemID) og indsendt:</p>'\n      ansoegning_om:\n        '#type': radios\n        '#title': 'Ansøgning om'\n        '#title_display': invisible\n        '#options':\n          'Ansøgning om Helbredstillæg': 'Ansøgning om Helbredstillæg'\n          'Ansøgning om Udvidet Helbredstillæg': 'Ansøgning om Udvidet Helbredstillæg'\n          'Ansøgning om Personligt tillæg': 'Ansøgning om Personligt tillæg'\n          'Anmodning om refusion i forbindelse med udgifter til behandling': 'Anmodning om refusion i forbindelse med udgifter til behandling'\n        '#required': true\n      markup_16:\n        '#type': webform_markup\n        '#markup': '<p>Denne fuldmagt er begrænset og er ikke en tilladelse til at handle på mine vegne i den efterfølgende sagsbehandling og dialog med kommunen.&nbsp;</p><h3>Ikrafttrædelse og tilbagekaldelse</h3><p>Fuldmagten gælder fra den dato, jeg har underskrevet, og dækker alene den konkrete tilhørende ansøgning/anmodning.</p>'\n      fuldmagt_dato:\n        '#type': date\n        '#title': Dato\n        '#required': true\n      fuldmagt_underskrift:\n        '#type': webform_signature\n        '#title': Underskrift\n        '#description': '<p>Sign above</p>'\n        '#required': true\noplysninger_om_ansoeger:\n  '#type': webform_wizard_page\n  '#title': 'Oplysninger om ansøger'\n  oplysninger_om_ansoeger1:\n    '#type': webform_section\n    '#title': 'Oplysninger om ansøger'\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    oplysninger_om_ansoeger2:\n      '#type': fieldset\n      '#title': 'Oplysninger om ansøger'\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_07:\n        '#type': webform_markup\n        '#markup': '<h3>Oplysninger om ansøger</h3>'\n      jeg_har_ikke_adresse_i_danmark:\n        '#type': checkbox\n        '#title': 'Jeg har ikke adresse i Danmark'\n      vejnavn:\n        '#type': textfield\n        '#title': Vejnavn\n        '#required': true\n        '#states':\n          invisible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      husnummer:\n        '#type': textfield\n        '#title': Husnummer\n        '#states':\n          invisible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n        '#required': true\n      etage:\n        '#type': textfield\n        '#title': Etage\n        '#states':\n          invisible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      side_doer:\n        '#type': textfield\n        '#title': Side/Dør\n        '#states':\n          invisible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      postnummer:\n        '#type': textfield\n        '#title': Postnummer\n        '#required': true\n        '#states':\n          invisible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      by:\n        '#type': textfield\n        '#title': By\n        '#states':\n          invisible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      telefonnummer:\n        '#type': textfield\n        '#title': Telefonnummer\n        '#states':\n          invisible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      adresselinje_1:\n        '#type': textfield\n        '#title': 'Adresselinje 1'\n        '#states':\n          visible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      adresselinje_2:\n        '#type': textfield\n        '#title': 'Adresselinje 2'\n        '#states':\n          visible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      adresselinje_3:\n        '#type': textfield\n        '#title': 'Adresselinje 3'\n        '#states':\n          visible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      adresselinje_4:\n        '#type': textfield\n        '#title': 'Adresselinje 4'\n        '#states':\n          visible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      adresselinje_5:\n        '#type': textfield\n        '#title': 'Adresselinje 5'\n        '#states':\n          visible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n      du_er_registreret_med_en_udenlandsk_adresse_og_du_skal_derfor_be:\n        '#type': fieldset\n        '#title': 'Du er registreret med en udenlandsk adresse, og du skal derfor benytte Anmodning om refusion i forbindelse med udgifter til behandling via Udbetaling Danmark. Du finder Udbetaling Danmark og yderligere vejledning på borger.dk (nyt vindue). Er du imidlertid flyttet til en dansk kommune, skal du rette dine adresseoplysninger og fortsætte med ansøgningen.'\n        '#title_display': invisible\n        '#states':\n          visible:\n            ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n              checked: true\n        '#attributes':\n          style: 'background: #FFEECC; padding: 25px;max-width: 500px;'\n        markup_04:\n          '#type': webform_markup\n          '#markup': '<p>Du er registreret med en udenlandsk adresse, og du skal derfor benytte Anmodning om refusion i forbindelse med udgifter til behandling via Udbetaling Danmark. Du finder Udbetaling Danmark og yderligere vejledning på <a href=\"http://www.borger.dk/\" target=\"_blank\">borger.dk</a> (nyt vindue). Er du imidlertid flyttet til en dansk kommune, skal du rette dine adresseoplysninger og fortsætte med ansøgningen.</p>'\ntilskud:\n  '#type': webform_wizard_page\n  '#title': Tilskud\n  tilskud1:\n    '#type': webform_section\n    '#title': Tilskud\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    tilskud2:\n      '#type': fieldset\n      '#title': Tilskud\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_18:\n        '#type': webform_markup\n        '#markup': '<h3>Tilskud til<br>&nbsp;</h3>'\n      udvidethelbredstillaeg:\n        '#type': radios\n        '#title': 'Jeg søger om tilskud til nødvendig udgift til'\n        '#options':\n          'Tandprotese ': 'Tandprotese '\n          'Briller ': 'Briller '\n          Fodbehandling: Fodbehandling\n        '#required': true\n      tandprotese:\n        '#type': fieldset\n        '#title': Tandprotese\n        '#title_display': invisible\n        '#states':\n          visible:\n            ':input[name=\"udvidethelbredstillaeg\"]':\n              value: 'Tandprotese '\n        '#attributes':\n          style: 'background: #EEFFE2; padding: 25px;'\n        markup_19:\n          '#type': webform_markup\n          '#markup': '<h5><strong>Tandprotese</strong></h5><p>Der kan ydes helbredstillæg til dækning af udgiften til den billigste (men tilstrækkelige) aftagelige tandprotese. Der kan ydes helbredstillæg til dækning af de udgifter, der indgår i behandlingsforløbet (fx beslibning af eksisterende tænder) og således ikke alene til selve protesen. Ligeledes er udgiften til aftagelige tandproteser i form af duplikering og rebasering omfattet.<br><br>Udgifter til faste tandproteser (herunder faste proteser, der er led i behandlingen med en aftagelig protese) er således ikke selvstændigt omfattet af de udvidede regler for helbredstillæg, men der ydes helbredstillæg beregnet i forhold til prisen på den aftagelige tandprotese, der alternativt ville være nødvendig. Det drejer sig bl.a. om fastcementerede tandkroner, fastcementerede broer og implantater.<br><br>Hvis du ønsker en fast protese, kan der således udbetales helbredstillæg, der svarer til dækningen af den type aftagelige protese, som er vurderet nødvendig.<br><br>Der vil efter en konkret individuel vurdering kunne udbetales personlige tillæg til dækning af merudgiften ved en fast protese, såfremt kommunen vurderer, at det er nødvendigt.</p>'\n      briller:\n        '#type': fieldset\n        '#title': Briller\n        '#title_display': invisible\n        '#states':\n          visible:\n            ':input[name=\"udvidethelbredstillaeg\"]':\n              value: 'Briller '\n        '#attributes':\n          style: 'background: #EEFFE2; padding: 25px;'\n        markup_20:\n          '#type': webform_markup\n          '#markup': '<h5><strong>Briller</strong></h5><p>Der kan ydes helbredstillæg til dækning af udgiften til en standardbrille (stel og glas). Der ydes tillæg til permanente briller, der afhjælper nær- eller langsynethed (herunder bygningsfejl), evt. med indbygget læsebrille, men ikke til briller med glidende overgang (progressive glas) eller kontaktlinser.<br><br>Almindelige læsebriller er ikke omfattet, da de kan erhverves meget billigt uden en optikers mellemkomst. Dog vil der kunne ydes tillæg til læsebriller med en styrkeforskel mellem glassene på mindst 1 dioptri og/eller en bygningsfejl på mindst 1 dioptri eller mere på mindst et øje, da disse briller kun kan købes ved optiker. Udgifter til eventuel overflade- eller refleksbehandling m.v. indgår ikke i den tilskudsberettigede udgift.<br><br>Hvis du ønsker kontaktlinser i stedet for briller, skal tilskuddet beregnes i forhold til en standardbrille af tilsvarende styrke.<br><br>Hvis du ønsker briller med glidende overgang, skal tilskuddet beregnes i forhold til en standardbrille med indbygget læsebrille.</p>'\n      fodbehandling:\n        '#type': fieldset\n        '#title': Fodbehandling\n        '#title_display': invisible\n        '#states':\n          visible:\n            ':input[name=\"udvidethelbredstillaeg\"]':\n              value: Fodbehandling\n        '#attributes':\n          style: 'background: #EEFFE2; padding: 25px;'\n        markup_21:\n          '#type': webform_markup\n          '#markup': '<h5><strong>Fodbehandling</strong></h5><p>Der kan ydes helbredstillæg til vedvarende fodbehandling til pensionister, som ikke har en funktionsnedsættelse, men som alligevel har behov for fodbehandling, og til pensionister med funktionsnedsættelse, som har brug for fodbehandling, der ligger ud over den behandling, der kan varetages af hjemmeplejen.<br><br>Det er et krav, at det drejer sig om fodbehandling, der ikke kan ydes tilskud til efter sundhedslovens kapitel 15, og at fodbehandlingen ikke kan dækkes efter servicelovens § 83 om personlig pleje, enten på grund af behovets særlige karakter eller fordi pensionisten ikke har nedsat funktionsevne.<br><br>Der kan ikke ydes tilskud til fodbehandling, som du selv kan varetage.</p>'\n      hvorfor_er_behandlingen_noedvendig:\n        '#type': textarea\n        '#title': 'Hvorfor er behandlingen nødvendig?'\n        '#states':\n          visible:\n            ':input[name=\"udvidethelbredstillaeg\"]':\n              value: Fodbehandling\n      har_du_sukkersyge_nedgroede_negle_med_boejle_svaer_ledegigt_elle:\n        '#type': radios\n        '#title': 'Har du sukkersyge, nedgroede negle med bøjle, svær ledegigt eller arvæv efter strålebehandling?'\n        '#options': yes_no\n        '#states':\n          visible:\n            ':input[name=\"udvidethelbredstillaeg\"]':\n              value: Fodbehandling\n      hvordan_oensker_du_at_dokumentere_din_udgift:\n        '#type': radios\n        '#title': 'Hvordan ønsker du at dokumentere din udgift?'\n        '#options':\n          'Jeg vil tilføje et bilag, der dokumenterer udgiften': 'Jeg vil tilføje et bilag, der dokumenterer udgiften'\n          'Jeg eftersender dokumentation': 'Jeg eftersender dokumentation'\n        '#required': true\n      dokumenter_overslag:\n        '#type': managed_file\n        '#title': Overslag\n        '#multiple': 10\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"hvordan_oensker_du_at_dokumentere_din_udgift\"]':\n              value: 'Jeg vil tilføje et bilag, der dokumenterer udgiften'\n        '#format': name\n        '#max_filesize': '45'\n        '#file_extensions': 'jpg jpeg png pict txt pdf doc docx'\n      dokumenter_faktura:\n        '#type': managed_file\n        '#title': Faktura\n        '#multiple': 10\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"hvordan_oensker_du_at_dokumentere_din_udgift\"]':\n              value: 'Jeg vil tilføje et bilag, der dokumenterer udgiften'\n        '#format': name\n        '#max_filesize': '45'\n        '#file_extensions': 'jpg jpeg png pict txt pdf doc docx'\n      dokumenter_bilag:\n        '#type': managed_file\n        '#title': Bilag\n        '#multiple': 10\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"hvordan_oensker_du_at_dokumentere_din_udgift\"]':\n              value: 'Jeg vil tilføje et bilag, der dokumenterer udgiften'\n        '#format': name\n        '#max_filesize': '45'\n        '#file_extensions': 'jpg jpeg png pict txt pdf doc docx'\n      jeg_bekraefter_hermed_at_jeg_har_vedhaeftet_alle_obligatoriske_b:\n        '#type': checkbox\n        '#title': 'Jeg bekræfter hermed at jeg har vedhæftet alle obligatoriske bilag.'\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"hvordan_oensker_du_at_dokumentere_din_udgift\"]':\n              value: 'Jeg vil tilføje et bilag, der dokumenterer udgiften'\n      du_har_valgt_at_eftersende_din_dokumentation_og_skal_derfor_vaer:\n        '#type': fieldset\n        '#title': 'Du har valgt at eftersende din dokumentation og skal derfor være opmærksom på, at der i din kommune kan være en tidsfrist for, hvornår dokumentationen skal være kommunen i hænde. Du får besked om tidsfristen sammen med din kvittering for udfyldelse af formularen. Modtager kommunen ikke din dokumentation rettidigt vil din ansøgning blive behandlet uden dokumentation og det vil øge sandsynligheden for, at du får et afslag.'\n        '#title_display': invisible\n        '#states':\n          visible:\n            ':input[name=\"hvordan_oensker_du_at_dokumentere_din_udgift\"]':\n              value: 'Jeg eftersender dokumentation'\n        '#attributes':\n          style: 'background: #FFEECC; padding: 25px;max-width: 500px;'\n        markup_22:\n          '#type': webform_markup\n          '#markup': '<p>Du har valgt at eftersende din dokumentation og skal derfor være opmærksom på, at der i din kommune kan være en tidsfrist for, hvornår dokumentationen skal være kommunen i hænde.<br>Du får besked om tidsfristen sammen med din kvittering for udfyldelse af formularen.<br>Modtager kommunen ikke din dokumentation rettidigt vil din ansøgning blive behandlet uden dokumentation og det vil øge sandsynligheden for, at du får et afslag.</p>'\naktuel_formue_mv:\n  '#type': webform_wizard_page\n  '#title': 'Aktuel formue mv.'\n  aktuel_formue_mv1:\n    '#type': webform_section\n    '#title': 'Aktuel formue mv.'\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    aktuel_formue_mv2:\n      '#type': fieldset\n      '#title': 'Aktuel formue mv.'\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_30:\n        '#type': webform_markup\n        '#markup': '<h3>Aktuel formue mv.</h3>'\n      sygeforsikring:\n        '#type': radios\n        '#title': 'Er du medlem af Sygeforsikringen \"danmark\"'\n        '#options': yes_no\n        '#required': true\n      sygeforsikring_gruppe:\n        '#type': select\n        '#title': Gruppe\n        '#options':\n          Gruppe_1: 'Gruppe 1'\n          Gruppe_2: 'Gruppe 2'\n          Gruppe_5: 'Gruppe 5'\n          Gruppe_E: 'Gruppe E'\n          Gruppe_N: 'Gruppe N'\n          Gruppe_S: 'Gruppe S'\n          Gruppe_BASIS: 'Gruppe Basis'\n        '#required': true\n        '#states':\n          visible:\n            ':input[name=\"er_du_medlem_af_sygeforsikringen_danmark\"]':\n              value: Ja\n      for_at_kunne_afgoere_din_ansoegning_om_udvidet_helbredstillaeg_s:\n        '#type': fieldset\n        '#title': \"For at kunne afgøre din ansøgning om udvidet helbredstillæg, skal kommunen bruge en opgørelse over din og din ægtefælles/samlevers aktuelle formue. Udbetaling Danmark træffer afgørelse om de aktuelle formueforhold og sender dem til kommunen. Du skal derfor oplyse om din formue via Udbetaling Danmark's selvbetjeningsløsning (der linkes til denne, når ansøgningen her er afsluttet)\"\n        '#title_display': invisible\n        '#attributes':\n          style: 'background: #EEFFE2; padding: 25px;'\n        markup_23:\n          '#type': webform_markup\n          '#markup': \"<p>For at kunne afgøre din ansøgning om udvidet helbredstillæg, skal kommunen bruge en opgørelse over din og din ægtefælles/samlevers aktuelle formue. Udbetaling Danmark træffer afgørelse om de aktuelle formueforhold og sender dem til kommunen. Du skal derfor oplyse om din formue via Udbetaling Danmark's selvbetjeningsløsning (der linkes til denne, når ansøgningen her er afsluttet)</p>\"\nbemaerkning:\n  '#type': webform_wizard_page\n  '#title': Bemærkning\n  bemaerkning1:\n    '#type': webform_section\n    '#title': Bemærkning\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    bemaerkning2:\n      '#type': fieldset\n      '#title': Bemærkning\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_24:\n        '#type': webform_markup\n        '#markup': '<h3>Bemærkning</h3>'\n      her_kan_du_skrive_supplerende_bemaerkninger_som_du_oensker_skal:\n        '#type': fieldset\n        '#title': 'Her kan du skrive supplerende bemærkninger, som du ønsker skal indgå i vurderingen af din ansøgning.'\n        '#title_display': invisible\n        '#attributes':\n          style: 'background: #EEFFE2; padding: 25px;'\n        markup_25:\n          '#type': webform_markup\n          '#markup': '<p>Her kan du skrive supplerende bemærkninger, som du ønsker skal indgå i vurderingen af din ansøgning.</p>'\n      bemaerkninger:\n        '#type': textarea\n        '#title': Bemærkninger\nside:\n  '#type': webform_wizard_page\n  '#title': Samtykke\n  sektion:\n    '#type': webform_section\n    '#title': sektion\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    feltgruppe:\n      '#type': fieldset\n      '#title': feltgruppe\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      overskrift:\n        '#type': webform_markup\n        '#markup': '<h3>Samtykke</h3>'\n      feltgruppea:\n        '#type': fieldset\n        '#title': 'Som en del af din ansøgning, skal du give samtykke til at kommunen kan udveksle oplysninger med din behandler.'\n        '#title_display': invisible\n        '#attributes':\n          style: 'background: #EEFFE2; padding: 25px;'\n        markup_26:\n          '#type': webform_markup\n          '#markup': '<p>Som en del af din ansøgning, skal du give samtykke til at kommunen kan udveksle oplysninger med din behandler.</p>'\n      samtykke:\n        '#type': checkbox\n        '#title': 'Jeg (ansøger) giver samtykke til, at kommunen kan tage kontakt til den konkrete behandler (tandlæge/tandtekniker/ fodplejer/fodterapeut eller optiker) for eventuel afklaring.'\n        '#required': true\n      markup_27:\n        '#type': webform_markup\n        '#markup': '<p>Du kan tilbagekalde et samtykke til indhentning/videregivelse af oplysninger, jf. databeskyttelsesforordningens artikel 7, stk. 3.</p>'\nside1:\n  '#type': webform_wizard_page\n  '#title': Erklæring\n  sektion1:\n    '#type': webform_section\n    '#title': Erklæring\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    feltgruppe2:\n      '#type': fieldset\n      '#title': Erklæring\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_33:\n        '#type': webform_markup\n        '#markup': '<h3>Erklæring</h3>'\n      inden_at_du_paa_naeste_side_underskriver_og_indsender_ansoegning:\n        '#type': fieldset\n        '#title': 'Inden at du på næste side underskriver og indsender ansøgningen, skal du på denne side erklære dig enig i de lovmæssige forudsætninger for at ansøge om udvidet helbredstillæg.'\n        '#title_display': invisible\n        '#attributes':\n          style: 'background: #EEFFE2; padding: 25px;'\n        markup_28:\n          '#type': webform_markup\n          '#markup': '<p>Inden at du på næste side underskriver og indsender ansøgningen, skal du på denne side erklære dig enig i de lovmæssige forudsætninger for at ansøge om udvidet helbredstillæg.</p>'\n      markup_29:\n        '#type': webform_markup\n        '#markup': '<p>Du bedes besvare alle relevante spørgsmål, idet dette vil lette kommunens behandling af din henvendelse, jf. retssikkerhedslovens § 11, stk. 1.<br>Dine oplysninger om Samlivsforhold og Aktuel formue fremsendes til Udbetaling Danmark, da det er Udbetaling Danmark, der skal opgøre din likvide formue.<br>Efter retssikkerhedslovens § 11, stk. 2, har du pligt til straks at underrette kommunen om enhver ændring i din personlige og økonomiske forhold, som kan medføre en ændring af helbredstillægget. Du kan vælge at gøre dette via Udbetaling Danmarks digitale løsning på Borger.dk.<br>Forkerte eller manglende oplysninger kan medføre tilbagebetaling, jf. pensionslovens § 42 eller førtidspensionslovens § 42.<br>Hvis du giver forkerte, mangelfulde eller vildledende oplysninger – enten bevidst eller ved grov uagtsomhed – kan du blive idømt bøde efter retssikkerhedslovens § 12b eller tiltales efter straffelovens § 289a.</p><p><strong>Oplysninger kommunen kan indhente uden dit samtykke</strong><br>Kommunen kan indhente økonomiske oplysninger samt oplysninger om dine ferieforhold fra<br>• andre offentlige myndigheder,<br>• eIndkomstregistret,<br>• A-kasser og<br>• Feriekonto.<br>Kommunen kan indhente tilsvarende oplysninger om andre i din husstand.<br>Kommunen bruger oplysningerne til behandling af din sag eller til efterfølgende kontrol, jf. retssikkerhedslovens § 11a, stk. 2 til 5 eller Integrationslovens § 50, stk. 5 og 6.<br>Kommunen har adgang til Udbetaling Danmarks oplysninger om dine og din ægtefælle/samlevers indtægt, personlig tillægsprocent og formue som er nødvendige for beregningen af helbredstillæg og personligt tillæg, jf. lov om Udbetaling Danmark, § 8, stk. 2.<br>Til kontrol af dine indkomst- og formueforhold kan kommunen kræve nødvendige oplysninger fra pengeinstitutter og arbejdsgivere. Oplysningerne kan sammenstilles med de øvrige oplysninger om dine økonomiske forhold, som kommunen er i besiddelse af, jf. retssikkerhedslovens § 11a, stk. 3</p><p><strong>Kommunens registrering og videregivelse af oplysninger</strong><br>Kommunen registrerer de modtagne oplysninger og videregiver oplysningerne til andre offentlige myndigheder, private virksomheder m.fl., der har lovmæssigt krav på oplysningerne eller samarbejder med kommunen.<br>Kommunen kan videregive oplysning om tilskuddets størrelse til behandleren.<br>Kommunen og Udbetaling Danmark har gensidig pligt til, at videregive oplysninger som kan have betydning for en ydelse, du modtager fra henholdsvis Udbetaling Danmark og kommunen, jf. lov om Udbetaling Danmark, §§ 6, 9 og 10.<br>For at kunne afgøre om det er relevant at videregive oplysninger, har kommunen og Udbetaling Danmark adgang til at se hvilke ydelser, du har modtaget de sidste tre måneder, jf. lov om Udbetaling Danmark, § 8.<br>Kommunens oplysninger om dine kontante ydelser og tilskud sammenkøres i Udbetaling Danmarks dataenhed med andre myndigheders bevillinger og med oplysninger fra forskellige offentlige registre hos fx SKAT og Folkeregisteret, jf. lov om Udbetaling Danmark, kapitel 3a. Der sammenkøres data om økonomiske forhold samt bopæls- og familieforhold for dig, din ægtefælle/samlever og øvrige husstandsmedlemmer, både nuværende, tidligere og formodede. Formålet med samkøringen er at forhindre fejl i offentligt bevilligede udbetalinger.<br>Udbetaling Danmarks dataenhed videregiver oplysninger om formodede fejl eller urigtige data til kommunen, som derefter træffer afgørelse om din ydelse/tilskud skal reguleres, eller om der skal rejses krav om tilbagebetaling. Udbetaling Danmarks dataenhed sletter data om dig, når kommunen har fået besked om resultatet.<br>Kommunen sletter oplysningerne når opbevaringspligten udløber og et eventuelt arkiveringskrav er opfyldt. Når oplysningerne er arkiveret eller slettet, har kommunen ikke længere adgang til dem.<br>Du har ret til at vide, hvilke oplysninger kommunen har om dig, og du kan kræve forkerte oplysninger rettet eller slettet.</p><p><strong>Kommunens databeskyttelsesrådgiver</strong><br>Du kan kontakte databeskyttelsesrådgiveren om dine rettigheder i henhold til databeskyttelseslovgivningen.<br>Du har ret til at klage til Datatilsynet over Kommunens behandling af dine personlige oplysninger.<br>På <a href=\"https://www.datatilsynet.dk/forside\" target=\"_blank\">datatilsynet.dk</a> (nyt vindue) kan du læse mere om databeskyttelsesrådgiverens rolle.</p>'\n      erklaering:\n        '#type': checkbox\n        '#title': 'Jeg kender mine rettigheder og pligter som angivet i afsnittet herover'\n        '#required': true\nsideb:\n  '#type': webform_wizard_page\n  '#title': Underskrift\n  sektionb:\n    '#type': webform_section\n    '#title': sektion\n    '#title_display': invisible\n    '#attributes':\n      style: 'background: #E5F5E0; padding: 25px;  '\n    feltgruppeb:\n      '#type': fieldset\n      '#title': feltgruppe\n      '#title_display': invisible\n      '#attributes':\n        style: 'background: #F7FCF5; padding: 25px; '\n      markup_34:\n        '#type': webform_markup\n        '#markup': '<h3>Underskrift</h3>'\n      underskriftsoplysninger_underskriftsdato:\n        '#type': date\n        '#title': Dato\n        '#required': true\n      underskriftsoplysninger_underskrift:\n        '#type': webform_signature\n        '#title': 'Underskriv herunder'\n        '#description': ''\n        '#description_display': invisible\n        '#required': true\nkvittering:\n  '#type': os2forms_attachment\n  '#title': Kvittering\n  '#filename': Kvittering.pdf\n  '#export_type': pdf\n  '#digital_signature': 0\n  '#excluded_elements': {  }\n  '#exclude_empty': 0\n  '#exclude_empty_checkbox': 0\nactions:\n  '#type': webform_actions\n  '#title': 'Send knap(per)'\n  '#states':\n    invisible:\n      ':input[name=\"jeg_har_ikke_adresse_i_danmark\"]':\n        checked: true"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: true
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: all
+  purge_days: 30
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  fordelingskomponent_sf2900:
+    id: os2forms_fordelingskomponent_sf2900
+    handler_id: fordelingskomponent_sf2900
+    label: 'Fordelingskomponent (sf2900)'
+    notes: ''
+    status: false
+    conditions: {  }
+    weight: 0
+    settings:
+      distribution_context:
+        routing_modtager_aktoer: ''
+        kle_emne: 32.03.13
+        handling_facet: G01
+        titel: 'Ansøgning om udvidet helbredstillæg (SP242)'
+        beskrivelse: 'Se https://rimi-itk.github.io/digitaliseringskataloget.dk/digitaliseringskataloget.dk/sf1415/0.6/Integrationsbeskrivelse_SF1415.pdf#page=14 for at finde formulartype mm.'
+      distribution_object:
+        distribution_type: FORMULAR
+        journalpost_message: ''
+        attachment_element: kvittering
+        formular_type: UdvidetHelbredstillægAnsøgningFormular_1
+        brugervendt_noegle: ''
+        files:
+          filspecifikation: UdvidetHelbredstillægAnsøgningBilag_1
+          recipient_it_system_look_up: 1
+          recipient_it_system: ''
+          recipient_authority: ''
+        xml_template: '<e/>'
+        xsd_url: 'module://os2forms_fordelingskomponent/resources/SP/SF2900_XSD/SP242.xsd'
+variants: {  }
+
