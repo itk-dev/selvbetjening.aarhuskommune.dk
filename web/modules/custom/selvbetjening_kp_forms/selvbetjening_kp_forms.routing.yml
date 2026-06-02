@@ -1,7 +1,7 @@
 selvbetjening_kp_forms.kp_forms:
-  path: '/admin/selvbetjening-kp-forms/example'
+  path: "/admin/selvbetjening-kp-forms/example"
   defaults:
-    _title: 'KP Forms'
+    _title: "KP Forms"
     _controller: '\Drupal\selvbetjening_kp_forms\Controller\SelvbetjeningKpFormsController'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: "administer site configuration"
