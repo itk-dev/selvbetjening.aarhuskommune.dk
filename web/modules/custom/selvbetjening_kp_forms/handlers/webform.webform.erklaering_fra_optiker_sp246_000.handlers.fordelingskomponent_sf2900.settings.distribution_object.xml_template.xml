@@ -52,7 +52,7 @@
 
   <Header>
     <Myndighed>urn:oio:cvr-nr:{{ handler.settings.sender.sender_id }}</Myndighed>
-    <ModtagetDato>{{ _self.data(submission.completed) }}</ModtagetDato>
+    <ModtagetDato>{{ _self.date(submission.completed) }}</ModtagetDato>
     <KLE>{{ handler.settings.distribution_context.kle_emne }}</KLE>
     {% for file in files.dokumenter_overslag|default([]) %}
     <Dokumenter>
