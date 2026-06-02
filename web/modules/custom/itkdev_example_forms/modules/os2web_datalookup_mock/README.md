@@ -19,12 +19,17 @@ to check that the mock responds to lookup requests.
 The default person lookup mock data sits in
 [`src/Plugin/os2web/DataLookup/PersonLookup.yaml`](src/Plugin/os2web/DataLookup/PersonLookup.yaml).
 
-The path to the person data file can be overridden in `settings.local.php`:
+The path to the person data file can be overridden by setting the `PERSON_LOOKUP_PATH` environment variable (cf.
+[docker-compose.oidc.yml](../../../../../../docker-compose.oidc.yml)).
 
-``` php
-// settings.local.php
-$settings['os2web_datalookup_mock']['paths']['PersonLookup'] = __DIR__.'/files/PersonLookup.yaml';
+Reload mock data by running
+
+``` shell
+docker compose up --force-recreate idp-citizen
 ```
+
+Start ["Self login"](http://idp-citizen.selvbetjening.local.itkdev.dk/) on
+<http://idp-citizen.selvbetjening.local.itkdev.dk/oidc/login> and check that mock users are defined as expected.
 
 ### Editing mock data
 

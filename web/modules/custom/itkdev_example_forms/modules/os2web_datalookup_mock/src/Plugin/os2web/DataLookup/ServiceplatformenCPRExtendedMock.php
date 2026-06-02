@@ -2,7 +2,6 @@
 
 namespace Drupal\os2web_datalookup_mock\Plugin\os2web\DataLookup;
 
-use Drupal\Core\Site\Settings;
 use Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended;
 use Symfony\Component\Yaml\Yaml;
 
@@ -59,10 +58,13 @@ class ServiceplatformenCPRExtendedMock extends ServiceplatformenCPRExtended {
    * Get mock data path.
    */
   private function getDataPath(string $method): string {
-    $settings = Settings::get('os2web_datalookup_mock');
-    $path = $settings['paths'][$method] ?? NULL;
-    if (NULL !== $path && is_readable($path)) {
-      return $path;
+    $path = trim((string) getenv('OS2WEB_DATALOOKUP_MOCK_COMPANY_LOOKUP_PATH'));
+    if ('' !== $path) {
+      // Resolve path relatively to the project root.
+      $path = dirname(DRUPAL_ROOT) . '/' . $path;
+      if (NULL !== $path && is_readable($path)) {
+        return $path;
+      }
     }
 
     return __DIR__ . '/../../../../resources/' . $method . '.yaml';

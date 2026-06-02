@@ -837,6 +837,9 @@ $settings['config_exclude_modules'][] = 'webprofiler';
 $settings['config_exclude_modules'][] = 'devel';
 $settings['config_exclude_modules'][] = 'tracer';
 $settings['config_exclude_modules'][] = 'devel_generate';
+$settings['config_exclude_modules'][] = 'webform_devel';
+
+$settings['config_exclude_modules'][] = 'selvbetjening_kp_forms';
 
 /**
  * Load local development override configuration, if available.

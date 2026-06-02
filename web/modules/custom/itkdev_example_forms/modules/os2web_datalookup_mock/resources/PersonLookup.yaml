@@ -14,7 +14,7 @@
 # Persons with persondata.status.status in (1, 3, 5, 7) will be used to define mock OIDC
 # users (cf. ../../../../../../../docker-compose.oidc.yml). Run
 #
-#   docker compose restart idp-citizen-generate-user-claims idp-citizen
+#   docker compose up --force-recreate idp-citizen
 #
 # to reload OIDC mock users after changing this file.
 
