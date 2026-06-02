@@ -23,14 +23,17 @@ use StringTranslationTrait;
   public function __invoke(): array
   {
     $config = Settings::get('selvbetjening_kp_forms') ?? [];
+    $sites = (array)($config['sites'] ?? null);
+    $webforms = (array)($config['webforms'] ?? null);
+    $handlers = (array)($config['handlers'] ?? null);
 
     $build = [];
 
 //    https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21Element%21Table.php/class/Table/10
 
-    $colspan = 2 + count($config['handlers']);
+    $colspan = 2 + count($handlers);
     $header = [''];
-    foreach ($config['sites'] as $name => $url) {
+    foreach ($sites as $name => $url) {
       $header[] = [
        'data' =>  $name,
         'colspan' => $colspan,
@@ -39,15 +42,15 @@ use StringTranslationTrait;
 
     $rows = [];
 
-    foreach ($config['webforms'] as $label => $webformId) {
-      $row = [$label];
-      foreach ($config['sites'] as $name => $url) {
+    foreach ($webforms as $label => $webformId) {
+      $row = [sprintf('%s (%s)', $label, $webformId)];
+      foreach ($sites as $name => $url) {
         $row[] = Link::fromTextAndUrl(
           $this->t('Elements source', ['@label' => $label]),
           $this->createUrl($url, 'entity.webform.source_form', ['webform' => $webformId]),
         );
 
-        foreach ($config['handlers'] as $handlerLabel => $handlerId) {
+        foreach ($handlers as $handlerLabel => $handlerId) {
           $row[] = Link::fromTextAndUrl(
             $this->t('Edit @label handler', ['@label' => $handlerLabel]),
             $this->createUrl($url, 'entity.webform.handler.edit_form', ['webform' => $webformId, 'webform_handler' => $handlerId]),
