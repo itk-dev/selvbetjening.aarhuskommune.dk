@@ -72,6 +72,7 @@
 !/web/modules/custom/os2forms_granular_permissions
 !/web/modules/custom/os2forms_selvbetjening_deprecations
 !/web/modules/custom/itkdev_example_forms
+!/web/modules/custom/selvbetjening_kp_forms
 
 # Ignore site specific modules.
 /web/sites/*/modules
