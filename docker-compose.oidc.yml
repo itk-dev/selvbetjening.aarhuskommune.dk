@@ -30,6 +30,7 @@ services:
   # Generate user data for idp-citizen service
   idp-citizen-generate-user-claims:
     image: mikefarah/yq
+    # We must run as root to allow the image to write the user claims into the shared volume (idp-citizen-data).
     user: root
     entrypoint: [
         sh,

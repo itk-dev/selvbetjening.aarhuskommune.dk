@@ -1,3 +1,5 @@
+# This is only for testing. DO NOT USE IN PRODUCTION!
+
 include:
   - docker-compose.oidc.yml
 
