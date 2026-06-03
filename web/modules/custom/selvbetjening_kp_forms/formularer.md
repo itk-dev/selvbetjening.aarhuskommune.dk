@@ -112,95 +112,34 @@ jf. [Anmodning.xsd](https://github.com/itk-dev/os2forms_fordelingskomponent/blob
 
 ## Lokal udvikling
 
-<table>
-<thead>
-<tr>
-  <td></td>
-
-  <th colspan="2">Local</th>
-
-  <th colspan="2">Dev</th>
-</tr>
-<tr>
-  <td></td>
-
-  <th>Elements</th>
-  <th>handlers</th>
-
-  <th>Elements</th>
-  <th>handlers</th>
-</tr>
-</thead>
-
-<tbody>
-  <tr>
-    <th>SP 241</th>
-    <td>
-      <a href="https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/source?config_entity=sp242_xsd">source</a>
-    </td>
-    <td>
-      <a href="https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/handlers?config_entity=sp242_xsd">list</a>
-      <a href="https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/handlers/fordelingskomponent_sf2900/edit">edit sf2900</a>
-    </td>
-  </tr>
-</tbody>
-</table>
-
-|        | Local |   |         | dev |
-|--------|-------|---|---------|-----|
-|        |       |   | Handler |     |
-| SP 241 |       |   |
-| SP 242 |
-|        |
-
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/source?config_entity=sp242_xsd
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/handlers?config_entity=sp242_xsd
-* [handler](https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/handlers/fordelingskomponent_sf2900/edit)
-
-### SP 246
-
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/erklaering_fra_optiker_sp246_000/source?config_entity=erklaering_fra_optiker_sp246_000
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/erklaering_fra_optiker_sp246_000/handlers?config_entity=erklaering_fra_optiker_sp246_000
-* [handler](https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/erklaering_fra_optiker_sp246_000/handlers/fordelingskomponent_sf2900/edit)
-
-### SP 501
-
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_personligt_tillaeg/source?config_entity=ansoegning_om_personligt_tillaeg
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_personligt_tillaeg/handlers?config_entity=ansoegning_om_personligt_tillaeg
-* [handler](https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_personligt_tillaeg/handlers/fordelingskomponent_sf2900/edit)
-
-### Anmodning
-
-
-
 ### SP 241
 
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_helbredstillaeg_sp/source?config_entity=ansoegning_om_helbredstillaeg_sp
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_helbredstillaeg_sp/handlers?config_entity=ansoegning_om_helbredstillaeg_sp
+* <https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_helbredstillaeg_sp/source?config_entity=ansoegning_om_helbredstillaeg_sp>
+* <https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_helbredstillaeg_sp/handlers?config_entity=ansoegning_om_helbredstillaeg_sp>
 * [handler](https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_helbredstillaeg_sp/handlers/fordelingskomponent_sf2900/edit)
 
 ### SP 242
 
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/source?config_entity=sp242_xsd
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/handlers?config_entity=sp242_xsd
+* <https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/source?config_entity=sp242_xsd>
+* <https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/handlers?config_entity=sp242_xsd>
 * [handler](https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/sp242_xsd/handlers/fordelingskomponent_sf2900/edit)
 
 ### SP 246
 
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/erklaering_fra_optiker_sp246_000/source?config_entity=erklaering_fra_optiker_sp246_000
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/erklaering_fra_optiker_sp246_000/handlers?config_entity=erklaering_fra_optiker_sp246_000
+* <https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/erklaering_fra_optiker_sp246_000/source?config_entity=erklaering_fra_optiker_sp246_000>
+* <https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/erklaering_fra_optiker_sp246_000/handlers?config_entity=erklaering_fra_optiker_sp246_000>
 * [handler](https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/erklaering_fra_optiker_sp246_000/handlers/fordelingskomponent_sf2900/edit)
 
 ### SP 501
 
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_personligt_tillaeg/source?config_entity=ansoegning_om_personligt_tillaeg
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_personligt_tillaeg/handlers?config_entity=ansoegning_om_personligt_tillaeg
+* <https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_personligt_tillaeg/source?config_entity=ansoegning_om_personligt_tillaeg>
+* <https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_personligt_tillaeg/handlers?config_entity=ansoegning_om_personligt_tillaeg>
 * [handler](https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/ansoegning_om_personligt_tillaeg/handlers/fordelingskomponent_sf2900/edit)
 
 ### Anmodning
 
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/helbredstillaeg_refundering_af_u/source?config_entity=helbredstillaeg_refundering_af_u
-* https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/helbredstillaeg_refundering_af_u/handlers?config_entity=helbredstillaeg_refundering_af_u
+* <https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/helbredstillaeg_refundering_af_u/source?config_entity=helbredstillaeg_refundering_af_u>
+* <https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/helbredstillaeg_refundering_af_u/handlers?config_entity=helbredstillaeg_refundering_af_u>
 * [handler](https://selvbetjening.local.itkdev.dk/da/admin/structure/webform/manage/helbredstillaeg_refundering_af_u/handlers/fordelingskomponent_sf2900/edit)
 
 ---
@@ -209,4 +148,3 @@ jf. [Anmodning.xsd](https://github.com/itk-dev/os2forms_fordelingskomponent/blob
 [SP 242]: https://dev-selvbetjening.aarhuskommune.dk/da/admin/structure/webform/manage/sp242_xsd/source?config_entity=sp242_xsd
 [SP 246]: https://dev-selvbetjening.aarhuskommune.dk/da/admin/structure/webform/manage/erklaering_fra_optiker_sp246_000/source?config_entity=erklaering_fra_optiker_sp246_000
 [SP 501]: https://dev-selvbetjening.aarhuskommune.dk/da/admin/structure/webform/manage/ansoegning_om_personligt_tillaeg/source?config_entity=ansoegning_om_personligt_tillaeg
-[Anmodning]: https://dev-selvbetjening.aarhuskommune.dk/da/admin/structure/webform/manage/helbredstillaeg_refundering_af_u/source?config_entity=helbredstillaeg_refundering_af_u

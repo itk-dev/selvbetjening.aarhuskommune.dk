@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# set -o errexit -o errtrace -o noclobber -o nounset -o pipefail
+# IFS=$'\n\t'
+
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+data_dir=$(realpath "$script_dir/../data")
+
+rsync -azv "${REMOTE_HOST?}":"${REMOTE_MODULE_PATH?}"/data/ "$data_dir"
