@@ -70,6 +70,25 @@ Vi kan sagtens håndtere dette i xml-skabelonen, men det er noget rod at bruge "
 
 <https://dev-selvbetjening.aarhuskommune.dk/da/admin/structure/webform/manage/ansoegning_om_personligt_tillaeg/source?config_entity=ansoegning_om_personligt_tillaeg>
 
+* Hvem er ansøger egentlig?
+
+  ``` text
+   [ERROR] Ansøgning om personligt tillæg - SP501: Submission #1
+
+           Key "ansoegeroplysninger_ansoeger_fornavn" for sequence/mapping with keys "udgift, adresse,
+           aegtefaelle_samlever, aktuelleindtaegter_aegtefaelleindtaegt_andenpension,
+  …
+  ```
+* "Civilstand":
+
+  ``` text
+   [ERROR] Ansøgning om personligt tillæg - SP501: Submission #5
+
+           Error validating XML:
+           16:0: Element 'Civilstand': [facet 'enumeration'] The value 'Samlevende med ægtefælle' is not an element of the
+           set {'Enlig', 'SamlevendeMedAegtefaelle', 'SamlevendeAndenPerson', 'SamlevendeSlaegtning'}.
+    ```
+
 * Der kan kun være ét formål i xml'en; formularen tillader flere.
 * Håndtering af filer!
 

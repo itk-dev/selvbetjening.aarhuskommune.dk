@@ -92,12 +92,12 @@
 
   <AnsoegerOplysninger>
     <Ansoeger>
-      <Fornavn>{{ submission.data.ansoeger_fornavn }}</Fornavn>
-      {% if submission.data.ansoeger_mellemnavn|default(false) %}
-      <Mellemnavn>{{ submission.data.ansoeger_mellemnavn }}</Mellemnavn>
+      <Fornavn>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn }}</Fornavn>
+      {% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %}
+      <Mellemnavn>{{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn }}</Mellemnavn>
       {% endif %}
-      <Efternavn>{{ submission.data.ansoeger_efternavn }}</Efternavn>
-      <Personnummer>urn:oio:cpr:{{ submission.data.ansoeger_personnummer_cpr_ }}</Personnummer>
+      <Efternavn>{{ submission.data.ansoegeroplysninger_ansoeger_efternavn }}</Efternavn>
+      <Personnummer>urn:oio:cpr:{{ submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_ }}</Personnummer>
     </Ansoeger>
   </AnsoegerOplysninger>
 
@@ -127,7 +127,7 @@
   <Erklaering>Accepteret</Erklaering>
 
   <Underskriftsoplysninger>
-    <Underskrift>{{ submission.data.ansoeger_fornavn }}{% if submission.data.ansoeger_mellemnavn|default(false) %} {{ submission.data.ansoeger_mellemnavn }}{% endif %} {{ submission.data.ansoeger_efternavn }}</Underskrift>
+    <Underskrift>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn }}{% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %} {{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn }}{% endif %} {{ submission.data.ansoegeroplysninger_ansoeger_efternavn }}</Underskrift>
     <Underskriftsdato>{{ _self.date(submission.data.underskriftsoplysninger_underskriftsdato) }}</Underskriftsdato>
   </Underskriftsoplysninger>
 
