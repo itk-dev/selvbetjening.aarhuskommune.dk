@@ -14,7 +14,6 @@ final class Script extends AbstractScript
     /** @var \Drupal\webform\WebformInterface[] $webforms */
     $webforms = \Drupal::entityTypeManager()->getStorage('webform')->loadMultiple($this->webformIds);
     foreach ($webforms as $webform) {
-      $id = $webform->id();
       $handler = $webform->getHandler($this->handlerId);
 
       $path = 'settings.distribution_object.xml_template';
@@ -24,11 +23,10 @@ final class Script extends AbstractScript
       $this->writeln($path);
 
       $configuration = $handler->getConfiguration();
-
-      $xml = file_get_contents($xmlPath);
-      NestedArray::setValue($configuration, explode('.', $path), $xml);
-      $handler->setConfiguration($configuration);
-      $webform->save();
+      $xml = $configuration['settings']['distribution_object']['xml_template'] ?? null;
+      if (null !== $xml) {
+        file_put_contents($xmlPath, $xml);
+      }
     }
   }
 }

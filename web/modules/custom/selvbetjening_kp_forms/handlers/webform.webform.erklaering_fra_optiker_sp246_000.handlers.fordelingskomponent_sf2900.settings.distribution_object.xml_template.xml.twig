@@ -3,8 +3,12 @@
 <SP246>
   {# module://os2forms_fordelingskomponent/resources/SP/SF2900_XSD/SP246.xsd #}
 
+  {% macro cvr(value) -%}
+    {{ 'urn:oio:cvr-nr:%08d'|format(value) }}
+  {%- endmacro %}
+
   {% macro personnummer(value) -%}
-  {{ 'urn:oio:cpr:%010d'|format(value) }}
+    {{ 'urn:oio:cpr:%010d'|format(value) }}
   {%- endmacro %}
 
   {% macro telefonnummer(value) -%}
@@ -12,42 +16,54 @@
   {%- endmacro %}
 
   {% macro date(value) -%}
-  {{ value|date('Y-m-d') }}
+    {{ value|date('Y-m-d') }}
   {%- endmacro %}
 
   {% macro max_laengde_strings_200(value) -%}
-  {{ value|trim|slice(0, 200) }}
+    {{ value|trim|slice(0, 200) }}
+  {%- endmacro %}
+
+  {% macro normalString(value) -%}
+    {{ value|trim|slice(0, 200) }}
+  {%- endmacro %}
+
+  {% macro longString(value) -%}
+    {{ value|trim|slice(0, 500) }}
   {%- endmacro %}
 
   {% macro positive_integer(value) -%}
-  {%- set value = max(1, value|number_format(0, '', '')) -%}
-  {{ '%d'|format(value) }}
+    {%- set value = max(1, value|number_format(0, '', '')) -%}
+    {{ '%d'|format(value) }}
   {%- endmacro %}
 
   {% macro positive_integer_type_or_empty(value) -%}
-  {%- if value is not empty -%}
-  {%- set value = max(1, value|number_format(0, '', '')) -%}
-  {{ '%d'|format(value) }}
-  {%- endif -%}
+    {%- if value is not empty -%}
+      {%- set value = max(1, value|number_format(0, '', '')) -%}
+      {{ '%d'|format(value) }}
+    {%- endif -%}
   {%- endmacro %}
 
   {# number_format (https://twig.symfony.com/doc/3.x/filters/number_format.html) will cast anything (that can be casted to a float) to a float before formatting
-  (cf. https://github.com/twigphp/Twig/blob/99d95dd6b8b0cc3c2397d15d45a4bb87eff89ddc/src/Extension/CoreExtension.php#L698) #}
+    (cf. https://github.com/twigphp/Twig/blob/99d95dd6b8b0cc3c2397d15d45a4bb87eff89ddc/src/Extension/CoreExtension.php#L698) #}
 
   {# Strip thousand and decimal separators (from Danish floats); compute with 4 decimals #}
   {% macro decimal_value(value) -%}
-  {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '') -%}
-  {{ value }}
+    {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '') -%}
+    {{ value }}
   {%- endmacro %}
 
   {% macro positiv_decimal_type(value) -%}
-  {%- set value = max(0.01, value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '')) -%}
-  {{ value|number_format(2, '.', '') }}
+    {%- set value = max(0.01, value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '')) -%}
+    {{ value|number_format(2, '.', '') }}
   {%- endmacro %}
 
   {% macro decimal_type(value) -%}
-  {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '') -%}
-  {{ value|number_format(2, '.', '') }}
+    {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '') -%}
+    {{ value|number_format(2, '.', '') }}
+  {%- endmacro %}
+
+  {% macro beloeb(value) -%}
+    {{ value|replace({'.': ''})|replace({',': '.'})|number_format(2, '.', '') }}
   {%- endmacro %}
 
   <Header>
@@ -155,7 +171,7 @@
 
   <Behandler>
     <UnderskriftsoplysningerBehandler>
-      <UnderskriftBehandler>@todo</UnderskriftBehandler>
+      <UnderskriftBehandler>{{ submission.data.navn }}</UnderskriftBehandler>
       <UnderskriftsdatoBehandler>{{ _self.date(submission.data.behandler_underskriftsoplysningerbehandler_underskriftsdatobehandler) }}</UnderskriftsdatoBehandler>
     </UnderskriftsoplysningerBehandler>
     <TelefonnummerBehandler>{{ _self.telefonnummer(submission.data.behandler_telefonnummerbehandler) }}</TelefonnummerBehandler>
