@@ -9372,12 +9372,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_fordelingskomponent.git",
-                "reference": "14be9b9cb9050d7a37f9127d85fda6ea4ba44507"
+                "reference": "8584f653fa66c8152417ce419dcb63ef027b1970"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/14be9b9cb9050d7a37f9127d85fda6ea4ba44507",
-                "reference": "14be9b9cb9050d7a37f9127d85fda6ea4ba44507",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/8584f653fa66c8152417ce419dcb63ef027b1970",
+                "reference": "8584f653fa66c8152417ce419dcb63ef027b1970",
                 "shasum": ""
             },
             "require": {
@@ -9427,7 +9427,7 @@
                 "source": "https://github.com/itk-dev/os2forms_fordelingskomponent/tree/os2forms_fordelingskomponent",
                 "issues": "https://github.com/itk-dev/os2forms_fordelingskomponent/issues"
             },
-            "time": "2026-06-02T14:48:23+00:00"
+            "time": "2026-06-08T14:45:10+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
