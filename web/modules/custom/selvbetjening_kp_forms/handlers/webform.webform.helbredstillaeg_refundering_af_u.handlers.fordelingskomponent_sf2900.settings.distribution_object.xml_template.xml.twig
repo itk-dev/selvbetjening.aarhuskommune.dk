@@ -117,10 +117,11 @@
     <Underskriftsdato>{{ _self.date(submission.data.underskriftsoplysninger_underskriftsdato) }}</Underskriftsdato>
   </Underskriftsoplysninger>
 
-  <Bemaerkning>{{ _self.max_laengde_strings_200('@todo') }}</Bemaerkning>
+  <!-- @todo
+  <Bemaerkning>{{ _self.max_laengde_strings_200('') }}</Bemaerkning>
+  -->
 
   {% if submission.data.giver_med_min_underskrift_begraenset_fuldmagt_til is not empty %}
-  {# @todo #}
   <Fuldmagt>
     <FuldmagtDokumentnavn>{{ submission.data.for_og_mellemnavn_e1|trim }} {{ submission.data.efternavn1|trim }}</FuldmagtDokumentnavn>
     <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.personnummer1) }}</FuldmagthaversPersonnummer>

@@ -122,7 +122,6 @@
   <Erklaering>Accepteret</Erklaering>
 
   {% if submission.data.fuldmagt is not empty %}
-  {# @todo #}
   <Fuldmagt>
     <FuldmagtDokumentnavn>{{ submission.data.fuldmagt_for_og_mellemnavn_e1|trim }} {{ submission.data.fuldmagt_efternavn|trim }}</FuldmagtDokumentnavn>
     <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.fuldmagt_undertegnedepersonnummer) }}</FuldmagthaversPersonnummer>
