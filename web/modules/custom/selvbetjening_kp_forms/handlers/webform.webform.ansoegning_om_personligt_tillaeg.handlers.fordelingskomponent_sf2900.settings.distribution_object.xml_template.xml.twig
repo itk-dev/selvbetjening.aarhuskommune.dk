@@ -235,26 +235,21 @@
         <Renteindtaegter>{{ value }}</Renteindtaegter>
       {% endif %}
 
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_borgerindtaegter_andet1beloeb) %}
+      {% if value %}
+        <Andet1>
+          <Andet1Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_andet1titel) }}</Andet1Titel>
+          <Andet1Beloeb>{{ value }}</Andet1Beloeb>
+        </Andet1>
+      {% endif %}
 
-      <!-- @todo We need two "andet"!
-           <xs:element name="Andet1" minOccurs="0">
-           <xs:complexType>
-           <xs:sequence>
-           <xs:element name="Andet1Titel" type="normalString" minOccurs="1"/>
-           <xs:element name="Andet1Beloeb" type="beloeb" minOccurs="1"/>
-           </xs:sequence>
-           </xs:complexType>
-           </xs:element>
-           <xs:element name="Andet2" minOccurs="0">
-           <xs:complexType>
-           <xs:sequence>
-           <xs:element name="Andet2Titel" type="normalString" minOccurs="1"/>
-           <xs:element name="Andet2Beloeb" type="beloeb" minOccurs="1"/>
-           </xs:sequence>
-           </xs:complexType>
-           </xs:element>
-           </xs:sequence>
-      -->
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_borgerindtaegter_andet2beloeb) %}
+      {% if value %}
+        <Andet2>
+          <Andet2Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_andet2titel) }}</Andet2Titel>
+          <Andet2Beloeb>{{ value }}</Andet2Beloeb>
+        </Andet2>
+      {% endif %}
 
     </BorgerIndtaegter>
 
@@ -284,28 +279,21 @@
         <Renteindtaegter>{{ value }}</Renteindtaegter>
       {% endif %}
 
-      <!-- @todo We need two "andet"!
-           <xs:element name="Andet1" minOccurs="0">
-           <xs:complexType>
-           <xs:sequence>
-           <xs:element name="Andet1Titel" type="normalString" minOccurs="1"/>
-           <xs:element name="Andet1Beloeb" type="beloeb" minOccurs="1"/>
-           </xs:sequence>
-           </xs:complexType>
-           </xs:element>
-           <xs:element name="Andet2" minOccurs="0">
-           <xs:complexType>
-           <xs:sequence>
-           <xs:element name="Andet2Titel" type="normalString" minOccurs="1"/>
-           <xs:element name="Andet2Beloeb" type="beloeb" minOccurs="1"/>
-           </xs:sequence>
-           </xs:complexType>
-           </xs:element>
-           </xs:sequence>
-           </xs:complexType>
-           </xs:element>
-           </xs:sequence>
-      -->
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_aegtefaelleindtaegt_andet1beloeb) %}
+      {% if value %}
+        <Andet1>
+          <Andet1Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_andet1titel) }}</Andet1Titel>
+          <Andet1Beloeb>{{ value }}</Andet1Beloeb>
+        </Andet1>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_aegtefaelleindtaegt_andet2beloeb) %}
+      {% if value %}
+        <Andet2>
+          <Andet2Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_andet2titel) }}</Andet2Titel>
+          <Andet2Beloeb>{{ value }}</Andet2Beloeb>
+        </Andet2>
+      {% endif %}
 
     </AegtefaelleIndtaegt>
   </AktuelleIndtaegter>
