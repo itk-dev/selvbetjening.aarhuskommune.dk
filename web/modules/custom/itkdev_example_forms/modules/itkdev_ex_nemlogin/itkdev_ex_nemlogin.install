@@ -31,3 +31,14 @@ function itkdev_ex_nemlogin_install(bool $is_syncing) : void {
     }
   }
 }
+
+/**
+ * Implements hook_uninstall().
+ */
+function itkdev_ex_nemlogin_uninstall(bool $is_syncing) : void {
+  if (!$is_syncing) {
+    /** @var \Drupal\itkdev_ex_nemlogin\SettingsHelper $helper */
+    $helper = \Drupal::service(SettingsHelper::class);
+    $helper->removeSettings();
+  }
+}

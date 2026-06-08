@@ -25,7 +25,8 @@ class ServiceplatformenCPRExtendedMock extends ServiceplatformenCPRExtended {
       $id = $request['PNR'] ?? NULL;
 
       // https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
-      $data = Yaml::parseFile(__DIR__ . '/' . $method . '.yaml', flags: Yaml::PARSE_CONSTANT);
+      $path = $this->getDataPath($method);
+      $data = Yaml::parseFile($path, flags: Yaml::PARSE_CONSTANT);
       if (!isset($data[$id])) {
         throw new \RuntimeException('Invalid CPR: ' . $id);
       }
@@ -51,6 +52,22 @@ class ServiceplatformenCPRExtendedMock extends ServiceplatformenCPRExtended {
         'error' => $exception->getMessage(),
       ];
     }
+  }
+
+  /**
+   * Get mock data path.
+   */
+  private function getDataPath(string $method): string {
+    $path = trim((string) getenv('OS2WEB_DATALOOKUP_MOCK_COMPANY_LOOKUP_PATH'));
+    if ('' !== $path) {
+      // Resolve path relatively to the project root.
+      $path = dirname(DRUPAL_ROOT) . '/' . $path;
+      if (NULL !== $path && is_readable($path)) {
+        return $path;
+      }
+    }
+
+    return __DIR__ . '/../../../../resources/' . $method . '.yaml';
   }
 
 }

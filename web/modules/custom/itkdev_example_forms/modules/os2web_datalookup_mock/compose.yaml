@@ -1,0 +1,7 @@
+services:
+  phpfpm:
+    image: itkdev/php8.5-fpm:latest
+    profiles:
+      - dev
+    volumes:
+      - ./:/app

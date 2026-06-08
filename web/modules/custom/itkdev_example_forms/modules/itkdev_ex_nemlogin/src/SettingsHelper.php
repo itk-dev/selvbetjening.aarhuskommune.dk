@@ -29,6 +29,8 @@ final class SettingsHelper implements EventSubscriberInterface {
 
   /**
    * Set settings.
+   *
+   * @see /admin/os2forms_nemlogin_openid_connect/settings
    */
   public function setSettings() : void {
     $this->logger->info('Setting %name settings (%url)', [
@@ -41,6 +43,23 @@ final class SettingsHelper implements EventSubscriberInterface {
           'openid_connect_nemlogin' => 'OpenIDConnect Nemlogin (set by itkdev_ex_nemlogin)',
         ]),
       ]);
+
+    // We need to rebuild cache after setting settings.
+    drupal_flush_all_caches();
+  }
+
+  /**
+   * Remove settings.
+   *
+   * @see /admin/os2forms_nemlogin_openid_connect/settings
+   */
+  public function removeSettings() : void {
+    $this->logger->info('Removing %name settings (%url)', [
+      '%name' => 'os2forms_nemlogin_openid_connect',
+      '%url' => Url::fromRoute('os2forms_nemlogin_openid_connect.admin.settings')->setAbsolute()->toString(TRUE)->getGeneratedUrl(),
+    ]);
+    $this->os2formsNemloginOpenidConnectSettings
+      ->setSettings([]);
 
     // We need to rebuild cache after setting settings.
     drupal_flush_all_caches();
