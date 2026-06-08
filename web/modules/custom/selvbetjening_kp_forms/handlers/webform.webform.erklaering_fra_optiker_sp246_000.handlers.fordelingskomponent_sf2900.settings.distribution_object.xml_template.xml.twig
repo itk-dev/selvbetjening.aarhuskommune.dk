@@ -52,8 +52,9 @@
     {{ value }}
   {%- endmacro %}
 
+  {# I think the XSD actually means to say "not negative" #}
   {% macro positiv_decimal_type(value) -%}
-    {%- set value = max(0.01, value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '')) -%}
+    {%- set value = max(0, value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '')) -%}
     {{ value|number_format(2, '.', '') }}
   {%- endmacro %}
 
@@ -113,9 +114,6 @@
 
     {% set brilleglas_pris = os2forms_fordelingskomponent_floatval(submission.data.brillestel_brilleglas[0].brilleglas_pris|default(0), langcode: langcode) %}
     {% if brilleglas_pris > 0 and (submission.data.overslag_brilleglas_venstre or submission.data.overslag_brilleglas_hoejre) %}
-      <!--
-           {{ submission.data.overslag_brilleglas_venstre|json_encode(constant('JSON_PRETTY_PRINT'))|raw }}
-      -->
     <Brilleglas>
       {% if submission.data.overslag_brilleglas_venstre %}
         {% set brilleglas = submission.data.overslag_brilleglas_venstre|first %}
@@ -142,7 +140,7 @@
     </Brilleglas>
     {% endif %}
 
-    {% set brillestel_pris = os2forms_fordelingskomponent_floatval(submission.data.brillestel_brilleglas[0].brillestel_pris|default(0), langcode: langcode) %}
+    {% set brillestel_pris = os2forms_fordelingskomponent_floatval(submission.data.brillestel_brilleglas[0].brillestel_pris_stel|default(0), langcode: langcode) %}
     {% if brillestel_pris > 0 and submission.data.brillestel_brilleglas %}
       {% set brillestel = submission.data.brillestel_brilleglas|first %}
       <Brillestel>
@@ -152,12 +150,13 @@
       </Brillestel>
     {% endif %}
 
-    {% set overslag_andet_brilleglas_pris = os2forms_fordelingskomponent_floatval(submission.data.overslag_andet_brilleglas_pris, langcode: langcode) %}
-    {% set overslag_andet_brillestel_pris = os2forms_fordelingskomponent_floatval(submission.data.overslag_andet_brillestel_pris, langcode: langcode) %}
+    {% set overslag_andet_brilleglas_pris = os2forms_fordelingskomponent_floatval(submission.data.overslag_andet_brilleglas_pris|default(0), langcode: langcode) %}
+    {% set overslag_andet_brillestel_pris = os2forms_fordelingskomponent_floatval(submission.data.overslag_andet_brillestel_pris|default(0), langcode: langcode) %}
 
     {% if overslag_andet_brilleglas_pris > 0 or overslag_andet_brillestel_pris > 0 %}
       <Andet>
-        {% if overslag_andet_brilleglas_pris > 0 %}
+        {# Both Brilleglas and Brillestel elements are required in "Andet" (!) #}
+        {% if overslag_andet_brilleglas_pris >= 0 %}
           <Brilleglas>
             {% if submission.data.overslag_andet_brilleglas_venstre %}
               {% set brilleglas = submission.data.overslag_andet_brilleglas_venstre|first %}
@@ -184,7 +183,7 @@
           </Brilleglas>
         {% endif %}
 
-        {% if overslag_andet_brillestel_pris > 0 %}
+        {% if overslag_andet_brillestel_pris >= 0 %}
           <Brillestel>
             <Navn>{{ _self.max_laengde_strings_200(submission.data.overslag_andet_brillestel) }}</Navn>
             <Pris>{{ _self.positiv_decimal_type(overslag_andet_brillestel_pris) }}</Pris>
