@@ -91,73 +91,111 @@
   </Header>
 
   <Aarsag>
-    {% if submission.data.aarsag_begrundelse == 'HarBriller' %}
-    <HarBriller>
-      <Alder>{{ _self.positive_integer(submission.data.aarsag_harbriller_alder) }}</Alder>
-    </HarBriller>
+    {% if submission.data.aarsag_harbriller|lower == 'ja' %}
+      <HarBriller>
+        <Alder>{{ _self.positive_integer(submission.data.aarsag_harbriller_alder) }}</Alder>
+      </HarBriller>
     {% endif %}
 
-    {% if submission.data.aarsag_begrundelse == 'Synsændring' %}
-    <AndenBegrundelse>
-    </AndenBegrundelse>
+    {% if submission.data.aarsag_andenbegrundelse|trim %}
+      <AndenBegrundelse>{{ _self.max_laengde_strings_200(submission.data.aarsag_andenbegrundelse|trim) }}</AndenBegrundelse>
     {% endif %}
 
-    {% if submission.data.er_der_specielle_forhold_fx_allergi_der_goer_sig_gaeldende_for_v == 'Ja' %}
-    <SpecielleForhold>{{ _self.max_laengde_strings_200(submission.data.aarsag_specielleforhold) }}</SpecielleForhold>
+    {% if submission.data.er_der_specielle_forhold_fx_allergi_der_goer_sig_gaeldende_for_v|lower == 'Ja' %}
+      <SpecielleForhold>{{ _self.max_laengde_strings_200(submission.data.aarsag_specielleforhold|trim) }}</SpecielleForhold>
     {% endif %}
   </Aarsag>
 
+  {% set langcode = submission.langcode %}
+
   <Overslag>
-    {# @todo #}
-    {% set values = [] %}
+    {% set total_price = 0 %}
 
+    {% set brilleglas_pris = os2forms_fordelingskomponent_floatval(submission.data.brillestel_brilleglas[0].brilleglas_pris|default(0), langcode: langcode) %}
+    {% if brilleglas_pris > 0 and (submission.data.overslag_brilleglas_venstre or submission.data.overslag_brilleglas_hoejre) %}
+      <!--
+           {{ submission.data.overslag_brilleglas_venstre|json_encode(constant('JSON_PRETTY_PRINT'))|raw }}
+      -->
     <Brilleglas>
-      <Venstre>
-          <Styrke>{{ _self.decimal_type('@todo') }}</Styrke>
-          <Cylinder>{{ _self.decimal_type('@todo') }}</Cylinder>
-          <Addition>{{ _self.decimal_type('@todo') }}</Addition>
-          <Akse>{{ _self.positive_integer_type_or_empty('@todo') }}</Akse>
-      </Venstre>
-      <Hoejre>
-          <Styrke>{{ _self.decimal_type('@todo') }}</Styrke>
-          <Cylinder>{{ _self.decimal_type('@todo') }}</Cylinder>
-          <Addition>{{ _self.decimal_type('@todo') }}</Addition>
-          <Akse>{{ _self.positive_integer_type_or_empty('@todo') }}</Akse>
-      </Hoejre>
-      <Pris>{{ _self.positiv_decimal_type('@todo') }}</Pris>
-    </Brilleglas>
-
-    <Brillestel>
-      <Navn>{{ _self.max_laengde_strings_200('@todo') }}</Navn>
-      <Pris>{{ _self.positiv_decimal_type('@todo') }}</Pris>
-    </Brillestel>
-
-    <Andet>
-      <Brilleglas>
+      {% if submission.data.overslag_brilleglas_venstre %}
+        {% set brilleglas = submission.data.overslag_brilleglas_venstre|first %}
         <Venstre>
-          <Styrke>{{ _self.decimal_type('@todo') }}</Styrke>
-          <Cylinder>{{ _self.decimal_type('@todo') }}</Cylinder>
-          <Addition>{{ _self.decimal_type('@todo') }}</Addition>
-          <Akse>{{ _self.positive_integer_type_or_empty('@todo') }}</Akse>
+          <Styrke>{{ _self.decimal_type(brilleglas.styrke) }}</Styrke>
+          <Cylinder>{{ _self.decimal_type(brilleglas.cyl) }}</Cylinder>
+          <Addition>{{ _self.decimal_type(brilleglas.add) }}</Addition>
+          <Akse>{{ _self.positive_integer_type_or_empty(brilleglas.o) }}</Akse>
         </Venstre>
+      {% endif %}
+
+      {% if submission.data.overslag_brilleglas_hoejre %}
+        {% set brilleglas = submission.data.overslag_brilleglas_hoejre|first %}
         <Hoejre>
-          <Styrke>{{ _self.decimal_type('@todo') }}</Styrke>
-          <Cylinder>{{ _self.decimal_type('@todo') }}</Cylinder>
-          <Addition>{{ _self.decimal_type('@todo') }}</Addition>
-          <Akse>{{ _self.positive_integer_type_or_empty('@todo') }}</Akse>
+          <Styrke>{{ _self.decimal_type(brilleglas.styrke) }}</Styrke>
+          <Cylinder>{{ _self.decimal_type(brilleglas.cyl) }}</Cylinder>
+          <Addition>{{ _self.decimal_type(brilleglas.add) }}</Addition>
+          <Akse>{{ _self.positive_integer_type_or_empty(brilleglas.o) }}</Akse>
         </Hoejre>
-        <Pris>{{ _self.positiv_decimal_type('@todo') }}</Pris>
-      </Brilleglas>
+      {% endif %}
 
+      <Pris>{{ _self.positiv_decimal_type(brilleglas_pris) }}</Pris>
+      {% set total_price = total_price + brilleglas_pris %}
+    </Brilleglas>
+    {% endif %}
+
+    {% set brillestel_pris = os2forms_fordelingskomponent_floatval(submission.data.brillestel_brilleglas[0].brillestel_pris|default(0), langcode: langcode) %}
+    {% if brillestel_pris > 0 and submission.data.brillestel_brilleglas %}
+      {% set brillestel = submission.data.brillestel_brilleglas|first %}
       <Brillestel>
-        <Navn>{{ _self.max_laengde_strings_200('@todo') }}</Navn>
-        <Pris>{{ _self.positiv_decimal_type('@todo') }}</Pris>
+        <Navn>{{ _self.max_laengde_strings_200(brillestel.brillestel_navn) }}</Navn>
+        <Pris>{{ _self.positiv_decimal_type(brillestel_pris) }}</Pris>
+        {% set total_price = total_price + brillestel_pris %}
       </Brillestel>
+    {% endif %}
 
-    </Andet>
+    {% set overslag_andet_brilleglas_pris = os2forms_fordelingskomponent_floatval(submission.data.overslag_andet_brilleglas_pris, langcode: langcode) %}
+    {% set overslag_andet_brillestel_pris = os2forms_fordelingskomponent_floatval(submission.data.overslag_andet_brillestel_pris, langcode: langcode) %}
 
-    {% set sum = values|reduce((carry, value) => carry + value) %}
-    <Pris>{{ _self.positiv_decimal_type(sum) }}</Pris>
+    {% if overslag_andet_brilleglas_pris > 0 or overslag_andet_brillestel_pris > 0 %}
+      <Andet>
+        {% if overslag_andet_brilleglas_pris > 0 %}
+          <Brilleglas>
+            {% if submission.data.overslag_andet_brilleglas_venstre %}
+              {% set brilleglas = submission.data.overslag_andet_brilleglas_venstre|first %}
+              <Venstre>
+                <Styrke>{{ _self.decimal_type(brilleglas.styrke) }}</Styrke>
+                <Cylinder>{{ _self.decimal_type(brilleglas.cyl) }}</Cylinder>
+                <Addition>{{ _self.decimal_type(brilleglas.add) }}</Addition>
+                <Akse>{{ _self.positive_integer_type_or_empty(brilleglas.o) }}</Akse>
+              </Venstre>
+            {% endif %}
+
+            {% if submission.data.overslag_andet_brilleglas_hoejre %}
+              {% set brilleglas = submission.data.overslag_andet_brilleglas_hoejre|first %}
+              <Hoejre>
+                <Styrke>{{ _self.decimal_type(brilleglas.styrke) }}</Styrke>
+                <Cylinder>{{ _self.decimal_type(brilleglas.cyl) }}</Cylinder>
+                <Addition>{{ _self.decimal_type(brilleglas.add) }}</Addition>
+                <Akse>{{ _self.positive_integer_type_or_empty(brilleglas.o) }}</Akse>
+              </Hoejre>
+            {% endif %}
+
+            <Pris>{{ _self.positiv_decimal_type(overslag_andet_brilleglas_pris) }}</Pris>
+            {% set total_price = total_price + overslag_andet_brilleglas_pris %}
+          </Brilleglas>
+        {% endif %}
+
+        {% if overslag_andet_brillestel_pris > 0 %}
+          <Brillestel>
+            <Navn>{{ _self.max_laengde_strings_200(submission.data.overslag_andet_brillestel) }}</Navn>
+            <Pris>{{ _self.positiv_decimal_type(overslag_andet_brillestel_pris) }}</Pris>
+            {% set total_price = total_price + overslag_andet_brillestel_pris %}
+          </Brillestel>
+        {% endif %}
+
+      </Andet>
+    {% endif %}
+
+    <Pris>{{ _self.positiv_decimal_type(total_price) }}</Pris>
   </Overslag>
 
   <Erklaering>
