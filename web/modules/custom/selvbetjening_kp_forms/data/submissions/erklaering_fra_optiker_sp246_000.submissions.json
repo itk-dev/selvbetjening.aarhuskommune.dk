@@ -421,6 +421,7 @@
         "navnansoeger": "Lise Jonassen",
         "overslag": "Ja",
         "overslag_andet": "",
+        "overslag_andet_brilleglas_pris": "",
         "overslag_andet_brillestel": "",
         "overslag_andet_brillestel_pris": "",
         "postnummer": "8200",
@@ -459,8 +460,22 @@
                 "styrke": "4,0"
             }
         ],
-        "overslag_andet_brilleglas_venstre": [],
-        "overslag_andet_brilleglas_hoejre": [],
+        "overslag_andet_brilleglas_venstre": [
+            {
+                "add": "2",
+                "cyl": "0,8",
+                "o": "3",
+                "styrke": "2,5"
+            }
+        ],
+        "overslag_andet_brilleglas_hoejre": [
+            {
+                "add": "1,5",
+                "cyl": "0,9",
+                "o": "2,5",
+                "styrke": "2,4"
+            }
+        ],
         "dokumenter_bilag": [],
         "dokumenter_faktura": [],
         "dokumenter_overslag": [],
@@ -488,13 +503,14 @@
         "navn": "SYNOPTIK A\/S",
         "navnansoeger": "Carsten Beck",
         "overslag": "Nej",
-        "overslag_andet": "",
-        "overslag_andet_brillestel": "",
-        "overslag_andet_brillestel_pris": "",
+        "overslag_andet": "Solbriller",
+        "overslag_andet_brilleglas_pris": "4500",
+        "overslag_andet_brillestel": "Louis Vuitton",
+        "overslag_andet_brillestel_pris": "25.000",
         "postnummer": "2730",
         "side_doer": "",
         "telefonnummer": "12345678",
-        "tilfoej_andet": "0",
+        "tilfoej_andet": "1",
         "vejnavn": "Lysk\u00e6rvej"
     }
 }
