@@ -39,7 +39,7 @@
         "os2forms/os2forms_rest_api": "^2.2",
         "os2forms/os2forms_sync": "^1.2",
         "os2forms/os2forms_webform_submission_log": "^1.1",
-        "os2web/os2web_datalookup": "dev-feature/fetch-first-middle-and-last-name as 3.1.0"
+        "os2web/os2web_datalookup": "dev-feature/fetch-first-middle-and-last-name as 3.4.0"
     },
     "require-dev": {
         "custom/itkdev_example_forms": "^1.0",
