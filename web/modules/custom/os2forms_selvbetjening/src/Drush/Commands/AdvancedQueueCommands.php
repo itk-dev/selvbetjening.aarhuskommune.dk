@@ -19,6 +19,8 @@ use Drush\Commands\config\ConfigCommands;
 use Drush\Commands\DrushCommands;
 use Drush\Exceptions\UserAbortException;
 use Symfony\Component\Console\Exception\RuntimeException;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 /**
  * A Drush commandfile.
@@ -151,11 +153,17 @@ final class AdvancedQueueCommands extends DrushCommands {
   #[CLI\Option(name: 'diff', description: 'Show payload diff')]
   #[CLI\Option(name: 'set', description: 'Set string value')]
   #[CLI\Option(name: 'set-int', description: 'Set integer value')]
+  #[CLI\Option(name: 'edit', description: 'Edit payload interactively. Editing will be performed after all set and unset operations have been performed.')]
+  #[CLI\Option(name: 'editor', description: 'The editor to use')]
   #[CLI\Option(name: 'unset', description: 'Unset value')]
   #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --set person.name=James', description: 'Set string value')]
   #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --set-int person.age=61', description: 'Set integer value')]
   #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --unset person.address', description: 'Unset value')]
   #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --set person.name=James --unset person.address --diff', description: 'Perform multiple operations and preview changes')]
+  #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --edit', description: 'Edit payload interactively in vi')]
+  #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --edit --diff', description: 'Edit payload interactively and preview final changes')]
+  #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --set name=test --edit', description: 'Set value and edit result interactively')]
+  #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --edit --editor=nano', description: 'Edit value using nano (for experts!)')]
   public function setJobPayloadValue(
     string $queue_id,
     string $job_id,
@@ -164,6 +172,8 @@ final class AdvancedQueueCommands extends DrushCommands {
       'set' => [],
       'set-int' => [],
       'unset' => [],
+      'edit' => FALSE,
+      'editor' => 'vi',
     ],
   ) {
     $backend = $this->loadQueueBackend($queue_id);
@@ -190,6 +200,10 @@ final class AdvancedQueueCommands extends DrushCommands {
       NestedArray::unsetValue($payload, explode('.', $path));
     }
 
+    if ($options['edit']) {
+      $payload = $this->editPayload($payload, editor: $options['editor']);
+    }
+
     $diff = $this->renderDiff($job->getPayload(), $payload);
     if (empty($diff)) {
       $this->io()->info('No changes to apply');
@@ -197,7 +211,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       return self::EXIT_SUCCESS;
     }
 
-    $question = dt('Apply the payload changes?');
+    $question = dt('Apply the payload changes (use --diff to preview the changes)?');
     if ($options['diff']) {
       $this->io()->writeln($diff);
       $question = dt('Apply the listed payload changes?');
@@ -265,6 +279,67 @@ final class AdvancedQueueCommands extends DrushCommands {
       $createConfigStorage([__FUNCTION__ => $b]),
       $this->output()
     );
+  }
+
+  /**
+   * Edit payload interactively.
+   *
+   * @param array $payload
+   *   The payload.
+   * @param string $editor
+   *   The editor to use.
+   *
+   * @return array
+   *   The edited payload.
+   *
+   * @throws \Symfony\Component\Console\Exception\RuntimeException
+   */
+  private function editPayload(array $payload, string $editor = 'vi'): array {
+    try {
+      // @todo Check that we can run editor.
+      $prettyPrintedPayload = json_encode($payload, JSON_PRETTY_PRINT);
+      // Check that payload down not change when decoded and encoded.
+      $bootstrappedPayload = json_decode($prettyPrintedPayload, TRUE);
+      if ($bootstrappedPayload !== $payload) {
+        $diff = $this->renderDiff(
+          $payload,
+          $bootstrappedPayload
+        );
+        throw new RuntimeException(sprintf('Cannot bootstrap payload: %s.', $diff));
+      }
+
+      $payloadFilename = tempnam(sys_get_temp_dir(), __FILE__);
+      file_put_contents($payloadFilename, $prettyPrintedPayload);
+      $process = new Process([$editor, $payloadFilename]);
+      $process->setTty(TRUE);
+      $process->run();
+
+      if (!$process->isSuccessful()) {
+        throw new ProcessFailedException($process);
+      }
+
+      $content = file_get_contents($payloadFilename);
+
+      try {
+        $editedPayload = json_decode($content, TRUE, flags: JSON_THROW_ON_ERROR);
+      }
+      catch (\JsonException $jsonException) {
+        throw new RuntimeException('Payload must be valid JSON', previous: $jsonException);
+      }
+
+      if (!is_array($editedPayload)) {
+        throw new RuntimeException(sprintf('Payload must be an array; got %s', var_export($editedPayload, TRUE)));
+      }
+
+      return $editedPayload;
+    }
+    catch (ProcessFailedException $exception) {
+      throw new RuntimeException(sprintf('Error editing payload: %s', $exception->getMessage()), previous: $exception);
+    } finally {
+      if (isset($payloadFilename)) {
+        unlink($payloadFilename);
+      }
+    }
   }
 
 }

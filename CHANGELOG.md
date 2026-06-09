@@ -14,7 +14,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
     * Skiftede fra DAWA (udfaset) til datafordeleren ifb. matrikelopslag.
   * Opdaterede til den moderniserede datafordeler ifb. CVR opslag og P-nummer
     opslag.
-
+* [PR-513](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/513)
+  Tilføjede endnu en fiks køjobkommando – redigering!
 * [PR-512](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/512)
   Forbedrede opsætning af test-borgere
 * [PR-504](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/504)
@@ -43,7 +44,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   Fjerende links fra OS2Forms Attachments der er indstillet til digital
   signering.
 * [PR-498](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/498)
-  Tilføjede fikse køjobkomandoer
+  Tilføjede fikse køjobkommandoer
 * [PR-500](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/500)
   Added mTLS config
 * [PR-494](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/494)
