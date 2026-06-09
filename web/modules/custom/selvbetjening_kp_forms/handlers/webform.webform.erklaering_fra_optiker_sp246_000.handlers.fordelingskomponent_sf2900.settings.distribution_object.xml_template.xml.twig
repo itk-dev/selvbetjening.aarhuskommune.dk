@@ -155,7 +155,7 @@
 
     {% if overslag_andet_brilleglas_pris > 0 or overslag_andet_brillestel_pris > 0 %}
       <Andet>
-        {# Both Brilleglas and Brillestel elements are required in "Andet" (!) #}
+        {# Hmm … Both Brilleglas and Brillestel elements are required in "Andet" (!) #}
         {% if overslag_andet_brilleglas_pris >= 0 %}
           <Brilleglas>
             {% if submission.data.overslag_andet_brilleglas_venstre %}
