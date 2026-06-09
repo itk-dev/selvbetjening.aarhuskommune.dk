@@ -9372,12 +9372,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_fordelingskomponent.git",
-                "reference": "8584f653fa66c8152417ce419dcb63ef027b1970"
+                "reference": "cbae908fa35c08c924ab9d3b1dd251298cdf188d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/8584f653fa66c8152417ce419dcb63ef027b1970",
-                "reference": "8584f653fa66c8152417ce419dcb63ef027b1970",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/cbae908fa35c08c924ab9d3b1dd251298cdf188d",
+                "reference": "cbae908fa35c08c924ab9d3b1dd251298cdf188d",
                 "shasum": ""
             },
             "require": {
@@ -9387,12 +9387,14 @@
                 "ext-soap": "*",
                 "ext-xsl": "*",
                 "itk-dev/serviceplatformen": "^1.9",
-                "os2forms/os2forms": "^5.0",
+                "os2forms/os2forms": "dev-feature/add-first-middle-and-last-name-nemid-elements as 5.1.0",
+                "os2web/os2web_datalookup": "dev-feature/fetch-first-middle-and-last-name as 3.1.0",
                 "php": "^8.3"
             },
             "require-dev": {
                 "drupal/coder": "^8.3",
                 "ergebnis/composer-normalize": "^2.50",
+                "mglaman/composer-drupal-lenient": "^1.0",
                 "mglaman/phpstan-drupal": "^2.0",
                 "phpstan/extension-installer": "^1.4",
                 "phpunit/phpunit": "^9.6",
@@ -9427,7 +9429,7 @@
                 "source": "https://github.com/itk-dev/os2forms_fordelingskomponent/tree/os2forms_fordelingskomponent",
                 "issues": "https://github.com/itk-dev/os2forms_fordelingskomponent/issues"
             },
-            "time": "2026-06-08T14:45:10+00:00"
+            "time": "2026-06-09T11:26:07+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
