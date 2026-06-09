@@ -14,7 +14,6 @@ module:
   breakpoint: 0
   chosen: 0
   chosen_lib: 0
-  ckeditor: 0
   ckeditor5: 0
   clamav: 0
   coc_forms_auto_export: 0

@@ -2659,7 +2659,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          show_how_assigned: 0
+          show_how_assigned: false
           separator_text: "<br>"
         process_name:
           id: process_name

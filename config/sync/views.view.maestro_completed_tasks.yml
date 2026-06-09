@@ -266,7 +266,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           user_display_style: name
-          link_to_user: 1
+          link_to_user: true
       pager:
         type: mini
         options:
