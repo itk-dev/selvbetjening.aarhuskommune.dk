@@ -6,6 +6,15 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-514](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/514)
+  * Opdaterede til OS2Forms Core 5.1.0.
+    * Opdaterede `Full HTML`- og `Simpel HTML`-tekstformater til at benytte
+      CKEditor 5.
+    * Skiftede fra DAWA (udfaset) til adressevælgeren ifb. adresseopslag.
+    * Skiftede fra DAWA (udfaset) til datafordeleren ifb. matrikelopslag.
+  * Opdaterede til den moderniserede datafordeler ifb. CVR opslag og P-nummer
+    opslag.
+
 * [PR-512](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/512)
   Forbedrede opsætning af test-borgere
 * [PR-504](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/504)
