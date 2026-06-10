@@ -79,6 +79,7 @@ Vi kan sagtens håndtere dette i xml-skabelonen, men det er noget rod at bruge "
            aegtefaelle_samlever, aktuelleindtaegter_aegtefaelleindtaegt_andenpension,
   …
   ```
+
 * "Civilstand":
 
   ``` text
