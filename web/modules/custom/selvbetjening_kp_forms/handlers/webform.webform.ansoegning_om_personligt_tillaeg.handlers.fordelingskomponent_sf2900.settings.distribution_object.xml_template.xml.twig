@@ -82,13 +82,18 @@
     <Myndighed>urn:oio:cvr-nr:{{ handler.settings.sender.sender_id }}</Myndighed>
     <ModtagetDato>{{ _self.date(submission.completed) }}</ModtagetDato>
     <KLE>{{ handler.settings.distribution_context.kle_emne }}</KLE>
+
     {% set grouped_files = {
       Bilag: []|merge(
         files.fuldmagt_fuldmagtdokumentnavn,
         files.dokumentation_for_udgiften_der_soeges_om_personligt_tillaeg_til,
         files.dokumentation_for_alle_aktuelle_faste_udgifter,
         files.hvis_du_vil_medsende_yderligere_bilag_kan_du_navngive_det_som_y,
-      )
+      ),
+      Faktura: []|merge(
+      ),
+      Overslag: []|merge(
+      ),
       } %}
     {% for type, files in grouped_files %}
       {% for file in files %}
