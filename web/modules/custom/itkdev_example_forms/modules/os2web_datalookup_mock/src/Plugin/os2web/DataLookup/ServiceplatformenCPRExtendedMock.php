@@ -58,7 +58,7 @@ class ServiceplatformenCPRExtendedMock extends ServiceplatformenCPRExtended {
    * Get mock data path.
    */
   private function getDataPath(string $method): string {
-    $path = trim((string) getenv('OS2WEB_DATALOOKUP_MOCK_COMPANY_LOOKUP_PATH'));
+    $path = trim((string) getenv('OS2WEB_DATALOOKUP_MOCK_PERSON_LOOKUP_PATH'));
     if ('' !== $path) {
       // Resolve path relatively to the project root.
       $path = dirname(DRUPAL_ROOT) . '/' . $path;
