@@ -70,23 +70,23 @@
     <Myndighed>urn:oio:cvr-nr:{{ handler.settings.sender.sender_id }}</Myndighed>
     <ModtagetDato>{{ _self.date(submission.completed) }}</ModtagetDato>
     <KLE>{{ handler.settings.distribution_context.kle_emne }}</KLE>
-    {% for file in files.dokumenter_overslag|default([]) %}
-    <Dokumenter>
-      <Dokumentnavn>{{ file.sftp_filename }}</Dokumentnavn>
-      <Dokumenttype>Overslag</Dokumenttype>
-    </Dokumenter>
-    {% endfor %}
-    {% for file in files.dokumenter_faktura|default([]) %}
-    <Dokumenter>
-      <Dokumentnavn>{{ file.sftp_filename }}</Dokumentnavn>
-      <Dokumenttype>Faktura</Dokumenttype>
-    </Dokumenter>
-    {% endfor %}
-    {% for file in files.dokumenter_bilag|default([]) %}
-    <Dokumenter>
-      <Dokumentnavn>{{ file.sftp_filename }}</Dokumentnavn>
-      <Dokumenttype>Bilag</Dokumenttype>
-    </Dokumenter>
+
+    {% set grouped_files = {
+      Bilag: []|merge(
+        files.tilfoej_bilag,
+      ),
+      Faktura: []|merge(
+      ),
+      Overslag: []|merge(
+      ),
+    } %}
+    {% for type, files in grouped_files %}
+      {% for file in files %}
+        <Dokumenter>
+          <Dokumentnavn>{{ file.sftp_filename }}</Dokumentnavn>
+          <Dokumenttype>{{ type }}</Dokumenttype>
+        </Dokumenter>
+      {% endfor %}
     {% endfor %}
   </Header>
 
