@@ -33,7 +33,7 @@ jobs:
     name: Check that site can be installed
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Create docker network
         run: |
@@ -92,7 +92,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Install site from our base ref
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.base_ref }}
 
@@ -130,7 +130,7 @@ jobs:
           sudo chmod -Rv a+w web/sites/default || true
 
       # Update site using our updated code.
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           # Keep our local settings (cf.
           # https://github.com/actions/checkout?tab=readme-ov-file#usage)

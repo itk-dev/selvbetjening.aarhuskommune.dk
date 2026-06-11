@@ -15,19 +15,22 @@ name: Styles
 
 on:
   pull_request:
+    paths: &paths
+      - "web/themes/custom/**/css/**/*.css"
+      - "web/themes/custom/**/css/**/*.scss"
+      - "docker-compose.yml"
   push:
     branches:
       - main
       - develop
+    paths: *paths
 
 jobs:
   styles-lint:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Create docker network
         run: |
