@@ -104,9 +104,10 @@
     <Underskriftsdato>{{ _self.date(submission.data.underskriftsoplysninger_underskriftsdato) }}</Underskriftsdato>
   </Underskriftsoplysninger>
 
-  {% if submission.data.fuldmagt == 'Privatperson, der med en fuldmagt udfylder og signerer på vegne af ansøger' %}
+  {% set fuldmagt_dokumentnavn = files.fuldmagt_fuldmagtdokumentnavn[0].sftp_filename|default(null) %}
+  {% if fuldmagt_dokumentnavn %}
   <Fuldmagt>
-    <FuldmagtDokumentnavn>{{ submission.data.fuldmagt_for_og_mellemnavn_e1|trim }} {{ submission.data.fuldmagt_efternavn|trim }}</FuldmagtDokumentnavn>
+    <FuldmagtDokumentnavn>{{ fuldmagt_dokumentnavn }}</FuldmagtDokumentnavn>
     <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.fuldmagt_undertegnedepersonnummer) }}</FuldmagthaversPersonnummer>
   </Fuldmagt>
   {% endif %}
