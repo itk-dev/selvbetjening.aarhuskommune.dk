@@ -66,6 +66,8 @@
     {{ value|replace({'.': ''})|replace({',': '.'})|number_format(2, '.', '') }}
   {%- endmacro %}
 
+  {% set is_fuldmagt = submission.data.jeg_udfylder_anmodningen_som == 'Privatperson, der med en fuldmagt udfylder og signerer på vegne af ansøger' %}
+
   <Header>
     <Myndighed>urn:oio:cvr-nr:{{ handler.settings.sender.sender_id }}</Myndighed>
     <ModtagetDato>{{ _self.date(submission.completed) }}</ModtagetDato>
@@ -94,14 +96,20 @@
 
   <AnsoegerOplysninger>
     <Ansoeger>
-      <Fornavn>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn|trim }}</Fornavn>
-      {% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %}
-      <Mellemnavn>{{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn|trim }}</Mellemnavn>
-      {% endif %}
-      <Efternavn>{{ submission.data.ansoegeroplysninger_ansoeger_efternavn|trim }}</Efternavn>
-      <Personnummer>{{ _self.personnummer(submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</Personnummer>
-      {% if submission.data.ansoeger_telefonnummer|default(false) %}
-      <Telefonnummer>{{ _self.telefonnummer(submission.data.ansoeger_telefonnummer) }}</Telefonnummer>
+      {% if is_fuldmagt %}
+        <Fornavn>{{ submission.data.fuldmagt_for_og_mellemnavn_e1|trim }}</Fornavn>
+        <Efternavn>{{ submission.data.fuldmagt_efternavn|trim }}</Efternavn>
+        <Personnummer>{{ _self.personnummer(submission.data.fuldmagt_undertegnedepersonnummer) }}</Personnummer>
+      {% else %}
+        <Fornavn>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn|trim }}</Fornavn>
+        {% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %}
+          <Mellemnavn>{{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn|trim }}</Mellemnavn>
+        {% endif %}
+        <Efternavn>{{ submission.data.ansoegeroplysninger_ansoeger_efternavn|trim }}</Efternavn>
+        <Personnummer>{{ _self.personnummer(submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</Personnummer>
+        {% if submission.data.ansoegeroplysninger_ansoeger_telefonnummer|default(false) %}
+          <Telefonnummer>{{ _self.telefonnummer(submission.data.ansoegeroplysninger_ansoeger_telefonnummer) }}</Telefonnummer>
+        {% endif %}
       {% endif %}
     </Ansoeger>
   </AnsoegerOplysninger>
@@ -123,11 +131,15 @@
 
   <Erklaering>Accepteret</Erklaering>
 
-  {% if submission.data.fuldmagt is not empty %}
-  <Fuldmagt>
-    <FuldmagtDokumentnavn>{{ submission.data.fuldmagt_for_og_mellemnavn_e1|trim }} {{ submission.data.fuldmagt_efternavn|trim }}</FuldmagtDokumentnavn>
-    <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.fuldmagt_undertegnedepersonnummer) }}</FuldmagthaversPersonnummer>
-  </Fuldmagt>
+  {% if is_fuldmagt %}
+    {# @todo Hvor ligger "fuldmagtsdokumentet"? #}
+    {% set fuldmagt_dokumentnavn = files.fuldmagt_fuldmagtdokumentnavn[0].sftp_filename|default(null) %}
+    {% if fuldmagt_dokumentnavn %}
+      <Fuldmagt>
+        <FuldmagtDokumentnavn>{{ fuldmagt_dokumentnavn }}</FuldmagtDokumentnavn>
+        <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.fuldmagt_undertegnedepersonnummer) }}</FuldmagthaversPersonnummer>
+      </Fuldmagt>
+    {% endif %}
   {% endif %}
 
 </SP242>
