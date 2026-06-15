@@ -23,7 +23,7 @@ final class Script extends AbstractScript {
       return;
     }
 
-    $this->drush('config:import', '--partial', '--source=' . $this->dataDir . '/webforms');
+    $this->drush('--yes', 'config:import', '--partial', '--source=' . $this->dataDir . '/webforms');
   }
 }
 

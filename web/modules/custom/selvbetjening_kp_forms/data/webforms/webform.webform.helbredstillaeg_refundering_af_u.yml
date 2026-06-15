@@ -598,7 +598,7 @@ handlers:
     handler_id: fordelingskomponent_sf2900
     label: 'Fordelingskomponent (sf2900)'
     notes: ''
-    status: true
+    status: false
     conditions: {  }
     weight: 0
     settings:
