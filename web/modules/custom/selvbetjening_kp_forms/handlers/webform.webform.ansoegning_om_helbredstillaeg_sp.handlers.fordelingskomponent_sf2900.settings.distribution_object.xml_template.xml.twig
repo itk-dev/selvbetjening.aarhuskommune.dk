@@ -3,56 +3,58 @@
 <SP241>
   {# module://os2forms_fordelingskomponent/resources/SP/SF2900_XSD/SP241.xsd #}
 
-{% macro cvr(value) -%}
-  {{ 'urn:oio:cvr-nr:%08d'|format(value) }}
-{%- endmacro %}
+  {% macro cvr(value) -%}
+    {{ 'urn:oio:cvr-nr:%08d'|format(value) }}
+  {%- endmacro %}
 
-{% macro personnummer(value) -%}
-  {{ 'urn:oio:cpr:%010d'|format(value) }}
-{%- endmacro %}
+  {% macro personnummer(value) -%}
+    {{ 'urn:oio:cpr:%010d'|format(value) }}
+  {%- endmacro %}
 
-{% macro telefonnummer(value) -%}
-  {{ '%08d'|format(value) }}
-{%- endmacro %}
+  {% macro telefonnummer(value) -%}
+    {{ '%08d'|format(value) }}
+  {%- endmacro %}
 
-{% macro date(value) -%}
-  {{ value|date('Y-m-d') }}
-{%- endmacro %}
+  {% macro date(value) -%}
+    {{ value|date('Y-m-d') }}
+  {%- endmacro %}
 
-{% macro max_laengde_strings_200(value) -%}
-  {{ value|trim|slice(0, 200) }}
-{%- endmacro %}
+  {% macro max_laengde_strings_200(value) -%}
+    {{ value|trim|slice(0, 200) }}
+  {%- endmacro %}
 
-{% macro positive_integer(value) -%}
-  {%- set value = max(1, value|number_format(0, '', '')) -%}
-  {{ '%d'|format(value) }}
-{%- endmacro %}
-
-{% macro positive_integer_type_or_empty(value) -%}
-  {%- if value is not empty -%}
+  {% macro positive_integer(value) -%}
     {%- set value = max(1, value|number_format(0, '', '')) -%}
     {{ '%d'|format(value) }}
-  {%- endif -%}
-{%- endmacro %}
+  {%- endmacro %}
 
-{# number_format (https://twig.symfony.com/doc/3.x/filters/number_format.html) will cast anything (that can be casted to a float) to a float before formatting
-  (cf. https://github.com/twigphp/Twig/blob/99d95dd6b8b0cc3c2397d15d45a4bb87eff89ddc/src/Extension/CoreExtension.php#L698) #}
+  {% macro positive_integer_type_or_empty(value) -%}
+    {%- if value is not empty -%}
+      {%- set value = max(1, value|number_format(0, '', '')) -%}
+      {{ '%d'|format(value) }}
+    {%- endif -%}
+  {%- endmacro %}
 
-{# Strip thousand and decimal separators (from Danish floats); compute with 4 decimals #}
-{% macro decimal_value(value) -%}
-  {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '') -%}
-  {{ value }}
-{%- endmacro %}
+  {# number_format (https://twig.symfony.com/doc/3.x/filters/number_format.html) will cast anything (that can be casted to a float) to a float before formatting
+    (cf. https://github.com/twigphp/Twig/blob/99d95dd6b8b0cc3c2397d15d45a4bb87eff89ddc/src/Extension/CoreExtension.php#L698) #}
 
-{% macro positiv_decimal_type(value) -%}
-  {%- set value = max(0.01, value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '')) -%}
-  {{ value|number_format(2, '.', '') }}
-{%- endmacro %}
+  {# Strip thousand and decimal separators (from Danish floats); compute with 4 decimals #}
+  {% macro decimal_value(value) -%}
+    {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '') -%}
+    {{ value }}
+  {%- endmacro %}
 
-{% macro decimal_type(value) -%}
-  {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '') -%}
-  {{ value|number_format(2, '.', '') }}
-{%- endmacro %}
+  {% macro positiv_decimal_type(value) -%}
+    {%- set value = max(0.01, value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '')) -%}
+    {{ value|number_format(2, '.', '') }}
+  {%- endmacro %}
+
+  {% macro decimal_type(value) -%}
+    {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '', '') -%}
+    {{ value|number_format(2, '.', '') }}
+  {%- endmacro %}
+
+  {% set is_fuldmagt = submission.data.fuldmagt == 'Privatperson, der med en fuldmagt udfylder og signerer på vegne af ansøger' %}
 
   <Header>
     <Myndighed>{{ _self.cvr(handler.settings.sender.sender_id) }}</Myndighed>
@@ -66,7 +68,7 @@
       ),
       Overslag: []|merge(
       ),
-    } %}
+      } %}
     {% for type, files in grouped_files %}
       {% for file in files %}
         <Dokumenter>
@@ -79,22 +81,28 @@
 
   <AnsoegerOplysninger>
     <Ansoeger>
-      <Fornavn>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn|trim }}</Fornavn>
-      {% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %}
-      <Mellemnavn>{{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn|trim }}</Mellemnavn>
-      {% endif %}
-      <Efternavn>{{ submission.data.ansoegeroplysninger_ansoeger_efternavn|trim }}</Efternavn>
-      <Personnummer>{{ _self.personnummer(submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</Personnummer>
-      {% if submission.data.ansoegeroplysninger_ansoeger_telefonnummer|default(false) %}
-      <Telefonnummer>{{ _self.telefonnummer(submission.data.ansoegeroplysninger_ansoeger_telefonnummer) }}</Telefonnummer>
+      {% if is_fuldmagt %}
+        <Fornavn>{{ submission.data.fuldmagt_for_og_mellemnavn_e1|trim }}</Fornavn>
+        <Efternavn>{{ submission.data.fuldmagt_efternavn|trim }}</Efternavn>
+        <Personnummer>{{ _self.personnummer(submission.data.fuldmagt_undertegnedepersonnummer) }}</Personnummer>
+      {% else %}
+        <Fornavn>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn|trim }}</Fornavn>
+        {% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %}
+          <Mellemnavn>{{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn|trim }}</Mellemnavn>
+        {% endif %}
+        <Efternavn>{{ submission.data.ansoegeroplysninger_ansoeger_efternavn|trim }}</Efternavn>
+        <Personnummer>{{ _self.personnummer(submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</Personnummer>
+        {% if submission.data.ansoegeroplysninger_ansoeger_telefonnummer|default(false) %}
+          <Telefonnummer>{{ _self.telefonnummer(submission.data.ansoegeroplysninger_ansoeger_telefonnummer) }}</Telefonnummer>
+        {% endif %}
       {% endif %}
     </Ansoeger>
   </AnsoegerOplysninger>
 
   {% if submission.data.sygeforsikring == 'Ja' %}
-  <Sygeforsikring>
-    <Gruppe>{{ submission.data.sygeforsikring_gruppe }}</Gruppe>
-  </Sygeforsikring>
+    <Sygeforsikring>
+      <Gruppe>{{ submission.data.sygeforsikring_gruppe }}</Gruppe>
+    </Sygeforsikring>
   {% endif %}
 
   <Erklaering>Accepteret</Erklaering>
@@ -104,12 +112,14 @@
     <Underskriftsdato>{{ _self.date(submission.data.underskriftsoplysninger_underskriftsdato) }}</Underskriftsdato>
   </Underskriftsoplysninger>
 
-  {% set fuldmagt_dokumentnavn = files.fuldmagt_fuldmagtdokumentnavn[0].sftp_filename|default(null) %}
-  {% if fuldmagt_dokumentnavn %}
-  <Fuldmagt>
-    <FuldmagtDokumentnavn>{{ fuldmagt_dokumentnavn }}</FuldmagtDokumentnavn>
-    <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.fuldmagt_undertegnedepersonnummer) }}</FuldmagthaversPersonnummer>
-  </Fuldmagt>
+  {% if is_fuldmagt %}
+    {% set fuldmagt_dokumentnavn = files.fuldmagt_fuldmagtdokumentnavn[0].sftp_filename|default(null) %}
+    {% if fuldmagt_dokumentnavn %}
+      <Fuldmagt>
+        <FuldmagtDokumentnavn>{{ fuldmagt_dokumentnavn }}</FuldmagtDokumentnavn>
+        <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.fuldmagt_fuldmagthaverspersonnummer) }}</FuldmagthaversPersonnummer>
+      </Fuldmagt>
+    {% endif %}
   {% endif %}
 
 </SP241>
