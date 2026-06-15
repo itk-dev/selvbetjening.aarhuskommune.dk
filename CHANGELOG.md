@@ -6,6 +6,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.9] 2026-06-15
+
+* Enabled os2forms_digital_signature-module.
+
 ## [5.1.8] 2026-05-20
 
 * [PR-510](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/510)

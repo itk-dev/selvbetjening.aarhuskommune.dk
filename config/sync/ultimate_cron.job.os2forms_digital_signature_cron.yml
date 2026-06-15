@@ -1,0 +1,17 @@
+uuid: 3fd38589-67d6-403e-847f-a491304753b8
+langcode: da
+status: true
+dependencies:
+  module:
+    - os2forms_digital_signature
+title: "Default cron handler"
+id: os2forms_digital_signature_cron
+weight: 0
+module: os2forms_digital_signature
+callback: "os2forms_digital_signature#cron"
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database
