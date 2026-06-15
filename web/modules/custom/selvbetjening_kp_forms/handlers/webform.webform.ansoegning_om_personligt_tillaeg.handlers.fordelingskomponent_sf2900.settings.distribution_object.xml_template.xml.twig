@@ -105,14 +105,26 @@
     {% endfor %}
   </Header>
 
+  {% set is_fuldmagt = submission.data.jeg_udfylder_ansoegningen_som == 'Privatperson, der med en fuldmagt udfylder og signerer på vegne af ansøger' %}
+
   <AnsoegerOplysninger>
     <Ansoeger>
-      <Fornavn>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn }}</Fornavn>
-      {% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %}
-        <Mellemnavn>{{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn }}</Mellemnavn>
+      {% if is_fuldmagt %}
+        <Fornavn>{{ submission.data.fuldmagt_for_og_mellemnavn_e1|trim }}</Fornavn>
+        <Efternavn>{{ submission.data.fuldmagt_efternavn|trim }}</Efternavn>
+        {# @todo Hvis personnummer dækker fuldmagt_fuldmagthaverspersonnummer over? Er titlen på feltet forkert? #}
+        <Personnummer>{{ _self.personnummer(submission.data.fuldmagt_fuldmagthaverspersonnummer) }}</Personnummer>
+      {% else %}
+        <Fornavn>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn|trim }}</Fornavn>
+        {% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %}
+          <Mellemnavn>{{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn|trim }}</Mellemnavn>
+        {% endif %}
+        <Efternavn>{{ submission.data.ansoegeroplysninger_ansoeger_efternavn|trim }}</Efternavn>
+        <Personnummer>{{ _self.personnummer(submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</Personnummer>
+        {% if submission.data.ansoegeroplysninger_ansoeger_telefonnummer|default(false) %}
+          <Telefonnummer>{{ _self.telefonnummer(submission.data.ansoegeroplysninger_ansoeger_telefonnummer) }}</Telefonnummer>
+        {% endif %}
       {% endif %}
-      <Efternavn>{{ submission.data.ansoegeroplysninger_ansoeger_efternavn }}</Efternavn>
-      <Personnummer>{{ _self.personnummer( submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</Personnummer>
     </Ansoeger>
   </AnsoegerOplysninger>
 
@@ -451,11 +463,14 @@
     <Underskriftsdato>{{ _self.date(submission.data.underskriftsoplysninger_underskriftsdato) }}</Underskriftsdato>
   </Underskriftsoplysninger>
 
-  {% if submission.data.jeg_udfylder_ansoegningen_som == 'Privatperson, der med en fuldmagt udfylder og signerer på vegne af ansøger' %}
-    <Fuldmagt>
-      <FuldmagtDokumentnavn>{{ submission.data.hvem_udfylder }}</FuldmagtDokumentnavn>
-      <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.fuldmagt_fuldmagthaverspersonnummer) }}</FuldmagthaversPersonnummer>
-    </Fuldmagt>
+  {% if is_fuldmagt %}
+    {% set fuldmagt_dokumentnavn = files.fuldmagt_fuldmagtdokumentnavn[0].sftp_filename|default(null) %}
+    {% if fuldmagt_dokumentnavn %}
+      <Fuldmagt>
+        <FuldmagtDokumentnavn>{{ fuldmagt_dokumentnavn }}</FuldmagtDokumentnavn>
+        <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.fuldmagt_fuldmagthaverspersonnummer) }}</FuldmagthaversPersonnummer>
+      </Fuldmagt>
+    {% endif %}
   {% endif %}
 
 </SP501>
