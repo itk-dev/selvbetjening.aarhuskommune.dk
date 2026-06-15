@@ -85,7 +85,6 @@
 
     {% set grouped_files = {
       Bilag: []|merge(
-        files.fuldmagt_fuldmagtdokumentnavn,
         files.dokumentation_for_udgiften_der_soeges_om_personligt_tillaeg_til,
         files.dokumentation_for_alle_aktuelle_faste_udgifter,
         files.hvis_du_vil_medsende_yderligere_bilag_kan_du_navngive_det_som_y,
@@ -112,7 +111,6 @@
       {% if is_fuldmagt %}
         <Fornavn>{{ submission.data.fuldmagt_for_og_mellemnavn_e1|trim }}</Fornavn>
         <Efternavn>{{ submission.data.fuldmagt_efternavn|trim }}</Efternavn>
-        {# @todo Hvis personnummer dækker fuldmagt_fuldmagthaverspersonnummer over? Er titlen på feltet forkert? #}
         <Personnummer>{{ _self.personnummer(submission.data.fuldmagt_fuldmagthaverspersonnummer) }}</Personnummer>
       {% else %}
         <Fornavn>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn|trim }}</Fornavn>
@@ -468,7 +466,7 @@
     {% if fuldmagt_dokumentnavn %}
       <Fuldmagt>
         <FuldmagtDokumentnavn>{{ fuldmagt_dokumentnavn }}</FuldmagtDokumentnavn>
-        <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.fuldmagt_fuldmagthaverspersonnummer) }}</FuldmagthaversPersonnummer>
+        <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</FuldmagthaversPersonnummer>
       </Fuldmagt>
     {% endif %}
   {% endif %}
