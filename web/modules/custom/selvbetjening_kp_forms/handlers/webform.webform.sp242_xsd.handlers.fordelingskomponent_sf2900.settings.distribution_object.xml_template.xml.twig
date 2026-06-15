@@ -132,12 +132,11 @@
   <Erklaering>Accepteret</Erklaering>
 
   {% if is_fuldmagt %}
-    {# @todo Hvor ligger "fuldmagtsdokumentet"? #}
     {% set fuldmagt_dokumentnavn = files.fuldmagt_fuldmagtdokumentnavn[0].sftp_filename|default(null) %}
     {% if fuldmagt_dokumentnavn %}
       <Fuldmagt>
         <FuldmagtDokumentnavn>{{ fuldmagt_dokumentnavn }}</FuldmagtDokumentnavn>
-        <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.fuldmagt_undertegnedepersonnummer) }}</FuldmagthaversPersonnummer>
+        <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</FuldmagthaversPersonnummer>
       </Fuldmagt>
     {% endif %}
   {% endif %}
