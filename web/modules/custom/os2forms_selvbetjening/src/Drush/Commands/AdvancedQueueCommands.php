@@ -3,8 +3,8 @@
 namespace Drupal\os2forms_selvbetjening\Drush\Commands;
 
 use Drupal\advancedqueue\Entity\Queue;
-use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\BackendInterface;
 use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\SupportsLoadingJobsInterface;
+use Drupal\advancedqueue\ProcessorInterface;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Config\MemoryStorage;
 use Drupal\Core\Config\StorageInterface;
@@ -19,6 +19,7 @@ use Drush\Commands\config\ConfigCommands;
 use Drush\Commands\DrushCommands;
 use Drush\Exceptions\UserAbortException;
 use Symfony\Component\Console\Exception\RuntimeException;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
@@ -36,12 +37,15 @@ final class AdvancedQueueCommands extends DrushCommands {
   public function __construct(
     EntityTypeManagerInterface $entityTypeManager,
     private readonly Connection $connection,
+    #[Autowire(service: 'advancedqueue.processor')]
+    private readonly ProcessorInterface $processor,
   ) {
     $this->queueStorage = $entityTypeManager->getStorage('advancedqueue_queue');
   }
 
   private const string COMMAND_LIST_JOBS = 'os2forms-selvbetjening:advancedqueue:queue:list:jobs';
   private const string COMMAND_SET_PAYLOAD_VALUE = 'os2forms-selvbetjening:advancedqueue:job:set-payload-value';
+  private const string COMMAND_PROCESS_JOB = 'os2forms-selvbetjening:advancedqueue:job:process';
 
   /**
    * List jobs command.
@@ -70,7 +74,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       'limit' => 1,
     ],
   ) {
-    $backend = $this->loadQueueBackend($queue_id);
+    [$backend] = $this->loadQueueBackend($queue_id);
 
     // Build the query by hand to use JSON functions (cf.
     // https://www.drupal.org/project/drupal/issues/3378275)
@@ -176,7 +180,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       'editor' => 'vi',
     ],
   ) {
-    $backend = $this->loadQueueBackend($queue_id);
+    [$backend] = $this->loadQueueBackend($queue_id);
     try {
       $updateJob = new \ReflectionMethod($backend, 'updateJob');
     }
@@ -233,9 +237,52 @@ final class AdvancedQueueCommands extends DrushCommands {
   }
 
   /**
-   * Load a queue's backend.
+   * Process job command.
+   *
+   * @phpstan-param array<string, mixed> $options
+   *   The command options.
    */
-  private function loadQueueBackend(string $queueId): BackendInterface&SupportsLoadingJobsInterface {
+  #[CLI\Command(name: self::COMMAND_PROCESS_JOB, aliases: ['advancedqueue:queue:job:process'])]
+  #[CLI\Argument(name: 'queue_id', description: 'The queue ID.')]
+  #[CLI\Argument(name: 'job_id', description: 'Job ID')]
+  #[CLI\Option(name: 'show-payload', description: 'Show payload')]
+  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue 87', description: 'Ask for confirmation and process job with ID 87 in "my_queue" queue.')]
+  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue 87 --yes', description: 'Process job with ID 87 in "my_queue" queue without confirmation.')]
+  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue 87 --show-payload', description: 'Show job payload and process job with ID 87 in "my_queue" queue.')]
+  public function processJob(
+    string $queue_id,
+    string $job_id,
+    $options = [
+      'show-payload' => FALSE,
+    ],
+  ) {
+    [$backend, $queue] = $this->loadQueueBackend($queue_id);
+    /** @var \Drupal\advancedqueue\Job $job */
+    $job = $backend->loadJob($job_id);
+
+    if ($options['show-payload']) {
+      $this->io()->section('Payload');
+      $this->io()->writeln(Yaml::encode($job->getPayload()));
+    }
+
+    $question = dt('Really process the job %id', ['%id' => $job->getId()]);
+    if (!$this->io()->confirm($question, default: FALSE)) {
+      return;
+    }
+
+    $this->processor->processJob($job, $queue);
+  }
+
+  /**
+   * Load a queue's backend.
+   *
+   * @return array{
+   *   0: \Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\BackendInterface&SupportsLoadingJobsInterface,
+   *   1: \Drupal\advancedqueue\Entity\QueueInterface,
+   *   }
+   *   The backend and its queue.
+   */
+  private function loadQueueBackend(string $queueId): array {
     $queue = $this->queueStorage->load($queueId);
     if (NULL === $queue) {
       throw new RuntimeException(dt('Cannot load queue %id.', ['%id' => $queueId]));
@@ -250,7 +297,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       ]));
     }
 
-    return $backend;
+    return [$backend, $queue];
   }
 
   /**
