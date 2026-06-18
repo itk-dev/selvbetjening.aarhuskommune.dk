@@ -20,6 +20,7 @@ dependencies:
     - locale
     - node
     - os2forms_failed_jobs
+    - os2forms_fordelingskomponent
     - os2forms_granular_permissions
     - os2forms_permission_alterations
     - os2forms_selvbetjening_deprecations
@@ -132,6 +133,7 @@ permissions:
   - "view any webform submission"
   - "view encrypted values"
   - "view latest version"
+  - "view os2forms_fordelingskomponent objects"
   - "view own unpublished content"
   - "view own webform submission"
   - "view the administration theme"

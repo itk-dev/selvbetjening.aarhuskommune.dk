@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<SP501>
+  {# module://os2forms_fordelingskomponent/resources/SP/SF2900_XSD/SP501.xsd #}
+
+  {% macro cvr(value) -%}
+    {{ 'urn:oio:cvr-nr:%08d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro personnummer(value) -%}
+    {{ 'urn:oio:cpr:%010d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro telefonnummer(value) -%}
+    {{ '%08d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro date(value) -%}
+    {{ value|date('Y-m-d') }}
+  {%- endmacro %}
+
+  {% macro max_laengde_strings_200(value) -%}
+    {{ value|trim|slice(0, 200) }}
+  {%- endmacro %}
+
+  {% macro normalString(value) -%}
+    {{ value|trim|slice(0, 200) }}
+  {%- endmacro %}
+
+  {% macro longString(value) -%}
+    {{ value|trim|slice(0, 500) }}
+  {%- endmacro %}
+
+  {% macro positive_integer(value) -%}
+    {%- set value = max(1, value|number_format(0, '', '')) -%}
+    {{ '%d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro positive_integer_type_or_empty(value) -%}
+    {%- if value is not empty -%}
+      {%- set value = max(1, value|number_format(0, '', '')) -%}
+      {{ '%d'|format(value) }}
+    {%- endif -%}
+  {%- endmacro %}
+
+  {# number_format (https://twig.symfony.com/doc/3.x/filters/number_format.html) will cast anything (that can be casted to a float) to a float before formatting
+    (cf. https://github.com/twigphp/Twig/blob/99d95dd6b8b0cc3c2397d15d45a4bb87eff89ddc/src/Extension/CoreExtension.php#L698) #}
+
+  {# Strip thousand and decimal separators (from Danish floats); compute with 4 decimals #}
+  {% macro decimal_value(value) -%}
+    {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '') -%}
+    {{ value }}
+  {%- endmacro %}
+
+  {% macro positiv_decimal_type(value) -%}
+    {%- set value = max(0.01, value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '')) -%}
+    {{ value|number_format(2, '.', '') }}
+  {%- endmacro %}
+
+  {% macro decimal_type(value) -%}
+    {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '') -%}
+    {{ value|number_format(2, '.', '') }}
+  {%- endmacro %}
+
+  {# Format value a positive float. An empty string is rendered if the value cannot be formatted as a positive float. #}
+  {% macro beloeb(value) -%}
+    {%- set formatted_value = value|replace({'.': ''})|replace({',': '.'})|number_format(2, '.', '')|trim -%}
+    {%- if formatted_value != '0.00' and not(formatted_value starts with '-') -%}
+      {{ formatted_value }}
+    {%- endif -%}
+  {%- endmacro %}
+
+  {% macro JaNej(value) -%}
+    {{ 'ja' == value|lower ? 'Ja' : 'Nej' }}
+  {%- endmacro %}
+
+  {% macro accept() -%}
+    Accepteret
+  {%- endmacro %}
+
+  <Header>
+    <Myndighed>urn:oio:cvr-nr:{{ handler.settings.sender.sender_id }}</Myndighed>
+    <ModtagetDato>{{ _self.date(submission.completed) }}</ModtagetDato>
+    <KLE>{{ handler.settings.distribution_context.kle_emne }}</KLE>
+
+    {% set grouped_files = {
+      Bilag: []|merge(
+        files.dokumentation_for_udgiften_der_soeges_om_personligt_tillaeg_til,
+        files.dokumentation_for_alle_aktuelle_faste_udgifter,
+        files.hvis_du_vil_medsende_yderligere_bilag_kan_du_navngive_det_som_y,
+      ),
+      Faktura: []|merge(
+      ),
+      Overslag: []|merge(
+      ),
+      } %}
+    {% for type, files in grouped_files %}
+      {% for file in files %}
+        <Dokumenter>
+          <Dokumentnavn>{{ file.sftp_filename }}</Dokumentnavn>
+          <Dokumenttype>{{ type }}</Dokumenttype>
+        </Dokumenter>
+      {% endfor %}
+    {% endfor %}
+  </Header>
+
+  {% set is_fuldmagt = submission.data.jeg_udfylder_ansoegningen_som == 'Privatperson, der med en fuldmagt udfylder og signerer på vegne af ansøger' %}
+
+  <AnsoegerOplysninger>
+    <Ansoeger>
+      {% if is_fuldmagt %}
+        <Fornavn>{{ submission.data.fuldmagt_for_og_mellemnavn_e1|trim }}</Fornavn>
+        <Efternavn>{{ submission.data.fuldmagt_efternavn|trim }}</Efternavn>
+        <Personnummer>{{ _self.personnummer(submission.data.fuldmagt_fuldmagthaverspersonnummer) }}</Personnummer>
+      {% else %}
+        <Fornavn>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn|trim }}</Fornavn>
+        {% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %}
+          <Mellemnavn>{{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn|trim }}</Mellemnavn>
+        {% endif %}
+        <Efternavn>{{ submission.data.ansoegeroplysninger_ansoeger_efternavn|trim }}</Efternavn>
+        <Personnummer>{{ _self.personnummer(submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</Personnummer>
+        {% if submission.data.ansoegeroplysninger_ansoeger_telefonnummer|default(false) %}
+          <Telefonnummer>{{ _self.telefonnummer(submission.data.ansoegeroplysninger_ansoeger_telefonnummer) }}</Telefonnummer>
+        {% endif %}
+      {% endif %}
+    </Ansoeger>
+  </AnsoegerOplysninger>
+
+  <AnsoegningsOplysninger>
+    <Civilstand>{{ submission.data.ansoegningsoplysninger_civilstand }}</Civilstand>
+
+    {% if submission.data.ansoegningsoplysninger_aegtefaellepersonnummer is not empty %}
+      <AegtefaelleFornavn>{{ submission.data.ansoegningsoplysninger_aegtefaellefornavn }}</AegtefaelleFornavn>
+      <AegtefaelleMellemnavn>{{ submission.data.ansoegningsoplysninger_aegtefaellemellemnavn }}</AegtefaelleMellemnavn>
+      <AegtefaelleEfternavn>{{ submission.data.ansoegningsoplysninger_aegtefaelleefternavn }}</AegtefaelleEfternavn>
+      <AegtefaellePersonnummer>{{ _self.personnummer(submission.data.ansoegningsoplysninger_aegtefaellepersonnummer) }}</AegtefaellePersonnummer>
+    {% endif %}
+
+    <Boform>{{ submission.data.ansoegningsoplysninger_boform|trim }}</Boform>
+
+    {% set udgift = submission.data.udgift|default([])|first %}
+    {% if udgift %}
+      <Formaal>{{ _self.normalString(udgift.ansoegningsOplysninger_formaal) }}</Formaal>
+      <ForventetUdgiftFormaal>{{ _self.beloeb(udgift.ansoegningsoplysninger_forventetudgiftformaal) }}</ForventetUdgiftFormaal>
+    {% endif %}
+
+    {% if submission.data.ansoegningsoplysninger_begrundelseansoegning %}
+      <BegrundelseAnsoegning>{{ _self.longString(submission.data.ansoegningsoplysninger_begrundelseansoegning) }}</BegrundelseAnsoegning>
+    {% endif %}
+  </AnsoegningsOplysninger>
+
+  <Formueoplysninger>
+    <BorgerFormue>
+      {% set value = _self.beloeb(submission.data.formueoplysninger_borgerformue_indestaaendepengeinstitut) %}
+      {% if value %}
+        <IndestaaendePengeinstitut>{{ value }}</IndestaaendePengeinstitut>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_borgerformue_obligationer) %}
+      {% if value %}
+        <Obligationer>{{ value }}</Obligationer>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_borgerformue_pantebreve) %}
+      {% if value %}
+        <Pantebreve>{{ value }}</Pantebreve>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_borgerformue_aktier) %}
+      {% if value %}
+        <Aktier>{{ value }}</Aktier>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_borgerformue_kontantbeholdning) %}
+      {% if value %}
+        <Kontantbeholdning>{{ value }}</Kontantbeholdning>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_borgerformue_sommerhusfrivaerdi) %}
+      {% if value %}
+        <SommerhusFrivaerdi>{{ value }}</SommerhusFrivaerdi>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_borgerformue_uhaevetkapitalpension) %}
+      {% if value %}
+        <UhaevetKapitalPension>{{ value }}</UhaevetKapitalPension>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_borgerformue_andrevaerdipapirer) %}
+      {% if value %}
+        <AndreVaerdipapirer>{{ value }}</AndreVaerdipapirer>
+      {% endif %}
+      <NedsparingsLaanKreditFastEjendom>{{ _self.JaNej(submission.data.formueoplysninger_borgerformue_nedsparingslaankreditfastejendom) }}</NedsparingsLaanKreditFastEjendom>
+    </BorgerFormue>
+
+    <AegtefaelleFormue>
+      {% set value = _self.beloeb(submission.data.formueoplysninger_aegtefaelleformue_indestaaendepengeinstitut) %}
+      {% if value %}
+        <IndestaaendePengeinstitut>{{ value }}</IndestaaendePengeinstitut>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_aegtefaelleformue_obligationer) %}
+      {% if value %}
+        <Obligationer>{{ value }}</Obligationer>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_aegtefaelleformue_pantebreve) %}
+      {% if value %}
+        <Pantebreve>{{ value }}</Pantebreve>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_aegtefaelleformue_aktier) %}
+      {% if value %}
+        <Aktier>{{ value }}</Aktier>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_aegtefaelleformue_kontantbeholdning) %}
+      {% if value %}
+        <Kontantbeholdning>{{ value }}</Kontantbeholdning>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_aegtefaelleformue_sommerhusfrivaerdi) %}
+      {% if value %}
+        <SommerhusFrivaerdi>{{ value }}</SommerhusFrivaerdi>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_aegtefaelleformue_uhaevetkapitalpension) %}
+      {% if value %}
+        <UhaevetKapitalPension>{{ value }}</UhaevetKapitalPension>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.formueoplysninger_aegtefaelleformue_andrevaerdipapirer) %}
+      {% if value %}
+        <AndreVaerdipapirer>{{ value }}</AndreVaerdipapirer>
+      {% endif %}
+      <NedsparingsLaanKreditFastEjendom>{{ _self.JaNej(submission.data.formueoplysninger_aegtefaelleformue_nedsparingslaankreditfastejendom) }}</NedsparingsLaanKreditFastEjendom>
+    </AegtefaelleFormue>
+  </Formueoplysninger>
+
+  <AktuelleIndtaegter>
+    <BorgerIndtaegter>
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_borgerindtaegter_loen) %}
+      {% if value %}
+        <Loen>{{ value }}</Loen>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_borgerindtaegter_folkepensionfoertidspension) %}
+      {% if value %}
+        <FolkepensionFoertidspension>{{ value }}</FolkepensionFoertidspension>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_borgerindtaegter_atp) %}
+      {% if value %}
+        <ATP>{{ value }}</ATP>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_borgerindtaegter_andenpension) %}
+      {% if value %}
+        <AndenPension>{{ value }}</AndenPension>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_borgerindtaegter_boligydelse) %}
+      {% if value %}
+        <Boligydelse>{{ value }}</Boligydelse>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_borgerindtaegter_renteindtaegter) %}
+      {% if value %}
+        <Renteindtaegter>{{ value }}</Renteindtaegter>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_borgerindtaegter_andet1beloeb) %}
+      {% if value %}
+        <Andet1>
+          <Andet1Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_andet1titel) }}</Andet1Titel>
+          <Andet1Beloeb>{{ value }}</Andet1Beloeb>
+        </Andet1>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_borgerindtaegter_andet2beloeb) %}
+      {% if value %}
+        <Andet2>
+          <Andet2Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_andet2titel) }}</Andet2Titel>
+          <Andet2Beloeb>{{ value }}</Andet2Beloeb>
+        </Andet2>
+      {% endif %}
+
+    </BorgerIndtaegter>
+
+    <AegtefaelleIndtaegt>
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_aegtefaelleindtaegt_loen) %}
+      {% if value %}
+        <Loen>{{ value }}</Loen>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_aegtefaelleindtaegt_folkepensionfoertidspension) %}
+      {% if value %}
+        <FolkepensionFoertidspension>{{ value }}</FolkepensionFoertidspension>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_aegtefaelleindtaegt_atp) %}
+      {% if value %}
+        <ATP>{{ value }}</ATP>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_aegtefaelleindtaegt_andenpension) %}
+      {% if value %}
+        <AndenPension>{{ value }}</AndenPension>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_aegtefaelleindtaegt_boligydelse) %}
+      {% if value %}
+        <Boligydelse>{{ value }}</Boligydelse>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_aegtefaelleindtaegt_renteindtaegter) %}
+      {% if value %}
+        <Renteindtaegter>{{ value }}</Renteindtaegter>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_aegtefaelleindtaegt_andet1beloeb) %}
+      {% if value %}
+        <Andet1>
+          <Andet1Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_andet1titel) }}</Andet1Titel>
+          <Andet1Beloeb>{{ value }}</Andet1Beloeb>
+        </Andet1>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleindtaegter_aegtefaelleindtaegt_andet2beloeb) %}
+      {% if value %}
+        <Andet2>
+          <Andet2Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_andet2titel) }}</Andet2Titel>
+          <Andet2Beloeb>{{ value }}</Andet2Beloeb>
+        </Andet2>
+      {% endif %}
+
+    </AegtefaelleIndtaegt>
+  </AktuelleIndtaegter>
+
+  <AktuelleUdgifter>
+    <BorgerUdgift>
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_husleje) %}
+      {% if value %}
+        <Husleje>{{ value }}</Husleje>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_terminsudgifter) %}
+      {% if value %}
+        <Terminsudgifter>{{ value }}</Terminsudgifter>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_vandafgift) %}
+      {% if value %}
+        <Vandafgift>{{ value }}</Vandafgift>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_el) %}
+      {% if value %}
+        <El>{{ value }}</El>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_varme) %}
+      {% if value %}
+        <Varme>{{ value }}</Varme>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_forsikring1beloeb) %}
+      {% if value %}
+        <Forsikring1>
+          <Forsikring1Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_forsikring1titel) }}</Forsikring1Titel>
+          <Forsikring1Beloeb>{{ value }}</Forsikring1Beloeb>
+        </Forsikring1>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_forsikring2beloeb) %}
+      {% if value %}
+        <Forsikring2>
+          <Forsikring2Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_forsikring2titel) }}</Forsikring2Titel>
+          <Forsikring2Beloeb>{{ value }}</Forsikring2Beloeb>
+        </Forsikring2>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_sygeforsikringdk) %}
+      {% if value %}
+        <SygeforsikringDK>{{ value }}</SygeforsikringDK>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_telefonabonnement) %}
+      {% if value %}
+        <TelefonAbonnement>{{ value }}</TelefonAbonnement>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_andet1beloeb) %}
+      {% if value %}
+        <Andet1>
+          <Andet1Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_andet1titel) }}</Andet1Titel>
+          <Andet1Beloeb>{{ value }}</Andet1Beloeb>
+        </Andet1>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_borgerudgift_andet2beloeb) %}
+      {% if value %}
+        <Andet2>
+          <Andet2Titel>{{ _self.normalString(submission.data.aktuelleudgifter_borgerudgift_andet2titel) }}</Andet2Titel>
+          <Andet2Beloeb>{{ value }}</Andet2Beloeb>
+        </Andet2>
+      {% endif %}
+
+    </BorgerUdgift>
+
+    <AegtefaelleUdgift>
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_husleje) %}
+      {% if value %}
+        <Husleje>{{ value }}</Husleje>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_terminsudgifter) %}
+      {% if value %}
+        <Terminsudgifter>{{ value }}</Terminsudgifter>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_vandafgift) %}
+      {% if value %}
+        <Vandafgift>{{ value }}</Vandafgift>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_el) %}
+      {% if value %}
+        <El>{{ value }}</El>
+      {% endif %}
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_varme) %}
+      {% if value %}
+        <Varme>{{ value }}</Varme>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_forsikring1beloeb) %}
+      {% if value %}
+        <Forsikring1>
+          <Forsikring1Titel>{{ _self.normalString(submission.data.aktuelleudgifter_aegtefaelleudgift_forsikring1titel) }}</Forsikring1Titel>
+          <Forsikring1Beloeb>{{ value }}</Forsikring1Beloeb>
+        </Forsikring1>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_forsikring2beloeb) %}
+      {% if value %}
+        <Forsikring2>
+          <Forsikring2Titel>{{ _self.normalString(submission.data.aktuelleudgifter_aegtefaelleudgift_forsikring2titel) }}</Forsikring2Titel>
+          <Forsikring2Beloeb>{{ value }}</Forsikring2Beloeb>
+        </Forsikring2>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_sygeforsikringdk) %}
+      {% if value %}
+        <SygeforsikringDK>{{ value }}</SygeforsikringDK>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_telefonabonnement) %}
+      {% if value %}
+        <TelefonAbonnement>{{ value }}</TelefonAbonnement>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_andet1beloeb) %}
+      {% if value %}
+        <Andet1>
+          <Andet1Titel>{{ _self.normalString(submission.data.aktuelleudgifter_aegtefaelleudgift_andet1titel) }}</Andet1Titel>
+          <Andet1Beloeb>{{ value }}</Andet1Beloeb>
+        </Andet1>
+      {% endif %}
+
+      {% set value = _self.beloeb(submission.data.aktuelleudgifter_aegtefaelleudgift_andet2beloeb) %}
+      {% if value %}
+        <Andet2>
+          <Andet2Titel>{{ _self.normalString(submission.data.aktuelleudgifter_aegtefaelleudgift_andet2titel) }}</Andet2Titel>
+          <Andet2Beloeb>{{ value }}</Andet2Beloeb>
+        </Andet2>
+      {% endif %}
+
+    </AegtefaelleUdgift>
+
+  </AktuelleUdgifter>
+
+  {% if submission.data.sygeforsikring == 'Ja' %}
+    <Sygeforsikring>
+      <Gruppe>{{ submission.data.sygeforsikring_gruppe|upper }}</Gruppe>
+    </Sygeforsikring>
+  {% endif %}
+
+  <Erklaering>{{ _self.accept() }}</Erklaering>
+
+  <Underskriftsoplysninger>
+    <Underskrift>{{ submission.data.ansoegeroplysninger_ansoeger_fornavn }}{% if submission.data.ansoegeroplysninger_ansoeger_mellemnavn|default(false) %} {{ submission.data.ansoegeroplysninger_ansoeger_mellemnavn }}{% endif %} {{ submission.data.ansoegeroplysninger_ansoeger_efternavn }}</Underskrift>
+    <Underskriftsdato>{{ _self.date(submission.data.underskriftsoplysninger_underskriftsdato) }}</Underskriftsdato>
+  </Underskriftsoplysninger>
+
+  {% if is_fuldmagt %}
+    {% set fuldmagt_dokumentnavn = files.fuldmagt_fuldmagtdokumentnavn[0].sftp_filename|default(null) %}
+    {% if fuldmagt_dokumentnavn %}
+      <Fuldmagt>
+        <FuldmagtDokumentnavn>{{ fuldmagt_dokumentnavn }}</FuldmagtDokumentnavn>
+        <FuldmagthaversPersonnummer>{{ _self.personnummer(submission.data.ansoegeroplysninger_ansoeger_personnummer_cpr_) }}</FuldmagthaversPersonnummer>
+      </Fuldmagt>
+    {% endif %}
+  {% endif %}
+
+</SP501>

@@ -72,6 +72,7 @@
 !/web/modules/custom/os2forms_granular_permissions
 !/web/modules/custom/os2forms_selvbetjening_deprecations
 !/web/modules/custom/itkdev_example_forms
+!/web/modules/custom/selvbetjening_kp_forms
 
 # Ignore site specific modules.
 /web/sites/*/modules
@@ -235,6 +236,8 @@ config/sync/**/leaflet_layers.map_layer.*
 config/sync/os2web_nemlogin.settings.yml
 # Ignore attachment components
 config/sync/os2forms_attachment.os2forms_attachment_component.*.yml
+
+config/sync/os2forms_fordelingskomponent.settings.yml
 
 *.local.yml
 *.cache

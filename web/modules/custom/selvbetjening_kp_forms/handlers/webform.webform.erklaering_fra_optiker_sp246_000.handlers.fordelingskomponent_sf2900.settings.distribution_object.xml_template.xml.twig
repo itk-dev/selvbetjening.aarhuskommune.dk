@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SP246>
+  {# module://os2forms_fordelingskomponent/resources/SP/SF2900_XSD/SP246.xsd #}
+
+  {% macro cvr(value) -%}
+    {{ 'urn:oio:cvr-nr:%08d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro personnummer(value) -%}
+    {{ 'urn:oio:cpr:%010d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro telefonnummer(value) -%}
+    {{ '%08d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro date(value) -%}
+    {{ value|date('Y-m-d') }}
+  {%- endmacro %}
+
+  {% macro max_laengde_strings_200(value) -%}
+    {{ value|trim|slice(0, 200) }}
+  {%- endmacro %}
+
+  {% macro normalString(value) -%}
+    {{ value|trim|slice(0, 200) }}
+  {%- endmacro %}
+
+  {% macro longString(value) -%}
+    {{ value|trim|slice(0, 500) }}
+  {%- endmacro %}
+
+  {% macro positive_integer(value) -%}
+    {%- set value = max(1, value|number_format(0, '', '')) -%}
+    {{ '%d'|format(value) }}
+  {%- endmacro %}
+
+  {% macro positive_integer_type_or_empty(value) -%}
+    {%- if value is not empty -%}
+      {%- set value = max(1, value|number_format(0, '', '')) -%}
+      {{ '%d'|format(value) }}
+    {%- endif -%}
+  {%- endmacro %}
+
+  {# number_format (https://twig.symfony.com/doc/3.x/filters/number_format.html) will cast anything (that can be casted to a float) to a float before formatting
+    (cf. https://github.com/twigphp/Twig/blob/99d95dd6b8b0cc3c2397d15d45a4bb87eff89ddc/src/Extension/CoreExtension.php#L698) #}
+
+  {# Strip thousand and decimal separators (from Danish floats); compute with 4 decimals #}
+  {% macro decimal_value(value) -%}
+    {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '') -%}
+    {{ value }}
+  {%- endmacro %}
+
+  {# I think the XSD actually means to say "not negative" #}
+  {% macro positiv_decimal_type(value) -%}
+    {%- set value = max(0, value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '')) -%}
+    {{ value|number_format(2, '.', '') }}
+  {%- endmacro %}
+
+  {% macro decimal_type(value) -%}
+    {%- set value = value|replace({'.': ''})|replace({',': '.'})|number_format(4, '.', '') -%}
+    {{ value|number_format(2, '.', '') }}
+  {%- endmacro %}
+
+  {% macro beloeb(value) -%}
+    {{ value|replace({'.': ''})|replace({',': '.'})|number_format(2, '.', '') }}
+  {%- endmacro %}
+
+  <Header>
+    <Myndighed>urn:oio:cvr-nr:{{ handler.settings.sender.sender_id }}</Myndighed>
+    <ModtagetDato>{{ _self.date(submission.completed) }}</ModtagetDato>
+    <KLE>{{ handler.settings.distribution_context.kle_emne }}</KLE>
+
+    {% set grouped_files = {
+      Bilag: []|merge(
+        files.dokumenter_bilag,
+      ),
+      Faktura: []|merge(
+        files.dokumenter_faktura,
+      ),
+      Overslag: []|merge(
+        files.dokumenter_overslag,
+      ),
+    } %}
+    {% for type, files in grouped_files %}
+      {% for file in files %}
+        <Dokumenter>
+          <Dokumentnavn>{{ file.sftp_filename }}</Dokumentnavn>
+          <Dokumenttype>{{ type }}</Dokumenttype>
+        </Dokumenter>
+      {% endfor %}
+    {% endfor %}
+  </Header>
+
+  <Aarsag>
+    {% if submission.data.aarsag_harbriller|lower == 'ja' %}
+      <HarBriller>
+        <Alder>{{ _self.positive_integer(submission.data.aarsag_harbriller_alder) }}</Alder>
+      </HarBriller>
+    {% endif %}
+
+    {% if submission.data.aarsag_andenbegrundelse|trim %}
+      <AndenBegrundelse>{{ _self.max_laengde_strings_200(submission.data.aarsag_andenbegrundelse|trim) }}</AndenBegrundelse>
+    {% endif %}
+
+    {% if submission.data.er_der_specielle_forhold_fx_allergi_der_goer_sig_gaeldende_for_v|lower == 'Ja' %}
+      <SpecielleForhold>{{ _self.max_laengde_strings_200(submission.data.aarsag_specielleforhold|trim) }}</SpecielleForhold>
+    {% endif %}
+  </Aarsag>
+
+  {% set langcode = submission.langcode %}
+
+  <Overslag>
+    {% set total_price = 0 %}
+
+    {% set brilleglas_pris = os2forms_fordelingskomponent_floatval(submission.data.brillestel_brilleglas[0].brilleglas_pris|default(0), langcode: langcode) %}
+    {% if brilleglas_pris > 0 and (submission.data.overslag_brilleglas_venstre or submission.data.overslag_brilleglas_hoejre) %}
+    <Brilleglas>
+      {% if submission.data.overslag_brilleglas_venstre %}
+        {% set brilleglas = submission.data.overslag_brilleglas_venstre|first %}
+        <Venstre>
+          <Styrke>{{ _self.decimal_type(brilleglas.styrke) }}</Styrke>
+          <Cylinder>{{ _self.decimal_type(brilleglas.cyl) }}</Cylinder>
+          <Addition>{{ _self.decimal_type(brilleglas.add) }}</Addition>
+          <Akse>{{ _self.positive_integer_type_or_empty(brilleglas.o) }}</Akse>
+        </Venstre>
+      {% endif %}
+
+      {% if submission.data.overslag_brilleglas_hoejre %}
+        {% set brilleglas = submission.data.overslag_brilleglas_hoejre|first %}
+        <Hoejre>
+          <Styrke>{{ _self.decimal_type(brilleglas.styrke) }}</Styrke>
+          <Cylinder>{{ _self.decimal_type(brilleglas.cyl) }}</Cylinder>
+          <Addition>{{ _self.decimal_type(brilleglas.add) }}</Addition>
+          <Akse>{{ _self.positive_integer_type_or_empty(brilleglas.o) }}</Akse>
+        </Hoejre>
+      {% endif %}
+
+      <Pris>{{ _self.positiv_decimal_type(brilleglas_pris) }}</Pris>
+      {% set total_price = total_price + brilleglas_pris %}
+    </Brilleglas>
+    {% endif %}
+
+    {% set brillestel_pris = os2forms_fordelingskomponent_floatval(submission.data.brillestel_brilleglas[0].brillestel_pris_stel|default(0), langcode: langcode) %}
+    {% if brillestel_pris > 0 and submission.data.brillestel_brilleglas %}
+      {% set brillestel = submission.data.brillestel_brilleglas|first %}
+      <Brillestel>
+        <Navn>{{ _self.max_laengde_strings_200(brillestel.brillestel_navn) }}</Navn>
+        <Pris>{{ _self.positiv_decimal_type(brillestel_pris) }}</Pris>
+        {% set total_price = total_price + brillestel_pris %}
+      </Brillestel>
+    {% endif %}
+
+    {% set overslag_andet_brilleglas_pris = os2forms_fordelingskomponent_floatval(submission.data.overslag_andet_brilleglas_pris|default(0), langcode: langcode) %}
+    {% set overslag_andet_brillestel_pris = os2forms_fordelingskomponent_floatval(submission.data.overslag_andet_brillestel_pris|default(0), langcode: langcode) %}
+
+    {% if overslag_andet_brilleglas_pris > 0 or overslag_andet_brillestel_pris > 0 %}
+      <Andet>
+        {# Hmm … Both Brilleglas and Brillestel elements are required in "Andet" (!) #}
+        {% if overslag_andet_brilleglas_pris >= 0 %}
+          <Brilleglas>
+            {% if submission.data.overslag_andet_brilleglas_venstre %}
+              {% set brilleglas = submission.data.overslag_andet_brilleglas_venstre|first %}
+              <Venstre>
+                <Styrke>{{ _self.decimal_type(brilleglas.styrke) }}</Styrke>
+                <Cylinder>{{ _self.decimal_type(brilleglas.cyl) }}</Cylinder>
+                <Addition>{{ _self.decimal_type(brilleglas.add) }}</Addition>
+                <Akse>{{ _self.positive_integer_type_or_empty(brilleglas.o) }}</Akse>
+              </Venstre>
+            {% endif %}
+
+            {% if submission.data.overslag_andet_brilleglas_hoejre %}
+              {% set brilleglas = submission.data.overslag_andet_brilleglas_hoejre|first %}
+              <Hoejre>
+                <Styrke>{{ _self.decimal_type(brilleglas.styrke) }}</Styrke>
+                <Cylinder>{{ _self.decimal_type(brilleglas.cyl) }}</Cylinder>
+                <Addition>{{ _self.decimal_type(brilleglas.add) }}</Addition>
+                <Akse>{{ _self.positive_integer_type_or_empty(brilleglas.o) }}</Akse>
+              </Hoejre>
+            {% endif %}
+
+            <Pris>{{ _self.positiv_decimal_type(overslag_andet_brilleglas_pris) }}</Pris>
+            {% set total_price = total_price + overslag_andet_brilleglas_pris %}
+          </Brilleglas>
+        {% endif %}
+
+        {% if overslag_andet_brillestel_pris >= 0 %}
+          <Brillestel>
+            <Navn>{{ _self.max_laengde_strings_200(submission.data.overslag_andet_brillestel) }}</Navn>
+            <Pris>{{ _self.positiv_decimal_type(overslag_andet_brillestel_pris) }}</Pris>
+            {% set total_price = total_price + overslag_andet_brillestel_pris %}
+          </Brillestel>
+        {% endif %}
+
+      </Andet>
+    {% endif %}
+
+    <Pris>{{ _self.positiv_decimal_type(total_price) }}</Pris>
+  </Overslag>
+
+  <Erklaering>
+    <NavnAnsoeger>{{ submission.data.navnansoeger|trim }}</NavnAnsoeger>
+    <CPRAnsoeger>{{ _self.personnummer(submission.data.cpransoeger) }}</CPRAnsoeger>
+    <UnderskriftsoplysningerAnsoeger>
+      <UnderskriftAnsoeger>{{ submission.data.erklaering_navnansoeger }}</UnderskriftAnsoeger>
+      <UnderskriftsdatoAnsoeger>{{ _self.date(submission.data.erklaering_underskriftsoplysningeransoeger_underskriftsdatoansoeger) }}</UnderskriftsdatoAnsoeger>
+    </UnderskriftsoplysningerAnsoeger>
+  </Erklaering>
+
+  <Behandler>
+    <UnderskriftsoplysningerBehandler>
+      <UnderskriftBehandler>{{ submission.data.navn }}</UnderskriftBehandler>
+      <UnderskriftsdatoBehandler>{{ _self.date(submission.data.behandler_underskriftsoplysningerbehandler_underskriftsdatobehandler) }}</UnderskriftsdatoBehandler>
+    </UnderskriftsoplysningerBehandler>
+    <TelefonnummerBehandler>{{ _self.telefonnummer(submission.data.behandler_telefonnummerbehandler) }}</TelefonnummerBehandler>
+    <EMailBehandler>{{ submission.data.behandler_emailbehandler }}</EMailBehandler>
+  </Behandler>
+
+</SP246>
