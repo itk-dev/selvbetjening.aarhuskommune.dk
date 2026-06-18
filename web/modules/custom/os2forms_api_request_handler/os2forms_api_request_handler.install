@@ -37,4 +37,3 @@ function os2forms_api_request_handler_update_10001(): void {
     }
   }
 }
-
