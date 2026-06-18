@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-517](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/517)
+  Tilføjede endnu en fiks køjobkommando – "Behandl job!"
 * [PR-515](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/515)
   Opdaterede projektskabelon.
 * [PR-514](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/514)
