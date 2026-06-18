@@ -246,9 +246,9 @@ final class AdvancedQueueCommands extends DrushCommands {
   #[CLI\Argument(name: 'queue_id', description: 'The queue ID.')]
   #[CLI\Argument(name: 'job_id', description: 'Job ID')]
   #[CLI\Option(name: 'show-payload', description: 'Show payload')]
-  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue 87', description: 'Ask for confirmation and process job with ID 87 in "my_queue" queue.')]
-  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue 87 --yes', description: 'Process job with ID 87 in "my_queue" queue without confirmation.')]
-  #[CLI\Usage(name: self::COMMAND_LIST_JOBS . ' my_queue 87 --show-payload', description: 'Show job payload and process job with ID 87 in "my_queue" queue.')]
+  #[CLI\Usage(name: self::COMMAND_PROCESS_JOB . ' my_queue 87', description: 'Ask for confirmation and process job with ID 87 in "my_queue" queue.')]
+  #[CLI\Usage(name: self::COMMAND_PROCESS_JOB . ' my_queue 87 --yes', description: 'Process job with ID 87 in "my_queue" queue without confirmation.')]
+  #[CLI\Usage(name: self::COMMAND_PROCESS_JOB . ' my_queue 87 --show-payload', description: 'Show job payload and process job with ID 87 in "my_queue" queue.')]
   public function processJob(
     string $queue_id,
     string $job_id,
