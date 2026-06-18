@@ -83,7 +83,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       ':queue_id' => $queue_id,
     ];
     if ($job_id) {
-      $query .= 'AND job_id = :job_id';
+      $query .= ' AND job_id = :job_id';
       $params[':job_id'] = $job_id;
     }
     if ($search = ($options['search'] ?? NULL)) {
