@@ -1,4 +1,7 @@
 services:
+  _defaults:
+    autowire: true
+
   logger.channel.os2forms_selvbetjening:
     parent: logger.channel_base
     arguments: ["os2forms_selvbetjening"]
@@ -36,3 +39,5 @@ services:
         "@plugin.manager.advancedqueue_job_type",
         "@logger.channel.cron",
       ]
+
+  Drupal\os2forms_selvbetjening\Hooks\WebformValidationHooks:
