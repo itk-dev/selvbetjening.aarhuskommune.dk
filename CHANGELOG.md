@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.10] 2026-06-22
+
 * [PR-517](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/517)
   Tilføjede endnu en fiks køjobkommando – "Behandl job!"
 * [PR-515](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/515)
@@ -838,7 +840,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.9...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.10...HEAD
+[5.1.10]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.9...5.1.10
 [5.1.9]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.8...5.1.9
 [5.1.8]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.7...5.1.8
 [5.1.7]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.6...5.1.7
