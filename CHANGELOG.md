@@ -10,6 +10,11 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   Opdaterede handlers så man kan konfigurere på hvilke tilstande de skal
   eksekvere.
   * API request handler
+  * Digital post handler
+  * Fasit handler
+  * FBS handler
+  * Digital signatur handler
+  * GetOrganized handler
 
 ## [5.1.10] 2026-06-22
 
