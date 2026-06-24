@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Install hooks.
+ */
+
+use Drupal\os2forms_selvbetjening_examples\Helper;
+
+/**
+ * Implements hook_install().
+ */
+function os2forms_selvbetjening_examples_install() {
+  _os2forms_selvbetjening_examples_helper()->install();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function os2forms_selvbetjening_examples_uninstall() {
+  _os2forms_selvbetjening_examples_helper()->uninstall();
+}
+
+/**
+ * Get helper.
+ *
+ * @return \Drupal\os2forms_selvbetjening_examples\Helper
+ *   The helper.
+ */
+function _os2forms_selvbetjening_examples_helper() {
+  return Drupal::service(Helper::class);
+}
