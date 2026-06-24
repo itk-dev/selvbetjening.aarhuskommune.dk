@@ -15,6 +15,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   * FBS handler
   * Digital signatur handler
   * GetOrganized handler
+* [PR-520](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/520)
+  Tilføjede advarsel om manglede formularindstillinger.
 
 ## [5.1.10] 2026-06-22
 

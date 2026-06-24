@@ -5,6 +5,7 @@
  * Module file for the os2forms_selvbetjening module.
  */
 
+use Drupal\os2forms_selvbetjening\Hooks\WebformValidationHooks;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\os2forms_selvbetjening\Helper\FormHelper;
 
@@ -22,6 +23,9 @@ function os2forms_selvbetjening_form_alter(array &$form, FormStateInterface $for
       $form['spv']['method']['#options']['bycontentfunction'] .= t('. Read more: <a href="https://os2forms.os2.eu/variabler-i-flow" target="_blank">https://os2forms.os2.eu/variabler-i-flow</a>');
     }
   }
+
+  // @todo Remove this file when upgrading to Drupal 11 (cf. https://www.drupal.org/node/3442349).
+  Drupal::service(WebformValidationHooks::class)->formAlter($form, $form_state, $form_id);
 }
 
 /**
