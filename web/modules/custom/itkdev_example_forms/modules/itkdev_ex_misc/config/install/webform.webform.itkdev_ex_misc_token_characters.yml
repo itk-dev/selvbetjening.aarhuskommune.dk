@@ -9,44 +9,12 @@ dependencies:
     - webform_revisions
   enforced:
     module:
-      - itkdev_ex_core_fields
+      - itkdev_ex_misc
 third_party_settings:
   os2forms_permissions_by_term:
     settings:
       1: '1'
       2: 0
-  webform_encrypt:
-    element:
-      required_modules_info:
-        encrypt: true
-        encrypt_profile: webform
-      example_buttons:
-        encrypt: true
-        encrypt_profile: webform
-      example_buttons_other:
-        encrypt: true
-        encrypt_profile: webform
-      example_image_select:
-        encrypt: true
-        encrypt_profile: webform
-      example_location_geocomplete:
-        encrypt: true
-        encrypt_profile: webform
-      example_location_places:
-        encrypt: true
-        encrypt_profile: webform
-      example_options_custom:
-        encrypt: true
-        encrypt_profile: webform
-      example_options_custom_entity:
-        encrypt: true
-        encrypt_profile: webform
-      example_toggle:
-        encrypt: true
-        encrypt_profile: webform
-      example_toggles:
-        encrypt: true
-        encrypt_profile: webform
   os2forms:
     os2forms_email_handler:
       enabled: 0
@@ -86,101 +54,28 @@ third_party_settings:
         enabled: false
         link_text: ''
         link_attributes: {  }
+  webform_encrypt:
+    element:
+      message:
+        encrypt: true
+        encrypt_profile: webform
 weight: 0
 open: null
 close: null
 uid: 1
 template: false
 archive: false
-id: itkdev_ex_core_fields_sub_mod_fi
-title: 'Webform sub-module elements'
-description: 'Examples of elements from webform sub-modules. Elements only render when their sub-module is enabled. See the markup at the top of this form for required modules.'
+id: itkdev_ex_misc_token_characters
+title: 'Token values with æ, ø and å'
+description: '<ul><li><a href="https://da.wikipedia.org/wiki/Pangram">https://da.wikipedia.org/wiki/Pangram</a></li></ul><p>&nbsp;</p>'
 categories: {  }
 elements: |-
-  required_modules_info:
-    '#type': webform_markup
-    '#markup': |
-      <details>
-        <summary><strong>Required modules for sub-module elements</strong></summary>
-        <p>Elements on this form require the following webform sub-modules to be enabled. Elements from disabled modules will not render.</p>
-        <table>
-          <thead><tr><th>Module</th><th>Element type</th></tr></thead>
-          <tbody>
-            <tr><td><code>webform_jqueryui_buttons</code></td><td>webform_buttons, webform_buttons_other</td></tr>
-            <tr><td><code>webform_image_select</code></td><td>webform_image_select</td></tr>
-            <tr><td><code>webform_location_geocomplete</code></td><td>webform_location_geocomplete</td></tr>
-            <tr><td><code>webform_location_places</code></td><td>webform_location_places</td></tr>
-            <tr><td><code>webform_options_custom</code></td><td>webform_options_custom, webform_options_custom_entity</td></tr>
-            <tr><td><code>webform_toggles</code></td><td>webform_toggle, webform_toggles</td></tr>
-          </tbody>
-        </table>
-      </details>
-  example_buttons:
-    '#type': webform_buttons
-    '#title': Buttons
-    '#options':
-      yes: 'Yes'
-      no: 'No'
-      maybe: Maybe
-  example_buttons_other:
-    '#type': webform_buttons_other
-    '#title': 'Buttons (with other)'
-    '#options':
-      option_a: 'Option A'
-      option_b: 'Option B'
-      option_c: 'Option C'
-    '#other__placeholder': 'Specify other'
-  example_image_select:
-    '#type': webform_image_select
-    '#title': 'Image select'
-    '#show_label': true
-    '#images':
-      image_1:
-        text: 'Image 1'
-        src: 'https://placehold.co/150x100?text=1'
-      image_2:
-        text: 'Image 2'
-        src: 'https://placehold.co/150x100?text=2'
-      image_3:
-        text: 'Image 3'
-        src: 'https://placehold.co/150x100?text=3'
-  example_location_geocomplete:
-    '#type': webform_location_geocomplete
-    '#title': 'Location (Geocomplete)'
-  example_location_places:
-    '#type': webform_location_places
-    '#title': 'Location (Places)'
-  example_options_custom:
-    '#type': webform_options_custom
-    '#title': 'Custom options'
-    '#options':
-      option_1: 'Custom option 1'
-      option_2: 'Custom option 2'
-      option_3: 'Custom option 3'
-  example_options_custom_entity:
-    '#type': webform_options_custom_entity
-    '#title': 'Custom options (entity)'
-    '#options':
-      option_1: 'Entity option 1'
-      option_2: 'Entity option 2'
-  example_toggle:
-    '#type': webform_toggle
-    '#title': 'Toggle option'
-    '#toggle_theme': light
-    '#toggle_size': medium
-    '#on_text': 'Yes'
-    '#off_text': 'No'
-  example_toggles:
-    '#type': webform_toggles
-    '#title': 'Toggle options'
-    '#toggle_theme': light
-    '#toggle_size': medium
-    '#on_text': 'Yes'
-    '#off_text': 'No'
-    '#options':
-      notify_email: 'Email notifications'
-      notify_sms: 'SMS notifications'
-      notify_push: 'Push notifications'
+  message:
+    "#type": textarea
+    "#title": Besked
+    "#required": true
+    "#default_value": "Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon"
+    "#test": "Høj bly gom vandt fræk sexquiz på wc"
 css: ''
 javascript: ''
 settings:
@@ -364,5 +259,48 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  e_mail:
+    id: email
+    handler_id: e_mail
+    label: E-mail
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - draft_created
+        - draft_updated
+        - converted
+        - completed
+        - updated
+        - deleted
+        - locked
+      to_mail: _default
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: _default
+      body: '<p>Du har udfyldt formularen [webform_submission:webform] med beskeden</p><p>“[webform_submission:values:message]”</p><p>Alle informationer:</p><p>[webform_submission:values]</p>'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
 variants: {  }
