@@ -22,16 +22,20 @@ name: YAML
 
 on:
   pull_request:
+    paths: &paths
+      - "**/*.yml"
+      - "**/*.yaml"
   push:
     branches:
       - main
       - develop
+    paths: *paths
 
 jobs:
   yaml-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Create docker network
         run: |

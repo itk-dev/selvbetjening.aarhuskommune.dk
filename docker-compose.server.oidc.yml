@@ -1,0 +1,15 @@
+# This is only for testing. DO NOT USE IN PRODUCTION!
+
+include:
+  - docker-compose.oidc.yml
+
+services:
+  idp-citizen:
+    restart: unless-stopped
+    networks: !override
+      - frontend
+    labels: !override
+      - "traefik.enable=true"
+      - "traefik.docker.network=frontend"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-idp-citizen.rule=Host(`idp-citizen-${COMPOSE_SERVER_DOMAIN:?}`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-idp-citizen.entrypoints=websecure"

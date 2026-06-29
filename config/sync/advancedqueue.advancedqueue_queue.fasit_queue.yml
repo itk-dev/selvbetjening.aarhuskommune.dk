@@ -10,6 +10,7 @@ backend_configuration:
 processor: daemon
 processing_time: 280
 locked: false
+stop_when_empty: true
 threshold:
   type: 0
   limit: 0

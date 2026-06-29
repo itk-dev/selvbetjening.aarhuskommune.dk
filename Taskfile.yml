@@ -1,17 +1,17 @@
-version: "3"
-
-# https://taskfile.dev/usage/#env-files
-dotenv: [".env.docker.local", ".env.local", ".env"]
+version: '3'
 
 vars:
   # https://taskfile.dev/reference/templating/
   DOCKER_COMPOSE: '{{.TASK_DOCKER_COMPOSE | default "docker compose"}}'
   COMPOSER_INSTALL_ARGUMENTS: '{{.TASK_COMPOSER_INSTALL_ARGUMENTS | default ""}}'
 
+# https://taskfile.dev/usage/#env-files
+dotenv: ['.env.docker.local', '.env.local', '.env']
+
 tasks:
   site:install:
     desc: Install site from scratch
-    prompt: "This will reset your setup. Continue?"
+    prompt: 'This will reset your setup. Continue?'
     cmds:
       - task: compose
         vars:
@@ -47,7 +47,7 @@ tasks:
 
   compose:
     cmds:
-      - "{{.DOCKER_COMPOSE}} {{.TASK_ARGS}} {{.CLI_ARGS}}"
+      - '{{.DOCKER_COMPOSE}} {{.TASK_ARGS}} {{.CLI_ARGS}}'
 
   composer:
     cmds:
@@ -65,7 +65,7 @@ tasks:
       # silent: true
 
   coding-standards:apply:
-    desc: "Apply coding standards"
+    desc: 'Apply coding standards'
     cmds:
       - task: coding-standards:javascript:apply
       - task: coding-standards:markdown:apply
@@ -76,7 +76,7 @@ tasks:
     silent: true
 
   coding-standards:check:
-    desc: "Apply coding standards"
+    desc: 'Apply coding standards'
     cmds:
       - task: coding-standards:javascript:check
       - task: coding-standards:markdown:check
@@ -87,40 +87,40 @@ tasks:
     silent: true
 
   coding-standards:javascript:apply:
-    desc: "Apply coding standards for javascript"
+    desc: 'Apply coding standards for javascript'
     cmds:
       # Cf. .github/workflows/javascript.yaml
       - docker compose run --rm prettier 'web/*/custom/**/*.js' --write
 
   coding-standards:javascript:check:
-    desc: "Apply coding standards for javascript"
+    desc: 'Apply coding standards for javascript'
     cmds:
       - task: coding-standards:javascript:apply
       # Cf. .github/workflows/javascript.yaml
       - docker compose run --rm prettier 'web/*/custom/**/*.js' --check
 
   coding-standards:markdown:apply:
-    desc: "Apply coding standards for Markdown"
+    desc: 'Apply coding standards for Markdown'
     cmds:
       # Cf. .github/workflows/markdown.yaml
       - docker compose run --rm markdownlint markdownlint '**/*.md' --fix
 
   coding-standards:markdown:check:
-    desc: "Apply and check coding standards for Markdown"
+    desc: 'Apply and check coding standards for Markdown'
     cmds:
       - task: coding-standards:markdown:apply
       # Cf. .github/workflows/markdown.yaml
       - docker compose run --rm markdownlint markdownlint '**/*.md'
 
   coding-standards:php:apply:
-    desc: "Apply coding standards for PHP"
+    desc: 'Apply coding standards for PHP'
     cmds:
       # Cf. .github/workflows/php.yaml
       - docker compose run --rm phpfpm vendor/bin/phpcbf
     silent: true
 
   coding-standards:php:check:
-    desc: "Apply and check coding standards for PHP"
+    desc: 'Apply and check coding standards for PHP'
     cmds:
       - task: coding-standards:php:apply
       # Cf. .github/workflows/php.yaml
@@ -128,39 +128,39 @@ tasks:
     silent: true
 
   coding-standards:styles:apply:
-    desc: "Apply coding standards for styles"
+    desc: 'Apply coding standards for styles'
     cmds:
       # Cf. .github/workflows/styles.yaml
       - docker compose run --rm prettier 'web/themes/custom/**/css/**/*.{css,scss}' --write
 
   coding-standards:styles:check:
-    desc: "Apply coding standards for styles"
+    desc: 'Apply coding standards for styles'
     cmds:
       - task: coding-standards:styles:apply
       # Cf. .github/workflows/styles.yaml
       - docker compose run --rm prettier 'web/themes/custom/**/css/**/*.{css,scss}' --check
 
   coding-standards:twig:apply:
-    desc: "Apply coding standards for Twig"
+    desc: 'Apply coding standards for Twig'
     cmds:
       - docker compose run --rm phpfpm vendor/bin/twig-cs-fixer fix
     silent: true
 
   coding-standards:twig:check:
-    desc: "Apply and check coding standards for Twig"
+    desc: 'Apply and check coding standards for Twig'
     cmds:
       - task: coding-standards:twig:apply
       - docker compose run --rm phpfpm vendor/bin/twig-cs-fixer lint
     silent: true
 
   coding-standards:yaml:apply:
-    desc: "Apply coding standards for YAML"
+    desc: 'Apply coding standards for YAML'
     cmds:
       # Cf. .github/workflows/yaml.yaml
       - docker compose run --rm prettier '**/*.{yml,yaml}' --write
 
   coding-standards:yaml:check:
-    desc: "Apply coding standards for YAML"
+    desc: 'Apply coding standards for YAML'
     cmds:
       - task: coding-standards:yaml:apply
       # Cf. .github/workflows/yaml.yaml

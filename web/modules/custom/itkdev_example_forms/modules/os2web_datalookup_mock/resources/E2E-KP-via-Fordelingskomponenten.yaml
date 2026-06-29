@@ -1,0 +1,273 @@
+# E2E. KP via Fordelingskomponenten
+
+"3006493890":
+  persondata:
+    status:
+      status: 1
+    navn:
+      personadresseringsnavn: "Gerda Ottosen"
+      fornavn: Gerda
+      mellemnavn:
+      efternavn: Ottosen
+    foedselsdato:
+      # Y-m-dP
+      dato: "1981-12-13+01:00"
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: "2001-01-01T00:00:00.000+02:00"
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    barn:
+    foraeldremyndighed:
+
+"1911334305":
+  persondata:
+    status:
+      status: 1
+    navn:
+      personadresseringsnavn: "Leo Petersson"
+      fornavn: Leo
+      mellemnavn:
+      efternavn: Petersson
+    foedselsdato:
+      # Y-m-dP
+      dato: "1981-12-13+01:00"
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: "2001-01-01T00:00:00.000+02:00"
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    barn:
+    foraeldremyndighed:
+
+"1608787446":
+  persondata:
+    status:
+      status: 1
+    navn:
+      personadresseringsnavn: "Sørine Vad Andresen"
+      fornavn: Sørine
+      mellemnavn: Vad
+      efternavn: Andresen
+    foedselsdato:
+      # Y-m-dP
+      dato: "1981-12-13+01:00"
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: "2001-01-01T00:00:00.000+02:00"
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    barn:
+    foraeldremyndighed:
+
+"1212515060":
+  persondata:
+    status:
+      status: 1
+    navn:
+      personadresseringsnavn: "Lise Jonassen"
+      fornavn: Lise
+      mellemnavn:
+      efternavn: Jonassen
+    foedselsdato:
+      # Y-m-dP
+      dato: "1981-12-13+01:00"
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: "2001-01-01T00:00:00.000+02:00"
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    barn:
+    foraeldremyndighed:
+
+"2502638553":
+  persondata:
+    status:
+      status: 1
+    navn:
+      personadresseringsnavn: "Carsten Beck"
+      fornavn: Carsten
+      mellemnavn:
+      efternavn: Beck
+    foedselsdato:
+      # Y-m-dP
+      dato: "1981-12-13+01:00"
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: "2001-01-01T00:00:00.000+02:00"
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    barn:
+    foraeldremyndighed:
+
+"2604693184":
+  persondata:
+    status:
+      status: 1
+    navn:
+      personadresseringsnavn: "Elisabeth Poulsen"
+      fornavn: Elisabeth
+      mellemnavn:
+      efternavn: Poulsen
+    foedselsdato:
+      # Y-m-dP
+      dato: "1981-12-13+01:00"
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: "2001-01-01T00:00:00.000+02:00"
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    barn:
+    foraeldremyndighed:
+
+"0107818161":
+  persondata:
+    status:
+      status: 1
+    navn:
+      personadresseringsnavn: "Birger Nørgaard"
+      fornavn: Birger
+      mellemnavn:
+      efternavn: Nørgaard
+    foedselsdato:
+      # Y-m-dP
+      dato: "1981-12-13+01:00"
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: "2001-01-01T00:00:00.000+02:00"
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    barn:
+    foraeldremyndighed:
+
+"1907692859":
+  persondata:
+    status:
+      status: 1
+    navn:
+      personadresseringsnavn: "Samlever Med Elisabeth Poulsen"
+      fornavn: Samlever
+      mellemnavn: Med
+      efternavn: Elisabeth Poulsen
+    foedselsdato:
+      # Y-m-dP
+      dato: "1981-12-13+01:00"
+    tilmeldtDigitalpost: true
+    adressebeskyttelse:
+      # beskyttet: true
+    statsborgerskab:
+      # https://symfony.com/doc/current/components/yaml.html#parsing-php-constants
+      landekode: !php/const \Drupal\os2web_datalookup\Plugin\os2web\DataLookup\ServiceplatformenCPRExtended::DENMARK_COUNTRY_CODE
+      statsborgerskabDato:
+        # https://www.php.net/manual/en/datetime.constants.php#constant.date-rfc3339-extended
+        dato: "2001-01-01T00:00:00.000+02:00"
+  adresse:
+    aktuelAdresse:
+      vejnavn: Livets Landevej
+      husnummer:
+      etage:
+      sidedoer:
+      postnummer:
+      postdistrikt:
+      kommunekode:
+  relationer:
+    barn:
+    foraeldremyndighed:

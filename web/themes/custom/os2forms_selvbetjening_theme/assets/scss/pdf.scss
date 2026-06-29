@@ -9,6 +9,7 @@ $envelope-window-height: 89mm;
 $envelope-window-width: 115mm;
 $recipient-window-height: 21mm;
 $recipient-window-width: 59mm;
+$webform-page-width: 65%;
 
 // We reset margin from the default and set them in body
 // @see https://github.com/dompdf/dompdf/blob/v2.0.8/lib/res/html.css#L18
@@ -180,7 +181,19 @@ details, .claro-details {
 
 .webform-entity-print-body {
   font-size: 14px;
-  width: 65% !important;
+  width: $webform-page-width !important;
+}
+
+// Constrain the digital signature validation text to the same column width as
+// the body content, so it does not overflow into the colophon.
+//
+// Only targets SIGNATURE_POSITION_AFTER_CONTENT: in that case the signature is
+// inserted as a direct child of <body>. The other positions (header, footer
+// and before content) place it inside their own container which already has a
+// fitting width.
+// @see \Drupal\os2forms_attachment\Os2formsAttachmentPrintBuilder::prepareRenderer
+body > .validate-signature-element {
+  width: $webform-page-width;
 }
 
 .webform-element {

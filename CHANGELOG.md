@@ -12,7 +12,45 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
     `os2forms_selvbetjening_overview`. Erstat derfor modul-navnet i URL'en
     for at tilgå visningerne.
 * [PR-507](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/507)
+* [PR-520](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/520)
+  Tilføjede advarsel om manglede formularindstillinger.
+
+## [5.1.10] 2026-06-22
+
+* [PR-517](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/517)
+  Tilføjede endnu en fiks køjobkommando – "Behandl job!"
+* [PR-515](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/515)
+  Opdaterede projektskabelon.
+* [PR-514](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/514)
+  * Opdaterede til OS2Forms Core 5.1.0.
+    * Opdaterede `Full HTML`- og `Simpel HTML`-tekstformater til at benytte
+      CKEditor 5.
+    * Skiftede fra DAWA (udfaset) til adressevælgeren ifb. adresseopslag.
+    * Skiftede fra DAWA (udfaset) til datafordeleren ifb. matrikelopslag.
+  * Opdaterede til den moderniserede datafordeler ifb. CVR opslag og P-nummer
+    opslag.
+* [PR-513](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/513)
+  Tilføjede endnu en fiks køjobkommando – redigering!
+* [PR-512](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/512)
+  Forbedrede opsætning af test-borgere
+* [PR-504](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/504)
+  Justerede digital signatur validerings teksten så den ikke overlapper
+  kolofon.
+
+## [5.1.9] 2026-06-15
+
+* [PR-516](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/516)
   Enabled os2forms_digital_signature-module.
+
+## [5.1.8] 2026-05-20
+
+* [PR-510](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/510)
+  Sikkerhedsopdatering af Drupal.
+
+## [5.1.7] 2026-05-19
+
+* [PR-509](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/509)
+  Tilføjede flex-basis til formularvisning når der ikke benyttes progress bar.
 
 ## [5.1.6] 2026-05-18
 
@@ -24,7 +62,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   Fjerende links fra OS2Forms Attachments der er indstillet til digital
   signering.
 * [PR-498](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/498)
-  Tilføjede fikse køjobkomandoer
+  Tilføjede fikse køjobkommandoer
 * [PR-500](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/500)
   Added mTLS config
 * [PR-494](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/494)
@@ -811,7 +849,11 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.6...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.10...HEAD
+[5.1.10]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.9...5.1.10
+[5.1.9]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.8...5.1.9
+[5.1.8]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.7...5.1.8
+[5.1.7]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.6...5.1.7
 [5.1.6]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.5...5.1.6
 [5.1.5]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.4...5.1.5
 [5.1.4]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.3...5.1.4

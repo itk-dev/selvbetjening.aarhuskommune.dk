@@ -3,8 +3,8 @@
 namespace Drupal\os2forms_selvbetjening\Drush\Commands;
 
 use Drupal\advancedqueue\Entity\Queue;
-use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\BackendInterface;
 use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\SupportsLoadingJobsInterface;
+use Drupal\advancedqueue\ProcessorInterface;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Config\MemoryStorage;
 use Drupal\Core\Config\StorageInterface;
@@ -19,6 +19,9 @@ use Drush\Commands\config\ConfigCommands;
 use Drush\Commands\DrushCommands;
 use Drush\Exceptions\UserAbortException;
 use Symfony\Component\Console\Exception\RuntimeException;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 /**
  * A Drush commandfile.
@@ -34,12 +37,15 @@ final class AdvancedQueueCommands extends DrushCommands {
   public function __construct(
     EntityTypeManagerInterface $entityTypeManager,
     private readonly Connection $connection,
+    #[Autowire(service: 'advancedqueue.processor')]
+    private readonly ProcessorInterface $processor,
   ) {
     $this->queueStorage = $entityTypeManager->getStorage('advancedqueue_queue');
   }
 
   private const string COMMAND_LIST_JOBS = 'os2forms-selvbetjening:advancedqueue:queue:list:jobs';
   private const string COMMAND_SET_PAYLOAD_VALUE = 'os2forms-selvbetjening:advancedqueue:job:set-payload-value';
+  private const string COMMAND_PROCESS_JOB = 'os2forms-selvbetjening:advancedqueue:job:process';
 
   /**
    * List jobs command.
@@ -68,7 +74,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       'limit' => 1,
     ],
   ) {
-    $backend = $this->loadQueueBackend($queue_id);
+    [$backend] = $this->loadQueueBackend($queue_id);
 
     // Build the query by hand to use JSON functions (cf.
     // https://www.drupal.org/project/drupal/issues/3378275)
@@ -77,7 +83,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       ':queue_id' => $queue_id,
     ];
     if ($job_id) {
-      $query .= 'AND job_id = :job_id';
+      $query .= ' AND job_id = :job_id';
       $params[':job_id'] = $job_id;
     }
     if ($search = ($options['search'] ?? NULL)) {
@@ -151,11 +157,17 @@ final class AdvancedQueueCommands extends DrushCommands {
   #[CLI\Option(name: 'diff', description: 'Show payload diff')]
   #[CLI\Option(name: 'set', description: 'Set string value')]
   #[CLI\Option(name: 'set-int', description: 'Set integer value')]
+  #[CLI\Option(name: 'edit', description: 'Edit payload interactively. Editing will be performed after all set and unset operations have been performed.')]
+  #[CLI\Option(name: 'editor', description: 'The editor to use')]
   #[CLI\Option(name: 'unset', description: 'Unset value')]
   #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --set person.name=James', description: 'Set string value')]
   #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --set-int person.age=61', description: 'Set integer value')]
   #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --unset person.address', description: 'Unset value')]
   #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --set person.name=James --unset person.address --diff', description: 'Perform multiple operations and preview changes')]
+  #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --edit', description: 'Edit payload interactively in vi')]
+  #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --edit --diff', description: 'Edit payload interactively and preview final changes')]
+  #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --set name=test --edit', description: 'Set value and edit result interactively')]
+  #[CLI\Usage(name: self::COMMAND_SET_PAYLOAD_VALUE . ' my_queue 87 --edit --editor=nano', description: 'Edit value using nano (for experts!)')]
   public function setJobPayloadValue(
     string $queue_id,
     string $job_id,
@@ -164,9 +176,11 @@ final class AdvancedQueueCommands extends DrushCommands {
       'set' => [],
       'set-int' => [],
       'unset' => [],
+      'edit' => FALSE,
+      'editor' => 'vi',
     ],
   ) {
-    $backend = $this->loadQueueBackend($queue_id);
+    [$backend] = $this->loadQueueBackend($queue_id);
     try {
       $updateJob = new \ReflectionMethod($backend, 'updateJob');
     }
@@ -190,6 +204,10 @@ final class AdvancedQueueCommands extends DrushCommands {
       NestedArray::unsetValue($payload, explode('.', $path));
     }
 
+    if ($options['edit']) {
+      $payload = $this->editPayload($payload, editor: $options['editor']);
+    }
+
     $diff = $this->renderDiff($job->getPayload(), $payload);
     if (empty($diff)) {
       $this->io()->info('No changes to apply');
@@ -197,7 +215,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       return self::EXIT_SUCCESS;
     }
 
-    $question = dt('Apply the payload changes?');
+    $question = dt('Apply the payload changes (use --diff to preview the changes)?');
     if ($options['diff']) {
       $this->io()->writeln($diff);
       $question = dt('Apply the listed payload changes?');
@@ -219,9 +237,52 @@ final class AdvancedQueueCommands extends DrushCommands {
   }
 
   /**
-   * Load a queue's backend.
+   * Process job command.
+   *
+   * @phpstan-param array<string, mixed> $options
+   *   The command options.
    */
-  private function loadQueueBackend(string $queueId): BackendInterface&SupportsLoadingJobsInterface {
+  #[CLI\Command(name: self::COMMAND_PROCESS_JOB, aliases: ['advancedqueue:queue:job:process'])]
+  #[CLI\Argument(name: 'queue_id', description: 'The queue ID.')]
+  #[CLI\Argument(name: 'job_id', description: 'Job ID')]
+  #[CLI\Option(name: 'show-payload', description: 'Show payload')]
+  #[CLI\Usage(name: self::COMMAND_PROCESS_JOB . ' my_queue 87', description: 'Ask for confirmation and process job with ID 87 in "my_queue" queue.')]
+  #[CLI\Usage(name: self::COMMAND_PROCESS_JOB . ' my_queue 87 --yes', description: 'Process job with ID 87 in "my_queue" queue without confirmation.')]
+  #[CLI\Usage(name: self::COMMAND_PROCESS_JOB . ' my_queue 87 --show-payload', description: 'Show job payload and process job with ID 87 in "my_queue" queue.')]
+  public function processJob(
+    string $queue_id,
+    string $job_id,
+    $options = [
+      'show-payload' => FALSE,
+    ],
+  ) {
+    [$backend, $queue] = $this->loadQueueBackend($queue_id);
+    /** @var \Drupal\advancedqueue\Job $job */
+    $job = $backend->loadJob($job_id);
+
+    if ($options['show-payload']) {
+      $this->io()->section('Payload');
+      $this->io()->writeln(Yaml::encode($job->getPayload()));
+    }
+
+    $question = dt('Really process the job %id', ['%id' => $job->getId()]);
+    if (!$this->io()->confirm($question, default: FALSE)) {
+      return;
+    }
+
+    $this->processor->processJob($job, $queue);
+  }
+
+  /**
+   * Load a queue's backend.
+   *
+   * @return array{
+   *   0: \Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\BackendInterface&SupportsLoadingJobsInterface,
+   *   1: \Drupal\advancedqueue\Entity\QueueInterface,
+   *   }
+   *   The backend and its queue.
+   */
+  private function loadQueueBackend(string $queueId): array {
     $queue = $this->queueStorage->load($queueId);
     if (NULL === $queue) {
       throw new RuntimeException(dt('Cannot load queue %id.', ['%id' => $queueId]));
@@ -236,7 +297,7 @@ final class AdvancedQueueCommands extends DrushCommands {
       ]));
     }
 
-    return $backend;
+    return [$backend, $queue];
   }
 
   /**
@@ -265,6 +326,67 @@ final class AdvancedQueueCommands extends DrushCommands {
       $createConfigStorage([__FUNCTION__ => $b]),
       $this->output()
     );
+  }
+
+  /**
+   * Edit payload interactively.
+   *
+   * @param array $payload
+   *   The payload.
+   * @param string $editor
+   *   The editor to use.
+   *
+   * @return array
+   *   The edited payload.
+   *
+   * @throws \Symfony\Component\Console\Exception\RuntimeException
+   */
+  private function editPayload(array $payload, string $editor = 'vi'): array {
+    try {
+      // @todo Check that we can run editor.
+      $prettyPrintedPayload = json_encode($payload, JSON_PRETTY_PRINT);
+      // Check that payload down not change when decoded and encoded.
+      $bootstrappedPayload = json_decode($prettyPrintedPayload, TRUE);
+      if ($bootstrappedPayload !== $payload) {
+        $diff = $this->renderDiff(
+          $payload,
+          $bootstrappedPayload
+        );
+        throw new RuntimeException(sprintf('Cannot bootstrap payload: %s.', $diff));
+      }
+
+      $payloadFilename = tempnam(sys_get_temp_dir(), __FILE__);
+      file_put_contents($payloadFilename, $prettyPrintedPayload);
+      $process = new Process([$editor, $payloadFilename]);
+      $process->setTty(TRUE);
+      $process->run();
+
+      if (!$process->isSuccessful()) {
+        throw new ProcessFailedException($process);
+      }
+
+      $content = file_get_contents($payloadFilename);
+
+      try {
+        $editedPayload = json_decode($content, TRUE, flags: JSON_THROW_ON_ERROR);
+      }
+      catch (\JsonException $jsonException) {
+        throw new RuntimeException('Payload must be valid JSON', previous: $jsonException);
+      }
+
+      if (!is_array($editedPayload)) {
+        throw new RuntimeException(sprintf('Payload must be an array; got %s', var_export($editedPayload, TRUE)));
+      }
+
+      return $editedPayload;
+    }
+    catch (ProcessFailedException $exception) {
+      throw new RuntimeException(sprintf('Error editing payload: %s', $exception->getMessage()), previous: $exception);
+    } finally {
+      if (isset($payloadFilename)) {
+        unlink($payloadFilename);
+      }
+    }
   }
 
 }
