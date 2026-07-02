@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c645921460dcfceb9966886ebf51e1e3",
+    "content-hash": "d9a9e5e5445b018797452a3a14b8892d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9165,7 +9165,7 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-release/5.1.5-and-avoid-inheriting-data-on-page-transition",
+            "version": "dev-release/5.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
@@ -23582,7 +23582,7 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-release/5.1.5-and-avoid-inheriting-data-on-page-transition",
+            "version": "dev-release/5.1.6",
             "alias": "5.1.6",
             "alias_normalized": "5.1.6.0"
         }
