@@ -8,6 +8,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 * [PR-520](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/520)
   Tilføjede advarsel om manglede formularindstillinger.
+* [PR-523](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/523)
+  Sikrede at MaestroInherit ikke overskriver med original data ved sideskift.
 
 ## [5.1.10] 2026-06-22
 
