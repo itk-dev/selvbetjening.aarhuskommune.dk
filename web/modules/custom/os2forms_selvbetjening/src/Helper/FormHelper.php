@@ -2,6 +2,8 @@
 
 namespace Drupal\os2forms_selvbetjening\Helper;
 
+use Drupal\Core\Entity\EntityFormInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Render\Element;
@@ -9,6 +11,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
+use Drupal\webform\WebformInterface;
 
 /**
  * Form Helper class, for altering forms.
@@ -52,6 +55,27 @@ class FormHelper {
     // Add description to category choice when adding new Webform.
     if ('webform_add_form' === $form_id) {
       $form['category']['#description'] = $webform_category_description;
+    }
+
+    // Add a link to the attached webform's build page on webform nodes.
+    if ('node_webform_edit_form' === $form_id) {
+      $formObject = $form_state->getFormObject();
+      $node = $formObject instanceof EntityFormInterface ? $formObject->getEntity() : NULL;
+      $webform = $node instanceof FieldableEntityInterface && $node->hasField('webform') ? $node->get('webform')->entity : NULL;
+      if ($webform instanceof WebformInterface && $webform->access('update') && isset($form['webform']['widget'][0]['target_id'])) {
+        $targetIdElement = &$form['webform']['widget'][0]['target_id'];
+        $targetIdElement['#description'] = [
+          'description' => [
+            '#markup' => $targetIdElement['#description'] ?? '',
+          ],
+          'webform_link' => [
+            '#type' => 'link',
+            '#title' => $this->t('Go to attached webform (@label)', ['@label' => $webform->label()]),
+            '#url' => Url::fromRoute('entity.webform.edit_form', ['webform' => $webform->id()]),
+            '#prefix' => ' ',
+          ],
+        ];
+      }
     }
 
     // Add logout suggestion to logged-in users
