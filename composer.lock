@@ -8243,22 +8243,22 @@
         },
         {
             "name": "itk-dev/os2forms_nemlogin_openid_connect",
-            "version": "2.3.1",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect.git",
-                "reference": "c7f403ce68b3d3fe112afa476beeb36f0100342e"
+                "reference": "10dc73262f081ae770f3457acbd2d931c912200e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_nemlogin_openid_connect/zipball/c7f403ce68b3d3fe112afa476beeb36f0100342e",
-                "reference": "c7f403ce68b3d3fe112afa476beeb36f0100342e",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_nemlogin_openid_connect/zipball/10dc73262f081ae770f3457acbd2d931c912200e",
+                "reference": "10dc73262f081ae770f3457acbd2d931c912200e",
                 "shasum": ""
             },
             "require": {
                 "drupal/webform": "^6.0",
                 "itk-dev/drupal_psr6_cache": "^1.1",
-                "itk-dev/openid-connect": "^3.1",
+                "itk-dev/openid-connect": "^3.1 || ^4.0",
                 "os2web/os2web_audit": "^1.0",
                 "os2web/os2web_key": "^1.0",
                 "os2web/os2web_nemlogin": "^1.2",
@@ -8289,9 +8289,9 @@
             "homepage": "https://www.drupal.org/project/os2forms_nemlogin_openid_connect",
             "support": {
                 "issues": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/issues",
-                "source": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/tree/2.3.1"
+                "source": "https://github.com/itk-dev/os2forms_nemlogin_openid_connect/tree/2.5.0"
             },
-            "time": "2025-12-12T12:38:46+00:00"
+            "time": "2026-07-14T11:17:29+00:00"
         },
         {
             "name": "itk-dev/os2forms_user_field_lookup",
