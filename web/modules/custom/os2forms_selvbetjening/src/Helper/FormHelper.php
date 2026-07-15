@@ -72,6 +72,7 @@ class FormHelper {
             '#type' => 'link',
             '#title' => $this->t('Go to attached webform (@label)', ['@label' => $webform->label()]),
             '#url' => Url::fromRoute('entity.webform.edit_form', ['webform' => $webform->id()]),
+            // Add whitespace between the existing description and the link.
             '#prefix' => ' ',
           ],
         ];
