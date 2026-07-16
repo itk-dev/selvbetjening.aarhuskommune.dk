@@ -9,8 +9,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 ## [5.1.12] 2026-07-14
 
 * [PR-526](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/526)
-   Opdaterede til `itk-dev/os2forms_nemlogin_openid_connect` `2.5.0`
-    * Der benyttes nu sessionstype specifikke sessionsnøgler.
+   Opdaterede til `itk-dev/os2forms_nemlogin_openid_connect` `2.5.1`
+  * Der benyttes nu sessionstype specifikke sessionsnøgler.
 
 ## [5.1.11] 2026-07-02
 
