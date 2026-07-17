@@ -239,6 +239,15 @@
   }
 }
 
+/* Claro only applies these to input[type=date/time], but the webform timepicker
+   renders as a text input meaning it loses the alignment next to the date input.
+   Values must match .form-element--type-time in
+   core/themes/claro/css/components/form--text.css. */
+.form-element--api-webform-time {
+  vertical-align: -webkit-baseline-middle;
+  min-width: 7.5rem;
+}
+
 /* Adjustments for webform flexbox */
 @media (min-width: 768px) {
   /* Allow potential wrapping. Overrides web/modules/contrib/webform/css/webform.element.flexbox.css */
