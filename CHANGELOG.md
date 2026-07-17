@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-525](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/525)
+  Tilføjede et link fra selvbetjeningsside til formular.
+
 ## [5.1.12] 2026-07-14
 
 * [PR-526](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/526)
