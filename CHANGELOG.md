@@ -9,6 +9,12 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 * [PR-525](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/525)
   Tilføjede et link fra selvbetjeningsside til formular.
 
+## [5.1.12] 2026-07-14
+
+* [PR-526](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/526)
+   Opdaterede til `itk-dev/os2forms_nemlogin_openid_connect` `2.5.1`
+  * Der benyttes nu sessionstype specifikke sessionsnøgler.
+
 ## [5.1.11] 2026-07-02
 
 * [PR-520](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/520)
@@ -850,7 +856,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.11...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.12...HEAD
+[5.1.12]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.11...5.1.12
 [5.1.11]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.10...5.1.11
 [5.1.10]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.9...5.1.10
 [5.1.9]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.8...5.1.9
