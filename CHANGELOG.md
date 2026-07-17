@@ -6,6 +6,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-527](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/527)
+  Rettede placeringen af tidsfeltet i `datetime`-elementet når der benyttes
+  `timepicker`.
+
 ## [5.1.12] 2026-07-14
 
 * [PR-526](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/526)
