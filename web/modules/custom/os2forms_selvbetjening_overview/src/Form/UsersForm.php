@@ -72,7 +72,7 @@ final class UsersForm extends FormBase {
     asort($userOptions, SORT_NATURAL);
 
     $query = $this->getRequest()->query;
-    $selectedUsers = $query->all('users') ?? [];
+    $selectedUsers = $query->all('users');
     $showOrphanedWebforms = (bool) $query->get('show_orphaned_webforms');
 
     $form['filters'] = [
@@ -140,6 +140,7 @@ final class UsersForm extends FormBase {
         $form['users']['no_owner']['webforms'] = $this->formatEntityTable($orphanedWebforms, $this->t('Webform ID'));
       }
 
+      /** @var \Drupal\user\UserInterface[] $users */
       $users = $this->userStorage->loadMultiple($selectedUsers);
       foreach ($users as $user) {
         $uid = $user->id();
