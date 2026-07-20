@@ -1,0 +1,13 @@
+/**
+ * Un-clip open Chosen dropdowns inside Gin's table scroll wrapper.
+ *
+ * Gin wraps admin tables in .gin-table-scroll-wrapper (overflow-x: auto,
+ * overflow-y: hidden), which clips the absolutely positioned .chosen-drop.
+ * Only relax the clipping while a dropdown is open (.chosen-with-drop), so
+ * wide tables keep their horizontal scroll the rest of the time.
+ *
+ * @see https://www.drupal.org/project/gin/issues/3501828
+ */
+.gin-table-scroll-wrapper:has(.chosen-container.chosen-with-drop) {
+  overflow: visible;
+}
