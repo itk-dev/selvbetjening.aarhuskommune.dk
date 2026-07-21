@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-528](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/528)
+  Sikrede at drop-down menuer på administrationssider ikke blive cuttet af.
 * [PR-527](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/527)
   Rettede placeringen af tidsfeltet i `datetime`-elementet når der benyttes
   `timepicker`.

@@ -44,6 +44,19 @@ function os2forms_selvbetjening_webform_element_alter(array &$element, FormState
 }
 
 /**
+ * Implements hook_library_info_alter().
+ *
+ * Gin's table scroll wrapper clips open Chosen dropdowns
+ * (cf. https://www.drupal.org/project/gin/issues/3501828). Load our fix
+ * whenever Gin's Chosen styling loads.
+ */
+function os2forms_selvbetjening_library_info_alter(array &$libraries, string $extension) {
+  if ('gin' === $extension && isset($libraries['chosen'])) {
+    $libraries['chosen']['dependencies'][] = 'os2forms_selvbetjening/chosen-gin-overflow';
+  }
+}
+
+/**
  * Implements hook_views_plugins_field_alter().
  */
 function os2forms_selvbetjening_views_plugins_field_alter(array &$plugins) {

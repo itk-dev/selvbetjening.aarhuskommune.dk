@@ -7,6 +7,11 @@ author_bulk_assignment:
   css:
     theme:
       assets/css/author_bulk_assignment.css: {}
+chosen-gin-overflow:
+  version: 1.x
+  css:
+    theme:
+      css/chosen-gin-overflow.css: {}
 dawa_address_autocomplete:
   version: 1.x
   js:
