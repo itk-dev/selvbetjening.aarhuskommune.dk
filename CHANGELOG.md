@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-530](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/530)
+  Sikrede at progresbaren ikke vises over Drupals menu og undermenu.
+
 ## [5.1.13] 2026-07-21
 
 * [PR-528](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/528)
