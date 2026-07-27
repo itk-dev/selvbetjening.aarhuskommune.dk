@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.14] 2026-07-27
+
 * [PR-530](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/530)
   Sikrede at progresbaren ikke vises over Drupals menu og undermenu.
 
@@ -866,7 +868,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.13...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.14...HEAD
+[5.1.14]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.13...5.1.14
 [5.1.13]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.12...5.1.13
 [5.1.12]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.11...5.1.12
 [5.1.11]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.10...5.1.11
