@@ -178,7 +178,8 @@
   @include mixins.media-breakpoint-up(md) {
     position: sticky;
     top: 50px;
-    z-index: 1000;
+    // Keep below the Drupal toolbar and its submenus (z-index 501/502).
+    z-index: 100;
     max-width: calc(300px - 4em);
     min-width: calc(200px - 4em);
   }
