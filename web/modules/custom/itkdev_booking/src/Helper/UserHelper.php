@@ -10,6 +10,11 @@ use Symfony\Component\HttpFoundation\Request;
  *
  */
 class UserHelper {
+  /**
+   * Id of the auth provider plugin used for logging in on booking webforms.
+   */
+  private const AUTH_PROVIDER_PLUGIN_ID = 'openid_connect_nemlogin';
+
   protected bool $bookingApiSampleUser;
 
   public function __construct() {
@@ -63,7 +68,7 @@ class UserHelper {
     }
 
     $session = $request->getSession();
-    $userToken = $session->get('os2forms_nemlogin_openid_connect.user_token');
+    $userToken = $session->get('os2forms_nemlogin_openid_connect.user_token_' . self::AUTH_PROVIDER_PLUGIN_ID);
 
     if (isset($userToken['cvr'])) {
       $permission = 'businessPartner';
