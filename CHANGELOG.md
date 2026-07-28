@@ -12,6 +12,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   Rettede manglende brugerdata i booking-indsendelser efter opdateringen til
   `itk-dev/os2forms_nemlogin_openid_connect` `2.5.x`, hvor brugertokenet gemmes
   under sessionstype-specifikke sessionsnøgler.
+* [533](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/533)
+  Tilføjede validering der afviser bookingindsendelser med en fejlbesked,
+  hvis brugerens sessionsdata mangler.
 
 ## [5.1.14] 2026-07-27
 
