@@ -34,7 +34,7 @@ os2forms_selvbetjening_overview.taxonomies:
     _form: '\Drupal\os2forms_selvbetjening_overview\Form\TaxonomyForm'
     _title: "Taxonomies"
   requirements:
-    _permission: "access deprecation taxonomy overview"
+    _permission: "access selvbetjening taxonomy overview"
   options:
     no_cache: TRUE
 
@@ -44,6 +44,6 @@ os2forms_selvbetjening_overview.users:
     _form: '\Drupal\os2forms_selvbetjening_overview\Form\UsersForm'
     _title: "Users"
   requirements:
-    _permission: "access deprecation user overview"
+    _permission: "access selvbetjening user overview"
   options:
     no_cache: TRUE
