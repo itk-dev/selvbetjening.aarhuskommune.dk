@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.16] 2026-07-31
+
 * [PR-503](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/503)
   * Tilføjede overblik over brugere og deres ejerskaber.
   * Omdøbte `os2forms_selvbetjening_deprecations`-modulet til
@@ -881,7 +883,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.15...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.16...HEAD
+[5.1.16]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.15...5.1.16
 [5.1.15]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.14...5.1.15
 [5.1.14]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.13...5.1.14
 [5.1.13]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.12...5.1.13
