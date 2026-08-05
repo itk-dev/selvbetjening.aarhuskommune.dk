@@ -15,8 +15,49 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   * FBS handler
   * Digital signatur handler
   * GetOrganized handler
+
+## [5.1.16] 2026-07-31
+
+* [PR-503](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/503)
+  * Tilføjede overblik over brugere og deres ejerskaber.
+  * Omdøbte `os2forms_selvbetjening_deprecations`-modulet til
+    `os2forms_selvbetjening_overview`. Erstat derfor modul-navnet i URL'en
+    for at tilgå visningerne.
+
+## [5.1.15] 2026-07-28
+
+* [PR-532](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/532)
+  Rettede manglende brugerdata i booking-indsendelser efter opdateringen til
+  `itk-dev/os2forms_nemlogin_openid_connect` `2.5.x`, hvor brugertokenet gemmes
+  under sessionstype-specifikke sessionsnøgler.
+
+## [5.1.14] 2026-07-27
+
+* [PR-530](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/530)
+  Sikrede at progresbaren ikke vises over Drupals menu og undermenu.
+
+## [5.1.13] 2026-07-21
+
+* [PR-528](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/528)
+  Sikrede at drop-down menuer på administrationssider ikke blive cuttet af.
+* [PR-527](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/527)
+  Rettede placeringen af tidsfeltet i `datetime`-elementet når der benyttes
+  `timepicker`.
+* [PR-525](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/525)
+  Tilføjede et link fra selvbetjeningsside til formular.
+
+## [5.1.12] 2026-07-14
+
+* [PR-526](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/526)
+   Opdaterede til `itk-dev/os2forms_nemlogin_openid_connect` `2.5.1`
+  * Der benyttes nu sessionstype specifikke sessionsnøgler.
+
+## [5.1.11] 2026-07-02
+
 * [PR-520](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/520)
   Tilføjede advarsel om manglede formularindstillinger.
+* [PR-523](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/523)
+  Sikrede at MaestroInherit ikke overskriver med original data ved sideskift.
 
 ## [5.1.10] 2026-06-22
 
@@ -852,7 +893,13 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.10...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.16...HEAD
+[5.1.16]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.15...5.1.16
+[5.1.15]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.14...5.1.15
+[5.1.14]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.13...5.1.14
+[5.1.13]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.12...5.1.13
+[5.1.12]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.11...5.1.12
+[5.1.11]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.10...5.1.11
 [5.1.10]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.9...5.1.10
 [5.1.9]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.8...5.1.9
 [5.1.8]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.7...5.1.8
