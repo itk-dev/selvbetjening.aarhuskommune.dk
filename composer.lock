@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9a9e5e5445b018797452a3a14b8892d",
+    "content-hash": "a430d830e0e4400b566805126cd1ed09",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9217,16 +9217,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-release/5.1.6",
+            "version": "dev-feature/fordelingskomponent",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "7d3d0032fb776194890436b25736e1a456ebea2a"
+                "reference": "4f5fe4af2ee721f7a51ab4ac3f626e071b5c66b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/7d3d0032fb776194890436b25736e1a456ebea2a",
-                "reference": "7d3d0032fb776194890436b25736e1a456ebea2a",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/4f5fe4af2ee721f7a51ab4ac3f626e071b5c66b9",
+                "reference": "4f5fe4af2ee721f7a51ab4ac3f626e071b5c66b9",
                 "shasum": ""
             },
             "require": {
@@ -9362,9 +9362,74 @@
             ],
             "description": "Drupal 10 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/release/5.1.5-and-avoid-inheriting-data-on-page-transition"
+                "source": "https://github.com/itk-dev/os2forms/tree/feature/fordelingskomponent"
             },
-            "time": "2026-07-02T08:43:42+00:00"
+            "time": "2026-08-11T11:03:45+00:00"
+        },
+        {
+            "name": "os2forms/os2forms_fordelingskomponent",
+            "version": "dev-os2forms_fordelingskomponent",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itk-dev/os2forms_fordelingskomponent.git",
+                "reference": "456c62845292119554592e2b98080c0cce0bc7fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/456c62845292119554592e2b98080c0cce0bc7fe",
+                "reference": "456c62845292119554592e2b98080c0cce0bc7fe",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/system_stream_wrapper": "^2.1",
+                "drush/drush": "^12 || ^13",
+                "ext-dom": "*",
+                "ext-soap": "*",
+                "ext-xsl": "*",
+                "itk-dev/serviceplatformen": "^1.9",
+                "os2forms/os2forms": "dev-feature/fordelingskomponent as 5.2.0",
+                "os2web/os2web_datalookup": "dev-feature/fetch-first-middle-and-last-name as 3.4.0",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "drupal/coder": "^8.3",
+                "ergebnis/composer-normalize": "^2.50",
+                "mglaman/composer-drupal-lenient": "^1.0",
+                "mglaman/phpstan-drupal": "^2.0",
+                "phpstan/extension-installer": "^1.4",
+                "phpunit/phpunit": "^9.6",
+                "vincentlanglet/twig-cs-fixer": "^3.13"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal-lenient": {
+                    "allowed-list": [
+                        "drupal/coc_forms_auto_export",
+                        "drupal/webform_node_element"
+                    ]
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Drupal\\os2forms_fordelingskomponent\\": "src/",
+                    "Drupal\\os2forms_fordelingskomponent\\Test\\": "tests/"
+                }
+            },
+            "license": [
+                "EUPL-1.2"
+            ],
+            "authors": [
+                {
+                    "name": "Mikkel Ricky",
+                    "email": "rimi@aarhus.dk"
+                }
+            ],
+            "description": "Fordelingskomponent integration for OS2Forms",
+            "support": {
+                "source": "https://github.com/itk-dev/os2forms_fordelingskomponent/tree/os2forms_fordelingskomponent",
+                "issues": "https://github.com/itk-dev/os2forms_fordelingskomponent/issues"
+            },
+            "time": "2026-06-11T21:57:02+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -9735,16 +9800,16 @@
         },
         {
             "name": "os2web/os2web_datalookup",
-            "version": "3.3.1",
+            "version": "dev-feature/fetch-first-middle-and-last-name",
             "source": {
                 "type": "git",
-                "url": "https://github.com/OS2web/os2web_datalookup.git",
-                "reference": "7d9ac9e147cd2c686bcf362388b83e3e954dc3f4"
+                "url": "https://github.com/itk-dev/os2web_datalookup.git",
+                "reference": "28258949dc3bc980695b627ca7bcc3ee0283db63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2web/os2web_datalookup/zipball/7d9ac9e147cd2c686bcf362388b83e3e954dc3f4",
-                "reference": "7d9ac9e147cd2c686bcf362388b83e3e954dc3f4",
+                "url": "https://api.github.com/repos/itk-dev/os2web_datalookup/zipball/28258949dc3bc980695b627ca7bcc3ee0283db63",
+                "reference": "28258949dc3bc980695b627ca7bcc3ee0283db63",
                 "shasum": ""
             },
             "require": {
@@ -9778,10 +9843,9 @@
             ],
             "description": "Provides integration with Danish data lookup services such as Service platformen or Datafordeler.",
             "support": {
-                "issues": "https://github.com/OS2web/os2web_datalookup/issues",
-                "source": "https://github.com/OS2web/os2web_datalookup/tree/3.3.1"
+                "source": "https://github.com/itk-dev/os2web_datalookup/tree/feature/fetch-first-middle-and-last-name"
             },
-            "time": "2026-06-17T12:38:50+00:00"
+            "time": "2026-04-29T07:42:10+00:00"
         },
         {
             "name": "os2web/os2web_key",
@@ -23647,9 +23711,21 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-release/5.1.6",
-            "alias": "5.1.6",
-            "alias_normalized": "5.1.6.0"
+            "version": "dev-feature/fordelingskomponent",
+            "alias": "5.2.0",
+            "alias_normalized": "5.2.0.0"
+        },
+        {
+            "package": "os2forms/os2forms_fordelingskomponent",
+            "version": "dev-os2forms_fordelingskomponent",
+            "alias": "1.0.0",
+            "alias_normalized": "1.0.0.0"
+        },
+        {
+            "package": "os2web/os2web_datalookup",
+            "version": "dev-feature/fetch-first-middle-and-last-name",
+            "alias": "3.4.0",
+            "alias_normalized": "3.4.0.0"
         }
     ],
     "minimum-stability": "dev",

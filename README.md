@@ -1,12 +1,13 @@
 # selvbetjening.aarhuskommune.dk
 
-## Fordelingskomponenten
+<details>
+<summary>Fordelingskomponenten</summary>
 
-### Production (dev)
+## Production (dev)
 
 * <https://getcomposer.org/doc/03-cli.md#repository-repo>
 
-``` shell name=require-prod
+``` shell name=fordelingskomponenten-require-prod
 git checkout develop composer.json composer.lock
 git restore --staged composer.json composer.lock
 
@@ -24,14 +25,14 @@ docker compose exec phpfpm composer require "os2forms/os2forms_fordelingskompone
 docker compose exec phpfpm composer normalize
 ```
 
-### Development
+## Development
 
 Assuming that a clone of <https://github.com/itk-dev/os2forms_fordelingskomponent/tree/os2forms_fordelingskomponent>
 sits in `web/sites/default/modules/os2forms_fordelingskomponent` and a clone of
 <https://github.com/itk-dev/serviceplatformen/tree/feature/SF2900-Fordelingskomponenten> sits in
 `packages/itk-dev/serviceplatformen`:
 
-``` shell name=require-dev
+``` shell name=fordelingskomponent-require-dev
 docker compose exec phpfpm composer repo add os2forms_fordelingskomponent '{
  "type": "path",
  "url": "web/sites/default/modules/os2forms_fordelingskomponent",
@@ -105,7 +106,7 @@ index 9e18a9a3..4bd43818 100644
      "minimum-stability": "dev",
 ```
 
--------------------------------------------------------------------------------
+</details>
 
 ## Getting started
 

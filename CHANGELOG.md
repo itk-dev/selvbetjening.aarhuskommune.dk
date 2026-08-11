@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-511](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/511)
+  Tilføjede "Fordelingskomponenten"
+
 ## [5.1.16] 2026-07-31
 
 * [PR-503](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/503)
