@@ -1,28 +1,31 @@
 # selvbetjening.aarhuskommune.dk
 
-## F2
 
-### Production (dev)
+<details>
+<summary>F2</summary>
+
+## Production (dev)
 
 * <https://getcomposer.org/doc/03-cli.md#repository-repo>
 
-``` shell name=require-prod
+``` shell name=f2-require-prod
 git checkout develop composer.json composer.lock
 git restore --staged composer.json composer.lock
 
 docker compose exec phpfpm composer repo add os2forms/os2forms_f2 vcs https://github.com/itk-dev/os2forms_f2
 
 docker compose exec phpfpm composer require "os2forms/os2forms_f2":"dev-os2forms_f2 as 1.0.0"
+docker compose exec phpfpm composer normalize
 ```
 
-### Development
+## Development
 
 Assuming that a clone of <https://github.com/itk-dev/os2forms_f2/tree/os2forms_f2>
 sits in `web/sites/default/modules/os2forms_f2` and a clone of
 <https://github.com/itk-dev/f2-api-client/tree/f2-api-client> sits in
 `packages/itk-dev/f2-api-client`:
 
-``` shell name=require-dev
+``` shell name=f2-require-dev
 git checkout develop composer.json composer.lock
 git restore --staged composer.json composer.lock
 
@@ -39,6 +42,7 @@ docker compose exec phpfpm composer repo add itk-dev/f2-api-client path packages
 
 docker compose exec phpfpm composer require "os2forms/os2forms_f2":"1.0-dev"
 ```
+</details>
 
 ## Getting started
 
