@@ -1,0 +1,60 @@
+# This is only for testing. DO NOT USE IN PRODUCTION!
+#
+# Use this file for test deployment on a test server:
+#
+# # .env.docker.local
+# COMPOSE_FILES=…,docker-compose.server.test.yml
+#
+# # web/sites/default/settings.local.php (replace ${COMPOSE_SERVER_DOMAIN} with the actual domain)
+# $config['openid_connect.client.generic']['settings']['authorization_endpoint'] = 'https://idp-admin.${COMPOSE_SERVER_DOMAIN}/oauth2/authorize';
+# $config['openid_connect.client.generic']['settings']['token_endpoint'] = 'https://idp-admin.${COMPOSE_SERVER_DOMAIN}/oauth2/token';
+
+include:
+  - docker-compose.oidc.yml
+
+services:
+  idp-citizen:
+    restart: unless-stopped
+    networks: !override
+      - frontend
+    labels: !override
+      - "traefik.enable=true"
+      - "traefik.docker.network=frontend"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-idp-citizen.rule=Host(`idp-citizen-${COMPOSE_SERVER_DOMAIN:?}`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-idp-citizen.entrypoints=websecure"
+
+  idp-admin:
+    restart: unless-stopped
+    networks: !override
+      - frontend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=frontend"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-idp-admin.rule=Host(`idp-admin.${COMPOSE_SERVER_DOMAIN:?}`)"
+
+  mariadb:
+    image: itkdev/mariadb:latest
+    networks:
+      - app
+    ports:
+      - "3306"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=db
+      - MYSQL_PASSWORD=db
+      - MYSQL_DATABASE=db
+    volumes:
+      - ./.docker/data/mariadb:/var/lib/mysql:Z
+
+  phpfpm:
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      # memcached:
+      #   condition: service_healthy
