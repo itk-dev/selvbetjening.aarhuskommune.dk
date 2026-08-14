@@ -1,4 +1,41 @@
 services:
+  idp-admin:
+    image: ghcr.io/geigerzaehler/oidc-provider-mock:latest
+    container_name: idp-admin.${COMPOSE_DOMAIN:?}
+    networks:
+      - app
+      - frontend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=frontend"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME:?}-idp-admin.rule=Host(`idp-admin.${COMPOSE_DOMAIN:?}`)"
+    expose:
+      - "80"
+    command: [
+        "--port",
+        "80",
+
+        # https://oidc-provider-mock.readthedocs.io/stable/usage.html#predefined-users
+        # User matching config/sync/openid_connect.settings.yml
+        "--user-claims",
+        '{"sub": "administrator", "email": "administrator@example.com", "name": "Administrator", "groups": ["Superadministrator"]}',
+
+        "--user-claims",
+        '{"sub": "site_admin", "email": "site_admin@example.com", "name": "Site Admin", "groups": ["SiteAdmin"]}',
+
+        "--user-claims",
+        '{"sub": "editor", "email": "editor@example.com", "name": "Tryksen", "groups": ["Redaktoer"]}',
+
+        "--user-claims",
+        '{"sub": "flow_designer", "email": "forloeb_designer@example.com", "name": "Flowdesigner", "groups": ["GG-Rolle-Digitaleworkflows-flowdesigner"]}',
+
+        "--user-claims",
+        '{"sub": "forloeb_designer", "email": "forloeb_designer@example.com", "name": "Forløbsdesigner", "groups": ["GG-Rolle-Digitaleworkflows-forloebsdesigner"]}',
+
+        "--user-claims",
+        '{"sub": "medarbejder", "email": "medarbejder@example.com", "name": "Medarbejder", "groups": ["GG-Rolle-Digitaleworkflows-medarbejder"]}',
+      ]
+
   # https://github.com/geigerzaehler/oidc-provider-mock
   idp-citizen:
     image: ghcr.io/geigerzaehler/oidc-provider-mock:latest
