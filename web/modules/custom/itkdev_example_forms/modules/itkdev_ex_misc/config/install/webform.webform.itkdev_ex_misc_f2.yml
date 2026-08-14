@@ -225,7 +225,7 @@ access:
     permissions: {}
 handlers:
   f2:
-    id: os2forms_f2
+    id: os2forms_f2_f2
     handler_id: f2
     label: F2
     notes: ""
@@ -233,7 +233,10 @@ handlers:
     conditions: {}
     weight: 0
     settings:
-      handler:
+      archive:
         attachment_element: attachment
-        archive_target: case_id
+        document_title: "[webform_submission:label] ([site:url])"
+        archive_target: matter_id
+        archive_target_matter:
+          matter_id: "87"
 variants: {}
