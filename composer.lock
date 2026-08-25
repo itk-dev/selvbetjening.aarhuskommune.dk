@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "514b74044f144f6bf49a2acb10a6d0fe",
+    "content-hash": "5289432c476ed2df22d5645bd4796e01",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9366,37 +9366,59 @@
         },
         {
             "name": "os2forms/os2forms_f2",
-            "version": "dev-os2forms_f2",
+            "version": "1.0.0-rc.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_f2.git",
-                "reference": "914967844c563fd932c5436bb69c3c1903d849c4"
+                "reference": "04166af7aaaa0e35d79066af3111715fee97d6bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_f2/zipball/914967844c563fd932c5436bb69c3c1903d849c4",
-                "reference": "914967844c563fd932c5436bb69c3c1903d849c4",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_f2/zipball/04166af7aaaa0e35d79066af3111715fee97d6bd",
+                "reference": "04166af7aaaa0e35d79066af3111715fee97d6bd",
                 "shasum": ""
             },
             "require": {
+                "drush/drush": "^12 || ^13",
                 "itk-dev/drupal_psr6_cache": "^1.1",
                 "itk-dev/f2-api-client": "dev-f2-api-client as 1.0.0",
-                "os2forms/os2forms": "^5.0"
+                "os2forms/os2forms": "^5.1",
+                "php": "^8.3"
             },
             "require-dev": {
-                "drupal/coder": "^9.0",
-                "ergebnis/composer-normalize": "^2.52"
+                "drupal/coder": "^8.3",
+                "ergebnis/composer-normalize": "^2.52",
+                "mglaman/composer-drupal-lenient": "^1.0",
+                "mglaman/phpstan-drupal": "^1.1",
+                "palantirnet/drupal-rector": "0.x-dev",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-deprecation-rules": "^1.0"
             },
             "type": "drupal-module",
+            "extra": {
+                "drupal-lenient": {
+                    "allowed-list": [
+                        "drupal/coc_forms_auto_export",
+                        "drupal/webform_node_element"
+                    ]
+                }
+            },
             "license": [
-                "MIT"
+                "EUPL-1.2"
+            ],
+            "authors": [
+                {
+                    "name": "Mikkel Ricky",
+                    "email": "rimi@aarhus.dk"
+                }
             ],
             "description": "OS2Forms: F2 integration",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms_f2/tree/os2forms_f2",
+                "source": "https://github.com/itk-dev/os2forms_f2/tree/1.0.0-rc.1",
                 "issues": "https://github.com/itk-dev/os2forms_f2/issues"
             },
-            "time": "2026-08-13T15:14:04+00:00"
+            "time": "2026-08-25T12:39:59+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -23713,19 +23735,12 @@
             "version": "dev-release/5.1.6",
             "alias": "5.1.6",
             "alias_normalized": "5.1.6.0"
-        },
-        {
-            "package": "os2forms/os2forms_f2",
-            "version": "dev-os2forms_f2",
-            "alias": "1.0.0",
-            "alias_normalized": "1.0.0.0"
         }
     ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/site_status_message": 15,
-        "os2forms/os2forms": 20,
-        "os2forms/os2forms_f2": 20
+        "os2forms/os2forms": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
