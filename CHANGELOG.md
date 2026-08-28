@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-511](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/511)
+  Tilføjede "Fordelingskomponenten"
 * [PR-535](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/535)
   * Opdaterede "Medarbejderlogin“-testopsætning.
   * Tilføjede test-serveropsætning
