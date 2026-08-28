@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a430d830e0e4400b566805126cd1ed09",
+    "content-hash": "f75078127f2df1793c7d99cb94e25daf",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9217,16 +9217,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-feature/fordelingskomponent",
+            "version": "dev-selvbetjening.aarhuskommune.dk",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "4f5fe4af2ee721f7a51ab4ac3f626e071b5c66b9"
+                "reference": "5b76663220977a1d9b074c31da9b32e141eb9476"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/4f5fe4af2ee721f7a51ab4ac3f626e071b5c66b9",
-                "reference": "4f5fe4af2ee721f7a51ab4ac3f626e071b5c66b9",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/5b76663220977a1d9b074c31da9b32e141eb9476",
+                "reference": "5b76663220977a1d9b074c31da9b32e141eb9476",
                 "shasum": ""
             },
             "require": {
@@ -9281,7 +9281,7 @@
                 "itk-dev/serviceplatformen": "^1.7.1",
                 "mglaman/composer-drupal-lenient": "^1.0",
                 "os2web/os2web_audit": "^1.0",
-                "os2web/os2web_datalookup": "^3.0",
+                "os2web/os2web_datalookup": "dev-selvbetjening.aarhuskommune.dk as 3.4.0",
                 "os2web/os2web_key": "^1.0",
                 "os2web/os2web_nemlogin": "^1.0",
                 "os2web/os2web_simplesaml": "dev-master",
@@ -9362,22 +9362,22 @@
             ],
             "description": "Drupal 10 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/feature/fordelingskomponent"
+                "source": "https://github.com/itk-dev/os2forms/tree/selvbetjening.aarhuskommune.dk"
             },
-            "time": "2026-08-11T11:03:45+00:00"
+            "time": "2026-08-28T07:03:21+00:00"
         },
         {
             "name": "os2forms/os2forms_fordelingskomponent",
-            "version": "dev-os2forms_fordelingskomponent",
+            "version": "1.0.0-rc.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_fordelingskomponent.git",
-                "reference": "456c62845292119554592e2b98080c0cce0bc7fe"
+                "reference": "1a544a80b03d6b8e37d2c3b77183edf4955a5425"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/456c62845292119554592e2b98080c0cce0bc7fe",
-                "reference": "456c62845292119554592e2b98080c0cce0bc7fe",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/1a544a80b03d6b8e37d2c3b77183edf4955a5425",
+                "reference": "1a544a80b03d6b8e37d2c3b77183edf4955a5425",
                 "shasum": ""
             },
             "require": {
@@ -9387,16 +9387,19 @@
                 "ext-soap": "*",
                 "ext-xsl": "*",
                 "itk-dev/serviceplatformen": "^1.9",
-                "os2forms/os2forms": "dev-feature/fordelingskomponent as 5.2.0",
-                "os2web/os2web_datalookup": "dev-feature/fetch-first-middle-and-last-name as 3.4.0",
+                "os2forms/os2forms": "dev-selvbetjening.aarhuskommune.dk as 5.2.0",
+                "os2web/os2web_datalookup": "dev-selvbetjening.aarhuskommune.dk as 3.4.0",
                 "php": "^8.3"
             },
             "require-dev": {
                 "drupal/coder": "^8.3",
-                "ergebnis/composer-normalize": "^2.50",
+                "ergebnis/composer-normalize": "^2.52",
                 "mglaman/composer-drupal-lenient": "^1.0",
-                "mglaman/phpstan-drupal": "^2.0",
+                "mglaman/phpstan-drupal": "^1.1",
+                "palantirnet/drupal-rector": "0.x-dev",
                 "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpunit/phpunit": "^9.6",
                 "vincentlanglet/twig-cs-fixer": "^3.13"
             },
@@ -9426,10 +9429,10 @@
             ],
             "description": "Fordelingskomponent integration for OS2Forms",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms_fordelingskomponent/tree/os2forms_fordelingskomponent",
+                "source": "https://github.com/itk-dev/os2forms_fordelingskomponent/tree/1.0.0-rc.1",
                 "issues": "https://github.com/itk-dev/os2forms_fordelingskomponent/issues"
             },
-            "time": "2026-06-11T21:57:02+00:00"
+            "time": "2026-08-28T07:37:13+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -9800,16 +9803,16 @@
         },
         {
             "name": "os2web/os2web_datalookup",
-            "version": "dev-feature/fetch-first-middle-and-last-name",
+            "version": "dev-selvbetjening.aarhuskommune.dk",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2web_datalookup.git",
-                "reference": "28258949dc3bc980695b627ca7bcc3ee0283db63"
+                "reference": "92252a30c7c04a3d05cd56d26c940d2693eae239"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2web_datalookup/zipball/28258949dc3bc980695b627ca7bcc3ee0283db63",
-                "reference": "28258949dc3bc980695b627ca7bcc3ee0283db63",
+                "url": "https://api.github.com/repos/itk-dev/os2web_datalookup/zipball/92252a30c7c04a3d05cd56d26c940d2693eae239",
+                "reference": "92252a30c7c04a3d05cd56d26c940d2693eae239",
                 "shasum": ""
             },
             "require": {
@@ -9843,9 +9846,9 @@
             ],
             "description": "Provides integration with Danish data lookup services such as Service platformen or Datafordeler.",
             "support": {
-                "source": "https://github.com/itk-dev/os2web_datalookup/tree/feature/fetch-first-middle-and-last-name"
+                "source": "https://github.com/itk-dev/os2web_datalookup/tree/selvbetjening.aarhuskommune.dk"
             },
-            "time": "2026-04-29T07:42:10+00:00"
+            "time": "2026-08-27T12:09:56+00:00"
         },
         {
             "name": "os2web/os2web_key",
@@ -23711,19 +23714,13 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-feature/fordelingskomponent",
+            "version": "dev-selvbetjening.aarhuskommune.dk",
             "alias": "5.2.0",
             "alias_normalized": "5.2.0.0"
         },
         {
-            "package": "os2forms/os2forms_fordelingskomponent",
-            "version": "dev-os2forms_fordelingskomponent",
-            "alias": "1.0.0",
-            "alias_normalized": "1.0.0.0"
-        },
-        {
             "package": "os2web/os2web_datalookup",
-            "version": "dev-feature/fetch-first-middle-and-last-name",
+            "version": "dev-selvbetjening.aarhuskommune.dk",
             "alias": "3.4.0",
             "alias_normalized": "3.4.0.0"
         }
@@ -23732,7 +23729,6 @@
     "stability-flags": {
         "drupal/site_status_message": 15,
         "os2forms/os2forms": 20,
-        "os2forms/os2forms_fordelingskomponent": 20,
         "os2web/os2web_datalookup": 20
     },
     "prefer-stable": true,
