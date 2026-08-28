@@ -14,3 +14,4 @@ parameters:
   excludePaths:
     - web/modules/custom/itkdev_booking
     - web/modules/custom/os2forms_custom_view_builders/src/CustomViewBuilderWebformSubmission.php
+    - web/modules/custom/selvbetjening_kp_forms/scripts

@@ -6,6 +6,8 @@
 
   <exclude-pattern>web/modules/custom/itkdev_booking/</exclude-pattern>
   <exclude-pattern>web/modules/custom/itkdev_booking/assets/</exclude-pattern>
+  <exclude-pattern>web/modules/custom/selvbetjening_kp_forms/data/</exclude-pattern>
+  <exclude-pattern>web/modules/custom/selvbetjening_kp_forms/scripts/</exclude-pattern>
 
   <!-- Show progress of the run -->
   <arg value="p"/>
