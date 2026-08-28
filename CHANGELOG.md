@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.17] 2026-08-28
+
 * [PR-511](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/511)
   Tilføjede "Fordelingskomponenten"
 * [PR-535](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/535)
@@ -889,7 +891,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.16...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.17...HEAD
+[5.1.17]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.16...5.1.17
 [5.1.16]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.15...5.1.16
 [5.1.15]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.14...5.1.15
 [5.1.14]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.13...5.1.14
