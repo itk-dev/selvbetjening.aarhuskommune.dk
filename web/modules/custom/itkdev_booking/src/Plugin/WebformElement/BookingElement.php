@@ -229,6 +229,16 @@ class BookingElement extends Hidden {
     $elements = $form['elements'];
     foreach ($elements as $key => $form_element) {
       if (is_array($form_element) && isset($form_element['#type']) && 'booking_element' === $form_element['#type']) {
+        // Abandon the submission if the user data that preSave() attaches is
+        // missing; Book Aarhus rejects bookings without it.
+        $userHelper = new UserHelper();
+        $userArray = $userHelper->getUserValues(\Drupal::request());
+
+        if (empty($userArray['name']) || empty($userArray['userId'])) {
+          $form_state->setError($form, t('Required session values are missing. Please try again. If the error persists, contact the person responsible for this form.'));
+          return;
+        }
+
         try {
           $bookingValues = json_decode($form_state->getValues()[$key], TRUE, 512, JSON_THROW_ON_ERROR);
         }
