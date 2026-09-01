@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f75078127f2df1793c7d99cb94e25daf",
+    "content-hash": "69ce75d9cf2a7d65aa65594459e98476",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9217,16 +9217,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-selvbetjening.aarhuskommune.dk",
+            "version": "dev-feature/add-handler-and-digital-signature-to-selvbetjening",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "5b76663220977a1d9b074c31da9b32e141eb9476"
+                "reference": "931725e747cbf9e004f0dbd6fcaa194543d7fea7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/5b76663220977a1d9b074c31da9b32e141eb9476",
-                "reference": "5b76663220977a1d9b074c31da9b32e141eb9476",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/931725e747cbf9e004f0dbd6fcaa194543d7fea7",
+                "reference": "931725e747cbf9e004f0dbd6fcaa194543d7fea7",
                 "shasum": ""
             },
             "require": {
@@ -9362,22 +9362,22 @@
             ],
             "description": "Drupal 10 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/selvbetjening.aarhuskommune.dk"
+                "source": "https://github.com/itk-dev/os2forms/tree/feature/add-handler-and-digital-signature-to-selvbetjening"
             },
-            "time": "2026-08-28T07:03:21+00:00"
+            "time": "2026-09-01T07:41:07+00:00"
         },
         {
             "name": "os2forms/os2forms_fordelingskomponent",
-            "version": "1.0.0-rc.1",
+            "version": "1.0.0-rc.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_fordelingskomponent.git",
-                "reference": "1a544a80b03d6b8e37d2c3b77183edf4955a5425"
+                "reference": "25489c779a104b6dca66cb1fa5575ca607d70711"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/1a544a80b03d6b8e37d2c3b77183edf4955a5425",
-                "reference": "1a544a80b03d6b8e37d2c3b77183edf4955a5425",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_fordelingskomponent/zipball/25489c779a104b6dca66cb1fa5575ca607d70711",
+                "reference": "25489c779a104b6dca66cb1fa5575ca607d70711",
                 "shasum": ""
             },
             "require": {
@@ -9387,7 +9387,7 @@
                 "ext-soap": "*",
                 "ext-xsl": "*",
                 "itk-dev/serviceplatformen": "^1.9",
-                "os2forms/os2forms": "dev-selvbetjening.aarhuskommune.dk as 5.2.0",
+                "os2forms/os2forms": "^5.2",
                 "os2web/os2web_datalookup": "dev-selvbetjening.aarhuskommune.dk as 3.4.0",
                 "php": "^8.3"
             },
@@ -9429,10 +9429,10 @@
             ],
             "description": "Fordelingskomponent integration for OS2Forms",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms_fordelingskomponent/tree/1.0.0-rc.1",
+                "source": "https://github.com/itk-dev/os2forms_fordelingskomponent/tree/1.0.0-rc.2",
                 "issues": "https://github.com/itk-dev/os2forms_fordelingskomponent/issues"
             },
-            "time": "2026-08-28T07:37:13+00:00"
+            "time": "2026-08-31T13:14:21+00:00"
         },
         {
             "name": "os2forms/os2forms_forloeb_profile",
@@ -9480,16 +9480,16 @@
         },
         {
             "name": "os2forms/os2forms_get_organized",
-            "version": "2.1.1",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OS2Forms/os2forms_get_organized.git",
-                "reference": "f323ee0251229e85afbb2fa112297980af0173f4"
+                "reference": "25a4ca4559e46aac939856921adfbaf52cdb2d7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OS2Forms/os2forms_get_organized/zipball/f323ee0251229e85afbb2fa112297980af0173f4",
-                "reference": "f323ee0251229e85afbb2fa112297980af0173f4",
+                "url": "https://api.github.com/repos/OS2Forms/os2forms_get_organized/zipball/25a4ca4559e46aac939856921adfbaf52cdb2d7c",
+                "reference": "25a4ca4559e46aac939856921adfbaf52cdb2d7c",
                 "shasum": ""
             },
             "require": {
@@ -9521,9 +9521,9 @@
             "description": "OS2Forms GetOrganized integration",
             "support": {
                 "issues": "https://github.com/OS2Forms/os2forms_get_organized/issues",
-                "source": "https://github.com/OS2Forms/os2forms_get_organized/tree/2.1.1"
+                "source": "https://github.com/OS2Forms/os2forms_get_organized/tree/2.2.0"
             },
-            "time": "2026-04-09T10:23:34+00:00"
+            "time": "2026-06-18T09:06:37+00:00"
         },
         {
             "name": "os2forms/os2forms_organisation",
@@ -23714,7 +23714,7 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-selvbetjening.aarhuskommune.dk",
+            "version": "dev-feature/add-handler-and-digital-signature-to-selvbetjening",
             "alias": "5.2.0",
             "alias_normalized": "5.2.0.0"
         },
@@ -23729,6 +23729,7 @@
     "stability-flags": {
         "drupal/site_status_message": 15,
         "os2forms/os2forms": 20,
+        "os2forms/os2forms_fordelingskomponent": 5,
         "os2web/os2web_datalookup": 20
     },
     "prefer-stable": true,

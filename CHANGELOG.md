@@ -6,6 +6,18 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-539](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/539)
+  Opdaterede handlers så man kan konfigurere på hvilke tilstande de skal
+  eksekvere.
+  * API request handler
+  * Digital post handler
+  * Fasit handler
+  * FBS handler
+  * Digital signatur handler
+  * GetOrganized handler
+* Flyttede konfigurering af digital signature fra attachment elementet til
+  handleren.
+
 ## [5.1.17] 2026-08-28
 
 * [PR-511](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/511)
