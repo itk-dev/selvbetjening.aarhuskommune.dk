@@ -9221,12 +9221,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "5038fc64cc4e98d205bb049914534d4c81f26b75"
+                "reference": "84b3506c6a7a3e52a5e43c6f474c386eb5bbecb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/5038fc64cc4e98d205bb049914534d4c81f26b75",
-                "reference": "5038fc64cc4e98d205bb049914534d4c81f26b75",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/84b3506c6a7a3e52a5e43c6f474c386eb5bbecb2",
+                "reference": "84b3506c6a7a3e52a5e43c6f474c386eb5bbecb2",
                 "shasum": ""
             },
             "require": {
@@ -9364,7 +9364,7 @@
             "support": {
                 "source": "https://github.com/itk-dev/os2forms/tree/feature/add-handler-and-digital-signature-to-selvbetjening"
             },
-            "time": "2026-08-31T14:34:58+00:00"
+            "time": "2026-09-01T06:56:33+00:00"
         },
         {
             "name": "os2forms/os2forms_fordelingskomponent",
