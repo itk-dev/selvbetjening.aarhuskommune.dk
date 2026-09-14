@@ -6,6 +6,20 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.18] 2026-09-14
+
+* [PR-539](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/539)
+  Opdaterede handlers så man kan konfigurere på hvilke tilstande de skal
+  eksekvere.
+  * API request handler
+  * Digital post handler
+  * Fasit handler
+  * FBS handler
+  * Digital signatur handler
+  * GetOrganized handler
+* Flyttede konfigurering af digital signature fra attachment elementet til
+  handleren.
+
 ## [5.1.17] 2026-08-28
 
 * [PR-511](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/511)
@@ -891,7 +905,8 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.17...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.18...HEAD
+[5.1.18]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.17...5.1.18
 [5.1.17]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.16...5.1.17
 [5.1.16]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.15...5.1.16
 [5.1.15]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.14...5.1.15
