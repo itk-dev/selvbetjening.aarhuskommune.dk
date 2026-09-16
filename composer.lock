@@ -9527,16 +9527,16 @@
         },
         {
             "name": "os2forms/os2forms_organisation",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_organisation.git",
-                "reference": "1483199d3e7a9616939962add9100a96019c21b5"
+                "reference": "99b453ee3b065d1ae1eabf57f88c5acb91d40340"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_organisation/zipball/1483199d3e7a9616939962add9100a96019c21b5",
-                "reference": "1483199d3e7a9616939962add9100a96019c21b5",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_organisation/zipball/99b453ee3b065d1ae1eabf57f88c5acb91d40340",
+                "reference": "99b453ee3b065d1ae1eabf57f88c5acb91d40340",
                 "shasum": ""
             },
             "require": {
@@ -9569,9 +9569,9 @@
             "description": "OS2Forms organisation",
             "support": {
                 "issues": "https://github.com/itk-dev/os2forms_organisation/issues",
-                "source": "https://github.com/itk-dev/os2forms_organisation/tree/2.2.1"
+                "source": "https://github.com/itk-dev/os2forms_organisation/tree/2.2.2"
             },
-            "time": "2025-02-28T10:31:40+00:00"
+            "time": "2026-09-15T12:49:11+00:00"
         },
         {
             "name": "os2forms/os2forms_payment",
