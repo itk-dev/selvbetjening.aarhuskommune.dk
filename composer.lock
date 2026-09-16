@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1d225204d36fff530879f16de55f9d5",
+    "content-hash": "21470128dc69f7a85f596d01c46a3581",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9217,16 +9217,16 @@
         },
         {
             "name": "os2forms/os2forms",
-            "version": "dev-selvbetjening.aarhuskommune.dk",
+            "version": "dev-feature/selvbetjening-and-maestro-inheret-on-prepare",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "a7d727cd73f8d9f6ed0ab2ad5909ff4b7ab2c9eb"
+                "reference": "c550a3e51f60789784b6961e70e6b242c6373463"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/a7d727cd73f8d9f6ed0ab2ad5909ff4b7ab2c9eb",
-                "reference": "a7d727cd73f8d9f6ed0ab2ad5909ff4b7ab2c9eb",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/c550a3e51f60789784b6961e70e6b242c6373463",
+                "reference": "c550a3e51f60789784b6961e70e6b242c6373463",
                 "shasum": ""
             },
             "require": {
@@ -9362,9 +9362,9 @@
             ],
             "description": "Drupal 10 OS2Form module provides advanced webform functionality for Danish Municipalities",
             "support": {
-                "source": "https://github.com/itk-dev/os2forms/tree/selvbetjening.aarhuskommune.dk"
+                "source": "https://github.com/itk-dev/os2forms/tree/feature/selvbetjening-and-maestro-inheret-on-prepare"
             },
-            "time": "2026-09-14T10:26:21+00:00"
+            "time": "2026-09-16T07:08:07+00:00"
         },
         {
             "name": "os2forms/os2forms_fordelingskomponent",
@@ -23714,7 +23714,7 @@
     "aliases": [
         {
             "package": "os2forms/os2forms",
-            "version": "dev-selvbetjening.aarhuskommune.dk",
+            "version": "dev-feature/selvbetjening-and-maestro-inheret-on-prepare",
             "alias": "5.2.0",
             "alias_normalized": "5.2.0.0"
         },

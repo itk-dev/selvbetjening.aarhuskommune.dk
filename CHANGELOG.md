@@ -8,6 +8,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 * Opdaterede [OS2Forms Organisation](https://github.com/1itk-dev/os2forms_organisation)
   * Gjorde funktion/ansættelses vælger obligatorisk.
+* Opdaterede MaestroInheritTask så data nu overføres før adgangstjek.
 
 ## [5.1.18] 2026-09-14
 
