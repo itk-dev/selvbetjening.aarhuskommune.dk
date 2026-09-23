@@ -204,7 +204,6 @@
                 "Maestro flow task entity autocomplete patch": "patches/drupal/maestro/maestro_entity_autocomplete.patch"
             },
             "drupal/webform": {
-                "Fix issue with webform search containing æøå": "https://www.drupal.org/files/issues/2024-02-26/3415445-cant-load-non-english_0.patch",
                 "Email handler shows fieldset and section titles despite all children fields etc are excluded (https://www.drupal.org/project/webform/issues/3482544)": "patches/drupal/webform/email_handler_titles_despite_exluded_element.patch",
                 "patches/drupal/webform/devel_generate.patch": "patches/drupal/webform/devel_generate.patch"
             },

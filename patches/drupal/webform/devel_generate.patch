@@ -1,22 +1,8 @@
 diff --git a/src/Plugin/DevelGenerate/WebformSubmissionDevelGenerate.php b/src/Plugin/DevelGenerate/WebformSubmissionDevelGenerate.php
-index c072ae2..077ab36 100644
+index b51881a09..077ab3617 100644
 --- a/src/Plugin/DevelGenerate/WebformSubmissionDevelGenerate.php
 +++ b/src/Plugin/DevelGenerate/WebformSubmissionDevelGenerate.php
-@@ -52,13 +52,6 @@ class WebformSubmissionDevelGenerate extends DevelGenerateBase implements Contai
-    */
-   protected $database;
-
--  /**
--   * The entity type manager.
--   *
--   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
--   */
--  protected $entityTypeManager;
--
-   /**
-    * The webform submission generation service.
-    *
-@@ -90,7 +83,8 @@ class WebformSubmissionDevelGenerate extends DevelGenerateBase implements Contai
+@@ -83,7 +83,8 @@ class WebformSubmissionDevelGenerate extends DevelGenerateBase implements Contai
    /**
     * {@inheritdoc}
     */
@@ -26,7 +12,7 @@ index c072ae2..077ab36 100644
      $instance = new static($configuration, $plugin_id, $plugin_definition);
      $instance->request = $container->get('request_stack')->getCurrentRequest();
      $instance->database = $container->get('database');
-@@ -105,7 +99,8 @@ public static function create(ContainerInterface $container, array $configuratio
+@@ -98,7 +99,8 @@ class WebformSubmissionDevelGenerate extends DevelGenerateBase implements Contai
    /**
     * {@inheritdoc}
     */
@@ -36,7 +22,7 @@ index c072ae2..077ab36 100644
      $form['message'] = [
        '#type' => 'webform_message',
        '#message_message' => $this->t('Please note that no emails will be sent while generating webform submissions.'),
-@@ -230,7 +225,8 @@ public function validateForm(array $form, FormStateInterface $form_state) {
+@@ -223,7 +225,8 @@ class WebformSubmissionDevelGenerate extends DevelGenerateBase implements Contai
    /**
     * {@inheritdoc}
     */
@@ -46,7 +32,7 @@ index c072ae2..077ab36 100644
      $this->generateSubmissions($values);
    }
 
-@@ -348,7 +344,8 @@ protected function generateSubmission(&$results) {
+@@ -341,7 +344,8 @@ class WebformSubmissionDevelGenerate extends DevelGenerateBase implements Contai
    /**
     * {@inheritdoc}
     */
