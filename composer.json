@@ -31,7 +31,7 @@
         "itk-dev/os2forms_nemlogin_openid_connect": "^2.2",
         "itk-dev/os2forms_user_field_lookup": "^1.1",
         "itk-dev/web_accessibility_statement": "^1.1",
-        "os2forms/os2forms": "dev-selvbetjening.aarhuskommune.dk as 5.2.0",
+        "os2forms/os2forms": "dev-feature/selvbetjening-and-maestro-inheret-on-prepare as 5.2.0",
         "os2forms/os2forms_fordelingskomponent": "^1.0@RC",
         "os2forms/os2forms_forloeb_profile": "^1.15",
         "os2forms/os2forms_get_organized": "^2.0",
@@ -204,7 +204,6 @@
                 "Maestro flow task entity autocomplete patch": "patches/drupal/maestro/maestro_entity_autocomplete.patch"
             },
             "drupal/webform": {
-                "Fix issue with webform search containing æøå": "https://www.drupal.org/files/issues/2024-02-26/3415445-cant-load-non-english_0.patch",
                 "Email handler shows fieldset and section titles despite all children fields etc are excluded (https://www.drupal.org/project/webform/issues/3482544)": "patches/drupal/webform/email_handler_titles_despite_exluded_element.patch",
                 "patches/drupal/webform/devel_generate.patch": "patches/drupal/webform/devel_generate.patch"
             },
