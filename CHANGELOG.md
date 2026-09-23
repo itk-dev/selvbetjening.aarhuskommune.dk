@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-543](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/543)
+  Sikkerhedsopdateringer.
+
 ## [5.1.18] 2026-09-14
 
 * [PR-539](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/539)
