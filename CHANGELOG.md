@@ -6,6 +6,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Sikkerhedsopdateringer:
+  * `drupal/webform` `6.3.1`
+  * `drupal/webform_rest` `4.2.1`
+  * `os2forms/os2forms_rest_api` `2.4.0`
 * Opdaterede [OS2Forms Organisation](https://github.com/1itk-dev/os2forms_organisation)
   * Gjorde funktion/ansættelses vælger obligatorisk.
 * Opdaterede MaestroInheritTask så data nu overføres før adgangstjek.
