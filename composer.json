@@ -37,7 +37,7 @@
         "os2forms/os2forms_get_organized": "^2.0",
         "os2forms/os2forms_organisation": "^2.1",
         "os2forms/os2forms_payment": "^1.0",
-        "os2forms/os2forms_rest_api": "^2.2",
+        "os2forms/os2forms_rest_api": "^2.4",
         "os2forms/os2forms_sync": "^1.2",
         "os2forms/os2forms_webform_submission_log": "^1.1",
         "os2web/os2web_datalookup": "dev-selvbetjening.aarhuskommune.dk as 3.4.0"
@@ -202,10 +202,6 @@
             "drupal/maestro": {
                 "Maestro task notification permission patch": "patches/drupal/maestro/maestro_task_select_notification_role_permission.patch",
                 "Maestro flow task entity autocomplete patch": "patches/drupal/maestro/maestro_entity_autocomplete.patch"
-            },
-            "drupal/webform": {
-                "Email handler shows fieldset and section titles despite all children fields etc are excluded (https://www.drupal.org/project/webform/issues/3482544)": "patches/drupal/webform/email_handler_titles_despite_exluded_element.patch",
-                "patches/drupal/webform/devel_generate.patch": "patches/drupal/webform/devel_generate.patch"
             },
             "os2forms/os2forms": {
                 "Hide additional os2forms webform settings page": "patches/drupal/os2forms/os2forms_hide_additional_settings_page.diff"
