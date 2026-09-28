@@ -62,7 +62,7 @@
   {# Format value a positive float. An empty string is rendered if the value cannot be formatted as a positive float. #}
   {% macro beloeb(value) -%}
     {%- set formatted_value = value|replace({'.': ''})|replace({',': '.'})|number_format(2, '.', '')|trim -%}
-    {%- if formatted_value != '0.00' and not(formatted_value starts with '-') -%}
+    {%- if formatted_value != '0.00' and not (formatted_value starts with '-') -%}
       {{ formatted_value }}
     {%- endif -%}
   {%- endmacro %}
