@@ -6849,24 +6849,26 @@
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v6.11.1",
+            "version": "v7.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/php-jwt.git",
-                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66"
+                "reference": "f502cdbf279cd7532060b041f7c22a05208c0b93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/php-jwt/zipball/d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
-                "reference": "d1e91ecf8c598d073d0995afa8cd5c75c6e19e66",
+                "url": "https://api.github.com/repos/googleapis/php-jwt/zipball/f502cdbf279cd7532060b041f7c22a05208c0b93",
+                "reference": "f502cdbf279cd7532060b041f7c22a05208c0b93",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.0"
             },
             "require-dev": {
-                "guzzlehttp/guzzle": "^7.4",
-                "phpspec/prophecy-phpunit": "^2.0",
+                "guzzlehttp/guzzle": "^7.4||^8.0",
+                "phpfastcache/phpfastcache": "^9.2",
+                "phpseclib/phpseclib": "~3.0",
+                "phpspec/prophecy-phpunit": "^2.2",
                 "phpunit/phpunit": "^9.5",
                 "psr/cache": "^2.0||^3.0",
                 "psr/http-client": "^1.0",
@@ -6874,9 +6876,18 @@
             },
             "suggest": {
                 "ext-sodium": "Support EdDSA (Ed25519) signatures",
-                "paragonie/sodium_compat": "Support EdDSA (Ed25519) signatures when libsodium is not present"
+                "paragonie/sodium_compat": "Support EdDSA (Ed25519) signatures when libsodium is not present",
+                "phpseclib/phpseclib": "Support PS256 (RSASSA-PSS) signatures"
             },
             "type": "library",
+            "extra": {
+                "component": {
+                    "id": "jwt",
+                    "path": "Jwt",
+                    "entry": "README.md",
+                    "target": "googleapis/php-jwt.git"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Firebase\\JWT\\": "src"
@@ -6899,16 +6910,16 @@
                 }
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
-            "homepage": "https://github.com/firebase/php-jwt",
+            "homepage": "https://github.com/googleapis/php-jwt",
             "keywords": [
                 "jwt",
                 "php"
             ],
             "support": {
-                "issues": "https://github.com/firebase/php-jwt/issues",
-                "source": "https://github.com/firebase/php-jwt/tree/v6.11.1"
+                "issues": "https://github.com/googleapis/php-jwt/issues",
+                "source": "https://github.com/googleapis/php-jwt/tree/v7.2.0"
             },
-            "time": "2025-04-09T20:32:01+00:00"
+            "time": "2026-09-21T19:29:58+00:00"
         },
         {
             "name": "gettext/gettext",
@@ -8106,35 +8117,35 @@
         },
         {
             "name": "itk-dev/openid-connect",
-            "version": "3.2.1",
+            "version": "4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/openid-connect.git",
-                "reference": "7bea58e5d8b338a1e0d260653ccf3f72fc2a4c2d"
+                "reference": "f19b9a39e7f1beae231d0b06e5b7a78a9efd8eb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/openid-connect/zipball/7bea58e5d8b338a1e0d260653ccf3f72fc2a4c2d",
-                "reference": "7bea58e5d8b338a1e0d260653ccf3f72fc2a4c2d",
+                "url": "https://api.github.com/repos/itk-dev/openid-connect/zipball/f19b9a39e7f1beae231d0b06e5b7a78a9efd8eb5",
+                "reference": "f19b9a39e7f1beae231d0b06e5b7a78a9efd8eb5",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-openssl": "*",
-                "firebase/php-jwt": "^6.8",
+                "firebase/php-jwt": "^7.0",
                 "league/oauth2-client": "^2.6",
-                "php": "^8.1",
+                "php": "^8.3",
                 "psr/cache": "^2.0 || ^3.0",
                 "psr/http-client": "^1.0",
-                "robrichards/xmlseclibs": "^3.1"
+                "robrichards/xmlseclibs": "^3.1.5"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-                "escapestudios/symfony2-coding-standard": "^3.12",
-                "mockery/mockery": "^1.4",
-                "phpunit/php-code-coverage": "^9.2",
-                "phpunit/phpunit": "^9.5",
-                "vimeo/psalm": "^5.0"
+                "ergebnis/composer-normalize": "^2.50",
+                "friendsofphp/php-cs-fixer": "^3.75",
+                "mockery/mockery": "^1.6.12",
+                "phpstan/phpstan": "^2.1.40",
+                "phpunit/php-code-coverage": "^12",
+                "phpunit/phpunit": "^12"
             },
             "type": "library",
             "autoload": {
@@ -8163,9 +8174,9 @@
             "description": "OpenID connect configuration package",
             "support": {
                 "issues": "https://github.com/itk-dev/openid-connect/issues",
-                "source": "https://github.com/itk-dev/openid-connect/tree/3.2.1"
+                "source": "https://github.com/itk-dev/openid-connect/tree/4.1.2"
             },
-            "time": "2023-09-18T10:24:50+00:00"
+            "time": "2026-05-11T12:03:06+00:00"
         },
         {
             "name": "itk-dev/os2forms_failed_jobs",
