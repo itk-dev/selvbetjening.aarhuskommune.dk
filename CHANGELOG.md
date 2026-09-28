@@ -10,10 +10,18 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
   * `drupal/webform` `6.3.1`
   * `drupal/webform_rest` `4.2.1`
   * `os2forms/os2forms_rest_api` `2.4.0`
+
+## [5.1.20] 2026-09-28
+
 * Opdaterede [OS2Forms Organisation](https://github.com/1itk-dev/os2forms_organisation)
   * Gjorde funktion/ansættelses vælger obligatorisk.
 * Opdaterede MaestroInheritTask så data nu overføres før adgangstjek.
 * Pakke-opdateringer heriblandt Drupal `10.6`.
+
+## [5.1.19] 2026-09-23
+
+* [PR-543](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/543)
+  Sikkerhedsopdateringer.
 
 ## [5.1.18] 2026-09-14
 
@@ -914,7 +922,9 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.18...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.20...HEAD
+[5.1.20]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.19...5.1.20
+[5.1.19]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.18...5.1.19
 [5.1.18]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.17...5.1.18
 [5.1.17]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.16...5.1.17
 [5.1.16]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.15...5.1.16
