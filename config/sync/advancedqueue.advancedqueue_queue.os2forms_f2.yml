@@ -1,0 +1,22 @@
+uuid: 2ce7c66a-3361-4f22-8cc4-fda085336d80
+langcode: da
+status: true
+dependencies:
+  enforced:
+    module:
+      - os2forms_f2
+_core:
+  default_config_hash: dttAuexEXdEjXrXfG7lBJCqSy24TYKSgUU5vwqZOkaY
+id: os2forms_f2
+label: "OS2Forms F2"
+backend: database
+backend_configuration:
+  lease_time: 300
+processor: daemon
+processing_time: 280
+locked: false
+stop_when_empty: true
+threshold:
+  type: 0
+  limit: 0
+  state: all
