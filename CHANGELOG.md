@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Tilføjede OS2Forms F2-behandler.
+
 ## [5.1.20] 2026-09-28
 
 * Opdaterede [OS2Forms Organisation](https://github.com/1itk-dev/os2forms_organisation)
