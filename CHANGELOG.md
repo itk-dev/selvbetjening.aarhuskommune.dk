@@ -6,6 +6,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.21] 2026-10-14
+
+* Sikkedhedsopdatering af drupal core.
+
 ## [5.1.20] 2026-09-28
 
 * Opdaterede [OS2Forms Organisation](https://github.com/1itk-dev/os2forms_organisation)
