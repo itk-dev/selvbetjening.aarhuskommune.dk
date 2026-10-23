@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* [PR-505](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/505)
+  * F2-behandler
+
 ## [5.1.21] 2026-10-14
 
 * Sikkedhedsopdatering af drupal core.

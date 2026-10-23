@@ -239,6 +239,8 @@ config/sync/os2web_nemlogin.settings.yml
 config/sync/os2forms_attachment.os2forms_attachment_component.*.yml
 
 config/sync/os2forms_fordelingskomponent.settings.yml
+# Ignore F2 settings
+config/sync/os2forms_f2.settings.yml
 
 *.local.yml
 *.cache
