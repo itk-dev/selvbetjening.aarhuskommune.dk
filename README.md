@@ -40,7 +40,7 @@ docker compose run --rm phpfpm composer repo add os2forms_f2 '{
  }
 }'
 
-docker compose run --rm phpfpm composer require --no-update "os2forms/os2forms_f2":"^1.0"
+docker compose run --rm phpfpm composer require "os2forms/os2forms_f2":"^1.0"
 ```
 
 </details>
