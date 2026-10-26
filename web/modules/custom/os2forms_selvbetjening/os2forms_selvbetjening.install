@@ -54,7 +54,7 @@ function os2forms_selvbetjening_update_10001() {
 
 /**
  * Delete the obsolete "my_workflow" view.
-*/
+ */
 function os2forms_selvbetjening_update_10002() {
   \Drupal::configFactory()
     ->getEditable('views.view.my_workflow')
