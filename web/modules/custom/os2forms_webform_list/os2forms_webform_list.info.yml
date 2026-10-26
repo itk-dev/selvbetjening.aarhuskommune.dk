@@ -2,7 +2,7 @@ name: OS2forms webform list
 type: module
 description: Alters display of webform list (/admin/structure/webform)
 package: OS2Web
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 dependencies:
   - "drupal:webform"
   - "drupal:os2forms_permissions_by_term"

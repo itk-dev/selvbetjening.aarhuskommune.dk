@@ -9,9 +9,9 @@
         "composer/installers": "^2.0",
         "drupal/author_bulk_assignment": "^2.0",
         "drupal/chosen": "^5.0",
-        "drupal/ckeditor": "^1.0",
         "drupal/clamav": "^2.0",
         "drupal/color": "^1.0",
+        "drupal/config_entity_revisions": "dev-2.0.x",
         "drupal/config_ignore": "^3.3",
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/core-project-message": "^10.3",
@@ -19,11 +19,11 @@
         "drupal/editor_advanced_link": "^2.2",
         "drupal/jquery_ui_datepicker": "^2.1",
         "drupal/lang_dropdown": "^2.1",
-        "drupal/log_stdout": "^1.5",
+        "drupal/log_stdout": "^3.0",
         "drupal/memcache": "^2.7",
         "drupal/menu_link_attributes": "^1.5",
         "drupal/openid_connect": "^3.0",
-        "drupal/rdf": "^2.1",
+        "drupal/rdf": "^3.0",
         "drupal/site_status_message": "^2.0@alpha",
         "drupal/upgrade_status": "^4.3",
         "drupal/webform_translation_permissions": "^2.0",
@@ -32,16 +32,17 @@
         "itk-dev/os2forms_nemlogin_openid_connect": "^2.2",
         "itk-dev/os2forms_user_field_lookup": "^1.1",
         "itk-dev/web_accessibility_statement": "^1.1",
-        "os2forms/os2forms": "dev-selvbetjening.aarhuskommune.dk as 5.2.0",
+        "mglaman/composer-drupal-lenient": "^1.0",
+        "os2forms/os2forms": "^6.0",
         "os2forms/os2forms_fordelingskomponent": "^1.0@RC",
-        "os2forms/os2forms_forloeb_profile": "^1.15",
+        "os2forms/os2forms_forloeb_profile": "^2.0",
         "os2forms/os2forms_get_organized": "^2.0",
         "os2forms/os2forms_organisation": "^2.1",
         "os2forms/os2forms_payment": "^1.0",
         "os2forms/os2forms_rest_api": "^2.2",
         "os2forms/os2forms_sync": "^1.2",
         "os2forms/os2forms_webform_submission_log": "^1.1",
-        "os2web/os2web_datalookup": "dev-selvbetjening.aarhuskommune.dk as 3.4.0"
+        "os2web/os2web_datalookup": "^3.5.0"
     },
     "require-dev": {
         "custom/itkdev_example_forms": "^1.0",
@@ -59,25 +60,6 @@
         "drupal/drupal": "*"
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/itk-dev/os2web_datalookup",
-            "name": "os2web/os2web_datalookup"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/itk-dev/os2forms",
-            "name": "os2forms/os2forms"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/itk-dev/os2forms_fordelingskomponent",
-            "name": "os2forms/os2forms_fordelingskomponent"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/itk-dev/os2forms"
-        },
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
@@ -140,7 +122,10 @@
         "drupal-lenient": {
             "allowed-list": [
                 "drupal/coc_forms_auto_export",
-                "drupal/webform_node_element"
+                "drupal/config_entity_revisions",
+                "drupal/webform_node_element",
+                "drupal/events_logging",
+                "drupal/switch_page_theme"
             ]
         },
         "drupal-scaffold": {
@@ -203,10 +188,6 @@
             "drupal/maestro": {
                 "Maestro task notification permission patch": "patches/drupal/maestro/maestro_task_select_notification_role_permission.patch",
                 "Maestro flow task entity autocomplete patch": "patches/drupal/maestro/maestro_entity_autocomplete.patch"
-            },
-            "drupal/webform": {
-                "Email handler shows fieldset and section titles despite all children fields etc are excluded (https://www.drupal.org/project/webform/issues/3482544)": "patches/drupal/webform/email_handler_titles_despite_exluded_element.patch",
-                "patches/drupal/webform/devel_generate.patch": "patches/drupal/webform/devel_generate.patch"
             },
             "os2forms/os2forms": {
                 "Hide additional os2forms webform settings page": "patches/drupal/os2forms/os2forms_hide_additional_settings_page.diff"
