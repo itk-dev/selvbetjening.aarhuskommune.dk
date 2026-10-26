@@ -56,7 +56,7 @@ final class WebformsForm extends FormBase {
       $this->webformEntityStorage->loadMultiple()
     );
 
-    $selectedWebforms = $this->getRequest()->get('webforms');
+    $selectedWebforms = $this->getRequest()->query->all()['webforms'] ?? [];
     if (!is_array($selectedWebforms)) {
       $selectedWebforms = [];
     }
