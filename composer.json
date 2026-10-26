@@ -11,7 +11,7 @@
         "drupal/chosen": "^5.0",
         "drupal/clamav": "^2.0",
         "drupal/color": "^1.0",
-        "drupal/config_entity_revisions": "dev-2.0.x",
+        "drupal/config_entity_revisions": "2.0.x-dev",
         "drupal/config_ignore": "^3.3",
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/core-project-message": "^10.3",
