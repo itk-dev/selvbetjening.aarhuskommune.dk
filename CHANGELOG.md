@@ -6,6 +6,11 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [5.1.22] 2026-10-27
+
+* [PR-551](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/551)
+  Skiftede til det vedligeholdte `nginx/nginx-unprivileged`-image.
+
 ## [5.1.21] 2026-10-14
 
 * Sikkedhedsopdatering af drupal core.
