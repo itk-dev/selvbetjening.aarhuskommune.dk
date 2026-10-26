@@ -6,6 +6,9 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Opdateret til OS2Forms Core 6.1.0.
+* Pakkeopdateringer heriblandt Drupal `11.4`
+
 ## [5.1.21] 2026-10-14
 
 * Sikkedhedsopdatering af drupal core.
