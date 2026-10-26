@@ -15,9 +15,8 @@ The module is effectively unmaintained upstream: the last commit on the
 compatibility has not been declared. On Drupal 10 the site used the
 `2.0.x-dev` package through `mglaman/composer-drupal-lenient` together with a
 set of Composer patches. With the upgrade to Drupal 11 the module fails
-fatally on class load (see change 3 below), so the code was copied into this
-project on 2026-10-26 to be maintained here. The patches are now applied
-directly in the source.
+fatally, so the code was copied into this project on 2026-10-26 to be
+maintained here. The patches are now applied directly in the source.
 
 ## Upstream base
 
@@ -37,39 +36,25 @@ Changes 1 to 3 were previously Composer patches in
 `patches/drupal/config_entity_revisions/` and are now part of the code.
 
 1. `modules/webform_revisions/src/Entity/WebformRevisionsSubmission.php`:
-   added the missing `use Drupal\Core\Serialization\Yaml;` import. The class
-   calls `Yaml::decode()` without importing the class.
-   (Former patch: `missing-use-statement.patch`.)
+   added the missing `use Drupal\Core\Serialization\Yaml;` import.
 
 2. `modules/webform_revisions/webform_revisions.install`:
    `webform_revisions_install()` only creates the `webform_revisions`
    config entity revisions type if it does not already exist, because the
    hook can run twice during `drush site:install --existing-config`. The
-   obsolete update hook `webform_revisions_8000()` was removed.
-   (Former patch: `webform_revisions.install.patch`.)
+   obsolete update hook `webform_revisions_8000()` was also removed.
 
 3. `src/ConfigEntityRevisionsConfigTrait.php`:
    `__wakeup()` now declares a `: void` return type. Drupal core's
    `DependencySerializationTrait`, used by `EntityBase`, declares
-   `__wakeup(): void`, and PHP requires an overriding method to keep the
-   parent's `void` return type. Without this change Drupal 11 fails with
-   "Declaration of ConfigEntityRevisionsConfigTrait::__wakeup() must be
-   compatible with EntityBase::__wakeup(): void".
-   (Former patch: `ConfigEntityRevisionsConfigTrait.patch`.)
+   `__wakeup(): void`.
 
-4. `config_entity_revisions.info.yml`,
-   `modules/webform_revisions/webform_revisions.info.yml` and
-   `modules/views_revisions/views_revisions.info.yml`:
-   `core_version_requirement` changed from `^9 || ^10` to `^10 || ^11`.
-   Upstream never declared Drupal 11 support, and Drupal marks a module
-   whose requirement excludes the running core version as incompatible.
-   That shows as an error on the status report and blocks `drush updb`.
+4. Swiitched modules from `^9 || ^10` to `^10 || ^11`.
    (Not a former patch; made directly in this copy on 2026-10-26.)
 
 Everything else is identical to the upstream commit, apart from the
 documentation: upstream's `README.md` was moved to `docs/README.md` and
-replaced by this file. Composer housekeeping files (`.git`, `PATCHES.txt`)
-were not copied.
+replaced by this file.
 
 ## Maintaining this copy
 
@@ -78,6 +63,3 @@ were not copied.
 - To diff against upstream, clone the repository, check out the commit above
   and run `diff -r` against this directory. The only expected differences
   besides the list above are this `README.md` and the `docs/` directory.
-- The package must not be added back to `composer.json` (`require`, the
-  `drupal-lenient` allowed list, or `extra.patches`). Two copies of the same
-  module would both be discovered by Drupal.
