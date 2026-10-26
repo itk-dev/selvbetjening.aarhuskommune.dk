@@ -74,6 +74,7 @@
 !/web/modules/custom/itkdev_example_forms
 !/web/modules/custom/os2forms_selvbetjening_overview
 !/web/modules/custom/selvbetjening_kp_forms
+!/web/modules/custom/config_entity_revisions
 
 # Ignore site specific modules.
 /web/sites/*/modules

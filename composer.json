@@ -11,11 +11,10 @@
         "drupal/chosen": "^5.0",
         "drupal/clamav": "^2.0",
         "drupal/color": "^2.0@alpha",
-        "drupal/config_entity_revisions": "2.0.x-dev",
         "drupal/config_ignore": "^3.3",
-        "drupal/core-composer-scaffold": "^10.3",
-        "drupal/core-project-message": "^10.3",
-        "drupal/core-recommended": "^10.3",
+        "drupal/core-composer-scaffold": "^11.4",
+        "drupal/core-project-message": "^11.4",
+        "drupal/core-recommended": "^11.4",
         "drupal/editor_advanced_link": "^2.2",
         "drupal/jquery_ui_datepicker": "^2.1",
         "drupal/lang_dropdown": "^2.1",
@@ -26,6 +25,7 @@
         "drupal/rdf": "^3.0",
         "drupal/site_status_message": "^2.0@alpha",
         "drupal/webform_translation_permissions": "^2.0",
+        "drush/drush": "^13.8",
         "fig/http-message-util": "^1.1",
         "itk-dev/os2forms_failed_jobs": "^1.7",
         "itk-dev/os2forms_nemlogin_openid_connect": "^2.2",
@@ -45,7 +45,7 @@
     },
     "require-dev": {
         "custom/itkdev_example_forms": "^1.0",
-        "drupal/core-dev": "^10",
+        "drupal/core-dev": "^11.4",
         "drupal/devel": "^5.4",
         "drupal/mail_debugger": "^1.4",
         "ergebnis/composer-normalize": "^2.43",
@@ -89,6 +89,7 @@
             "phpstan/extension-installer": true,
             "simplesamlphp/composer-module-installer": false,
             "simplesamlphp/composer-xmlprovider-installer": false,
+            "symfony/runtime": true,
             "tbachert/spi": true,
             "zaporylie/composer-drupal-optimizations": true
         },
@@ -121,7 +122,6 @@
         "drupal-lenient": {
             "allowed-list": [
                 "drupal/coc_forms_auto_export",
-                "drupal/config_entity_revisions",
                 "drupal/webform_node_element",
                 "drupal/events_logging",
                 "drupal/switch_page_theme"
@@ -163,14 +163,10 @@
             ]
         },
         "patches": {
-            "drupal/config_entity_revisions": {
-                "patches/drupal/config_entity_revisions/missing-use-statement.patch": "patches/drupal/config_entity_revisions/missing-use-statement.patch",
-                "webform_revisions_install called twice during site:install --existing-config": "patches/drupal/config_entity_revisions/webform_revisions.install.patch"
-            },
             "drupal/core": {
                 "Get CKEditor 5 to work in (modal) dialogs (https://www.drupal.org/project/drupal/issues/3274937)": "https://www.drupal.org/files/issues/2024-07-02/3351603-30.patch",
                 "Allow conditionals based on computed twig (https://www.drupal.org/project/webform/issues/3481569)": "https://www.drupal.org/files/issues/2024-11-05/revert-core-states.patch",
-                "Use date fields for views filters (https://www.drupal.org/project/drupal/issues/2648950)": "https://www.drupal.org/files/issues/2025-06-24/2648950-293.patch"
+                "Use date fields for views filters (https://www.drupal.org/project/drupal/issues/2648950)": "https://www.drupal.org/files/issues/2026-07-13/2648950-304.patch"
             },
             "drupal/devel": {
                 "patches/drupal/devel/devel_generate.patch": "patches/drupal/devel/devel_generate.patch"
