@@ -5,7 +5,7 @@ namespace Drupal\webform_revisions\Entity;
 use Drupal\Component\Utility\Crypt;
 use Drupal\config_entity_revisions\ConfigEntityRevisionsInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Serialization\Yaml;
+use Drupal\Component\Serialization\Yaml;
 use Drupal\webform\Entity\WebformSubmission;
 use Drupal\webform_revisions\Controller\WebformRevisionsController;
 

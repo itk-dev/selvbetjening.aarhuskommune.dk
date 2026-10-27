@@ -140,7 +140,6 @@ class WebformRevisionsSubmissionStorage extends WebformSubmissionStorage {
       }
 
       foreach ($revision_ids as $revision_id) {
-        $element_manager->resetPluginInstances();
         $revisionController = WebformRevisionsController::create(\Drupal::getContainer());
         $webform = $revisionController->loadConfigEntityRevision($revision_id, $webform->id());
         $elements = $webform->getElementsInitializedFlattenedAndHasValue('view');

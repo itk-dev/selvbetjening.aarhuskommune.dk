@@ -258,7 +258,7 @@ abstract class ConfigEntityRevisionsOverviewFormBase extends FormBase implements
           '#template' => '{% trans %}{{ date }} by {{ username }}{% endtrans %}{% if message %}<p class="revision-log">{{ message }}</p>{% endif %}',
           '#context' => [
             'date' => $link,
-            'username' => $this->renderer->renderPlain($username),
+            'username' => $this->renderer->renderInIsolation($username),
             'message' => [
               '#markup' => $revision->getRevisionLogMessage(),
               '#allowed_tags' => Xss::getHtmlTagList(),

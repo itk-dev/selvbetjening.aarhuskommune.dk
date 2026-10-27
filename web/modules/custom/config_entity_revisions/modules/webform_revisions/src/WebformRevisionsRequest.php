@@ -126,7 +126,7 @@ class WebformRevisionsRequest extends WebformRequest implements WebformRequestIn
    * {@inheritdoc}
    */
   public function isAjax() {
-    return $this->request->get(AjaxResponseSubscriber::AJAX_REQUEST_PARAMETER) ? TRUE : FALSE;
+    return (bool) ($this->request->query->get(AjaxResponseSubscriber::AJAX_REQUEST_PARAMETER) || $this->request->request->get(AjaxResponseSubscriber::AJAX_REQUEST_PARAMETER));
   }
 
   /**
