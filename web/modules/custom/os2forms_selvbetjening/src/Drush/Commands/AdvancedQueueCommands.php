@@ -142,6 +142,10 @@ final class AdvancedQueueCommands extends DrushCommands {
       }
     }
 
+    if (count($jobs) > 0 && 1 === $limit) {
+      $this->io()->note('Only one job listed. Use `--limit` to show more.');
+    }
+
     return self::EXIT_SUCCESS;
   }
 
