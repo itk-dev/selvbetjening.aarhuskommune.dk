@@ -60,9 +60,9 @@
     },
     "repositories": [
         {
+            "name": "os2forms/os2forms",
             "type": "vcs",
-            "url": "https://github.com/itk-dev/os2forms",
-            "name": "os2forms/os2forms"
+            "url": "https://github.com/itk-dev/os2forms"
         },
         {
             "type": "composer",
