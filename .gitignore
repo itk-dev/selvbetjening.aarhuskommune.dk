@@ -74,6 +74,7 @@
 !/web/modules/custom/itkdev_example_forms
 !/web/modules/custom/os2forms_selvbetjening_overview
 !/web/modules/custom/selvbetjening_kp_forms
+!/web/modules/custom/config_entity_revisions
 
 # Ignore site specific modules.
 /web/sites/*/modules
@@ -239,6 +240,8 @@ config/sync/os2web_nemlogin.settings.yml
 config/sync/os2forms_attachment.os2forms_attachment_component.*.yml
 
 config/sync/os2forms_fordelingskomponent.settings.yml
+# Ignore F2 settings
+config/sync/os2forms_f2.settings.yml
 
 *.local.yml
 *.cache

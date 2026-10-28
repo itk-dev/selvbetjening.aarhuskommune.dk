@@ -1,0 +1,8 @@
+name: Views Revisions
+description: Allows Drupal views to have revisions. This submodule is work in progress.
+package: Views
+type: module
+core_version_requirement: ^10 || ^11
+dependencies:
+  - core:views
+  - config_entity_revisions:config_entity_revisions

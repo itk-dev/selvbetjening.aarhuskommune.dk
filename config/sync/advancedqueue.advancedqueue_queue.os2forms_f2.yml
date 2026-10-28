@@ -1,0 +1,19 @@
+uuid: 541172b2-80ae-4d8b-8af3-e7fe11151170
+langcode: da
+status: true
+dependencies:
+  enforced:
+    module:
+      - os2forms_f2
+_core:
+  default_config_hash: GmynR39MNVykXQEPCKuXq3wRcPL6mGkWyRQxGPiLkN8
+id: os2forms_f2
+label: "OSForms F2"
+backend: database
+backend_configuration:
+  lease_time: 300
+processor: cron
+processing_time: 90
+locked: false
+stop_when_empty: true
+threshold: {}

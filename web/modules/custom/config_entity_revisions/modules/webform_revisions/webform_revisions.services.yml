@@ -1,0 +1,32 @@
+services:
+  paramconverter.webform_revisions:
+    class: Drupal\webform_revisions\ParamConverter\WebformRevisionsConverter
+    # Use a higher priority than either the config converter or the entity converter.
+    # In contrast to weights, a higher number = earlier, not later.
+    tags:
+      - { name: paramconverter, priority: 20 }
+    arguments: ['@entity_type.manager', '@entity.repository']
+  #paramconverter.webform_revisions_revision:
+    #class: Drupal\Core\ParamConverter\EntityRevisionParamConverter
+    #tags:
+      #- { name: paramconverter }
+    #arguments: ['@entity_type.manager', '@entity.repository']
+
+  webform_revisions.route_subscriber:
+    class: Drupal\webform_revisions\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  webform.request:
+    class: Drupal\webform_revisions\WebformRevisionsRequest
+    arguments: ['@router.route_provider', '@request_stack', '@router.admin_context', '@current_route_match', '@entity_type.manager', '@entity_type.repository', '@webform.entity_reference_manager', '@plugin.manager.webform.source_entity', '@database', '@service_container']
+  webform_revisions.plugin.manager.webform.element:
+    class: Drupal\webform_revisions\WebformRevisionsElementManager
+    decorates: plugin.manager.webform.element
+    arguments: ['@container.namespaces', '@cache.discovery', '@module_handler', '@theme_handler', '@config.factory', '@plugin.manager.element_info']
+
+  webform_revisions_event_subscriber:
+    class: '\Drupal\webform_revisions\EventSubscriber\WebformRevisionsEventSubscriber'
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: 'event_subscriber' }
