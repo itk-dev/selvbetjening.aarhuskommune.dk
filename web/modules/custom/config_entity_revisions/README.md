@@ -8,6 +8,13 @@ The module's own documentation, describing what it does and how to add
 revision support for another config entity type, is the unchanged upstream
 README in [docs/README.md](docs/README.md).
 
+## Scheduled for removal
+
+Both modules are uninstalled by
+`os2forms_selvbetjening_post_update_remove_webform_revisions()`, which also
+deletes all stored revisions. Delete this directory in the release after that
+hook has run on every environment.
+
 ## Why
 
 The module is effectively unmaintained upstream: the last commit on the

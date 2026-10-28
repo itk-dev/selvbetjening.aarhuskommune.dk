@@ -16,7 +16,6 @@ dependencies:
     - webform
     - webform_encrypt
     - webform_node
-    - webform_revisions
     - webform_submission_log
     - webform_translation_permissions
 id: editor
@@ -30,7 +29,6 @@ permissions:
   - 'access webform handlers tab'
   - 'access webform overview'
   - 'access webform submission log'
-  - 'administer webform revisions'
   - 'create webform'
   - 'edit any webform'
   - 'edit own webform submission'

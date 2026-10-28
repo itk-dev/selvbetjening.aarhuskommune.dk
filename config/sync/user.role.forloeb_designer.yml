@@ -23,7 +23,6 @@ dependencies:
     - webform
     - webform_encrypt
     - webform_node
-    - webform_revisions
     - webform_submission_log
     - webform_templates
     - webform_translation_permissions
@@ -54,7 +53,6 @@ permissions:
   - 'access webform submission user'
   - 'access webform submission_notes'
   - 'administer webform element access'
-  - 'administer webform revisions'
   - 'administer webform submission'
   - 'administer webform templates'
   - 'bypass entity print access'
@@ -70,7 +68,6 @@ permissions:
   - 'delete own webform'
   - 'delete own webform content'
   - 'delete own webform submission'
-  - 'delete webform revisions'
   - 'delete webform submissions any node'
   - 'delete webform submissions own node'
   - 'edit any webform'
@@ -84,7 +81,6 @@ permissions:
   - 'edit webform submissions any node'
   - 'edit webform submissions own node'
   - 'edit webform twig'
-  - 'revert webform revisions'
   - 'search content'
   - 'translate any webform'
   - 'translate editable entities'
@@ -103,6 +99,5 @@ permissions:
   - 'view own unpublished content'
   - 'view own webform submission'
   - 'view the administration theme'
-  - 'view webform revisions'
   - 'view webform submissions any node'
   - 'view webform submissions own node'

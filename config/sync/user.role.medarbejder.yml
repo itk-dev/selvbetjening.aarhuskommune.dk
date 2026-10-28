@@ -13,7 +13,6 @@ dependencies:
     - webform
     - webform_encrypt
     - webform_node
-    - webform_revisions
 _core:
   default_config_hash: jyVru4CrmXzkdJ89xYvtbhWaxGezx1aOqkZCrQYRDEk
 id: medarbejder
@@ -24,7 +23,6 @@ permissions:
   - 'access content'
   - 'access site in maintenance mode'
   - 'access toolbar'
-  - 'administer webform revisions'
   - 'edit own webform submission'
   - 'edit webform submissions any node'
   - 'edit webform submissions own node'

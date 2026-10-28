@@ -32,7 +32,6 @@ dependencies:
     - webform
     - webform_encrypt
     - webform_node
-    - webform_revisions
     - webform_submission_log
     - webform_templates
     - webform_translation_permissions
@@ -81,7 +80,6 @@ permissions:
   - 'administer user form display'
   - 'administer webform'
   - 'administer webform element access'
-  - 'administer webform revisions'
   - 'administer webform submission'
   - 'administer webform templates'
   - 'assign author to selected content'
@@ -96,7 +94,6 @@ permissions:
   - 'delete own webform'
   - 'delete own webform content'
   - 'delete own webform submission'
-  - 'delete webform revisions'
   - 'delete webform submissions any node'
   - 'delete webform submissions own node'
   - 'edit any webform'
@@ -118,7 +115,6 @@ permissions:
   - 'entity print access type taxonomy_term'
   - 'entity print access type user'
   - 'entity print access type webform_submission'
-  - 'revert webform revisions'
   - 'search content'
   - 'translate any webform'
   - 'translate interface'
@@ -138,6 +134,5 @@ permissions:
   - 'view own unpublished content'
   - 'view own webform submission'
   - 'view the administration theme'
-  - 'view webform revisions'
   - 'view webform submissions any node'
   - 'view webform submissions own node'
