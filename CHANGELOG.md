@@ -6,7 +6,6 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
-
 * Opdateret til OS2Forms Core 6.1.0.
 * Pakkeopdateringer heriblandt Drupal `11.4`
 * PHP `8.4`
