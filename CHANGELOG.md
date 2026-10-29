@@ -6,12 +6,18 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+
 * Opdateret til OS2Forms Core 6.1.0.
 * Pakkeopdateringer heriblandt Drupal `11.4`
 * PHP `8.4`
 * Fjernede webform-revisioner: `webform_revisions` og `config_entity_revisions`
   afinstalleres, og alle gemte revisioner slettes. Den aktuelle version af hver
   webformular bevares. Modulkoden fjernes i en efterfølgende release.
+
+## [5.1.22] 2026-10-27
+
+* [PR-551](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/551)
+  Skiftede til det vedligeholdte `nginx/nginx-unprivileged`-image.
 
 ## [5.1.21] 2026-10-14
 
@@ -928,7 +934,9 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.20...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.22...HEAD
+[5.1.22]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.21...5.1.22
+[5.1.21]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.20...5.1.21
 [5.1.20]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.19...5.1.20
 [5.1.19]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.18...5.1.19
 [5.1.18]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.17...5.1.18
