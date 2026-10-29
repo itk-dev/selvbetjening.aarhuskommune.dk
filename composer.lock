@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "adc6e3906f5a59bc91a334197858be6c",
+    "content-hash": "b2661b81255044bb7bf7ab594c7bb4e3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9425,12 +9425,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms.git",
-                "reference": "b86c34deda58bf6104163107b64cdd18d2fb4dff"
+                "reference": "9a29fbe4209888d964e71264d5a99047add18f79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/b86c34deda58bf6104163107b64cdd18d2fb4dff",
-                "reference": "b86c34deda58bf6104163107b64cdd18d2fb4dff",
+                "url": "https://api.github.com/repos/itk-dev/os2forms/zipball/9a29fbe4209888d964e71264d5a99047add18f79",
+                "reference": "9a29fbe4209888d964e71264d5a99047add18f79",
                 "shasum": ""
             },
             "require": {
@@ -9575,7 +9575,7 @@
             "support": {
                 "source": "https://github.com/itk-dev/os2forms/tree/drupal-11-selvbetjening.aarhuskommune.dk"
             },
-            "time": "2026-10-27T09:57:11+00:00"
+            "time": "2026-10-29T08:09:19+00:00"
         },
         {
             "name": "os2forms/os2forms_fordelingskomponent",
@@ -14824,16 +14824,16 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v7.4.19",
+            "version": "v7.4.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "f8ac7d0a800bcabbcd1f7de56594cf05e6cd5693"
+                "reference": "94a4c017435bc515f5ac80421a2c555fb9ca3676"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/f8ac7d0a800bcabbcd1f7de56594cf05e6cd5693",
-                "reference": "f8ac7d0a800bcabbcd1f7de56594cf05e6cd5693",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/94a4c017435bc515f5ac80421a2c555fb9ca3676",
+                "reference": "94a4c017435bc515f5ac80421a2c555fb9ca3676",
                 "shasum": ""
             },
             "require": {
@@ -14889,7 +14889,7 @@
                 "mime-type"
             ],
             "support": {
-                "source": "https://github.com/symfony/mime/tree/v7.4.19"
+                "source": "https://github.com/symfony/mime/tree/v7.4.22"
             },
             "funding": [
                 {
@@ -14909,7 +14909,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-04T10:45:44+00:00"
+            "time": "2026-10-28T17:57:58+00:00"
         },
         {
             "name": "symfony/options-resolver",
@@ -24591,8 +24591,8 @@
         {
             "package": "os2forms/os2forms",
             "version": "dev-drupal-11-selvbetjening.aarhuskommune.dk",
-            "alias": "6.2.0",
-            "alias_normalized": "6.2.0.0"
+            "alias": "6.2.1",
+            "alias_normalized": "6.2.1.0"
         }
     ],
     "minimum-stability": "dev",
