@@ -11,6 +11,8 @@
  * Deletes all config entity revisions and uninstalls webform_revisions and
  * config_entity_revisions. The current configuration of each webform is kept.
  * The module code is removed in a later release.
+ *
+ * Inspired by web/modules/contrib/webform/webform.post_update.php.
  */
 function os2forms_selvbetjening_post_update_remove_webform_revisions(array &$sandbox): void {
   $moduleHandler = \Drupal::moduleHandler();
