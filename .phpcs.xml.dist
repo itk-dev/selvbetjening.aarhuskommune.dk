@@ -8,6 +8,8 @@
   <file>web/modules/custom/</file>
   <file>web/themes/custom/</file>
 
+  <!-- Ignore config_entity_revisions-->
+  <exclude-pattern>web/modules/custom/config_entity_revisions/</exclude-pattern>
   <exclude-pattern>web/modules/custom/selvbetjening_kp_forms/data/</exclude-pattern>
   <exclude-pattern>web/modules/custom/selvbetjening_kp_forms/scripts/</exclude-pattern>
 

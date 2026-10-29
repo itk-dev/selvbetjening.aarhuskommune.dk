@@ -1,0 +1,3 @@
+views.*.third_party.views_revisions:
+  type: integer
+  label: 'Views Revision ID'

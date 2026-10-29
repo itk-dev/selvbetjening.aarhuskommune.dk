@@ -1,0 +1,8 @@
+name: Webform Revisions
+description: Allows Drupal webforms to have revisions.
+package: webform
+type: module
+core_version_requirement: ^10 || ^11
+dependencies:
+  - webform:webform
+  - config_entity_revisions:config_entity_revisions

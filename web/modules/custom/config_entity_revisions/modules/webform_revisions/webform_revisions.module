@@ -1,0 +1,302 @@
+<?php
+
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\config_entity_revisions\ConfigEntityRevisionsControllerInterface;
+use Drupal\config_entity_revisions\ConfigEntityRevisionsInterface;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform_revisions\Controller\WebformRevisionsController;
+use Drupal\webform_revisions\Entity\WebformRevisions;
+use Drupal\webform_revisions\WebformRevisionFields;
+
+/**
+ * Implements hook_form_alter().
+ */
+function webform_revisions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $webform = NULL;
+
+  $add_edit_form_routes = [
+    'entity.webform.edit_form',
+    'entity.webform.source_form',
+  ];
+
+  $revision_routes = array_merge($add_edit_form_routes, [
+    'webform_ui_element_form',
+    'entity.webform.revision',
+  ]);
+
+  $routename = \Drupal::routeMatch()->getRouteName();
+
+  /* @var $contentEntity ConfigEntityRevisionsInterface */
+  $contentEntity = NULL;
+
+  // Get the content entity if it will be needed. This needs to be the most
+  // recent version of the entity - if we've saved a new revision, we want
+  // the latest revision message, not the old one.
+  // When logging in, I have seen a CacheableAccessDeniedHttpException thrown
+  // that caused an infinite loop, so catch any exceptions thrown here and
+  // treat them as a non-match for the webform until we find a situation in
+  // which a webform should actually be loaded.
+  $buildInfo = $form_state->getBuildInfo();
+  $callbackObject = $buildInfo['callback_object'];
+  $callbackEntity = method_exists($callbackObject, 'getEntity') ?
+    $callbackObject->getEntity() : FALSE;
+
+  if ($callbackEntity instanceof WebformRevisions) {
+    $webform = $callbackObject->getEntity();
+  }
+  else {
+    $parameters = \Drupal::routeMatch()->getParameters();
+
+    if ($parameters->has('webform')) {
+      /* @var $webform WebformRevisions */
+      $webform = $parameters->get('webform');
+
+      if (is_string($webform)) {
+        /* @var $revisionsController ConfigEntityRevisionsControllerInterface */
+        $revisionsController = WebformRevisionsController::create(\Drupal::getContainer());
+        $webform = $revisionsController->loadConfigEntityRevision();
+      }
+    }
+  }
+
+  if (in_array($routename, $revision_routes) && !$webform) {
+    return;
+  }
+
+  if ($webform) {
+    $contentEntity = $webform->getContentEntity();
+  }
+
+  // If we're displaying a non-current revision, add a message and remove the
+  // submission buttons.
+  if ($routename == 'entity.webform.revision') {
+
+    if (!$contentEntity->isDefaultRevision()) {
+      \Drupal::messenger()->addWarning('This is not the currently published revision of the webform.');
+      $form['actions'] = [];
+    }
+
+    return;
+  }
+
+  // If we're not adding a form or rendering the main edit form, don't provide
+  // the option of adding a new revision or modifying the revision message.
+  if (!in_array($routename, $add_edit_form_routes)) {
+    if ($webform) {
+      $form_state->setValue('webform_revision', $webform->getRevisionId());
+    }
+    return;
+  }
+
+  WebformRevisionFields::addRevisionFormFields($form);
+
+  if (!$contentEntity) {
+    /* @var $revisionsController ConfigEntityRevisionsControllerInterface */
+    $revisionsController = WebformRevisionsController::create(\Drupal::getContainer());
+    $contentEntity = $revisionsController->createUpdateRevision($webform);
+
+    // Update any existing submissions to point at the original revision.
+    \Drupal::database()
+      ->query('UPDATE {webform_submission} SET webform_revision = :rid WHERE webform_id = :form',
+        [ ':rid' => $contentEntity->id(), ':form' => $webform->id()]);
+  }
+
+  $entity_form_display = EntityFormDisplay::create([
+    'targetEntityType' => 'config_entity_revisions',
+    'bundle' => 'WebformRevisions',
+    'mode' => 'default',
+    'status' => TRUE,
+  ]);
+  $entity_form_display->buildForm($contentEntity, $form, $form_state);
+  $form['revision_log_message']['#group'] = 'revision_information';
+  $form['actions']['#weight'] = 200;
+}
+
+// No insert hook. The content entity will be automatically created the first
+// time a person visits the revisions display, or when a new revision is saved.
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function webform_revisions_webform_presave(WebformRevisions $webform) {
+  if ($webform->isNew()) {
+    $webform->setContentEntityId(null);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function webform_revisions_webform_delete(WebformRevisions $webform) {
+  $controller = WebformRevisionsController::create(\Drupal::getContainer());
+  $controller->deleteRevisions($webform);
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function webform_revisions_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
+  // ISSUE:
+  // Devel routes do not use 'webform' parameter which throws the error below.
+  // Some mandatory parameters are missing ("webform") to generate a URL for
+  // route "entity.webform_submission.canonical"
+  //
+  // WORKAROUND:
+  // Make sure webform parameter is set for all routes.
+  if (strpos($route_name, 'entity.webform') === 0) {
+    foreach ($data['tabs'] as $tab_level) {
+      foreach ($tab_level as $tab) {
+        /** @var Drupal\Core\Url $url */
+        $url = $tab['#link']['url'];
+        $tab_route_name = $url->getRouteName();
+        $tab_route_parameters = $url->getRouteParameters();
+
+        if (strpos($tab_route_name, 'entity.webform') !== FALSE &&
+          isset($tab_route_parameters['webform'])) {
+          $url->setRouteParameter('config_entity', $tab_route_parameters['webform']);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Perform alterations before a webform submission form is rendered.
+ *
+ * This hook is identical to hook_form_alter() but allows the
+ * hook_webform_submission_form_alter() function to be stored in a dedicated
+ * include file and it also allows the Webform module to implement webform alter
+ * logic on another module's behalf.
+ *
+ * @param array $form
+ *   Nested array of form elements that comprise the webform.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form. The arguments that
+ *   \Drupal::formBuilder()->getForm() was originally called with are available
+ *   in the array $form_state->getBuildInfo()['args'].
+ * @param string $form_id
+ *   String representing the webform's id.
+ *
+ * @see webform.honeypot.inc
+ * @see hook_form_BASE_FORM_ID_alter()
+ * @see hook_form_FORM_ID_alter()
+ *
+ * @ingroup form_api
+ */
+function webform_revisions_webform_submission_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  WebformRevisionsController::submissionFormAlter($form, $form_state, $form_id);
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function webform_revisions_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'webform_submission') {
+    $fields['webform_revision'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel('Webform revision')
+      ->setName('webform_revision')
+      ->setProvider('webform_revisions')
+      ->setTargetEntityTypeId('config_entity_revisions')
+      ->setTargetBundle(null)
+      ->setTargetEntityTypeId('webform_submission');
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function webform_revisions_entity_type_alter(&$entity_types) {
+  if (isset($entity_types['webform'])) {
+    $entity_types['webform']->setClass('Drupal\webform_revisions\Entity\WebformRevisions');
+    $entity_types['webform']->setStorageClass('Drupal\webform_revisions\WebformRevisionsStorage');
+  }
+
+  if (isset($entity_types['webform_submission'])) {
+    // Play nice with other implementations. If you've already overridden the classes,
+    // I assume you're extending the classes below and won't override you.
+    $type = $entity_types['webform_submission'];
+    if ($type->getClass() == 'Drupal\webform\Entity\WebformSubmission') {
+      $type->setClass('Drupal\webform_revisions\Entity\WebformRevisionsSubmission');
+    }
+    if ($type->getStorageClass() == 'Drupal\webform\WebformSubmissionStorage') {
+      $type->setStorageClass('Drupal\webform_revisions\WebformRevisionsSubmissionStorage');
+    }
+    switch ($type->getHandlerClass('list_builder')) {
+      case 'Drupal\webform\WebformSubmissionListBuilder':
+        $type->setHandlerClass('list_builder', 'Drupal\webform_revisions\WebformRevisionsSubmissionListBuilder');
+        break;
+      case 'Drupal\webform_workflows_element\WebformSubmissionWorkflowListBuilder':
+        $type->setHandlerClass('list_builder', 'Drupal\webform_revisions\WebformRevisionsSubmissionWorkflowListBuilder');
+        break;
+    }
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function webform_revisions_module_implements_alter(&$implementations, $hook) {
+  if ($hook != 'entity_type_alter') {
+    return;
+  }
+
+  unset($implementations['webform_revisions']);
+  $implementations['webform_revisions'] = false;
+}
+
+/**
+ * Implements hook_webform_third_party_settings_form_alter().
+ */
+function webform_revisions_webform_third_party_settings_form_alter(
+  array &$form, FormStateInterface $form_state) {
+  /** @var \Drupal\webform\WebformInterface $webform */
+  $webform = $form_state->getFormObject()->getEntity();
+
+  $form['third_party_settings']['webform_revisions'] = [
+    '#type' => 'details',
+    '#title' => t('Webform revisions settings'),
+    '#open' => TRUE,
+  ];
+  $form['third_party_settings']['webform_revisions']['auto_update'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Automatically update older draft submissions to this revision.'),
+    '#default_value' => $webform->getThirdPartySetting('webform_revisions', 'auto_update'),
+  ];
+
+  $earlier_revisions = $webform->getEarlierRevisions();
+  if (!empty($earlier_revisions)) {
+    $earlier_revisions = array_map(
+      fn($revision) =>
+        'Revision ' . $revision->id() . ': ' . $revision->revision_log_message->value,
+      $earlier_revisions);
+    // The chosen control will be 0 width if initially hidden. The class and
+    // library provide a way to override that with a min-width.
+    $form['third_party_settings']['webform_revisions']['auto_update_exclusions'] = [
+      '#type' => 'select',
+      '#chosen' => true,
+      '#multiple' => true,
+      '#title' => t('Exclude these earlier revisions.'),
+      '#default_value' => $webform->getThirdPartySetting('webform_revisions', 'auto_update_exclusions'),
+      '#options' => $earlier_revisions,
+      '#states' => [
+        'visible' => [
+          ':input[name="third_party_settings[webform_revisions][auto_update]"]' => ['checked' => TRUE ]
+        ]
+      ],
+      '#attributes' => [
+        'class' => [
+          'auto-update-exclusions'
+        ]
+      ],
+      '#attached' => [
+        'library' => [
+          'webform_revisions/admin',
+        ]
+      ]
+    ];
+  }
+}

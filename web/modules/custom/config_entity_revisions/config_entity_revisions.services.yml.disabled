@@ -1,0 +1,19 @@
+services:
+  config_entity_revisions.entity_type_info:
+   class: Drupal\config_entity_revisions\ConfigEntityRevisionsEntityTypeInfo
+   arguments:
+     - '@string_translation'
+     - '?@content_moderation.moderation_information'
+     - '@entity_type.manager'
+     - '@entity_type.bundle.info'
+     - '@current_user'
+     - '?@content_moderation.state_transition_validation'
+   calls:
+     - [ setContentModeration, [ '@?content_moderation.moderation_information', '@?content_moderation.state_transition_validation' ] ]
+  config_entity_revisions.moderation_information:
+    class: Drupal\config_entity_revisions\ConfigEntityRevisionsModerationInformation
+    public: false
+    decorates: content_moderation.moderation_information
+    parent: content_moderation.moderation_information
+  0Drupal\content_moderation\EntityTypeInfo:
+    alias: config_entity_revisions.entity_type_info

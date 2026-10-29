@@ -1,0 +1,6 @@
+attributes:
+  class:
+    label: 'Link class(es)'
+    description: 'CSS class for the link (<code>&lt;a href&gt;</code>). Separate multiple classes by space.'
+  target:
+    label: 'Link target'

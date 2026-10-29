@@ -1,9 +1,9 @@
 uuid: c09d2900-fa91-4363-ba89-c574d6fd8a4b
 langcode: da
 status: true
-dependencies: {}
+dependencies: {  }
 id: os2forms_fordelingskomponent
-label: "OSForms fordelingskomponent"
+label: 'OSForms fordelingskomponent'
 backend: database
 backend_configuration:
   lease_time: 300

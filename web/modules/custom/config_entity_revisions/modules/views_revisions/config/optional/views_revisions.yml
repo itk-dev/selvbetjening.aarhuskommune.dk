@@ -1,0 +1,9 @@
+status: true
+dependencies: {  }
+type: views_revisions
+id: 'views_revisions'
+label: 'Views Revisions'
+description: 'Adds support for creating revisions of a view and moderating changes.'
+help: ''
+preview_mode: 0
+display_submitted: false

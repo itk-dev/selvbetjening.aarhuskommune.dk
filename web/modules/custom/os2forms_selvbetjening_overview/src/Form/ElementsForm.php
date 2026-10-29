@@ -60,7 +60,7 @@ final class ElementsForm extends FormBase {
       $this->getWebformElementDefinitions()
     );
 
-    $selectedElements = $this->getRequest()->get('elements');
+    $selectedElements = $this->getRequest()->query->all()['elements'] ?? [];
     if (!is_array($selectedElements)) {
       $selectedElements = [];
     }

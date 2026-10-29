@@ -1,5 +1,5 @@
 uuid: ab99862c-61a3-43e2-a7dc-71258f5bdd5c
-langcode: en
+langcode: da
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
     - os2forms_rest_api
     - serialization
 id: entity.file
-plugin_id: "entity:file"
+plugin_id: 'entity:file'
 granularity: resource
 configuration:
   methods:
