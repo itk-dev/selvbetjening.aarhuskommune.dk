@@ -20,7 +20,6 @@ module:
   color: 0
   comment: 0
   config: 0
-  config_entity_revisions: 0
   config_ignore: 0
   config_translation: 0
   contact: 0
@@ -86,6 +85,7 @@ module:
   os2forms_digital_post: 0
   os2forms_digital_signature: 0
   os2forms_email_handler: 0
+  os2forms_f2: 0
   os2forms_failed_jobs: 0
   os2forms_fasit: 0
   os2forms_fbs_handler: 0
@@ -158,7 +158,6 @@ module:
   webform_remote_handlers: 0
   webform_remote_select: 0
   webform_rest: 0
-  webform_revisions: 0
   webform_scheduled_email: 0
   webform_share: 0
   webform_submission_export_import: 0

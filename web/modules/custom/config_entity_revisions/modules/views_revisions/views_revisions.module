@@ -1,0 +1,174 @@
+<?php
+
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\views_revisions\ViewsRevisionFields;
+use Drupal\views_revisions\Controller\ViewsRevisionsController;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views_revisions\Entity\ViewsRevisions;
+use Drupal\config_entity_revisions\ConfigEntityRevisionsInterface;
+use Drupal\config_entity_revisions\ConfigEntityRevisionsControllerInterface;
+use Drupal\views_revisions\ViewsRevisionsUI;
+
+/**
+ * Implements hook_form_alter().
+ */
+function views_revisions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $view = NULL;
+
+  // Modify the label on the workflow form so it doesn't say "Config entities".
+  if ($form_id == 'workflow_edit_form') {
+    $entity_types = &$form['type_settings']['entity_types_container']['entity_types'];
+    if (!empty($entity_types['ViewRevisions'])) {
+      $entity_types['ViewRevisions']['type']['#context']['label'] =
+        t('Views');
+    }
+
+    return;
+  }
+
+  $add_edit_form_routes = [
+    'entity.view.edit_form',
+    'entity.view.source_form',
+  ];
+
+  $revision_routes = array_merge($add_edit_form_routes, [
+    'view_ui_element_form',
+    'entity.view.revision',
+  ]);
+
+  $routename = \Drupal::routeMatch()->getRouteName();
+
+  /* @var $contentEntity ConfigEntityRevisionsInterface */
+  $contentEntity = NULL;
+
+  // Get the content entity if it will be needed. This needs to be the most
+  // recent version of the entity - if we've saved a new revision, we want
+  // the latest revision message, not the old one.
+  $match = \Drupal::service('router')->matchRequest(\Drupal::request());
+
+  /* @var $view ViewUI */
+  if (isset($match['view'])) {
+    $view = $match['view'];
+
+    if ($view instanceof ViewsRevisionsUI) {
+      $view = $view->get('storage');
+      $contentEntity = $view->getContentEntity();
+    }
+
+  }
+
+  if (in_array($routename, $revision_routes) && !$view) {
+    return;
+  }
+
+  // If we're displaying a non-current revision, add a message and remove the
+  // submission buttons.
+  if ($routename == 'entity.view.revision') {
+    if (!$contentEntity->isDefaultRevision()) {
+      \Drupal::messenger()->addWarning('This is not the currently published revision of the view.');
+      $form['actions'] = [];
+    }
+
+    return;
+  }
+
+  // If we're not adding a form or rendering the main edit form, don't provide
+  // the option of adding a new revision or modifying the revision message.
+  if (!in_array($routename, $add_edit_form_routes)) {
+    if ($view) {
+      $form_state->setValue('view_revision', $view->getRevisionId());
+    }
+    return;
+  }
+
+  ViewsRevisionFields::addRevisionFormFields($form);
+
+  if (!$contentEntity) {
+    /* @var $revisionsController ConfigEntityRevisionsControllerInterface */
+    $revisionsController = ViewsRevisionsController::create(\Drupal::getContainer());
+    $contentEntity = $revisionsController->createUpdateRevision($view);
+  }
+
+  $entity_form_display = EntityFormDisplay::create([
+    'targetEntityType' => 'config_entity_revisions',
+    'bundle' => 'ViewRevisions',
+    'mode' => 'default',
+    'status' => TRUE,
+  ]);
+  $entity_form_display->buildForm($contentEntity, $form, $form_state);
+  $form['actions']['#weight'] = 200;
+}
+
+// No insert hook. The content entity will be automatically created the first
+// time a person visits the revisions display, or when a new revision is saved.
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function views_revisions_view_update(ViewsRevisions $view) {
+  $controller = ViewsRevisionsController::create(\Drupal::getContainer());
+  $controller->createUpdateRevision($view);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function views_revisions_view_delete(ViewsRevisions $view) {
+  $controller = ViewsRevisionsController::create(\Drupal::getContainer());
+  $controller->deleteRevisions($view);
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function views_revisions_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
+  if (strpos($route_name, 'entity.view') === 0) {
+    foreach ($data['tabs'] as $tab_level) {
+      foreach ($tab_level as $tab) {
+        /** @var Drupal\Core\Url $url */
+        $url = $tab['#link']['url'];
+        $tab_route_name = $url->getRouteName();
+        $tab_route_parameters = $url->getRouteParameters();
+
+        if (strpos($tab_route_name, 'entity.view') !== FALSE &&
+          isset($tab_route_parameters['view'])) {
+          $url->setRouteParameter('config_entity', $tab_route_parameters['view']);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function views_revisions_entity_type_alter(&$entity_types) {
+  if (isset($entity_types['view'])) {
+    $entity_types['view']
+      ->setClass('Drupal\views_revisions\Entity\ViewsRevisions')
+      ->setStorageClass('Drupal\views_revisions\ViewsRevisionsStorage')
+      ->setLinkTemplate('revisions', '/admin/structure/views/view/{view}/revisions')
+      ->setLinkTemplate('revision', '/admin/structure/views/view/{view}/revision/{revision_id}')
+      ->setFormClass('edit', 'Drupal\views_revisions\ViewsRevisionsEditForm');
+  }
+}
+
+/**
+ * Implements hook_entity_operations().
+ */
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function views_revisions_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  if ($entity->access('revisions') && $entity->hasLinkTemplate('revisions')) {
+    $operations['revisions'] = [
+      'title' => t('Revisions'),
+      'weight' => 100,
+      'url' => $entity->toUrl('revisions'),
+    ];
+  }
+}

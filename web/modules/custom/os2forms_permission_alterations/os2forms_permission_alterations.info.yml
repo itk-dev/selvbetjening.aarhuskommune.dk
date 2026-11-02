@@ -2,6 +2,6 @@ name: "OS2Forms permission alterations"
 type: module
 description: "Custom module for altering permissions on entities or routes"
 package: "OS2Forms"
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 dependencies:
   - "leaflet_layers:leaflet_layers"

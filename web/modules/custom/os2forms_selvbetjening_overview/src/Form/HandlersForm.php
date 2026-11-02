@@ -61,7 +61,7 @@ final class HandlersForm extends FormBase {
       $this->getWebformHandlerDefinitions()
     );
 
-    $selectedHandlers = $this->getRequest()->get('handlers');
+    $selectedHandlers = $this->getRequest()->query->all()['handlers'] ?? [];
     if (!is_array($selectedHandlers)) {
       $selectedHandlers = [];
     }

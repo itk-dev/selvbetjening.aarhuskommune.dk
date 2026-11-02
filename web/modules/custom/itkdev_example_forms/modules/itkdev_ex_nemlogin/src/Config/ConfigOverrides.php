@@ -2,10 +2,10 @@
 
 namespace Drupal\itkdev_ex_nemlogin\Config;
 
+use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryOverrideInterface;
 use Drupal\Core\Config\StorageInterface;
-use Drupal\Core\Serialization\Yaml;
 
 /**
  * Config overrides.
