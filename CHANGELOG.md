@@ -6,6 +6,8 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+* Tilføjede manglende tilgængelighedserklæring konfiguration.
+
 ## [5.1.22] 2026-10-27
 
 * [PR-551](https://github.com/itk-dev/selvbetjening.aarhuskommune.dk/pull/551)
