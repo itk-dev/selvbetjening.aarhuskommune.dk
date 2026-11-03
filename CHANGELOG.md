@@ -12,6 +12,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 * Fjernede webform-revisioner: `webform_revisions` og `config_entity_revisions`
   afinstalleres, og alle gemte revisioner slettes. Den aktuelle version af hver
   webformular bevares. Modulkoden fjernes i en efterfølgende release.
+* Tilføjede manglende tilgængelighedserklæring konfiguration.
 
 ## [5.1.22] 2026-10-27
 
