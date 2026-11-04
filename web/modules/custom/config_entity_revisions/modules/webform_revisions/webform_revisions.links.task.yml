@@ -1,0 +1,12 @@
+# Ensure we get local tasks even if webform_ui is disabled.
+entity.webform.edit_manage:
+  title: 'Elements'
+  route_name: entity.webform.edit_form
+  parent_id: entity.webform.edit_form
+  weight: 0
+
+entity.webform.revisions:
+  title: 'Revisions'
+  route_name: entity.webform.revisions
+  parent_id: entity.webform.edit_form
+  weight: 90

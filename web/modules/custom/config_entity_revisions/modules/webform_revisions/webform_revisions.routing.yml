@@ -1,0 +1,59 @@
+entity.webform.revisions:
+  path: '/admin/structure/webform/manage/{webform}/revisions'
+  defaults:
+    _title: 'Revisions'
+    _form: '\Drupal\webform_revisions\Form\WebformRevisionsOverviewForm'
+  options:
+    parameters:
+      webform:
+        type: 'entity:webform'
+  requirements:
+    _permission: 'administer webform revisions'
+entity.webform.revision:
+  path: '/webform/{webform}/revisions/{revision_id}'
+  defaults:
+    _controller: '\Drupal\webform\Controller\WebformEntityController::addForm'
+    _title_callback: '\Drupal\webform_revisions\Controller\WebformRevisionsController::revisionShowTitle'
+  requirements:
+    _permission: 'administer webform revisions'
+    webform_revision: \d+
+  options:
+    parameters:
+      webform:
+        type: 'entity:webform'
+entity.webform.revision.edit:
+  path: '/admin/structure/webform/manage/{webform}/revisions/{revision_id}/edit'
+  defaults:
+    _entity_form: 'webform.edit'
+    _title_callback: '\Drupal\webform_revisions\Controller\WebformRevisionsController::revisionEditTitle'
+  requirements:
+    _permission: 'administer webform revisions'
+    webform_revision: \d+
+  options:
+    parameters:
+        config_entity:
+          type: 'entity:webform'
+entity.webform.revision_revert_confirm:
+  path: '/admin/structure/webform/manage/{config_entity}/revisions/{revision_id}/revert'
+  defaults:
+    _form: '\Drupal\webform_revisions\Form\WebformRevisionsRevertForm'
+    _title: 'Revert to earlier revision'
+  requirements:
+    _permission: 'administer webform revisions'
+  options:
+    _node_operation_route: TRUE
+    parameters:
+      config_entity:
+        type: 'entity:webform'
+entity.webform.revision_delete_confirm:
+  path: '/admin/structure/webform/manage/{config_entity}/revisions/{revision_id}/delete'
+  defaults:
+    _form: '\Drupal\webform_revisions\Form\WebformRevisionsDeleteForm'
+    _title: 'Delete a revision'
+  requirements:
+    _permission: 'administer webform revisions'
+  options:
+    _node_operation_route: TRUE
+    parameters:
+      config_entity:
+        type: 'entity:webform'

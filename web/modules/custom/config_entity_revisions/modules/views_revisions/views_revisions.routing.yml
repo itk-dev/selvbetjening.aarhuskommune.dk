@@ -1,0 +1,49 @@
+entity.view.revisions:
+  path: '/admin/structure/views/view/{view}/revisions'
+  defaults:
+    _title: 'Revisions'
+    _form: '\Drupal\views_revisions\Form\ViewsRevisionsOverviewForm'
+  options:
+    parameters:
+      view:
+        type: 'entity:view'
+  requirements:
+    _permission: 'administer views revisions'
+entity.view.revision:
+ path: '/admin/structure/views/view/{view}/revision/{revision_id}'
+ defaults:
+   _controller: '\Drupal\views_ui\Controller\ViewsUIController::edit'
+   _title_callback: '\Drupal\views_revisions\Controller\ViewsRevisionsController::revisionShowTitle'
+ requirements:
+   _permission: 'administer views revisions'
+   revision_id: \d+
+ options:
+   parameters:
+     view:
+       type: 'entity:view'
+entity.view.revision_revert_confirm:
+  path: '/admin/structure/views/view/{config_entity}/revisions/{revision_id}/revert'
+  defaults:
+    _form: '\Drupal\views_revisions\Form\ViewsRevisionsRevertForm'
+    _title: 'Revert to earlier revision'
+  requirements:
+    _permission: 'administer views revisions'
+    revision_id: \d+
+  options:
+    _node_operation_route: TRUE
+    parameters:
+      config_entity:
+        type: 'entity:view'
+entity.view.revision_delete_confirm:
+  path: '/admin/structure/views/view/{config_entity}/revisions/{revision_id}/delete'
+  defaults:
+    _form: '\Drupal\views_revisions\Form\ViewsRevisionsDeleteForm'
+    _title: 'Delete a revision'
+  requirements:
+    _permission: 'administer views revisions'
+    revision_id: \d+
+  options:
+    _node_operation_route: TRUE
+    parameters:
+      config_entity:
+        type: 'entity:view'

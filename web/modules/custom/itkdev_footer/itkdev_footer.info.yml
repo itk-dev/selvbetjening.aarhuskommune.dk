@@ -1,5 +1,5 @@
 name: ITK Dev footer blocks
 type: module
 description: "ITK Dev footer blocks"
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 package: "ITKDev"

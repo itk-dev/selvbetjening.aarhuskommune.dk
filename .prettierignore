@@ -3,3 +3,6 @@ config/
 
 # Ignore generated content
 web/modules/custom/selvbetjening_kp_forms/data/
+
+# Ignore config_entity_revisions
+web/modules/custom/config_entity_revisions/

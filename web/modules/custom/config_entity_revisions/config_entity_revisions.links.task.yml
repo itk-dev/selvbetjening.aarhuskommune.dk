@@ -1,0 +1,8 @@
+entity.config_entity_revisions_type.edit_form:
+  title: 'Edit'
+  route_name: entity.config_entity_revisions_type.edit_form
+  base_route: entity.config_entity_revisions_type.edit_form
+entity.config_entity_revisions_type.collection:
+  title: List
+  route_name: entity.config_entity_revisions_type.collection
+  base_route: entity.config_entity_revisions_type.collection
