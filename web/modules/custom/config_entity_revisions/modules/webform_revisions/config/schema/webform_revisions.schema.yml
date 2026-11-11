@@ -1,0 +1,3 @@
+webform.*.third_party.webform_revisions:
+  type: integer
+  label: 'Webform Revision ID'
