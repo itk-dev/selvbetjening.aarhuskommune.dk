@@ -2768,17 +2768,17 @@
         },
         {
             "name": "drupal/entity_print",
-            "version": "2.19.0",
+            "version": "2.20.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_print.git",
-                "reference": "8.x-2.19"
+                "reference": "8.x-2.20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_print-8.x-2.19.zip",
-                "reference": "8.x-2.19",
-                "shasum": "c18628ca0641639d08eac111db722db094194118"
+                "url": "https://ftp.drupal.org/files/projects/entity_print-8.x-2.20.zip",
+                "reference": "8.x-2.20",
+                "shasum": "e89ff5234eb1dd4d2f6e500cdf594272c9f216a1"
             },
             "require": {
                 "dompdf/dompdf": ">=2.0.7",
@@ -2794,8 +2794,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.19",
-                    "datestamp": "1787298442",
+                    "version": "8.x-2.20",
+                    "datestamp": "1794419450",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2822,14 +2822,6 @@
                 {
                     "name": "jsacksick",
                     "homepage": "https://www.drupal.org/user/972218"
-                },
-                {
-                    "name": "larowlan",
-                    "homepage": "https://www.drupal.org/user/395439"
-                },
-                {
-                    "name": "pameeela",
-                    "homepage": "https://www.drupal.org/user/1431110"
                 },
                 {
                     "name": "sam152",
@@ -10244,16 +10236,16 @@
         },
         {
             "name": "paragonie/halite",
-            "version": "v5.1.4",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/halite.git",
-                "reference": "12e7d1ab50ef3cacc27b59140e75d2cf59e85f71"
+                "reference": "aa28beef75a09ed8b7ca87d758ba4916753646a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/halite/zipball/12e7d1ab50ef3cacc27b59140e75d2cf59e85f71",
-                "reference": "12e7d1ab50ef3cacc27b59140e75d2cf59e85f71",
+                "url": "https://api.github.com/repos/paragonie/halite/zipball/aa28beef75a09ed8b7ca87d758ba4916753646a6",
+                "reference": "aa28beef75a09ed8b7ca87d758ba4916753646a6",
                 "shasum": ""
             },
             "require": {
@@ -10310,9 +10302,9 @@
             "support": {
                 "docs": "https://github.com/paragonie/halite/tree/master/doc",
                 "issues": "https://github.com/paragonie/halite/issues",
-                "source": "https://github.com/paragonie/halite/tree/v5.1.4"
+                "source": "https://github.com/paragonie/halite/tree/v5.1.5"
             },
-            "time": "2025-09-19T03:39:32+00:00"
+            "time": "2026-11-06T19:23:08+00:00"
         },
         {
             "name": "paragonie/hidden-string",
