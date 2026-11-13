@@ -1,0 +1,25 @@
+entity.config_entity_revisions_type.collection:
+  path: '/admin/structure/config_entity_revision_types'
+  defaults:
+    _entity_list: 'config_entity_revisions_type'
+    _title: 'Configuration Entity Revision types'
+  requirements:
+    _permission: 'administer config entity revision types'
+
+entity.config_entity_revisions_type.edit_form:
+  path: '/admin/structure/config_entity_revisions_types/manage/{config_entity_revisions_type}'
+  defaults:
+    _entity_form: 'config_entity_revisions_type.edit'
+    _title_callback: '\Drupal\Core\Entity\Controller\EntityController::title'
+  requirements:
+    _permission: 'administer config entity revision types'
+
+#diff.config_entity_revisions_diff:
+#  path: '/diff/{config_entity_type}/{config_entity_id}/revisions/view/{left_revision}/{right_revision}/{filter}'
+#  defaults:
+#    _controller: '\Drupal\diff\Controller\NodeRevisionController::compareNodeRevisions'
+#    _title: Diff General Settings
+#  requirements:
+#    _access_config_entity_revision: 'view'
+#  options:
+#    _admin_route: TRUE

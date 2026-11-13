@@ -1,0 +1,9 @@
+status: true
+dependencies: {  }
+type: webform_revisions
+id: 'webform_revisions'
+label: 'Webform Revisions'
+description: 'Adds support for creating revisions of a webform and moderating changes.'
+help: ''
+preview_mode: 0
+display_submitted: false

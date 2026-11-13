@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Drupal\itkdev_ex_nemlogin;
 
+use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Logger\LoggerChannelInterface;
-use Drupal\Core\Serialization\Yaml;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Url;
 use Drupal\os2forms_nemlogin_openid_connect\Helper\Settings as Os2formsNemloginOpenidConnectSettings;

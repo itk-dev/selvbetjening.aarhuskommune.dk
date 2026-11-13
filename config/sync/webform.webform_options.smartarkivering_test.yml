@@ -5,7 +5,6 @@ dependencies:
   module:
     - os2forms
     - webform_entity_print
-    - webform_revisions
 third_party_settings:
   os2forms:
     os2forms_nemid:
@@ -25,8 +24,6 @@ third_party_settings:
         enabled: false
         link_text: ''
         link_attributes: {  }
-  webform_revisions:
-    contentEntity_id: '27'
 id: smartarkivering_test
 label: null
 category: MKB

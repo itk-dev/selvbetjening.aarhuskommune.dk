@@ -1,0 +1,34 @@
+<?php
+
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * Implements hook_install().
+ */
+function webform_revisions_install() {
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $cert_storage = $entityTypeManager->getStorage('config_entity_revisions_type');
+
+  // This hook_install() implementation is potentially called twice when
+  // importing config during `drush site:install --with-existing-config`.
+  if (null === $cert_storage->load('webform_revisions')) {
+    $entity = $cert_storage->create([
+      'id' => 'webform_revisions',
+      'label' => 'Webform Revisions',
+    ]);
+
+    $entity->save();
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function webform_revisions_uninstall() {
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $cert_storage = $entityTypeManager->getStorage('config_entity_revisions_type');
+
+  $entity = $cert_storage->load('webform_revisions');
+
+  $cert_storage->delete([$entity]);
+}
