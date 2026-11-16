@@ -1,0 +1,44 @@
+<?php
+
+use Drupal\Core\Config\Entity\ConfigEntityStorage;
+
+/**
+ * Implements hook_install().
+ */
+function views_revisions_install() {
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $cert_storage = $entityTypeManager->getStorage('config_entity_revisions_type');
+
+  $entity = $cert_storage->create([
+    'id' => 'views_revisions',
+    'label' => 'Views Revisions',
+  ]);
+
+  $entity->save();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function views_revisions_uninstall() {
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $cert_storage = $entityTypeManager->getStorage('config_entity_revisions_type');
+
+  $entity = $cert_storage->load('views_revisions');
+
+  $cert_storage->delete([$entity]);
+}
+
+/**
+ * Implements hook_update.
+ */
+function view_revisions_8000(&$sandbox) {
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $cert_storage = $entityTypeManager->getStorage('config_entity_revisions_type');
+
+  $entity = $cert_storage->create([
+    'id' => 'views_revisions',
+  ]);
+
+  $entity->save();
+}

@@ -1,0 +1,33 @@
+config_entity_revisions.config_entity_revisions_type.settings:
+  type: config_object
+  label: 'Config Entity Revisions Type'
+
+config_entity_revisions.config_entity_revisions_type.*:
+  type: config_entity
+  label: 'Config Entity Revisions'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    revision:
+      type: integer
+      label: 'Revision'
+    type:
+      type: text
+      label: 'Configuration Entity Type'
+    name:
+      type: boolean
+      label: 'Whether a new revision should be created by default'
+    uuid:
+      type: string
+      label: 'UUID'
+    configuration:
+      type: string
+      label: 'Serialised configuration entity revision'
+    changed:
+      type: integer
+      label: 'Changed'
+    published:
+      type: boolean
+      label: 'Display setting for author and date Submitted by post information'
+

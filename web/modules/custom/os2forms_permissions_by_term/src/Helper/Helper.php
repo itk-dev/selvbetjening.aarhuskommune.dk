@@ -17,7 +17,7 @@ use Drupal\permissions_by_term\Service\AccessCheck;
 use Drupal\permissions_by_term\Service\AccessStorage;
 use Drupal\user\Entity\User;
 use Drupal\webform\WebformInterface;
-use Drupal\webform_revisions\Entity\WebformRevisionsSubmission;
+use Drupal\webform\WebformSubmissionInterface;
 
 /**
  * Helper class for os2forms permissions by term.
@@ -235,12 +235,12 @@ class Helper {
   /**
    * Implementation of hook_ENTITY_TYPE_access().
    *
-   * Check access on webform revisions submission related operations.
+   * Check access on webform submission related operations.
    *
-   * @param \Drupal\webform_revisions\Entity\WebformRevisionsSubmission $webformRevisionsSubmission
-   *   The webform revision submission we check access for.
+   * @param \Drupal\webform\WebformSubmissionInterface $webformSubmission
+   *   The webform submission we check access for.
    * @param string $operation
-   *   The operation being performed on the webform revisions submission.
+   *   The operation being performed on the webform submission.
    * @param \Drupal\Core\Session\AccountInterface $account
    *   The current user.
    *
@@ -250,7 +250,7 @@ class Helper {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function webformSubmissionAccess(WebformRevisionsSubmission $webformRevisionsSubmission, $operation, AccountInterface $account) {
+  public function webformSubmissionAccess(WebformSubmissionInterface $webformSubmission, $operation, AccountInterface $account) {
     // 'view' operation allows viewing the submission.
     // 'notes' operation allows writing notes,
     // flagging and locking the submission.
@@ -259,14 +259,14 @@ class Helper {
     // 'update_any' operation allows duplicating submissions and
     // should have an access check equivalent to 'update' on webform.
     if (in_array($operation, ['view', 'notes', 'view_any'])) {
-      return $this->webformAccess($webformRevisionsSubmission->getWebform(), 'submission_page', $account);
+      return $this->webformAccess($webformSubmission->getWebform(), 'submission_page', $account);
     }
     elseif ($operation === 'update_any') {
-      return $this->webformAccess($webformRevisionsSubmission->getWebform(), 'update', $account);
+      return $this->webformAccess($webformSubmission->getWebform(), 'update', $account);
     }
 
     // Other operations should have the same access as on the webform.
-    return $this->webformAccess($webformRevisionsSubmission->getWebform(), $operation, $account);
+    return $this->webformAccess($webformSubmission->getWebform(), $operation, $account);
   }
 
   /**

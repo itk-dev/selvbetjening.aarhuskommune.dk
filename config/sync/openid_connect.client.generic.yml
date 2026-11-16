@@ -9,6 +9,8 @@ settings:
   client_id: client-id
   client_secret: client-secret
   iss_allowed_domains: ''
+  prompt:
+    - login
   issuer_url: ''
   authorization_endpoint: 'http://idp-admin.selvbetjening.local.itkdev.dk/oauth2/authorize'
   token_endpoint: 'http://idp-admin.selvbetjening.local.itkdev.dk/oauth2/token'
@@ -18,5 +20,3 @@ settings:
     - openid
     - email
     - profile
-  prompt:
-    - login

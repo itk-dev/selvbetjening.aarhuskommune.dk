@@ -10,7 +10,7 @@ include:
 
 services:
   phpfpm:
-    image: itkdev/php8.3-fpm:latest
+    image: itkdev/php8.4-fpm:latest
     networks:
       # frontend is necessary for booking to work locally.
       # @see web/modules/custom/itkdev_booking/README.md

@@ -1,7 +1,7 @@
 name: selvbetjening.aarhuskommune.dk
 type: theme
 description: "Theme for selvbetjening.aarhuskommune.dk"
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 base theme: claro
 
 libraries:

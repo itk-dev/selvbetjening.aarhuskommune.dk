@@ -1,0 +1,25 @@
+services:
+  paramconverter.view_revision:
+    class: Drupal\views_revisions\ParamConverter\ViewsRevisionsConverter
+    # Use a higher priority than either the config converter or the entity convertor.
+    # In contrast to weights, a higher number = earlier, not later.
+    tags:
+      - { name: paramconverter, priority: 20 }
+    arguments: ['@entity_type.manager', '@tempstore.shared', '@config.factory', '@router.admin_context', '@entity.repository']
+    lazy: true
+
+  #paramconverter.view_revisions_revision:
+    #class: Drupal\Core\ParamConverter\EntityRevisionParamConverter
+    #tags:
+      #- { name: paramconverter }
+    #arguments: ['@entity_type.manager', '@entity.repository']
+
+  views_revisions.route_subscriber:
+    class: Drupal\views_revisions\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+#  view.request:
+#    class: Drupal\views_revisions\ViewsRevisionsRequest
+#    arguments: ['@router.route_provider', '@request_stack', '@router.admin_context', '@current_route_match', '@entity_type.manager', '@entity_type.repository', '@view.entity_reference_manager', '@plugin.manager.view.source_entity']
+

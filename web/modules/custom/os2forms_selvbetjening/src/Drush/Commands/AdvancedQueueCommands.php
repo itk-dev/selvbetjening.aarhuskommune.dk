@@ -5,6 +5,7 @@ namespace Drupal\os2forms_selvbetjening\Drush\Commands;
 use Drupal\advancedqueue\Entity\Queue;
 use Drupal\advancedqueue\Plugin\AdvancedQueue\Backend\SupportsLoadingJobsInterface;
 use Drupal\advancedqueue\ProcessorInterface;
+use Drupal\Component\Serialization\Yaml;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Config\MemoryStorage;
 use Drupal\Core\Config\StorageInterface;
@@ -13,7 +14,6 @@ use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Serialization\Yaml;
 use Drush\Attributes as CLI;
 use Drush\Commands\config\ConfigCommands;
 use Drush\Commands\DrushCommands;
@@ -140,6 +140,10 @@ final class AdvancedQueueCommands extends DrushCommands {
         $this->io()->section('Payload');
         $this->io()->writeln(Yaml::encode($job->getPayload()));
       }
+    }
+
+    if (count($jobs) > 0 && 1 === $limit) {
+      $this->io()->note('Only one job listed. Use `--limit` to show more.');
     }
 
     return self::EXIT_SUCCESS;

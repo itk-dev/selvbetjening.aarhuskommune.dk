@@ -7,12 +7,14 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Routing\ResettableStackedRouteMatchInterface;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\author_bulk_assignment\Plugin\views\field\AuthorAssignmentEntityBulkForm;
 use Drupal\node\NodeInterface;
 use Drupal\permissions_by_term\Service\AccessStorage;
 use Drupal\user\Entity\User;
 use Drupal\webform\Entity\Webform;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -49,8 +51,10 @@ class AuthorAssignmentNodeBulkFormOverride extends AuthorAssignmentEntityBulkFor
     MessengerInterface $messenger,
     EntityRepositoryInterface $entity_repository,
     private readonly AccountProxyInterface $currentUser,
+    #[Autowire(service: 'current_route_match')]
+    ResettableStackedRouteMatchInterface $route_match,
   ) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $entityTypeManager, $language_manager, $messenger, $entity_repository);
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $entityTypeManager, $language_manager, $messenger, $entity_repository, $route_match);
     $this->langcode = $language_manager->getCurrentLanguage()->getId();
   }
 
@@ -68,7 +72,8 @@ class AuthorAssignmentNodeBulkFormOverride extends AuthorAssignmentEntityBulkFor
       $container->get('language_manager'),
       $container->get('messenger'),
       $container->get('entity.repository'),
-      $container->get('current_user')
+      $container->get('current_user'),
+      $container->get('current_route_match'),
     );
   }
 

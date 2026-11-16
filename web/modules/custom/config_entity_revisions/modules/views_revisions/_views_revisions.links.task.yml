@@ -1,0 +1,12 @@
+# Ensure we get local tasks even if view_ui is disabled.
+entity.view.edit_manage:
+  title: 'Elements'
+  route_name: entity.view.edit_form
+  parent_id: entity.view.edit_form
+  weight: 0
+
+entity.view.revisions:
+  title: 'Revisions'
+  route_name: entity.view.revisions
+  parent_id: entity.view.edit_form
+  weight: 90

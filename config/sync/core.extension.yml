@@ -20,7 +20,6 @@ module:
   color: 0
   comment: 0
   config: 0
-  config_entity_revisions: 0
   config_ignore: 0
   config_translation: 0
   contact: 0
@@ -158,7 +157,6 @@ module:
   webform_remote_handlers: 0
   webform_remote_select: 0
   webform_rest: 0
-  webform_revisions: 0
   webform_scheduled_email: 0
   webform_share: 0
   webform_submission_export_import: 0

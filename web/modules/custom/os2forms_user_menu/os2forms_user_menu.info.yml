@@ -2,7 +2,7 @@ name: OS2Forms User Menu
 type: module
 description: User menu for os2forms
 package: OS2Forms
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 dependencies:
   - "drupal:os2web_nemlogin"
   - "drupal:os2web_datalookup"

@@ -1,0 +1,7 @@
+name: Config Entity Revisions
+description: Allows configuration entities in Drupal 8.5+ to have revisions.
+package: api
+type: module
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:serialization

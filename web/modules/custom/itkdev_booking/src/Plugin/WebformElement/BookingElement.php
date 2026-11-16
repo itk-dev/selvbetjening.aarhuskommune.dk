@@ -2,8 +2,8 @@
 
 namespace Drupal\itkdev_booking\Plugin\WebformElement;
 
-use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\RendererInterface;
 use Drupal\itkdev_booking\Helper\UserHelper;
 use Drupal\webform\Plugin\WebformElement\Hidden;
 use Drupal\Core\Site\Settings;
@@ -25,14 +25,14 @@ use Drupal\Core\Url;
  */
 class BookingElement extends Hidden {
 
-  private ModuleExtensionList $extensionList;
+  private RendererInterface $renderer;
 
   /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     $instance = parent::create($container, $configuration, $plugin_id, $plugin_definition);
-    $instance->extensionList = $container->get('extension.list.module');
+    $instance->renderer = $container->get('renderer');
     return $instance;
   }
 
@@ -173,16 +173,17 @@ class BookingElement extends Hidden {
       'df_map_password' => Settings::get('itkdev_booking_df_map_password'),
     ];
 
-    $prefix = twig_render_template($this->extensionList->getPath('itkdev_booking') . '/templates/booking_app.html.twig', [
-      'params' => $params,
-      // Needed to prevent notices when Twig debugging is enabled.
-      'theme_hook_original' => 'not-applicable',
-    ]);
-
     if ('booking_element' == $element['#type']) {
       $form['#attached']['library'][] = 'itkdev_booking/booking_app';
       $form['#attached']['drupalSettings']['booking_app'] = $params;
-      $form['elements'][$element['#webform_key']]['#prefix'] = $prefix;
+      $prefix = [
+        '#type' => 'inline_template',
+        '#template' => '<div id="react-booking-app" data-config="{{ config }}"></div>',
+        '#context' => [
+          'config' => json_encode($params),
+        ],
+      ];
+      $form['elements'][$element['#webform_key']]['#prefix'] = $this->renderer->renderInIsolation($prefix);
       $form['elements'][$element['#webform_key']]['#attributes']['id'] = 'submit-values';
       $form['elements'][$element['#webform_key']]['#default_value'] = json_encode([]);
       $form['#validate'][] = [$this, 'validateBooking'];
