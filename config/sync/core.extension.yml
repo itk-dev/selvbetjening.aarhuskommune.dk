@@ -61,6 +61,7 @@ module:
   libraries: 0
   link: 0
   locale: 0
+  locale_translation_context: 0
   log_stdout: 0
   maestro: 0
   maestro_taskconsole: 0
