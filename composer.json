@@ -18,6 +18,7 @@
         "drupal/editor_advanced_link": "^2.2",
         "drupal/jquery_ui_datepicker": "^2.1",
         "drupal/lang_dropdown": "^2.1",
+        "drupal/locale_translation_context": "^2.0",
         "drupal/log_stdout": "^3.0",
         "drupal/memcache": "^2.7",
         "drupal/menu_link_attributes": "^1.5",
