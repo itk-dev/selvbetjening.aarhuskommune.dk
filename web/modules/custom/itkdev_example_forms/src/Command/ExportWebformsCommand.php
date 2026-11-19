@@ -24,7 +24,6 @@ final class ExportWebformsCommand extends AbstractCommand {
   private static array $configKeysToClear = [
     'uuid',
     '_core',
-    'third_party_settings.webform_revisions',
     // 'third_party_settings.os2forms_permissions_by_term',
   ];
 

@@ -6,7 +6,6 @@ dependencies:
     - os2forms_permissions_by_term
     - webform_encrypt
     - webform_entity_print
-    - webform_revisions
   enforced:
     module:
       - itkdev_ex_core_fields

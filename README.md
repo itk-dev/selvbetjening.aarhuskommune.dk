@@ -1,5 +1,11 @@
 # selvbetjening.aarhuskommune.dk
 
+<details>
+<summary>Webform submission bug</summary>
+
+
+</details>
+
 ## Getting started
 
 These instructions will get you a copy of the project up and running on your
