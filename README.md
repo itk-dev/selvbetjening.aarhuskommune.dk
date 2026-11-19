@@ -7,9 +7,12 @@
 # docker compose exec phpfpm php vendor/bin/drush.php pm:install devel_generate
 
 docker compose exec phpfpm php vendor/bin/drush.php sql:query "TRUNCATE advancedqueue"
-docker compose exec phpfpm php vendor/bin/drush.php webform:generate --kill itkdev_ex_misc_bug_000 1
-docker compose exec phpfpm php vendor/bin/drush.php webform:generate --kill itkdev_ex_misc_bug_001 1
+docker compose exec phpfpm php vendor/bin/drush.php --xdebug webform:generate --kill itkdev_ex_misc_bug_000 1
+docker compose exec phpfpm php vendor/bin/drush.php --xdebug webform:generate --kill itkdev_ex_misc_bug_001 1
+
+docker compose exec phpfpm php vendor/bin/drush.php advancedqueue:queue:list
 docker compose exec phpfpm php vendor/bin/drush.php advancedqueue:queue:process fasit_queue
+docker compose exec phpfpm php vendor/bin/drush.php advancedqueue:queue:process os2forms_queued_email
 ```
 
 
