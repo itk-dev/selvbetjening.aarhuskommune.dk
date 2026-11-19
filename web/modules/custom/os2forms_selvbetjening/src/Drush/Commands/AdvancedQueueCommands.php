@@ -248,33 +248,36 @@ final class AdvancedQueueCommands extends DrushCommands {
    */
   #[CLI\Command(name: self::COMMAND_PROCESS_JOB, aliases: ['advancedqueue:queue:job:process'])]
   #[CLI\Argument(name: 'queue_id', description: 'The queue ID.')]
-  #[CLI\Argument(name: 'job_id', description: 'Job ID')]
+  #[CLI\Argument(name: 'job_ids', description: 'Comma-separatd list if job IDs')]
   #[CLI\Option(name: 'show-payload', description: 'Show payload')]
   #[CLI\Usage(name: self::COMMAND_PROCESS_JOB . ' my_queue 87', description: 'Ask for confirmation and process job with ID 87 in "my_queue" queue.')]
   #[CLI\Usage(name: self::COMMAND_PROCESS_JOB . ' my_queue 87 --yes', description: 'Process job with ID 87 in "my_queue" queue without confirmation.')]
   #[CLI\Usage(name: self::COMMAND_PROCESS_JOB . ' my_queue 87 --show-payload', description: 'Show job payload and process job with ID 87 in "my_queue" queue.')]
   public function processJob(
     string $queue_id,
-    string $job_id,
+    string $job_ids,
     $options = [
       'show-payload' => FALSE,
     ],
   ) {
     [$backend, $queue] = $this->loadQueueBackend($queue_id);
-    /** @var \Drupal\advancedqueue\Job $job */
-    $job = $backend->loadJob($job_id);
+    $job_ids = preg_split('/\s*,\s*/', $job_ids);
+    foreach ($job_ids as $job_id) {
+      /** @var \Drupal\advancedqueue\Job $job */
+      $job = $backend->loadJob($job_id);
 
-    if ($options['show-payload']) {
-      $this->io()->section('Payload');
-      $this->io()->writeln(Yaml::encode($job->getPayload()));
+      if ($options['show-payload']) {
+        $this->io()->section('Payload');
+        $this->io()->writeln(Yaml::encode($job->getPayload()));
+      }
+
+      $question = dt('Really process the job %id', ['%id' => $job->getId()]);
+      if (!$this->io()->confirm($question, default: FALSE)) {
+        return;
+      }
+
+      $this->processor->processJob($job, $queue);
     }
-
-    $question = dt('Really process the job %id', ['%id' => $job->getId()]);
-    if (!$this->io()->confirm($question, default: FALSE)) {
-      return;
-    }
-
-    $this->processor->processJob($job, $queue);
   }
 
   /**
