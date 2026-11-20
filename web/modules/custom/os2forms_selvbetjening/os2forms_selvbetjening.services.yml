@@ -41,3 +41,7 @@ services:
       ]
 
   Drupal\os2forms_selvbetjening\Hooks\WebformValidationHooks:
+
+  Drupal\os2forms_selvbetjening\EventSubscriber\AdvancedQueueSubscriber:
+    tags:
+      - { name: event_subscriber }
