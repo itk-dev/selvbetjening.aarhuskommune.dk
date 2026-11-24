@@ -4038,8 +4038,7 @@
             "homepage": "https://drupal.org/project/locale_translation_context",
             "support": {
                 "source": "https://git.drupalcode.org/project/locale_translation_context"
-            },
-            "published-time": "2026-08-26T08:14:01+00:00"
+            }
         },
         {
             "name": "drupal/log_stdout",
@@ -8139,8 +8138,7 @@
                 "issues": "https://github.com/itk-dev/f2-api-client/issues",
                 "source": "https://github.com/itk-dev/f2-api-client/tree/1.0.0-rc.11"
             },
-            "time": "2026-11-16T10:27:13+00:00",
-            "published-time": "2026-11-16T10:27:49+00:00"
+            "time": "2026-11-16T10:27:13+00:00"
         },
         {
             "name": "itk-dev/getorganized-api-client-php",
@@ -9741,8 +9739,7 @@
                 "issues": "https://github.com/itk-dev/os2forms_f2/issues",
                 "source": "https://github.com/itk-dev/os2forms_f2/tree/1.0.0-rc.19"
             },
-            "time": "2026-11-23T12:50:18+00:00",
-            "published-time": "2026-11-23T12:56:03+00:00"
+            "time": "2026-11-23T12:50:18+00:00"
         },
         {
             "name": "os2forms/os2forms_fordelingskomponent",
@@ -9912,16 +9909,16 @@
         },
         {
             "name": "os2forms/os2forms_organisation",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itk-dev/os2forms_organisation.git",
-                "reference": "5faeb018ebfae6b682d9e1912fe02ee9a12cc129"
+                "reference": "c68f360157f19cbe3fb2febe0e9e5c6a67c5df40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itk-dev/os2forms_organisation/zipball/5faeb018ebfae6b682d9e1912fe02ee9a12cc129",
-                "reference": "5faeb018ebfae6b682d9e1912fe02ee9a12cc129",
+                "url": "https://api.github.com/repos/itk-dev/os2forms_organisation/zipball/c68f360157f19cbe3fb2febe0e9e5c6a67c5df40",
+                "reference": "c68f360157f19cbe3fb2febe0e9e5c6a67c5df40",
                 "shasum": ""
             },
             "require": {
@@ -9954,9 +9951,9 @@
             "description": "OS2Forms organisation",
             "support": {
                 "issues": "https://github.com/itk-dev/os2forms_organisation/issues",
-                "source": "https://github.com/itk-dev/os2forms_organisation/tree/2.3.0"
+                "source": "https://github.com/itk-dev/os2forms_organisation/tree/2.3.1"
             },
-            "time": "2026-10-23T11:27:44+00:00"
+            "time": "2026-11-24T12:32:14+00:00"
         },
         {
             "name": "os2forms/os2forms_payment",
@@ -13199,8 +13196,7 @@
                 "issues": "https://github.com/swaggest/json-diff/issues",
                 "source": "https://github.com/swaggest/json-diff/tree/v3.12.1"
             },
-            "time": "2025-03-10T08:22:10+00:00",
-            "published-time": "2025-03-10T08:22:36+00:00"
+            "time": "2025-03-10T08:22:10+00:00"
         },
         {
             "name": "symfony/cache",
@@ -24744,5 +24740,5 @@
         "php": "^8.3"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.11.0"
+    "plugin-api-version": "2.9.0"
 }
