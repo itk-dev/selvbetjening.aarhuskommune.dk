@@ -6,6 +6,12 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [6.0.3] 2026-11-24
+
+* Opdaterede [OS2Forms Organisation](https://github.com/itk-dev/os2forms_organisation)
+    til `2.3.1`
+  * Tilføjede manglende titel på brugersøgningen i "Mine organisation data"-elementet.
+
 ## [6.0.2] 2026-11-20
 
 * Fix af [393](https://github.com/OS2Forms/os2forms/issues/393).
@@ -35,7 +41,7 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [5.1.20] 2026-09-28
 
-* Opdaterede [OS2Forms Organisation](https://github.com/1itk-dev/os2forms_organisation)
+* Opdaterede [OS2Forms Organisation](https://github.com/itk-dev/os2forms_organisation)
   * Gjorde funktion/ansættelses vælger obligatorisk.
 * Opdaterede MaestroInheritTask så data nu overføres før adgangstjek.
 * Pakke-opdateringer heriblandt Drupal `10.6`.
