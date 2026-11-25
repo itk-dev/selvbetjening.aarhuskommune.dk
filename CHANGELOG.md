@@ -6,6 +6,10 @@ Nedenfor ses dato for release og beskrivelse af opgaver som er implementeret.
 
 ## [Under udvikling]
 
+## [6.0.3] 2026-11-25
+
+* Sikkedhedsopdatering af drupal core.
+
 ## [6.0.2] 2026-11-20
 
 * Fix af [393](https://github.com/OS2Forms/os2forms/issues/393).
@@ -944,7 +948,10 @@ og [OS2Forms 3.7.0](https://github.com/OS2Forms/os2forms/releases/tag/3.7.0)
 
 * GO borgersager
 
-[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/6.0.0...HEAD
+[Under udvikling]: https://github.com/itk-dev/os2forms_selvbetjening/compare/6.0.3...HEAD
+[6.0.3]: https://github.com/itk-dev/os2forms_selvbetjening/compare/6.0.2...6.0.3
+[6.0.2]: https://github.com/itk-dev/os2forms_selvbetjening/compare/6.0.1...6.0.2
+[6.0.1]: https://github.com/itk-dev/os2forms_selvbetjening/compare/6.0.0...6.0.1
 [6.0.0]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.22...6.0.0
 [5.1.22]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.21...5.1.22
 [5.1.21]: https://github.com/itk-dev/os2forms_selvbetjening/compare/5.1.20...5.1.21
